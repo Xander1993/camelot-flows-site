@@ -1,0 +1,153 @@
+/*
+Theme Name: Camelot Flows
+Description: WP conversion of Camelot Flows
+Version: 1.0
+Text Domain: camelot-flows
+*/
+
+        body {
+            background-color: #050508;
+            color: #e2e8f0;
+        }
+        .font-body { font-family: 'Inter', sans-serif; }
+        
+        html.lenis, html.lenis body { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto !important; }
+        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+        .lenis.lenis-stopped { overflow: hidden; }
+        .lenis.lenis-scrolling iframe { pointer-events: none; }
+
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .glass-panel {
+            background: rgba(10, 10, 18, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+        }
+        .glass-card {
+            background: linear-gradient(145deg, rgba(15, 15, 25, 0.6) 0%, rgba(5, 5, 8, 0.8) 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(99, 102, 241, 0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(99, 102, 241, 0.5);
+            box-shadow: 0 0 30px -10px rgba(79, 70, 229, 0.3);
+            background: linear-gradient(145deg, rgba(20, 20, 35, 0.7) 0%, rgba(10, 10, 15, 0.9) 100%);
+        }
+        .text-glow { text-shadow: 0 0 20px rgba(99, 102, 241, 0.5); }
+        .grid-bg {
+            background-size: 50px 50px;
+            background-image: 
+                linear-gradient(to right, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+            mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+        }
+        .status-dot { box-shadow: 0 0 10px currentColor; }
+
+        .perspective-1000 { perspective: 1000px; }
+        
+        /* ИЗМЕНЕНИЕ: Стили для бегущей строки Zentry */
+        .marquee-container { width: max-content; }
+
+        /* Custom Cursor */
+        @media (pointer: fine) {
+            body { cursor: none; }
+            #custom-cursor {
+                position: fixed; top: 0; left: 0; width: 16px; height: 16px; border-radius: 50%;
+                background: #8b5cf6; box-shadow: 0 0 20px 6px rgba(139, 92, 246, 0.6);
+                pointer-events: none; z-index: 99999; mix-blend-mode: screen; opacity: 0;
+                transform: translate(-50%, -50%);
+            }
+        }
+        @media (pointer: coarse) { #custom-cursor { display: none; } }
+
+        /* Star Wars Pricing Styles */
+        #starwars-pricing {
+            perspective: 1500px;
+            overflow: hidden;
+            background-color: #050508;
+            position: relative;
+        }
+        #starwars-pricing::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(191,0,255,0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        #starwars-pricing::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 40%, rgba(5,5,8,1) 100%);
+            pointer-events: none;
+        }
+        .starfield-anim {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 100px 150px, #bf00ff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 200px 100px, #00f2ff, rgba(0,0,0,0)),
+                radial-gradient(1.2px 1.2px at 300px 250px, #fff, rgba(0,0,0,0));
+            background-size: 400px 400px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        .crawl-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 60vh;
+            transform-style: preserve-3d;
+        }
+        .crawl-content {
+            width: 90%;
+            max-width: 900px;
+            transform-origin: 50% 100%;
+        }
+        .pricing-card-sw {
+            background: linear-gradient(135deg, rgba(15, 10, 25, 0.8) 0%, rgba(5, 5, 8, 0.95) 100%);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 3.5rem;
+            transition: all 0.4s ease;
+        }
+        .pricing-card-sw:hover {
+            transform: translateY(-8px) scale(1.02);
+            background: linear-gradient(135deg, rgba(25, 15, 45, 0.8) 0%, rgba(10, 10, 15, 0.95) 100%);
+        }
+        /* Color updates matching stitch */
+        .border-cyan { border: 1px solid rgba(0, 242, 255, 0.2); }
+        .border-purple { border: 1px solid rgba(191, 0, 255, 0.2); box-shadow: 0 0 40px rgba(191,0,255,0.15); }
+        .border-blue { border: 1px solid rgba(0, 102, 255, 0.2); }
+        
+        .glow-cyan:hover { border-color: rgba(0, 242, 255, 0.6); box-shadow: 0 0 30px rgba(0, 242, 255, 0.3); }
+        .glow-purple:hover { border-color: rgba(191, 0, 255, 0.6); box-shadow: 0 0 40px rgba(191, 0, 255, 0.4); }
+        .glow-blue:hover { border-color: rgba(0, 102, 255, 0.6); box-shadow: 0 0 30px rgba(0, 102, 255, 0.3); }
+        
+        .text-neon-cyan { color: #00f2ff; text-shadow: 0 0 8px rgba(0, 242, 255, 0.6); }
+        .bg-neon-cyan { background-color: #00f2ff; }
+        .text-neon-purple { color: #bf00ff; text-shadow: 0 0 8px rgba(191, 0, 255, 0.6); }
+        .bg-neon-purple { background-color: #bf00ff; }
+        .text-neon-blue { color: #0066ff; text-shadow: 0 0 8px rgba(0, 102, 255, 0.6); }
+        .bg-neon-blue { background-color: #0066ff; }
+        .text-glow-cyan { text-shadow: 0 0 20px rgba(0, 242, 255, 0.5); }
+        .text-glow-purple { text-shadow: 0 0 20px rgba(191, 0, 255, 0.5); }
+    

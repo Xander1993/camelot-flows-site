@@ -1,0 +1,223 @@
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#25aff4",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#050508",
+                        "merlin": "#00f2ff",
+                        "percival": "#bf00ff",
+                        "excalibur": "#ffcc00",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .perspective-container {
+            perspective: 800px;
+            overflow: hidden;
+            height: 100vh;
+            background: radial-gradient(circle at center, #101c22 0%, #050508 100%);
+        }
+        .starfield {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 50px 160px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 80px 120px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 110px 10px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 150px 50px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 190px 90px, #fff, rgba(0,0,0,0));
+            background-size: 200px 200px;
+            opacity: 0.3;
+        }
+        .crawl-content {
+            transform: rotateX(25deg);
+            transform-origin: 50% 100%;
+        }
+        .glow-cyan { box-shadow: 0 0 15px rgba(0, 242, 255, 0.2); border-color: rgba(0, 242, 255, 0.4); }
+        .glow-purple { box-shadow: 0 0 15px rgba(191, 0, 255, 0.2); border-color: rgba(191, 0, 255, 0.4); }
+        .glow-gold { box-shadow: 0 0 15px rgba(255, 204, 0, 0.2); border-color: rgba(255, 204, 0, 0.4); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark font-display selection:bg-primary/30 antialiased overflow-hidden">
+<div class="relative flex h-screen w-full flex-col bg-background-dark group/design-root">
+<!-- Header -->
+<div class="flex items-center bg-background-dark/80 backdrop-blur-md p-4 sticky top-0 z-50 justify-between border-b border-slate-800">
+<div class="text-slate-100 flex size-12 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center uppercase tracking-[0.2em]">The Pricing Arc</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex items-center justify-center rounded-lg h-12 bg-transparent text-slate-100 p-0">
+<span class="material-symbols-outlined">auto_awesome</span>
+</button>
+</div>
+</div>
+<!-- Scrollable Area -->
+<div class="perspective-container relative">
+<div class="starfield" data-alt="Deep space starfield with tiny white points"></div>
+<div class="crawl-content flex flex-col items-center gap-12 px-6 pt-12 pb-32">
+<div class="max-w-md text-center">
+<h1 class="text-primary tracking-widest text-xl font-bold uppercase mb-4">A Long Time Ago in a Galaxy...</h1>
+<h2 class="text-slate-100 text-4xl font-black leading-tight tracking-tighter mb-4">CHOOSE YOUR POWER</h2>
+<p class="text-slate-400 text-lg font-normal leading-relaxed">May the data be with you. Select your terminal for deep-space financial analytics and high-velocity trade execution.</p>
+</div>
+<!-- Tier 1: Merlin Core -->
+<div class="w-full max-w-sm flex flex-col gap-6 rounded-xl border border-solid bg-slate-900/40 backdrop-blur-xl p-8 glow-cyan transition-transform duration-500 hover:scale-[1.02]">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<h3 class="text-merlin text-xl font-bold tracking-[0.1em] uppercase">Merlin Core</h3>
+<span class="text-background-dark text-[10px] font-bold tracking-widest uppercase rounded-full bg-merlin px-3 py-1">Apprentice</span>
+</div>
+<p class="flex items-baseline gap-1 text-slate-100">
+<span class="text-slate-100 text-5xl font-black tracking-tighter">$2,400</span>
+<span class="text-slate-400 text-base font-medium">/mo</span>
+</p>
+</div>
+<button class="flex w-full cursor-pointer items-center justify-center rounded-lg h-12 px-4 bg-merlin text-background-dark text-sm font-black uppercase tracking-widest">
+                        Initialize Core
+                    </button>
+<div class="flex flex-col gap-4">
+<div class="text-[13px] font-medium leading-normal flex gap-3 text-slate-300">
+<span class="material-symbols-outlined text-merlin text-sm">check_circle</span>
+                            Essential Holo-Analytics
+                        </div>
+<div class="text-[13px] font-medium leading-normal flex gap-3 text-slate-300">
+<span class="material-symbols-outlined text-merlin text-sm">check_circle</span>
+                            Obsidian Terminal Skin
+                        </div>
+<div class="text-[13px] font-medium leading-normal flex gap-3 text-slate-300">
+<span class="material-symbols-outlined text-merlin text-sm">check_circle</span>
+                            Neon Cyan HUD Accents
+                        </div>
+<div class="text-[13px] font-medium leading-normal flex gap-3 text-slate-300">
+<span class="material-symbols-outlined text-merlin text-sm">check_circle</span>
+                            Droid-Based Support
+                        </div>
+</div>
+</div>
+<!-- Tier 2: Percival Data -->
+<div class="w-full max-w-sm flex flex-col gap-6 rounded-xl border border-solid bg-slate-900/40 backdrop-blur-xl p-8 glow-purple transition-transform duration-500 hover:scale-[1.02]">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<h3 class="text-percival text-xl font-bold tracking-[0.1em] uppercase">Percival Data</h3>
+<span class="text-background-dark text-[10px] font-bold tracking-widest uppercase rounded-full bg-percival px-3 py-1">Sentinel</span>
+</div>
+<p class="flex items-baseline gap-1 text-slate-100">
+<span class="text-slate-100 text-5xl font-black tracking-tighter">$3,800</span>
+<span class="text-slate-400 text-base font-medium">/mo</span>
+</p>
+</div>
+<button class="flex w-full cursor-pointer items-center justify-center rounded-lg h-12 px-4 bg-percival text-background-dark text-sm font-black uppercase tracking-widest">
+                        Establish Uplink
+                    </button>
+<div class="flex flex-col gap-4">
+<div class="text-[13px] font-medium leading-normal flex gap-3 text-slate-300">
+<span class="material-symbols-outlined text-percival text-sm">check_circle</span>
+                            Advanced Hyper-Data Mining
+                        </div>
+<div class="text-[13px] font-medium leading-normal flex gap-3 text-slate-300">
+<span class="material-symbols-outlined text-percival text-sm">check_circle</span>
+                            Purple Glow UI Matrix
+                        </div>
+<div class="text-[13px] font-medium leading-normal flex gap-3 text-slate-300">
+<span class="material-symbols-outlined text-percival text-sm">check_circle</span>
+                            Low-Latency Animations
+                        </div>
+<div class="text-[13px] font-medium leading-normal flex gap-3 text-slate-300">
+<span class="material-symbols-outlined text-percival text-sm">check_circle</span>
+                            Master-Class Support
+                        </div>
+</div>
+</div>
+<!-- Tier 3: Excalibur Env -->
+<div class="w-full max-w-sm flex flex-col gap-6 rounded-xl border border-solid bg-slate-900/40 backdrop-blur-xl p-8 glow-gold transition-transform duration-500 hover:scale-[1.02]">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<h3 class="text-excalibur text-xl font-bold tracking-[0.1em] uppercase">Excalibur Env</h3>
+<span class="text-background-dark text-[10px] font-bold tracking-widest uppercase rounded-full bg-excalibur px-3 py-1">Grandmaster</span>
+</div>
+<p class="flex items-baseline gap-1 text-slate-100">
+<span class="text-slate-100 text-5xl font-black tracking-tighter">$8,500</span>
+<span class="text-slate-400 text-base font-medium">/mo</span>
+</p>
+</div>
+<button class="flex w-full cursor-pointer items-center justify-center rounded-lg h-12 px-4 bg-excalibur text-background-dark text-sm font-black uppercase tracking-widest">
+                        Summon Environment
+                    </button>
+<div class="flex flex-col gap-4">
+<div class="text-[13px] font-medium leading-normal flex gap-3 text-slate-300">
+<span class="material-symbols-outlined text-excalibur text-sm">check_circle</span>
+                            Full Galactic Environment Access
+                        </div>
+<div class="text-[13px] font-medium leading-normal flex gap-3 text-slate-300">
+<span class="material-symbols-outlined text-excalibur text-sm">check_circle</span>
+                            Gold Leaf Legacy UI
+                        </div>
+<div class="text-[13px] font-medium leading-normal flex gap-3 text-slate-300">
+<span class="material-symbols-outlined text-excalibur text-sm">check_circle</span>
+                            3D Perspective Trading API
+                        </div>
+<div class="text-[13px] font-medium leading-normal flex gap-3 text-slate-300">
+<span class="material-symbols-outlined text-excalibur text-sm">check_circle</span>
+                            24/7 Council Support
+                        </div>
+</div>
+</div>
+<div class="py-20 text-center">
+<p class="text-slate-500 text-xs tracking-widest uppercase">Encryption Status: Active | Sector: 7-G</p>
+</div>
+</div>
+</div>
+<!-- Bottom Nav Bar -->
+<div class="fixed bottom-0 left-0 right-0 flex gap-2 border-t border-slate-800 bg-background-dark/95 backdrop-blur-lg px-4 pb-6 pt-2 z-50">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">home</span>
+</div>
+<p class="text-[10px] font-bold uppercase tracking-widest">Bridge</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">monitoring</span>
+</div>
+<p class="text-[10px] font-bold uppercase tracking-widest">Hyperdrive</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">token</span>
+</div>
+<p class="text-[10px] font-bold uppercase tracking-widest">Credits</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">account_circle</span>
+</div>
+<p class="text-[10px] font-bold uppercase tracking-widest">Pilot</p>
+</a>
+</div>
+</div>
+
+```</body></html>

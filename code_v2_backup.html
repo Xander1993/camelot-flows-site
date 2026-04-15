@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Camelot Flows | Neon Knight Edition</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4f46e5","primary-glow": "#6366f1","accent": "#8b5cf6","cobalt": "#1e3a8a","obsidian": "#050508","obsidian-light": "#0a0a12",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"],
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    },
+                    boxShadow: {
+                        'neon': '0 0 15px -3px rgba(99, 102, 241, 0.4), 0 4px 6px -4px rgba(99, 102, 241, 0.2)',
+                        'neon-strong': '0 0 25px -5px rgba(99, 102, 241, 0.6)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #050508;
+            color: #e2e8f0;
+        }
+        .font-body { font-family: 'Inter', sans-serif; }
+        
+        html.lenis, html.lenis body { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto !important; }
+        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+        .lenis.lenis-stopped { overflow: hidden; }
+        .lenis.lenis-scrolling iframe { pointer-events: none; }
+
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .glass-panel {
+            background: rgba(10, 10, 18, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+        }
+        .glass-card {
+            background: linear-gradient(145deg, rgba(15, 15, 25, 0.6) 0%, rgba(5, 5, 8, 0.8) 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(99, 102, 241, 0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(99, 102, 241, 0.5);
+            box-shadow: 0 0 30px -10px rgba(79, 70, 229, 0.3);
+            background: linear-gradient(145deg, rgba(20, 20, 35, 0.7) 0%, rgba(10, 10, 15, 0.9) 100%);
+        }
+        .text-glow { text-shadow: 0 0 20px rgba(99, 102, 241, 0.5); }
+        .grid-bg {
+            background-size: 50px 50px;
+            background-image: 
+                linear-gradient(to right, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+            mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+        }
+        .status-dot { box-shadow: 0 0 10px currentColor; }
+
+        .perspective-1000 { perspective: 1000px; }
+        
+        /* ИЗМЕНЕНИЕ: Стили для бегущей строки Zentry */
+        .marquee-container { width: max-content; }
+
+        /* Custom Cursor */
+        @media (pointer: fine) {
+            body { cursor: none; }
+            #custom-cursor {
+                position: fixed; top: 0; left: 0; width: 16px; height: 16px; border-radius: 50%;
+                background: #8b5cf6; box-shadow: 0 0 20px 6px rgba(139, 92, 246, 0.6);
+                pointer-events: none; z-index: 99999; mix-blend-mode: screen; opacity: 0;
+                transform: translate(-50%, -50%);
+            }
+        }
+        @media (pointer: coarse) { #custom-cursor { display: none; } }
+    </style>
+</head>
+<body class="font-body overflow-x-hidden selection:bg-primary selection:text-white">
+
+<div id="preloader" class="fixed inset-0 z-[999999] bg-obsidian flex flex-col items-center justify-center">
+    <div class="absolute inset-0 grid-bg opacity-30"></div>
+    <div class="w-32 h-32 relative flex items-center justify-center mb-8 z-10">
+        <div class="absolute inset-0 rounded-full border-t-2 border-primary animate-spin"></div>
+        <div class="absolute inset-2 rounded-full border-b-2 border-accent animate-[spin_2s_linear_infinite_reverse]"></div>
+        <span class="material-symbols-outlined text-4xl text-white animate-pulse">shield_locked</span>
+    </div>
+    <div class="text-primary-glow font-mono text-[10px] tracking-[0.4em] uppercase mb-4 z-10" id="loader-text">Initializing Protocols...</div>
+    <div class="w-64 h-[2px] bg-white/10 rounded-full overflow-hidden z-10">
+        <div id="loader-bar" class="w-0 h-full bg-gradient-to-r from-primary to-accent"></div>
+    </div>
+    <div id="loader-percent" class="mt-4 font-mono text-white text-sm tracking-widest z-10">0%</div>
+</div>
+
+<div class="grain-overlay"></div>
+<div id="bg-orbs" class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+<div class="bg-orb absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-cobalt/20 rounded-full blur-[120px]"></div>
+<div class="bg-orb absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-accent/10 rounded-full blur-[100px]"></div>
+<div class="bg-orb absolute top-[40%] left-[30%] w-[30vw] h-[30vw] bg-primary/10 rounded-full blur-[150px]"></div>
+<div class="absolute inset-0 grid-bg"></div>
+</div>
+
+<!-- ИЗМЕНЕНИЕ: Zentry Orbital Badge (Вращающаяся печать в углу) -->
+<div class="fixed bottom-8 right-8 z-50 pointer-events-none mix-blend-screen opacity-60 hidden md:flex items-center justify-center w-32 h-32">
+    <svg viewBox="0 0 100 100" width="100" height="100" class="animate-[spin_12s_linear_infinite] absolute inset-0">
+        <defs><path id="circle" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" /></defs>
+        <text font-size="10.5" fill="currentColor" class="text-primary-glow font-mono uppercase tracking-[0.15em]">
+            <textPath href="#circle">Camelot Flows • Digital Kingdom •</textPath>
+        </text>
+    </svg>
+    <span class="material-symbols-outlined text-primary text-2xl animate-pulse">change_history</span>
+</div>
+
+<nav class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-6 md:py-6">
+<div class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-neon">
+<span class="material-symbols-outlined text-white text-lg">shield</span>
+</div>
+<div class="flex flex-col">
+<span class="text-lg font-display font-bold tracking-tight uppercase leading-none text-white">Camelot</span>
+<span class="text-[0.6rem] font-mono text-primary-glow tracking-[0.2em] uppercase mt-1">Flows_v2.0</span>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-1">
+<a class="px-4 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="#">[Round_Table]</a>
+<a class="px-4 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="#">[Arsenal]</a>
+<a class="px-4 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="#">[Merlin]</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-500 status-dot animate-pulse"></div>
+<span class="text-[10px] font-mono text-emerald-500/80">SYS_ONLINE</span>
+</div>
+<button class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-5 py-2 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong">
+                // SUMMON_AGENT
+            </button>
+</div>
+</div>
+</nav>
+
+<main id="hero" class="relative pt-32 pb-20 px-6 overflow-hidden min-h-screen flex flex-col justify-center perspective-1000">
+<div class="absolute top-[25%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent z-0 overflow-hidden">
+    <div class="data-stream w-32 md:w-64 h-full bg-gradient-to-r from-transparent via-white to-transparent shadow-[0_0_15px_#fff]"></div>
+</div>
+<div class="absolute bottom-[35%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent/20 to-transparent z-0 overflow-hidden">
+    <div class="data-stream w-40 md:w-80 h-full bg-gradient-to-r from-transparent via-white to-transparent shadow-[0_0_15px_#fff]"></div>
+</div>
+
+<div class="absolute top-[20%] right-[8%] w-20 h-20 md:w-28 md:h-28 glass-panel rounded-xl rotate-12 flex items-center justify-center opacity-80 parallax-float z-20 shadow-neon border-primary/40" data-depth="0.15">
+    <span class="material-symbols-outlined text-primary text-4xl md:text-5xl drop-shadow-[0_0_15px_rgba(79,70,229,0.8)]">code_blocks</span>
+</div>
+<div class="absolute bottom-[25%] left-[5%] md:left-[10%] w-16 h-16 md:w-20 md:h-20 glass-panel rounded-full flex items-center justify-center opacity-60 parallax-float z-20 border-accent/40" data-depth="-0.12">
+    <span class="material-symbols-outlined text-accent text-2xl md:text-3xl">memory</span>
+</div>
+<div class="absolute top-[40%] left-[45%] md:left-[50%] w-12 h-12 md:w-16 md:h-16 glass-panel rounded-lg flex items-center justify-center opacity-40 parallax-float z-20 border-white/10" data-depth="0.08" style="transform: rotate(-15deg);">
+    <span class="material-symbols-outlined text-white text-xl md:text-2xl">api</span>
+</div>
+
+<div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-7 z-10 relative">
+<div id="hero-badge" class="inline-flex items-center gap-3 px-4 py-2 rounded-none border-l-2 border-primary bg-gradient-to-r from-primary/10 to-transparent mb-8">
+<span class="material-symbols-outlined text-primary text-sm">terminal</span>
+<span class="text-primary-glow font-mono text-xs tracking-widest uppercase">Protocol: Neon Knight</span>
+</div>
+<h1 id="hero-h1" class="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tighter mb-8 text-white uppercase perspective-1000" style="transform-style: preserve-3d;">
+    <span id="hero-word-1" class="inline-block whitespace-nowrap">Rule Your</span> <br/>
+    <span class="inline-flex overflow-hidden pb-4 -mb-4">
+        <span id="hero-word-2" class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400 animate-gradient-x text-glow whitespace-nowrap">Digital Kingdom</span>
+    </span>
+</h1>
+<p id="hero-p" class="text-lg md:text-xl text-slate-400 max-w-xl mb-10 leading-relaxed font-light border-l border-white/10 pl-6">
+                Deploy <span class="text-white font-medium">AI Autopilot</span> and high-performance web infrastructure to conquer the digital frontier. Orchestrate your business with mystic precision.
+            </p>
+<div id="hero-btns" class="flex flex-wrap gap-5">
+<button class="group relative px-8 py-4 bg-primary text-white font-mono font-bold text-sm tracking-wide overflow-hidden rounded-sm hover:scale-[1.02] transition-transform">
+<div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+<span class="relative flex items-center gap-3">
+                        INITIALIZE_AGENT
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</span>
+</button>
+<button class="px-8 py-4 glass-panel text-slate-300 font-mono font-bold text-sm tracking-wide rounded-sm hover:bg-white/5 border border-white/10 hover:border-primary/50 transition-colors flex items-center gap-3">
+                    VIEW_ARSENAL
+                    <span class="material-symbols-outlined text-sm opacity-50">grid_view</span>
+</button>
+</div>
+<div id="hero-stats" class="mt-16 flex gap-8 md:gap-12 border-t border-white/5 pt-8">
+<div>
+<div class="font-display text-2xl font-bold text-white mb-1">99.9<span class="text-primary text-base">%</span></div>
+<div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Uptime Guarantee</div>
+</div>
+<div>
+<div class="font-display text-2xl font-bold text-white mb-1">&lt;50<span class="text-primary text-base">ms</span></div>
+<div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Latency Core</div>
+</div>
+<div>
+<div class="font-display text-2xl font-bold text-white mb-1">24/7</div>
+<div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">AI Overwatch</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 relative h-[400px] md:h-[600px] w-full flex items-center justify-center">
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle, #4f46e5 1px, transparent 1px); background-size: 30px 30px;"></div>
+<div class="relative w-full aspect-square max-w-md">
+<div class="absolute inset-0 rounded-full border border-primary/20 animate-[spin_10s_linear_infinite]"></div>
+<div class="absolute inset-4 rounded-full border border-dashed border-primary/30 animate-[spin_15s_linear_infinite_reverse]"></div>
+<div class="absolute inset-0 m-auto w-48 h-64 md:w-64 md:h-80 glass-panel clip-path-shield flex flex-col items-center justify-center z-10 shadow-neon">
+<style>.clip-path-shield { clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }</style>
+<div class="w-16 h-16 md:w-20 md:h-20 mb-4 rounded-full bg-gradient-to-b from-primary/20 to-transparent flex items-center justify-center border border-primary/40 relative">
+<div class="absolute inset-0 rounded-full animate-ping bg-primary/20"></div>
+<span class="material-symbols-outlined text-3xl md:text-4xl text-primary drop-shadow-[0_0_10px_rgba(79,70,229,0.8)]">security</span>
+</div>
+<h3 class="text-white font-mono font-bold tracking-widest text-xs md:text-sm mb-1">SHIELD_ACTIVE</h3>
+<p class="text-[8px] md:text-[10px] text-indigo-300 uppercase">Protection Level: MAX</p>
+</div>
+<div class="absolute top-10 right-0 glass-panel p-3 rounded border-l-2 border-l-emerald-500 backdrop-blur-md animate-bounce hidden md:block" style="animation-duration: 3s;">
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2 h-2 bg-emerald-500 rounded-full status-dot"></span>
+<span class="text-[10px] font-mono text-white">CPU_LOAD</span>
+</div>
+<div class="w-24 h-1 bg-white/10 rounded-full overflow-hidden">
+<div class="w-[30%] h-full bg-emerald-500"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<!-- ИЗМЕНЕНИЕ: Zentry Kinetic Angled Marquee -->
+<div class="relative w-full overflow-hidden bg-primary py-5 -rotate-2 scale-110 z-30 shadow-[0_0_40px_rgba(79,70,229,0.4)] border-y border-white/20">
+    <div class="marquee-container flex whitespace-nowrap font-display font-bold text-4xl md:text-5xl uppercase tracking-tighter text-obsidian">
+        <!-- Блок контента 1 -->
+        <div class="flex items-center">
+            <span class="mx-6">// NEON KNIGHT ARCHITECTURE</span>
+            <span class="material-symbols-outlined text-4xl mx-2">auto_awesome</span>
+            <span class="mx-6">// 100% UPTIME SLA</span>
+            <span class="material-symbols-outlined text-4xl mx-2">speed</span>
+            <span class="mx-6">// ZERO HUMAN FRICTION</span>
+            <span class="material-symbols-outlined text-4xl mx-2">memory</span>
+            <span class="mx-6">// AI AUTOPILOT</span>
+        </div>
+        <!-- Блок контента 2 (копия для бесконечного цикла) -->
+        <div class="flex items-center">
+            <span class="mx-6">// NEON KNIGHT ARCHITECTURE</span>
+            <span class="material-symbols-outlined text-4xl mx-2">auto_awesome</span>
+            <span class="mx-6">// 100% UPTIME SLA</span>
+            <span class="material-symbols-outlined text-4xl mx-2">speed</span>
+            <span class="mx-6">// ZERO HUMAN FRICTION</span>
+            <span class="material-symbols-outlined text-4xl mx-2">memory</span>
+            <span class="mx-6">// AI AUTOPILOT</span>
+        </div>
+    </div>
+</div>
+
+<!-- ИЗМЕНЕНИЕ: Исправлен баг "Черной дыры" (GSAP Pin Spacer Bug). Убраны ручные высоты и sticky -->
+<section id="portal-trigger" class="relative bg-obsidian z-20">
+    <!-- Блок центровки без sticky, GSAP сам создаст pin -->
+    <div class="relative h-screen w-full flex items-center justify-center p-4 md:p-12 overflow-hidden">
+        
+        <!-- Сам Портал (изначально сжат в ромб/щит через clip-path) -->
+        <div id="zentry-portal" class="w-full h-full bg-obsidian border border-primary/40 relative flex items-center justify-center overflow-hidden shadow-neon-strong" style="clip-path: polygon(50% 15%, 85% 50%, 50% 85%, 15% 50%); border-radius: 40px;">
+            
+            <!-- Параллакс фон внутри портала -->
+            <div id="portal-bg" class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20"></div>
+            <div class="absolute inset-0 bg-gradient-radial from-primary/30 via-obsidian/80 to-obsidian"></div>
+            
+            <!-- Контент портала -->
+            <div class="text-center z-10 relative">
+                <span id="portal-sub" class="text-primary-glow font-mono text-xs md:text-sm uppercase tracking-[0.4em] mb-4 block drop-shadow-[0_0_10px_rgba(99,102,241,0.8)]">System Override</span>
+                <h2 id="portal-text" class="font-display text-5xl md:text-9xl font-bold tracking-tighter text-white uppercase text-glow mix-blend-overlay">Enter<br/>The Matrix</h2>
+            </div>
+            
+            <!-- ИЗМЕНЕНИЕ: Артурианское Откровение (Голограмма Экскалибура) -->
+            <div id="portal-revelation" class="absolute inset-0 flex flex-col items-center justify-center opacity-0 scale-75 pointer-events-none z-20">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
+                    <!-- Магические кольца (Ормузд/Артур) -->
+                    <div class="absolute inset-0 rounded-full border border-primary/20 animate-[spin_10s_linear_infinite]"></div>
+                    <div class="absolute inset-4 rounded-full border border-dashed border-accent/40 animate-[spin_15s_linear_infinite_reverse]"></div>
+                    <div class="absolute inset-8 rounded-full border-t-2 border-l-2 border-white/10 animate-[spin_5s_ease-in-out_infinite_alternate]"></div>
+                    
+                    <!-- Голографический Меч Экскалибур -->
+                    <div class="relative z-10 flex flex-col items-center">
+                        <span class="material-symbols-outlined text-[100px] md:text-[140px] text-white drop-shadow-[0_0_40px_rgba(99,102,241,0.8)]" style="transform: rotate(180deg);">swords</span>
+                    </div>
+                    
+                    <!-- Энергетический пьедестал -->
+                    <div class="absolute bottom-10 w-32 h-4 bg-primary/60 blur-[15px] rounded-full"></div>
+                    <div class="absolute bottom-10 w-16 h-2 bg-white/80 blur-[5px] rounded-full"></div>
+                </div>
+                
+                <h3 class="font-display text-3xl md:text-5xl font-bold mt-8 text-white uppercase tracking-widest text-glow">Excalibur <span class="text-primary-glow">Online</span></h3>
+                <div class="mt-4 flex items-center gap-3 bg-black/50 px-4 py-2 rounded border border-primary/30 backdrop-blur-md">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse shadow-[0_0_10px_#34d399]"></div>
+                    <p class="font-mono text-xs text-emerald-400 tracking-[0.2em] uppercase">Camelot Server Authorized</p>
+                </div>
+            </div>
+
+            <!-- Декоративные уголки -->
+            <div class="absolute top-8 left-8 w-8 h-8 border-t-2 border-l-2 border-primary/50"></div>
+            <div class="absolute top-8 right-8 w-8 h-8 border-t-2 border-r-2 border-primary/50"></div>
+            <div class="absolute bottom-8 left-8 w-8 h-8 border-b-2 border-l-2 border-primary/50"></div>
+            <div class="absolute bottom-8 right-8 w-8 h-8 border-b-2 border-r-2 border-primary/50"></div>
+        </div>
+
+    </div>
+</section>
+
+<section id="round-table" class="py-24 px-6 relative border-t border-white/5 bg-obsidian overflow-hidden -mt-[1px] z-30">
+<div class="absolute top-[5%] right-[-40%] md:right-[-15%] w-[500px] h-[500px] md:w-[800px] md:h-[800px] opacity-25 pointer-events-none z-0">
+    <div id="literal-round-table" class="relative w-full h-full border-[2px] border-dashed border-primary/30 rounded-full flex items-center justify-center">
+        <div class="absolute w-[75%] h-[75%] border border-accent/20 rounded-full"></div>
+        <div class="absolute w-[45%] h-[45%] border border-white/5 rounded-full"></div>
+        
+        <div class="absolute w-full h-full" style="transform: rotate(0deg);">
+            <div class="absolute top-[-24px] md:top-[-32px] left-1/2 -translate-x-1/2 w-12 h-12 md:w-16 md:h-16 bg-obsidian border border-primary/50 rounded-full flex items-center justify-center shadow-neon">
+                 <span class="rt-icon material-symbols-outlined text-white text-lg md:text-2xl">smart_toy</span>
+            </div>
+        </div>
+        <div class="absolute w-full h-full" style="transform: rotate(60deg);">
+            <div class="absolute top-[-24px] md:top-[-32px] left-1/2 -translate-x-1/2 w-12 h-12 md:w-16 md:h-16 bg-obsidian border border-accent/50 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(139,92,246,0.5)]">
+                 <span class="rt-icon material-symbols-outlined text-white text-lg md:text-2xl">webhook</span>
+            </div>
+        </div>
+        <div class="absolute w-full h-full" style="transform: rotate(120deg);">
+            <div class="absolute top-[-24px] md:top-[-32px] left-1/2 -translate-x-1/2 w-12 h-12 md:w-16 md:h-16 bg-obsidian border border-indigo-500/50 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+                 <span class="rt-icon material-symbols-outlined text-white text-lg md:text-2xl">database</span>
+            </div>
+        </div>
+        <div class="absolute w-full h-full" style="transform: rotate(180deg);">
+            <div class="absolute top-[-24px] md:top-[-32px] left-1/2 -translate-x-1/2 w-12 h-12 md:w-16 md:h-16 bg-obsidian border border-emerald-500/50 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.4)]">
+                 <span class="rt-icon material-symbols-outlined text-white text-lg md:text-2xl">sync</span>
+            </div>
+        </div>
+        <div class="absolute w-full h-full" style="transform: rotate(240deg);">
+            <div class="absolute top-[-24px] md:top-[-32px] left-1/2 -translate-x-1/2 w-12 h-12 md:w-16 md:h-16 bg-obsidian border border-purple-500/50 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(168,85,247,0.4)]">
+                 <span class="rt-icon material-symbols-outlined text-white text-lg md:text-2xl">terminal</span>
+            </div>
+        </div>
+        <div class="absolute w-full h-full" style="transform: rotate(300deg);">
+            <div class="absolute top-[-24px] md:top-[-32px] left-1/2 -translate-x-1/2 w-12 h-12 md:w-16 md:h-16 bg-obsidian border border-blue-500/50 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.4)]">
+                 <span class="rt-icon material-symbols-outlined text-white text-lg md:text-2xl">analytics</span>
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-gradient-radial from-primary/10 to-transparent rounded-full"></div>
+    </div>
+</div>
+
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="mb-16 md:mb-20 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h2 class="font-display text-4xl md:text-5xl font-bold tracking-tighter text-white mb-2 uppercase">The High-Tech <br/>Round Table</h2>
+<div class="h-1 w-20 bg-gradient-to-r from-primary to-transparent"></div>
+</div>
+<div class="md:text-right max-w-sm">
+<p class="font-mono text-xs text-primary mb-2">// SYSTEM_MODULES</p>
+<p class="text-slate-400 text-sm leading-relaxed">Elite protocols engineered for the modern sovereign entity. Zero latency. Maximum impact.</p>
+</div>
+</div>
+
+<div id="card-stack" class="relative md:h-[520px] flex flex-col md:block gap-6 perspective-[1500px]">
+    <div class="stack-card glass-card p-8 rounded-xl flex flex-col md:h-[480px] group relative overflow-hidden md:absolute md:top-0 md:left-0 md:w-full" style="transform-style: preserve-3d;">
+    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/50 to-transparent transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+    <div class="mb-8 w-14 h-14 rounded bg-primary/10 flex items-center justify-center border border-primary/20 group-hover:bg-primary/20 group-hover:border-primary/50 transition-colors">
+    <span class="material-symbols-outlined text-3xl text-primary group-hover:text-white transition-colors">auto_fix</span>
+    </div>
+    <h3 class="font-display text-2xl font-bold mb-2 text-white uppercase">The Merlin Protocol</h3>
+    <div class="text-[10px] font-mono text-primary mb-6 tracking-widest uppercase">AI_SALES_AGENT_v1</div>
+    <p class="text-slate-400 mb-8 text-sm leading-relaxed border-l border-white/5 pl-4">
+                        Autonomous 24/7 AI agents that learn your brand's voice and close deals while you sleep.
+                    </p>
+    <div class="mt-auto pt-6 border-t border-white/5">
+    <ul class="space-y-3 text-xs font-mono text-slate-300">
+    <li class="flex items-center gap-3">
+    <span class="text-primary">&gt;</span> NLP_Mastery
+                            </li>
+    <li class="flex items-center gap-3">
+    <span class="text-primary">&gt;</span> Omni_Channel_Sync
+                            </li>
+    </ul>
+    </div>
+    </div>
+
+    <div class="stack-card glass-card p-8 rounded-xl flex flex-col md:h-[480px] relative overflow-hidden ring-1 ring-primary/30 shadow-neon md:absolute md:top-0 md:left-0 md:w-full" style="transform-style: preserve-3d;">
+    <div class="absolute -top-20 -right-20 w-60 h-60 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="mb-8 w-14 h-14 rounded bg-indigo-500 flex items-center justify-center border border-indigo-400 shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+    <span class="material-symbols-outlined text-3xl text-white">swords</span>
+    </div>
+    <h3 class="font-display text-2xl font-bold mb-2 text-white uppercase">Excalibur Web</h3>
+    <div class="text-[10px] font-mono text-indigo-300 mb-6 tracking-widest uppercase">INFRASTRUCTURE_CORE</div>
+    <p class="text-slate-300 mb-8 text-sm leading-relaxed border-l border-indigo-500/30 pl-4">
+                        High-Performance VPS &amp; WordPress architectures designed for speed, security, and total dominance.
+                    </p>
+    <div class="mt-auto pt-6 border-t border-white/10">
+    <ul class="space-y-3 text-xs font-mono text-white">
+    <li class="flex items-center gap-3">
+    <span class="text-indigo-400 text-lg material-symbols-outlined">bolt</span> 99.9% Uptime SLA
+                            </li>
+    <li class="flex items-center gap-3">
+    <span class="text-indigo-400 text-lg material-symbols-outlined">public</span> Global CDN Grid
+                            </li>
+    </ul>
+    </div>
+    </div>
+
+    <div class="stack-card glass-card p-8 rounded-xl flex flex-col md:h-[480px] group relative overflow-hidden md:absolute md:top-0 md:left-0 md:w-full" style="transform-style: preserve-3d;">
+    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500/50 to-transparent transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+    <div class="mb-8 w-14 h-14 rounded bg-purple-500/10 flex items-center justify-center border border-purple-500/20 group-hover:bg-purple-500/20 group-hover:border-purple-500/50 transition-colors">
+    <span class="material-symbols-outlined text-3xl text-purple-400 group-hover:text-white transition-colors">query_stats</span>
+    </div>
+    <h3 class="font-display text-2xl font-bold mb-2 text-white uppercase">Percival Parser</h3>
+    <div class="text-[10px] font-mono text-purple-400 mb-6 tracking-widest uppercase">DATA_INTEL_UNIT</div>
+    <p class="text-slate-400 mb-8 text-sm leading-relaxed border-l border-white/5 pl-4">
+                        Data Intelligence systems that extract, analyze, and synthesize raw data into actionable wisdom.
+                    </p>
+    <div class="mt-auto pt-6 border-t border-white/5">
+    <ul class="space-y-3 text-xs font-mono text-slate-300">
+    <li class="flex items-center gap-3">
+    <span class="text-purple-400">&gt;</span> Predictive_Analytics
+                            </li>
+    <li class="flex items-center gap-3">
+    <span class="text-purple-400">&gt;</span> Live_Dashboards
+                            </li>
+    </ul>
+    </div>
+    </div>
+</div>
+</div>
+</section>
+
+<section id="terminal-section" class="py-24 px-6 bg-black relative overflow-hidden">
+<div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(#1e1e2e 1px, transparent 1px), linear-gradient(90deg, #1e1e2e 1px, transparent 1px); background-size: 40px 40px;"></div>
+<div class="max-w-7xl mx-auto glass-panel border border-white/10 rounded-2xl p-6 md:p-16 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<div class="terminal-step inline-block px-3 py-1 bg-primary/10 rounded text-primary text-[10px] font-mono mb-6 uppercase tracking-widest border border-primary/20">
+                    Process Visualization
+                </div>
+<h2 class="terminal-step font-display text-4xl font-bold mb-6 text-white tracking-tight uppercase">Transmuting Inputs <br/>Into <span class="text-primary-glow">Revenue</span></h2>
+<p class="terminal-step text-slate-400 mb-10 text-base font-light">Our flows aren't just code; they are magical circuits that turn customer interaction into business growth without human friction.</p>
+<div class="space-y-4">
+<div class="terminal-step group flex items-center gap-4 p-4 rounded-lg bg-white/5 hover:bg-white/10 border border-white/5 hover:border-primary/30 transition-all cursor-default">
+<div class="w-10 h-10 min-w-10 rounded bg-green-900/30 flex items-center justify-center text-green-400 border border-green-500/30 shadow-[0_0_10px_rgba(74,222,128,0.2)]">
+<span class="material-symbols-outlined text-lg">forum</span>
+</div>
+<div>
+<h4 class="font-mono font-bold text-sm text-green-400">01_WHATSAPP_INTAKE</h4>
+<p class="text-xs text-slate-500 mt-1">Capture leads via encrypted channels.</p>
+</div>
+</div>
+<div class="terminal-step group flex items-center gap-4 p-4 rounded-lg bg-white/5 hover:bg-white/10 border border-white/5 hover:border-primary/30 transition-all cursor-default">
+<div class="w-10 h-10 min-w-10 rounded bg-indigo-900/30 flex items-center justify-center text-indigo-400 border border-indigo-500/30 shadow-[0_0_10px_rgba(99,102,241,0.2)]">
+<span class="material-symbols-outlined text-lg">psychology</span>
+</div>
+<div>
+<h4 class="font-mono font-bold text-sm text-indigo-400">02_MERLIN_CORE</h4>
+<p class="text-xs text-slate-500 mt-1">Contextual decision making engine.</p>
+</div>
+</div>
+<div class="terminal-step group flex items-center gap-4 p-4 rounded-lg bg-white/5 hover:bg-white/10 border border-white/5 hover:border-primary/30 transition-all cursor-default">
+<div class="w-10 h-10 min-w-10 rounded bg-blue-900/30 flex items-center justify-center text-blue-400 border border-blue-500/30 shadow-[0_0_10px_rgba(96,165,250,0.2)]">
+<span class="material-symbols-outlined text-lg">database</span>
+</div>
+<div>
+<h4 class="font-mono font-bold text-sm text-blue-400">03_CRM_SYNC</h4>
+<p class="text-xs text-slate-500 mt-1">Auto-population &amp; schedule handling.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="terminal-hub" class="relative flex items-center justify-center min-h-[300px] md:min-h-[400px]">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/circuit-board.png')] opacity-10"></div>
+<div class="relative w-full aspect-square max-w-[400px] flex items-center justify-center scale-75 md:scale-100">
+<div class="absolute w-full h-full border border-primary/10 rounded-full animate-ping" style="animation-duration: 3s"></div>
+<div class="absolute w-[80%] h-[80%] border border-primary/20 rounded-full animate-ping" style="animation-duration: 3s; animation-delay: 1s"></div>
+<div class="relative z-20 w-32 h-32 rounded-full bg-black border border-primary/50 shadow-[0_0_30px_rgba(79,70,229,0.4)] flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl text-primary animate-pulse">hub</span>
+</div>
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+<div class="glass-panel px-4 py-2 rounded text-[10px] font-mono text-green-400 border border-green-500/30 shadow-[0_0_15px_rgba(74,222,128,0.3)]">
+                            INPUT_SIGNAL
+                         </div>
+<div class="h-16 w-[1px] bg-gradient-to-b from-green-500 to-primary mx-auto"></div>
+</div>
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-20">
+<div class="h-16 w-[1px] bg-gradient-to-b from-primary to-blue-500 mx-auto"></div>
+<div class="glass-panel px-4 py-2 rounded text-[10px] font-mono text-blue-400 border border-blue-500/30 shadow-[0_0_15px_rgba(96,165,250,0.3)]">
+                            OUTPUT_DATA
+                         </div>
+</div>
+<div class="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex items-center">
+<div class="glass-panel p-2 rounded-full border border-purple-500/30 shadow-[0_0_15px_rgba(168,85,247,0.3)] bg-black">
+<span class="material-symbols-outlined text-purple-400 text-sm">bolt</span>
+</div>
+<div class="w-12 h-[1px] bg-gradient-to-r from-purple-500 to-primary hidden md:block"></div>
+</div>
+<div class="absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 z-20 flex items-center">
+<div class="w-12 h-[1px] bg-gradient-to-r from-primary to-orange-500 hidden md:block"></div>
+<div class="glass-panel p-2 rounded-full border border-orange-500/30 shadow-[0_0_15px_rgba(249,115,22,0.3)] bg-black">
+<span class="material-symbols-outlined text-orange-400 text-sm">storage</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ИЗМЕНЕНИЕ: Добавлена секция цен в стиле Cosmos Studio (Oblique Typography) -->
+<section id="cosmos-pricing" class="py-32 px-6 bg-obsidian relative overflow-hidden border-t border-white/5">
+    <!-- Декоративная подсветка -->
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none"></div>
+    
+    <div class="max-w-7xl mx-auto relative z-10">
+        <h2 class="font-mono text-xs text-primary mb-12 uppercase tracking-[0.3em]">// INVESTMENT_PROTOCOLS</h2>
+
+        <div class="flex flex-col">
+            <!-- Строка 1 -->
+            <div class="pricing-row group flex flex-col md:flex-row md:items-center justify-between py-12 border-b border-white/10 hover:border-primary/50 transition-colors cursor-pointer relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-transparent -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out"></div>
+                <div class="relative z-10">
+                    <h3 class="font-display italic font-bold text-5xl md:text-7xl lg:text-8xl text-white/30 group-hover:text-white transition-colors duration-500 uppercase tracking-tighter">Merlin Core</h3>
+                    <p class="font-mono text-sm text-slate-500 mt-4 group-hover:text-primary-glow transition-colors">AI Auto-Responder &amp; CRM Sync Engine</p>
+                </div>
+                <div class="relative z-10 mt-6 md:mt-0 md:text-right">
+                    <span class="font-mono text-2xl md:text-4xl text-white block">$2,400</span>
+                    <span class="text-[10px] text-slate-500 font-mono uppercase tracking-widest block mt-2">One-Time Installation</span>
+                </div>
+            </div>
+
+            <!-- Строка 2 -->
+            <div class="pricing-row group flex flex-col md:flex-row md:items-center justify-between py-12 border-b border-white/10 hover:border-accent/50 transition-colors cursor-pointer relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/5 to-transparent -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out"></div>
+                <div class="relative z-10">
+                    <h3 class="font-display italic font-bold text-5xl md:text-7xl lg:text-8xl text-white/30 group-hover:text-white transition-colors duration-500 uppercase tracking-tighter">Percival Data</h3>
+                    <p class="font-mono text-sm text-slate-500 mt-4 group-hover:text-accent transition-colors">Custom Scraping &amp; Real-Time Market Parsers</p>
+                </div>
+                <div class="relative z-10 mt-6 md:mt-0 md:text-right">
+                    <span class="font-mono text-2xl md:text-4xl text-white block">$3,800</span>
+                    <span class="text-[10px] text-slate-500 font-mono uppercase tracking-widest block mt-2">Infrastructure + Logic</span>
+                </div>
+            </div>
+
+            <!-- Строка 3 -->
+            <div class="pricing-row group flex flex-col md:flex-row md:items-center justify-between py-12 border-b border-white/10 hover:border-emerald-500/50 transition-colors cursor-pointer relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/0 via-emerald-500/5 to-transparent -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out"></div>
+                <div class="relative z-10">
+                    <h3 class="font-display italic font-bold text-5xl md:text-7xl lg:text-8xl text-white/30 group-hover:text-white transition-colors duration-500 uppercase tracking-tighter">Excalibur Env</h3>
+                    <p class="font-mono text-sm text-slate-500 mt-4 group-hover:text-emerald-400 transition-colors">Awwwards-Tier WebGL/GSAP Infrastructure</p>
+                </div>
+                <div class="relative z-10 mt-6 md:mt-0 md:text-right">
+                    <span class="font-mono text-2xl md:text-4xl text-white block">$8,500<span class="text-emerald-400 text-xl">+</span></span>
+                    <span class="text-[10px] text-emerald-500/70 font-mono uppercase tracking-widest block mt-2">Enterprise Quote</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-16 px-6 border-b border-white/5">
+<div class="max-w-7xl mx-auto text-center">
+<p class="text-[10px] font-mono uppercase tracking-[0.3em] text-slate-500 mb-12">
+            [TRUSTED_BY_SOVEREIGNS]
+        </p>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60">
+<div class="flex items-center gap-2 group cursor-default">
+<span class="material-symbols-outlined text-3xl group-hover:text-white transition-colors">payments</span>
+<span class="font-display text-xl font-bold tracking-tighter group-hover:text-white transition-colors italic">PAYNET</span>
+</div>
+<div class="flex items-center gap-2 group cursor-default">
+<span class="material-symbols-outlined text-3xl group-hover:text-white transition-colors">account_balance</span>
+<span class="font-display text-xl font-bold tracking-tighter group-hover:text-white transition-colors italic">GLOBALBANK</span>
+</div>
+<div class="flex items-center gap-2 group cursor-default">
+<span class="material-symbols-outlined text-3xl group-hover:text-white transition-colors">security</span>
+<span class="font-display text-xl font-bold tracking-tighter group-hover:text-white transition-colors italic">SECUREFLOW</span>
+</div>
+<div class="flex items-center gap-2 group cursor-default">
+<span class="material-symbols-outlined text-3xl group-hover:text-white transition-colors">public</span>
+<span class="font-display text-xl font-bold tracking-tighter group-hover:text-white transition-colors italic">HYPERNODE</span>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="bg-obsidian pt-24 pb-12 px-6 border-t border-primary/20 relative">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent shadow-[0_0_15px_rgba(99,102,241,0.5)]"></div>
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 mb-20">
+<div class="md:col-span-4">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-lg">shield_with_heart</span>
+</div>
+<span class="font-display text-xl font-bold tracking-tighter uppercase text-white">Camelot Flows</span>
+</div>
+<p class="text-slate-500 mb-8 text-sm leading-relaxed font-mono">
+<span class="text-primary">&gt;</span> Location: Chisinau, MD<br/>
+<span class="text-primary">&gt;</span> Coordinates: 47.0105° N, 28.8638° E<br/>
+<span class="text-primary">&gt;</span> Mission: Infrastructure for Sovereigns.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+<a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="#">
+<span class="material-symbols-outlined text-lg">alternate_email</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max">Protocol</h5>
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="#"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> The Arsenal</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="#"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> Merlin Protocol</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="#"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> Case Studies</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="#"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> Documentation</a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max">Agency</h5>
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="#"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> About Us</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="#"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> Careers</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="#"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> Legal</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="#"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> Privacy</a></li>
+</ul>
+</div>
+<div class="md:col-span-4">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max">Join the Vanguard</h5>
+<p class="text-slate-500 text-sm mb-6 leading-relaxed">Weekly insights on AI automation sent directly to your terminal.</p>
+<div class="flex gap-2 p-1 bg-white/5 rounded border border-white/10 focus-within:border-primary/50 transition-colors">
+<input class="bg-transparent border-none focus:ring-0 text-sm flex-1 px-4 text-white font-mono placeholder:text-slate-600" placeholder="ENTER_EMAIL_ADDRESS" type="email"/>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded text-xs font-bold transition-colors font-mono">
+                        [SUBMIT]
+                    </button>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-xs text-slate-600 font-mono">© 2026 Camelot Flows. Secured by Neon Knight.</p>
+<div class="flex flex-wrap justify-center gap-4 md:gap-8">
+<div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+<span class="material-symbols-outlined text-sm text-green-500">wifi</span>
+<span>System Status: Optimal</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+<span class="material-symbols-outlined text-sm text-blue-500">encrypted</span>
+<span>256-bit Encrypted</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<div id="custom-cursor"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+<script>
+// ============================================================
+// CAMELOT FLOWS — GSAP ANIMATION ENGINE (ZENTRY TIER)
+// ============================================================
+gsap.registerPlugin(ScrollTrigger);
+
+const wrapLetters = (element) => {
+    if (!element) return;
+    const text = element.innerText;
+    element.innerHTML = ''; 
+    text.split('').forEach(char => {
+        const span = document.createElement('span');
+        span.className = 'inline-block hero-char';
+        span.innerHTML = char === ' ' ? '&nbsp;' : char;
+        element.appendChild(span);
+    });
+};
+
+wrapLetters(document.getElementById('hero-word-1'));
+
+// ------------------------------------------------------------
+// 1. LENIS SMOOTH SCROLL
+// ------------------------------------------------------------
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+    smoothWheel: true,
+});
+
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+gsap.ticker.lagSmoothing(0);
+
+lenis.stop();
+
+window.addEventListener("load", () => {
+    const preloaderTl = gsap.timeline({
+        onComplete: () => {
+            lenis.start();
+            playHeroAnimation();
+        }
+    });
+
+    preloaderTl
+        .to("#loader-percent", { innerHTML: "100%", duration: 1.5, snap: { innerHTML: 1 }, ease: "power2.inOut" })
+        .to("#loader-bar", { width: "100%", duration: 1.5, ease: "power2.inOut" }, "<")
+        .to("#loader-text", { text: "SYSTEM_READY", duration: 0.2 }, "-=0.2")
+        .to("#preloader", { yPercent: -100, duration: 1, ease: "power4.inOut", delay: 0.3 })
+        .set("#preloader", { display: "none" });
+});
+
+// ------------------------------------------------------------
+// 2. KINETIC MARQUEE (ZENTRY STYLE)
+// ------------------------------------------------------------
+// ИЗМЕНЕНИЕ: Бесконечная бегущая строка, ломающая сетку
+(() => {
+    gsap.to(".marquee-container", {
+        xPercent: -50, // Двигаем ровно на 50% (так как у нас 2 одинаковых блока внутри)
+        ease: "none",
+        repeat: -1,
+        duration: 15 // Скорость движения
+    });
+})();
+
+// ------------------------------------------------------------
+// 3. ZENTRY PORTAL (VIEWPORT TAKEOVER)
+// ------------------------------------------------------------
+// ИЗМЕНЕНИЕ: Разрывающий экран портал перед Round Table
+(() => {
+    let mm = gsap.matchMedia();
+    
+    mm.add("(min-width: 768px)", () => {
+        const portalTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#portal-trigger",
+                start: "top top",
+                end: "+=120%", 
+                scrub: 0.5,
+                pin: true,
+            }
+        });
+
+        portalTl
+            // Открываем ромб на весь экран
+            .to("#zentry-portal", {
+                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+                borderRadius: "0px",
+                duration: 1,
+                ease: "power2.inOut"
+            })
+            // Параллакс фона внутри портала
+            .fromTo("#portal-bg", 
+                { scale: 1.5, rotation: 5 }, 
+                { scale: 1, rotation: 0, duration: 1 }, 
+            "<")
+            // Текст внутри пропадает при расширении
+            .to("#portal-text", { scale: 1.5, opacity: 0, duration: 0.5 }, "-=0.5")
+            .to("#portal-sub", { opacity: 0, duration: 0.3 }, "-=0.5")
+            // ИЗМЕНЕНИЕ: Появление Голограммы Экскалибура после исчезновения текста
+            .to("#portal-revelation", { 
+                opacity: 1, 
+                scale: 1, 
+                duration: 1, 
+                ease: "back.out(1.5)" 
+            }, "-=0.2"); // Запускаем чуть до того, как портал полностью откроется
+    });
+})();
+
+// ------------------------------------------------------------
+// 4. DATA STREAMS
+// ------------------------------------------------------------
+(() => {
+    gsap.utils.toArray(".data-stream").forEach((stream, i) => {
+        gsap.fromTo(stream, 
+            { x: "-100vw" },
+            { 
+                x: "100vw", 
+                duration: i === 0 ? 3 : 4, 
+                repeat: -1, 
+                ease: "none", 
+                delay: i * 1.5 
+            }
+        );
+    });
+})();
+
+// ------------------------------------------------------------
+// 5. CUSTOM CURSOR
+// ------------------------------------------------------------
+(() => {
+    if (window.matchMedia("(pointer: fine)").matches) {
+        const cursor = document.getElementById("custom-cursor");
+        let cursorVisible = false;
+
+        gsap.set(cursor, { xPercent: -50, yPercent: -50 });
+
+        window.addEventListener("mousemove", (e) => {
+            if (!cursorVisible) {
+                cursorVisible = true;
+                gsap.to(cursor, { opacity: 1, duration: 0.3 });
+            }
+            gsap.to(cursor, {
+                x: e.clientX,
+                y: e.clientY,
+                duration: 0.15,
+                ease: "power2.out",
+            });
+        });
+
+        document.addEventListener("mouseleave", () => {
+            cursorVisible = false;
+            gsap.to(cursor, { opacity: 0, duration: 0.3 });
+        });
+
+        const interactiveEls = document.querySelectorAll("a, button, input");
+        interactiveEls.forEach((el) => {
+            el.addEventListener("mouseenter", () => {
+                gsap.to(cursor, { scale: 2.5, opacity: 0.5, duration: 0.3, ease: "power2.out" });
+            });
+            el.addEventListener("mouseleave", () => {
+                gsap.to(cursor, { scale: 1, opacity: 1, duration: 0.3, ease: "power2.out" });
+            });
+        });
+    }
+})();
+
+// ------------------------------------------------------------
+// 6. HERO PARALLAX & KINETIC TYPOGRAPHY REVEAL
+// ------------------------------------------------------------
+const playHeroAnimation = () => {
+    const heroTl = gsap.timeline();
+
+    heroTl
+        .from("#hero-badge", { y: 60, opacity: 0, duration: 1, ease: "power4.out" })
+        .from(".hero-char", { 
+            z: 400, 
+            rotationX: -90, 
+            opacity: 0, 
+            stagger: 0.04, 
+            duration: 1.2,
+            ease: "back.out(1.5)", 
+            transformOrigin: "50% 50% -50px" 
+        }, "-=0.8")
+        .from("#hero-word-2", {
+            yPercent: 100,
+            duration: 1.2,
+            ease: "power4.out"
+        }, "-=1.0")
+        .from("#hero-p",     { y: 50, opacity: 0, duration: 1, ease: "power4.out" }, "-=0.8")
+        .from("#hero-btns",  { y: 40, opacity: 0, duration: 1, ease: "power4.out" }, "-=0.7")
+        .from("#hero-stats", { y: 30, opacity: 0, duration: 1, ease: "power4.out" }, "-=0.6");
+};
+
+(() => {
+    const orbs = document.querySelectorAll(".bg-orb");
+    const multipliers = [0.03, -0.04, 0.025]; 
+
+    if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+        window.addEventListener("mousemove", (e) => {
+            const cx = window.innerWidth / 2;
+            const cy = window.innerHeight / 2;
+            const dx = (e.clientX - cx) / cx;
+            const dy = (e.clientY - cy) / cy;
+
+            orbs.forEach((orb, i) => {
+                const m = multipliers[i] || 0.03;
+                gsap.to(orb, {
+                    x: -dx * m * window.innerWidth,
+                    y: -dy * m * window.innerHeight,
+                    duration: 1.2,
+                    ease: "power1.out",
+                });
+            });
+
+            gsap.utils.toArray(".parallax-float").forEach((el) => {
+                const depth = parseFloat(el.getAttribute("data-depth")) || 0.1;
+                gsap.to(el, {
+                    x: dx * depth * 80,
+                    y: dy * depth * 80,
+                    duration: 1.5,
+                    ease: "power2.out",
+                });
+            });
+        });
+
+        gsap.utils.toArray(".parallax-float").forEach((el) => {
+            gsap.to(el, {
+                y: "+=15",
+                rotation: "+=10",
+                duration: "random(3, 5)",
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+            
+            const depth = parseFloat(el.getAttribute("data-depth")) || 0.1;
+            gsap.to(el, {
+                yPercent: depth * 300,
+                rotation: depth * 100,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#hero",
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+        });
+    }
+})();
+
+(() => {
+    gsap.to("#literal-round-table", {
+        rotation: 360,
+        duration: 50,
+        repeat: -1,
+        ease: "none"
+    });
+    gsap.to(".rt-icon", {
+        rotation: -360,
+        duration: 50,
+        repeat: -1,
+        ease: "none"
+    });
+})();
+
+// ------------------------------------------------------------
+// 7. CARD STACK — HOLOGRAM TO GLASSMORPHISM
+// ------------------------------------------------------------
+(() => {
+    const cards = gsap.utils.toArray(".stack-card");
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 768px)", () => {
+        // ИЗМЕНЕНИЕ: Настройка состояний Голограммы (ярко-голубая, размытая, прозрачная) и Стекла
+        cards.forEach((card, i) => {
+            if (i === 0) {
+                // Активная карта (Стекло)
+                gsap.set(card, { 
+                    zIndex: 3, y: 0, scale: 1, opacity: 1, rotationX: 0,
+                    filter: "hue-rotate(0deg) brightness(1) blur(0px)"
+                });
+            } else if (i === 1) {
+                // Следующая карта (Голограмма)
+                gsap.set(card, { 
+                    zIndex: 2, y: 0, scale: 0.85, opacity: 0.4, rotationX: -10,
+                    filter: "hue-rotate(90deg) brightness(1.5) blur(6px)", 
+                    clearProps: "position" 
+                });
+            } else {
+                // Глубокая карта (Далекая Голограмма)
+                gsap.set(card, { 
+                    zIndex: 1, y: 0, scale: 0.7, opacity: 0, rotationX: -20,
+                    filter: "hue-rotate(90deg) brightness(2) blur(10px)", 
+                    clearProps: "position" 
+                });
+            }
+        });
+
+        const stackTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#round-table",
+                start: "top top",
+                // ИЗМЕНЕНИЕ: Ускорен скролл дистанции
+                end: () => "+=" + (window.innerHeight * 1.5), 
+                pin: true,
+                // ИЗМЕНЕНИЕ: Scrub уменьшен для мгновенной реакции
+                scrub: 0.15, 
+                markers: false, 
+            },
+        });
+
+        // Карта 1: Стекло -> Голограмма (улетает)
+        stackTl.to(cards[0], {
+            yPercent: -120, z: 200, rotationX: 15, opacity: 0, 
+            filter: "hue-rotate(-90deg) brightness(2) blur(10px)",
+            duration: 1, ease: "power2.inOut"
+        }, 0); 
+        // Карта 2: Голограмма -> Стекло (материализуется)
+        stackTl.to(cards[1], { 
+            scale: 1, opacity: 1, rotationX: 0,
+            filter: "hue-rotate(0deg) brightness(1) blur(0px)",
+            duration: 1, ease: "power2.inOut" 
+        }, 0); 
+
+        // Карта 2: Стекло -> Голограмма (улетает)
+        stackTl.to(cards[1], {
+            yPercent: -120, z: 200, rotationX: 15, opacity: 0, 
+            filter: "hue-rotate(-90deg) brightness(2) blur(10px)",
+            duration: 1, ease: "power2.inOut"
+        }, 1); 
+        // Карта 3: Голограмма -> Стекло (материализуется)
+        stackTl.to(cards[2], { 
+            scale: 1, opacity: 1, rotationX: 0,
+            filter: "hue-rotate(0deg) brightness(1) blur(0px)",
+            duration: 1, ease: "power2.inOut" 
+        }, 1); 
+        
+        return () => { gsap.set(cards, { clearProps: "all" }); };
+    });
+
+    mm.add("(max-width: 767px)", () => {
+        cards.forEach((card, i) => {
+            gsap.set(card, { y: 0, scale: 1, rotationX: 0, opacity: 1, filter: "none", clearProps: "position,zIndex" });
+        });
+    });
+})();
+
+// ------------------------------------------------------------
+// 8. TERMINAL BOOT SEQUENCE
+// ------------------------------------------------------------
+(() => {
+    const steps = gsap.utils.toArray(".terminal-step");
+
+    steps.forEach((step, i) => {
+        gsap.from(step, {
+            scrollTrigger: {
+                trigger: step,
+                start: "top 88%",
+                toggleActions: "play none none none",
+            },
+            y: 40,
+            opacity: 0,
+            duration: 0.8,
+            delay: i * 0.1,
+            ease: "power3.out",
+        });
+    });
+
+    gsap.from("#terminal-hub", {
+        scrollTrigger: {
+            trigger: "#terminal-hub",
+            start: "top 85%",
+            toggleActions: "play none none none",
+        },
+        scale: 0.85,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power4.out",
+    });
+})();
+
+// ------------------------------------------------------------
+// 9. COSMOS PRICING ANIMATION
+// ------------------------------------------------------------
+(() => {
+    const pricingRows = gsap.utils.toArray(".pricing-row");
+    pricingRows.forEach((row, i) => {
+        gsap.from(row, {
+            scrollTrigger: {
+                trigger: row,
+                start: "top 90%",
+                toggleActions: "play none none none"
+            },
+            y: 50,
+            opacity: 0,
+            rotationX: -20,
+            transformOrigin: "center top",
+            duration: 1,
+            ease: "power3.out"
+        });
+    });
+})();
+</script>
+
+</body></html>

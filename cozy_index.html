@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camelot Flows — Websites, Automation & Custom Tools</title>
+    <meta name="description" content="I build high-performance websites, automate repetitive business operations, and create custom digital tools for businesses, agencies, and individuals. Based in Chisinau, available worldwide.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+    <!-- GSAP & Lenis -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <style>
+        /* ─── RESET ─── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        a { text-decoration: none; color: inherit; }
+        button { background: none; border: none; cursor: pointer; font: inherit; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+        input, select, textarea { font: inherit; }
+
+        /* ─── TOKENS ─── */
+        :root {
+            --alabaster: #F5F4F0;
+            --cream: #EDEBE6;
+            --sand: #E0DDD6;
+            --charcoal: #1A1A18;
+            --charcoal-soft: #2D2D29;
+            --sage: #7B9171;
+            --sage-light: #A3B89A;
+            --terracotta: #C4785C;
+            --warm-gray: #8A8780;
+            --white-06: rgba(255,255,255,0.06);
+            --white-08: rgba(255,255,255,0.08);
+            --white-20: rgba(255,255,255,0.2);
+            --white-30: rgba(255,255,255,0.3);
+            --white-40: rgba(255,255,255,0.4);
+            --white-50: rgba(255,255,255,0.5);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--alabaster);
+            color: var(--charcoal);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        ::selection { background: var(--sage); color: white; }
+
+        /* ─── TYPOGRAPHY ─── */
+        .font-display, h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; }
+
+        /* ─── CONTAINER ─── */
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+        @media (min-width: 768px) { .container { padding: 0 48px; } }
+
+        /* ─── NOISE OVERLAY ─── */
+        .noise {
+            position: fixed; inset: 0;
+            pointer-events: none; z-index: 100;
+            opacity: 0.15;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        /* ─── ORGANIC BLOB ─── */
+        .blob {
+            position: absolute;
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            animation: morph 10s ease-in-out infinite alternate;
+            will-change: border-radius;
+            pointer-events: none;
+        }
+        @keyframes morph {
+            0%   { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+            33%  { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+            66%  { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }
+            100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+        }
+
+        /* ─── PULSE ─── */
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .pulse { animation: pulse 2s ease-in-out infinite; }
+
+        /* ─── NAV UNDERLINE ─── */
+        .nav-link { position: relative; display: inline-block; }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: -2px; left: 0;
+            width: 100%; height: 1px; background: var(--charcoal);
+            transform: scaleX(0); transform-origin: right;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
+
+        /* ─── CARD LIFT ─── */
+        .lift {
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s ease;
+        }
+        .lift:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px -15px rgba(0,0,0,0.12);
+        }
+
+        /* ─── ACCORDION ─── */
+        .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .accordion-body.open { max-height: 600px; }
+        .accordion-icon { transition: transform 0.3s ease; }
+        .accordion-icon.rotated { transform: rotate(45deg); }
+
+        /* ─── SCROLL REVEAL ─── */
+        .sr { opacity: 0; transform: translateY(40px); }
+
+        /* ─── SCROLLBAR ─── */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--alabaster); }
+        ::-webkit-scrollbar-thumb { background: var(--sand); border-radius: 3px; }
+
+        /* ─── MOBILE MENU ─── */
+        .mobile-menu {
+            position: fixed; inset: 0; z-index: 60;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+            background: var(--alabaster);
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .mobile-menu.open { transform: translateX(0); }
+
+        /*═══════════════════════════════════════════
+          COMPONENT STYLES
+        ═══════════════════════════════════════════*/
+
+        /* ── NAV ── */
+        .site-nav {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 50;
+            background: rgba(245,244,240,0.85);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+            transition: box-shadow 0.3s ease;
+        }
+        .nav-inner {
+            max-width: 1280px; margin: 0 auto;
+            padding: 20px 24px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        @media (min-width: 768px) { .nav-inner { padding: 20px 48px; } }
+        .nav-brand { font-family: 'Fraunces', Georgia, serif; font-size: 1.25rem; font-style: italic; letter-spacing: 0.03em; }
+        .nav-links { display: none; align-items: center; gap: 32px; }
+        @media (min-width: 768px) { .nav-links { display: flex; } }
+        .nav-links a { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 500; color: var(--warm-gray); }
+        .nav-cta {
+            padding: 10px 24px; border-radius: 9999px; font-size: 0.75rem;
+            text-transform: uppercase; letter-spacing: 0.15em; font-weight: 500;
+            border: 1px solid var(--charcoal); color: var(--charcoal);
+            transition: all 0.3s ease;
+        }
+        .nav-cta:hover { transform: scale(1.05); }
+        .burger { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px; width: 32px; height: 32px; }
+        .burger span { display: block; height: 1.5px; background: currentColor; }
+        .burger span:first-child { width: 24px; }
+        .burger span:last-child { width: 16px; }
+        @media (min-width: 768px) { .burger { display: none; } }
+
+        /* ── HERO ── */
+        .hero {
+            position: relative; min-height: 100vh;
+            display: flex; align-items: center;
+            padding: 120px 24px 64px;
+            overflow: hidden;
+        }
+        @media (min-width: 768px) { .hero { padding: 120px 48px 64px; } }
+        .hero-grid { max-width: 1280px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
+        @media (min-width: 1024px) { .hero-grid { grid-template-columns: 7fr 5fr; } }
+        .hero-badge { display: inline-block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.3em; font-weight: 500; color: var(--warm-gray); margin-bottom: 24px; }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 300; line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 32px; }
+        .hero h1 em { font-style: italic; color: var(--sage); }
+        .hero-sub { font-size: 1rem; font-weight: 300; line-height: 1.7; color: var(--warm-gray); margin-bottom: 40px; max-width: 540px; }
+        @media (min-width: 768px) { .hero-sub { font-size: 1.125rem; } }
+        .hero-ctas { display: flex; flex-wrap: wrap; gap: 16px; }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 16px 32px; border-radius: 9999px;
+            font-size: 0.875rem; font-weight: 500; letter-spacing: 0.03em;
+            color: white; background: var(--charcoal);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover { transform: scale(1.05); box-shadow: 0 10px 40px rgba(0,0,0,0.15); }
+        .btn-primary .material-symbols-outlined { font-size: 16px; }
+        .btn-secondary {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 16px 32px; border-radius: 9999px;
+            font-size: 0.875rem; font-weight: 500; letter-spacing: 0.03em;
+            color: var(--charcoal); border: 1px solid var(--sand);
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover { transform: scale(1.05); }
+
+        /* Hero terminal */
+        .terminal { border-radius: 16px; overflow: hidden; box-shadow: 0 25px 80px -15px rgba(0,0,0,0.3); background: var(--charcoal); }
+        .terminal-inner { padding: 24px; }
+        .terminal-dots { display: flex; gap: 8px; margin-bottom: 24px; }
+        .terminal-dots span { width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.15); }
+        .terminal-code { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.875rem; line-height: 1.9; color: rgba(255,255,255,0.6); }
+        .terminal-code .hl { color: var(--sage-light); }
+        .terminal-badge {
+            position: absolute; bottom: -16px; left: -16px;
+            padding: 8px 16px; border-radius: 12px;
+            font-size: 0.75rem; font-weight: 500;
+            background: white; color: var(--charcoal);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .terminal-badge .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--sage); margin-right: 8px; }
+
+        /* ── TRUST STRIP ── */
+        .trust-strip { padding: 48px 24px; border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand); }
+        @media (min-width: 768px) { .trust-strip { padding: 48px; } }
+        .trust-grid {
+            max-width: 1280px; margin: 0 auto;
+            display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px;
+        }
+        .trust-item { text-align: center; flex: 1; min-width: 140px; }
+        .trust-num { font-family: 'Fraunces', Georgia, serif; font-size: 1.875rem; font-weight: 600; }
+        .trust-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--warm-gray); margin-top: 4px; }
+
+        /* ── SECTIONS ── */
+        .section { padding: 96px 24px; }
+        @media (min-width: 768px) { .section { padding: 128px 48px; } }
+        .section-inner { max-width: 1280px; margin: 0 auto; }
+        .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.3em; font-weight: 500; }
+        .section-title { font-size: clamp(1.875rem, 4vw, 3rem); font-weight: 300; margin-top: 16px; line-height: 1.2; }
+        .section-title em { font-style: italic; }
+        .section-header { margin-bottom: 80px; max-width: 640px; }
+        .section-header.centered { margin-left: auto; margin-right: auto; text-align: center; }
+
+        /* ── 3-COL GRID ── */
+        .grid-3 { display: grid; grid-template-columns: 1fr; gap: 24px; }
+        @media (min-width: 768px) { .grid-3 { grid-template-columns: repeat(3, 1fr); gap: 32px; } }
+
+        /* ── 4-COL GRID ── */
+        .grid-4 { display: grid; grid-template-columns: 1fr; gap: 32px; }
+        @media (min-width: 768px) { .grid-4 { grid-template-columns: repeat(4, 1fr); } }
+
+        /* ── 2-COL GRID ── */
+        .grid-2 { display: grid; grid-template-columns: 1fr; gap: 24px; }
+        @media (min-width: 768px) { .grid-2 { grid-template-columns: repeat(2, 1fr); } }
+
+        /* ── ABOUT GRID ── */
+        .grid-about { display: grid; grid-template-columns: 1fr; gap: 64px; align-items: center; }
+        @media (min-width: 1024px) { .grid-about { grid-template-columns: 1fr 1fr; } }
+
+        /* ── SERVICE CARD ── */
+        .svc-card { background: white; border: 1px solid var(--sand); border-radius: 16px; padding: 32px; }
+        @media (min-width: 768px) { .svc-card { padding: 40px; } }
+        .svc-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; margin-bottom: 24px; }
+        .svc-card h3 { font-size: 1.25rem; font-weight: 300; margin-bottom: 16px; line-height: 1.3; }
+        @media (min-width: 768px) { .svc-card h3 { font-size: 1.5rem; } }
+        .svc-card h3 em { font-style: italic; }
+        .svc-desc { font-size: 0.875rem; line-height: 1.7; color: var(--warm-gray); margin-bottom: 24px; }
+        .svc-list { display: flex; flex-direction: column; gap: 12px; }
+        .svc-list li { display: flex; align-items: center; gap: 12px; font-size: 0.875rem; color: var(--charcoal-soft); }
+        .svc-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+        /* ── AUDIENCE CARD ── */
+        .aud-card { background: white; border-radius: 16px; padding: 32px; text-align: center; }
+        .aud-icon { width: 64px; height: 64px; border-radius: 50%; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; color: white; }
+        .aud-icon .material-symbols-outlined { font-size: 28px; }
+        .aud-card h3 { font-size: 1.25rem; margin-bottom: 12px; }
+        .aud-desc { font-size: 0.875rem; line-height: 1.7; color: var(--warm-gray); margin-bottom: 24px; }
+        .aud-tags { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 500; }
+
+        /* ── PROCESS STEP ── */
+        .step-num { font-family: 'Fraunces', Georgia, serif; font-size: 3rem; font-weight: 300; color: var(--sage); opacity: 0.5; margin-bottom: 16px; }
+        .step h3 { font-size: 1.125rem; margin-bottom: 12px; }
+        .step p { font-size: 0.875rem; line-height: 1.7; color: var(--warm-gray); }
+
+        /* ── PRICING ── */
+        .pricing { background: var(--charcoal); color: white; }
+        .pricing-list { max-width: 896px; display: flex; flex-direction: column; gap: 16px; }
+        .pricing-item { border: 1px solid var(--white-08); border-radius: 12px; overflow: hidden; }
+        .pricing-trigger {
+            width: 100%; display: flex; align-items: center; justify-content: space-between;
+            padding: 24px; text-align: left; cursor: pointer; gap: 16px;
+        }
+        @media (min-width: 768px) { .pricing-trigger { padding: 32px; } }
+        .pricing-trigger h3 { font-size: 1.25rem; font-weight: 300; }
+        @media (min-width: 768px) { .pricing-trigger h3 { font-size: 1.5rem; } }
+        .pricing-trigger .sub { font-size: 0.875rem; color: var(--white-40); margin-top: 4px; }
+        .pricing-right { display: flex; align-items: center; gap: 24px; flex-shrink: 0; }
+        .pricing-price { font-family: 'Fraunces', Georgia, serif; font-size: 1.5rem; }
+        @media (min-width: 768px) { .pricing-price { font-size: 1.875rem; } }
+        .pricing-details { padding: 0 24px; }
+        @media (min-width: 768px) { .pricing-details { padding: 0 32px; } }
+        .pricing-details-inner { padding-bottom: 24px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; font-size: 0.875rem; color: var(--white-50); }
+        @media (min-width: 768px) { .pricing-details-inner { grid-template-columns: repeat(4, 1fr); } }
+        .pricing-note { margin-top: 48px; font-size: 0.875rem; color: var(--white-30); max-width: 512px; }
+
+        /* ── ABOUT ── */
+        .about-photo { border-radius: 16px; overflow: hidden; aspect-ratio: 4/5; background: var(--sand); position: relative; }
+        .about-photo-inner {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; padding: 32px;
+        }
+        .about-avatar { width: 96px; height: 96px; border-radius: 50%; background: var(--sage); color: white; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+        .about-avatar .material-symbols-outlined { font-size: 40px; }
+        .about-name { font-family: 'Fraunces', Georgia, serif; font-size: 1.5rem; margin-bottom: 8px; }
+        .about-loc { font-size: 0.875rem; color: var(--warm-gray); }
+        .about-status { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; margin-top: 16px; padding: 8px 16px; border-radius: 9999px; background: white; display: inline-block; }
+        .about-text { display: flex; flex-direction: column; gap: 20px; font-size: 1rem; line-height: 1.7; color: var(--warm-gray); }
+        .about-text strong { color: var(--charcoal); }
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+        .tech-tag { padding: 8px 16px; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; background: var(--cream); color: var(--charcoal-soft); }
+
+        /* ── CONTACT ── */
+        .contact { background: var(--cream); }
+        .contact-form { max-width: 768px; margin: 0 auto; }
+        .form-row { display: grid; grid-template-columns: 1fr; gap: 24px; margin-bottom: 24px; }
+        @media (min-width: 768px) { .form-row { grid-template-columns: 1fr 1fr; } }
+        .form-group { margin-bottom: 24px; }
+        .form-label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 500; color: var(--warm-gray); margin-bottom: 8px; }
+        .form-input {
+            width: 100%; padding: 16px 20px; border-radius: 12px;
+            font-size: 0.875rem; background: white; border: 1px solid var(--sand);
+            outline: none; transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .form-input:focus { border-color: var(--sage); box-shadow: 0 0 0 3px rgba(123,145,113,0.15); }
+        textarea.form-input { resize: none; }
+        .form-submit {
+            width: 100%; padding: 16px; border-radius: 12px;
+            font-size: 0.875rem; font-weight: 500; letter-spacing: 0.03em;
+            color: white; background: var(--charcoal); border: none; cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .form-submit:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.15); transform: scale(1.01); }
+        .form-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; padding-top: 16px; }
+        .form-badge { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--warm-gray); }
+        .form-badge .material-symbols-outlined { font-size: 16px; color: var(--sage); }
+
+        /* ── FOOTER ── */
+        .site-footer { background: var(--charcoal); color: white; padding: 64px 24px; }
+        @media (min-width: 768px) { .site-footer { padding: 64px 48px; } }
+        .footer-inner { max-width: 1280px; margin: 0 auto; }
+        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 48px; margin-bottom: 48px; }
+        @media (min-width: 768px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr; } }
+        .footer-brand { font-family: 'Fraunces', Georgia, serif; font-size: 1.25rem; font-style: italic; margin-bottom: 16px; }
+        .footer-desc { font-size: 0.875rem; line-height: 1.7; color: var(--white-40); max-width: 360px; }
+        .footer-heading { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 500; color: var(--white-30); margin-bottom: 16px; }
+        .footer-links { display: flex; flex-direction: column; gap: 12px; }
+        .footer-links a { font-size: 0.875rem; color: var(--white-50); transition: color 0.3s ease; }
+        .footer-links a:hover { color: white; }
+        .footer-bottom {
+            padding-top: 32px; border-top: 1px solid var(--white-06);
+            display: flex; flex-direction: column; gap: 16px;
+            align-items: center; justify-content: space-between;
+            font-size: 0.75rem; color: var(--white-20);
+        }
+        @media (min-width: 768px) { .footer-bottom { flex-direction: row; } }
+        .footer-status { display: flex; align-items: center; gap: 8px; }
+        .footer-status .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--sage); }
+    </style>
+</head>
+<body>
+    <div class="noise"></div>
+
+    <!-- ═══════════ NAVIGATION ═══════════ -->
+    <nav id="main-nav" class="site-nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-brand">Camelot Flows</a>
+            <div class="nav-links">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#process" class="nav-link">Process</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-cta">Let's talk</a>
+            </div>
+            <button class="burger" onclick="document.getElementById('mobile-nav').classList.toggle('open')">
+                <span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile nav -->
+    <div id="mobile-nav" class="mobile-menu">
+        <button style="position:absolute;top:24px;right:24px;font-size:1.5rem;" onclick="this.parentElement.classList.remove('open')">✕</button>
+        <a href="#services" class="font-display" style="font-size:1.875rem;" onclick="this.parentElement.classList.remove('open')">Services</a>
+        <a href="#process" class="font-display" style="font-size:1.875rem;" onclick="this.parentElement.classList.remove('open')">Process</a>
+        <a href="#pricing" class="font-display" style="font-size:1.875rem;" onclick="this.parentElement.classList.remove('open')">Pricing</a>
+        <a href="#about" class="font-display" style="font-size:1.875rem;" onclick="this.parentElement.classList.remove('open')">About</a>
+        <a href="#contact" class="font-display" style="font-size:1.875rem;color:var(--sage);" onclick="this.parentElement.classList.remove('open')">Contact</a>
+    </div>
+
+    <main>
+        <!-- ═══════════ HERO ═══════════ -->
+        <section class="hero">
+            <div class="blob" style="top:15%;left:5%;width:35vw;height:35vw;background:rgba(123,145,113,0.12);filter:blur(80px);"></div>
+            <div class="blob" style="bottom:5%;right:5%;width:45vw;height:45vw;background:rgba(196,120,92,0.08);filter:blur(100px);animation-delay:-4s;animation-duration:14s;"></div>
+
+            <div class="hero-grid">
+                <div>
+                    <div class="sr"><span class="hero-badge">Freelance Digital Architect — Chisinau, Moldova</span></div>
+                    <h1 class="sr">
+                        I build websites,<br>
+                        <em>automate workflows,</em><br>
+                        & craft custom tools.
+                    </h1>
+                    <p class="sr hero-sub">
+                        One-person studio for businesses that want a premium digital presence, silent background automation that saves hours every week, and bespoke internal tools built for their exact needs.
+                    </p>
+                    <div class="sr hero-ctas">
+                        <a href="#contact" class="btn-primary">
+                            Start a project
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                        <a href="#services" class="btn-secondary">See what I do</a>
+                    </div>
+                </div>
+                <div class="sr">
+                    <div style="position: relative;">
+                        <div class="terminal">
+                            <div class="terminal-inner">
+                                <div class="terminal-dots"><span></span><span></span><span></span></div>
+                                <div class="terminal-code">
+                                    <p><span class="hl">→</span> new_client_lead received</p>
+                                    <p><span class="hl">→</span> auto-qualify... <span class="hl">✓ passed</span></p>
+                                    <p><span class="hl">→</span> CRM entry created</p>
+                                    <p><span class="hl">→</span> proposal_draft generated</p>
+                                    <p><span class="hl">→</span> calendar slot offered</p>
+                                    <p style="color:var(--sage-light);margin-top:12px;">// All handled. Zero manual work.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="terminal-badge">
+                            <span class="dot pulse"></span>
+                            3 workflows running now
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ TRUST STRIP ═══════════ -->
+        <section class="trust-strip">
+            <div class="trust-grid">
+                <div class="sr trust-item"><div class="trust-num">40+</div><div class="trust-label">Projects delivered</div></div>
+                <div class="sr trust-item"><div class="trust-num">500+</div><div class="trust-label">Hours saved for clients</div></div>
+                <div class="sr trust-item"><div class="trust-num">100%</div><div class="trust-label">Remote & async</div></div>
+                <div class="sr trust-item"><div class="trust-num">&lt;24h</div><div class="trust-label">Response time</div></div>
+            </div>
+        </section>
+
+        <!-- ═══════════ SERVICES ═══════════ -->
+        <section id="services" class="section">
+            <div class="section-inner">
+                <div class="sr section-header">
+                    <div class="section-label" style="color: var(--sage);">What I do</div>
+                    <h2 class="section-title">Three things, done <em>exceptionally</em> well.</h2>
+                </div>
+
+                <div class="grid-3">
+                    <!-- Websites -->
+                    <div class="sr lift svc-card">
+                        <div class="svc-icon" style="background:var(--sage);">
+                            <span class="material-symbols-outlined">web</span>
+                        </div>
+                        <h3>Websites &<br><em>Landing Pages</em></h3>
+                        <p class="svc-desc">High-converting, visually stunning sites built with modern frameworks and fluid animations. From single landing pages to full e-commerce storefronts — each one engineered for speed, SEO, and that premium "wow" factor.</p>
+                        <ul class="svc-list">
+                            <li><span class="svc-dot" style="background:var(--sage);"></span>Next.js / React / Static HTML</li>
+                            <li><span class="svc-dot" style="background:var(--sage);"></span>GSAP fluid animations & transitions</li>
+                            <li><span class="svc-dot" style="background:var(--sage);"></span>Mobile-first responsive design</li>
+                            <li><span class="svc-dot" style="background:var(--sage);"></span>Shopify, WordPress, or custom CMS</li>
+                        </ul>
+                    </div>
+
+                    <!-- Automation -->
+                    <div class="sr lift svc-card">
+                        <div class="svc-icon" style="background:var(--terracotta);">
+                            <span class="material-symbols-outlined">settings_suggest</span>
+                        </div>
+                        <h3>Business<br><em>Automation</em></h3>
+                        <p class="svc-desc">I eliminate the repetitive tasks eating your time. From lead intake to invoicing, I wire up systems that run quietly in the background — syncing your CRM, sending follow-ups, processing orders, and routing data where it needs to go.</p>
+                        <ul class="svc-list">
+                            <li><span class="svc-dot" style="background:var(--terracotta);"></span>Make.com / Zapier / n8n workflows</li>
+                            <li><span class="svc-dot" style="background:var(--terracotta);"></span>CRM, email & calendar automation</li>
+                            <li><span class="svc-dot" style="background:var(--terracotta);"></span>Data pipelines & API integrations</li>
+                            <li><span class="svc-dot" style="background:var(--terracotta);"></span>Smart notification & alert systems</li>
+                        </ul>
+                    </div>
+
+                    <!-- Custom Tools -->
+                    <div class="sr lift svc-card">
+                        <div class="svc-icon" style="background:var(--charcoal);">
+                            <span class="material-symbols-outlined">build</span>
+                        </div>
+                        <h3>Custom<br><em>Digital Tools</em></h3>
+                        <p class="svc-desc">Off-the-shelf software doesn't fit you? I build internal dashboards, client portals, data aggregators, and specialty apps tailored to your exact operation. White-label ready for agencies.</p>
+                        <ul class="svc-list">
+                            <li><span class="svc-dot" style="background:var(--charcoal);"></span>Internal admin dashboards</li>
+                            <li><span class="svc-dot" style="background:var(--charcoal);"></span>Client-facing portals & calculators</li>
+                            <li><span class="svc-dot" style="background:var(--charcoal);"></span>Reporting & analytics tools</li>
+                            <li><span class="svc-dot" style="background:var(--charcoal);"></span>White-label solutions for agencies</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ WHO I WORK WITH ═══════════ -->
+        <section class="section" style="background: var(--cream);">
+            <div class="section-inner">
+                <div class="sr section-header centered">
+                    <div class="section-label" style="color: var(--terracotta);">Who I work with</div>
+                    <h2 class="section-title">Built for <em>your</em> exact situation.</h2>
+                </div>
+
+                <div class="grid-3">
+                    <div class="sr lift aud-card">
+                        <div class="aud-icon" style="background:var(--sage);"><span class="material-symbols-outlined">storefront</span></div>
+                        <h3>Small Businesses</h3>
+                        <p class="aud-desc">You need a site that makes clients trust you instantly, and backend workflows that don't require a full-time ops hire. I build both — and maintain them month to month.</p>
+                        <div class="aud-tags" style="color: var(--sage);">Sites • Automation • Maintenance</div>
+                    </div>
+                    <div class="sr lift aud-card">
+                        <div class="aud-icon" style="background:var(--terracotta);"><span class="material-symbols-outlined">groups</span></div>
+                        <h3>Agencies</h3>
+                        <p class="aud-desc">Overflow work? Complex frontend your team can't crack? I slot in as your invisible dev partner — white-label, NDA-ready, delivering production code on your timelines.</p>
+                        <div class="aud-tags" style="color: var(--terracotta);">White-label dev • Frontend • Integrations</div>
+                    </div>
+                    <div class="sr lift aud-card">
+                        <div class="aud-icon" style="background:var(--charcoal);"><span class="material-symbols-outlined">person</span></div>
+                        <h3>Individuals</h3>
+                        <p class="aud-desc">Coaches, consultants, creators — you need a portfolio that feels premium, a booking system that runs itself, and maybe a custom tool that makes your life easier. I make it happen.</p>
+                        <div class="aud-tags" style="color: var(--charcoal-soft);">Portfolio • Booking • Custom apps</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ PROCESS ═══════════ -->
+        <section id="process" class="section">
+            <div class="section-inner">
+                <div class="sr section-header">
+                    <div class="section-label" style="color: var(--sage);">How it works</div>
+                    <h2 class="section-title">Simple, transparent, <em>no surprises.</em></h2>
+                </div>
+
+                <div class="grid-4">
+                    <div class="sr step">
+                        <div class="step-num">01</div>
+                        <h3>Discovery Call</h3>
+                        <p>We talk about what you need, what's broken, and what "done" looks like. 30 minutes, no cost, no commitment.</p>
+                    </div>
+                    <div class="sr step">
+                        <div class="step-num">02</div>
+                        <h3>Proposal & Scope</h3>
+                        <p>You get a clear doc with exactly what I'll build, the timeline, and the fixed price. No scope creep surprises.</p>
+                    </div>
+                    <div class="sr step">
+                        <div class="step-num">03</div>
+                        <h3>Build & Iterate</h3>
+                        <p>I build in weekly sprints with live previews. You see progress every few days and can course-correct early.</p>
+                    </div>
+                    <div class="sr step">
+                        <div class="step-num">04</div>
+                        <h3>Launch & Support</h3>
+                        <p>We deploy, I train you on everything, and offer ongoing monthly maintenance if you need it. Simple.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ PRICING ═══════════ -->
+        <section id="pricing" class="section pricing">
+            <div class="section-inner">
+                <div class="sr section-header">
+                    <div class="section-label" style="color: var(--sage-light);">Investment</div>
+                    <h2 class="section-title">Straightforward<br><em style="color: var(--sage-light);">pricing.</em></h2>
+                </div>
+
+                <div class="pricing-list">
+                    <div class="sr pricing-item">
+                        <button class="pricing-trigger" onclick="toggleAccordion(this)">
+                            <div>
+                                <h3>Landing Page</h3>
+                                <div class="sub">One-page site with animations, SEO, mobile-ready</div>
+                            </div>
+                            <div class="pricing-right">
+                                <span class="pricing-price" style="color: var(--sage-light);">$499</span>
+                                <span class="material-symbols-outlined accordion-icon" style="color:var(--white-30);">add</span>
+                            </div>
+                        </button>
+                        <div class="accordion-body pricing-details">
+                            <div class="pricing-details-inner">
+                                <div>✓ Custom design</div><div>✓ Fluid animations</div>
+                                <div>✓ Contact form</div><div>✓ SEO optimization</div>
+                                <div>✓ Mobile responsive</div><div>✓ Analytics setup</div>
+                                <div>✓ 2 revision rounds</div><div>✓ 1-2 week delivery</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sr pricing-item">
+                        <button class="pricing-trigger" onclick="toggleAccordion(this)">
+                            <div>
+                                <h3>Full Website</h3>
+                                <div class="sub">Multi-page site, CMS, blog, integrations</div>
+                            </div>
+                            <div class="pricing-right">
+                                <span class="pricing-price" style="color: var(--sage-light);">$1,200+</span>
+                                <span class="material-symbols-outlined accordion-icon" style="color:var(--white-30);">add</span>
+                            </div>
+                        </button>
+                        <div class="accordion-body pricing-details">
+                            <div class="pricing-details-inner">
+                                <div>✓ 5-10 pages</div><div>✓ CMS / Blog</div>
+                                <div>✓ Custom interactions</div><div>✓ E-commerce option</div>
+                                <div>✓ Performance tuning</div><div>✓ CRM integration</div>
+                                <div>✓ 3 revision rounds</div><div>✓ 3-5 week delivery</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sr pricing-item">
+                        <button class="pricing-trigger" onclick="toggleAccordion(this)">
+                            <div>
+                                <h3>Automation Setup</h3>
+                                <div class="sub">Workflow design, API wiring, ongoing monitoring</div>
+                            </div>
+                            <div class="pricing-right">
+                                <span class="pricing-price" style="color: var(--terracotta);">$300+</span>
+                                <span class="material-symbols-outlined accordion-icon" style="color:var(--white-30);">add</span>
+                            </div>
+                        </button>
+                        <div class="accordion-body pricing-details">
+                            <div class="pricing-details-inner">
+                                <div>✓ Workflow audit</div><div>✓ Make / n8n setup</div>
+                                <div>✓ CRM sync</div><div>✓ Email sequences</div>
+                                <div>✓ Error handling</div><div>✓ Documentation</div>
+                                <div>✓ Testing & QA</div><div>✓ 1-2 week setup</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sr pricing-item">
+                        <button class="pricing-trigger" onclick="toggleAccordion(this)">
+                            <div>
+                                <h3>Monthly Retainer</h3>
+                                <div class="sub">Ongoing dev, maintenance, tweaks & priority support</div>
+                            </div>
+                            <div class="pricing-right">
+                                <span class="pricing-price" style="color: var(--sage-light);">$500/mo</span>
+                                <span class="material-symbols-outlined accordion-icon" style="color:var(--white-30);">add</span>
+                            </div>
+                        </button>
+                        <div class="accordion-body pricing-details">
+                            <div class="pricing-details-inner">
+                                <div>✓ 15 hours/month</div><div>✓ Priority Slack channel</div>
+                                <div>✓ Bug fixes same day</div><div>✓ Feature additions</div>
+                                <div>✓ Performance reports</div><div>✓ Security updates</div>
+                                <div>✓ Uptime monitoring</div><div>✓ Cancel anytime</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="sr pricing-note">
+                    All prices in USD. Custom projects scoped individually. 50% upfront, 50% on delivery. Crypto, wire, Wise — whatever works for you.
+                </p>
+            </div>
+        </section>
+
+        <!-- ═══════════ ABOUT ═══════════ -->
+        <section id="about" class="section">
+            <div class="section-inner">
+                <div class="grid-about">
+                    <div class="sr">
+                        <div class="about-photo">
+                            <div class="about-photo-inner">
+                                <div class="about-avatar"><span class="material-symbols-outlined">person</span></div>
+                                <div class="about-name">Alex B.</div>
+                                <div class="about-loc">Chisinau, Moldova</div>
+                                <div class="about-status">Available for projects</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sr">
+                        <div class="section-label" style="color: var(--sage);">About me</div>
+                        <h2 class="section-title" style="margin-bottom: 32px;">The person behind <em>the pixels.</em></h2>
+                        <div class="about-text">
+                            <p>I'm a freelance developer and automation specialist based in Chisinau, Moldova. For the past 6+ years I've been building websites, wiring up business logic, and creating custom tools for clients across Europe and the US.</p>
+                            <p>I work at the intersection of design and efficiency. Every site I build looks like it came from a top-tier agency — because I use the same tools and techniques they do. Every automation I set up is documented, tested, and built to run without babysitting.</p>
+                            <p>My stack: <strong>React, Next.js, Python, GSAP, Make.com, n8n, Tailwind, Node.js.</strong> I'm fluent in English, Russian, and Romanian. Father of Arthur, builder of systems.</p>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span><span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Python</span><span class="tech-tag">GSAP</span>
+                            <span class="tech-tag">Make.com</span><span class="tech-tag">n8n</span>
+                            <span class="tech-tag">Tailwind</span><span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Shopify</span><span class="tech-tag">WordPress</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ CONTACT ═══════════ -->
+        <section id="contact" class="section contact">
+            <div class="section-inner">
+                <div class="contact-form">
+                    <div class="sr section-header centered">
+                        <div class="section-label" style="color: var(--terracotta);">Get in touch</div>
+                        <h2 class="section-title">Have a project?<br><em>Let's talk.</em></h2>
+                    </div>
+
+                    <form class="sr" onsubmit="event.preventDefault(); alert('Thanks! I\'ll get back to you within 24 hours.');">
+                        <div class="form-row">
+                            <div>
+                                <label class="form-label">Name</label>
+                                <input type="text" required placeholder="Your name" class="form-input">
+                            </div>
+                            <div>
+                                <label class="form-label">Email</label>
+                                <input type="email" required placeholder="you@company.com" class="form-input">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">What do you need?</label>
+                            <select required class="form-input">
+                                <option value="" disabled selected>Select a service</option>
+                                <option>Website or Landing Page</option>
+                                <option>Business Automation</option>
+                                <option>Custom Tool / Dashboard</option>
+                                <option>Agency Partnership (white-label)</option>
+                                <option>Monthly Retainer</option>
+                                <option>Something else</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Tell me about your project</label>
+                            <textarea rows="5" required placeholder="What are you building? What problem are you solving? What's the timeline?" class="form-input"></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit">Send message</button>
+
+                        <div class="form-badges">
+                            <div class="form-badge"><span class="material-symbols-outlined">schedule</span>Response within 24h</div>
+                            <div class="form-badge"><span class="material-symbols-outlined">public</span>Working with EU, US, CIS</div>
+                            <div class="form-badge"><span class="material-symbols-outlined">lock</span>NDA-ready</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">Camelot Flows</div>
+                    <p class="footer-desc">Freelance web development, automation, and custom tool engineering. Based in Chisinau, Moldova — working remotely with clients worldwide.</p>
+                </div>
+                <div>
+                    <div class="footer-heading">Navigate</div>
+                    <div class="footer-links">
+                        <a href="#services">Services</a>
+                        <a href="#process">Process</a>
+                        <a href="#pricing">Pricing</a>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-heading">Connect</div>
+                    <div class="footer-links">
+                        <a href="mailto:hello@camelotflows.com">hello@camelotflows.com</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Twitter / X</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>© 2026 Camelot Flows. All rights reserved.</div>
+                <div class="footer-status"><span class="dot pulse"></span>Available for new projects</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ── Lenis Smooth Scroll ──
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smooth: true,
+        });
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+
+        // ── GSAP ScrollTrigger ──
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray('.sr').forEach((el) => {
+            gsap.to(el, {
+                opacity: 1, y: 0,
+                duration: 0.9,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top 88%',
+                    toggleActions: 'play none none none'
+                }
+            });
+        });
+
+        // ── Pricing Accordion ──
+        function toggleAccordion(btn) {
+            const body = btn.nextElementSibling;
+            const icon = btn.querySelector('.accordion-icon');
+            const isOpen = body.classList.contains('open');
+
+            document.querySelectorAll('.accordion-body').forEach(b => b.classList.remove('open'));
+            document.querySelectorAll('.accordion-icon').forEach(i => i.classList.remove('rotated'));
+
+            if (!isOpen) {
+                body.classList.add('open');
+                icon.classList.add('rotated');
+            }
+        }
+
+        // ── Magnetic buttons ──
+        document.querySelectorAll('.btn-primary, .form-submit').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                gsap.to(btn, { x: x * 0.15, y: y * 0.15, duration: 0.3 });
+            });
+            btn.addEventListener('mouseleave', () => {
+                gsap.to(btn, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)' });
+            });
+        });
+
+        // ── Nav scroll effect ──
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.pageYOffset > 100) {
+                nav.style.boxShadow = '0 1px 20px rgba(0,0,0,0.04)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
