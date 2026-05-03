@@ -1,0 +1,255 @@
+/* ================================================================
+   Camelot Flows — Night Theme (Neon Knight gamma)
+
+   Active when <html data-theme="night">. Default theme is "cozy".
+
+   The base CSS in `camelot.css` (lines 1–389) is already the original
+   Neon-Knight design extracted from code_v2.html. The cozy paint job
+   (lines 390+ in camelot.css) is now gated on [data-theme="cozy"] so
+   it simply turns off in night mode, exposing the neon base.
+
+   Therefore this file only needs to:
+     1. Explicitly set the dark body background + radial orbs (matching
+        code_v2.html's `<style> body { background-color: #050508 }`).
+     2. Hide the decorative cozy hero-image overlays that pages embed
+        as inline styles (these only make sense in cozy mode).
+     3. Style the theme-toggle button + view-transition crossfade.
+     4. Hide the preloader on internal navigation (sessionStorage gate).
+   ================================================================ */
+
+/* ── Body background ───────────────────────────────────────────── */
+/* Very subtle cobalt/accent radial tints (~9%/6%) give the dark base
+   a slight blue warmth. Kept well below the DOM #bg-orbs (20%/10%)
+   so there's no visible double-layer — just a tinted obsidian, not
+   a bright glow. */
+[data-theme="night"] body {
+    background:
+        radial-gradient(circle at 0% 0%,   rgb(var(--cft-cobalt) / 0.09), transparent 40%),
+        radial-gradient(circle at 100% 20%, rgb(var(--cft-accent) / 0.06), transparent 35%),
+        #050508;
+    color: #e2e8f0;
+}
+
+/* ── Hide decorative cozy hero overlays in night mode ─────────
+   Inline `<div aria-hidden="true" style="background:url('.../cozy-...')
+   ...mix-blend-mode:multiply">` decorations are cozy-only — they'd
+   bleed warm tones into the dark surface. Real <img> content images
+   are unaffected (they have no `aria-hidden`). */
+[data-theme="night"] [aria-hidden="true"][style*="cozy-freelancer"] {
+    display: none !important;
+}
+
+/* ── Selection ────────────────────────────────────────────────── */
+[data-theme="night"] ::selection {
+    background: #8b5cf6;
+    color: #fff;
+}
+
+/* ── Theme toggle button (lives in nav, both modes) ──────────── */
+.theme-toggle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: transparent;
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    cursor: pointer;
+    color: inherit;
+    transition: background .25s ease, border-color .25s ease, transform .35s ease;
+}
+
+[data-theme="cozy"] .theme-toggle {
+    border-color: rgba(196, 120, 92, 0.3);
+    color: #c4785c;
+}
+[data-theme="cozy"] .theme-toggle:hover {
+    background: rgba(196, 120, 92, 0.1);
+    border-color: rgba(196, 120, 92, 0.6);
+    transform: rotate(15deg);
+}
+
+[data-theme="night"] .theme-toggle {
+    border-color: rgba(99, 102, 241, 0.4);
+    color: #a5b4fc;
+}
+[data-theme="night"] .theme-toggle:hover {
+    background: rgba(99, 102, 241, 0.12);
+    border-color: rgba(99, 102, 241, 0.7);
+    transform: rotate(-15deg);
+    box-shadow: 0 0 18px -2px rgba(99, 102, 241, 0.4);
+}
+
+.theme-toggle .icon-cozy  { display: inline-block; }
+.theme-toggle .icon-night { display: none; }
+[data-theme="night"] .theme-toggle .icon-cozy  { display: none; }
+[data-theme="night"] .theme-toggle .icon-night { display: inline-block; }
+
+/* ── View Transition (smooth crossfade on toggle) ─────────────── */
+@supports (view-transition-name: root) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation-duration: 0.45s;
+        animation-timing-function: cubic-bezier(.4, 0, .2, 1);
+    }
+    ::view-transition-old(root) { animation-name: cf-fade-out; }
+    ::view-transition-new(root) { animation-name: cf-fade-in;  }
+}
+@keyframes cf-fade-out { to   { opacity: 0; } }
+@keyframes cf-fade-in  { from { opacity: 0; } }
+
+/* ── Skip-preloader (sessionStorage gate) ─────────────────────── */
+html.cf-skip-preloader #preloader { display: none !important; }
+
+/* ── Image vignette ────────────────────────────────────────────── */
+[data-theme="night"] img.cozy-vignette,
+[data-theme="night"] .case-image::after,
+[data-theme="night"] .image-frame::after {
+    /* soft vignette already handled by component CSS */
+}
+
+/* ================================================================
+   site.css component overrides — night mode
+   Fixes white-card / dark-text issues from site.css variables that
+   default to cozy (cream) values but are never overridden in night.
+   ================================================================ */
+
+/* ── CSS variable overrides ───────────────────────────────────── */
+/* Fixes all components using var(--surface/--line/--text/--muted):
+   form-shell, contact-sidebar, card, signal-panel, image-frame,
+   proof-item, strip-card — all adapt automatically. */
+[data-theme="night"] {
+    --surface:            rgba(15, 15, 25, 0.72);
+    --surface-strong:     rgba(20, 20, 35, 0.88);
+    --line:               rgba(255, 255, 255, 0.09);
+    --line-strong:        rgba(255, 255, 255, 0.16);
+    --text:               #e2e8f0;
+    --text-soft:          #b4c0d0;
+    --muted:              rgba(180, 192, 208, 0.70);
+    --bg:                 #050508;
+    --bg-alt:             #0a0a12;
+    --shadow:             0 30px 90px -45px rgba(0, 0, 0, 0.60);
+    /* --cf-* inline vars used in page style="" attributes */
+    --cf-charcoal:        #e2e8f0;
+    --cf-charcoal-soft:   #b4c0d0;
+    --cf-muted:           rgba(180, 192, 208, 0.70);
+    --cf-line:            rgba(255, 255, 255, 0.09);
+    --cf-line-strong:     rgba(255, 255, 255, 0.16);
+}
+
+/* ── Hardcoded-white component overrides ──────────────────────── */
+[data-theme="night"] .stack-card {
+    background:   rgba(15, 15, 25, 0.72);
+    border-color: rgba(255, 255, 255, 0.09);
+    color: #e2e8f0;
+}
+[data-theme="night"] .stack-card strong { color: #e2e8f0; }
+
+[data-theme="night"] .panel-pill,
+[data-theme="night"] .card-pill,
+[data-theme="night"] .status-pill {
+    background:   rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: rgba(180, 192, 208, 0.72);
+}
+
+[data-theme="night"] .card.highlight,
+[data-theme="night"] .tier-card.highlight {
+    border-color: rgba(99, 102, 241, 0.30);
+    background: linear-gradient(180deg, rgba(20,20,35,0.80), rgba(99,102,241,0.06));
+}
+
+[data-theme="night"] .section-alt {
+    background: rgba(15, 15, 25, 0.40);
+}
+
+[data-theme="night"] .tag,
+[data-theme="night"] .mini-tag {
+    background:   rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.10);
+    color: rgba(180, 192, 208, 0.72);
+}
+
+/* ── Form inputs ──────────────────────────────────────────────── */
+[data-theme="night"] .field input,
+[data-theme="night"] .field select,
+[data-theme="night"] .field textarea {
+    background:   rgba(10, 10, 18, 0.85);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #e2e8f0;
+}
+[data-theme="night"] .field input::placeholder,
+[data-theme="night"] .field textarea::placeholder {
+    color: rgba(180, 192, 208, 0.45);
+}
+[data-theme="night"] .field input:focus,
+[data-theme="night"] .field select:focus,
+[data-theme="night"] .field textarea:focus {
+    outline: none;
+    border-color: rgba(99, 102, 241, 0.55);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.10);
+}
+
+/* ── site.css buttons ─────────────────────────────────────────── */
+[data-theme="night"] .button.primary {
+    background: rgb(var(--cft-primary));
+    color: #fff;
+}
+[data-theme="night"] .button.primary:hover {
+    background: rgb(var(--cft-primary-glow));
+    box-shadow: 0 8px 30px -8px rgba(99, 102, 241, 0.50);
+}
+[data-theme="night"] .button.ghost {
+    border-color: rgba(255, 255, 255, 0.18);
+    color: rgba(180, 192, 208, 0.90);
+}
+[data-theme="night"] .button.secondary {
+    background:   rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.14);
+    color: #e2e8f0;
+}
+
+/* ── Mobile menu / site-nav (pages that use site.css nav) ─────── */
+[data-theme="night"] .mobile-menu {
+    background: rgba(5, 5, 8, 0.97);
+    color: #e2e8f0;
+}
+[data-theme="night"] .site-nav.is-scrolled {
+    background:          rgba(5, 5, 8, 0.92);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 18px 42px -40px rgba(0, 0, 0, 0.60);
+}
+[data-theme="night"] .nav-inner {
+    background:   rgba(10, 10, 18, 0.85);
+    border-color: rgba(255, 255, 255, 0.09);
+}
+
+/* ── Active nav item ──────────────────────────────────────────── */
+/* JS adds .nav-current to the link whose href matches the current page. */
+.nav-current {
+    color: #e2e8f0 !important;
+    background: rgba(255, 255, 255, 0.10) !important;
+    border-radius: 4px;
+}
+[data-theme="cozy"] .nav-current {
+    color: rgb(var(--cft-terracotta)) !important;
+    background: rgb(var(--cft-terracotta) / 0.10) !important;
+}
+
+/* ── Nav CTA (SUMMON_AGENT) — night mode ──────────────────────── */
+/* text-indigo-100 (#e0e7ff) looks too close to white. Use a proper
+   indigo accent with a visible filled look. */
+[data-theme="night"] .nav-cta {
+    background:   rgba(79, 70, 229, 0.22) !important;
+    border-color: rgba(99, 102, 241, 0.55) !important;
+    color:        #a5b4fc                  !important; /* indigo-300 */
+    box-shadow:   0 0 12px rgba(99,102,241,0.18) !important;
+}
+[data-theme="night"] .nav-cta:hover {
+    background:   rgba(79, 70, 229, 0.38) !important;
+    border-color: rgba(99, 102, 241, 0.80) !important;
+    color:        #c7d2fe                  !important; /* indigo-200 */
+    box-shadow:   0 0 20px rgba(99,102,241,0.30) !important;
+}

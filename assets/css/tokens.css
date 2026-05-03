@@ -1,0 +1,51 @@
+/*
+ * Camelot Flows — Design Tokens
+ * Canonical palette source (Phase 3 will link this instead of the inline block).
+ * Do not import directly yet — tokens are currently inlined in code_v2.html.
+ */
+:root {
+    /* Warm surfaces */
+    --cf-alabaster:       #F5F4F0;
+    --cf-cream:           #EDEBE6;
+    --cf-sand:            #E0DDD6;
+    --cf-parchment:       #F1ECDF;
+
+    /* Text */
+    --cf-charcoal:        #1A1A18;
+    --cf-charcoal-soft:   #302F2B;
+    --cf-muted:           #6D6A64;
+
+    /* Borders */
+    --cf-line:            rgba(26, 26, 24, 0.10);
+    --cf-line-strong:     rgba(26, 26, 24, 0.20);
+
+    /* Brand accents */
+    --cf-sage:            #7B9171;
+    --cf-sage-soft:       rgba(123, 145, 113, 0.15);
+    --cf-terracotta:      #C4785C;
+    --cf-terracotta-soft: rgba(196, 120, 92, 0.15);
+    --cf-cobalt:          #3F5D8D;
+    --cf-cobalt-soft:     rgba(63, 93, 141, 0.15);
+    --cf-candle:          #E8B96B;
+    --cf-candle-glow:     rgba(232, 185, 107, 0.18);
+
+    /* Surfaces */
+    --cf-surface:         rgba(255, 255, 255, 0.72);
+    --cf-surface-strong:  rgba(255, 255, 255, 0.88);
+    --cf-card:            rgba(255, 255, 255, 0.64);
+
+    /* Typography */
+    --cf-font-serif:      "Fraunces", Georgia, serif;
+    --cf-font-sans:       "Inter", -apple-system, sans-serif;
+    --cf-font-display:    "Fraunces", Georgia, serif;
+    --cf-font-mono:       "JetBrains Mono", monospace;
+
+    /* Layout */
+    --cf-radius-xl:  32px;
+    --cf-radius-lg:  24px;
+    --cf-radius-md:  18px;
+    --cf-radius-sm:  14px;
+    --cf-container:  1280px;
+    --cf-nav-height: 88px;
+    --cf-shadow:     0 30px 90px -45px rgba(17, 19, 23, 0.35);
+}

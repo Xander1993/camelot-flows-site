@@ -1,934 +1,396 @@
 <!DOCTYPE html>
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Camelot Flows | Agency Partners</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#4f46e5","primary-glow": "#6366f1","accent": "#8b5cf6","cobalt": "#1e3a8a","obsidian": "#050508","obsidian-light": "#0a0a12",
-                    },
-                    fontFamily: {
-                        "display": ["Space Grotesk", "sans-serif"],
-                        "body": ["Inter", "sans-serif"],
-                        "mono": ["JetBrains Mono", "monospace"],
-                    },
-                    backgroundImage: {
-                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                    },
-                    boxShadow: {
-                        'neon': '0 0 15px -3px rgba(99, 102, 241, 0.4), 0 4px 6px -4px rgba(99, 102, 241, 0.2)',
-                        'neon-strong': '0 0 25px -5px rgba(99, 102, 241, 0.6)',
-                    }
-                },
-            },
-        }
+<html lang="en" data-i18n-page="for-agencies">
+
+<head>
+    <!-- CF: theme bootstrap (sync, before paint) -->
+    <script>
+      (function () {
+        var html = document.documentElement;
+        try {
+          var c = document.cookie.match('(?:^|;) ?cf_theme=([^;]*)');
+          var t = c ? c[1] : (localStorage.getItem('cf_theme') || 'cozy');
+          html.setAttribute('data-theme', t);
+        } catch (e) { html.setAttribute('data-theme', 'cozy'); }
+        try {
+          if (sessionStorage.getItem('cf_loaded') === '1') {
+            html.classList.add('cf-skip-preloader');
+          }
+        } catch (e) {}
+        html.classList.add('js');
+      })();
     </script>
-<style>
-        body {
-            background-color: #050508;
-            color: #e2e8f0;
-        }
-        .font-body { font-family: 'Inter', sans-serif; }
-        
-        html.lenis, html.lenis body { height: auto; }
-        .lenis.lenis-smooth { scroll-behavior: auto !important; }
-        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-        .lenis.lenis-stopped { overflow: hidden; }
-        .lenis.lenis-scrolling iframe { pointer-events: none; }
+    <!-- CF: lang bootstrap (sync, before paint) -->
+    <script>
+      (function () {
+        var html = document.documentElement;
+        try {
+          var l = localStorage.getItem('cf_lang') || 'en';
+          if (['en','ro','ru'].indexOf(l) === -1) l = 'en';
+          html.setAttribute('lang', l);
+          html.setAttribute('data-cf-lang', l);
+          if (l !== 'en') html.setAttribute('data-i18n-loading', '1');
+        } catch (e) { html.setAttribute('lang', 'en'); }
+      })();
+    </script>
 
-        .grain-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.05;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
-        .glass-panel {
-            background: rgba(10, 10, 18, 0.6);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
-        }
-        .glass-card {
-            background: linear-gradient(145deg, rgba(15, 15, 25, 0.6) 0%, rgba(5, 5, 8, 0.8) 100%);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(99, 102, 241, 0.15);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .glass-card:hover {
-            border-color: rgba(99, 102, 241, 0.5);
-            box-shadow: 0 0 30px -10px rgba(79, 70, 229, 0.3);
-            background: linear-gradient(145deg, rgba(20, 20, 35, 0.7) 0%, rgba(10, 10, 15, 0.9) 100%);
-        }
-        .text-glow { text-shadow: 0 0 20px rgba(99, 102, 241, 0.5); }
-        .grid-bg {
-            background-size: 50px 50px;
-            background-image: 
-                linear-gradient(to right, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
-            mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
-        }
-        .status-dot { box-shadow: 0 0 10px currentColor; }
-
-        .perspective-1000 { perspective: 1000px; }
-        
-        /* ИЗМЕНЕНИЕ: Стили для бегущей строки Zentry */
-        .marquee-container { width: max-content; }
-
-        /* Custom Cursor */
-        @media (pointer: fine) {
-            body { cursor: none; }
-            #custom-cursor {
-                position: fixed; top: 0; left: 0; width: 16px; height: 16px; border-radius: 50%;
-                background: #8b5cf6; box-shadow: 0 0 20px 6px rgba(139, 92, 246, 0.6);
-                pointer-events: none; z-index: 99999; mix-blend-mode: screen; opacity: 0;
-                transform: translate(-50%, -50%);
-            }
-        }
-        @media (pointer: coarse) { #custom-cursor { display: none; } }
-
-        /* Star Wars Pricing Styles */
-        #starwars-pricing {
-            perspective: 1500px;
-            overflow: hidden;
-            background-color: #050508;
-            position: relative;
-        }
-        #starwars-pricing::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(191,0,255,0.05) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        #starwars-pricing::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, transparent 40%, rgba(5,5,8,1) 100%);
-            pointer-events: none;
-        }
-        .starfield-anim {
-            position: absolute;
-            inset: 0;
-            background-image: 
-                radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1.5px 1.5px at 100px 150px, #bf00ff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 200px 100px, #00f2ff, rgba(0,0,0,0)),
-                radial-gradient(1.2px 1.2px at 300px 250px, #fff, rgba(0,0,0,0));
-            background-size: 400px 400px;
-            opacity: 0.3;
-            pointer-events: none;
-        }
-        .crawl-container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding-top: 60vh;
-            transform-style: preserve-3d;
-        }
-        .crawl-content {
-            width: 90%;
-            max-width: 900px;
-            transform-origin: 50% 100%;
-        }
-        .pricing-card-sw {
-            background: linear-gradient(135deg, rgba(15, 10, 25, 0.8) 0%, rgba(5, 5, 8, 0.95) 100%);
-            backdrop-filter: blur(12px);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin-bottom: 3.5rem;
-            transition: all 0.4s ease;
-        }
-        .pricing-card-sw:hover {
-            transform: translateY(-8px) scale(1.02);
-            background: linear-gradient(135deg, rgba(25, 15, 45, 0.8) 0%, rgba(10, 10, 15, 0.95) 100%);
-        }
-        /* Color updates matching stitch */
-        .border-cyan { border: 1px solid rgba(0, 242, 255, 0.2); }
-        .border-purple { border: 1px solid rgba(191, 0, 255, 0.2); box-shadow: 0 0 40px rgba(191,0,255,0.15); }
-        .border-blue { border: 1px solid rgba(0, 102, 255, 0.2); }
-        
-        .glow-cyan:hover { border-color: rgba(0, 242, 255, 0.6); box-shadow: 0 0 30px rgba(0, 242, 255, 0.3); }
-        .glow-purple:hover { border-color: rgba(191, 0, 255, 0.6); box-shadow: 0 0 40px rgba(191, 0, 255, 0.4); }
-        .glow-blue:hover { border-color: rgba(0, 102, 255, 0.6); box-shadow: 0 0 30px rgba(0, 102, 255, 0.3); }
-        
-        .text-neon-cyan { color: #00f2ff; text-shadow: 0 0 8px rgba(0, 242, 255, 0.6); }
-        .bg-neon-cyan { background-color: #00f2ff; }
-        .text-neon-purple { color: #bf00ff; text-shadow: 0 0 8px rgba(191, 0, 255, 0.6); }
-        .bg-neon-purple { background-color: #bf00ff; }
-        .text-neon-blue { color: #0066ff; text-shadow: 0 0 8px rgba(0, 102, 255, 0.6); }
-        .bg-neon-blue { background-color: #0066ff; }
-        .text-glow-cyan { text-shadow: 0 0 20px rgba(0, 242, 255, 0.5); }
-        .text-glow-purple { text-shadow: 0 0 20px rgba(191, 0, 255, 0.5); }
-    </style>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>For Agencies | White-Label Web &amp; AI Build Partner</title>
+    <meta name="description" content="White-label website and AI automation capacity for agencies that need reliable senior delivery without adding another full-time hire.">
+    <link rel="canonical" href="https://camelotflows.dev/for-agencies.html">
+    <link rel="icon" href="assets/images/generated/cf-favicon.svg" type="image/svg+xml">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="For Agencies | White-Label Web &amp; AI Build Partner">
+    <meta property="og:description" content="White-label website and AI automation capacity for agencies that need reliable senior delivery without adding another full-time hire.">
+    <meta property="og:image" content="https://camelotflows.dev/assets/images/cozy-freelancer/cf-cozy-og-default.webp">
+    <meta property="og:url" content="https://camelotflows.dev/for-agencies.html">
+    <meta property="og:site_name" content="Camelot Flows">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="For Agencies | White-Label Web &amp; AI Build Partner">
+    <meta name="twitter:description" content="White-label website and AI automation capacity for agencies that need reliable senior delivery without adding another full-time hire.">
+    <meta name="twitter:image" content="https://camelotflows.dev/assets/images/cozy-freelancer/cf-cozy-og-default.webp">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/tailwind.built.css">
+    <link rel="stylesheet" href="assets/site.css">
+    <link rel="stylesheet" href="assets/css/camelot.css">
+    <link rel="stylesheet" href="assets/css/theme-night.css">
+    <link rel="stylesheet" href="assets/css/lang-switcher.css">
+    <link rel="prefetch" href="arsenal.html" as="document">
+    <link rel="prefetch" href="merlin.html" as="document">
+    <link rel="prefetch" href="contact.html" as="document">
+    <link rel="prefetch" href="case-studies.html" as="document">
+    <link rel="prefetch" href="about.html" as="document">
 </head>
-<body class="font-body overflow-x-hidden selection:bg-primary selection:text-white">
 
-<div id="preloader" class="fixed inset-0 z-[999999] bg-obsidian flex flex-col items-center justify-center">
-    <div class="absolute inset-0 grid-bg opacity-30"></div>
-    <div class="w-32 h-32 relative flex items-center justify-center mb-8 z-10">
-        <div class="absolute inset-0 rounded-full border-t-2 border-primary animate-spin"></div>
-        <div class="absolute inset-2 rounded-full border-b-2 border-accent animate-[spin_2s_linear_infinite_reverse]"></div>
-        <span class="material-symbols-outlined text-4xl text-white animate-pulse">design_services</span>
+<body class="theme-cozy font-body overflow-x-hidden selection:bg-primary selection:text-white">
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <div id="preloader" class="fixed inset-0 z-[999999] bg-obsidian flex flex-col items-center justify-center">
+        <div class="absolute inset-0 grid-bg opacity-30"></div>
+        <div class="w-32 h-32 relative flex items-center justify-center mb-8 z-10">
+            <div class="absolute inset-0 rounded-full border-t-2 border-primary animate-spin"></div>
+            <div
+                class="absolute inset-2 rounded-full border-b-2 border-accent animate-[spin_2s_linear_infinite_reverse]">
+            </div>
+            <span class="material-symbols-outlined text-4xl text-white animate-pulse">design_services</span>
+        </div>
+        <div class="text-primary-glow font-mono text-[10px] tracking-[0.4em] uppercase mb-4 z-10" id="loader-text" data-i18n="common.preloader_init">
+            Initializing Protocols...</div>
+        <div class="w-64 h-[2px] bg-white/10 rounded-full overflow-hidden z-10">
+            <div id="loader-bar" class="w-0 h-full bg-gradient-to-r from-primary to-accent"></div>
+        </div>
+        <div id="loader-percent" class="mt-4 font-mono text-white text-sm tracking-widest z-10">0%</div>
     </div>
-    <div class="text-primary-glow font-mono text-[10px] tracking-[0.4em] uppercase mb-4 z-10" id="loader-text">Initializing Protocols...</div>
-    <div class="w-64 h-[2px] bg-white/10 rounded-full overflow-hidden z-10">
-        <div id="loader-bar" class="w-0 h-full bg-gradient-to-r from-primary to-accent"></div>
+
+    <div class="grain-overlay"></div>
+    <div id="bg-orbs" class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+        <div class="bg-orb absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-cobalt/20 rounded-full blur-[120px]">
+        </div>
+        <div
+            class="bg-orb absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-accent/10 rounded-full blur-[100px]">
+        </div>
+        <div class="bg-orb absolute top-[40%] left-[30%] w-[30vw] h-[30vw] bg-primary/10 rounded-full blur-[150px]">
+        </div>
+        <div class="absolute inset-0 grid-bg"></div>
     </div>
-    <div id="loader-percent" class="mt-4 font-mono text-white text-sm tracking-widest z-10">0%</div>
-</div>
 
-<div class="grain-overlay"></div>
-<div id="bg-orbs" class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-<div class="bg-orb absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-cobalt/20 rounded-full blur-[120px]"></div>
-<div class="bg-orb absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-accent/10 rounded-full blur-[100px]"></div>
-<div class="bg-orb absolute top-[40%] left-[30%] w-[30vw] h-[30vw] bg-primary/10 rounded-full blur-[150px]"></div>
-<div class="absolute inset-0 grid-bg"></div>
-</div>
-
-<!-- ИЗМЕНЕНИЕ: Zentry Orbital Badge (Вращающаяся печать в углу) -->
-<div class="fixed bottom-8 right-8 z-50 pointer-events-none mix-blend-screen opacity-60 hidden md:flex items-center justify-center w-32 h-32">
-    <svg viewBox="0 0 100 100" width="100" height="100" class="animate-[spin_12s_linear_infinite] absolute inset-0">
-        <defs><path id="circle" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" /></defs>
-        <text font-size="10.5" fill="currentColor" class="text-primary-glow font-mono uppercase tracking-[0.15em]">
-            <textPath href="#circle">Camelot Flows • Digital Kingdom •</textPath>
-        </text>
-    </svg>
-    <span class="material-symbols-outlined text-primary text-2xl animate-pulse">change_history</span>
-</div>
-
-<nav class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-6 md:py-6">
-<div class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
-<div class="flex items-center gap-4">
-<div class="w-8 h-8 rounded bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-neon">
-<span class="material-symbols-outlined text-white text-lg">shield</span>
-</div>
-<div class="flex flex-col">
-<span class="text-lg font-display font-bold tracking-tight uppercase leading-none text-white">Camelot</span>
-<span class="text-[0.6rem] font-mono text-primary-glow tracking-[0.2em] uppercase mt-1">Flows_v2.0</span>
-</div>
-</div>
-<div class="hidden md:flex items-center gap-1">
-<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="index.html">[Home]</a>
-<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="#round-table">[Services]</a>
-<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="arsenal.html">[Arsenal]</a>
-<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="merlin.html">[Merlin]</a>
-<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="case-studies.html">[Cases]</a>
-<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="for-agencies.html">[Agencies]</a>
-<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="about.html">[About]</a>
-<a class="px-3 py-2 text-xs font-mono text-cyan-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="contact.html">[Contact]</a>
-</div>
-<div class="flex items-center gap-4">
-<div class="hidden md:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
-<div class="w-1.5 h-1.5 rounded-full bg-emerald-500 status-dot animate-pulse"></div>
-<span class="text-[10px] font-mono text-emerald-500/80">SYS_ONLINE</span>
-</div>
-<button class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-5 py-2 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong">
-                // SUMMON_AGENT
-            </button>
-</div>
-</div>
-</nav>
-
-
-<main class="relative pt-32 pb-20 px-6 min-h-screen">
-<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-    <div>
-        <h1 class="font-display text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6 text-white text-glow">Agency <span class="text-neon-blue">Partners</span></h1>
-        <p class="text-slate-400 text-lg leading-relaxed mb-8">White-label web development and robust automation integration to scale your agency's delivery capabilities without overhead.</p>
-        <button onclick="window.location.href='contact.html'" class="bg-neon-blue/10 border border-neon-blue/50 text-neon-blue px-8 py-3 rounded font-mono text-sm tracking-widest uppercase hover:bg-neon-blue hover:text-white transition-colors">Schedule Audit</button>
+    <!-- ИЗМЕНЕНИЕ: Zentry Orbital Badge (Вращающаяся печать в углу) -->
+    <div
+        class="fixed bottom-8 right-8 z-50 pointer-events-none mix-blend-screen opacity-60 hidden md:flex items-center justify-center w-32 h-32">
+        <svg viewBox="0 0 100 100" width="100" height="100" class="animate-[spin_12s_linear_infinite] absolute inset-0">
+            <defs>
+                <path id="circle" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
+            </defs>
+            <text font-size="10.5" fill="currentColor" class="text-primary-glow font-mono uppercase tracking-[0.15em]">
+                <textPath href="#circle">Camelot Flows • Digital Kingdom •</textPath>
+            </text>
+        </svg>
+        <span class="material-symbols-outlined text-primary text-2xl animate-pulse">change_history</span>
     </div>
-    <div class="glass-card p-8 rounded-xl border-neon-blue/30">
-        <ul class="space-y-4 text-sm text-slate-300">
-            <li class="flex items-center gap-3"><span class="text-neon-blue material-symbols-outlined text-xl">shield</span> Complete White-label (NDA)</li>
-            <li class="flex items-center gap-3"><span class="text-neon-blue material-symbols-outlined text-xl">speed</span> Overflow Capacity Scaling</li>
-            <li class="flex items-center gap-3"><span class="text-neon-blue material-symbols-outlined text-xl">model_training</span> Specialized Engineering Team</li>
-        </ul>
-    </div>
+
+    <nav class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-6 md:py-6">
+        <div
+            class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
+            <div class="flex items-center gap-4">
+                <div
+                    class="w-8 h-8 rounded bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-neon">
+                    <span class="material-symbols-outlined text-white text-lg">shield</span>
+                </div>
+                <div class="flex flex-col">
+                    <span
+                        class="text-lg font-display font-bold tracking-tight uppercase leading-none text-white">Camelot</span>
+                    <span
+                        class="text-[0.6rem] font-mono text-primary-glow tracking-[0.2em] uppercase mt-1">Flows_v2.0</span>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center gap-1">
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="index.html" data-i18n="common.nav.home">[Home]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="index.html#round-table" data-i18n="common.nav.services">[Services]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="for-agencies.html" data-i18n="common.nav.agencies">[Agencies]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="about.html" data-i18n="common.nav.about">[About]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="contact.html" data-i18n="common.nav.contact">[Contact]</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="hidden md:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
+                    <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 status-dot animate-pulse"></div>
+                    <span class="text-[10px] font-mono text-emerald-500/80" data-i18n="common.nav.sys_online">SYS_ONLINE</span>
+                </div>
+                <div class="lang-switcher" data-cf-lang-switcher>
+    <button class="lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Change language" data-i18n-attr="aria-label:common.lang_label">
+        <span class="lang-current" data-cf-lang-current>EN</span>
+        <span class="material-symbols-outlined lang-chevron">expand_more</span>
+    </button>
+    <ul class="lang-menu" role="listbox" hidden>
+        <li role="option" data-lang="en" tabindex="-1">EN</li>
+        <li role="option" data-lang="ro" tabindex="-1">RO</li>
+        <li role="option" data-lang="ru" tabindex="-1">RU</li>
+    </ul>
 </div>
+                <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Toggle theme">
+    <span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
+    <span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
+</button>
+                <a href="contact.html?service=staff"
+                    class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-5 py-2 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong inline-flex items-center nav-cta"
+                    data-i18n="common.nav.summon_agent">
+                    // SUMMON_AGENT
+                </a>
+            </div>
+        </div>
+        </nav>
+<main class="page-shell" style="padding-top:88px">
+
+  <!-- Hero -->
+  <section style="padding:96px 0 56px;position:relative;">
+    <div aria-hidden="true" style="position:absolute;inset:0;background:url('assets/images/cozy-freelancer/cf-cozy-hero-agencies.webp') center/cover no-repeat;opacity:0.11;mix-blend-mode:multiply;pointer-events:none;"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="hero-copy" style="max-width:820px">
+        <p class="hero-eyebrow" data-i18n="pages.for-agencies.hero_eyebrow">White-label · NDA by default</p>
+        <h1 class="hero-title" data-i18n="pages.for-agencies.hero_title">Overflow capacity for agencies who landed <em class="accent">more than they staffed.</em></h1>
+        <p class="hero-lead" data-i18n="pages.for-agencies.hero_lead">I work directly with your project manager under your brand. Clean code, on-time delivery, no direct client contact unless you want it. You take the credit.</p>
+        <div class="button-row">
+          <a href="contact.html?service=agency" class="button primary">Let's talk overflow</a>
+          <a href="work-with-me.html" class="button ghost">See the rate card</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section" style="background:rgba(255,255,255,0.32);">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-kicker" data-i18n="pages.for-agencies.s_how_kicker">The arrangement</p>
+        <h2 class="section-title" data-i18n="pages.for-agencies.s_how_h2">How I work with agencies.</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <p class="card-meta"><span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;color:var(--cf-sage)">shield</span> <span data-i18n="pages.for-agencies.s_how_c1_meta">NDA by default</span></p>
+          <h3 data-i18n="pages.for-agencies.s_how_c1_h">Your brand. My work.</h3>
+          <p data-i18n="pages.for-agencies.s_how_c1_p">I sign an NDA before seeing any client details. All deliverables are handed to you — no watermarks, no signatures, no portfolio requests unless you approve.</p>
+        </div>
+        <div class="card highlight">
+          <p class="card-meta"><span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;color:var(--cf-terracotta)">speed</span> <span data-i18n="pages.for-agencies.s_how_c2_meta">Overflow capacity</span></p>
+          <h3 data-i18n="pages.for-agencies.s_how_c2_h">Plug in when you need it.</h3>
+          <p data-i18n="pages.for-agencies.s_how_c2_p">I'm available for sprint-based overflow. You brief me via Slack or Notion, I deliver on the timeline we agree, and we close the loop cleanly. No retainer required.</p>
+        </div>
+        <div class="card">
+          <p class="card-meta"><span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;color:var(--cf-cobalt)">build</span> <span data-i18n="pages.for-agencies.s_how_c3_meta">What I can deliver</span></p>
+          <h3 data-i18n="pages.for-agencies.s_how_c3_h">Web + automation.</h3>
+          <p data-i18n="pages.for-agencies.s_how_c3_p">Astro, Next.js, GSAP animation, n8n workflows, Claude-based agents. If your agency lands a project needing any of these, I can execute it under your umbrella.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rate card -->
+  <section class="section">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start;">
+        <div>
+          <p class="section-kicker" data-i18n="pages.for-agencies.s_rate_kicker">Rate card</p>
+          <h2 class="section-title" data-i18n="pages.for-agencies.s_rate_h2">Transparent agency pricing.</h2>
+          <p style="color:var(--cf-muted);font-size:1.02rem;line-height:1.75;margin:24px 0 0" data-i18n="pages.for-agencies.s_rate_p">Agency rates are lower than direct-client rates because the relationship is simpler — no discovery, no async client questions, no scope ambiguity. You handle the client layer; I handle execution.</p>
+          <a href="contact.html?service=agency" class="button primary" style="margin-top:28px" data-i18n="pages.for-agencies.s_rate_btn">Start the conversation</a>
+        </div>
+        <div style="display:grid;gap:16px;margin-top:4px">
+          <div class="stack-card">
+            <strong data-i18n="pages.for-agencies.s_rate_c1_h">Sprint rate &nbsp;&mdash;&nbsp; €800–1,000 / sprint</strong>
+            <p data-i18n="pages.for-agencies.s_rate_c1_p">One week of focused delivery. Defined scope agreed before start. Ideal for single features, landing pages, or automation builds.</p>
+          </div>
+          <div class="stack-card">
+            <strong data-i18n="pages.for-agencies.s_rate_c2_h">Hourly &nbsp;&mdash;&nbsp; €45–60 / hour</strong>
+            <p data-i18n="pages.for-agencies.s_rate_c2_p">For scope that's genuinely hard to bound upfront. Tracked and invoiced weekly with a summary of work done.</p>
+          </div>
+          <div class="stack-card">
+            <strong data-i18n="pages.for-agencies.s_rate_c3_h">Slack Connect onboarding included</strong>
+            <p data-i18n="pages.for-agencies.s_rate_c3_p">I join your agency Slack as a guest. You can brief me, share assets, and review work without leaving your own tools.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 <footer class="bg-obsidian pt-24 pb-12 px-6 border-t border-primary/20 relative">
-<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent shadow-[0_0_15px_rgba(99,102,241,0.5)]"></div>
-<div class="max-w-7xl mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20">
-<div class="md:col-span-3">
-<div class="flex items-center gap-3 mb-6">
-<div class="w-8 h-8 rounded bg-primary flex items-center justify-center">
-<span class="material-symbols-outlined text-white text-lg">architecture</span>
-</div>
-<span class="font-display text-xl font-bold tracking-tighter uppercase text-white">Camelot Flows</span>
-</div>
-<p class="text-slate-500 mb-8 text-sm leading-relaxed font-mono">
-<span class="text-primary">&gt;</span> Location: Chisinau, MD<br/>
-<span class="text-primary">&gt;</span> Coordinates: 47.0105° N, 28.8638° E<br/>
-<span class="text-primary">&gt;</span> Mission: Awwwards-Tier Design & AI Automation.
-</p>
-<div class="flex gap-4">
-<a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="contact.html">
-<span class="material-symbols-outlined text-lg">mail</span>
-</a>
-<a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="contact.html">
-<span class="material-symbols-outlined text-lg">alternate_email</span>
-</a>
-</div>
-</div>
-<div class="md:col-span-2">
-<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max">Protocol</h5>
-<ul class="space-y-3 text-slate-500 text-sm font-mono">
-<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="arsenal.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> The Arsenal</a></li>
-<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="merlin.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> Merlin</a></li>
-<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="case-studies.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> Case Studies</a></li>
-<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="for-agencies.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> Agencies</a></li>
-</ul>
-</div>
-<div class="md:col-span-2">
-<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max">Services</h5>
-<ul class="space-y-3 text-slate-500 text-sm font-mono">
-<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="service-creation.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> Site Creation</a></li>
-<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="service-maintenance.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> Maintenance</a></li>
-<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="service-automation.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> Automations</a></li>
-<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="service-marketing.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> Marketing</a></li>
-</ul>
-</div>
-<div class="md:col-span-2">
-<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max">Company</h5>
-<ul class="space-y-3 text-slate-500 text-sm font-mono">
-<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="about.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> About</a></li>
-<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="work-with-me.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> Work With</a></li>
-<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="legal.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> Legal</a></li>
-<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="contact.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> Contact</a></li>
-</ul>
-</div>
-<div class="md:col-span-3">
-<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max">Vanguard</h5>
-<p class="text-slate-500 text-sm mb-6 leading-relaxed">Weekly insights on AI automation sent directly to your terminal.</p>
-<div class="flex gap-2 p-1 bg-white/5 rounded border border-white/10 focus-within:border-primary/50 transition-colors">
-<input class="bg-transparent border-none focus:ring-0 text-sm flex-1 px-4 text-white font-mono placeholder:text-slate-600" placeholder="ENTER_EMAIL" type="email"/>
-<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded text-xs font-bold transition-colors font-mono">[SUBMIT]</button>
-</div>
-</div>
-</div>
-<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-<p class="text-xs text-slate-600 font-mono">&copy; 2026 Camelot Flows. Built by Alex Buzi.</p>
-<div class="flex flex-wrap justify-center gap-4 md:gap-8">
-<div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
-<span class="material-symbols-outlined text-sm text-green-500">wifi</span>
-<span>System Status: Optimal</span>
-</div>
-<div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
-<span class="material-symbols-outlined text-sm text-blue-500">bolt</span>
-<span>Lightning Fast Performance</span>
-</div>
-</div>
-</div>
-</div>
-</footer>
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+        </div>
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20">
+                <div class="md:col-span-3">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-8 rounded bg-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-lg">architecture</span>
+                        </div>
+                        <span class="font-display text-xl font-bold tracking-tighter uppercase text-white">Camelot
+                            Flows</span>
+                    </div>
+                    <p class="text-slate-500 mb-8 text-sm leading-relaxed font-mono">
+                        <span data-i18n="common.footer.location_line_1"><span class="text-primary">&gt;</span> Location: Chisinau, MD</span><br />
+                        <span data-i18n="common.footer.location_line_2"><span class="text-primary">&gt;</span> Coordinates: 47.0105° N, 28.8638° E</span><br />
+                        <span data-i18n="common.footer.location_line_3"><span class="text-primary">&gt;</span> Mission: Awwwards-Tier Design & AI Automation.</span>
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400"
+                            href="contact.html">
+                            <span class="material-symbols-outlined text-lg">mail</span>
+                        </a>
+                        <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400"
+                            href="contact.html">
+                            <span class="material-symbols-outlined text-lg">alternate_email</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <h5
+                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_protocol">
+                        Protocol</h5>
+                    <ul class="space-y-3 text-slate-500 text-sm font-mono">
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="arsenal.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_protocol_arsenal">The Arsenal</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="merlin.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_protocol_merlin">Merlin</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="case-studies.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_protocol_cases">Case Studies</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="for-agencies.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_protocol_agencies">Agencies</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="https://blog.camelotflows.dev" target="_blank"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> <span>Blog</span></a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <h5
+                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_services">
+                        Services</h5>
+                    <ul class="space-y-3 text-slate-500 text-sm font-mono">
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="service-creation.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_services_creation">Site Creation</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="service-maintenance.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_services_maintenance">Maintenance</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="service-automation.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_services_automation">Automations</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="service-marketing.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_services_marketing">Marketing</span></a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <h5
+                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_company">
+                        Company</h5>
+                    <ul class="space-y-3 text-slate-500 text-sm font-mono">
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="about.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_company_about">About</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="work-with-me.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_company_work">Work With</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="legal.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_company_legal">Legal</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="contact.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_company_contact">Contact</span></a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-3">
+                    <h5
+                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_vanguard">
+                        Vanguard</h5>
+                    <p class="text-slate-500 text-sm mb-6 leading-relaxed" data-i18n="common.footer.col_vanguard_lead">Weekly insights on AI automation sent
+                        directly to your terminal.</p>
+                    <div
+                        class="flex gap-2 p-1 bg-white/5 rounded border border-white/10 focus-within:border-primary/50 transition-colors">
+                        <input
+                            class="bg-transparent border-none focus:ring-0 text-sm flex-1 px-4 text-white font-mono placeholder:text-slate-600"
+                            placeholder="ENTER_EMAIL" type="email" data-i18n-attr="placeholder:common.footer.col_vanguard_placeholder" />
+                        <button
+                            class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded text-xs font-bold transition-colors font-mono" data-i18n="common.footer.col_vanguard_submit">[SUBMIT]</button>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-xs text-slate-600 font-mono" data-i18n="common.footer.copyright">&copy; 2026 Camelot Flows. Built by Alex Buzi.</p>
+                <div class="flex flex-wrap justify-center gap-4 md:gap-8">
+                    <div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+                        <span class="material-symbols-outlined text-sm text-green-500">wifi</span>
+                        <span data-i18n="common.footer.status_optimal">System Status: Optimal</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+                        <span class="material-symbols-outlined text-sm text-blue-500">bolt</span>
+                        <span data-i18n="common.footer.status_lightning">Lightning Fast Performance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-<div id="custom-cursor"></div>
+    <div id="custom-cursor"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
-<script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 
-<script>
-// ============================================================
-// CAMELOT FLOWS — GSAP ANIMATION ENGINE (ZENTRY TIER)
-// ============================================================
-gsap.registerPlugin(ScrollTrigger, TextPlugin);
+    <script src="assets/js/locales.js"></script>
+    <script defer src="assets/js/i18n.js"></script>
+    <script defer src="assets/js/camelot-gsap.js"></script>
+    <script defer src="assets/site.js"></script>
 
-const wrapLetters = (element) => {
-    if (!element) return;
-    const text = element.innerText;
-    element.innerHTML = ''; 
-    text.split('').forEach(char => {
-        const span = document.createElement('span');
-        span.className = 'inline-block hero-char';
-        span.innerHTML = char === ' ' ? '&nbsp;' : char;
-        element.appendChild(span);
-    });
-};
+</body>
 
-wrapLetters(document.getElementById('hero-word-1'));
-
-// ------------------------------------------------------------
-// 1. LENIS SMOOTH SCROLL
-// ------------------------------------------------------------
-const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
-    smoothWheel: true,
-});
-
-lenis.on('scroll', ScrollTrigger.update);
-gsap.ticker.add((time) => { lenis.raf(time * 1000); });
-gsap.ticker.lagSmoothing(0);
-
-lenis.stop();
-
-window.addEventListener("load", () => {
-    const preloaderTl = gsap.timeline({
-        onComplete: () => {
-            lenis.start();
-            playHeroAnimation();
-        }
-    });
-
-    preloaderTl
-        .to("#loader-percent", { innerHTML: "100%", duration: 1.5, snap: { innerHTML: 1 }, ease: "power2.inOut" })
-        .to("#loader-bar", { width: "100%", duration: 1.5, ease: "power2.inOut" }, "<")
-        .to("#loader-text", { text: "SYSTEM_READY", duration: 0.2 }, "-=0.2")
-        .to("#preloader", { yPercent: -100, duration: 1, ease: "power4.inOut", delay: 0.3 })
-        .set("#preloader", { display: "none" });
-});
-
-// ------------------------------------------------------------
-// 2. KINETIC MARQUEE (ZENTRY STYLE)
-// ------------------------------------------------------------
-// ИЗМЕНЕНИЕ: Бесконечная бегущая строка, ломающая сетку
-(() => {
-    if(!document.querySelector(".marquee-container")) return;
-    gsap.to(".marquee-container", {
-        xPercent: -50, // Двигаем ровно на 50% (так как у нас 2 одинаковых блока внутри)
-        ease: "none",
-        repeat: -1,
-        duration: 15 // Скорость движения
-    });
-})();
-
-// ------------------------------------------------------------
-// 3. ZENTRY PORTAL (VIEWPORT TAKEOVER)
-// ------------------------------------------------------------
-// ИЗМЕНЕНИЕ: Разрывающий экран портал перед Round Table
-(() => {
-    let mm = gsap.matchMedia();
-    
-    mm.add("(min-width: 768px)", () => {
-        const portalTl = gsap.timeline({
-            scrollTrigger: {
-                trigger: "#portal-trigger",
-                start: "top top",
-                end: "+=120%", 
-                scrub: 0.5,
-                pin: true,
-            }
-        });
-
-        portalTl
-            // Открываем ромб на весь экран
-            .to("#zentry-portal", {
-                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-                borderRadius: "0px",
-                duration: 1,
-                ease: "power2.inOut"
-            })
-            // Параллакс фона внутри портала
-            .fromTo("#portal-bg", 
-                { scale: 1.5, rotation: 5 }, 
-                { scale: 1, rotation: 0, duration: 1 }, 
-            "<")
-            // Текст внутри пропадает при расширении
-            .to("#portal-text", { scale: 1.5, opacity: 0, duration: 0.5 }, "-=0.5")
-            .to("#portal-sub", { opacity: 0, duration: 0.3 }, "-=0.5")
-            // ИЗМЕНЕНИЕ: Появление Голограммы Экскалибура после исчезновения текста
-            .to("#portal-revelation", { 
-                opacity: 1, 
-                scale: 1, 
-                duration: 1, 
-                ease: "back.out(1.5)" 
-            }, "-=0.2"); // Запускаем чуть до того, как портал полностью откроется
-    });
-})();
-
-// ------------------------------------------------------------
-// 4. DATA STREAMS
-// ------------------------------------------------------------
-(() => {
-    gsap.utils.toArray(".data-stream").forEach((stream, i) => {
-        gsap.fromTo(stream, 
-            { x: "-100vw" },
-            { 
-                x: "100vw", 
-                duration: i === 0 ? 3 : 4, 
-                repeat: -1, 
-                ease: "none", 
-                delay: i * 1.5 
-            }
-        );
-    });
-})();
-
-// ------------------------------------------------------------
-// 5. CUSTOM CURSOR
-// ------------------------------------------------------------
-(() => {
-    if (window.matchMedia("(pointer: fine)").matches) {
-        const cursor = document.getElementById("custom-cursor");
-        let cursorVisible = false;
-        let lastParticleTime = 0;
-
-        gsap.set(cursor, { xPercent: -50, yPercent: -50, zIndex: 9999 });
-
-        window.addEventListener("mousemove", (e) => {
-            if (!cursorVisible) {
-                cursorVisible = true;
-                gsap.to(cursor, { opacity: 1, duration: 0.3 });
-            }
-            gsap.to(cursor, {
-                x: e.clientX,
-                y: e.clientY,
-                duration: 0.15,
-                ease: "power2.out",
-            });
-
-            // Comet Tail Particle System (Violet)
-            const now = Date.now();
-            if (now - lastParticleTime > 12) { // Increased density for smoother trail
-                lastParticleTime = now;
-                const particle = document.createElement("div");
-                
-                // Base particle styling (Neon Purple glowing dot with blur)
-                particle.className = "fixed w-[6px] h-[6px] bg-neon-purple rounded-full pointer-events-none z-[9998] shadow-[0_0_20px_4px_rgba(191,0,255,0.9)] mix-blend-screen blur-[1px]";
-                document.body.appendChild(particle);
-
-                gsap.set(particle, {
-                    x: e.clientX,
-                    y: e.clientY,
-                    xPercent: -50,
-                    yPercent: -50,
-                });
-
-                // Animate tail dissipating and spreading
-                gsap.to(particle, {
-                    x: e.clientX + (Math.random() - 0.5) * 15, // Tighter spread for a clean line
-                    y: e.clientY + (Math.random() - 0.5) * 15, 
-                    scale: 0,
-                    opacity: 0,
-                    duration: Math.random() * 0.4 + 0.4,
-                    ease: "power2.out",
-                    onComplete: () => particle.remove()
-                });
-            }
-        });
-
-        document.addEventListener("mouseleave", () => {
-            cursorVisible = false;
-            gsap.to(cursor, { opacity: 0, duration: 0.3 });
-        });
-
-        // Interactive cursor scaling
-        const interactiveEls = document.querySelectorAll("a, button, input, .circuit-node");
-        interactiveEls.forEach((el) => {
-            el.addEventListener("mouseenter", () => {
-                gsap.to(cursor, { scale: 3.5, opacity: 0.3, backgroundColor: "#bf00ff", borderColor: "transparent", duration: 0.3, ease: "power2.out" });
-            });
-            el.addEventListener("mouseleave", () => {
-                gsap.to(cursor, { scale: 1, opacity: 1, backgroundColor: "#8b5cf6", borderColor: "transparent", duration: 0.3, ease: "power2.out" });
-            });
-        });
-    }
-})();
-
-// ------------------------------------------------------------
-// 5.5. MAGNETIC ELEMENTS (TRENDING GSAP TRICK)
-// ------------------------------------------------------------
-(() => {
-    if (window.matchMedia("(pointer: fine)").matches) {
-        // Apply magnetic pull to all buttons
-        const magnets = document.querySelectorAll("button");
-        
-        magnets.forEach((magnet) => {
-            magnet.addEventListener("mousemove", (e) => {
-                const rect = magnet.getBoundingClientRect();
-                // Calculate distance from center of button
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                
-                // Move button slightly towards mouse
-                gsap.to(magnet, {
-                    x: x * 0.25,
-                    y: y * 0.25,
-                    rotation: x * 0.05,
-                    duration: 0.4,
-                    ease: "power2.out",
-                    overwrite: "auto"
-                });
-            });
-            
-            magnet.addEventListener("mouseleave", () => {
-                // Bounce back using a highly kinetic elastic ease
-                gsap.to(magnet, {
-                    x: 0,
-                    y: 0,
-                    rotation: 0,
-                    duration: 0.8,
-                    ease: "elastic.out(1, 0.3)",
-                    overwrite: "auto"
-                });
-            });
-        });
-    }
-})();
-
-// ------------------------------------------------------------
-// 6. HERO PARALLAX & KINETIC TYPOGRAPHY REVEAL
-// ------------------------------------------------------------
-const playHeroAnimation = () => {
-    const heroTl = gsap.timeline();
-
-    heroTl
-        .from("#hero-badge", { y: 60, opacity: 0, duration: 1, ease: "power4.out" })
-        .from(".hero-char", { 
-            z: 400, 
-            rotationX: -90, 
-            opacity: 0, 
-            stagger: 0.04, 
-            duration: 1.2,
-            ease: "back.out(1.5)", 
-            transformOrigin: "50% 50% -50px" 
-        }, "-=0.8")
-        .from("#hero-word-2", {
-            yPercent: 100,
-            duration: 1.2,
-            ease: "power4.out"
-        }, "-=1.0")
-        .from("#hero-p",     { y: 50, opacity: 0, duration: 1, ease: "power4.out" }, "-=0.8")
-        .from("#hero-btns",  { y: 40, opacity: 0, duration: 1, ease: "power4.out" }, "-=0.7")
-        .from("#hero-stats", { y: 30, opacity: 0, duration: 1, ease: "power4.out" }, "-=0.6");
-};
-
-(() => {
-    const orbs = document.querySelectorAll(".bg-orb");
-    const multipliers = [0.03, -0.04, 0.025]; 
-
-    if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
-        window.addEventListener("mousemove", (e) => {
-            const cx = window.innerWidth / 2;
-            const cy = window.innerHeight / 2;
-            const dx = (e.clientX - cx) / cx;
-            const dy = (e.clientY - cy) / cy;
-
-            orbs.forEach((orb, i) => {
-                const m = multipliers[i] || 0.03;
-                gsap.to(orb, {
-                    x: -dx * m * window.innerWidth,
-                    y: -dy * m * window.innerHeight,
-                    duration: 1.2,
-                    ease: "power1.out",
-                });
-            });
-
-            gsap.utils.toArray(".parallax-float").forEach((el) => {
-                const depth = parseFloat(el.getAttribute("data-depth")) || 0.1;
-                gsap.to(el, {
-                    x: dx * depth * 80,
-                    y: dy * depth * 80,
-                    duration: 1.5,
-                    ease: "power2.out",
-                });
-            });
-        });
-
-        gsap.utils.toArray(".parallax-float").forEach((el) => {
-            gsap.to(el, {
-                y: "+=15",
-                rotation: "+=10",
-                duration: "random(3, 5)",
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut"
-            });
-            
-            const depth = parseFloat(el.getAttribute("data-depth")) || 0.1;
-            gsap.to(el, {
-                yPercent: depth * 300,
-                rotation: depth * 100,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: "#hero",
-                    start: "top top",
-                    end: "bottom top",
-                    scrub: true
-                }
-            });
-        });
-    }
-})();
-
-(() => {
-    gsap.to("#literal-round-table", {
-        rotation: 360,
-        duration: 50,
-        repeat: -1,
-        ease: "none"
-    });
-    gsap.to(".rt-icon", {
-        rotation: -360,
-        duration: 50,
-        repeat: -1,
-        ease: "none"
-    });
-})();
-
-// ------------------------------------------------------------
-// 7. CARD STACK — AWWWARDS HORIZONTAL SCROLL EFFECT
-// ------------------------------------------------------------
-(() => {
-    let mm = gsap.matchMedia();
-
-    mm.add("(min-width: 768px)", () => {
-        const stackWrapper = document.getElementById("card-scroll-wrapper");
-        const stackContent = document.getElementById("card-stack");
-        
-        // Remove any old absolute positioning properties
-        gsap.set(".stack-card", { clearProps: "all" });
-
-        const getScrollAmount = () => {
-            let offset = stackContent.scrollWidth - stackWrapper.offsetWidth;
-            return offset > 0 ? -(offset + 24) : 0; // Add small padding so right edge is fully visible
-        };
-
-        const stackTl = gsap.timeline({
-            scrollTrigger: {
-                trigger: "#round-table",
-                start: "top top",
-                end: () => `+=${stackContent.scrollWidth}`, // Scroll dist matches width
-                pin: true,
-                scrub: 1, 
-                invalidateOnRefresh: true
-            },
-        });
-
-        stackTl.to(stackContent, {
-            x: getScrollAmount,
-            duration: 1,
-            ease: "none"
-        });
-
-        return () => { gsap.set(".stack-card", { clearProps: "all" }); gsap.set(stackContent, { clearProps: "all" }); };
-    });
-
-    mm.add("(max-width: 767px)", () => {
-        gsap.set(".stack-card", { clearProps: "all" });
-        gsap.set("#card-stack", { clearProps: "all" });
-    });
-})();
-
-// ------------------------------------------------------------
-// 8. TERMINAL BOOT SEQUENCE
-// ------------------------------------------------------------
-(() => {
-    const steps = gsap.utils.toArray(".terminal-step");
-
-    steps.forEach((step, i) => {
-        gsap.from(step, {
-            scrollTrigger: {
-                trigger: step,
-                start: "top 88%",
-                toggleActions: "play none none none",
-            },
-            y: 40,
-            opacity: 0,
-            duration: 0.8,
-            delay: i * 0.1,
-            ease: "power3.out",
-        });
-    });
-
-    gsap.from("#terminal-hub", {
-        scrollTrigger: {
-            trigger: "#terminal-hub",
-            start: "top 85%",
-            toggleActions: "play none none none",
-        },
-        scale: 0.85,
-        opacity: 0,
-        duration: 1.2,
-        ease: "power4.out",
-    });
-})();
-
-// ------------------------------------------------------------
-// 9. STAR WARS PRICING CRAWL ANIMATION
-// ------------------------------------------------------------
-(() => {
-    // 3D Perspective Scroll for Pricing
-    let mm = gsap.matchMedia();
-    
-    mm.add("(min-width: 768px)", () => {
-        const crawlContent = document.querySelector('.crawl-content');
-        
-        // Initial setup
-        gsap.set(crawlContent, { 
-            rotationX: 25, 
-            yPercent: 0, 
-            z: 0,
-            opacity: 0,
-            transformOrigin: "50% 100%"
-        });
-
-        const crawlTl = gsap.timeline({
-            scrollTrigger: {
-                trigger: "#starwars-pricing",
-                start: "top top",
-                end: "+=250%", // Distance to scroll
-                pin: true,
-                scrub: 1.5,
-            }
-        });
-
-        crawlTl
-            .to(crawlContent, { opacity: 1, duration: 0.1 }, 0)
-            .to(crawlContent, {
-                yPercent: -180, // Scroll up past screen
-                z: -1200,       // Move deep into Z space
-                rotationX: 45,  // Lean back further
-                ease: "power1.inOut",
-                duration: 1
-            }, 0)
-            .to(crawlContent, { opacity: 0, duration: 0.2 }, 0.8); // Fade out at the end
-
-        // Animate the hologram sword subtly
-        gsap.to('.hologram-sword-img', {
-            y: "+=30",
-            rotation: 3,
-            scale: 1.05,
-            duration: 4,
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut"
-        });
-
-        // Generate circuit wires drawing effect
-        gsap.utils.toArray(".circuit-wire").forEach(wire => {
-            const length = wire.getTotalLength();
-            gsap.set(wire, { strokeDasharray: length, strokeDashoffset: length });
-            
-            gsap.to(wire, {
-                strokeDashoffset: 0,
-                scrollTrigger: {
-                    trigger: "#starwars-pricing",
-                    start: "top bottom", // Start when section enters screen
-                    end: "bottom top", 
-                    scrub: 1.5
-                }
-            });
-            });
-        });
-
-        // Pulse the circuit nodes
-        gsap.utils.toArray(".circuit-node").forEach(node => {
-            gsap.fromTo(node, 
-                { scale: 0.5, opacity: 0 },
-                {
-                    scale: 1, 
-                    opacity: 1,
-                    scrollTrigger: {
-                        trigger: "#starwars-pricing",
-                        start: "top 80%",
-                        toggleActions: "play none none reverse"
-                    },
-                    duration: 0.5,
-                    ease: "back.out(2)"
-                }
-            );
-        });
-
-    });
-}
-
-
-    // Animate the New Sections
-    if(document.getElementById("grand-armory")) {
-        gsap.from(".armory-visual", {
-            scrollTrigger: { trigger: "#grand-armory", start: "top 85%" },
-            x: -80, opacity: 0, duration: 1.2, ease: "power4.out"
-        });
-        gsap.from(".armory-content", {
-            scrollTrigger: { trigger: "#grand-armory", start: "top 85%" },
-            x: 80, opacity: 0, duration: 1.2, ease: "power4.out", delay: 0.2
-        });
-
-        gsap.from(".alchemy-visual", {
-            scrollTrigger: { trigger: "#alchemy-sanctum", start: "top 85%" },
-            x: 80, opacity: 0, duration: 1.2, ease: "power4.out"
-        });
-        gsap.from(".alchemy-content", {
-            scrollTrigger: { trigger: "#alchemy-sanctum", start: "top 85%" },
-            x: -80, opacity: 0, duration: 1.2, ease: "power4.out", delay: 0.2
-        });
-
-        gsap.from(".vault-visual", {
-            scrollTrigger: { trigger: "#obsidian-vault", start: "top 85%" },
-            x: -80, opacity: 0, duration: 1.2, ease: "power4.out"
-        });
-        gsap.from(".vault-content", {
-            scrollTrigger: { trigger: "#obsidian-vault", start: "top 85%" },
-            x: 80, opacity: 0, duration: 1.2, ease: "power4.out", delay: 0.2
-        });
-
-        gsap.from(".aug-visual", {
-            scrollTrigger: { trigger: "#cybernetic-augmentations", start: "top 85%" },
-            x: 80, opacity: 0, duration: 1.2, ease: "power4.out"
-        });
-        gsap.from(".aug-content", {
-            scrollTrigger: { trigger: "#cybernetic-augmentations", start: "top 85%" },
-            x: -80, opacity: 0, duration: 1.2, ease: "power4.out", delay: 0.2
-        });
-    }
-
-    // ------------------------------------------------------------
-    // 9.5 SKEW ON SCROLL (TRENDING FLUIDITY EFFECT)
-    // ------------------------------------------------------------
-    let proxy = { skew: 0 },
-        skewSetter = gsap.quickSetter(".glass-panel, .stack-card, .armory-visual, .vault-visual, .aug-visual", "skewY", "deg"),
-        clamp = gsap.utils.clamp(-3, 3); // Limit skew to subtle degrees to avoid layout breaking
-
-    ScrollTrigger.create({
-        onUpdate: (self) => {
-            let skew = clamp(self.getVelocity() / -400); // Inverse velocity tied to skew
-            if (Math.abs(skew) > Math.abs(proxy.skew)) {
-                proxy.skew = skew;
-                gsap.to(proxy, {
-                    skew: 0,
-                    duration: 0.8,
-                    ease: "power3",
-                    overwrite: true,
-                    onUpdate: () => skewSetter(proxy.skew)
-                });
-            }
-        }
-    });
-
-    // Image slow zoom effect
-    gsap.utils.toArray('.img-zoom').forEach(img => {
-        gsap.to(img, {
-            scale: 1.15,
-            scrollTrigger: {
-                trigger: img,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: true
-            }
-        });
-    });
-
-})();
-</script>
-
-</body></html>
+</html>

@@ -349,7 +349,7 @@ h4 {
 }
 
 .hero-copy {
-    max-width: 640px;
+    max-width: 860px;
 }
 
 .hero-eyebrow,
@@ -409,7 +409,7 @@ h4 {
 
 .hero-lead {
     margin: 26px 0 0;
-    max-width: 590px;
+    max-width: 720px;
 }
 
 .button-row {
@@ -431,7 +431,9 @@ h4 {
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.16em;
+    line-height: 1;
     text-transform: uppercase;
+    text-decoration: none;
     transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 

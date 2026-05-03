@@ -1,0 +1,578 @@
+/* ============================================================
+   CAMELOT FLOWS — LANGUAGE SWITCHER (vertical letter stack)
+   Companion to the sun/moon theme toggle.
+   Cozy palette by default; [data-theme="night"] overrides below.
+   ============================================================ */
+
+/* ---- FOUC guard — only kicks in when chosen lang ≠ EN ---- */
+html[data-i18n-loading] [data-i18n],
+html[data-i18n-loading] [data-i18n-attr] {
+    visibility: hidden;
+}
+
+/* ---- Container ---- */
+.lang-switcher {
+    position: relative;
+    display: inline-flex;
+    font-family: 'Fraunces', Georgia, serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ---- Trigger button (closed: shows current language + chevron) ---- */
+.lang-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 10px 6px 12px;
+    height: 36px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.35);
+    color: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+    line-height: 1;
+    user-select: none;
+}
+
+.lang-trigger:hover,
+.lang-trigger:focus-visible {
+    outline: none;
+    border-color: rgba(99, 102, 241, 0.6);
+    background: rgba(99, 102, 241, 0.12);
+}
+
+.lang-current {
+    display: inline-block;
+    min-width: 22px;
+    text-align: center;
+    line-height: 1;
+}
+
+.lang-chevron {
+    font-size: 18px !important;
+    line-height: 1;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.8;
+}
+
+.lang-switcher.is-open .lang-chevron {
+    transform: rotate(180deg);
+}
+
+/* ---- Menu (vertical letter stack) ---- */
+.lang-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    min-width: 100%;
+    margin: 0;
+    padding: 4px;
+    list-style: none;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    background: rgba(10, 10, 14, 0.82);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45),
+                0 0 0 1px rgba(99, 102, 241, 0.18) inset;
+    z-index: 60;
+    overflow: hidden;
+    /* Closed: clipped from below so options drop down */
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
+    pointer-events: none;
+    transition: clip-path 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 0.2s ease;
+}
+
+.lang-switcher.is-open .lang-menu {
+    clip-path: inset(0 0 0% 0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lang-menu li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    padding: 8px 14px;
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.78);
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    line-height: 1;
+    transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+    /* Animate in on open */
+    opacity: 0;
+    transform: translateY(-6px);
+}
+
+.lang-switcher.is-open .lang-menu li {
+    opacity: 1;
+    transform: translateY(0);
+    transition: background 0.18s ease, color 0.18s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1) var(--cf-stagger, 0s),
+                opacity 0.35s ease var(--cf-stagger, 0s);
+}
+
+.lang-menu li:nth-child(1) { --cf-stagger: 0.04s; }
+.lang-menu li:nth-child(2) { --cf-stagger: 0.10s; }
+.lang-menu li:nth-child(3) { --cf-stagger: 0.16s; }
+
+.lang-menu li:hover,
+.lang-menu li:focus-visible,
+.lang-menu li.is-active {
+    outline: none;
+    color: #fff;
+    background: rgba(99, 102, 241, 0.18);
+}
+
+.lang-menu li.is-current {
+    color: #818cf8;
+}
+
+/* When the user clicks an option, GSAP/JS adds .is-flying — we simply
+   keep CSS out of the way; the JS runs the FLIP-style tween. */
+.lang-menu li.is-flying {
+    pointer-events: none;
+}
+
+/* ---- COZY THEME OVERRIDES (default visible state) ---- */
+[data-theme="cozy"] .lang-trigger {
+    background: rgba(255, 255, 255, 0.55);
+    border-color: rgba(60, 35, 25, 0.18);
+    color: #2c1f17;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset,
+                0 1px 2px rgba(60, 35, 25, 0.06);
+}
+
+[data-theme="cozy"] .lang-trigger:hover,
+[data-theme="cozy"] .lang-trigger:focus-visible {
+    border-color: rgba(193, 102, 55, 0.55);
+    background: rgba(255, 240, 230, 0.85);
+    color: #1a1209;
+}
+
+[data-theme="cozy"] .lang-menu {
+    background: rgba(252, 247, 240, 0.96);
+    border-color: rgba(60, 35, 25, 0.12);
+    box-shadow: 0 16px 40px rgba(60, 35, 25, 0.12),
+                0 0 0 1px rgba(193, 102, 55, 0.12) inset;
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
+}
+
+[data-theme="cozy"] .lang-menu li {
+    color: #4a3526;
+}
+
+[data-theme="cozy"] .lang-menu li:hover,
+[data-theme="cozy"] .lang-menu li:focus-visible,
+[data-theme="cozy"] .lang-menu li.is-active {
+    color: #1a1209;
+    background: rgba(193, 102, 55, 0.14);
+}
+
+[data-theme="cozy"] .lang-menu li.is-current {
+    color: #c16637;
+}
+
+/* ---- NIGHT THEME — already the base style, but tweak glow ---- */
+[data-theme="night"] .lang-trigger {
+    background: rgba(8, 12, 20, 0.55);
+    border-color: rgba(0, 242, 255, 0.18);
+    color: #e0f7ff;
+    box-shadow: 0 0 0 1px rgba(0, 242, 255, 0.04) inset;
+}
+
+[data-theme="night"] .lang-trigger:hover,
+[data-theme="night"] .lang-trigger:focus-visible {
+    border-color: rgba(0, 242, 255, 0.6);
+    background: rgba(0, 242, 255, 0.06);
+    color: #fff;
+    box-shadow: 0 0 18px rgba(0, 242, 255, 0.18),
+                0 0 0 1px rgba(0, 242, 255, 0.18) inset;
+}
+
+[data-theme="night"] .lang-menu {
+    background: rgba(6, 9, 16, 0.86);
+    border-color: rgba(0, 242, 255, 0.18);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55),
+                0 0 0 1px rgba(0, 242, 255, 0.12) inset,
+                0 0 32px rgba(0, 242, 255, 0.05);
+}
+
+[data-theme="night"] .lang-menu li:hover,
+[data-theme="night"] .lang-menu li:focus-visible,
+[data-theme="night"] .lang-menu li.is-active {
+    color: #fff;
+    background: rgba(0, 242, 255, 0.10);
+    box-shadow: 0 0 0 1px rgba(0, 242, 255, 0.24) inset;
+}
+
+[data-theme="night"] .lang-menu li.is-current {
+    color: #00f2ff;
+    text-shadow: 0 0 12px rgba(0, 242, 255, 0.5);
+}
+
+/* ---- Nav overflow fix for multilingual text ---- */
+/* Prevent translated labels (e.g. "АБО МНЕ") from wrapping; tighten px-3 → px-2 */
+nav a[data-i18n] {
+    white-space: nowrap;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+/* Shrink the right-side controls gap (gap-4 → gap-2) without touching HTML on all 14 pages */
+div:has(> a.nav-cta) {
+    gap: 0.5rem;
+}
+
+/* ---- Nav centering: give logo + controls equal flex-1 so links stay centered ---- */
+/* Logo section: grow to fill available space so nav links don't hug the left */
+nav > div > div:first-child {
+    flex: 1;
+}
+/* Controls section: grow + push content rightward */
+nav > div > div:last-child {
+    flex: 1;
+    justify-content: flex-end;
+}
+
+/* ---- Nav "More" submenu — notebook breakpoint (769–1379 px) ---- */
+.nav-more-wrapper {
+    position: relative;
+    display: none; /* JS shows it at notebook widths */
+    align-items: center;
+}
+
+.nav-more-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 8px 8px;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    color: rgba(148, 163, 184, 1);
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: color 0.2s ease, background 0.2s ease;
+    line-height: 1;
+}
+
+.nav-more-trigger:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-more-chevron {
+    font-size: 16px !important;
+    opacity: 0.7;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-more-wrapper.is-open .nav-more-chevron {
+    transform: rotate(180deg);
+}
+
+.nav-more-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    min-width: 150px;
+    padding: 4px;
+    background: rgba(10, 10, 14, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45),
+                0 0 0 1px rgba(99, 102, 241, 0.12) inset;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.nav-more-menu[hidden] {
+    display: none;
+}
+
+.nav-more-menu a {
+    display: block;
+    padding: 8px 14px;
+    color: rgba(148, 163, 184, 1);
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    white-space: nowrap;
+    transition: color 0.15s ease, background 0.15s ease;
+    /* Override the global nav a[data-i18n] padding rule */
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+}
+
+.nav-more-menu a:hover {
+    color: #fff;
+    background: rgba(99, 102, 241, 0.14);
+}
+
+/* Cozy theme */
+[data-theme="cozy"] .nav-more-trigger {
+    color: rgba(60, 35, 25, 0.65);
+}
+[data-theme="cozy"] .nav-more-trigger:hover {
+    color: #1a1209;
+    background: rgba(0, 0, 0, 0.05);
+}
+[data-theme="cozy"] .nav-more-menu {
+    background: rgba(252, 247, 240, 0.97);
+    border-color: rgba(60, 35, 25, 0.12);
+    box-shadow: 0 16px 40px rgba(60, 35, 25, 0.12),
+                0 0 0 1px rgba(193, 102, 55, 0.1) inset;
+}
+[data-theme="cozy"] .nav-more-menu a {
+    color: rgba(60, 35, 25, 0.72);
+}
+[data-theme="cozy"] .nav-more-menu a:hover {
+    color: #1a1209;
+    background: rgba(193, 102, 55, 0.12);
+}
+
+/* Night theme */
+[data-theme="night"] .nav-more-menu {
+    background: rgba(6, 9, 16, 0.88);
+    border-color: rgba(0, 242, 255, 0.15);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55),
+                0 0 0 1px rgba(0, 242, 255, 0.08) inset;
+}
+[data-theme="night"] .nav-more-menu a:hover {
+    background: rgba(0, 242, 255, 0.08);
+    color: #fff;
+}
+
+/* ---- Mobile sizing ---- */
+@media (max-width: 640px) {
+    .lang-trigger {
+        height: 32px;
+        padding: 4px 8px 4px 10px;
+        font-size: 13px;
+    }
+    .lang-chevron {
+        font-size: 16px !important;
+    }
+    .lang-menu li {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+    .lang-menu,
+    .lang-menu li,
+    .lang-chevron {
+        transition: none !important;
+    }
+}
+
+/* ---- View Transitions: cross-fade body during language swap ---- */
+@supports (view-transition-name: root) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation-duration: 0.35s;
+    }
+}
+
+/* ============================================================
+   MOBILE NAV — hamburger button + GSAP mega drawer
+   Hamburger: visible below 768px, positioned before // button.
+   Drawer: fixed, JS positions it below the glass nav panel.
+   ============================================================ */
+
+/* ---- Hamburger button ---- */
+.cf-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    flex-shrink: 0;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.cf-hamburger:hover {
+    background: rgba(99, 102, 241, 0.22);
+    border-color: rgba(99, 102, 241, 0.55);
+}
+
+/* Hide at md+ — §12 "More" handles those widths */
+@media (min-width: 768px) {
+    .cf-hamburger { display: none; }
+}
+
+/* ---- Mega drawer — JS sets top/left/right, GSAP controls display ---- */
+.cf-mobile-drawer {
+    display: none; /* JS sets to flex before GSAP animates */
+    position: fixed;
+    top: 5rem; /* fallback — JS overrides with navBar.getBoundingClientRect() */
+    left: 1rem;
+    right: 1rem;
+    background: rgba(8, 10, 18, 0.97);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 12px;
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75),
+                0 0 0 1px rgba(99, 102, 241, 0.12) inset,
+                0 0 48px rgba(99, 102, 241, 0.06);
+    z-index: 200;
+    flex-direction: column;
+    padding: 8px;
+    gap: 2px;
+    overflow: hidden;
+}
+
+/* Nav links inside drawer */
+.cf-mobile-drawer a {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px !important;
+    color: rgba(148, 163, 184, 0.9);
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: color 0.15s ease, background 0.15s ease;
+}
+
+.cf-mobile-drawer a:hover {
+    color: #fff;
+    background: rgba(99, 102, 241, 0.15);
+}
+
+/* CTA link (SUMMON_AGENT) gets accent styling */
+.cf-mobile-drawer a.nav-cta {
+    margin-top: 6px;
+    justify-content: center;
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.35);
+    color: #a5b4fc;
+}
+
+.cf-mobile-drawer a.nav-cta:hover {
+    background: rgba(99, 102, 241, 0.28);
+    border-color: rgba(99, 102, 241, 0.7);
+    color: #fff;
+}
+
+/* Separator line between regular links and CTA */
+.cf-mobile-drawer .cf-drawer-sep {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.07);
+    margin: 4px 8px;
+    flex-shrink: 0;
+}
+
+/* Hard-hide at md+ so even inline style can't override */
+@media (min-width: 768px) {
+    .cf-mobile-drawer { display: none !important; }
+}
+
+/* ---- Cozy overrides ---- */
+[data-theme="cozy"] .cf-hamburger {
+    background: rgba(255, 255, 255, 0.55);
+    border-color: rgba(60, 35, 25, 0.18);
+    color: #2c1f17;
+}
+[data-theme="cozy"] .cf-hamburger:hover {
+    background: rgba(255, 240, 230, 0.9);
+    border-color: rgba(193, 102, 55, 0.55);
+    color: #1a1209;
+}
+[data-theme="cozy"] .cf-mobile-drawer {
+    background: rgba(252, 247, 240, 0.98);
+    border-color: rgba(60, 35, 25, 0.14);
+    box-shadow: 0 24px 60px rgba(60, 35, 25, 0.18),
+                0 0 0 1px rgba(193, 102, 55, 0.12) inset;
+}
+[data-theme="cozy"] .cf-mobile-drawer a {
+    color: rgba(60, 35, 25, 0.75);
+}
+[data-theme="cozy"] .cf-mobile-drawer a:hover {
+    color: #1a1209;
+    background: rgba(193, 102, 55, 0.12);
+}
+[data-theme="cozy"] .cf-mobile-drawer a.nav-cta {
+    background: rgba(193, 102, 55, 0.1);
+    border-color: rgba(193, 102, 55, 0.4);
+    color: #c16637;
+}
+[data-theme="cozy"] .cf-mobile-drawer a.nav-cta:hover {
+    background: rgba(193, 102, 55, 0.22);
+    color: #1a1209;
+}
+[data-theme="cozy"] .cf-mobile-drawer .cf-drawer-sep {
+    background: rgba(60, 35, 25, 0.1);
+}
+
+/* ---- Night overrides ---- */
+[data-theme="night"] .cf-hamburger {
+    background: rgba(8, 12, 20, 0.55);
+    border-color: rgba(0, 242, 255, 0.2);
+    color: #e0f7ff;
+}
+[data-theme="night"] .cf-hamburger:hover {
+    background: rgba(0, 242, 255, 0.08);
+    border-color: rgba(0, 242, 255, 0.55);
+    color: #fff;
+    box-shadow: 0 0 16px rgba(0, 242, 255, 0.15);
+}
+[data-theme="night"] .cf-mobile-drawer {
+    background: rgba(4, 7, 14, 0.97);
+    border-color: rgba(0, 242, 255, 0.18);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8),
+                0 0 0 1px rgba(0, 242, 255, 0.08) inset,
+                0 0 40px rgba(0, 242, 255, 0.04);
+}
+[data-theme="night"] .cf-mobile-drawer a:hover {
+    background: rgba(0, 242, 255, 0.08);
+    color: #fff;
+}
+[data-theme="night"] .cf-mobile-drawer a.nav-cta {
+    background: rgba(0, 242, 255, 0.06);
+    border-color: rgba(0, 242, 255, 0.3);
+    color: #67e8f9;
+}
+[data-theme="night"] .cf-mobile-drawer a.nav-cta:hover {
+    background: rgba(0, 242, 255, 0.15);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.12);
+}

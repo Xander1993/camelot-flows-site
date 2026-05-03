@@ -37,6 +37,7 @@
 
     function initMagneticButtons() {
         if (!window.matchMedia("(pointer: fine)").matches) return;
+        if (query(".cf-cursor") || window.lenis) return;
 
         queryAll(".button, .nav-cta").forEach(function (button) {
             button.addEventListener("mousemove", function (event) {
@@ -93,7 +94,7 @@
 
         window.gsap.registerPlugin(window.ScrollTrigger);
 
-        const lenisAvailable = window.Lenis && !prefersReducedMotion;
+        const lenisAvailable = window.Lenis && !prefersReducedMotion && !window.lenis;
 
         if (lenisAvailable) {
             const lenis = new window.Lenis({
@@ -261,14 +262,33 @@
 
     function initLeadForm() {
         const params = new URLSearchParams(window.location.search);
+        const objectiveToService = {
+            creation: "site",
+            project: "site",
+            site: "site",
+            automation: "staff",
+            staff: "staff",
+            merlin: "staff",
+            maintenance: "other",
+            marketing: "other",
+            retainer: "round-table",
+            "round-table": "round-table",
+            agency: "agency"
+        };
 
         queryAll("[data-progress-form]").forEach(function (form) {
             const progressFill = query("[data-progress-fill]", form);
             const statusNode = query("[data-form-status]", form);
             const serviceField = query("select[name='service']", form);
+            const objectiveField = query("input[name='objective']", form);
+            const objective = normalizedValue(params.get("objective"));
 
-            if (serviceField && params.has("service")) {
-                const requested = normalizedValue(params.get("service"));
+            if (objectiveField && objective) {
+                objectiveField.value = objective;
+            }
+
+            if (serviceField && (params.has("service") || objective)) {
+                const requested = normalizedValue(params.get("service")) || objectiveToService[objective] || objective;
                 const options = Array.from(serviceField.options);
                 const exact = options.find(function (option) {
                     return normalizedValue(option.value || option.textContent) === requested;
@@ -305,6 +325,7 @@
                     ["Email", data.get("email")],
                     ["Service", data.get("service")],
                     ["Budget", data.get("budget")],
+                    ["Objective", data.get("objective")],
                     ["Timeline", data.get("timeline")],
                     ["Market", data.get("market")],
                     ["Project goal", data.get("project_goal")]
@@ -312,13 +333,14 @@
                     return entry[1] && String(entry[1]).trim() !== "";
                 });
 
-                const subject = "Project inquiry - " + (data.get("service") || "Camelot Flows");
+                const subjectPrefix = (window.cfI18n && window.cfI18n.t('contact.email_subject_prefix')) || "Project inquiry - ";
+                const subject = subjectPrefix + (data.get("service") || "Camelot Flows");
                 const body = pairs.map(function (entry) {
                     return entry[0] + ": " + entry[1];
                 }).join("\n");
 
                 if (statusNode) {
-                    statusNode.textContent = "Opening your email app with a structured project brief.";
+                    statusNode.textContent = (window.cfI18n && window.cfI18n.t('contact.form_status_opening')) || "Opening your email app with a structured project brief.";
                 }
 
                 window.location.href = "mailto:hello@camelotflows.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
