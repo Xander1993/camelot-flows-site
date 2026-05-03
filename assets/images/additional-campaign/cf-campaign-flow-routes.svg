@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Animated Camelot flow routes</title>
+  <desc id="desc">Warm abstract route lines connecting service nodes around a round-table map.</desc>
+  <style>
+    :root {
+      --cream: #f6f3ed;
+      --paper: #efe8d8;
+      --terra: #c4785c;
+      --sage: #7b9171;
+      --cobalt: #3f5d8d;
+      --ink: #1a1a18;
+    }
+    .route {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 18 28;
+      animation: routeFlow 10s linear infinite;
+    }
+    .route.slow { animation-duration: 15s; animation-direction: reverse; }
+    .pulse {
+      transform-origin: center;
+      animation: nodePulse 3.6s ease-in-out infinite;
+    }
+    .pulse:nth-of-type(odd) { animation-delay: .8s; }
+    .ring {
+      transform-origin: 800px 450px;
+      animation: rotateMap 42s linear infinite;
+    }
+    @keyframes routeFlow { to { stroke-dashoffset: -460; } }
+    @keyframes nodePulse {
+      0%, 100% { opacity: .65; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.08); }
+    }
+    @keyframes rotateMap { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      .route, .pulse, .ring { animation: none; }
+    }
+  </style>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="46%" r="70%">
+      <stop offset="0%" stop-color="#fffaf0"/>
+      <stop offset="54%" stop-color="#f6f3ed"/>
+      <stop offset="100%" stop-color="#e9dfce"/>
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="280" cy="170" r="220" fill="#7b9171" opacity=".11" filter="url(#soft)"/>
+  <circle cx="1320" cy="710" r="260" fill="#c4785c" opacity=".14" filter="url(#soft)"/>
+  <g opacity=".12" stroke="#1a1a18" stroke-width="1">
+    <path d="M0 150H1600M0 300H1600M0 450H1600M0 600H1600M0 750H1600"/>
+    <path d="M160 0V900M320 0V900M480 0V900M640 0V900M800 0V900M960 0V900M1120 0V900M1280 0V900M1440 0V900"/>
+  </g>
+  <g class="ring" fill="none" stroke="#3f5d8d" stroke-width="2" opacity=".34">
+    <circle cx="800" cy="450" r="250"/>
+    <circle cx="800" cy="450" r="330" stroke-dasharray="8 22"/>
+    <path d="M800 120L1030 450L800 780L570 450Z"/>
+  </g>
+  <g stroke-width="9">
+    <path class="route" stroke="#c4785c" d="M170 590C360 350 510 295 800 450C1075 596 1230 565 1430 330"/>
+    <path class="route slow" stroke="#7b9171" d="M210 330C420 512 585 610 800 450C1010 295 1198 248 1410 580"/>
+    <path class="route" stroke="#3f5d8d" opacity=".85" d="M405 735C560 640 640 500 800 450C1010 382 1110 250 1235 145"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" font-size="22" letter-spacing="6" text-anchor="middle" fill="#1a1a18">
+    <g class="pulse">
+      <circle cx="800" cy="450" r="82" fill="#f9f5ec" stroke="#c4785c" stroke-width="3"/>
+      <path d="M800 404l43 23v44l-43 25l-43-25v-44z" fill="none" stroke="#c4785c" stroke-width="8"/>
+    </g>
+    <g class="pulse">
+      <rect x="118" y="538" width="210" height="104" rx="22" fill="#fffaf0" stroke="#c4785c" opacity=".9"/>
+      <text x="223" y="600">SITE</text>
+    </g>
+    <g class="pulse">
+      <rect x="1270" y="278" width="220" height="104" rx="22" fill="#fffaf0" stroke="#7b9171" opacity=".9"/>
+      <text x="1380" y="340">STAFF</text>
+    </g>
+    <g class="pulse">
+      <rect x="1230" y="640" width="250" height="104" rx="22" fill="#fffaf0" stroke="#3f5d8d" opacity=".9"/>
+      <text x="1355" y="702">HANDOFF</text>
+    </g>
+    <g class="pulse">
+      <rect x="130" y="260" width="250" height="104" rx="22" fill="#fffaf0" stroke="#3f5d8d" opacity=".9"/>
+      <text x="255" y="322">STRATEGY</text>
+    </g>
+  </g>
+</svg>

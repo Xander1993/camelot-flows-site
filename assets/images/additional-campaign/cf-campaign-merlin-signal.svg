@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Animated Merlin signal orb</title>
+  <desc id="desc">A dark glass signal orb with animated assistant rings and route sparks.</desc>
+  <style>
+    .ring {
+      fill: none;
+      stroke-linecap: round;
+      transform-origin: 600px 600px;
+      animation: spin 24s linear infinite;
+    }
+    .ring.alt { animation-duration: 34s; animation-direction: reverse; }
+    .spark {
+      transform-origin: center;
+      animation: spark 2.8s ease-in-out infinite;
+    }
+    .spark:nth-child(2n) { animation-delay: .7s; }
+    .core { animation: breathe 4.8s ease-in-out infinite; transform-origin: 600px 600px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes spark {
+      0%, 100% { opacity: .25; transform: scale(.88); }
+      50% { opacity: 1; transform: scale(1.14); }
+    }
+    @keyframes breathe {
+      0%, 100% { transform: scale(1); opacity: .92; }
+      50% { transform: scale(1.04); opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ring, .spark, .core { animation: none; }
+    }
+  </style>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#15162a"/>
+      <stop offset="60%" stop-color="#080811"/>
+      <stop offset="100%" stop-color="#050508"/>
+    </radialGradient>
+    <radialGradient id="orb" cx="50%" cy="42%" r="60%">
+      <stop offset="0%" stop-color="#dbeafe" stop-opacity=".9"/>
+      <stop offset="34%" stop-color="#6366f1" stop-opacity=".62"/>
+      <stop offset="72%" stop-color="#8b5cf6" stop-opacity=".22"/>
+      <stop offset="100%" stop-color="#00f2ff" stop-opacity=".08"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="1200" fill="url(#bg)"/>
+  <g opacity=".18" stroke="#6366f1">
+    <path d="M0 200H1200M0 400H1200M0 600H1200M0 800H1200M0 1000H1200"/>
+    <path d="M200 0V1200M400 0V1200M600 0V1200M800 0V1200M1000 0V1200"/>
+  </g>
+  <circle cx="600" cy="600" r="390" fill="#6366f1" opacity=".08" filter="url(#glow)"/>
+  <g class="ring" stroke="#00f2ff" stroke-width="3" opacity=".55">
+    <circle cx="600" cy="600" r="280" stroke-dasharray="18 34"/>
+    <path d="M600 260L894 430V770L600 940L306 770V430Z"/>
+  </g>
+  <g class="ring alt" stroke="#8b5cf6" stroke-width="4" opacity=".72">
+    <circle cx="600" cy="600" r="210" stroke-dasharray="7 24"/>
+    <circle cx="600" cy="600" r="338" stroke-dasharray="3 28"/>
+  </g>
+  <g class="core" filter="url(#glow)">
+    <circle cx="600" cy="600" r="142" fill="url(#orb)" stroke="#a5b4fc" stroke-width="2"/>
+    <path d="M600 512l78 42v83l-78 45l-78-45v-83z" fill="none" stroke="#e0e7ff" stroke-width="12"/>
+    <path d="M600 548v96M554 574l46 24l46-24" fill="none" stroke="#00f2ff" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <g fill="#00f2ff" filter="url(#glow)">
+    <circle class="spark" cx="292" cy="470" r="8"/>
+    <circle class="spark" cx="910" cy="430" r="7"/>
+    <circle class="spark" cx="828" cy="858" r="9"/>
+    <circle class="spark" cx="406" cy="820" r="7"/>
+    <circle class="spark" cx="600" cy="205" r="6"/>
+    <circle class="spark" cx="1020" cy="630" r="6"/>
+  </g>
+</svg>
