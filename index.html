@@ -64,6 +64,110 @@
     <link rel="prefetch" href="contact.html" as="document">
     <link rel="prefetch" href="case-studies.html" as="document">
     <link rel="prefetch" href="about.html" as="document">
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://camelotflows.dev/#business",
+          "name": "Camelot Flows",
+          "url": "https://camelotflows.dev/",
+          "logo": "https://camelotflows.dev/assets/images/logo.png",
+          "description": "AI-powered WordPress development and automation for agencies and founders in Romania and Europe.",
+          "founder": {
+            "@type": "Person",
+            "name": "Alexandru Buzi",
+            "jobTitle": "WordPress Developer & AI Automation Specialist",
+            "url": "https://camelotflows.dev/about.html"
+          },
+          "areaServed": ["Romania", "Moldova", "European Union"],
+          "knowsLanguage": ["en", "ro", "ru"],
+          "priceRange": "€€",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Web & AI Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "name": "Launch Page",
+                "description": "Complete WordPress site — designed, built, and live in 10 days.",
+                "price": "390",
+                "priceCurrency": "EUR",
+                "url": "https://camelotflows.dev/service-creation.html"
+              },
+              {
+                "@type": "Offer",
+                "name": "Merlin Automation",
+                "description": "AI agent stack that handles repetitive workflows inside your business.",
+                "price": "1200",
+                "priceCurrency": "EUR",
+                "url": "https://camelotflows.dev/service-automation.html"
+              },
+              {
+                "@type": "Offer",
+                "name": "Agency Partner Sprint",
+                "description": "White-label WordPress development for agencies — delivered per sprint.",
+                "price": "800",
+                "priceCurrency": "EUR",
+                "url": "https://camelotflows.dev/for-agencies.html"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://camelotflows.dev/#website",
+          "url": "https://camelotflows.dev/",
+          "name": "Camelot Flows",
+          "publisher": { "@id": "https://camelotflows.dev/#business" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://camelotflows.dev/case-studies.html?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How long does it take to build a WordPress site?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A Launch Page is delivered in 10 business days from kickoff. Larger custom builds are quoted per scope."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you work with agencies?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The Agency Partner Sprint is a white-label engagement — your branding, your client, delivered on schedule. Starting at €800/sprint."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the Merlin AI Protocol?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Merlin is our AI automation stack: workflows, lead-capture bots, and GPT-powered assistants built into your WordPress site or business process."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where are you based?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Based in Moldova, serving Romania and the wider EU. All communication is async-first in English or Romanian."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body class="theme-cozy font-body overflow-x-hidden selection:bg-primary selection:text-white">
@@ -143,6 +247,8 @@
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
                     href="about.html" data-i18n="common.nav.about">[About]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="#starwars-pricing" data-i18n="common.nav.pricing">[Pricing]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
                     href="contact.html" data-i18n="common.nav.contact">[Contact]</a>
             </div>
             <div class="flex items-center gap-4">
@@ -166,7 +272,7 @@
     <span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
 </button>
                 <a href="contact.html?service=staff"
-                    class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-5 py-2 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong inline-flex items-center nav-cta"
+                    class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-5 py-2 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong hidden md:inline-flex items-center nav-cta"
                     data-i18n="common.nav.summon_agent">
                     // SUMMON_AGENT
                 </a>
@@ -226,7 +332,7 @@
                     Sites in two weeks. AI staff in three.
                 </p>
                 <div id="hero-btns" class="flex flex-wrap gap-5">
-                    <button onclick="window.location.href='contact.html'"
+                    <a href="contact.html"
                         class="group relative px-8 py-4 bg-primary text-white font-mono font-bold text-sm tracking-wide overflow-hidden rounded-sm hover:scale-[1.02] transition-transform">
                         <div
                             class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000">
@@ -235,12 +341,12 @@
                             <span data-i18n="pages.index.hero_btn_start">START A PROJECT</span>
                             <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </span>
-                    </button>
-                    <button onclick="window.location.href='arsenal.html'"
+                    </a>
+                    <a href="arsenal.html"
                         class="px-8 py-4 glass-panel text-slate-300 font-mono font-bold text-sm tracking-wide rounded-sm hover:bg-white/5 border border-white/10 hover:border-primary/50 transition-colors flex items-center gap-3">
                         <span data-i18n="pages.index.hero_btn_view">VIEW ARSENAL</span>
                         <span class="material-symbols-outlined text-sm opacity-50">grid_view</span>
-                    </button>
+                    </a>
                 </div>
                 <div id="hero-stats" class="mt-16 flex gap-8 md:gap-12 border-t border-white/5 pt-8">
                     <div>
@@ -714,10 +820,10 @@
                         Pipelines</span>
                     </li>
                 </ul>
-                <button onclick="window.location.href='arsenal.html'"
+                <a href="arsenal.html"
                     class="bg-obsidian border border-neon-cyan/50 text-neon-cyan px-8 py-4 rounded text-xs font-bold font-mono uppercase tracking-[0.2em] hover:bg-neon-cyan hover:text-obsidian transition-colors shadow-[0_0_15px_rgba(0,242,255,0.2)]" data-i18n="pages.index.armory_btn">
                     ENTER THE FORGE
-                </button>
+                </a>
             </div>
         </div>
     </section>
@@ -752,10 +858,10 @@
                         Execution</span>
                     </li>
                 </ul>
-                <button onclick="window.location.href='merlin.html'"
+                <a href="merlin.html"
                     class="bg-obsidian border border-neon-purple/50 text-neon-purple px-8 py-4 rounded text-xs font-bold font-mono uppercase tracking-[0.2em] hover:bg-neon-purple hover:text-obsidian transition-colors shadow-[0_0_15px_rgba(191,0,255,0.2)]" data-i18n="pages.index.alchemy_btn">
                     VIEW AUTOMATIONS
-                </button>
+                </a>
             </div>
             <div
                 class="alchemy-visual cf-artifact-frame cf-artifact-frame--sage relative h-[400px] md:h-[600px] w-full overflow-hidden glass-panel border border-neon-purple/20 p-2 order-1 lg:order-2">
