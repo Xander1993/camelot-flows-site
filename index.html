@@ -64,110 +64,101 @@
     <link rel="prefetch" href="contact.html" as="document">
     <link rel="prefetch" href="case-studies.html" as="document">
     <link rel="prefetch" href="about.html" as="document">
-    <!-- JSON-LD structured data -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Person", "ProfessionalService"],
+  "name": "Alexandru Buzi",
+  "alternateName": "Camelot Flows",
+  "url": "https://camelotflows.dev/",
+  "image": "https://camelotflows.dev/assets/images/cozy-freelancer/cf-cozy-og-default.webp",
+  "description": "Freelance WordPress developer and AI automation specialist based in Chisinau, Moldova. Award-quality websites and n8n automation for European SMEs and agencies.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Chișinău",
+    "addressCountry": "MD"
+  },
+  "knowsAbout": ["WordPress Development", "GSAP Animation", "AI Automation", "n8n", "Web Design"],
+  "offers": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "LocalBusiness",
-          "@id": "https://camelotflows.dev/#business",
-          "name": "Camelot Flows",
-          "url": "https://camelotflows.dev/",
-          "logo": "https://camelotflows.dev/assets/images/logo.png",
-          "description": "AI-powered WordPress development and automation for agencies and founders in Romania and Europe.",
-          "founder": {
-            "@type": "Person",
-            "name": "Alexandru Buzi",
-            "jobTitle": "WordPress Developer & AI Automation Specialist",
-            "url": "https://camelotflows.dev/about.html"
-          },
-          "areaServed": ["Romania", "Moldova", "European Union"],
-          "knowsLanguage": ["en", "ro", "ru"],
-          "priceRange": "€€",
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Web & AI Services",
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "name": "Launch Page",
-                "description": "Complete WordPress site — designed, built, and live in 10 days.",
-                "price": "390",
-                "priceCurrency": "EUR",
-                "url": "https://camelotflows.dev/service-creation.html"
-              },
-              {
-                "@type": "Offer",
-                "name": "Merlin Automation",
-                "description": "AI agent stack that handles repetitive workflows inside your business.",
-                "price": "1200",
-                "priceCurrency": "EUR",
-                "url": "https://camelotflows.dev/service-automation.html"
-              },
-              {
-                "@type": "Offer",
-                "name": "Agency Partner Sprint",
-                "description": "White-label WordPress development for agencies — delivered per sprint.",
-                "price": "800",
-                "priceCurrency": "EUR",
-                "url": "https://camelotflows.dev/for-agencies.html"
-              }
-            ]
-          }
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://camelotflows.dev/#website",
-          "url": "https://camelotflows.dev/",
-          "name": "Camelot Flows",
-          "publisher": { "@id": "https://camelotflows.dev/#business" },
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://camelotflows.dev/case-studies.html?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "How long does it take to build a WordPress site?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "A Launch Page is delivered in 10 business days from kickoff. Larger custom builds are quoted per scope."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Do you work with agencies?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. The Agency Partner Sprint is a white-label engagement — your branding, your client, delivered on schedule. Starting at €800/sprint."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What is the Merlin AI Protocol?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Merlin is our AI automation stack: workflows, lead-capture bots, and GPT-powered assistants built into your WordPress site or business process."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Where are you based?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Based in Moldova, serving Romania and the wider EU. All communication is async-first in English or Romanian."
-              }
-            }
-          ]
-        }
-      ]
+      "@type": "Offer",
+      "name": "Launch Page",
+      "price": "390",
+      "priceCurrency": "EUR",
+      "url": "https://camelotflows.dev/#starwars-pricing"
+    },
+    {
+      "@type": "Offer",
+      "name": "Signature Landing",
+      "price": "650",
+      "priceCurrency": "EUR",
+      "url": "https://camelotflows.dev/#starwars-pricing"
+    },
+    {
+      "@type": "Offer",
+      "name": "Site Sprint",
+      "price": "900",
+      "priceCurrency": "EUR",
+      "url": "https://camelotflows.dev/#starwars-pricing"
+    },
+    {
+      "@type": "Offer",
+      "name": "Merlin Automation",
+      "price": "1200",
+      "priceCurrency": "EUR",
+      "url": "https://camelotflows.dev/merlin.html"
+    },
+    {
+      "@type": "Offer",
+      "name": "Agency Partner Sprint",
+      "price": "800",
+      "priceCurrency": "EUR",
+      "url": "https://camelotflows.dev/for-agencies.html"
     }
-    </script>
+  ]
+}
+</script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://camelotflows.dev/",
+  "name": "Camelot Flows",
+  "description": "Award-quality websites and AI automation from a solo workshop in Chisinau."
+}
+</script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does a website cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Launch Page starts from €390 (5-7 days). A Signature Landing starts from €650. A full Site Sprint starts from €900."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does AI automation cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Merlin Automation setup starts from €1,200."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer white-label services for agencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The Agency Partner plan starts at €800/sprint with NDA-protected development and direct async updates."
+      }
+    }
+  ]
+}
+</script>
 </head>
 
 <body class="theme-cozy font-body overflow-x-hidden selection:bg-primary selection:text-white">
