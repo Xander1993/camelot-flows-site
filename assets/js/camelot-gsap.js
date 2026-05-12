@@ -1451,4 +1451,17 @@
                 if (window.innerWidth >= BREAKPOINT && isOpen) closeDrawer(true);
             });
         })();
+
+        // ── Phone button hover: GSAP scale pulse layered on CSS ring ─────────
+        (() => {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            document.querySelectorAll('.nav-phone-btn').forEach(btn => {
+                btn.addEventListener('mouseenter', () => {
+                    gsap.to(btn, { scale: 1.1, duration: 0.18, ease: 'power2.out' });
+                });
+                btn.addEventListener('mouseleave', () => {
+                    gsap.to(btn, { scale: 1, duration: 0.5, ease: 'elastic.out(1.4, 0.5)' });
+                });
+            });
+        })();
         }
