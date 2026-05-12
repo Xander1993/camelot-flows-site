@@ -4,3 +4,35 @@ __pycache__/
 .env
 node_modules/
 .netlify
+
+# Build output
+dist/
+
+# Generated archives
+*.zip
+
+# Local debug
+debug/
+debug.txt
+
+# Local archive (orphans + scratch)
+_archive/
+
+# WordPress theme (deployed separately to VPS)
+wp-theme/
+
+# Python build scripts (not part of static site)
+*.py
+
+# Tailwind build intermediates
+src/tw.css.bak
+
+# VPS deploy artifacts (generated, contain base64 blobs)
+_cf_deploy.php
+_cf_content.php
+_do_console_deploy.txt
+_deploy_commands.txt
+
+# Security: unauthenticated WP setup helper — never deploy
+_cf_setup.php
+_cf_setup.b64
