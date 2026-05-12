@@ -23,6 +23,7 @@
         contact: "[Contact]",
         more: "[More]",
         summon_agent: "// SUMMON_AGENT",
+        pricing: "[Pricing]",
         sys_online: "SYS_ONLINE"
       },
       footer: {
@@ -682,6 +683,7 @@
         contact: "[Contact]",
         more: "[Mai mult]",
         summon_agent: "// SUMMON_AGENT",
+        pricing: "[Prețuri]",
         sys_online: "SYS_ONLINE"
       },
       footer: {
@@ -1339,6 +1341,7 @@
         contact: "[Контакты]",
         more: "[Ещё]",
         summon_agent: "// SUMMON_AGENT",
+        pricing: "[Цены]",
         sys_online: "SYS_ONLINE"
       },
       footer: {
