@@ -1403,7 +1403,7 @@ body {
 }
 .hero-photo-wrap img {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     display: block;
     transition: transform 7s ease;
@@ -1461,6 +1461,25 @@ body {
 }
 [data-theme="night"] .editorial-kicker {
     color: #f0f0f8;
+}
+
+/* ── Cozy theme: soften dark lifestyle images ─────────────── */
+[data-theme="cozy"] .hero-photo-wrap img,
+[data-theme="cozy"] .editorial-photo img {
+    opacity: 0.88;
+}
+
+/* ── Merlin signal SVG: float rings on dark glass (night) ───── */
+.merlin-signal-wrap {
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+[data-theme="night"] .merlin-signal-wrap {
+    background: radial-gradient(ellipse at 50% 45%, #15162a 0%, #080811 60%, #050508 100%);
+    box-shadow: 0 0 80px rgba(99, 102, 241, 0.12);
 }
 
 #hero-word-1,

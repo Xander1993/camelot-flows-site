@@ -48,7 +48,7 @@
       </feMerge>
     </filter>
   </defs>
-  <rect width="1200" height="1200" fill="url(#bg)"/>
+  <rect width="1200" height="1200" fill="none"/>
   <g opacity=".18" stroke="#6366f1">
     <path d="M0 200H1200M0 400H1200M0 600H1200M0 800H1200M0 1000H1200"/>
     <path d="M200 0V1200M400 0V1200M600 0V1200M800 0V1200M1000 0V1200"/>
