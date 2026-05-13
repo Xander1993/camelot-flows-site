@@ -876,11 +876,11 @@
         // One-shot flash zoom entrance: snaps in from 1.14 → 1 with fast ease-out
         gsap.utils.toArray('.img-flash-zoom').forEach(img => {
             gsap.fromTo(img,
-                { scale: 1.14 },
+                { scale: 1.55 },
                 {
                     scale: 1,
-                    duration: 0.55,
-                    ease: 'power3.out',
+                    duration: 0.16,
+                    ease: 'expo.out',
                     scrollTrigger: {
                         trigger: img,
                         start: 'top 88%',
