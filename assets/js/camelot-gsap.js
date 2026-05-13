@@ -555,7 +555,13 @@
                 const crawlContent = document.querySelector('.crawl-content');
                 if (!crawlContent) return;
 
-                // Initial setup
+                // Blueprint / background elements inside the section
+                const blueprintEls = pricingSection.querySelectorAll(
+                    '.pricing-blueprint-system, .pricing-route-card, .hologram-sword-img, .starfield-anim'
+                );
+
+                // Start section invisible so it doesn't flash blueprint before pin
+                gsap.set(pricingSection, { opacity: 0 });
                 gsap.set(crawlContent, {
                     rotationX: 25,
                     yPercent: 0,
@@ -568,14 +574,18 @@
                     scrollTrigger: {
                         trigger: "#starwars-pricing",
                         start: "top top",
-                        end: "+=140%",
+                        end: "+=120%",
                         pin: true,
                         scrub: 1.5,
                     }
                 });
 
                 crawlTl
+                    // Snap section visible immediately as pin starts
+                    .to(pricingSection, { opacity: 1, duration: 0.04, ease: 'none' }, 0)
+                    // Crawl fades in
                     .to(crawlContent, { opacity: 1, duration: 0.1 }, 0)
+                    // Crawl scrolls up
                     .to(crawlContent, {
                         yPercent: -180,
                         z: -1200,
@@ -583,9 +593,10 @@
                         ease: "power1.inOut",
                         duration: 1
                     }, 0)
-                    // Fade crawl content AND the whole section background simultaneously
-                    .to(crawlContent, { opacity: 0, duration: 0.08 }, 0.82)
-                    .to(pricingSection, { opacity: 0, duration: 0.18 }, 0.82);
+                    // Everything fades out together at 78% — blueprint elements + crawl + section bg
+                    .to(crawlContent, { opacity: 0, duration: 0.06 }, 0.78)
+                    .to(blueprintEls, { opacity: 0, duration: 0.14, stagger: 0 }, 0.78)
+                    .to(pricingSection, { opacity: 0, duration: 0.22 }, 0.78);
 
                 // Animate the hologram sword subtly
                 gsap.to('.hologram-sword-img', {

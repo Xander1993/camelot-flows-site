@@ -83,13 +83,13 @@
                     href="<?php echo CF_MAIN_SITE; ?>/for-agencies.html" data-i18n="common.nav.agencies">[Agencies]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden xl:block"
                     href="<?php echo CF_MAIN_SITE; ?>/about.html" data-i18n="common.nav.about">[About]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden xl:block"
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
                     href="<?php echo CF_MAIN_SITE; ?>/#starwars-pricing" data-i18n="common.nav.pricing">[Pricing]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
                     href="<?php echo CF_MAIN_SITE; ?>/contact.html" data-i18n="common.nav.contact">[Contact]</a>
             </div>
             <div class="flex items-center gap-2">
-                <a href="tel:+37369555936" class="nav-phone-btn flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" aria-label="Call Camelot Flows" title="+373 69 555 936">
+                <a href="tel:+37369555936" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" aria-label="Call Camelot Flows" title="+373 69 555 936">
                     <span class="material-symbols-outlined cf-phone-icon" style="font-size:18px">call</span>
                 </a>
                 <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
