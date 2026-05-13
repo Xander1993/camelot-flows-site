@@ -1325,6 +1325,7 @@ body {
     object-fit: cover;
     aspect-ratio: 3 / 4;
     box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+    transform: scaleX(-1);
 }
 
 @media (max-width: 820px) {
