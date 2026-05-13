@@ -1651,13 +1651,13 @@ body {
     font-style: italic;
     background-image: linear-gradient(
         110deg,
-        #c4785c  0%,
+        #b86848  0%,
         #c4785c 30%,
-        #f0c4aa 41%,
-        #fff2ea 50%,
-        #f0c4aa 59%,
+        #e0956a 41%,
+        #f0a870 50%,
+        #e0956a 59%,
         #c4785c 70%,
-        #c4785c 100%
+        #b86848 100%
     );
     background-size: 200% 100%;
     -webkit-background-clip: text;
