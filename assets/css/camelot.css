@@ -1650,18 +1650,18 @@ body {
 }
 
 .cf-glow-text {
-    color: rgb(var(--cft-terracotta));
+    color: var(--terracotta);
     font-style: italic;
     padding-bottom: 4px;
     background-image: linear-gradient(
         90deg,
         transparent 0%,
         transparent 28%,
-        rgb(var(--cft-terracotta) / 0.12) 36%,
-        rgb(var(--cft-terracotta) / 0.85) 47%,
-        rgb(var(--cft-terracotta))        50%,
-        rgb(var(--cft-terracotta) / 0.85) 53%,
-        rgb(var(--cft-terracotta) / 0.12) 64%,
+        rgba(196, 120, 92, 0.12) 36%,
+        rgba(196, 120, 92, 0.85) 47%,
+        rgba(196, 120, 92, 1)    50%,
+        rgba(196, 120, 92, 0.85) 53%,
+        rgba(196, 120, 92, 0.12) 64%,
         transparent 72%,
         transparent 100%
     );
@@ -1674,17 +1674,17 @@ body {
 
 /* Night mode: switch to neon cyan for maximum impact */
 [data-theme="night"] .cf-glow-text {
-    color: rgb(var(--cft-candle));
-    text-shadow: 0 0 28px rgb(var(--cft-candle) / 0.38);
+    color: #00f2ff;
+    text-shadow: 0 0 28px rgba(0, 242, 255, 0.38);
     background-image: linear-gradient(
         90deg,
         transparent 0%,
         transparent 28%,
-        rgb(var(--cft-candle) / 0.10) 36%,
-        rgb(var(--cft-candle) / 0.85) 47%,
-        rgb(var(--cft-candle))        50%,
-        rgb(var(--cft-candle) / 0.85) 53%,
-        rgb(var(--cft-candle) / 0.10) 64%,
+        rgba(0, 242, 255, 0.10) 36%,
+        rgba(0, 242, 255, 0.85) 47%,
+        rgba(0, 242, 255, 1)    50%,
+        rgba(0, 242, 255, 0.85) 53%,
+        rgba(0, 242, 255, 0.10) 64%,
         transparent 72%,
         transparent 100%
     );
