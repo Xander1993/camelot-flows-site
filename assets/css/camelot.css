@@ -689,6 +689,15 @@ body {
             letter-spacing: -0.03em;
         }
 
+        /* ── Button overrides ───────────────────────────────── */
+        [data-theme="cozy"] body.theme-cozy .button.primary {
+            background: linear-gradient(to bottom right, #C4785C, #7B9171);
+            color: #fff !important;
+        }
+        [data-theme="cozy"] body.theme-cozy .button.primary:hover {
+            background: linear-gradient(to bottom right, #b86e53, #6d8465);
+        }
+
         /* ── Text colour overrides ──────────────────────────── */
         [data-theme="cozy"] body.theme-cozy .text-white,
         [data-theme="cozy"] body.theme-cozy .text-slate-100,
