@@ -76,6 +76,7 @@
 </head>
 
 <body class="theme-cozy font-body overflow-x-hidden selection:bg-primary selection:text-white">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999999] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm focus:font-mono focus:shadow-neon" data-i18n="common.skip_link">Skip to main content</a>
     <div class="scroll-progress" aria-hidden="true"></div>
 
     <div id="preloader" class="fixed inset-0 z-[999999] bg-obsidian flex flex-col items-center justify-center">
@@ -147,7 +148,8 @@
         </div>
     </nav>
 
-<main id="service-creation" class="relative pt-32 pb-20 px-0 min-h-screen overflow-x-hidden bg-obsidian text-charcoal">
+<a id="main-content" aria-hidden="true" tabindex="-1" style="position:absolute;opacity:0;pointer-events:none;"></a>
+    <main id="service-creation" class="relative pt-32 pb-20 px-0 min-h-screen overflow-x-hidden bg-obsidian text-charcoal">
 
     <!-- HERO -->
     <section class="relative max-w-7xl mx-auto px-6 mb-32 z-10 pt-16">
