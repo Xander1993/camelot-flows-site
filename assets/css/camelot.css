@@ -1307,6 +1307,35 @@ body {
     max-width: 100%;
 }
 
+.about-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 48px;
+    align-items: center;
+}
+
+.about-hero-grid .hero-copy {
+    max-width: none;
+}
+
+.about-hero-photo img {
+    width: 100%;
+    border-radius: 20px;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 3 / 4;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 820px) {
+    .about-hero-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-hero-photo {
+        display: none;
+    }
+}
+
 #hero-word-1,
 #hero-word-2 {
     max-width: 100%;
