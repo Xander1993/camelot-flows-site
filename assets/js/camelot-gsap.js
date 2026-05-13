@@ -1031,6 +1031,13 @@
                         if (menu) reorderMenuItems(menu, lang);
                         syncTriggerLabel(switcher, lang);
                         closeSwitcher(switcher);
+                        // Announce language change to screen readers
+                        const announcer = document.getElementById('lang-announce');
+                        if (announcer) {
+                            const names = { en: 'English selected', ro: 'Română selectată', ru: 'Русский выбран' };
+                            announcer.textContent = '';
+                            requestAnimationFrame(() => { announcer.textContent = names[lang] || lang; });
+                        }
                     });
                 };
 
