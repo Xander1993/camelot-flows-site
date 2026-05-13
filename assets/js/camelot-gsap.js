@@ -568,7 +568,7 @@
                     scrollTrigger: {
                         trigger: "#starwars-pricing",
                         start: "top top",
-                        end: "+=190%",
+                        end: "+=140%",
                         pin: true,
                         scrub: 1.5,
                     }
@@ -583,7 +583,9 @@
                         ease: "power1.inOut",
                         duration: 1
                     }, 0)
-                    .to(crawlContent, { opacity: 0, duration: 0.1 }, 0.9);
+                    // Fade crawl content AND the whole section background simultaneously
+                    .to(crawlContent, { opacity: 0, duration: 0.08 }, 0.82)
+                    .to(pricingSection, { opacity: 0, duration: 0.18 }, 0.82);
 
                 // Animate the hologram sword subtly
                 gsap.to('.hologram-sword-img', {
