@@ -236,28 +236,43 @@
     </div>
   </section>
 
+  <!-- Merlin interface visual -->
+  <section class="section" style="padding-top:0;padding-bottom:0;">
+    <div class="container">
+      <div style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/7;box-shadow:0 12px 48px rgba(0,0,0,0.14);">
+        <img src="assets/images/cozy-freelancer/cf-campaign-merlin-interface.webp" alt="Merlin AI agent interface" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">
+        <div style="position:absolute;top:50%;right:4%;transform:translateY(-50%);width:min(140px,18%);opacity:0.92;">
+          <img src="assets/images/cozy-freelancer/cf-campaign-merlin-signal.svg" alt="" aria-hidden="true" style="width:100%;height:auto;display:block;">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- How it's built -->
   <section class="section">
     <div class="container">
-      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start;">
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center;">
         <div>
           <p class="section-kicker" data-i18n="pages.merlin.s_build_kicker">The build</p>
           <h2 class="section-title" data-i18n="pages.merlin.s_build_h2">How I set it up.</h2>
           <p style="color:var(--cf-muted);font-size:1.02rem;line-height:1.75;margin:24px 0 0" data-i18n="pages.merlin.s_build_p">Every Merlin instance is custom-built for one business. I train it on your docs, your tone, your offers, and your edge cases. Setup takes 2–3 weeks. After that, the monthly fee covers hosting, model costs, and ongoing refinement.</p>
+          <div style="display:grid;gap:16px;margin-top:24px">
+            <div class="stack-card">
+              <strong data-i18n="pages.merlin.s_build_c1_h">Week 1 — Knowledge build</strong>
+              <p data-i18n="pages.merlin.s_build_c1_p">I ingest your docs, FAQs, pricing, and past conversations to build the context base.</p>
+            </div>
+            <div class="stack-card">
+              <strong data-i18n="pages.merlin.s_build_c2_h">Week 2 — Workflow wiring</strong>
+              <p data-i18n="pages.merlin.s_build_c2_p">n8n flows connect Merlin to your CRM, calendar, inbox, and any tools it needs to act.</p>
+            </div>
+            <div class="stack-card">
+              <strong data-i18n="pages.merlin.s_build_c3_h">Week 3 — Testing and handoff</strong>
+              <p data-i18n="pages.merlin.s_build_c3_p">We run real scenarios together until you're confident it handles your edge cases correctly.</p>
+            </div>
+          </div>
         </div>
-        <div style="display:grid;gap:16px;margin-top:4px">
-          <div class="stack-card">
-            <strong data-i18n="pages.merlin.s_build_c1_h">Week 1 — Knowledge build</strong>
-            <p data-i18n="pages.merlin.s_build_c1_p">I ingest your docs, FAQs, pricing, and past conversations to build the context base.</p>
-          </div>
-          <div class="stack-card">
-            <strong data-i18n="pages.merlin.s_build_c2_h">Week 2 — Workflow wiring</strong>
-            <p data-i18n="pages.merlin.s_build_c2_p">n8n flows connect Merlin to your CRM, calendar, inbox, and any tools it needs to act.</p>
-          </div>
-          <div class="stack-card">
-            <strong data-i18n="pages.merlin.s_build_c3_h">Week 3 — Testing and handoff</strong>
-            <p data-i18n="pages.merlin.s_build_c3_p">We run real scenarios together until you're confident it handles your edge cases correctly.</p>
-          </div>
+        <div style="display:flex;align-items:center;justify-content:center;padding:24px;">
+          <img src="assets/images/cozy-freelancer/cf-campaign-merlin-signal.svg" alt="Merlin signal" style="width:100%;max-width:300px;height:auto;display:block;">
         </div>
       </div>
     </div>
