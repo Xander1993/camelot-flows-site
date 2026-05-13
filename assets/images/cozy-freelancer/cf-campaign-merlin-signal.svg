@@ -49,10 +49,6 @@
     </filter>
   </defs>
   <rect width="1200" height="1200" fill="none"/>
-  <g opacity=".18" stroke="#6366f1">
-    <path d="M0 200H1200M0 400H1200M0 600H1200M0 800H1200M0 1000H1200"/>
-    <path d="M200 0V1200M400 0V1200M600 0V1200M800 0V1200M1000 0V1200"/>
-  </g>
   <circle cx="600" cy="600" r="390" fill="#6366f1" opacity=".08" filter="url(#glow)"/>
   <g class="ring" stroke="#00f2ff" stroke-width="3" opacity=".55">
     <circle cx="600" cy="600" r="280" stroke-dasharray="18 34"/>
