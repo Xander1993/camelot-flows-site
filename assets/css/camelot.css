@@ -1638,55 +1638,48 @@ body {
     animation: cf-phone-ring 0.7s ease-in-out;
 }
 
-/* ── Running glow-line animation on accent text ──────────────
-   background-position math for background-size:200% 2px:
-   • 200% → center of gradient is off-screen LEFT  (start)
-   • -100% → center is off-screen RIGHT (end)
-   The comet sweeps left → right, clipped naturally by the element.
-   ────────────────────────────────────────────────────────── */
-@keyframes cf-glow-sweep {
-    0%   { background-position: 200% bottom; }
-    100% { background-position: -100% bottom; }
+/* ── Oblique shine sweep inside the letters (background-clip: text) ─
+   A narrow bright glint sweeps left→right at 110° through the glyphs.
+   background-size: 200% so the shine starts off-screen and exits off.
+   ──────────────────────────────────────────────────────────────────── */
+@keyframes cf-text-shine {
+    0%   { background-position: 180% center; }
+    100% { background-position: -60% center; }
 }
 
 .cf-glow-text {
-    color: var(--terracotta);
     font-style: italic;
-    padding-bottom: 4px;
     background-image: linear-gradient(
-        90deg,
-        transparent 0%,
-        transparent 28%,
-        rgba(196, 120, 92, 0.12) 36%,
-        rgba(196, 120, 92, 0.85) 47%,
-        rgba(196, 120, 92, 1)    50%,
-        rgba(196, 120, 92, 0.85) 53%,
-        rgba(196, 120, 92, 0.12) 64%,
-        transparent 72%,
-        transparent 100%
+        110deg,
+        #c4785c  0%,
+        #c4785c 30%,
+        #f0c4aa 41%,
+        #fff2ea 50%,
+        #f0c4aa 59%,
+        #c4785c 70%,
+        #c4785c 100%
     );
-    background-size: 200% 2px;
-    background-repeat: no-repeat;
-    background-position: 200% bottom;
-    animation: cf-glow-sweep 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    animation-delay: 0.7s;
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--terracotta);
+    animation: cf-text-shine 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation-delay: 0.8s;
 }
 
-/* Night mode: switch to neon cyan for maximum impact */
+/* Night mode: neon cyan base with white-hot peak */
 [data-theme="night"] .cf-glow-text {
-    color: #00f2ff;
-    text-shadow: 0 0 28px rgba(0, 242, 255, 0.38);
     background-image: linear-gradient(
-        90deg,
-        transparent 0%,
-        transparent 28%,
-        rgba(0, 242, 255, 0.10) 36%,
-        rgba(0, 242, 255, 0.85) 47%,
-        rgba(0, 242, 255, 1)    50%,
-        rgba(0, 242, 255, 0.85) 53%,
-        rgba(0, 242, 255, 0.10) 64%,
-        transparent 72%,
-        transparent 100%
+        110deg,
+        #00f2ff  0%,
+        #00f2ff 30%,
+        #7ffdff 41%,
+        #ffffff 50%,
+        #7ffdff 59%,
+        #00f2ff 70%,
+        #00f2ff 100%
     );
+    filter: drop-shadow(0 0 8px rgba(0, 242, 255, 0.55));
 }
 
