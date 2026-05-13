@@ -1390,8 +1390,8 @@ body {
 /* ── Hero 2-column with photo ───────────────────────────── */
 .hero-2col {
     display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-    gap: 48px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: 40px;
     align-items: center;
 }
 .hero-2col .hero-copy { max-width: none; }
