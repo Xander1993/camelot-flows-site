@@ -1,4 +1,4 @@
-// ============================================================
+﻿// ============================================================
 // CAMELOT FLOWS — INLINE LOCALE DICTIONARIES
 // ------------------------------------------------------------
 // Loaded as a regular <script> so it works on file:// AND http://
@@ -22,7 +22,7 @@
         about: "[About]",
         contact: "[Contact]",
         more: "[More]",
-        summon_agent: "// SUMMON_AGENT",
+        summon_agent: "[Hire_me]",
         pricing: "[Pricing]",
         sys_online: "SYS_ONLINE"
       },
@@ -682,7 +682,7 @@
         about: "[Despre]",
         contact: "[Contact]",
         more: "[Mai mult]",
-        summon_agent: "// SUMMON_AGENT",
+        summon_agent: "[Hire_me]",
         pricing: "[Prețuri]",
         sys_online: "SYS_ONLINE"
       },
@@ -1340,7 +1340,7 @@
         about: "[Обо мне]",
         contact: "[Контакты]",
         more: "[Ещё]",
-        summon_agent: "// SUMMON_AGENT",
+        summon_agent: "[Hire_me]",
         pricing: "[Цены]",
         sys_online: "SYS_ONLINE"
       },
