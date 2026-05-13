@@ -568,7 +568,7 @@
                     scrollTrigger: {
                         trigger: "#starwars-pricing",
                         start: "top top",
-                        end: "+=250%", // Distance to scroll
+                        end: "+=190%",
                         pin: true,
                         scrub: 1.5,
                     }
@@ -577,13 +577,13 @@
                 crawlTl
                     .to(crawlContent, { opacity: 1, duration: 0.1 }, 0)
                     .to(crawlContent, {
-                        yPercent: -180, // Scroll up past screen
-                        z: -1200,       // Move deep into Z space
-                        rotationX: 45,  // Lean back further
+                        yPercent: -180,
+                        z: -1200,
+                        rotationX: 45,
                         ease: "power1.inOut",
                         duration: 1
                     }, 0)
-                    .to(crawlContent, { opacity: 0, duration: 0.2 }, 0.8); // Fade out at the end
+                    .to(crawlContent, { opacity: 0, duration: 0.1 }, 0.9);
 
                 // Animate the hologram sword subtly
                 gsap.to('.hologram-sword-img', {
