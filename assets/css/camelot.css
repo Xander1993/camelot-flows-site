@@ -1683,3 +1683,19 @@ body {
     filter: drop-shadow(0 0 8px rgba(0, 242, 255, 0.55));
 }
 
+/* ── Section decorative background images ─────────────────────────────────── */
+.section-img-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+}
+[data-theme="night"] .section-img-bg {
+    opacity: 0.16;
+    mix-blend-mode: screen;
+}
+
