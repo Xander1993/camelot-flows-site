@@ -1695,8 +1695,7 @@ body {
     z-index: 0;
 }
 [data-theme="night"] .section-img-bg {
-    opacity: 0.5;
-    mix-blend-mode: screen;
-    filter: brightness(3) saturate(1.5);
+    opacity: 0.25;
+    filter: brightness(5) saturate(2) contrast(1.2);
 }
 
