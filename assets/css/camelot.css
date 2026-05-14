@@ -1696,5 +1696,6 @@ body {
 }
 [data-theme="night"] .section-img-bg {
     opacity: 0.12;
+    filter: invert(1);
 }
 

@@ -6,7 +6,7 @@ function camelot_flows_scripts() {
     wp_enqueue_style('camelot-flows-style', get_stylesheet_uri(), array(), '1.1.0');
     wp_enqueue_style('camelot-flows-tailwind', get_template_directory_uri() . '/assets/css/tailwind.built.css', array('camelot-flows-style'), '1.3.0');
     wp_enqueue_style('camelot-flows-site', get_template_directory_uri() . '/assets/site.css', array('camelot-flows-tailwind'), '1.2.0');
-    wp_enqueue_style('camelot-flows-components', get_template_directory_uri() . '/assets/css/camelot.css', array('camelot-flows-site'), '1.5.0');
+    wp_enqueue_style('camelot-flows-components', get_template_directory_uri() . '/assets/css/camelot.css', array('camelot-flows-site'), '1.6.0');
     wp_enqueue_style('camelot-flows-night', get_template_directory_uri() . '/assets/css/theme-night.css', array('camelot-flows-components'), '1.2.0');
     wp_enqueue_style('camelot-flows-lang', get_template_directory_uri() . '/assets/css/lang-switcher.css', array('camelot-flows-night'), '1.2.0');
     wp_enqueue_script('lenis', 'https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js', array(), null, true);
@@ -15,7 +15,7 @@ function camelot_flows_scripts() {
     wp_enqueue_script('textplugin', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js', array('gsap'), null, true);
     wp_enqueue_script('camelot-flows-locales', get_template_directory_uri() . '/assets/js/locales.js', array(), '1.2.0', true);
     wp_enqueue_script('camelot-flows-i18n', get_template_directory_uri() . '/assets/js/i18n.js', array('camelot-flows-locales'), '1.1.0', true);
-    wp_enqueue_script('camelot-flows-gsap', get_template_directory_uri() . '/assets/js/camelot-gsap.js', array('gsap', 'scrolltrigger', 'textplugin', 'lenis', 'camelot-flows-i18n'), '1.5.0', true);
+    wp_enqueue_script('camelot-flows-gsap', get_template_directory_uri() . '/assets/js/camelot-gsap.v2.js', array('gsap', 'scrolltrigger', 'textplugin', 'lenis', 'camelot-flows-i18n'), '1.0.0', true);
     wp_enqueue_script('camelot-flows-site', get_template_directory_uri() . '/assets/site.js', array('camelot-flows-gsap'), '1.2.0', true);
 }
 add_action('wp_enqueue_scripts', 'camelot_flows_scripts');

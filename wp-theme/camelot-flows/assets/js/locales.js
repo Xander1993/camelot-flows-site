@@ -1,4 +1,4 @@
-﻿// ============================================================
+// ============================================================
 // CAMELOT FLOWS — INLINE LOCALE DICTIONARIES
 // ------------------------------------------------------------
 // Loaded as a regular <script> so it works on file:// AND http://
@@ -60,9 +60,9 @@
     pages: {
       index: {
         meta_title: "Camelot Flows | Award-Quality Web & AI Automation",
-        meta_description: "Award-quality websites and AI automation from a solo workshop in Chisinau. Fixed prices, fast launches, Merlin agents, and direct builder access.",
+        meta_description: "Premium websites and AI automation from a solo workshop in Chisinau. Fixed prices, fast launches, Merlin agents, and direct builder access.",
         hero_badge: "Solo workshop · serving worldwide",
-        hero_word_1: "Award-Winning",
+        hero_word_1: "Precision-Built",
         hero_word_2: "Systems",
         hero_p: "html:I build the site, then I build the <span class=\"text-white font-medium\">staff that runs it.</span> Sites in two weeks. AI staff in three.",
         hero_btn_start: "START A PROJECT",
@@ -91,7 +91,7 @@
         rt_card_1_p: "Custom workflows and AI integrations that eliminate manual tasks and scale operations.",
         rt_card_1_li_1: "Process_Automation",
         rt_card_1_li_2: "Custom_LLM_Apps",
-        rt_card_2_h: "Award-Winning Web",
+        rt_card_2_h: "Precision Web",
         rt_card_2_meta: "SITE_ARCHITECTURE",
         rt_card_2_p: "High-performance websites and landing pages designed for premium brands and market leaders.",
         rt_card_2_li_1: "Custom Design",
@@ -212,7 +212,7 @@
         hero_lead: "Premium digital infrastructure and autonomous business workforces engineered to scale operations and eliminate bottlenecks.",
         s_web_kicker: "01 // Digital Infrastructure",
         s_web_h2: "html:System<br>Architecture",
-        s_web_desc: "Award-winning, high-conversion visual frameworks. We don't just build sites; we engineer digital assets that dominate mindshare.",
+        s_web_desc: "Precision-crafted, high-conversion visual systems. We don't just build sites; we engineer digital assets that perform, convert, and set your brand apart.",
         s_web_c1_h: "Immersive Frontends",
         s_web_c1_p: "Cinematic user experiences that turn passive viewers into active buyers via micro-interactions and psychology-driven layouts.",
         s_web_c2_h: "Conversion Engineering",

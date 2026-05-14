@@ -23,25 +23,11 @@ MOBILE_ITEMS = NAV_ITEMS + [
     ("Work With Me", "work-with-me.html"),
 ]
 
-IMAGE_MAP = {
-    "arsenal-mockup.jpg": ROOT / "all stitch mockups" / "stitch_arsenal_mockup.jpg",
-    "about-mockup.jpg": ROOT / "all stitch mockups" / "stitch_about_mockup.jpg",
-    "about-variant-mockup.jpg": ROOT / "all stitch mockups" / "stitch_about_variant_mockup.jpg",
-    "agencies-mockup.jpg": ROOT / "all stitch mockups" / "stitch_agencies_mockup.jpg",
-    "case-studies-mockup.jpg": ROOT / "all stitch mockups" / "stitch_case_studies_mockup.jpg",
-    "contact-mockup.jpg": ROOT / "all stitch mockups" / "stitch_contact_mockup.jpg",
-    "service-automation.jpg": ROOT / "all stitch mockups" / "stitch_service_automation.jpg",
-    "service-creation.jpg": ROOT / "all stitch mockups" / "stitch_service_creation.jpg",
-    "service-maintenance.jpg": ROOT / "all stitch mockups" / "stitch_service_maintenance.jpg",
-    "service-marketing.jpg": ROOT / "all stitch mockups" / "stitch_service_marketing.jpg",
-    "merlin-mockup.jpg": ROOT / "all stitch mockups" / "stitch_merlin_mockup.jpg",
-    "workwithme-mockup.jpg": ROOT / "all stitch mockups" / "stitch_workwithme_mockup.jpg",
-    "workspace-screen.png": ROOT / "screen.png",
-    "automation-console.png": ROOT / "cyber_alchemy_scripts.png",
-    "forge-console.png": ROOT / "cyber_forge_templates.png",
-    "vault-console.png": ROOT / "cyber_templar_vault.png",
-    "crown-console.png": ROOT / "cybernetic_crown.png",
-}
+COZY_IMAGE_DIR = "assets/images/cozy-freelancer"
+
+# New cozy assets are generated in-place and referenced directly. Keep this
+# empty so regenerating the legacy page set does not overwrite old mockups.
+IMAGE_MAP = {}
 
 
 def button(label: str, href: str, variant: str = "primary", extra: str = "") -> str:
@@ -432,7 +418,7 @@ HOME_BODY = dedent(
     <section class="section">
         <div class="container detail-grid">
             <div class="image-frame reveal">
-                <img src="assets/images/about-mockup.jpg" alt="Founder-led studio presentation">
+                <img src="assets/images/cozy-freelancer/cf-cozy-hero-about.webp" alt="Founder-led studio presentation" loading="lazy" decoding="async" width="1536" height="1024">
                 <div class="image-caption"><span>Founder-led studio</span><span>Chisinau to international clients</span></div>
             </div>
             <div class="card reveal">
@@ -485,7 +471,7 @@ WEB_DESIGN_BODY = dedent(
                 </div>
             </div>
             <div class="image-frame reveal">
-                <img src="assets/images/service-creation.jpg" alt="Web design service concept">
+                <img src="assets/images/cozy-freelancer/cf-cozy-case-site.webp" alt="Web design service concept" loading="lazy" decoding="async" width="1672" height="941">
                 <div class="image-caption"><span>Hybrid premium direction</span><span>Design + build in one workflow</span></div>
             </div>
         </div>
@@ -621,7 +607,7 @@ WEB_DESIGN_BODY = dedent(
     <section class="section">
         <div class="container detail-grid">
             <div class="image-frame reveal">
-                <img src="assets/images/arsenal-mockup.jpg" alt="Selected website showcase concepts">
+                <img src="assets/images/cozy-freelancer/cf-cozy-hero-arsenal.webp" alt="Selected website showcase concepts" loading="lazy" decoding="async" width="1536" height="1024">
                 <div class="image-caption"><span>Selected showcase direction</span><span>Portfolio, not template spam</span></div>
             </div>
             <div class="card reveal">
@@ -767,7 +753,7 @@ AUTOMATION_BODY = dedent(
     <section class="section">
         <div class="container detail-grid">
             <div class="image-frame reveal">
-                <img src="assets/images/service-automation.jpg" alt="Automation service concept">
+                <img src="assets/images/cozy-freelancer/cf-cozy-case-automation.webp" alt="Automation service concept" loading="lazy" decoding="async" width="1672" height="941">
                 <div class="image-caption"><span>Flagship automation offer</span><span>AI where it is actually useful</span></div>
             </div>
             <div class="card reveal">
@@ -832,7 +818,7 @@ AGENCIES_BODY = dedent(
                 </div>
             </div>
             <div class="image-frame reveal">
-                <img src="assets/images/agencies-mockup.jpg" alt="Agency collaboration concept">
+                <img src="assets/images/cozy-freelancer/cf-cozy-hero-agencies.webp" alt="Agency collaboration concept" loading="lazy" decoding="async" width="1536" height="1024">
                 <div class="image-caption"><span>Invisible partner mode</span><span>Premium delivery under your brand</span></div>
             </div>
         </div>
@@ -969,7 +955,7 @@ AGENCIES_BODY = dedent(
                 </div>
             </div>
             <div class="image-frame reveal">
-                <img src="assets/images/workwithme-mockup.jpg" alt="Collaboration and delivery overview">
+                <img src="assets/images/cozy-freelancer/cf-cozy-hero-work.webp" alt="Collaboration and delivery overview" loading="lazy" decoding="async" width="1536" height="1024">
                 <div class="image-caption"><span>Agency support</span><span>Quiet execution, visible quality</span></div>
             </div>
         </div>
@@ -994,7 +980,7 @@ CASE_STUDIES_BODY = dedent(
                 </div>
             </div>
             <div class="image-frame reveal">
-                <img src="assets/images/case-studies-mockup.jpg" alt="Case study page concept">
+                <img src="assets/images/cozy-freelancer/cf-cozy-case-roundtable.webp" alt="Case study page concept" loading="lazy" decoding="async" width="1672" height="941">
                 <div class="image-caption"><span>Proof architecture</span><span>Ready for real client evidence</span></div>
             </div>
         </div>
@@ -1003,7 +989,7 @@ CASE_STUDIES_BODY = dedent(
     <section class="section">
         <div class="container case-layout">
             <div class="card reveal">
-                <div class="case-card__image"><img src="assets/images/service-creation.jpg" alt="Premium website case placeholder"></div>
+                <div class="case-card__image"><img src="assets/images/cozy-freelancer/cf-cozy-case-site.webp" alt="Premium website case placeholder" loading="lazy" decoding="async" width="1672" height="941"></div>
                 <div class="case-card__body">
                     <div class="card-meta">Website case placeholder</div>
                     <h3>Premium service website repositioning</h3>
@@ -1016,7 +1002,7 @@ CASE_STUDIES_BODY = dedent(
                 </div>
             </div>
             <div class="card reveal">
-                <div class="case-card__image"><img src="assets/images/service-automation.jpg" alt="Automation case placeholder"></div>
+                <div class="case-card__image"><img src="assets/images/cozy-freelancer/cf-cozy-case-automation.webp" alt="Automation case placeholder" loading="lazy" decoding="async" width="1672" height="941"></div>
                 <div class="case-card__body">
                     <div class="card-meta">Automation case placeholder</div>
                     <h3>Lead handling and follow-up workflow</h3>
@@ -1029,7 +1015,7 @@ CASE_STUDIES_BODY = dedent(
                 </div>
             </div>
             <div class="card reveal">
-                <div class="case-card__image"><img src="assets/images/agencies-mockup.jpg" alt="Agency partner case placeholder"></div>
+                <div class="case-card__image"><img src="assets/images/cozy-freelancer/cf-cozy-hero-agencies.webp" alt="Agency partner case placeholder" loading="lazy" decoding="async" width="1536" height="1024"></div>
                 <div class="case-card__body">
                     <div class="card-meta">Agency case placeholder</div>
                     <h3>White-label premium build support</h3>
@@ -1121,7 +1107,7 @@ ARSENAL_BODY = dedent(
                 </div>
             </div>
             <div class="image-frame reveal">
-                <img src="assets/images/forge-console.png" alt="Arsenal showcase interface">
+                <img src="assets/images/cozy-freelancer/cf-cozy-hero-arsenal.webp" alt="Arsenal showcase interface" loading="lazy" decoding="async" width="1536" height="1024">
                 <div class="image-caption"><span>Portfolio layer</span><span>Curated, not crowded</span></div>
             </div>
         </div>
@@ -1138,7 +1124,7 @@ ARSENAL_BODY = dedent(
             </div>
             <div class="grid-3">
                 <div class="card arsenal-card reveal" data-filter-card="web systems">
-                    <div class="case-card__image"><img src="assets/images/arsenal-mockup.jpg" alt="Premium web showcase"></div>
+                    <div class="case-card__image"><img src="assets/images/cozy-freelancer/cf-cozy-hero-arsenal.webp" alt="Premium web showcase" loading="lazy" decoding="async" width="1536" height="1024"></div>
                     <div class="case-card__body">
                         <div class="card-meta">Web showcase</div>
                         <h3>Premium service site direction</h3>
@@ -1147,7 +1133,7 @@ ARSENAL_BODY = dedent(
                     </div>
                 </div>
                 <div class="card arsenal-card reveal" data-filter-card="automation systems">
-                    <div class="case-card__image"><img src="assets/images/automation-console.png" alt="Automation showcase"></div>
+                    <div class="case-card__image"><img src="assets/images/cozy-freelancer/cf-cozy-case-automation.webp" alt="Automation showcase" loading="lazy" decoding="async" width="1672" height="941"></div>
                     <div class="case-card__body">
                         <div class="card-meta">Automation showcase</div>
                         <h3>Operational workflow interface</h3>
@@ -1156,7 +1142,7 @@ ARSENAL_BODY = dedent(
                     </div>
                 </div>
                 <div class="card arsenal-card reveal" data-filter-card="agency web">
-                    <div class="case-card__image"><img src="assets/images/agencies-mockup.jpg" alt="Agency support showcase"></div>
+                    <div class="case-card__image"><img src="assets/images/cozy-freelancer/cf-cozy-hero-agencies.webp" alt="Agency support showcase" loading="lazy" decoding="async" width="1536" height="1024"></div>
                     <div class="case-card__body">
                         <div class="card-meta">Agency support</div>
                         <h3>White-label premium build layer</h3>
@@ -1165,7 +1151,7 @@ ARSENAL_BODY = dedent(
                     </div>
                 </div>
                 <div class="card arsenal-card reveal" data-filter-card="web">
-                    <div class="case-card__image"><img src="assets/images/service-creation.jpg" alt="Landing page showcase"></div>
+                    <div class="case-card__image"><img src="assets/images/cozy-freelancer/cf-cozy-case-site.webp" alt="Landing page showcase" loading="lazy" decoding="async" width="1672" height="941"></div>
                     <div class="case-card__body">
                         <div class="card-meta">Landing page</div>
                         <h3>Focused launch experience</h3>
@@ -1174,7 +1160,7 @@ ARSENAL_BODY = dedent(
                     </div>
                 </div>
                 <div class="card arsenal-card reveal" data-filter-card="systems automation">
-                    <div class="case-card__image"><img src="assets/images/vault-console.png" alt="Internal system showcase"></div>
+                    <div class="case-card__image"><img src="assets/images/cozy-freelancer/cf-cozy-case-roundtable.webp" alt="Internal system showcase" loading="lazy" decoding="async" width="1672" height="941"></div>
                     <div class="case-card__body">
                         <div class="card-meta">Systems</div>
                         <h3>Internal admin or reporting layer</h3>
@@ -1183,7 +1169,7 @@ ARSENAL_BODY = dedent(
                     </div>
                 </div>
                 <div class="card arsenal-card reveal" data-filter-card="automation agency">
-                    <div class="case-card__image"><img src="assets/images/merlin-mockup.jpg" alt="Merlin protocol showcase"></div>
+                    <div class="case-card__image"><img src="assets/images/cozy-freelancer/cf-cozy-hero-merlin.webp" alt="Merlin protocol showcase" loading="lazy" decoding="async" width="1536" height="1024"></div>
                     <div class="case-card__body">
                         <div class="card-meta">Flagship offer</div>
                         <h3>Merlin Protocol</h3>
@@ -1214,7 +1200,7 @@ ABOUT_BODY = dedent(
                 </div>
             </div>
             <div class="image-frame reveal">
-                <img src="assets/images/about-mockup.jpg" alt="Founder page concept">
+                <img src="assets/images/cozy-freelancer/cf-cozy-hero-about.webp" alt="Founder page concept" loading="lazy" decoding="async" width="1536" height="1024">
                 <div class="image-caption"><span>Founder-led studio</span><span>Premium, direct, international</span></div>
             </div>
         </div>
@@ -1298,7 +1284,7 @@ ABOUT_BODY = dedent(
     <section class="section">
         <div class="container detail-grid">
             <div class="image-frame reveal">
-                <img src="assets/images/about-variant-mockup.jpg" alt="Additional founder page direction">
+                <img src="assets/images/cozy-freelancer/cf-cozy-hero-about.webp" alt="Additional founder page direction" loading="lazy" decoding="async" width="1536" height="1024">
                 <div class="image-caption"><span>Founder perspective</span><span>Small studio, sharper involvement</span></div>
             </div>
             <div class="card reveal">
@@ -1332,7 +1318,7 @@ WORK_WITH_ME_BODY = dedent(
                 </div>
             </div>
             <div class="image-frame reveal">
-                <img src="assets/images/workwithme-mockup.jpg" alt="Work with me page concept">
+                <img src="assets/images/cozy-freelancer/cf-cozy-hero-work.webp" alt="Work with me page concept" loading="lazy" decoding="async" width="1536" height="1024">
                 <div class="image-caption"><span>Working model</span><span>Fast signals, cleaner process</span></div>
             </div>
         </div>
@@ -1510,7 +1496,7 @@ CONTACT_BODY = dedent(
                     <p>English-first delivery with context for RU and RO markets. Founder-led, async-friendly and comfortable with international work.</p>
                 </div>
                 <div class="sidebar-block">
-                    <img src="assets/images/contact-mockup.jpg" alt="Contact page mockup">
+                    <img src="assets/images/cozy-freelancer/cf-cozy-hero-contact.webp" alt="Contact page mockup" loading="lazy" decoding="async" width="1672" height="941">
                 </div>
             </div>
         </div>
@@ -1563,7 +1549,7 @@ MAINTENANCE_BODY = dedent(
                 </div>
             </div>
             <div class="image-frame reveal">
-                <img src="assets/images/service-maintenance.jpg" alt="Maintenance support concept">
+                <img src="assets/images/cozy-freelancer/cf-cozy-case-roundtable.webp" alt="Maintenance support concept" loading="lazy" decoding="async" width="1672" height="941">
                 <div class="image-caption"><span>Support layer</span><span>Monitoring, fixes and iteration</span></div>
             </div>
         </div>
@@ -1605,7 +1591,7 @@ GROWTH_BODY = dedent(
                 </div>
             </div>
             <div class="image-frame reveal">
-                <img src="assets/images/service-marketing.jpg" alt="Growth and landing pages concept">
+                <img src="assets/images/cozy-freelancer/cf-cozy-case-site.webp" alt="Growth and landing pages concept" loading="lazy" decoding="async" width="1672" height="941">
                 <div class="image-caption"><span>Support layer</span><span>Pages, CRO and measurement</span></div>
             </div>
         </div>
@@ -1648,7 +1634,7 @@ MERLIN_BODY = dedent(
                 </div>
             </div>
             <div class="image-frame reveal">
-                <img src="assets/images/merlin-mockup.jpg" alt="Merlin protocol showcase">
+                <img src="assets/images/cozy-freelancer/cf-cozy-hero-merlin.webp" alt="Merlin protocol showcase" loading="lazy" decoding="async" width="1536" height="1024">
                 <div class="image-caption"><span>Flagship automation page</span><span>AI with human handoff rules</span></div>
             </div>
         </div>

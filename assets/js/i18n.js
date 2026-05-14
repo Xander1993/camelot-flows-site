@@ -126,24 +126,25 @@
 
         var pageSlug = document.documentElement.getAttribute('data-i18n-page');
         if (pageSlug) {
+            // SEO: meta tags must remain as static HTML only
             var titleVal = translate(lang, 'pages.' + pageSlug + '.meta_title');
-            if (titleVal !== undefined) document.title = titleVal;
+            // if (titleVal !== undefined) document.title = titleVal;
 
             var descVal = translate(lang, 'pages.' + pageSlug + '.meta_description');
-            if (descVal !== undefined) {
-                ['meta[name="description"]', 'meta[property="og:description"]', 'meta[name="twitter:description"]']
-                    .forEach(function (sel) {
-                        var m = document.querySelector(sel);
-                        if (m) m.setAttribute('content', descVal);
-                    });
-            }
-            if (titleVal !== undefined) {
-                ['meta[property="og:title"]', 'meta[name="twitter:title"]']
-                    .forEach(function (sel) {
-                        var m = document.querySelector(sel);
-                        if (m) m.setAttribute('content', titleVal);
-                    });
-            }
+            // if (descVal !== undefined) {
+            //     ['meta[name="description"]', 'meta[property="og:description"]', 'meta[name="twitter:description"]']
+            //         .forEach(function (sel) {
+            //             var m = document.querySelector(sel);
+            //             if (m) m.setAttribute('content', descVal);
+            //         });
+            // }
+            // if (titleVal !== undefined) {
+            //     ['meta[property="og:title"]', 'meta[name="twitter:title"]']
+            //         .forEach(function (sel) {
+            //             var m = document.querySelector(sel);
+            //             if (m) m.setAttribute('content', titleVal);
+            //         });
+            // }
         }
 
         document.querySelectorAll('[data-lang-content]').forEach(function (el) {
