@@ -143,7 +143,10 @@
       "hero_title": "html:An Avalon for makers, run from Moldova while my son <em class=\"accent\">Arthur</em> naps.",
       "hero_lead": "I build the site, then I build the staff that runs it. One workshop, no middlemen, fixed prices.",
       "hero_btn_services": "See the services",
-      "hero_btn_start": "Start a conversation"
+      "hero_btn_start": "Start a conversation",
+      "s_editorial_kicker": "// SOLO_WORKSHOP",
+      "s_editorial_quote": "html:Moldova is not a disadvantage.<br>It's a <span class=\"cf-glow-text\">competitive edge.</span>",
+      "s_editorial_body": "Lower overhead means I can take fewer, better projects and give each one what it actually needs. No rushing to fill a calendar. No cutting corners to hit utilisation targets."
     },
     "arsenal": {
       "meta_title": "The Arsenal | Camelot Flows",

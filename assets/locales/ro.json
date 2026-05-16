@@ -143,7 +143,10 @@
       "hero_title": "html:Un Avalon pentru creatori, condus din Moldova cât timp fiul meu <em class=\"accent\">Arthur</em> doarme.",
       "hero_lead": "Eu construiesc site-ul, apoi construiesc echipa care îl operează. Un singur atelier, fără intermediari, prețuri fixe.",
       "hero_btn_services": "Vezi serviciile",
-      "hero_btn_start": "Începe o conversație"
+      "hero_btn_start": "Începe o conversație",
+      "s_editorial_kicker": "// SOLO_WORKSHOP",
+      "s_editorial_quote": "html:Moldova nu este un dezavantaj.<br>Este un <span class=\"cf-glow-text\">avantaj competitiv.</span>",
+      "s_editorial_body": "Overhead redus înseamnă că pot lua mai puține proiecte, dar mai bune, și să acord fiecăruia atenția de care are nevoie. Fără grabă să umplu un calendar. Fără compromisuri pentru a atinge targeturi de utilizare."
     },
     "arsenal": {
       "meta_title": "Arsenalul | Camelot Flows",

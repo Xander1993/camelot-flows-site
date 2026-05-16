@@ -140,7 +140,10 @@
     "about": {
       "meta_title": "", "meta_description": "",
       "hero_eyebrow": "", "hero_title": "", "hero_lead": "",
-      "hero_btn_services": "", "hero_btn_start": ""
+      "hero_btn_services": "", "hero_btn_start": "",
+      "s_editorial_kicker": "// SOLO_WORKSHOP",
+      "s_editorial_quote": "html:Молдова — не недостаток.<br>Это <span class=\"cf-glow-text\">конкурентное преимущество.</span>",
+      "s_editorial_body": "Низкие накладные расходы означают, что я могу брать меньше, но лучших клиентов, и уделять каждому то внимание, которое он действительно заслуживает. Никакой спешки заполнить календарь. Никаких срезанных углов ради показателей загрузки."
     },
     "arsenal": {
       "meta_title": "", "meta_description": "",
