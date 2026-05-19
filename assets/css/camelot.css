@@ -1735,3 +1735,36 @@ body {
     background: rgba(196, 120, 92, 0.08);
 }
 
+/* ── Sub-400px nav: rescue the logo ─────────────────────────────────────────
+   At 309 px the right-side buttons (phone+lang+hamburger+theme+hire_me)
+   total ~260 px and crush the logo to nothing.
+   Fix: drop phone + hire_me buttons, tighten padding, pin logo width. */
+@media (max-width: 399px) {
+    nav.fixed {
+        padding: 0.5rem 0.75rem !important;
+    }
+    nav.fixed > .glass-panel,
+    nav.fixed > div.glass-panel {
+        padding: 0.5rem 0.75rem !important;
+        gap: 0.375rem !important;
+    }
+    /* Drop non-critical buttons to free ~90px */
+    nav.fixed .nav-phone-btn { display: none !important; }
+    nav.fixed .nav-cta      { display: none !important; }
+    /* Pin logo: prevent flex from collapsing it, cap width so it clips
+       cleanly at the right edge rather than stretching layout */
+    nav.fixed .glass-panel > div:first-child {
+        flex: 0 0 auto;
+        max-width: 96px;
+        overflow: hidden;
+    }
+    nav.fixed .glass-panel > div:first-child img {
+        height: 32px !important;
+        max-width: none;
+    }
+    /* Tighten right-side button gap */
+    nav.fixed .glass-panel > div:last-child {
+        gap: 0.375rem !important;
+    }
+}
+
