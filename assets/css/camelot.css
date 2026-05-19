@@ -1699,24 +1699,6 @@ body {
     filter: brightness(8) saturate(3);
 }
 
-/* ── Logo larger on wide screens — same nav height, less padding ─────────────
-   Default nav height: py-6(24) + glass py-3(12) + logo(96) + 12 + 24 = 168px
-   At 1536px+: trim nav+glass padding, give saved space to logo — stays 168px.
-   nav py-3(12) + glass py-2(8) + logo(128) + 8 + 12 = 168px  ✓  */
-@media (min-width: 1536px) {
-    nav.fixed {
-        padding-top: 0.75rem !important;
-        padding-bottom: 0.75rem !important;
-    }
-    nav.fixed > .glass-panel,
-    nav.fixed > div.glass-panel {
-        padding-top: 0.5rem !important;
-        padding-bottom: 0.5rem !important;
-    }
-    nav.fixed .glass-panel > div:first-child img {
-        height: 8rem !important; /* 128px — fits in same 168px total height */
-    }
-}
 
 /* ── Logo flex fix: lang-switcher.css sets nav>div>div:first-child{flex:1 1 0%}
    which gives the logo div flex-basis:0%. When buttons overflow on small
