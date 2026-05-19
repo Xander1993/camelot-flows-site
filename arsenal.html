@@ -129,7 +129,7 @@
         <div
             class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
             <div class="flex items-center">
-                <img src="assets/images/cf-logo-wordmark.png" alt="Camelot Flows" class="h-24 w-auto object-contain">
+                <img src="assets/images/cf-logo-wordmark.png" alt="Camelot Flows" class="h-14 md:h-24 w-auto object-contain">
             </div>
             <div class="hidden md:flex items-center gap-1">
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
@@ -170,6 +170,9 @@
         <li role="option" data-lang="ru" tabindex="-1">RU</li>
     </ul>
 </div>
+                <button id="mobile-menu-toggle" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 transition-all text-slate-400" aria-label="Open menu" type="button">
+                    <span class="material-symbols-outlined" style="font-size:20px">menu</span>
+                </button>
                 <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Toggle theme">
     <span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
     <span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
@@ -181,6 +184,22 @@
                 </a>
             </div>
         </div>
+        
+        <div id="mobile-nav" class="hidden mt-2 max-w-7xl mx-auto">
+            <div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
+                <div class="flex flex-col gap-0.5">
+                    <a class="px-4 py-2.5 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="index.html" data-i18n="common.nav.home">[Home]</a>
+                    <a class="px-4 py-2.5 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="index.html#round-table" data-i18n="common.nav.services">[Services]</a>
+                    <a class="px-4 py-2.5 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
+                    <a class="px-4 py-2.5 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
+                    <a class="px-4 py-2.5 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
+                    <a class="px-4 py-2.5 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="contact.html" data-i18n="common.nav.contact">[Contact]</a>
+                    <div class="mx-3 my-2 h-px bg-white/10"></div>
+                    <a href="contact.html?service=staff" class="mx-2 block text-center bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-2 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent">[Hire_me]</a>
+                </div>
+            </div>
+        </div>
+        <script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");var open=!menu.classList.contains("hidden");btn.setAttribute("aria-expanded",open?"true":"false");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");}});document.querySelectorAll("#mobile-nav a").forEach(function(a){a.addEventListener("click",function(){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");});});}})();</script>
         </nav>
 <main id="arsenal-main" class="relative pt-32 pb-20 px-0 min-h-screen arsenal-wrapper overflow-x-hidden bg-obsidian text-charcoal">
     <!-- Hero Arsenal -->
