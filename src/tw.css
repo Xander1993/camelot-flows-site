@@ -1,0 +1,8 @@
+/*
+ * Tailwind input file for Camelot Flows.
+ * Compiled to assets/css/tailwind.built.css via `npm run build:css`.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

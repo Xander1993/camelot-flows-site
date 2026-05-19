@@ -50,6 +50,10 @@ function camelot_flows_head() {
 }
 add_action('wp_head', 'camelot_flows_head', 0);
 
+add_action('wp_head', function() {
+    remove_action('wp_head', 'wp_site_icon', 99);
+}, 1);
+
 function camelot_flows_setup() {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
