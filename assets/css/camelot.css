@@ -1699,22 +1699,22 @@ body {
     filter: brightness(8) saturate(3);
 }
 
-/* ── Logo responsive scaling for large / 4K screens ─────────────────────────
-   Base Tailwind compiles h-24 (96px) as max desktop size.
-   Override upward for wider viewports so the wordmark stays legible. */
+/* ── Logo larger on wide screens — same nav height, less padding ─────────────
+   Default nav height: py-6(24) + glass py-3(12) + logo(96) + 12 + 24 = 168px
+   At 1536px+: trim nav+glass padding, give saved space to logo — stays 168px.
+   nav py-3(12) + glass py-2(8) + logo(128) + 8 + 12 = 168px  ✓  */
 @media (min-width: 1536px) {
-    nav.fixed .glass-panel > div:first-child img {
-        height: 7rem !important;   /* 112px at 1536px+ (2xl) */
+    nav.fixed {
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
     }
-}
-@media (min-width: 1920px) {
-    nav.fixed .glass-panel > div:first-child img {
-        height: 8.5rem !important; /* 136px at 1920px+ */
+    nav.fixed > .glass-panel,
+    nav.fixed > div.glass-panel {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
     }
-}
-@media (min-width: 2560px) {
     nav.fixed .glass-panel > div:first-child img {
-        height: 10rem !important;  /* 160px at 4K */
+        height: 8rem !important; /* 128px — fits in same 168px total height */
     }
 }
 
