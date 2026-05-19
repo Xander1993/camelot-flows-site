@@ -3,6 +3,9 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://camelotflows.dev/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://camelotflows.dev/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://camelotflows.dev/apple-touch-icon.png">
     <?php wp_head(); ?>
 </head>
 <body <?php body_class('theme-cozy font-body overflow-x-hidden selection:bg-primary selection:text-white'); ?>>
@@ -57,7 +60,7 @@
         <div
             class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50" style="position:relative;z-index:201">
             <div class="flex items-center gap-4">
-                <img src="https://camelotflows.dev/assets/images/cf-logo-wordmark.png" alt="Camelot Flows" class="h-14 md:h-24 w-auto object-contain">
+                <img src="https://camelotflows.dev/assets/images/cf-logo-wordmark.png?v=3" alt="Camelot Flows" class="h-14 md:h-24 w-auto object-contain">
             </div>
             <div class="hidden md:flex items-center gap-1">
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
@@ -111,15 +114,15 @@
         </div>
         <div id="mobile-nav" class="hidden mt-2 max-w-7xl mx-auto">
             <div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
-                <div class="flex flex-col gap-0.5">
-                    <a class="px-4 py-2.5 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="<?php echo CF_MAIN_SITE; ?>" data-i18n="common.nav.home">[Home]</a>
-                    <a class="px-4 py-2.5 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="<?php echo CF_MAIN_SITE; ?>/#round-table" data-i18n="common.nav.services">[Services]</a>
-                    <a class="px-4 py-2.5 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="<?php echo CF_MAIN_SITE; ?>/arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
-                    <a class="px-4 py-2.5 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="<?php echo CF_MAIN_SITE; ?>/merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
-                    <a class="px-4 py-2.5 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="<?php echo CF_MAIN_SITE; ?>/case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
-                    <a class="px-4 py-2.5 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="<?php echo CF_MAIN_SITE; ?>/contact.html" data-i18n="common.nav.contact">[Contact]</a>
+                <div class="flex flex-col gap-1">
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="<?php echo CF_MAIN_SITE; ?>" data-i18n="common.nav.home">[Home]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="<?php echo CF_MAIN_SITE; ?>/#round-table" data-i18n="common.nav.services">[Services]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="<?php echo CF_MAIN_SITE; ?>/arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="<?php echo CF_MAIN_SITE; ?>/merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="<?php echo CF_MAIN_SITE; ?>/case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="<?php echo CF_MAIN_SITE; ?>/contact.html" data-i18n="common.nav.contact">[Contact]</a>
                     <div class="mx-3 my-2 h-px bg-white/10"></div>
-                    <a href="<?php echo CF_MAIN_SITE; ?>/contact.html?service=staff" class="mx-2 block text-center bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-2 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent">[Hire_me]</a>
+                    <a href="<?php echo CF_MAIN_SITE; ?>/contact.html?service=staff" class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent">[Hire_me]</a>
                 </div>
             </div>
         </div>
