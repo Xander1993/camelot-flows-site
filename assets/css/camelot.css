@@ -1699,6 +1699,14 @@ body {
     filter: brightness(8) saturate(3);
 }
 
+/* ── Logo flex fix: lang-switcher.css sets nav>div>div:first-child{flex:1 1 0%}
+   which gives the logo div flex-basis:0%. When buttons overflow on small
+   screens, the logo collapses to 0px because flex-shrink can't go below
+   the basis. Override globally so the logo always sizes to its content. */
+nav.fixed .glass-panel > div:first-child {
+    flex: 0 0 auto !important;
+}
+
 /* ── Mobile hamburger + dropdown ─────────────────────────────────────────────
    md:hidden is not in the compiled Tailwind CSS, so enforce visibility
    via plain CSS. Hamburger visible only below 768 px; dropdown always
