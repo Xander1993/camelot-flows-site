@@ -360,5 +360,21 @@
         initAgencyStrip();
         initArsenalFilters();
         initLeadForm();
+
+        // Handle ?goto=pricing — navigating here without a hash so GSAP inits
+        // normally at the top, then Lenis scrolls to pricing after animations start.
+        var gotoParam = new URLSearchParams(window.location.search).get('goto');
+        if (gotoParam === 'pricing') {
+            history.replaceState(null, '', window.location.pathname);
+            setTimeout(function () {
+                var el = document.getElementById('pricing-cards');
+                if (!el) return;
+                if (window.lenis) {
+                    window.lenis.scrollTo(el, { offset: -80, duration: 1.5 });
+                } else {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 900);
+        }
     });
 })();
