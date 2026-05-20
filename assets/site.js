@@ -363,16 +363,28 @@
 
         // Handle ?goto=pricing — navigating here without a hash so GSAP inits
         // normally at the top, then Lenis scrolls to pricing after animations start.
+        // Uses absolute scroll target (section.offsetTop + crawl-reveal offset) so
+        // the behaviour is identical regardless of where the user was on the page.
+        function getPricingScrollTarget() {
+            var section = document.getElementById('starwars-pricing');
+            if (!section) return null;
+            // ~20% of the 120vh pin range brings the first card into view on desktop.
+            var intoSection = window.innerWidth >= 768
+                ? Math.round(window.innerHeight * 0.20)
+                : 0;
+            return section.getBoundingClientRect().top + window.scrollY + intoSection;
+        }
+
         var gotoParam = new URLSearchParams(window.location.search).get('goto');
         if (gotoParam === 'pricing') {
             history.replaceState(null, '', window.location.pathname);
             setTimeout(function () {
-                var el = document.getElementById('pricing-cards');
-                if (!el) return;
+                var targetY = getPricingScrollTarget();
+                if (targetY === null) return;
                 if (window.lenis) {
-                    window.lenis.scrollTo(el, { offset: -20, duration: 1.5 });
+                    window.lenis.scrollTo(targetY, { duration: 1.5 });
                 } else {
-                    el.scrollIntoView({ behavior: 'smooth' });
+                    window.scrollTo({ top: targetY, behavior: 'smooth' });
                 }
             }, 900);
         }
@@ -381,13 +393,13 @@
         // native browser scroll so GSAP ScrollTrigger animations fire correctly.
         document.querySelectorAll('a[href="#pricing-cards"]').forEach(function (link) {
             link.addEventListener('click', function (e) {
-                var el = document.getElementById('pricing-cards');
-                if (!el) return; // not on homepage, let browser navigate normally
+                var targetY = getPricingScrollTarget();
+                if (targetY === null) return; // not on homepage, let browser navigate normally
                 e.preventDefault();
                 if (window.lenis) {
-                    window.lenis.scrollTo(el, { offset: -20, duration: 1.5 });
+                    window.lenis.scrollTo(targetY, { duration: 1.5 });
                 } else {
-                    el.scrollIntoView({ behavior: 'smooth' });
+                    window.scrollTo({ top: targetY, behavior: 'smooth' });
                 }
             });
         });
