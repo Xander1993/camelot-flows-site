@@ -62,7 +62,7 @@
             <div class="flex items-center gap-4">
                 <img src="https://camelotflows.dev/assets/images/cf-logo-wordmark.png?v=3" alt="Camelot Flows" class="h-14 md:h-24 w-auto object-contain">
             </div>
-            <div class="hidden md:flex items-center gap-1">
+            <div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
                     href="<?php echo CF_MAIN_SITE; ?>" data-i18n="common.nav.home">[Home]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
@@ -78,7 +78,7 @@
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden xl:block"
                     href="<?php echo CF_MAIN_SITE; ?>/about.html" data-i18n="common.nav.about">[About]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
-                    href="<?php echo CF_MAIN_SITE; ?>/#pricing-cards" data-i18n="common.nav.pricing">[Pricing]</a>
+                    href="<?php echo CF_MAIN_SITE; ?>/?goto=pricing" data-i18n="common.nav.pricing">[Pricing]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
                     href="<?php echo CF_MAIN_SITE; ?>/contact.html" data-i18n="common.nav.contact">[Contact]</a>
             </div>

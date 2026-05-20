@@ -579,6 +579,36 @@ body {
             background-color: #0066ff;
         }
 
+        .border-amber {
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        .glow-amber:hover {
+            border-color: rgba(245, 158, 11, 0.6);
+            box-shadow: 0 0 30px rgba(245, 158, 11, 0.3);
+        }
+
+        .text-neon-amber {
+            color: #f59e0b;
+            text-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+        }
+
+        .bg-neon-amber {
+            background-color: #f59e0b;
+        }
+
+        .bg-neon-amber-10 {
+            background-color: rgba(245, 158, 11, 0.10);
+        }
+
+        .border-neon-amber-50 {
+            border-color: rgba(245, 158, 11, 0.50);
+        }
+
+        .neon-text-amber {
+            text-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+        }
+
         .text-glow-cyan {
             text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
         }
@@ -756,6 +786,12 @@ body {
         [data-theme="cozy"] body.theme-cozy .border-neon-purple\/50 { border-color: rgba(123,145,113,0.50) !important; }
         [data-theme="cozy"] body.theme-cozy .hover\:bg-neon-cyan:hover  { background-color: var(--cf-terracotta) !important; color: var(--cf-alabaster) !important; }
         [data-theme="cozy"] body.theme-cozy .hover\:text-obsidian:hover { color: var(--cf-charcoal) !important; }
+        [data-theme="cozy"] body.theme-cozy .text-neon-amber { color: var(--cf-terracotta) !important; text-shadow: 0 0 10px rgba(196,120,92,0.25); }
+        [data-theme="cozy"] body.theme-cozy .bg-neon-amber-10 { background-color: rgba(196,120,92,0.10) !important; }
+        [data-theme="cozy"] body.theme-cozy .border-neon-amber-50 { border-color: rgba(196,120,92,0.50) !important; }
+        [data-theme="cozy"] body.theme-cozy .border-amber { border-color: rgba(196,120,92,0.22) !important; }
+        [data-theme="cozy"] body.theme-cozy .glow-amber:hover { border-color: rgba(196,120,92,0.45) !important; box-shadow: 0 0 20px rgba(196,120,92,0.18) !important; }
+        [data-theme="cozy"] body.theme-cozy .hover\:bg-neon-amber:hover { background-color: var(--cf-terracotta) !important; color: var(--cf-alabaster) !important; }
 
         /* ── Background overrides ───────────────────────────── */
 
