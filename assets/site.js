@@ -370,7 +370,7 @@
                 var el = document.getElementById('pricing-cards');
                 if (!el) return;
                 if (window.lenis) {
-                    window.lenis.scrollTo(el, { offset: -80, duration: 1.5 });
+                    window.lenis.scrollTo(el, { offset: -20, duration: 1.5 });
                 } else {
                     el.scrollIntoView({ behavior: 'smooth' });
                 }
@@ -385,7 +385,7 @@
                 if (!el) return; // not on homepage, let browser navigate normally
                 e.preventDefault();
                 if (window.lenis) {
-                    window.lenis.scrollTo(el, { offset: -80, duration: 1.5 });
+                    window.lenis.scrollTo(el, { offset: -20, duration: 1.5 });
                 } else {
                     el.scrollIntoView({ behavior: 'smooth' });
                 }
