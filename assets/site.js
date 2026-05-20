@@ -376,5 +376,20 @@
                 }
             }, 900);
         }
+
+        // Intercept same-page #pricing-cards nav clicks — use Lenis instead of
+        // native browser scroll so GSAP ScrollTrigger animations fire correctly.
+        document.querySelectorAll('a[href="#pricing-cards"]').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                var el = document.getElementById('pricing-cards');
+                if (!el) return; // not on homepage, let browser navigate normally
+                e.preventDefault();
+                if (window.lenis) {
+                    window.lenis.scrollTo(el, { offset: -80, duration: 1.5 });
+                } else {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
     });
 })();
