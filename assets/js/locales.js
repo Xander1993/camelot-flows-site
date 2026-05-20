@@ -56,7 +56,10 @@
     },
     contact: {
       email_subject_prefix: "Project inquiry - ",
-      form_status_opening: "Opening your email app with a structured project brief."
+      form_status_opening: "Opening your email app with a structured project brief.",
+      form_status_sending: "Sending your message…",
+      form_status_sent: "Message sent! I'll get back to you within 24 hours.",
+      form_status_error: "Could not send. Please reach out on WhatsApp: +373 69 555 936"
     },
     pages: {
       index: {
@@ -738,7 +741,10 @@
     },
     contact: {
       email_subject_prefix: "Solicitare proiect - ",
-      form_status_opening: "Se deschide aplicația ta de email cu un brief structurat al proiectului."
+      form_status_opening: "Se deschide aplicația ta de email cu un brief structurat al proiectului.",
+      form_status_sending: "Se trimite mesajul tău…",
+      form_status_sent: "Mesaj trimis! Îți răspund în 24 de ore.",
+      form_status_error: "Nu s-a putut trimite. Contactează-mă pe WhatsApp: +373 69 555 936"
     },
     pages: {
       index: {
@@ -1418,7 +1424,10 @@
     },
     contact: {
       email_subject_prefix: "Запрос по проекту - ",
-      form_status_opening: "Открываю твой email со структурированным брифом проекта."
+      form_status_opening: "Открываю твой email со структурированным брифом проекта.",
+      form_status_sending: "Отправляю твоё сообщение…",
+      form_status_sent: "Сообщение отправлено! Отвечу в течение 24 часов.",
+      form_status_error: "Не удалось отправить. Напиши в WhatsApp: +373 69 555 936"
     },
     pages: {
       index: {
