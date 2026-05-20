@@ -335,31 +335,25 @@
             form.addEventListener("submit", function (event) {
                 event.preventDefault();
 
-                const data = new FormData(form);
-                const pairs = [
-                    ["Name", data.get("name")],
-                    ["Email", data.get("email")],
-                    ["Service", data.get("service")],
-                    ["Budget", data.get("budget")],
-                    ["Objective", data.get("objective")],
-                    ["Timeline", data.get("timeline")],
-                    ["Market", data.get("market")],
-                    ["Project goal", data.get("project_goal")]
-                ].filter(function (entry) {
-                    return entry[1] && String(entry[1]).trim() !== "";
-                });
-
-                const subjectPrefix = (window.cfI18n && window.cfI18n.t('contact.email_subject_prefix')) || "Project inquiry - ";
-                const subject = subjectPrefix + (data.get("service") || "Camelot Flows");
-                const body = pairs.map(function (entry) {
-                    return entry[0] + ": " + entry[1];
-                }).join("\n");
-
                 if (statusNode) {
-                    statusNode.textContent = (window.cfI18n && window.cfI18n.t('contact.form_status_opening')) || "Opening your email app with a structured project brief.";
+                    statusNode.textContent = (window.cfI18n && window.cfI18n.t('contact.form_status_sending')) || "Sending your message…";
                 }
 
-                window.location.href = "mailto:hello@camelotflows.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+                fetch(form.action, {
+                    method: "POST",
+                    body: new FormData(form),
+                    headers: { "Accept": "application/json" }
+                }).then(function (response) {
+                    if (statusNode) {
+                        statusNode.textContent = (window.cfI18n && window.cfI18n.t('contact.form_status_sent')) || "Message sent! I'll get back to you within 24 hours.";
+                    }
+                    form.reset();
+                    if (progressFill) progressFill.style.width = "0%";
+                }).catch(function () {
+                    if (statusNode) {
+                        statusNode.textContent = (window.cfI18n && window.cfI18n.t('contact.form_status_error')) || "Could not send. Please reach out on WhatsApp: +373 69 555 936";
+                    }
+                });
             });
         });
     }
