@@ -233,6 +233,22 @@
         });
     }
 
+    function initWhatsAppButton() {
+        var btn = document.createElement('a');
+        btn.href = 'https://wa.me/37369555936?text=Hi%20Alex%2C%20I%27d%20like%20to%20discuss%20a%20web%20project';
+        btn.target = '_blank';
+        btn.rel = 'noopener noreferrer';
+        btn.setAttribute('aria-label', 'Chat on WhatsApp');
+        btn.setAttribute('title', 'Chat on WhatsApp');
+        btn.className = 'cf-wa-btn';
+        btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.107.549 4.09 1.512 5.818L.057 23.998l6.337-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.37l-.359-.213-3.72.845.859-3.626-.234-.373A9.818 9.818 0 012.182 12c0-5.424 4.394-9.818 9.818-9.818 5.424 0 9.818 4.394 9.818 9.818 0 5.424-4.394 9.818-9.818 9.818z"/></svg>';
+
+        var style = document.createElement('style');
+        style.textContent = '.cf-wa-btn{position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;box-shadow:0 4px 16px rgba(37,211,102,0.45);transition:transform .2s,box-shadow .2s;text-decoration:none}.cf-wa-btn:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(37,211,102,0.6)}.cf-wa-btn::after{content:"Chat on WhatsApp";position:absolute;right:calc(100% + 12px);background:rgba(0,0,0,.8);color:#fff;font-size:12px;font-family:var(--font-body,sans-serif);white-space:nowrap;padding:5px 10px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .2s}.cf-wa-btn:hover::after{opacity:1}@media(max-width:640px){.cf-wa-btn{bottom:16px;right:16px;width:50px;height:50px}}';
+        document.head.appendChild(style);
+        document.body.appendChild(btn);
+    }
+
     function initArsenalFilters() {
         const buttons = queryAll("[data-filter-button]");
         const cards = queryAll("[data-filter-card]");
@@ -360,6 +376,7 @@
         initAgencyStrip();
         initArsenalFilters();
         initLeadForm();
+        initWhatsAppButton();
 
         // Handle ?goto=pricing — navigating here without a hash so GSAP inits
         // normally at the top, then Lenis scrolls to pricing after animations start.
