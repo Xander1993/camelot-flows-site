@@ -298,7 +298,7 @@
         s_build_c3_h: "Week 3 — Testing and handoff",
         s_build_c3_p: "We run real scenarios together until you're confident it handles your edge cases correctly.",
         s_price_kicker: "Pricing",
-        s_price_h2: "from €1,200 setup · support from €250/mo",
+        s_price_h2: "from €690 setup · support from €250/mo",
         s_price_p: "Fixed setup, cancel anytime. Optional monthly support covers Claude API costs, n8n hosting, and keeping the agent accurate as your business evolves.",
         s_price_btn1: "Book a demo call",
         s_price_btn2: "Full pricing breakdown"
@@ -626,7 +626,7 @@
         s_out_i3_h: "Vendor-neutral",
         s_out_i3_p: "Claude where it wins, GPT where it wins, open-source where the data demands it.",
         s_cta_h2: "One brief away from a real plan.",
-        s_cta_p: "Tell me what you're trying to ship. I'll come back with a scope, a fixed price, and a launch date — usually within 48 hours. Merlin setup from €1,200 · optional support from €250/mo · limits quoted after discovery.",
+        s_cta_p: "Tell me what you're trying to ship. I'll come back with a scope, a fixed price, and a launch date — usually within 48 hours. Merlin setup from €690 · optional support from €250/mo · limits quoted after discovery.",
         s_cta_link1_p: "How we build and ship agents.",
         s_cta_link2_p: "White-label automation for your clients.",
         s_cta_link3_p: "Live agents, real numbers."
@@ -980,7 +980,7 @@
         s_build_c3_h: "Săptămâna 3 — Testare și predare",
         s_build_c3_p: "Rulăm scenarii reale împreună până când ești sigur că agentul gestionează corect toate situațiile.",
         s_price_kicker: "Preț",
-        s_price_h2: "de la €1.200 setup · suport de la €250/lună",
+        s_price_h2: "de la €690 setup · suport de la €250/lună",
         s_price_p: "Setup fix, anulare oricând. Suportul lunar opțional acoperă costurile Claude API, hosting-ul n8n și menținerea agentului actualizat pe măsură ce business-ul tău evoluează.",
         s_price_btn1: "Programează un demo",
         s_price_btn2: "Detalii complete de preț"
@@ -1308,7 +1308,7 @@
         s_out_i3_h: "Vendor-neutral",
         s_out_i3_p: "Claude unde câștigă, GPT unde câștigă, open-source unde datele o cer.",
         s_cta_h2: "Un brief distanță de un plan real.",
-        s_cta_p: "Spune-mi ce vrei să automatizezi. Îți răspund cu un plan, un preț fix și o dată de lansare — de obicei în 48 de ore. Configurare Merlin de la €1.200 · suport opțional de la €250/lună · limite discutate după o analiză inițială.",
+        s_cta_p: "Spune-mi ce vrei să automatizezi. Îți răspund cu un plan, un preț fix și o dată de lansare — de obicei în 48 de ore. Configurare Merlin de la €690 · suport opțional de la €250/lună · limite discutate după o analiză inițială.",
         s_cta_link1_p: "Cum construim și livrăm agenți.",
         s_cta_link2_p: "Automatizare white-label pentru clienții tăi.",
         s_cta_link3_p: "Agenți live, cifre reale."
@@ -1660,7 +1660,7 @@
         s_build_c3_h: "Неделя 3 — Тестирование и передача проекта",
         s_build_c3_p: "Прогоняем реальные сценарии вместе, пока ты не убедишься, что он правильно обрабатывает твои нестандартные случаи.",
         s_price_kicker: "Цена",
-        s_price_h2: "от €1 200 настройка · поддержка от €250/мес",
+        s_price_h2: "от €690 настройка · поддержка от €250/мес",
         s_price_p: "Фикс. настройка, отмена в любое время. Опциональная ежемесячная поддержка покрывает расходы на Claude API, хостинг n8n и поддержание точности агента по мере развития твоего бизнеса.",
         s_price_btn1: "Забронировать демо-звонок",
         s_price_btn2: "Полная разбивка цен"
@@ -1988,7 +1988,7 @@
         s_out_i3_h: "Vendor-neutral",
         s_out_i3_p: "Claude там, где он выигрывает, GPT там, где выигрывает он, open-source там, где данные требуют этого.",
         s_cta_h2: "Один бриф — до реального плана.",
-        s_cta_p: "Скажи, что хочешь автоматизировать. Отвечу с планом, фиксированной ценой и датой запуска — обычно в течение 48 часов. Настройка Merlin от €1 200 · опциональная поддержка от €250/мес · лимиты обсуждаются после первичной консультации.",
+        s_cta_p: "Скажи, что хочешь автоматизировать. Отвечу с планом, фиксированной ценой и датой запуска — обычно в течение 48 часов. Настройка Merlin от €690 · опциональная поддержка от €250/мес · лимиты обсуждаются после первичной консультации.",
         s_cta_link1_p: "Как мы разрабатываем и запускаем агентов.",
         s_cta_link2_p: "White-label автоматизация для твоих клиентов.",
         s_cta_link3_p: "Живые агенты, реальные цифры."
