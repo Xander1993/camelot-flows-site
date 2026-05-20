@@ -456,7 +456,7 @@
         s_law_h: "Governing Law",
         s_law_p: "These terms are governed by the laws of the Republic of Moldova. Disputes will be resolved by mutual agreement wherever possible. If formal proceedings are necessary, they will be conducted in Chișinău, Moldova.",
         s_contact_h: "Contact",
-        s_contact_p: "html:For any legal enquiries: <a href=\"mailto:hello@camelotflows.com\" style=\"color:var(--cf-terracotta)\">hello@camelotflows.com</a>"
+        s_contact_p: "html:For any legal enquiries: <a href=\"mailto:alex@camelotflows.dev\" style=\"color:var(--cf-terracotta)\">alex@camelotflows.dev</a>"
       },
       privacy: {
         meta_title: "Privacy Policy | Camelot Flows",
@@ -474,11 +474,11 @@
         s_analytics_h: "Analytics",
         s_analytics_p: "This website does not currently use any analytics service. If analytics are added in the future, this policy will be updated before any data collection begins.",
         s_rights_h: "Your rights",
-        s_rights_p: "html:You have the right to request a copy of any personal data I hold about you, to request its deletion, and to object to its processing. To exercise any of these rights, email <a href=\"mailto:hello@camelotflows.com\" style=\"color:var(--cf-terracotta)\">hello@camelotflows.com</a>.",
+        s_rights_p: "html:You have the right to request a copy of any personal data I hold about you, to request its deletion, and to object to its processing. To exercise any of these rights, email <a href=\"mailto:alex@camelotflows.dev\" style=\"color:var(--cf-terracotta)\">alex@camelotflows.dev</a>.",
         s_cookies_h: "Cookies",
         s_cookies_p: "This website does not set cookies. The only third-party script loaded is Tailwind CSS via CDN and Google Fonts, which may set their own cookies under their respective privacy policies.",
         s_contact_h: "Contact",
-        s_contact_p: "html:Privacy questions: <a href=\"mailto:hello@camelotflows.com\" style=\"color:var(--cf-terracotta)\">hello@camelotflows.com</a>"
+        s_contact_p: "html:Privacy questions: <a href=\"mailto:alex@camelotflows.dev\" style=\"color:var(--cf-terracotta)\">alex@camelotflows.dev</a>"
       },
       contact: {
         meta_title: "Contact Camelot Flows | Brief a Web or AI Build",
@@ -1138,7 +1138,7 @@
         s_law_h: "Legislație aplicabilă",
         s_law_p: "Acești termeni sunt reglementați de legile Republicii Moldova. Litigiile vor fi rezolvate prin acord reciproc ori de câte ori este posibil. Dacă sunt necesare proceduri formale, acestea se vor desfășura în Chișinău, Moldova.",
         s_contact_h: "Contact",
-        s_contact_p: "html:Pentru orice întrebări juridice: <a href=\"mailto:hello@camelotflows.com\" style=\"color:var(--cf-terracotta)\">hello@camelotflows.com</a>"
+        s_contact_p: "html:Pentru orice întrebări juridice: <a href=\"mailto:alex@camelotflows.dev\" style=\"color:var(--cf-terracotta)\">alex@camelotflows.dev</a>"
       },
       privacy: {
         meta_title: "Politica de confidențialitate | Camelot Flows",
@@ -1156,11 +1156,11 @@
         s_analytics_h: "Analitică",
         s_analytics_p: "Acest site nu folosește în prezent niciun serviciu de analiză. Dacă analitice sunt adăugate în viitor, această politică va fi actualizată înainte ca orice colectare de date să înceapă.",
         s_rights_h: "Drepturile tale",
-        s_rights_p: "html:Ai dreptul de a solicita o copie a oricăror date personale pe care le dețin despre tine, de a solicita ștergerea acestora și de a te opune prelucrării lor. Pentru a exercita oricare dintre aceste drepturi, trimite un email la <a href=\"mailto:hello@camelotflows.com\" style=\"color:var(--cf-terracotta)\">hello@camelotflows.com</a>.",
+        s_rights_p: "html:Ai dreptul de a solicita o copie a oricăror date personale pe care le dețin despre tine, de a solicita ștergerea acestora și de a te opune prelucrării lor. Pentru a exercita oricare dintre aceste drepturi, trimite un email la <a href=\"mailto:alex@camelotflows.dev\" style=\"color:var(--cf-terracotta)\">alex@camelotflows.dev</a>.",
         s_cookies_h: "Cookie-uri",
         s_cookies_p: "Acest site nu setează cookie-uri. Singurul script terț încărcat este Tailwind CSS via CDN și Google Fonts, care pot seta propriile cookie-uri conform politicilor lor de confidențialitate.",
         s_contact_h: "Contact",
-        s_contact_p: "html:Întrebări despre confidențialitate: <a href=\"mailto:hello@camelotflows.com\" style=\"color:var(--cf-terracotta)\">hello@camelotflows.com</a>"
+        s_contact_p: "html:Întrebări despre confidențialitate: <a href=\"mailto:alex@camelotflows.dev\" style=\"color:var(--cf-terracotta)\">alex@camelotflows.dev</a>"
       },
       contact: {
         meta_title: "Contact Camelot Flows | Brief pentru un proiect web sau AI",
@@ -1818,7 +1818,7 @@
         s_law_h: "Применимое право",
         s_law_p: "Настоящие условия регулируются законодательством Республики Молдова. Споры по возможности разрешаются по взаимному согласию. Если необходимы формальные процедуры, они проводятся в Кишинёве, Молдова.",
         s_contact_h: "Контакт",
-        s_contact_p: "html:По юридическим вопросам: <a href=\"mailto:hello@camelotflows.com\" style=\"color:var(--cf-terracotta)\">hello@camelotflows.com</a>"
+        s_contact_p: "html:По юридическим вопросам: <a href=\"mailto:alex@camelotflows.dev\" style=\"color:var(--cf-terracotta)\">alex@camelotflows.dev</a>"
       },
       privacy: {
         meta_title: "Политика конфиденциальности | Camelot Flows",
@@ -1836,11 +1836,11 @@
         s_analytics_h: "Аналитика",
         s_analytics_p: "Сайт в настоящее время не использует никаких аналитических сервисов. Если аналитика будет добавлена в будущем, эта политика будет обновлена до начала сбора данных.",
         s_rights_h: "Твои права",
-        s_rights_p: "html:Ты вправе запросить копию любых персональных данных, которые я о тебе храню, потребовать их удаления и возразить против их обработки. Для реализации любого из этих прав напиши на <a href=\"mailto:hello@camelotflows.com\" style=\"color:var(--cf-terracotta)\">hello@camelotflows.com</a>.",
+        s_rights_p: "html:Ты вправе запросить копию любых персональных данных, которые я о тебе храню, потребовать их удаления и возразить против их обработки. Для реализации любого из этих прав напиши на <a href=\"mailto:alex@camelotflows.dev\" style=\"color:var(--cf-terracotta)\">alex@camelotflows.dev</a>.",
         s_cookies_h: "Cookie",
         s_cookies_p: "Сайт не устанавливает cookie. Единственные сторонние скрипты — Tailwind CSS через CDN и Google Fonts, которые могут устанавливать собственные cookie согласно своим политикам конфиденциальности.",
         s_contact_h: "Контакт",
-        s_contact_p: "html:Вопросы по конфиденциальности: <a href=\"mailto:hello@camelotflows.com\" style=\"color:var(--cf-terracotta)\">hello@camelotflows.com</a>"
+        s_contact_p: "html:Вопросы по конфиденциальности: <a href=\"mailto:alex@camelotflows.dev\" style=\"color:var(--cf-terracotta)\">alex@camelotflows.dev</a>"
       },
       contact: {
         meta_title: "Контакты Camelot Flows | Бриф для веб- или AI-проекта",
