@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://camelotflows.dev/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://camelotflows.dev/about.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://camelotflows.dev/arsenal.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://camelotflows.dev/merlin.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://camelotflows.dev/case-studies.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://camelotflows.dev/for-agencies.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://camelotflows.dev/contact.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://camelotflows.dev/work-with-me.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://camelotflows.dev/service-creation.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://camelotflows.dev/service-maintenance.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://camelotflows.dev/service-automation.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://camelotflows.dev/service-marketing.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://camelotflows.dev/legal.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://camelotflows.dev/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://camelotflows.dev/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://camelotflows.dev/arsenal</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://camelotflows.dev/merlin</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://camelotflows.dev/case-studies</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://camelotflows.dev/for-agencies</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://camelotflows.dev/contact</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://camelotflows.dev/work-with-me</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://camelotflows.dev/service-creation</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://camelotflows.dev/service-maintenance</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://camelotflows.dev/service-automation</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://camelotflows.dev/service-marketing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://camelotflows.dev/legal</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://camelotflows.dev/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
