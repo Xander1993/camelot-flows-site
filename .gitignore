@@ -27,6 +27,10 @@ wp-theme/
 # Tailwind build intermediates
 src/tw.css.bak
 
+# Private outreach files — never deploy
+white-label-email-template.html
+send-emails/node_modules/
+
 # VPS deploy artifacts (generated, contain base64 blobs)
 _cf_deploy.php
 _cf_content.php
