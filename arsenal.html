@@ -537,7 +537,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     trigger: capWeb,
                     pin: true,
                     anticipatePin: 1,
-                    scrub: 1,
+                    scrub: 0.3,
                     start: "top top",
                     end: () => "+=" + travelDist(),
                     invalidateOnRefresh: true
@@ -553,7 +553,7 @@ window.addEventListener("DOMContentLoaded", () => {
                       trigger: capWeb,
                       start: "top top",
                       end: () => "+=" + travelDist(),
-                      scrub: 1,
+                      scrub: 0.3,
                       invalidateOnRefresh: true
                   }
                 }
