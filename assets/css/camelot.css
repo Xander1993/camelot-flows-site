@@ -366,6 +366,60 @@ body {
             background: linear-gradient(135deg, rgba(25, 15, 45, 0.8) 0%, rgba(10, 10, 15, 0.95) 100%);
         }
 
+        /* ── Pricing card details toggle ── */
+        .sw-details-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 10px;
+            background: none;
+            border: none;
+            padding: 2px 0;
+            cursor: pointer;
+            font-family: var(--font-mono, 'JetBrains Mono', monospace);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.35);
+            transition: color 0.2s ease;
+            outline: none;
+        }
+        .sw-details-toggle:hover  { color: rgba(255,255,255,0.7); }
+        .sw-details-toggle--cyan:hover   { color: rgba(0,255,255,0.75); }
+        .sw-details-toggle--purple:hover { color: rgba(191,0,255,0.75); }
+        .sw-details-toggle--amber:hover  { color: rgba(255,165,0,0.75); }
+        .sw-details-toggle--blue:hover   { color: rgba(0,102,255,0.75); }
+        .sw-details-toggle--cyan.is-open   { color: rgba(0,255,255,0.65); }
+        .sw-details-toggle--purple.is-open { color: rgba(191,0,255,0.65); }
+        .sw-details-toggle--amber.is-open  { color: rgba(255,165,0,0.65); }
+        .sw-details-toggle--blue.is-open   { color: rgba(0,102,255,0.65); }
+
+        .sw-details-toggle .toggle-arrow {
+            display: inline-block;
+            font-size: 9px;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .sw-details-toggle.is-open .toggle-arrow {
+            transform: rotate(90deg);
+        }
+
+        .sw-details {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+                        opacity 0.3s ease 0.05s;
+        }
+        .sw-details.is-open {
+            max-height: 240px;
+            opacity: 1;
+        }
+
+        [data-theme="cozy"] .sw-details-toggle       { color: rgba(26,26,24,0.35); }
+        [data-theme="cozy"] .sw-details-toggle:hover  { color: rgba(26,26,24,0.75); }
+        [data-theme="cozy"] .sw-details-toggle.is-open { color: rgba(26,26,24,0.65); }
+
         @media (max-width: 767px) {
             #starwars-pricing {
                 height: auto !important;

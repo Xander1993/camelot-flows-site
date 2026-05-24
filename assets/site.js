@@ -358,6 +358,29 @@
         });
     }
 
+    function initPricingCardDetails() {
+        queryAll('.sw-details-toggle').forEach(function (toggle) {
+            toggle.addEventListener('click', function () {
+                var details = toggle.nextElementSibling;
+                if (!details || !details.classList.contains('sw-details')) return;
+
+                var isOpen = details.classList.toggle('is-open');
+                toggle.classList.toggle('is-open', isOpen);
+                toggle.setAttribute('aria-expanded', String(isOpen));
+
+                if (window.gsap && isOpen) {
+                    var card = toggle.closest('.pricing-card-sw');
+                    if (card) {
+                        window.gsap.fromTo(card,
+                            { scale: 1 },
+                            { scale: 1.018, duration: 0.15, ease: 'power2.out', yoyo: true, repeat: 1 }
+                        );
+                    }
+                }
+            });
+        });
+    }
+
     document.addEventListener("DOMContentLoaded", function () {
         initNav();
         initMagneticButtons();
@@ -371,6 +394,7 @@
         initArsenalFilters();
         initLeadForm();
         initWhatsAppButton();
+        initPricingCardDetails();
 
         // Handle ?goto=pricing — navigating here without a hash so GSAP inits
         // normally at the top, then Lenis scrolls to pricing after animations start.
