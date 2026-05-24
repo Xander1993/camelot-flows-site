@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>(function(){var h=document.documentElement;try{var c=document.cookie.match('(?:^|;) ?cf_theme=([^;]*)');var t=c?c[1]:(localStorage.getItem('cf_theme')||'cozy');h.setAttribute('data-theme',t);}catch(e){h.setAttribute('data-theme','cozy');}try{if(sessionStorage.getItem('cf_loaded')==='1')h.classList.add('cf-skip-preloader');}catch(e){}h.classList.add('js');})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Launch Site — Live in 7 Days · €390 | Camelot Flows</title>
+<meta name="description" content="Fixed-scope website. Up to 3 pages, mobile responsive, contact form, GA4, lead-capture automation. Delivered in 5–7 days from €390.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tailwind.built.css">
+<link rel="stylesheet" href="assets/site.css?v=2">
+<link rel="stylesheet" href="assets/css/camelot.css?v=8">
+<link rel="stylesheet" href="assets/css/theme-night.css?v=2">
+<link rel="stylesheet" href="assets/css/lang-switcher.css">
+<noscript><style>.sr,.hero-word,.hero-price,.hero-cta{opacity:1!important;transform:none!important;}</style></noscript>
+<style>
+/* ── Accent tokens (launch-site = cyan / terracotta) ── */
+:root,[data-theme="night"]{
+  --lp-accent:#00f2ff;--lp-accent-rgb:0,242,255;
+  --lp-bg:#050508;--lp-surface:#0A0A12;
+  --lp-text:#e2e8f0;--lp-muted:rgba(226,232,240,.45);
+  --lp-border:rgba(255,255,255,.08);
+  --lp-card:rgba(255,255,255,.04);--lp-shine:rgba(255,255,255,.10);
+}
+[data-theme="cozy"]{
+  --lp-accent:#C4785C;--lp-accent-rgb:196,120,92;
+  --lp-bg:#F5F4F0;--lp-surface:#EDEBE6;
+  --lp-text:#1A1A18;--lp-muted:rgba(26,26,24,.50);
+  --lp-border:rgba(26,26,24,.10);
+  --lp-card:rgba(26,26,24,.03);--lp-shine:rgba(255,255,255,.80);
+}
+body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--lp-bg);color:var(--lp-text);overflow-x:hidden;line-height:1.7;}
+a{text-decoration:none;color:inherit;}
+.lp-grain{position:fixed;inset:0;z-index:50;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.04;mix-blend-mode:overlay;}
+[data-theme="cozy"] .lp-grain{opacity:.09;}
+.lp-wrap{max-width:80rem;margin-inline:auto;padding-inline:1.5rem;}
+@media(min-width:1024px){.lp-wrap{padding-inline:3rem;}}
+.lp-section{padding-top:8rem;padding-bottom:8rem;}
+@media(min-width:768px){.lp-section{padding-top:12rem;padding-bottom:12rem;}}
+.pill{display:inline-flex;align-items:center;padding:.25rem .875rem;border-radius:999px;background:rgba(var(--lp-accent-rgb),.12);border:1px solid rgba(var(--lp-accent-rgb),.28);color:var(--lp-accent);font-family:'Fraunces',serif;font-size:.6875rem;font-weight:500;text-transform:uppercase;letter-spacing:.18em;margin-bottom:1.25rem;}
+.lp-hero{position:relative;min-height:100dvh;display:flex;align-items:center;padding-top:9rem;padding-bottom:4rem;overflow:hidden;}
+.hero-orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(80px);will-change:transform;}
+.hero-orb-1{width:40vw;height:40vw;top:-10%;right:5%;background:radial-gradient(circle,rgba(var(--lp-accent-rgb),.18) 0%,transparent 70%);}
+.hero-orb-2{width:30vw;height:30vw;bottom:10%;left:-5%;background:radial-gradient(circle,rgba(var(--lp-accent-rgb),.08) 0%,transparent 70%);}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:3rem;align-items:center;width:100%;}
+@media(min-width:768px){.hero-grid{grid-template-columns:3fr 2fr;gap:4rem;}}
+.hero-h1{font-family:'Fraunces',serif;font-size:clamp(3rem,5.5vw,5.5rem);font-weight:500;line-height:1.05;letter-spacing:-.025em;max-width:44rem;margin-bottom:1.75rem;}
+.hero-h1 .accent{color:var(--lp-accent);}
+.hero-sub{font-size:1.0625rem;line-height:1.7;color:var(--lp-muted);max-width:38rem;margin-bottom:2.5rem;}
+.hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:1rem;}
+.cta-pill{display:inline-flex;align-items:center;gap:.75rem;padding:.875rem .875rem .875rem 1.75rem;border-radius:999px;background:var(--lp-accent);color:#050508;font-size:1rem;font-weight:600;transition:transform .4s cubic-bezier(.32,.72,0,1),box-shadow .4s cubic-bezier(.32,.72,0,1);}
+.cta-pill:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(var(--lp-accent-rgb),.28);}
+.cta-arrow{width:2.25rem;height:2.25rem;border-radius:999px;background:rgba(0,0,0,.20);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .35s cubic-bezier(.32,.72,0,1);}
+.cta-pill:hover .cta-arrow{transform:translate(3px,-2px) scale(1.1);}
+.cta-arrow svg{width:1rem;height:1rem;stroke:#050508;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.cta-ghost{display:inline-flex;align-items:center;gap:.5rem;padding:.875rem 1.75rem;border-radius:999px;border:1px solid var(--lp-border);background:transparent;color:var(--lp-muted);font-size:1rem;transition:border-color .3s ease,background .3s ease,color .3s ease;}
+.cta-ghost:hover{background:rgba(var(--lp-accent-rgb),.06);border-color:rgba(var(--lp-accent-rgb),.35);color:var(--lp-text);}
+.price-card-outer{border-radius:2rem;padding:6px;max-width:280px;width:100%;border:1px solid rgba(var(--lp-accent-rgb),.22);background:rgba(var(--lp-accent-rgb),.04);}
+.price-card-inner{border-radius:calc(2rem - 6px);background:rgba(var(--lp-accent-rgb),.06);box-shadow:inset 0 1px 1px rgba(var(--lp-accent-rgb),.15);padding:2.5rem 2rem;display:flex;flex-direction:column;gap:1.5rem;}
+[data-theme="cozy"] .price-card-inner{background:rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.9);}
+.price-from{font-size:.75rem;color:var(--lp-muted);text-transform:uppercase;letter-spacing:.12em;}
+.price-amount{font-family:'JetBrains Mono',monospace;font-size:clamp(3.5rem,6vw,5rem);font-weight:400;line-height:1;color:var(--lp-accent);letter-spacing:-.03em;}
+.price-checks{list-style:none;display:flex;flex-direction:column;gap:.625rem;}
+.price-check-item{display:flex;align-items:center;gap:.625rem;font-size:.875rem;color:var(--lp-muted);}
+.check-dot{width:.375rem;height:.375rem;border-radius:50%;background:var(--lp-accent);flex-shrink:0;}
+.marquee-wrap{padding:1.375rem 0;border-top:1px solid var(--lp-border);border-bottom:1px solid var(--lp-border);overflow:hidden;}
+.marquee-track{display:flex;gap:2.5rem;width:max-content;animation:marquee 26s linear infinite;}
+.m-item{font-size:.875rem;font-weight:500;color:var(--lp-muted);white-space:nowrap;letter-spacing:.04em;}
+.m-dot{color:var(--lp-accent);opacity:.7;}
+@keyframes marquee{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none;}}
+.feat-grid{display:grid;grid-template-columns:1fr;gap:3rem;align-items:start;}
+@media(min-width:768px){.feat-grid{grid-template-columns:2fr 3fr;gap:4rem;align-items:center;}}
+.feat-list{display:flex;flex-direction:column;gap:.75rem;}
+.feat-item{padding:1.125rem 1.375rem;border-radius:1rem;border:1px solid transparent;cursor:default;}
+.feat-item-name{font-family:'Fraunces',serif;font-size:1.125rem;font-weight:400;margin-bottom:.2rem;}
+.feat-item-sub{font-size:.8125rem;color:var(--lp-muted);}
+.feat-details{position:relative;}
+.feat-detail{opacity:0;transform:translateY(14px);pointer-events:none;}
+.feat-detail:first-child{opacity:1;transform:translateY(0);pointer-events:auto;}
+@media(max-width:767px){.feat-detail{opacity:1!important;transform:none!important;pointer-events:auto;margin-bottom:1.25rem;}.feat-detail+.feat-detail{position:relative;}}
+.feat-detail-card{border-radius:2rem;padding:6px;border:1px solid var(--lp-border);background:rgba(var(--lp-accent-rgb),.03);}
+.feat-detail-inner{border-radius:calc(2rem - 6px);background:var(--lp-card);box-shadow:inset 0 1px 1px var(--lp-shine);padding:2.5rem;}
+[data-theme="cozy"] .feat-detail-inner{background:rgba(255,255,255,.60);}
+.feat-icon{width:2.75rem;height:2.75rem;margin-bottom:1.5rem;}
+.feat-icon svg{width:100%;height:100%;stroke:var(--lp-accent);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+.feat-title{font-family:'Fraunces',serif;font-size:1.875rem;font-weight:400;line-height:1.15;margin-bottom:.875rem;}
+.feat-desc{font-size:1rem;line-height:1.75;color:var(--lp-muted);}
+.section-h{font-family:'Fraunces',serif;font-size:clamp(2.25rem,4vw,3.5rem);font-weight:400;line-height:1.1;letter-spacing:-.02em;margin-bottom:1rem;}
+.section-sub{font-size:1.0625rem;color:var(--lp-muted);max-width:40rem;line-height:1.7;margin-bottom:3.5rem;}
+.deliverables{display:grid;grid-template-columns:1fr;gap:1.5rem;max-width:46rem;}
+@media(min-width:600px){.deliverables{grid-template-columns:1fr 1fr;}}
+.deliv-item{display:flex;align-items:flex-start;gap:1rem;}
+.check-svg{flex-shrink:0;width:2rem;height:2rem;margin-top:.125rem;}
+.check-bg{fill:rgba(var(--lp-accent-rgb),.12);}
+.check-path{stroke:var(--lp-accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.deliv-name{font-size:1rem;font-weight:600;margin-bottom:.25rem;}
+.deliv-desc{font-size:.875rem;color:var(--lp-muted);line-height:1.6;}
+.timeline-scroll{overflow-x:auto;margin-top:3.5rem;padding-bottom:.5rem;}
+.timeline-svg-wrap{min-width:580px;height:150px;}
+.timeline-svg{width:100%;height:100%;overflow:visible;}
+.t-track{fill:none;stroke:var(--lp-border);stroke-width:2;stroke-linecap:round;}
+.t-path{fill:none;stroke:var(--lp-accent);stroke-width:2;stroke-linecap:round;}
+.t-ring{fill:var(--lp-bg);stroke:var(--lp-accent);stroke-width:2;}
+.t-dot{fill:var(--lp-accent);}
+.t-day{font-family:'JetBrains Mono',monospace;font-size:10px;fill:var(--lp-accent);font-weight:500;}
+.t-label{font-family:'Space Grotesk',sans-serif;font-size:12px;fill:var(--lp-text);font-weight:500;}
+.t-sub{font-family:'Space Grotesk',sans-serif;font-size:11px;fill:var(--lp-muted);}
+.risk-outer{max-width:680px;margin-inline:auto;border-radius:2rem;padding:6px;border:1px solid rgba(var(--lp-accent-rgb),.22);background:rgba(var(--lp-accent-rgb),.04);}
+.risk-inner{border-radius:calc(2rem - 6px);background:var(--lp-card);box-shadow:inset 0 1px 1px var(--lp-shine);padding:3rem 2.5rem;text-align:center;}
+[data-theme="cozy"] .risk-inner{background:rgba(255,255,255,.60);}
+.risk-icon{width:2.75rem;height:2.75rem;margin:0 auto 1.25rem;}
+.risk-icon svg{width:100%;height:100%;stroke:var(--lp-accent);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+.risk-h{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:500;margin-bottom:.875rem;}
+.risk-copy{font-family:'Fraunces',serif;font-style:italic;font-size:1.125rem;line-height:1.7;color:var(--lp-muted);max-width:36rem;margin:0 auto 1.5rem;}
+.risk-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.375rem 1rem;border-radius:999px;background:rgba(var(--lp-accent-rgb),.12);border:1px solid rgba(var(--lp-accent-rgb),.25);font-size:.8125rem;font-weight:500;color:var(--lp-accent);}
+.risk-badge svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.faq-wrap{max-width:680px;margin-top:3rem;}
+.faq-item{border-bottom:1px solid var(--lp-border);}
+.faq-btn{display:flex;justify-content:space-between;align-items:center;width:100%;padding:1.375rem 0;background:transparent;border:none;cursor:pointer;color:var(--lp-text);text-align:left;gap:1rem;}
+.faq-q{font-size:1.0625rem;font-weight:500;line-height:1.4;}
+.faq-arrow{flex-shrink:0;color:var(--lp-accent);font-size:.9375rem;transition:transform .35s cubic-bezier(.32,.72,0,1);}
+.faq-item.open .faq-arrow{transform:rotate(90deg);}
+.faq-body{max-height:0;overflow:hidden;opacity:0;transition:max-height .45s cubic-bezier(.4,0,.2,1),opacity .3s ease .05s;}
+.faq-item.open .faq-body{max-height:320px;opacity:1;}
+.faq-ans{font-size:.9375rem;line-height:1.75;color:var(--lp-muted);padding-bottom:1.375rem;}
+.lp-cta-sect{min-height:100dvh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 1.5rem;position:relative;overflow:hidden;}
+.cta-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 50% 60%,rgba(var(--lp-accent-rgb),.11) 0%,transparent 70%);}
+.cta-content{position:relative;z-index:2;max-width:48rem;width:100%;}
+.cta-h{font-family:'Fraunces',serif;font-size:clamp(2.75rem,5.5vw,5rem);font-weight:400;line-height:1.05;letter-spacing:-.025em;margin-bottom:1.375rem;}
+.cta-h .accent{color:var(--lp-accent);}
+.cta-p{font-size:1.0625rem;color:var(--lp-muted);margin-bottom:2.5rem;line-height:1.7;}
+.cta-row{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:1rem;}
+.sr{opacity:0;transform:translateY(40px);}
+</style>
+</head>
+
+<body class="theme-cozy font-body overflow-x-hidden">
+<div class="lp-grain" aria-hidden="true"></div>
+
+<!-- Site nav (identical to all other pages) -->
+<nav class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-6 md:py-6">
+    <div class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
+        <div class="flex items-center">
+            <a href="index.html"><img src="assets/images/cf-logo-wordmark.png?v=3" alt="Camelot Flows" class="h-14 md:h-24 w-auto object-contain"></a>
+        </div>
+        <div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
+            <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="index.html">[Home]</a>
+            <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="index.html#round-table">[Services]</a>
+            <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="arsenal.html">[Arsenal]</a>
+            <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="merlin.html">[Merlin]</a>
+            <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" href="case-studies.html">[Cases]</a>
+            <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="contact.html">[Contact]</a>
+        </div>
+        <div class="flex items-center gap-2">
+            <a href="tel:+37369555936" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" aria-label="Call" title="+373 69 555 936">
+                <span class="material-symbols-outlined cf-phone-icon" style="font-size:18px">call</span>
+            </a>
+            <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
+                <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
+                <span class="text-[10px] font-mono text-emerald-500/80">SYS_ONLINE</span>
+            </div>
+            <div class="lang-switcher" data-cf-lang-switcher>
+                <button class="lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Change language">
+                    <span class="lang-current" data-cf-lang-current>EN</span>
+                    <span class="material-symbols-outlined lang-chevron">expand_more</span>
+                </button>
+                <ul class="lang-menu" role="listbox" hidden>
+                    <li role="option" data-lang="en" tabindex="-1">EN</li>
+                    <li role="option" data-lang="ro" tabindex="-1">RO</li>
+                    <li role="option" data-lang="ru" tabindex="-1">RU</li>
+                </ul>
+            </div>
+            <button id="mobile-menu-toggle" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 transition-all text-slate-400" aria-label="Open menu" type="button">
+                <span class="material-symbols-outlined" style="font-size:20px">menu</span>
+            </button>
+            <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Toggle theme">
+                <span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
+                <span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
+            </button>
+            <a href="contact.html?objective=launch-site" class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hidden lg:inline-flex items-center">[Get_Started]</a>
+        </div>
+    </div>
+    <div id="mobile-nav" class="hidden mt-2 max-w-7xl mx-auto">
+        <div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
+            <div class="flex flex-col gap-1">
+                <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="index.html">[Home]</a>
+                <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="arsenal.html">[Arsenal]</a>
+                <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="merlin.html">[Merlin]</a>
+                <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="contact.html">[Contact]</a>
+                <div class="mx-3 my-2 h-px bg-white/10"></div>
+                <a href="contact.html?objective=launch-site" class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all">[Get_Started]</a>
+            </div>
+        </div>
+    </div>
+    <script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.add("hidden");}});}})();</script>
+</nav>
+
+<!-- S1: Hero -->
+<section class="lp-hero" id="hero">
+  <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+  <div class="lp-wrap hero-grid">
+    <div>
+      <span class="pill">Launch Site · Fixed Scope</span>
+      <h1 class="hero-h1">
+        <span class="hero-word">Your site,</span><br>
+        <span class="hero-word">live in</span><br>
+        <span class="hero-word accent">7 days.</span>
+      </h1>
+      <p class="hero-sub">Up to 3 pages, mobile responsive, contact form, GA4 analytics, and lead-capture automation wired in. Fixed price. Zero surprises.</p>
+      <div class="hero-actions">
+        <a href="contact.html?objective=launch-site" class="cta-pill hero-cta">
+          <span>Start my project</span>
+          <span class="cta-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+        </a>
+        <a href="#deliverables" class="cta-ghost hero-cta">What's included</a>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;">
+      <div class="price-card-outer hero-price">
+        <div class="price-card-inner">
+          <div><div class="price-from">Starting from</div><div class="price-amount">€390</div></div>
+          <ul class="price-checks">
+            <li class="price-check-item"><span class="check-dot"></span>Up to 3 pages</li>
+            <li class="price-check-item"><span class="check-dot"></span>5–7 business days</li>
+            <li class="price-check-item"><span class="check-dot"></span>Fixed price</li>
+            <li class="price-check-item"><span class="check-dot"></span>2 revision rounds</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S2: Trust marquee -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="m-item">Fixed Scope</span><span class="m-dot m-item">·</span><span class="m-item">47 Projects Delivered</span><span class="m-dot m-item">·</span><span class="m-item">WordPress + Claude AI</span><span class="m-dot m-item">·</span><span class="m-item">Clean Handoff</span><span class="m-dot m-item">·</span><span class="m-item">5–7 Day Delivery</span><span class="m-dot m-item">·</span><span class="m-item">Mobile Responsive</span><span class="m-dot m-item">·</span><span class="m-item">GA4 Included</span><span class="m-dot m-item">·</span>
+    <span class="m-item">Fixed Scope</span><span class="m-dot m-item">·</span><span class="m-item">47 Projects Delivered</span><span class="m-dot m-item">·</span><span class="m-item">WordPress + Claude AI</span><span class="m-dot m-item">·</span><span class="m-item">Clean Handoff</span><span class="m-dot m-item">·</span><span class="m-item">5–7 Day Delivery</span><span class="m-dot m-item">·</span><span class="m-item">Mobile Responsive</span><span class="m-dot m-item">·</span><span class="m-item">GA4 Included</span><span class="m-dot m-item">·</span>
+  </div>
+</div>
+
+<!-- S3: Feature Spotlight (GSAP PIN) -->
+<section id="feature-spotlight" class="lp-section">
+  <div class="lp-wrap">
+    <div class="sr" style="margin-bottom:3rem;">
+      <span class="pill">How it works</span>
+      <h2 class="section-h">Built right, the first time.</h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-list">
+        <div class="feat-item" data-fi="0"><div class="feat-item-name">Speed</div><div class="feat-item-sub">Live in 5–7 business days</div></div>
+        <div class="feat-item" data-fi="1"><div class="feat-item-name">Scope Lock</div><div class="feat-item-sub">Price quoted is price invoiced</div></div>
+        <div class="feat-item" data-fi="2"><div class="feat-item-name">Mobile-first</div><div class="feat-item-sub">Designed for 375px, scales up</div></div>
+        <div class="feat-item" data-fi="3"><div class="feat-item-name">Analytics</div><div class="feat-item-sub">GA4 goals configured, not just installed</div></div>
+      </div>
+      <div class="feat-details">
+        <div class="feat-detail" data-fd="0"><div class="feat-detail-card"><div class="feat-detail-inner">
+          <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <h3 class="feat-title">Live before Monday.</h3>
+          <p class="feat-desc">Most freelancers take weeks. I deliver in 5–7 business days — guaranteed by contract. Daily updates in Slack, keys to a live site by Friday.</p>
+        </div></div></div>
+        <div class="feat-detail" data-fd="1"><div class="feat-detail-card"><div class="feat-detail-inner">
+          <div class="feat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <h3 class="feat-title">The price you see is what you pay.</h3>
+          <p class="feat-desc">A fixed scope means a fixed invoice. After 47 projects I know exactly what to budget — surprises are on me, not you.</p>
+        </div></div></div>
+        <div class="feat-detail" data-fd="2"><div class="feat-detail-card"><div class="feat-detail-inner">
+          <div class="feat-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1"/></svg></div>
+          <h3 class="feat-title">63% of your visitors are on mobile.</h3>
+          <p class="feat-desc">Every button is touch-target sized. Every image optimised for slow connections. Every layout tested on real devices before handoff.</p>
+        </div></div></div>
+        <div class="feat-detail" data-fd="3"><div class="feat-detail-card"><div class="feat-detail-inner">
+          <div class="feat-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <h3 class="feat-title">Know who visits. Know why they leave.</h3>
+          <p class="feat-desc">GA4 is configured, goals are set, and your first insight is waiting on day one. Lead-capture automation fires the moment a form is submitted.</p>
+        </div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S4: Deliverables -->
+<section id="deliverables" class="lp-section">
+  <div class="lp-wrap">
+    <div class="sr">
+      <span class="pill">What's included</span>
+      <h2 class="section-h">Everything you need. Nothing you don't.</h2>
+      <p class="section-sub">A fixed-scope package means exactly this, nothing more, nothing less.</p>
+    </div>
+    <div class="deliverables">
+      <div class="deliv-item sr"><svg class="check-svg" viewBox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"/><path class="check-path" d="M10 16l4 4 8-8"/></svg><div><div class="deliv-name">Up to 3 pages</div><div class="deliv-desc">Home, About, Contact — or any 3 you need. Clean WordPress build.</div></div></div>
+      <div class="deliv-item sr"><svg class="check-svg" viewBox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"/><path class="check-path" d="M10 16l4 4 8-8"/></svg><div><div class="deliv-name">Contact form + email</div><div class="deliv-desc">Working form delivered to your inbox. Spam-filtered, tested on mobile.</div></div></div>
+      <div class="deliv-item sr"><svg class="check-svg" viewBox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"/><path class="check-path" d="M10 16l4 4 8-8"/></svg><div><div class="deliv-name">GA4 Analytics</div><div class="deliv-desc">Goals configured, events tracked, data flowing from day one.</div></div></div>
+      <div class="deliv-item sr"><svg class="check-svg" viewBox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"/><path class="check-path" d="M10 16l4 4 8-8"/></svg><div><div class="deliv-name">Lead-capture automation</div><div class="deliv-desc">Form submission → CRM entry + follow-up email fires automatically.</div></div></div>
+      <div class="deliv-item sr"><svg class="check-svg" viewBox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"/><path class="check-path" d="M10 16l4 4 8-8"/></svg><div><div class="deliv-name">2 revision rounds</div><div class="deliv-desc">Two full cycles. Request changes, I implement within 24 hours.</div></div></div>
+      <div class="deliv-item sr"><svg class="check-svg" viewBox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"/><path class="check-path" d="M10 16l4 4 8-8"/></svg><div><div class="deliv-name">Mobile responsive</div><div class="deliv-desc">Tested on iPhone, Android, tablet. Not a template — a real mobile build.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- S5: Timeline -->
+<section id="timeline-section" class="lp-section">
+  <div class="lp-wrap">
+    <div class="sr"><span class="pill">Delivery timeline</span><h2 class="section-h">From call to live in 7 days.</h2><p class="section-sub">This is the actual schedule, not the optimistic one. The process is dialled after 47 projects.</p></div>
+    <div class="timeline-scroll"><div class="timeline-svg-wrap">
+      <svg class="timeline-svg" viewBox="0 0 860 140" preserveAspectRatio="xMidYMid meet">
+        <line class="t-track" x1="60" y1="70" x2="800" y2="70"/>
+        <line class="t-path" x1="60" y1="70" x2="60" y2="70" id="t-line"/>
+        <circle class="t-ring" cx="60" cy="70" r="9"/><circle class="t-dot" cx="60" cy="70" r="4"/>
+        <text class="t-day" x="60" y="28" text-anchor="middle">DAY 1</text><text class="t-label" x="60" y="46" text-anchor="middle">Kick-off call</text><text class="t-sub" x="60" y="97" text-anchor="middle">Brief + assets</text><text class="t-sub" x="60" y="112" text-anchor="middle">collected</text>
+        <circle class="t-ring" cx="430" cy="70" r="9"/><circle class="t-dot" cx="430" cy="70" r="4"/>
+        <text class="t-day" x="430" y="28" text-anchor="middle">DAY 3–4</text><text class="t-label" x="430" y="46" text-anchor="middle">First draft</text><text class="t-sub" x="430" y="97" text-anchor="middle">Staging live,</text><text class="t-sub" x="430" y="112" text-anchor="middle">revision round 1</text>
+        <circle class="t-ring" cx="800" cy="70" r="9"/><circle class="t-dot" cx="800" cy="70" r="4"/>
+        <text class="t-day" x="800" y="28" text-anchor="middle">DAY 7</text><text class="t-label" x="800" y="46" text-anchor="middle">Live</text><text class="t-sub" x="800" y="97" text-anchor="middle">Domain connected,</text><text class="t-sub" x="800" y="112" text-anchor="middle">GA4 + automation on</text>
+      </svg>
+    </div></div>
+  </div>
+</section>
+
+<!-- S6: Risk Reversal -->
+<section class="lp-section" id="guarantee">
+  <div class="lp-wrap">
+    <div class="risk-outer sr"><div class="risk-inner">
+      <div class="risk-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <h2 class="risk-h">7-Day Delivery Guarantee</h2>
+      <p class="risk-copy">"If your site isn't live within 7 business days of our kick-off call, you receive a full refund. No questions, no awkward emails."</p>
+      <span class="risk-badge"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Backed by contract</span>
+    </div></div>
+  </div>
+</section>
+
+<!-- S7: FAQ -->
+<section class="lp-section" id="faq">
+  <div class="lp-wrap">
+    <div class="sr"><span class="pill">Questions</span><h2 class="section-h">Everything you might wonder.</h2></div>
+    <div class="faq-wrap">
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">What does "up to 3 pages" include?</span><span class="faq-arrow" aria-hidden="true">▸</span></button><div class="faq-body"><p class="faq-ans">Any 3 pages — most clients choose Home, About/Services, and Contact. Pages are built in WordPress so you can edit them yourself after handoff.</p></div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">Do I need to provide copy and images?</span><span class="faq-arrow" aria-hidden="true">▸</span></button><div class="faq-body"><p class="faq-ans">Ideally yes — your words, your photos. If you don't have copy, I can write a first draft based on a 30-minute briefing. Stock photos are included as placeholders.</p></div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">Is hosting included in the €390?</span><span class="faq-arrow" aria-hidden="true">▸</span></button><div class="faq-body"><p class="faq-ans">No — hosting is billed separately directly to you (typically €3–6/month). I set it up, configure it, and hand you the credentials. You own everything.</p></div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">What if I want changes after the 2 revision rounds?</span><span class="faq-arrow" aria-hidden="true">▸</span></button><div class="faq-body"><p class="faq-ans">Additional revisions are €45/hour. If a revision is needed because I misunderstood the brief, that's on me, not the revision counter.</p></div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">Can I upgrade to more pages later?</span><span class="faq-arrow" aria-hidden="true">▸</span></button><div class="faq-body"><p class="faq-ans">Yes. Existing clients get €90/page for add-ons. You can upgrade to Ecommerce or Custom Premium — the amount paid counts toward the difference.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- S8: Final CTA -->
+<section class="lp-cta-sect" id="book">
+  <div class="cta-glow" aria-hidden="true"></div>
+  <div class="cta-content sr">
+    <span class="pill">Ready to start?</span>
+    <h2 class="cta-h">Your site, live<br>before <span class="accent">Monday.</span></h2>
+    <p class="cta-p">Book a free 20-minute call. We scope the project, agree the price, and I start building the same day.</p>
+    <div class="cta-row">
+      <a href="contact.html?objective=launch-site" class="cta-pill">
+        <span>Book a free call</span>
+        <span class="cta-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Site footer (identical to all other pages) -->
+<footer class="bg-obsidian pt-24 pb-12 px-6 border-t border-primary/20 relative">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20">
+            <div class="md:col-span-3">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-8 rounded bg-primary flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-lg">architecture</span>
+                    </div>
+                    <span class="font-display text-xl font-bold tracking-tighter uppercase text-white">Camelot Flows</span>
+                </div>
+                <p class="text-slate-500 mb-8 text-sm leading-relaxed font-mono">
+                    <span class="text-primary">&gt;</span> Location: Chisinau, MD<br>
+                    <span class="text-primary">&gt;</span> Coordinates: 47.0105° N, 28.8638° E<br>
+                    <span class="text-primary">&gt;</span> Mission: Premium builds. Measurable results.
+                </p>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="https://www.linkedin.com/in/alex-buzi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a class="nav-phone-btn w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="tel:+37369555936" aria-label="Call">
+                        <span class="material-symbols-outlined cf-phone-icon text-lg">call</span>
+                    </a>
+                </div>
+            </div>
+            <div class="md:col-span-2">
+                <h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max">Protocol</h5>
+                <ul class="space-y-3 text-slate-500 text-sm font-mono">
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="arsenal.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>The Arsenal</a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="merlin.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>Merlin</a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="case-studies.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>Case Studies</a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="for-agencies.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>Agencies</a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="https://blog.camelotflows.dev" target="_blank"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>Blog</a></li>
+                </ul>
+            </div>
+            <div class="md:col-span-2">
+                <h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max">Services</h5>
+                <ul class="space-y-3 text-slate-500 text-sm font-mono">
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="service-creation.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>Site Creation</a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="service-maintenance.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>Maintenance</a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="service-automation.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>Automations</a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="service-marketing.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>Marketing</a></li>
+                </ul>
+            </div>
+            <div class="md:col-span-2">
+                <h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max">Company</h5>
+                <ul class="space-y-3 text-slate-500 text-sm font-mono">
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="about.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>About</a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="work-with-me.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>Work With</a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="legal.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>Legal</a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="contact.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>Contact</a></li>
+                </ul>
+            </div>
+            <div class="md:col-span-3">
+                <h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max">Vanguard</h5>
+                <p class="text-slate-500 text-sm mb-6 leading-relaxed">Weekly insights on AI automation sent directly to your terminal.</p>
+                <div class="flex gap-2 p-1 bg-white/5 rounded border border-white/10">
+                    <label for="nl-email" class="sr-only">Email address</label>
+                    <input id="nl-email" class="bg-transparent border-none focus:ring-0 text-sm flex-1 px-4 text-white font-mono placeholder:text-slate-600" placeholder="ENTER_EMAIL" type="email">
+                    <button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded text-xs font-bold transition-colors font-mono">[SUBMIT]</button>
+                </div>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-xs text-slate-600 font-mono">&copy; 2026 Camelot Flows. Built by Alex Buzi.</p>
+            <div class="flex flex-wrap justify-center gap-4 md:gap-8">
+                <div class="flex items-center gap-2 text-xs text-slate-500 font-mono"><span class="material-symbols-outlined text-sm text-green-500">wifi</span>System Status: Optimal</div>
+                <div class="flex items-center gap-2 text-xs text-slate-500 font-mono"><span class="material-symbols-outlined text-sm text-blue-500">bolt</span>Lightning Fast Performance</div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/js/locales.js"></script>
+<script defer src="assets/js/i18n.js"></script>
+<script defer src="assets/site.js?v=2"></script>
+<script>
+// Theme toggle (site nav button)
+(function(){
+  var btn=document.getElementById('theme-toggle');
+  if(!btn)return;
+  btn.addEventListener('click',function(){
+    var h=document.documentElement;
+    var next=h.getAttribute('data-theme')==='night'?'cozy':'night';
+    if(document.startViewTransition){document.startViewTransition(function(){h.setAttribute('data-theme',next);});}
+    else{h.setAttribute('data-theme',next);}
+    try{localStorage.setItem('cf_theme',next);document.cookie='cf_theme='+next+';path=/;max-age=31536000';}catch(e){}
+  });
+})();
+
+// FAQ
+document.querySelectorAll('.faq-btn').forEach(function(btn){btn.addEventListener('click',function(){var item=this.closest('.faq-item');var isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(o){o.classList.remove('open');o.querySelector('.faq-btn').setAttribute('aria-expanded','false');});if(!isOpen){item.classList.add('open');this.setAttribute('aria-expanded','true');}});});
+
+// GSAP
+window.addEventListener('DOMContentLoaded',function(){
+  if(typeof gsap==='undefined'){document.querySelectorAll('.sr,.hero-word,.hero-price,.hero-cta').forEach(function(el){el.style.opacity='1';el.style.transform='none';});return;}
+  gsap.registerPlugin(ScrollTrigger);
+  var noMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!noMotion){
+    gsap.timeline({delay:.25}).from('.hero-word',{y:60,opacity:0,stagger:.09,duration:1,ease:'power4.out'}).from('.hero-price',{x:80,opacity:0,duration:1,ease:'back.out(1.7)'},'-=.55').from('.hero-cta',{y:20,opacity:0,stagger:.1,duration:.7,ease:'power3.out'},'-.45');
+    var orbs=document.querySelectorAll('.hero-orb');
+    window.addEventListener('mousemove',function(e){var dx=e.clientX/window.innerWidth-.5;var dy=e.clientY/window.innerHeight-.5;orbs.forEach(function(o,i){gsap.to(o,{x:dx*(i+1)*40,y:dy*(i+1)*30,duration:1.2,ease:'power1.out'});});});
+  }else{gsap.set(['.hero-word','.hero-price','.hero-cta'],{opacity:1,x:0,y:0});}
+  var desktop=window.innerWidth>=768;
+  var feats=gsap.utils.toArray('.feat-item');
+  var details=gsap.utils.toArray('.feat-detail');
+  if(desktop&&!noMotion&&feats.length){
+    feats.forEach(function(f,i){gsap.set(f,{opacity:i===0?1:.2,scale:i===0?1:.95});});
+    details.forEach(function(d,i){gsap.set(d,i===0?{opacity:1,y:0}:{opacity:0,y:14});});
+    ScrollTrigger.create({trigger:'#feature-spotlight',pin:true,anticipatePin:1,scrub:.6,invalidateOnRefresh:true,start:'top top',end:function(){return'+='+feats.length*window.innerHeight*.75;},onUpdate:function(self){var idx=Math.min(Math.floor(self.progress*feats.length),feats.length-1);feats.forEach(function(f,i){gsap.to(f,{opacity:i===idx?1:.2,scale:i===idx?1:.95,duration:.3,ease:'power2.out'});});details.forEach(function(d,i){gsap.to(d,{opacity:i===idx?1:0,y:i===idx?0:14,duration:.3,ease:'power2.out'});});}});
+  }else{gsap.set('.feat-detail',{opacity:1,y:0});gsap.set('.feat-item',{opacity:1,scale:1});}
+  document.querySelectorAll('.check-path').forEach(function(p,i){var len=p.getTotalLength();if(noMotion){gsap.set(p,{strokeDasharray:len,strokeDashoffset:0});return;}gsap.set(p,{strokeDasharray:len,strokeDashoffset:len});gsap.to(p,{strokeDashoffset:0,duration:.55,ease:'power2.out',delay:i*.12,scrollTrigger:{trigger:p,start:'top 83%',toggleActions:'play none none reverse'}});});
+  if(!noMotion){gsap.fromTo('#t-line',{attr:{x2:60}},{attr:{x2:800},ease:'none',scrollTrigger:{trigger:'#timeline-section',start:'top 70%',end:'bottom 30%',scrub:1}});}else{gsap.set('#t-line',{attr:{x2:800}});}
+  if(!noMotion){gsap.utils.toArray('.sr').forEach(function(el){gsap.to(el,{y:0,opacity:1,duration:.85,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 83%',toggleActions:'play none none reverse'}});});}else{gsap.set('.sr',{opacity:1,y:0});}
+});
+</script>
+</body>
+</html>
