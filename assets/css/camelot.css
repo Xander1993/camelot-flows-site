@@ -344,6 +344,11 @@ body {
             align-items: flex-start;
             padding-top: 35vh;
             transform-style: preserve-3d;
+            pointer-events: none;
+        }
+
+        .crawl-container > * {
+            pointer-events: auto;
         }
 
         .crawl-content {
