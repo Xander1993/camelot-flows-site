@@ -1503,7 +1503,38 @@
         })();
 
         // ============================================================
-        // 15. SCROLL REVEAL — GSAP ScrollTrigger for .cf-reveal/.cf-wipe
+        // 15. MOBILE NAV — ensure full link set on every page
+        // ============================================================
+        (() => {
+            const mobileNav = document.getElementById('mobile-nav');
+            if (!mobileNav) return;
+            const container = mobileNav.querySelector('.flex.flex-col') || mobileNav.querySelector('div');
+            if (!container) return;
+            if (container.querySelector('a[href*="for-agencies"]')) return; // already present
+
+            const casesLink = container.querySelector('a[href*="case-studies"]');
+            if (!casesLink) return;
+
+            const cls = casesLink.className;
+            const toAdd = [
+                ['for-agencies.html',      '[Agencies]', 'common.nav.agencies'],
+                ['about.html',             '[About]',    'common.nav.about'   ],
+                ['index.html#pricing-cards','[Pricing]', 'common.nav.pricing' ],
+            ];
+            let after = casesLink;
+            toAdd.forEach(([href, label, i18n]) => {
+                const a = document.createElement('a');
+                a.href = href;
+                a.className = cls;
+                a.textContent = label;
+                a.setAttribute('data-i18n', i18n);
+                after.insertAdjacentElement('afterend', a);
+                after = a;
+            });
+        })();
+
+        // ============================================================
+        // 16. SCROLL REVEAL — GSAP ScrollTrigger for .cf-reveal/.cf-wipe
         // ============================================================
         (() => {
             if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
