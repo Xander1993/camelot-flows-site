@@ -15,8 +15,7 @@
 <link rel="stylesheet" href="assets/css/camelot.css?v=8">
 <link rel="stylesheet" href="assets/css/theme-night.css?v=2">
 <link rel="stylesheet" href="assets/css/lang-switcher.css">
-<noscript><style>.sr,.hero-word,.hero-price,.hero-cta{opacity:1!important;transform:none!important;}#more-btn-wrap{display:none;}@media(min-width:768px){#more-btn-wrap{display:flex;align-items:center;position:relative;}}@media(min-width:1024px){#more-btn-wrap{display:none;}}
-</style></noscript>
+<noscript><style>.sr,.hero-word,.hero-price,.hero-cta{opacity:1!important;transform:none!important;}</style></noscript>
 <style>
 /* ── Accent tokens (hermes-agent = neon purple / deep violet) ── */
 :root,[data-theme="night"]{
@@ -163,7 +162,8 @@ a{text-decoration:none;color:inherit;}
 [data-theme="cozy"] .lp-nav-cta{color:rgb(196,120,92);border-color:rgba(196,120,92,.45);background:rgba(196,120,92,.10);}
 [data-theme="cozy"] .lp-nav-cta:hover{background:rgba(196,120,92,.22);border-color:rgba(196,120,92,.70);color:rgb(175,95,65);}
 #custom-cursor{background:var(--lp-accent)!important;box-shadow:0 0 20px 6px rgba(var(--lp-accent-rgb),.6)!important;}
-#more-btn-wrap{display:none;}@media(min-width:768px){#more-btn-wrap{display:flex;align-items:center;position:relative;}}@media(min-width:1024px){#more-btn-wrap{display:none;}}
+@media(max-width:1180px){nav.fixed .lp-nav-cta{width:44px;height:44px;padding:0!important;border-radius:999px!important;justify-content:center;flex:0 0 44px;overflow:hidden;color:transparent!important;font-size:0!important;letter-spacing:0!important;display:inline-flex!important;}nav.fixed .lp-nav-cta::before{content:"//";color:rgb(var(--cft-terracotta));font:700 12px/1 "JetBrains Mono",monospace;letter-spacing:.06em;}[data-theme="night"] nav.fixed .lp-nav-cta::before{color:#a5b4fc;}}
+@media(max-width:767px){nav.fixed .lp-nav-cta{display:none!important;}}
 </style>
 </head>
 <body class="theme-cozy font-body overflow-x-hidden">
@@ -183,14 +183,6 @@ a{text-decoration:none;color:inherit;}
             <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="merlin.html">[Merlin]</a>
             <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" href="case-studies.html">[Cases]</a>
             <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="contact.html">[Contact]</a>
-            <div id="more-btn-wrap">
-                <button id="more-btn" type="button" class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider flex items-center">[//]</button>
-                <div id="more-menu" class="hidden absolute top-full left-0 mt-2 glass-panel rounded-lg border border-primary/20 py-2" style="min-width:180px;z-index:999">
-                    <a class="block px-4 py-2.5 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 transition-colors uppercase tracking-wider" href="case-studies.html">[Cases]</a>
-                    <div class="mx-3 my-1.5 h-px bg-white/10"></div>
-                    <a href="contact.html?objective=hermes-agent" class="lp-nav-cta mx-2 block text-center bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-300 px-4 py-2.5 rounded-full text-xs font-mono font-bold transition-all">[Deploy_Hermes]</a>
-                </div>
-            </div>
         </div>
         <div class="flex items-center gap-2">
             <a href="tel:+37369555936" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" aria-label="Call" title="+373 69 555 936">
@@ -234,7 +226,7 @@ a{text-decoration:none;color:inherit;}
             <a href="contact.html?objective=hermes-agent" class="lp-nav-cta mx-2 block text-center bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-300 px-4 py-3 rounded-full text-sm font-mono font-bold transition-all">[Deploy_Hermes]</a>
         </div>
     </div>
-    <script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav"),mb=document.getElementById("more-btn"),mm=document.getElementById("more-menu");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");});}if(mb&&mm){mb.addEventListener("click",function(e){e.stopPropagation();mm.classList.toggle("hidden");});}document.addEventListener("click",function(e){if(menu&&btn&&!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.add("hidden");}if(mm&&mb&&!mb.contains(e.target)&&!mm.contains(e.target)){mm.classList.add("hidden");}});})();</script>
+    <script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target))menu.classList.add("hidden");});}var lDiv=document.querySelector('nav .hidden.md\\:flex');if(!lDiv)return;var links=Array.from(lDiv.querySelectorAll('a'));if(links.length<3)return;var wrap=document.createElement('div');wrap.className='nav-more-wrapper';wrap.style.display='none';var trig=document.createElement('button');trig.type='button';trig.className='nav-more-trigger';trig.setAttribute('aria-expanded','false');trig.innerHTML='<span class="nav-more-label">[More]</span><span class="material-symbols-outlined nav-more-chevron" aria-hidden="true">expand_more</span>';var mm=document.createElement('div');mm.className='nav-more-menu';mm.setAttribute('hidden','');mm.setAttribute('role','menu');wrap.appendChild(trig);wrap.appendChild(mm);lDiv.appendChild(wrap);var open=false,close=function(){open=false;mm.setAttribute('hidden','');wrap.classList.remove('is-open');trig.setAttribute('aria-expanded','false');};trig.addEventListener('click',function(e){e.stopPropagation();open=!open;if(open)mm.removeAttribute('hidden');else mm.setAttribute('hidden','');wrap.classList.toggle('is-open',open);trig.setAttribute('aria-expanded',String(open));});document.addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});var tier=function(w){if(w<768||w>=1380)return null;if(w>=1100)return 5;if(w>=900)return 4;return 3;};var last=-1,rebuild=function(t){if(t===last)return;last=t;mm.innerHTML='';links.slice(t).forEach(function(l){var c=l.cloneNode(true);c.style.removeProperty('display');c.setAttribute('role','menuitem');mm.appendChild(c);});};var update=function(){var w=window.innerWidth,t=tier(w);if(t===null){lDiv.style.removeProperty('display');links.forEach(function(l){l.style.removeProperty('display');});wrap.style.display='none';close();return;}lDiv.style.display='flex';links.forEach(function(l,i){l.style.display=i<t?'inline-block':'none';});rebuild(t);wrap.style.display='inline-flex';};update();window.addEventListener('resize',update);})();</script>
 </nav>
 
 <!-- S1: Hero -->
