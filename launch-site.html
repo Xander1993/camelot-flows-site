@@ -123,12 +123,14 @@ a{text-decoration:none;color:inherit;}
 .faq-item{border-bottom:1px solid var(--lp-border);}
 .faq-btn{display:flex;justify-content:space-between;align-items:center;width:100%;padding:1.375rem 0;background:transparent;border:none;cursor:pointer;color:var(--lp-text);text-align:left;gap:1rem;}
 .faq-q{font-size:1.0625rem;font-weight:500;line-height:1.4;}
-.faq-arrow{flex-shrink:0;color:var(--lp-accent);font-size:.9375rem;transition:transform .35s cubic-bezier(.32,.72,0,1);}
+.faq-arrow{flex-shrink:0;color:var(--lp-accent);font-size:1.25rem;line-height:1;transition:transform .35s cubic-bezier(.32,.72,0,1);}
 .faq-item.open .faq-arrow{transform:rotate(90deg);}
+#faq{padding-bottom:2rem;}
+.lp-cta-sect{min-height:auto;padding-top:5rem;padding-bottom:6rem;align-items:flex-start;}
 .faq-body{max-height:0;overflow:hidden;opacity:0;transition:max-height .45s cubic-bezier(.4,0,.2,1),opacity .3s ease .05s;}
 .faq-item.open .faq-body{max-height:320px;opacity:1;}
 .faq-ans{font-size:.9375rem;line-height:1.75;color:var(--lp-muted);padding-bottom:1.375rem;}
-.lp-cta-sect{min-height:100dvh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 1.5rem;position:relative;overflow:hidden;}
+.lp-cta-sect{min-height:auto;display:flex;align-items:flex-start;justify-content:center;text-align:center;padding:4.5rem 1.5rem 6rem;position:relative;overflow:hidden;}
 .cta-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 50% 60%,rgba(var(--lp-accent-rgb),.11) 0%,transparent 70%);}
 .cta-content{position:relative;z-index:2;max-width:48rem;width:100%;}
 .cta-h{font-family:'Fraunces',serif;font-size:clamp(2.75rem,5.5vw,5rem);font-weight:400;line-height:1.05;letter-spacing:-.025em;margin-bottom:1.375rem;}
@@ -185,7 +187,7 @@ a{text-decoration:none;color:inherit;}
                 <span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
                 <span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
             </button>
-            <a href="contact.html?objective=launch-site" class="lp-nav-cta bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hidden lg:inline-flex items-center">[Get_Started]</a>
+            <a href="contact.html?objective=launch-site" class="lp-nav-cta bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-5 py-2.5 rounded text-xs font-mono font-bold transition-all shadow-neon hidden lg:inline-flex items-center">[Get_Started]</a>
         </div>
     </div>
     <div id="mobile-nav" class="hidden mt-2 max-w-7xl mx-auto">
