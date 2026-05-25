@@ -15,7 +15,8 @@
 <link rel="stylesheet" href="assets/css/camelot.css?v=8">
 <link rel="stylesheet" href="assets/css/theme-night.css?v=2">
 <link rel="stylesheet" href="assets/css/lang-switcher.css">
-<noscript><style>.sr,.hero-word,.hero-price,.hero-cta{opacity:1!important;transform:none!important;}</style></noscript>
+<noscript><style>.sr,.hero-word,.hero-price,.hero-cta{opacity:1!important;transform:none!important;}#more-btn-wrap{display:none;}@media(min-width:768px){#more-btn-wrap{display:flex;align-items:center;position:relative;}}@media(min-width:1024px){#more-btn-wrap{display:none;}}
+</style></noscript>
 <style>
 /* ── Accent tokens (launch-site = cyan / terracotta) ── */
 :root,[data-theme="night"]{
@@ -143,6 +144,7 @@ a{text-decoration:none;color:inherit;}
 [data-theme="cozy"] .lp-nav-cta{color:rgb(196,120,92);border-color:rgba(196,120,92,.45);background:rgba(196,120,92,.10);}
 [data-theme="cozy"] .lp-nav-cta:hover{background:rgba(196,120,92,.22);border-color:rgba(196,120,92,.70);color:rgb(175,95,65);}
 #custom-cursor{background:var(--lp-accent)!important;box-shadow:0 0 20px 6px rgba(var(--lp-accent-rgb),.6)!important;}
+#more-btn-wrap{display:none;}@media(min-width:768px){#more-btn-wrap{display:flex;align-items:center;position:relative;}}@media(min-width:1024px){#more-btn-wrap{display:none;}}
 </style>
 </head>
 
@@ -190,7 +192,15 @@ a{text-decoration:none;color:inherit;}
                 <span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
                 <span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
             </button>
-            <a href="contact.html?objective=launch-site" class="lp-nav-cta bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-5 py-3 rounded-full text-xs font-mono font-bold transition-all shadow-neon hidden lg:inline-flex items-center">[Get_Started]</a>
+            <div id="more-btn-wrap">
+                <button id="more-btn" type="button" class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider flex items-center">[More<span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle;line-height:1">expand_more</span>]</button>
+                <div id="more-menu" class="hidden absolute top-full right-0 mt-2 glass-panel rounded-lg border border-primary/20 py-2" style="min-width:180px;z-index:999">
+                    <a class="block px-4 py-2.5 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 transition-colors uppercase tracking-wider" href="case-studies.html">[Cases]</a>
+                    <div class="mx-3 my-1.5 h-px bg-white/10"></div>
+                    <a href="contact.html?objective=launch-site" class="lp-nav-cta mx-2 block text-center bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-300 px-4 py-2.5 rounded-full text-xs font-mono font-bold transition-all">[Get_Started]</a>
+                </div>
+            </div>
+                        <a href="contact.html?objective=launch-site" class="lp-nav-cta bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-5 py-3 rounded-full text-xs font-mono font-bold transition-all shadow-neon hidden lg:inline-flex items-center">[Get_Started]</a>
         </div>
     </div>
     <div id="mobile-nav" class="hidden mt-2 max-w-7xl mx-auto">
@@ -205,7 +215,7 @@ a{text-decoration:none;color:inherit;}
             <a href="contact.html?objective=launch-site" class="lp-nav-cta mx-2 block text-center bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-300 px-4 py-3 rounded-full text-sm font-mono font-bold transition-all">[Get_Started]</a>
         </div>
     </div>
-    <script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.add("hidden");}});}})();</script>
+    <script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav"),mb=document.getElementById("more-btn"),mm=document.getElementById("more-menu");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");});}if(mb&&mm){mb.addEventListener("click",function(e){e.stopPropagation();mm.classList.toggle("hidden");});}document.addEventListener("click",function(e){if(menu&&btn&&!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.add("hidden");}if(mm&&mb&&!mb.contains(e.target)&&!mm.contains(e.target)){mm.classList.add("hidden");}});})();</script>
 </nav>
 
 <!-- S1: Hero -->
