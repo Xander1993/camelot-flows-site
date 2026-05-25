@@ -140,12 +140,13 @@ a{text-decoration:none;color:inherit;}
 .cta-p{font-size:1.0625rem;color:var(--lp-muted);margin-bottom:2.5rem;line-height:1.7;}
 .cta-row{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:1rem;}
 .sr{opacity:0;transform:translateY(40px);}
-.lp-nav-cta{transition:color .3s ease,background .3s ease,border-color .3s ease;}
-[data-theme="cozy"] .lp-nav-cta{color:rgb(196,120,92);border-color:rgba(196,120,92,.45);background:rgba(196,120,92,.10);}
-[data-theme="cozy"] .lp-nav-cta:hover{background:rgba(196,120,92,.22);border-color:rgba(196,120,92,.70);color:rgb(175,95,65);}
+.lp-nav-cta{transition:color .3s ease,background .3s ease,border-color .3s ease;color:var(--lp-accent);border-color:rgba(var(--lp-accent-rgb),.45);background:transparent;}
+.lp-nav-cta:hover{background:rgba(var(--lp-accent-rgb),.12);border-color:rgba(var(--lp-accent-rgb),.70);}
+[data-theme="cozy"] .lp-nav-cta{color:rgb(196,120,92);border-color:rgba(196,120,92,.45);background:transparent;}
+[data-theme="cozy"] .lp-nav-cta:hover{background:rgba(196,120,92,.12);border-color:rgba(196,120,92,.70);color:rgb(175,95,65);}
 #custom-cursor{background:var(--lp-accent)!important;box-shadow:0 0 20px 6px rgba(var(--lp-accent-rgb),.6)!important;}
 @media(max-width:1180px){nav.fixed .lp-nav-cta{width:44px;height:44px;padding:0!important;border-radius:999px!important;justify-content:center;flex:0 0 44px;overflow:hidden;color:transparent!important;font-size:0!important;letter-spacing:0!important;display:inline-flex!important;}nav.fixed .lp-nav-cta::before{content:"//";color:rgb(var(--cft-terracotta));font:700 12px/1 "JetBrains Mono",monospace;letter-spacing:.06em;}[data-theme="night"] nav.fixed .lp-nav-cta::before{color:#a5b4fc;}}
-@media(max-width:767px){nav.fixed .lp-nav-cta{display:none!important;}}
+@media(max-width:767px){nav.fixed > div:not(#mobile-nav) .lp-nav-cta{display:none!important;}}
 </style>
 </head>
 
@@ -194,7 +195,7 @@ a{text-decoration:none;color:inherit;}
                 <span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
             </button>
 
-                        <a href="contact.html?objective=custom-premium" class="lp-nav-cta bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-5 py-3 rounded-full text-xs font-mono font-bold transition-all shadow-neon hidden lg:inline-flex items-center">[Book_Call]</a>
+                        <a href="contact.html?objective=custom-premium" class="lp-nav-cta border px-5 py-2.5 rounded-full text-xs font-mono font-bold transition-all hidden lg:inline-flex items-center">[Book_Call]</a>
         </div>
     </div>
     <div id="mobile-nav" class="hidden mt-2 max-w-7xl mx-auto">
@@ -206,7 +207,7 @@ a{text-decoration:none;color:inherit;}
             <a class="block px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="case-studies.html">[Cases]</a>
             <a class="block px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="contact.html">[Contact]</a>
             <div class="mx-3 my-2 h-px bg-white/10"></div>
-            <a href="contact.html?objective=custom-premium" class="lp-nav-cta mx-2 block text-center bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-300 px-4 py-3 rounded-full text-sm font-mono font-bold transition-all">[Book_Call]</a>
+            <a href="contact.html?objective=custom-premium" class="lp-nav-cta mx-2 block text-center border px-4 py-4 rounded-full text-sm font-mono font-bold transition-all">[Book_Call]</a>
         </div>
     </div>
     <script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target))menu.classList.add("hidden");});}var lDiv=document.querySelector('nav .hidden.md\\:flex');if(!lDiv)return;var links=Array.from(lDiv.querySelectorAll('a'));if(links.length<3)return;var wrap=document.createElement('div');wrap.className='nav-more-wrapper';wrap.style.display='none';var trig=document.createElement('button');trig.type='button';trig.className='nav-more-trigger';trig.setAttribute('aria-expanded','false');trig.innerHTML='<span class="nav-more-label">[More]</span><span class="material-symbols-outlined nav-more-chevron" aria-hidden="true">expand_more</span>';var mm=document.createElement('div');mm.className='nav-more-menu';mm.setAttribute('hidden','');mm.setAttribute('role','menu');wrap.appendChild(trig);wrap.appendChild(mm);lDiv.appendChild(wrap);var open=false,close=function(){open=false;mm.setAttribute('hidden','');wrap.classList.remove('is-open');trig.setAttribute('aria-expanded','false');};trig.addEventListener('click',function(e){e.stopPropagation();open=!open;if(open)mm.removeAttribute('hidden');else mm.setAttribute('hidden','');wrap.classList.toggle('is-open',open);trig.setAttribute('aria-expanded',String(open));});document.addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});var tier=function(w){if(w<768||w>=1380)return null;if(w>=1100)return 5;if(w>=900)return 4;return 3;};var last=-1,rebuild=function(t){if(t===last)return;last=t;mm.innerHTML='';links.slice(t).forEach(function(l){var c=l.cloneNode(true);c.style.removeProperty('display');c.setAttribute('role','menuitem');mm.appendChild(c);});};var update=function(){var w=window.innerWidth,t=tier(w);if(t===null){lDiv.style.removeProperty('display');links.forEach(function(l){l.style.removeProperty('display');});wrap.style.display='none';close();return;}lDiv.style.display='flex';links.forEach(function(l,i){l.style.display=i<t?'inline-block':'none';});rebuild(t);wrap.style.display='inline-flex';};update();window.addEventListener('resize',update);})();</script>
