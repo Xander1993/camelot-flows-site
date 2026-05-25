@@ -1872,3 +1872,22 @@ nav.fixed .glass-panel > div:first-child {
     }
 }
 
+/* ── Mobile nav [Hire_me] CTA ─────────────────────────────────────────── */
+/* More vertical breathing room on both themes */
+#mobile-nav a[data-i18n="common.nav.summon_agent"] {
+    padding-top: 0.875rem !important;
+    padding-bottom: 0.875rem !important;
+}
+
+/* Cozy: ghost / outline only — no blue fill */
+[data-theme="cozy"] #mobile-nav a[data-i18n="common.nav.summon_agent"] {
+    background-color: transparent !important;
+    border-color: rgba(196,120,92,0.5) !important;
+    color: rgb(196,120,92) !important;
+}
+
+[data-theme="cozy"] #mobile-nav a[data-i18n="common.nav.summon_agent"]:hover {
+    background-color: rgba(196,120,92,0.1) !important;
+    border-color: rgba(196,120,92,0.8) !important;
+}
+
