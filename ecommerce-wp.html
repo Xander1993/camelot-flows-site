@@ -166,7 +166,7 @@ a{text-decoration:none;color:inherit;}
 [data-theme="cozy"] .lp-nav-cta{color:rgb(196,120,92);border-color:rgba(196,120,92,.45);background:transparent;}
 [data-theme="cozy"] .lp-nav-cta:hover{background:rgba(196,120,92,.12);border-color:rgba(196,120,92,.70);color:rgb(175,95,65);}
 #custom-cursor{background:var(--lp-accent)!important;box-shadow:0 0 20px 6px rgba(var(--lp-accent-rgb),.6)!important;}
-@media(max-width:1180px){nav.fixed .lp-nav-cta{width:44px;height:44px;padding:0!important;border-radius:999px!important;justify-content:center;flex:0 0 44px;overflow:hidden;color:transparent!important;font-size:0!important;letter-spacing:0!important;display:inline-flex!important;}nav.fixed .lp-nav-cta::before{content:"//";color:rgb(var(--cft-terracotta));font:700 12px/1 "JetBrains Mono",monospace;letter-spacing:.06em;}[data-theme="night"] nav.fixed .lp-nav-cta::before{color:#a5b4fc;}}
+@media(max-width:1180px){nav.fixed > div:not(#mobile-nav) .lp-nav-cta{width:44px;height:44px;padding:0!important;border-radius:999px!important;justify-content:center;flex:0 0 44px;overflow:hidden;color:transparent!important;font-size:0!important;letter-spacing:0!important;display:inline-flex!important;}nav.fixed > div:not(#mobile-nav) .lp-nav-cta::before{content:"//";color:rgb(var(--cft-terracotta));font:700 12px/1 "JetBrains Mono",monospace;letter-spacing:.06em;}[data-theme="night"] nav.fixed > div:not(#mobile-nav) .lp-nav-cta::before{color:#a5b4fc;}}
 @media(max-width:767px){nav.fixed > div:not(#mobile-nav) .lp-nav-cta{display:none!important;}}
 </style>
 </head>
@@ -187,6 +187,9 @@ a{text-decoration:none;color:inherit;}
             <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="arsenal.html">[Arsenal]</a>
             <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="merlin.html">[Merlin]</a>
             <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" href="case-studies.html">[Cases]</a>
+            <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden xl:block" href="for-agencies.html">[Agencies]</a>
+            <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden xl:block" href="about.html">[About]</a>
+            <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" href="index.html#pricing-cards">[Pricing]</a>
             <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="contact.html">[Contact]</a>
         </div>
         <div class="flex items-center gap-2">
