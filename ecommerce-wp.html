@@ -164,7 +164,7 @@ a{text-decoration:none;color:inherit;}
 .lp-nav-cta{transition:color .3s ease,background .3s ease,border-color .3s ease;}
 [data-theme="cozy"] .lp-nav-cta{color:#312e81;border-color:rgba(67,56,202,.45);background:rgba(67,56,202,.10);}
 [data-theme="cozy"] .lp-nav-cta:hover{background:rgba(67,56,202,.18);border-color:rgba(67,56,202,.65);}
-html,html *{cursor:auto!important;}a,button,[role="button"]{cursor:pointer!important;}
+
 </style>
 </head>
 
@@ -538,6 +538,7 @@ window.addEventListener('DOMContentLoaded',function(){
   document.querySelectorAll('.check-path').forEach(function(p,i){var len=p.getTotalLength();if(noMotion){gsap.set(p,{strokeDasharray:len,strokeDashoffset:0});return;}gsap.set(p,{strokeDasharray:len,strokeDashoffset:len});gsap.to(p,{strokeDashoffset:0,duration:.55,ease:'power2.out',delay:i*.12,scrollTrigger:{trigger:p,start:'top 83%',toggleActions:'play none none reverse'}});});
   if(!noMotion){gsap.fromTo('#t-line',{attr:{x2:60}},{attr:{x2:800},ease:'none',scrollTrigger:{trigger:'#timeline-section',start:'top 70%',end:'bottom 30%',scrub:1}});}else{gsap.set('#t-line',{attr:{x2:800}});}
   if(!noMotion){gsap.utils.toArray('.sr').forEach(function(el){gsap.to(el,{y:0,opacity:1,duration:.85,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 83%',toggleActions:'play none none reverse'}});});}else{gsap.set('.sr',{opacity:1,y:0});}
+  if(!noMotion&&!window.matchMedia('(hover:none)').matches){var cur=document.createElement('div');cur.className='cf-cursor';cur.setAttribute('aria-hidden','true');document.body.appendChild(cur);var xTo=gsap.quickTo(cur,'x',{duration:.4,ease:'power3'});var yTo=gsap.quickTo(cur,'y',{duration:.4,ease:'power3'});window.addEventListener('mousemove',function(e){xTo(e.clientX);yTo(e.clientY);});var iSel='a,button,[role=button],input,textarea,select,.lp-feat-item';document.body.addEventListener('mouseover',function(e){if(e.target.closest(iSel))cur.classList.add('is-hover');});document.body.addEventListener('mouseout',function(e){if(e.target.closest(iSel))cur.classList.remove('is-hover');});}
 });
 </script>
 </body>
