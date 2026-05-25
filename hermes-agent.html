@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <script>(function(){var h=document.documentElement;try{var c=document.cookie.match('(?:^|;) ?cf_theme=([^;]*)');var t=c?c[1]:(localStorage.getItem('cf_theme')||'cozy');h.setAttribute('data-theme',t);}catch(e){h.setAttribute('data-theme','cozy');}try{if(sessionStorage.getItem('cf_loaded')==='1')h.classList.add('cf-skip-preloader');}catch(e){}h.classList.add('js');})();</script>
@@ -139,9 +139,10 @@ a{text-decoration:none;color:inherit;}
 .faq-item{border-bottom:1px solid var(--lp-border);}
 .faq-btn{display:flex;justify-content:space-between;align-items:center;width:100%;padding:1.375rem 0;background:transparent;border:none;cursor:pointer;color:var(--lp-text);text-align:left;gap:1rem;}
 .faq-q{font-size:1.0625rem;font-weight:500;line-height:1.4;}
-.faq-arrow{flex-shrink:0;color:var(--lp-accent);font-size:1.25rem;line-height:1;transition:transform .35s cubic-bezier(.32,.72,0,1);}
-.faq-item.open .faq-arrow{transform:rotate(90deg);}
-#faq{padding-bottom:2rem;}
+.faq-arrow{flex-shrink:0;width:1.625rem;height:1.625rem;border-radius:50%;background:rgba(var(--lp-accent-rgb),.1);border:1px solid rgba(var(--lp-accent-rgb),.3);display:flex;align-items:center;justify-content:center;transition:transform .35s cubic-bezier(.32,.72,0,1),background .25s;}
+.faq-arrow::before{content:'›';color:var(--lp-accent);font-size:1.1rem;line-height:1;font-weight:700;margin-top:-1px;}
+.faq-item.open .faq-arrow{transform:rotate(90deg);background:rgba(var(--lp-accent-rgb),.22);}
+#faq{padding-bottom:5rem;}
 .lp-cta-sect{min-height:auto;padding-top:5rem;padding-bottom:6rem;align-items:flex-start;}
 .faq-body{max-height:0;overflow:hidden;opacity:0;transition:max-height .45s cubic-bezier(.4,0,.2,1),opacity .3s ease .05s;}
 .faq-item.open .faq-body{max-height:320px;opacity:1;}
@@ -428,35 +429,35 @@ a{text-decoration:none;color:inherit;}
       <div class="faq-item">
         <button class="faq-btn" aria-expanded="false" type="button">
           <span class="faq-q">Do I need technical knowledge to use Hermes?</span>
-          <span class="faq-arrow" aria-hidden="true">▸</span>
+          <span class="faq-arrow" aria-hidden="true"></span>
         </button>
         <div class="faq-body"><p class="faq-ans">No. The business-ready wrapper is designed for non-technical owners and team members. You interact with Hermes through a clean interface — no workflows, no code, no API keys.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-btn" aria-expanded="false" type="button">
           <span class="faq-q">Which tools does Hermes connect to?</span>
-          <span class="faq-arrow" aria-hidden="true">▸</span>
+          <span class="faq-arrow" aria-hidden="true"></span>
         </button>
         <div class="faq-body"><p class="faq-ans">Gmail, Outlook, HubSpot, Notion, Airtable, Slack, WhatsApp Business, and most tools with an API or Zapier connector. We scope the exact integrations during the discovery call.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-btn" aria-expanded="false" type="button">
           <span class="faq-q">What if Hermes makes a mistake?</span>
-          <span class="faq-arrow" aria-hidden="true">▸</span>
+          <span class="faq-arrow" aria-hidden="true"></span>
         </button>
         <div class="faq-body"><p class="faq-ans">All outbound actions (emails, CRM writes) can be set to "draft mode" where Hermes prepares but waits for human approval before sending. You decide how much autonomy Hermes has — we configure it to match your risk tolerance.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-btn" aria-expanded="false" type="button">
           <span class="faq-q">Is there an ongoing cost after setup?</span>
-          <span class="faq-arrow" aria-hidden="true">▸</span>
+          <span class="faq-arrow" aria-hidden="true"></span>
         </button>
         <div class="faq-body"><p class="faq-ans">The €690 covers setup and configuration. Running costs are your Claude API credits (typically €20–60/month depending on volume) and n8n hosting (€12–20/month on a small VPS). I can manage ongoing updates at €45/hour, or hand you full control.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-btn" aria-expanded="false" type="button">
           <span class="faq-q">Can Hermes be upgraded later?</span>
-          <span class="faq-arrow" aria-hidden="true">▸</span>
+          <span class="faq-arrow" aria-hidden="true"></span>
         </button>
         <div class="faq-body"><p class="faq-ans">Yes. New capabilities (additional integrations, new workflows, deeper automations) are scoped and billed separately. Hermes is built on a modular stack — adding a new skill doesn't require rebuilding the whole agent.</p></div>
       </div>

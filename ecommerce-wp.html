@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <script>(function(){var h=document.documentElement;try{var c=document.cookie.match('(?:^|;) ?cf_theme=([^;]*)');var t=c?c[1]:(localStorage.getItem('cf_theme')||'cozy');h.setAttribute('data-theme',t);}catch(e){h.setAttribute('data-theme','cozy');}try{if(sessionStorage.getItem('cf_loaded')==='1')h.classList.add('cf-skip-preloader');}catch(e){}h.classList.add('js');})();</script>
@@ -145,9 +145,10 @@ a{text-decoration:none;color:inherit;}
 .faq-item{border-bottom:1px solid var(--lp-border);}
 .faq-btn{display:flex;justify-content:space-between;align-items:center;width:100%;padding:1.375rem 0;background:transparent;border:none;cursor:pointer;color:var(--lp-text);text-align:left;gap:1rem;}
 .faq-q{font-size:1.0625rem;font-weight:500;line-height:1.4;}
-.faq-arrow{flex-shrink:0;color:var(--lp-accent);font-size:1.25rem;line-height:1;transition:transform .35s cubic-bezier(.32,.72,0,1);}
-.faq-item.open .faq-arrow{transform:rotate(90deg);}
-#faq{padding-bottom:2rem;}
+.faq-arrow{flex-shrink:0;width:1.625rem;height:1.625rem;border-radius:50%;background:rgba(var(--lp-accent-rgb),.1);border:1px solid rgba(var(--lp-accent-rgb),.3);display:flex;align-items:center;justify-content:center;transition:transform .35s cubic-bezier(.32,.72,0,1),background .25s;}
+.faq-arrow::before{content:'›';color:var(--lp-accent);font-size:1.1rem;line-height:1;font-weight:700;margin-top:-1px;}
+.faq-item.open .faq-arrow{transform:rotate(90deg);background:rgba(var(--lp-accent-rgb),.22);}
+#faq{padding-bottom:5rem;}
 .lp-cta-sect{min-height:auto;padding-top:5rem;padding-bottom:6rem;align-items:flex-start;}
 .faq-body{max-height:0;overflow:hidden;opacity:0;transition:max-height .45s cubic-bezier(.4,0,.2,1),opacity .3s ease .05s;}
 .faq-item.open .faq-body{max-height:320px;opacity:1;}
@@ -394,11 +395,11 @@ a{text-decoration:none;color:inherit;}
   <div class="lp-wrap">
     <div class="sr"><span class="pill">Questions</span><h2 class="section-h">Everything you might wonder.</h2></div>
     <div class="faq-wrap">
-      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">Is WooCommerce the right platform for my store?</span><span class="faq-arrow" aria-hidden="true">▸</span></button><div class="faq-body"><p class="faq-ans">WooCommerce is the right choice for stores where you need full control — custom product types, complex rules, and the ability to own your data. If you're selling 5 SKUs and want Shopify's simplicity, I'll tell you honestly. If you need a real commerce engine, WooCommerce is the answer.</p></div></div>
-      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">How does AI cart recovery actually work?</span><span class="faq-arrow" aria-hidden="true">▸</span></button><div class="faq-body"><p class="faq-ans">When WooCommerce detects an abandoned cart (customer added items but didn't complete checkout), an automated sequence fires — personalised email with the exact products they left, then a follow-up nudge. It runs on your own infrastructure — no third-party cart recovery subscription required.</p></div></div>
-      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">Do I need to provide all the product content?</span><span class="faq-arrow" aria-hidden="true">▸</span></button><div class="faq-body"><p class="faq-ans">Yes — product names, descriptions, prices, and images should come from you. I can help structure and format them in WordPress, and AI can generate first-draft product descriptions if you're starting from scratch.</p></div></div>
-      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">What CRMs does the sync connect to?</span><span class="faq-arrow" aria-hidden="true">▸</span></button><div class="faq-body"><p class="faq-ans">HubSpot, Notion, Airtable, Pipedrive, and most tools with an API or Zapier connector. We scope the exact integration during kick-off — if your CRM is on n8n's integration list, it connects.</p></div></div>
-      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">Can I add more products or categories after launch?</span><span class="faq-arrow" aria-hidden="true">▸</span></button><div class="faq-body"><p class="faq-ans">Yes. WooCommerce's admin panel is designed for non-technical users to manage their own catalogue. I'll show you how during handoff. If you need structural changes (new product types, new shipping zones), those are billed at €65/hour.</p></div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">Is WooCommerce the right platform for my store?</span><span class="faq-arrow" aria-hidden="true"></span></button><div class="faq-body"><p class="faq-ans">WooCommerce is the right choice for stores where you need full control — custom product types, complex rules, and the ability to own your data. If you're selling 5 SKUs and want Shopify's simplicity, I'll tell you honestly. If you need a real commerce engine, WooCommerce is the answer.</p></div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">How does AI cart recovery actually work?</span><span class="faq-arrow" aria-hidden="true"></span></button><div class="faq-body"><p class="faq-ans">When WooCommerce detects an abandoned cart (customer added items but didn't complete checkout), an automated sequence fires — personalised email with the exact products they left, then a follow-up nudge. It runs on your own infrastructure — no third-party cart recovery subscription required.</p></div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">Do I need to provide all the product content?</span><span class="faq-arrow" aria-hidden="true"></span></button><div class="faq-body"><p class="faq-ans">Yes — product names, descriptions, prices, and images should come from you. I can help structure and format them in WordPress, and AI can generate first-draft product descriptions if you're starting from scratch.</p></div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">What CRMs does the sync connect to?</span><span class="faq-arrow" aria-hidden="true"></span></button><div class="faq-body"><p class="faq-ans">HubSpot, Notion, Airtable, Pipedrive, and most tools with an API or Zapier connector. We scope the exact integration during kick-off — if your CRM is on n8n's integration list, it connects.</p></div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">Can I add more products or categories after launch?</span><span class="faq-arrow" aria-hidden="true"></span></button><div class="faq-body"><p class="faq-ans">Yes. WooCommerce's admin panel is designed for non-technical users to manage their own catalogue. I'll show you how during handoff. If you need structural changes (new product types, new shipping zones), those are billed at €65/hour.</p></div></div>
     </div>
   </div>
 </section>

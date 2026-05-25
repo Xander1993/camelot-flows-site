@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <script>(function(){var h=document.documentElement;try{var c=document.cookie.match('(?:^|;) ?cf_theme=([^;]*)');var t=c?c[1]:(localStorage.getItem('cf_theme')||'cozy');h.setAttribute('data-theme',t);}catch(e){h.setAttribute('data-theme','cozy');}try{if(sessionStorage.getItem('cf_loaded')==='1')h.classList.add('cf-skip-preloader');}catch(e){}h.classList.add('js');})();</script>
@@ -123,9 +123,10 @@ a{text-decoration:none;color:inherit;}
 .faq-item{border-bottom:1px solid var(--lp-border);}
 .faq-btn{display:flex;justify-content:space-between;align-items:center;width:100%;padding:1.375rem 0;background:transparent;border:none;cursor:pointer;color:var(--lp-text);text-align:left;gap:1rem;}
 .faq-q{font-size:1.0625rem;font-weight:500;line-height:1.4;}
-.faq-arrow{flex-shrink:0;color:var(--lp-accent);font-size:1.25rem;line-height:1;transition:transform .35s cubic-bezier(.32,.72,0,1);}
-.faq-item.open .faq-arrow{transform:rotate(90deg);}
-#faq{padding-bottom:2rem;}
+.faq-arrow{flex-shrink:0;width:1.625rem;height:1.625rem;border-radius:50%;background:rgba(var(--lp-accent-rgb),.1);border:1px solid rgba(var(--lp-accent-rgb),.3);display:flex;align-items:center;justify-content:center;transition:transform .35s cubic-bezier(.32,.72,0,1),background .25s;}
+.faq-arrow::before{content:'›';color:var(--lp-accent);font-size:1.1rem;line-height:1;font-weight:700;margin-top:-1px;}
+.faq-item.open .faq-arrow{transform:rotate(90deg);background:rgba(var(--lp-accent-rgb),.22);}
+#faq{padding-bottom:5rem;}
 .lp-cta-sect{min-height:auto;padding-top:5rem;padding-bottom:6rem;align-items:flex-start;}
 .faq-body{max-height:0;overflow:hidden;opacity:0;transition:max-height .45s cubic-bezier(.4,0,.2,1),opacity .3s ease .05s;}
 .faq-item.open .faq-body{max-height:320px;opacity:1;}
@@ -345,11 +346,11 @@ a{text-decoration:none;color:inherit;}
   <div class="lp-wrap">
     <div class="sr"><span class="pill">Questions</span><h2 class="section-h">Everything you might wonder.</h2></div>
     <div class="faq-wrap">
-      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">What does "up to 3 pages" include?</span><span class="faq-arrow" aria-hidden="true">▸</span></button><div class="faq-body"><p class="faq-ans">Any 3 pages — most clients choose Home, About/Services, and Contact. Pages are built in WordPress so you can edit them yourself after handoff.</p></div></div>
-      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">Do I need to provide copy and images?</span><span class="faq-arrow" aria-hidden="true">▸</span></button><div class="faq-body"><p class="faq-ans">Ideally yes — your words, your photos. If you don't have copy, I can write a first draft based on a 30-minute briefing. Stock photos are included as placeholders.</p></div></div>
-      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">Is hosting included in the €390?</span><span class="faq-arrow" aria-hidden="true">▸</span></button><div class="faq-body"><p class="faq-ans">No — hosting is billed separately directly to you (typically €3–6/month). I set it up, configure it, and hand you the credentials. You own everything.</p></div></div>
-      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">What if I want changes after the 2 revision rounds?</span><span class="faq-arrow" aria-hidden="true">▸</span></button><div class="faq-body"><p class="faq-ans">Additional revisions are €45/hour. If a revision is needed because I misunderstood the brief, that's on me, not the revision counter.</p></div></div>
-      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">Can I upgrade to more pages later?</span><span class="faq-arrow" aria-hidden="true">▸</span></button><div class="faq-body"><p class="faq-ans">Yes. Existing clients get €90/page for add-ons. You can upgrade to Ecommerce or Custom Premium — the amount paid counts toward the difference.</p></div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">What does "up to 3 pages" include?</span><span class="faq-arrow" aria-hidden="true"></span></button><div class="faq-body"><p class="faq-ans">Any 3 pages — most clients choose Home, About/Services, and Contact. Pages are built in WordPress so you can edit them yourself after handoff.</p></div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">Do I need to provide copy and images?</span><span class="faq-arrow" aria-hidden="true"></span></button><div class="faq-body"><p class="faq-ans">Ideally yes — your words, your photos. If you don't have copy, I can write a first draft based on a 30-minute briefing. Stock photos are included as placeholders.</p></div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">Is hosting included in the €390?</span><span class="faq-arrow" aria-hidden="true"></span></button><div class="faq-body"><p class="faq-ans">No — hosting is billed separately directly to you (typically €3–6/month). I set it up, configure it, and hand you the credentials. You own everything.</p></div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">What if I want changes after the 2 revision rounds?</span><span class="faq-arrow" aria-hidden="true"></span></button><div class="faq-body"><p class="faq-ans">Additional revisions are €45/hour. If a revision is needed because I misunderstood the brief, that's on me, not the revision counter.</p></div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">Can I upgrade to more pages later?</span><span class="faq-arrow" aria-hidden="true"></span></button><div class="faq-body"><p class="faq-ans">Yes. Existing clients get €90/page for add-ons. You can upgrade to Ecommerce or Custom Premium — the amount paid counts toward the difference.</p></div></div>
     </div>
   </div>
 </section>

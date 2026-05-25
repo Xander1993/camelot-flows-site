@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <script>(function(){var h=document.documentElement;try{var c=document.cookie.match('(?:^|;) ?cf_theme=([^;]*)');var t=c?c[1]:(localStorage.getItem('cf_theme')||'cozy');h.setAttribute('data-theme',t);}catch(e){h.setAttribute('data-theme','cozy');}try{if(sessionStorage.getItem('cf_loaded')==='1')h.classList.add('cf-skip-preloader');}catch(e){}h.classList.add('js');})();</script>
@@ -124,9 +124,10 @@ a{text-decoration:none;color:inherit;}
 .faq-item{border-bottom:1px solid var(--lp-border);}
 .faq-btn{display:flex;justify-content:space-between;align-items:center;width:100%;padding:1.375rem 0;background:transparent;border:none;cursor:pointer;color:var(--lp-text);text-align:left;gap:1rem;}
 .faq-q{font-size:1.0625rem;font-weight:500;line-height:1.4;}
-.faq-arrow{flex-shrink:0;color:var(--lp-accent);font-size:1.25rem;line-height:1;transition:transform .35s cubic-bezier(.32,.72,0,1);}
-.faq-item.open .faq-arrow{transform:rotate(90deg);}
-#faq{padding-bottom:2rem;}
+.faq-arrow{flex-shrink:0;width:1.625rem;height:1.625rem;border-radius:50%;background:rgba(var(--lp-accent-rgb),.1);border:1px solid rgba(var(--lp-accent-rgb),.3);display:flex;align-items:center;justify-content:center;transition:transform .35s cubic-bezier(.32,.72,0,1),background .25s;}
+.faq-arrow::before{content:'›';color:var(--lp-accent);font-size:1.1rem;line-height:1;font-weight:700;margin-top:-1px;}
+.faq-item.open .faq-arrow{transform:rotate(90deg);background:rgba(var(--lp-accent-rgb),.22);}
+#faq{padding-bottom:5rem;}
 .lp-cta-sect{min-height:auto;padding-top:5rem;padding-bottom:6rem;align-items:flex-start;}
 .faq-body{max-height:0;overflow:hidden;opacity:0;transition:max-height .45s cubic-bezier(.4,0,.2,1),opacity .3s ease .05s;}
 .faq-item.open .faq-body{max-height:320px;opacity:1;}
@@ -350,11 +351,11 @@ a{text-decoration:none;color:inherit;}
   <div class="lp-wrap">
     <div class="sr"><span class="pill">Questions</span><h2 class="section-h">Everything you might wonder.</h2></div>
     <div class="faq-wrap">
-      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">Why is the price "starting from €1,200"?</span><span class="faq-arrow" aria-hidden="true">▸</span></button><div class="faq-body"><p class="faq-ans">Custom builds vary significantly by scope. A 5-page site with standard animations is a different project than a 20-page site with custom GSAP sequences and full AI automation. The kick-off call takes 30 minutes — from that I give you a fixed, itemised quote with no surprises.</p></div></div>
-      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">What does "full AI integration" mean in practice?</span><span class="faq-arrow" aria-hidden="true">▸</span></button><div class="faq-body"><p class="faq-ans">It means AI that knows your business rules — not a chatbot widget. Lead qualification, email drafting, CRM sync, automated follow-ups, content generation. The exact capabilities are scoped based on your workflows during kick-off.</p></div></div>
-      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">Do I need to supply design assets?</span><span class="faq-arrow" aria-hidden="true">▸</span></button><div class="faq-body"><p class="faq-ans">Logo files and brand guidelines are helpful if they exist. If you're starting from scratch, I can develop a visual identity as part of the engagement. Either way, the design system is built to communicate your brand — not adapt a pre-existing template.</p></div></div>
-      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">Can I upgrade from a Launch Site or Ecommerce package?</span><span class="faq-arrow" aria-hidden="true">▸</span></button><div class="faq-body"><p class="faq-ans">Yes. Any amount already paid on a previous package counts toward the Custom Premium price. I track client lifetime value and apply credits automatically — you're never penalised for starting small.</p></div></div>
-      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">What's included in the post-launch support window?</span><span class="faq-arrow" aria-hidden="true">▸</span></button><div class="faq-body"><p class="faq-ans">30 days of included bug fixes, content changes, and minor feature adjustments. After that, I offer a monthly retainer (€150–300/month depending on scope) or ad-hoc hours at €65/hour. You're never left to manage a complex site alone.</p></div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">Why is the price "starting from €1,200"?</span><span class="faq-arrow" aria-hidden="true"></span></button><div class="faq-body"><p class="faq-ans">Custom builds vary significantly by scope. A 5-page site with standard animations is a different project than a 20-page site with custom GSAP sequences and full AI automation. The kick-off call takes 30 minutes — from that I give you a fixed, itemised quote with no surprises.</p></div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">What does "full AI integration" mean in practice?</span><span class="faq-arrow" aria-hidden="true"></span></button><div class="faq-body"><p class="faq-ans">It means AI that knows your business rules — not a chatbot widget. Lead qualification, email drafting, CRM sync, automated follow-ups, content generation. The exact capabilities are scoped based on your workflows during kick-off.</p></div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">Do I need to supply design assets?</span><span class="faq-arrow" aria-hidden="true"></span></button><div class="faq-body"><p class="faq-ans">Logo files and brand guidelines are helpful if they exist. If you're starting from scratch, I can develop a visual identity as part of the engagement. Either way, the design system is built to communicate your brand — not adapt a pre-existing template.</p></div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">Can I upgrade from a Launch Site or Ecommerce package?</span><span class="faq-arrow" aria-hidden="true"></span></button><div class="faq-body"><p class="faq-ans">Yes. Any amount already paid on a previous package counts toward the Custom Premium price. I track client lifetime value and apply credits automatically — you're never penalised for starting small.</p></div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q">What's included in the post-launch support window?</span><span class="faq-arrow" aria-hidden="true"></span></button><div class="faq-body"><p class="faq-ans">30 days of included bug fixes, content changes, and minor feature adjustments. After that, I offer a monthly retainer (€150–300/month depending on scope) or ad-hoc hours at €65/hour. You're never left to manage a complex site alone.</p></div></div>
     </div>
   </div>
 </section>
