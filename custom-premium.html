@@ -62,7 +62,7 @@ a{text-decoration:none;color:inherit;}
 .price-card-inner{border-radius:calc(2rem - 6px);background:rgba(var(--lp-accent-rgb),.06);box-shadow:inset 0 1px 1px rgba(var(--lp-accent-rgb),.15);padding:2.5rem 2rem;display:flex;flex-direction:column;gap:1.5rem;}
 [data-theme="cozy"] .price-card-inner{background:rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.9);}
 .price-from{font-size:.75rem;color:var(--lp-muted);text-transform:uppercase;letter-spacing:.12em;}
-.price-amount{font-family:'JetBrains Mono',monospace;font-size:clamp(3rem,5.5vw,4.5rem);font-weight:400;line-height:1;color:var(--lp-accent);letter-spacing:-.03em;}
+.price-amount{font-family:'JetBrains Mono',monospace;font-size:clamp(1.75rem,3.5vw,3rem);font-weight:400;line-height:1;color:var(--lp-accent);letter-spacing:-.03em;}
 .price-note{font-size:.75rem;color:var(--lp-muted);margin-top:.25rem;}
 .price-checks{list-style:none;display:flex;flex-direction:column;gap:.625rem;}
 .price-check-item{display:flex;align-items:center;gap:.625rem;font-size:.875rem;color:var(--lp-muted);}
@@ -149,6 +149,7 @@ a{text-decoration:none;color:inherit;}
 [data-theme="cozy"] .lp-nav-cta:hover{background:rgba(196,120,92,.12);border-color:rgba(196,120,92,.70);color:rgb(175,95,65);}
 #custom-cursor{background:var(--lp-accent)!important;box-shadow:0 0 20px 6px rgba(var(--lp-accent-rgb),.6)!important;}
 @media(max-width:1180px){nav.fixed > div:not(#mobile-nav) .lp-nav-cta{width:44px;height:44px;padding:0!important;border-radius:999px!important;justify-content:center;flex:0 0 44px;overflow:hidden;color:transparent!important;font-size:0!important;letter-spacing:0!important;display:inline-flex!important;}nav.fixed > div:not(#mobile-nav) .lp-nav-cta::before{content:"//";color:rgb(var(--cft-terracotta));font:700 12px/1 "JetBrains Mono",monospace;letter-spacing:.06em;}[data-theme="night"] nav.fixed > div:not(#mobile-nav) .lp-nav-cta::before{color:#a5b4fc;}}
+@keyframes deco-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}@keyframes deco-spin-slow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}@keyframes deco-pulse{0%,100%{opacity:.15}50%{opacity:.38}}.hero-deco{position:absolute;pointer-events:none;z-index:0;overflow:visible;}.hero-deco-gem{top:6%;right:4%;width:150px;animation:deco-float 7s ease-in-out infinite;}.hero-deco-crown{bottom:18%;left:3%;width:86px;animation:deco-float 9s ease-in-out infinite 2.5s;}.hero-deco-orbit{top:48%;right:22%;width:100px;animation:deco-spin-slow 28s linear infinite;}@media(max-width:767px){.hero-deco{display:none;}}
 @media(max-width:767px){nav.fixed > div:not(#mobile-nav) .lp-nav-cta{display:none!important;}}
 </style>
 </head>
@@ -225,7 +226,9 @@ a{text-decoration:none;color:inherit;}
 <!-- S1: Hero -->
 <section class="lp-hero" id="hero">
   <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
-  <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+  <svg class="hero-deco hero-deco-gem" aria-hidden="true" viewBox="0 0 160 190" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="80,8 148,58 80,182 12,58" stroke="rgba(var(--lp-accent-rgb),.28)" stroke-width="1.5" fill="rgba(var(--lp-accent-rgb),.05)"/><polyline points="12,58 80,58 148,58" stroke="rgba(var(--lp-accent-rgb),.18)" stroke-width="1" fill="none"/><line x1="80" y1="8" x2="80" y2="182" stroke="rgba(var(--lp-accent-rgb),.1)" stroke-width=".75"/><line x1="12" y1="58" x2="80" y2="182" stroke="rgba(var(--lp-accent-rgb),.1)" stroke-width=".75"/><line x1="148" y1="58" x2="80" y2="182" stroke="rgba(var(--lp-accent-rgb),.1)" stroke-width=".75"/><circle cx="80" cy="8" r="4" fill="rgba(var(--lp-accent-rgb),.55)"/><circle cx="12" cy="58" r="2.5" fill="rgba(var(--lp-accent-rgb),.3)"/><circle cx="148" cy="58" r="2.5" fill="rgba(var(--lp-accent-rgb),.3)"/><circle cx="80" cy="182" r="3" fill="rgba(var(--lp-accent-rgb),.2)"/></svg>
+  <svg class="hero-deco hero-deco-crown" aria-hidden="true" viewBox="0 0 100 82" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 66 L6 38 L24 53 L50 12 L76 53 L94 38 L94 66 Z" stroke="rgba(var(--lp-accent-rgb),.28)" stroke-width="1.5" stroke-linejoin="round" fill="rgba(var(--lp-accent-rgb),.06)"/><line x1="6" y1="74" x2="94" y2="74" stroke="rgba(var(--lp-accent-rgb),.35)" stroke-width="2" stroke-linecap="round"/><circle cx="50" cy="10" r="4.5" fill="rgba(var(--lp-accent-rgb),.45)"/><circle cx="5" cy="37" r="3" fill="rgba(var(--lp-accent-rgb),.3)"/><circle cx="95" cy="37" r="3" fill="rgba(var(--lp-accent-rgb),.3)"/></svg>
+  <svg class="hero-deco hero-deco-orbit" aria-hidden="true" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="54" stroke="rgba(var(--lp-accent-rgb),.14)" stroke-width="1" stroke-dasharray="6 10"/><circle cx="60" cy="60" r="36" stroke="rgba(var(--lp-accent-rgb),.1)" stroke-width=".75" stroke-dasharray="4 8"/><line x1="5" y1="60" x2="115" y2="60" stroke="rgba(var(--lp-accent-rgb),.1)" stroke-width=".75"/><line x1="60" y1="5" x2="60" y2="115" stroke="rgba(var(--lp-accent-rgb),.1)" stroke-width=".75"/><circle cx="60" cy="6" r="3" fill="rgba(var(--lp-accent-rgb),.35)"/><circle cx="60" cy="60" r="2.5" fill="rgba(var(--lp-accent-rgb),.25)"/></svg>
   <div class="lp-wrap hero-grid">
     <div>
       <span class="pill">Custom Premium · No Templates</span>
