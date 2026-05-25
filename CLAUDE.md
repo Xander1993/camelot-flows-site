@@ -4,6 +4,76 @@ Solo workshop website. Static HTML site **and** WordPress theme, built from the 
 
 ---
 
+## Memory — CRITICAL
+
+**The Obsidian vault at `E:\Camelot Flows` is the ONLY memory system for this project.**
+
+- Save all notes, feedback, decisions, and learnings to the vault using the obsidian MCP or Write tool
+- Do NOT use the auto-memory folder at `C:\Users\user\.claude\projects\...\memory\` — that folder is overridden by this rule
+- Vault folder routing: strategy/business → `01 - Business\`, tech → `02 - Tech\`, clients → `03 - Clients\`, outreach → `04 - Outreach\`, content → `05 - Content\`, principles/frameworks/feedback → `06 - Knowledge\`
+
+---
+
+## Session Start — Always Do This
+
+1. Read `E:\Camelot Flows\🗺 index.md` **first** — this is the vault map. It tells you what exists and where.
+2. Read `E:\Camelot Flows\🏠 Home.md` — current week's focus, active leads, metrics
+3. For any strategy/outreach/research task → use the obsidian MCP (`mcp__obsidian__read_notes`) to read the specific note before starting
+4. When research results come in or decisions are made → run `/ingest` to file immediately, don't wait to be asked
+5. When you encounter a `[[wiki link]]` in a vault note → follow it with the obsidian MCP
+
+**Ingest pattern (Karpathy LLM Wiki) — fully automatic, no prompt needed:**
+| Step | Action |
+|------|--------|
+| Raw research arrives | Spawn a vault-ingest subagent (Agent tool) — do NOT process inline |
+| Subagent handles | Classify → file → cross-reference **10–15** related notes → update index.md → append log.md |
+| Main session receives | One-line summary: what was filed, what was updated, what links were made |
+| Complex answer given | If a strategic answer took synthesis (3+ sentences), file it as a wiki page too |
+| `/lint` | Health check: structural + gap analysis |
+
+**Subagent rule — ALWAYS spawn Agent for vault ingestion:**
+When research, decisions, or new knowledge arrives in the conversation:
+1. DO NOT process it inline — this pollutes main context with vault work
+2. Spawn an Agent subagent using the prompt template in the `/ingest` skill
+3. The subagent handles the full pipeline: classify → write → cross-reference → update index → log
+4. Report back to the user in one sentence: "Filed X → updated Y, Z, W → linked to A, B"
+5. Main conversation stays clean and fast
+
+**Query compounding rule:**
+When you give a strategic answer that involved real synthesis — comparing options, market analysis, tactical recommendation — file it as a wiki page via subagent. The question becomes the title, the answer becomes the page. This is how the vault compounds on queries, not just ingests.
+
+**Vault folder routing:**
+| Task type | Vault folder |
+|-----------|-------------|
+| Market research, competitive analysis, pricing, testimonials | `E:\Camelot Flows\01 - Business\` |
+| Outreach channels, group lists, email templates, social strategy | `E:\Camelot Flows\04 - Outreach\` |
+| Tech, servers, MCP, infrastructure | `E:\Camelot Flows\02 - Tech\` |
+| Client notes | `E:\Camelot Flows\03 - Clients\` |
+| Content ideas, YouTube, social posts | `E:\Camelot Flows\05 - Content\` |
+| Frameworks, tactics, principles | `E:\Camelot Flows\06 - Knowledge\` |
+
+---
+
+## Working Directories
+
+| Path | Purpose |
+|------|---------|
+| `D:\Download\stitch_camelot_flows_homepage` | **This repo** — static HTML site + WP theme. Edit here, `git push` → Cloudflare Pages auto-deploys. |
+| `E:\Camelot Flows` | **Obsidian vault** — all strategy, outreach, client, and knowledge notes. Write Obsidian notes here ONLY, never in the repo. |
+
+## Servers
+
+| Server | IP | SSH port | SSH user | Key | Hosts |
+|--------|----|----------|----------|-----|-------|
+| DigitalOcean VPS | `46.101.150.59` | `8080` | `root` | `C:\Users\user\.ssh\id_ed25519` | www.camelotflows.dev, blog.camelotflows.dev |
+| Hostinger VPS | `72.62.45.144` | `22` | `developer` | `C:\Users\user\.ssh\id_ed25519` | camelotflows + client sites |
+
+**SSH rule:** Always use PowerShell tool for SSH/SCP — Bash mangles Windows key paths.
+**DO Console:** broken (Bitnami disables password auth). Use SCP only.
+**SCP to DO:** `scp -P 8080 -i "C:\Users\user\.ssh\id_ed25519" file root@46.101.150.59:/var/www/html/...`
+
+---
+
 ## Quick orientation
 
 - **Default theme:** `cozy` — warm cream surfaces, terracotta + sage accents, Fraunces serif display.
