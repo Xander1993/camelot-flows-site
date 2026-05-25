@@ -10,11 +10,13 @@
                 pre.style.pointerEvents = 'none';
                 setTimeout(function () { pre.style.display = 'none'; }, 260);
             }
-            document.querySelectorAll("#hero-badge, #hero-word-1, #hero-word-2, #hero-p, #hero-btns, #hero-stats").forEach((node) => {
-                node.style.opacity = "1";
-                node.style.visibility = "visible";
-                node.style.transform = "none";
-            });
+            if (!window._heroAnimStarted) {
+                document.querySelectorAll("#hero-badge, #hero-word-1, #hero-word-2, #hero-p, #hero-btns, #hero-stats").forEach((node) => {
+                    node.style.opacity = "1";
+                    node.style.visibility = "visible";
+                    node.style.transform = "none";
+                });
+            }
             try { window.lenis && window.lenis.start(); } catch (_) { }
         };
 
@@ -346,6 +348,7 @@
         // 6. HERO PARALLAX & KINETIC TYPOGRAPHY REVEAL
         // ------------------------------------------------------------
         const playHeroAnimation = () => {
+            window._heroAnimStarted = true;
             if (!document.getElementById('hero-badge')) return; // Non-home pages: no-op
             // Wrap the hero word AFTER i18n has run, so the per-char spans
             // contain the translated letters and aren't wiped by a later
