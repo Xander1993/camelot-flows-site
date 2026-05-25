@@ -10,7 +10,9 @@
                 pre.style.pointerEvents = 'none';
                 setTimeout(function () { pre.style.display = 'none'; }, 260);
             }
-            if (!window._heroAnimStarted) {
+            // Only force-reveal hero elements when GSAP failed to load entirely.
+            // When GSAP is present, playHeroAnimation() owns the reveal via fromTo.
+            if (!window.gsap) {
                 document.querySelectorAll("#hero-badge, #hero-word-1, #hero-word-2, #hero-p, #hero-btns, #hero-stats").forEach((node) => {
                     node.style.opacity = "1";
                     node.style.visibility = "visible";
@@ -116,6 +118,9 @@
         const hidePreloader = () => {
             if (window._preloaderRun) return;
             window._preloaderRun = true;
+            // Mark as handled so cfFallbackHidePreloader skips the preloader entirely.
+            const pre = document.getElementById('preloader');
+            if (pre) pre.dataset.cfHidden = '1';
 
             // Skip path — no animated loader on internal nav.
             if (SKIP_PRELOADER) {
