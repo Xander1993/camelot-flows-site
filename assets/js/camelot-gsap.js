@@ -65,8 +65,9 @@
         // SKIP-PRELOADER GATE — once-per-session: first load shows the
         // animated loader; every subsequent navigation in the same session
         // skips it instantly so internal nav feels snappy.
-        const SKIP_PRELOADER = sessionStorage.getItem('cf_loaded') === '1';
-        if (!SKIP_PRELOADER) sessionStorage.setItem('cf_loaded', '1');
+        const IS_BOT = document.documentElement.classList.contains('cf-bot-mode');
+        const SKIP_PRELOADER = IS_BOT || sessionStorage.getItem('cf_loaded') === '1';
+        if (!IS_BOT && !SKIP_PRELOADER) sessionStorage.setItem('cf_loaded', '1');
         if (SKIP_PRELOADER) {
             document.documentElement.classList.add('cf-skip-preloader');
         }
@@ -97,7 +98,7 @@
         // coverage during initial parse.
         const _heroTargets = ["#hero-badge", "#hero-word-1", "#hero-word-2", "#hero-p", "#hero-btns", "#hero-stats"]
             .filter(sel => document.querySelector(sel));
-        if (_heroTargets.length) gsap.set(_heroTargets, { autoAlpha: 0 });
+        if (_heroTargets.length && !IS_BOT) gsap.set(_heroTargets, { autoAlpha: 0 });
 
         // ------------------------------------------------------------
         // 1. LENIS SMOOTH SCROLL

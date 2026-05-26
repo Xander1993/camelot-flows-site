@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-i18n-page="merlin">
 
 <head>
@@ -12,9 +12,11 @@
           html.setAttribute('data-theme', t);
         } catch (e) { html.setAttribute('data-theme', 'cozy'); }
         try {
-          if (sessionStorage.getItem('cf_loaded') === '1') {
+          var isBot = navigator.webdriver || /HeadlessChrome/i.test(navigator.userAgent);
+          if (isBot || sessionStorage.getItem('cf_loaded') === '1') {
             html.classList.add('cf-skip-preloader');
           }
+          if (isBot) html.classList.add('cf-bot-mode');
         } catch (e) {}
         html.classList.add('js');
       })();
