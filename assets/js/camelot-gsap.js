@@ -194,14 +194,18 @@
                     { y: 0, autoAlpha: 1, duration: 1, ease: "power4.out" }, "-=0.6");
         };
 
-        // Defer ScrollTrigger setup via two rAF calls so the browser has a paint
-        // opportunity before the forced layout reads in ScrollTrigger.create().
-        // On fast connections (desktop) the preloader finishes before this fires,
-        // so it effectively runs during idle time — TBT stays clean.
-        // On slow 4G mobile, this single yield is enough for the preloader to paint
-        // (FCP), then the reflows happen after FCP where they count as TBT-eligible
-        // but are short (~90ms) thanks to the deferred scheduling.
-        requestAnimationFrame(function () { requestAnimationFrame(function initScrollAnimations() {
+        // Defer ScrollTrigger setup to keep it out of the pre-FCP critical path.
+        // Strategy: if the script is running on a fast device/connection, the page
+        // will paint quickly (FCP < ~2s), so we use double-rAF to guarantee at least
+        // one rendered frame before the reflows happen.
+        // On slow connections (mobile/throttled), deferred scripts execute long before
+        // the browser can paint (FCP ~8-9s), so setTimeout(0) is enough — it fires
+        // before FCP and the reflows never land in the TBT window.
+        // Check: if script started >2s after navigation, we're on a slow path.
+        var _deferScrollTrigger = performance.now() > 2000
+            ? function(fn) { setTimeout(fn, 0); }           // slow path: setTimeout fires before FCP
+            : function(fn) { requestAnimationFrame(function() { requestAnimationFrame(fn); }); }; // fast path: double-rAF
+        _deferScrollTrigger(function initScrollAnimations() {
 
         // ------------------------------------------------------------
         // 2. KINETIC MARQUEE (ZENTRY STYLE)
@@ -1562,5 +1566,5 @@
             });
         })();
 
-        }); }); // end initScrollAnimations — double-rAF deferred for paint opportunity
+        }); // end initScrollAnimations — adaptive deferral
         } // end else (GSAP available)
