@@ -158,6 +158,50 @@
             setTimeout(hidePreloader, 800); // Secondary failsafe (the 1.5s DOM one is above)
         }
 
+        // HERO ANIMATION — defined before the deferred block so it's
+        // available both in the SKIP_PRELOADER (rAF) path and in the
+        // normal path where hidePreloader.onComplete fires ~1s later.
+        const playHeroAnimation = () => {
+            window._heroAnimStarted = true;
+            if (!document.getElementById('hero-badge')) return;
+            wrapLetters(document.getElementById('hero-word-1'));
+            const heroTl = gsap.timeline();
+            heroTl
+                .fromTo("#hero-badge",
+                    { y: 60, autoAlpha: 0 },
+                    { y: 0, autoAlpha: 1, duration: 1, ease: "power4.out" })
+                .set("#hero-word-1", { autoAlpha: 1 }, "<")
+                .from(".hero-char", {
+                    z: 400,
+                    rotationX: -90,
+                    opacity: 0,
+                    stagger: 0.04,
+                    duration: 1.2,
+                    ease: "back.out(1.5)",
+                    transformOrigin: "50% 50% -50px"
+                }, "-=0.8")
+                .fromTo("#hero-word-2",
+                    { yPercent: 100, autoAlpha: 0 },
+                    { yPercent: 0, autoAlpha: 1, duration: 1.2, ease: "power4.out" }, "-=1.0")
+                .fromTo("#hero-p",
+                    { y: 50, autoAlpha: 0 },
+                    { y: 0, autoAlpha: 1, duration: 1, ease: "power4.out" }, "-=0.8")
+                .fromTo("#hero-btns",
+                    { y: 40, autoAlpha: 0 },
+                    { y: 0, autoAlpha: 1, duration: 1, ease: "power4.out" }, "-=0.7")
+                .fromTo("#hero-stats",
+                    { y: 30, autoAlpha: 0 },
+                    { y: 0, autoAlpha: 1, duration: 1, ease: "power4.out" }, "-=0.6");
+        };
+
+        // Defer ALL ScrollTrigger.create() calls until after first paint.
+        // ScrollTrigger forces layout reads (getBoundingClientRect / offsetHeight)
+        // on every trigger element at init — ~1,800ms of reflow × 4× CPU throttle
+        // = ~7s blocking on Slow-4G mobile, pushing FCP from ~1s to ~9s.
+        // A setTimeout(0) yields to the browser so it can paint the preloader
+        // before any of this runs.
+        setTimeout(function initScrollAnimations() {
+
         // ------------------------------------------------------------
         // 2. KINETIC MARQUEE (ZENTRY STYLE)
         // ------------------------------------------------------------
@@ -350,50 +394,7 @@
             }
         })();
 
-        // ------------------------------------------------------------
-        // 6. HERO PARALLAX & KINETIC TYPOGRAPHY REVEAL
-        // ------------------------------------------------------------
-        const playHeroAnimation = () => {
-            window._heroAnimStarted = true;
-            if (!document.getElementById('hero-badge')) return; // Non-home pages: no-op
-            // Wrap the hero word AFTER i18n has run, so the per-char spans
-            // contain the translated letters and aren't wiped by a later
-            // textContent assignment. Idempotent — re-wrapping plain text
-            // gives the same result.
-            wrapLetters(document.getElementById('hero-word-1'));
-            // Targets were pre-hidden (autoAlpha: 0) at script load to prevent
-            // a flash. We use fromTo so the from-state is explicit and the
-            // tweens animate to autoAlpha: 1 regardless of pre-set state.
-            const heroTl = gsap.timeline();
-
-            heroTl
-                .fromTo("#hero-badge",
-                    { y: 60, autoAlpha: 0 },
-                    { y: 0, autoAlpha: 1, duration: 1, ease: "power4.out" })
-                // Unhide the word-1 wrapper so the per-char animation is visible.
-                .set("#hero-word-1", { autoAlpha: 1 }, "<")
-                .from(".hero-char", {
-                    z: 400,
-                    rotationX: -90,
-                    opacity: 0,
-                    stagger: 0.04,
-                    duration: 1.2,
-                    ease: "back.out(1.5)",
-                    transformOrigin: "50% 50% -50px"
-                }, "-=0.8")
-                .fromTo("#hero-word-2",
-                    { yPercent: 100, autoAlpha: 0 },
-                    { yPercent: 0, autoAlpha: 1, duration: 1.2, ease: "power4.out" }, "-=1.0")
-                .fromTo("#hero-p",
-                    { y: 50, autoAlpha: 0 },
-                    { y: 0, autoAlpha: 1, duration: 1, ease: "power4.out" }, "-=0.8")
-                .fromTo("#hero-btns",
-                    { y: 40, autoAlpha: 0 },
-                    { y: 0, autoAlpha: 1, duration: 1, ease: "power4.out" }, "-=0.7")
-                .fromTo("#hero-stats",
-                    { y: 30, autoAlpha: 0 },
-                    { y: 0, autoAlpha: 1, duration: 1, ease: "power4.out" }, "-=0.6");
-        };
+        // 6. HERO PARALLAX — playHeroAnimation defined above the setTimeout block.
 
         (() => {
             const orbs = document.querySelectorAll(".bg-orb");
@@ -1559,4 +1560,6 @@
                 });
             });
         })();
-        }
+
+        }, 0); // end initScrollAnimations — deferred to allow first paint before reflows
+        } // end else (GSAP available)
