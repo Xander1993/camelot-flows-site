@@ -2,13 +2,11 @@
 module.exports = {
   content: [
     "./*.html",
-    "./_archive/**/*.html",
     "./wp-theme/camelot-flows/**/*.php",
     "./assets/js/**/*.js",
     "./assets/site.js",
   ],
-  // Safelist anything dynamically added by JS or generated arbitrary classes
-  // that scanning might miss.
+  // Safelist only classes added dynamically by JS at runtime (not in HTML source).
   safelist: [
     "cf-skip-preloader",
     "cf-cursor",
@@ -17,12 +15,13 @@ module.exports = {
     "theme-toggle",
     "icon-cozy",
     "icon-night",
+    // Custom token colors used via data-theme variants in JS/dynamic contexts
     {
       pattern: /(bg|text|border|from|to)-(primary|primary-glow|accent|cobalt|sage|terracotta|charcoal|candle|parchment|obsidian|obsidian-light)(\/.+)?/,
     },
-    {
-      pattern: /(bg|text|border)-(slate|indigo|emerald|cyan|black|white)-(\d+)(\/.+)?/,
-    },
+    // Only the specific Tailwind color classes injected by locales.js
+    "text-emerald-400",
+    "text-indigo-400",
   ],
   theme: {
     extend: {
