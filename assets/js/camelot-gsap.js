@@ -140,10 +140,10 @@
             });
 
             preloaderTl
-                .to("#loader-percent", { innerHTML: "100%", duration: 1.5, snap: { innerHTML: 1 }, ease: "power2.inOut" })
-                .to("#loader-bar", { width: "100%", duration: 1.5, ease: "power2.inOut" }, "<")
-                .to("#loader-text", { text: (window.cfI18n && window.cfI18n.t('common.preloader_ready')) || "SYSTEM_READY", duration: 0.2 }, "-=0.2")
-                .to("#preloader", { yPercent: -100, duration: 1, ease: "power4.inOut", delay: 0.3 })
+                .to("#loader-percent", { innerHTML: "100%", duration: 0.4, snap: { innerHTML: 1 }, ease: "power2.inOut" })
+                .to("#loader-bar", { width: "100%", duration: 0.4, ease: "power2.inOut" }, "<")
+                .to("#loader-text", { text: (window.cfI18n && window.cfI18n.t('common.preloader_ready')) || "SYSTEM_READY", duration: 0.15 }, "-=0.15")
+                .to("#preloader", { yPercent: -100, duration: 0.5, ease: "power4.inOut", delay: 0.1 })
                 .set("#preloader", { display: "none" });
         };
 
@@ -154,7 +154,7 @@
             // hit the temporal dead zone and silently leave the hero hidden.
             requestAnimationFrame(hidePreloader);
         } else {
-            window.addEventListener("load", hidePreloader);
+            document.addEventListener("DOMContentLoaded", hidePreloader);
             setTimeout(hidePreloader, 800); // Secondary failsafe (the 1.5s DOM one is above)
         }
 
