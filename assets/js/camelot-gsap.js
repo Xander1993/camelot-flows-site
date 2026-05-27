@@ -122,9 +122,8 @@
             const pre = document.getElementById('preloader');
             if (pre) pre.dataset.cfHidden = '1';
 
-            // Skip path — no animated loader on internal nav.
-            if (SKIP_PRELOADER) {
-                const pre = document.getElementById('preloader');
+            // Skip path — no animated loader on internal nav or when preloader element is absent.
+            if (SKIP_PRELOADER || !pre) {
                 if (pre) pre.style.display = 'none';
                 lenis.start();
                 playHeroAnimation();
