@@ -156,10 +156,6 @@
             setTimeout(hidePreloader, 800); // Secondary failsafe (the 1.5s DOM one is above)
         }
 
-        // Defer all scroll-trigger setup to idle time — prevents ScrollTrigger's
-        // _refreshAll() forced reflows from blocking the main thread during paint.
-        (window.requestIdleCallback || function(cb){ setTimeout(cb, 100); })(function(){
-
         // ------------------------------------------------------------
         // 2. KINETIC MARQUEE (ZENTRY STYLE)
         // ------------------------------------------------------------
@@ -1561,5 +1557,4 @@
                 });
             });
         })();
-        }); // end requestIdleCallback — all scroll triggers registered
         }
