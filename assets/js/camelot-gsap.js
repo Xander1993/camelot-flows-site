@@ -97,10 +97,6 @@
         // coverage during initial parse.
         const _heroTargets = ["#hero-badge", "#hero-word-1", "#hero-word-2", "#hero-p", "#hero-btns", "#hero-stats"]
             .filter(sel => document.querySelector(sel));
-        // Add .js now (deferred until GSAP is ready) so hero is visible from first
-        // paint on pages that omit the sync bootstrap class. gsap.set() below
-        // immediately hides targets via inline style before the animation runs.
-        document.documentElement.classList.add('js');
         if (_heroTargets.length) gsap.set(_heroTargets, { autoAlpha: 0 });
 
         // ------------------------------------------------------------
