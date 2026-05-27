@@ -153,7 +153,7 @@
             requestAnimationFrame(hidePreloader);
         } else {
             window.addEventListener("load", hidePreloader);
-            setTimeout(hidePreloader, 0); // Fire after all defer scripts run (macrotask); no preloader element exists
+            setTimeout(hidePreloader, 800); // Secondary failsafe (the 1.5s DOM one is above)
         }
 
         // 3. PORTAL — sync: pin+scrub needs synchronous setup
