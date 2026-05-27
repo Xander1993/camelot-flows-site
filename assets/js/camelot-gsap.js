@@ -156,6 +156,9 @@
             setTimeout(hidePreloader, 800); // Secondary failsafe (the 1.5s DOM one is above)
         }
 
+        // Defer non-critical scroll/animation setup to idle — eliminates forced reflows from TBT window
+        ;(window.requestIdleCallback || function(fn,o){setTimeout(fn,(o&&o.timeout)||100);})(function(){
+
         // ------------------------------------------------------------
         // 2. KINETIC MARQUEE (ZENTRY STYLE)
         // ------------------------------------------------------------
@@ -348,6 +351,8 @@
             }
         })();
 
+        }, { timeout: 2000 });
+
         // ------------------------------------------------------------
         // 6. HERO PARALLAX & KINETIC TYPOGRAPHY REVEAL
         // ------------------------------------------------------------
@@ -392,6 +397,9 @@
                     { y: 30, autoAlpha: 0 },
                     { y: 0, autoAlpha: 1, duration: 1, ease: "power4.out" }, "-=0.6");
         };
+
+        // Defer scroll-driven animations to idle — eliminates forced reflows from TBT
+        ;(window.requestIdleCallback || function(fn,o){setTimeout(fn,(o&&o.timeout)||100);})(function(){
 
         (() => {
             const orbs = document.querySelectorAll(".bg-orb");
@@ -897,6 +905,8 @@
             );
         });
 
+        }, { timeout: 2000 });
+
         // ============================================================
         // 10. THEME TOGGLE (cozy ↔ night) with View Transitions
         // ============================================================
@@ -928,6 +938,7 @@
             });
         })();
 
+        ;(window.requestIdleCallback || function(fn,o){setTimeout(fn,(o&&o.timeout)||100);})(function(){
         // ============================================================
         // 11. MAGNETIC CTAs + CUSTOM CURSOR (premium polish)
         // ============================================================
@@ -986,6 +997,8 @@
                 onUpdate: (self) => { bar.style.transform = 'scaleX(' + self.progress + ')'; }
             });
         })();
+
+        }, { timeout: 2000 });
 
         // ============================================================
         // 13. ACTIVE NAV ITEM — highlight the link that matches the current page
@@ -1543,6 +1556,7 @@
         // ============================================================
         // 16. SCROLL REVEAL — GSAP ScrollTrigger for .cf-reveal/.cf-wipe
         // ============================================================
+        ;(window.requestIdleCallback || function(fn,o){setTimeout(fn,(o&&o.timeout)||100);})(function(){
         (() => {
             if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
                 document.querySelectorAll('.cf-reveal, .cf-reveal-x, .cf-wipe').forEach(el => el.classList.add('is-visible'));
@@ -1557,4 +1571,5 @@
                 });
             });
         })();
+        }, { timeout: 2000 });
         }
