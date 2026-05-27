@@ -2,8 +2,6 @@
 module.exports = {
   content: [
     "./*.html",
-    "./_archive/**/*.html",
-    "./wp-theme/camelot-flows/**/*.php",
     "./assets/js/**/*.js",
     "./assets/site.js",
   ],
@@ -18,10 +16,10 @@ module.exports = {
     "icon-cozy",
     "icon-night",
     {
-      pattern: /(bg|text|border|from|to)-(primary|primary-glow|accent|cobalt|sage|terracotta|charcoal|candle|parchment|obsidian|obsidian-light)(\/.+)?/,
+      pattern: /(bg|text|border|from|to)-(primary|primary-glow|accent|cobalt|sage|terracotta|charcoal|candle|parchment|obsidian|obsidian-light)/,
     },
     {
-      pattern: /(bg|text|border)-(slate|indigo|emerald|cyan|black|white)-(\d+)(\/.+)?/,
+      pattern: /(bg|text|border)-(slate|indigo|emerald|cyan|black|white)-(\d+)/,
     },
   ],
   theme: {
