@@ -156,28 +156,7 @@
             setTimeout(hidePreloader, 800); // Secondary failsafe (the 1.5s DOM one is above)
         }
 
-        // Defer non-critical scroll/animation setup to idle — eliminates forced reflows from TBT window
-        ;(window.requestIdleCallback || function(fn,o){setTimeout(fn,(o&&o.timeout)||100);})(function(){
-
-        // ------------------------------------------------------------
-        // 2. KINETIC MARQUEE (ZENTRY STYLE)
-        // ------------------------------------------------------------
-        // ИЗМЕНЕНИЕ: Бесконечная бегущая строка, ломающая сетку
-        (() => {
-            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-            if (!document.querySelector(".marquee-container")) return;
-            gsap.to(".marquee-container", {
-                xPercent: -50, // Двигаем ровно на 50% (так как у нас 2 одинаковых блока внутри)
-                ease: "none",
-                repeat: -1,
-                duration: 15 // Скорость движения
-            });
-        })();
-
-        // ------------------------------------------------------------
-        // 3. ZENTRY PORTAL (VIEWPORT TAKEOVER)
-        // ------------------------------------------------------------
-        // ИЗМЕНЕНИЕ: Разрывающий экран портал перед Round Table
+        // 3. PORTAL — sync: pin+scrub needs synchronous setup
         (() => {
             if (!document.getElementById('portal-trigger')) return;
             if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -217,6 +196,24 @@
                         duration: 1,
                         ease: "back.out(1.5)"
                     }, "-=0.2"); // Запускаем чуть до того, как портал полностью откроется
+            });
+        })();
+
+        // Defer non-critical scroll/animation setup to idle — eliminates forced reflows from TBT window
+        ;(window.requestIdleCallback || function(fn,o){setTimeout(fn,(o&&o.timeout)||100);})(function(){
+
+        // ------------------------------------------------------------
+        // 2. KINETIC MARQUEE (ZENTRY STYLE)
+        // ------------------------------------------------------------
+        // ИЗМЕНЕНИЕ: Бесконечная бегущая строка, ломающая сетку
+        (() => {
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+            if (!document.querySelector(".marquee-container")) return;
+            gsap.to(".marquee-container", {
+                xPercent: -50, // Двигаем ровно на 50% (так как у нас 2 одинаковых блока внутри)
+                ease: "none",
+                repeat: -1,
+                duration: 15 // Скорость движения
             });
         })();
 
@@ -398,82 +395,7 @@
                     { y: 0, autoAlpha: 1, duration: 1, ease: "power4.out" }, "-=0.6");
         };
 
-        // Defer scroll-driven animations to idle — eliminates forced reflows from TBT
-        ;(window.requestIdleCallback || function(fn,o){setTimeout(fn,(o&&o.timeout)||100);})(function(){
-
-        (() => {
-            const orbs = document.querySelectorAll(".bg-orb");
-            const multipliers = [0.03, -0.04, 0.025];
-
-            if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
-                window.addEventListener("mousemove", (e) => {
-                    const cx = window.innerWidth / 2;
-                    const cy = window.innerHeight / 2;
-                    const dx = (e.clientX - cx) / cx;
-                    const dy = (e.clientY - cy) / cy;
-
-                    orbs.forEach((orb, i) => {
-                        const m = multipliers[i] || 0.03;
-                        gsap.to(orb, {
-                            x: -dx * m * window.innerWidth,
-                            y: -dy * m * window.innerHeight,
-                            duration: 1.2,
-                            ease: "power1.out",
-                        });
-                    });
-
-                    gsap.utils.toArray(".parallax-float").forEach((el) => {
-                        const depth = parseFloat(el.getAttribute("data-depth")) || 0.1;
-                        gsap.to(el, {
-                            x: dx * depth * 80,
-                            y: dy * depth * 80,
-                            duration: 1.5,
-                            ease: "power2.out",
-                        });
-                    });
-                });
-
-                gsap.utils.toArray(".parallax-float").forEach((el) => {
-                    gsap.to(el, {
-                        y: "+=15",
-                        rotation: "+=10",
-                        duration: "random(3, 5)",
-                        repeat: -1,
-                        yoyo: true,
-                        ease: "sine.inOut"
-                    });
-
-                    const depth = parseFloat(el.getAttribute("data-depth")) || 0.1;
-                    gsap.to(el, {
-                        yPercent: depth * 300,
-                        rotation: depth * 100,
-                        ease: "none",
-                        scrollTrigger: {
-                            trigger: "#hero",
-                            start: "top top",
-                            end: "bottom top",
-                            scrub: true
-                        }
-                    });
-                });
-            }
-        })();
-
-        (() => {
-            if (!document.getElementById('literal-round-table')) return;
-            gsap.to("#literal-round-table", {
-                rotation: 360,
-                duration: 50,
-                repeat: -1,
-                ease: "none"
-            });
-            gsap.to(".rt-icon", {
-                rotation: -360,
-                duration: 50,
-                repeat: -1,
-                ease: "none"
-            });
-        })();
+        // SYNC: sections that set initial visibility state
 
         // ------------------------------------------------------------
         // 7. CARD STACK — AWWWARDS HORIZONTAL SCROLL EFFECT
@@ -851,6 +773,83 @@
                 });
             }
         }
+
+        // Defer scroll-driven animations to idle — eliminates forced reflows from TBT
+        ;(window.requestIdleCallback || function(fn,o){setTimeout(fn,(o&&o.timeout)||100);})(function(){
+
+        (() => {
+            const orbs = document.querySelectorAll(".bg-orb");
+            const multipliers = [0.03, -0.04, 0.025];
+
+            if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+                window.addEventListener("mousemove", (e) => {
+                    const cx = window.innerWidth / 2;
+                    const cy = window.innerHeight / 2;
+                    const dx = (e.clientX - cx) / cx;
+                    const dy = (e.clientY - cy) / cy;
+
+                    orbs.forEach((orb, i) => {
+                        const m = multipliers[i] || 0.03;
+                        gsap.to(orb, {
+                            x: -dx * m * window.innerWidth,
+                            y: -dy * m * window.innerHeight,
+                            duration: 1.2,
+                            ease: "power1.out",
+                        });
+                    });
+
+                    gsap.utils.toArray(".parallax-float").forEach((el) => {
+                        const depth = parseFloat(el.getAttribute("data-depth")) || 0.1;
+                        gsap.to(el, {
+                            x: dx * depth * 80,
+                            y: dy * depth * 80,
+                            duration: 1.5,
+                            ease: "power2.out",
+                        });
+                    });
+                });
+
+                gsap.utils.toArray(".parallax-float").forEach((el) => {
+                    gsap.to(el, {
+                        y: "+=15",
+                        rotation: "+=10",
+                        duration: "random(3, 5)",
+                        repeat: -1,
+                        yoyo: true,
+                        ease: "sine.inOut"
+                    });
+
+                    const depth = parseFloat(el.getAttribute("data-depth")) || 0.1;
+                    gsap.to(el, {
+                        yPercent: depth * 300,
+                        rotation: depth * 100,
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: "#hero",
+                            start: "top top",
+                            end: "bottom top",
+                            scrub: true
+                        }
+                    });
+                });
+            }
+        })();
+
+        (() => {
+            if (!document.getElementById('literal-round-table')) return;
+            gsap.to("#literal-round-table", {
+                rotation: 360,
+                duration: 50,
+                repeat: -1,
+                ease: "none"
+            });
+            gsap.to(".rt-icon", {
+                rotation: -360,
+                duration: 50,
+                repeat: -1,
+                ease: "none"
+            });
+        })();
 
         // ------------------------------------------------------------
         // 9.5 SKEW ON SCROLL (TRENDING FLUIDITY EFFECT)
@@ -1556,7 +1555,6 @@
         // ============================================================
         // 16. SCROLL REVEAL — GSAP ScrollTrigger for .cf-reveal/.cf-wipe
         // ============================================================
-        ;(window.requestIdleCallback || function(fn,o){setTimeout(fn,(o&&o.timeout)||100);})(function(){
         (() => {
             if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
                 document.querySelectorAll('.cf-reveal, .cf-reveal-x, .cf-wipe').forEach(el => el.classList.add('is-visible'));
@@ -1571,5 +1569,4 @@
                 });
             });
         })();
-        }, { timeout: 2000 });
         }

@@ -65,9 +65,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"></noscript>
     <link rel="stylesheet" href="assets/css/tailwind.built.css">
-    <link rel="stylesheet" href="assets/site.min.css?v=1">
-    <link rel="stylesheet" href="assets/css/camelot.min.css?v=1">
-    <link rel="stylesheet" href="assets/css/theme-night.min.css?v=1">
+    <link rel="stylesheet" href="assets/site.min.css?v=1" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="assets/site.min.css?v=1"></noscript>
+    <link rel="stylesheet" href="assets/css/camelot.min.css?v=1" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="assets/css/camelot.min.css?v=1"></noscript>
+    <link rel="stylesheet" href="assets/css/theme-night.min.css?v=1" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="assets/css/theme-night.min.css?v=1"></noscript>
     <link rel="stylesheet" href="assets/css/lang-switcher.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="assets/css/lang-switcher.css"></noscript>
     <link rel="prefetch" href="arsenal.html" as="document">
@@ -212,44 +215,75 @@
 }
 </script>
 <style>
-/* Critical layout CSS — stable before Tailwind async loads, prevents CLS */
+/* ── Critical CSS — inlined to remove render-blocking FCP penalty ── */
+/* CSS tokens (camelot.css :root) */
+:root,[data-theme="night"]{--cft-primary:79 70 229;--cft-primary-glow:99 102 241;--cft-accent:139 92 246;--cft-cobalt:30 58 138;--cft-obsidian:5 5 8;--cft-obsidian-light:10 10 18;--cft-parchment:10 10 18;--cft-candle:0 242 255;--cft-sage:139 92 246;--cft-terracotta:99 102 241;--cft-charcoal:15 23 42;--cf-alabaster:#F5F4F0;--cf-cream:#EDEBE6;--cf-sand:#E0DDD6;--cf-parchment:#F1ECDF;--cf-charcoal:#1A1A18;--cf-charcoal-soft:#302F2B;--cf-muted:#6D6A64;--cf-line:rgba(26,26,24,0.1);--cf-line-strong:rgba(26,26,24,0.2);--cf-sage:#7B9171;--cf-sage-soft:rgba(123,145,113,0.15);--cf-terracotta:#C4785C;--cf-terracotta-soft:rgba(196,120,92,0.15);--cf-cobalt:#3F5D8D;--cf-candle:#E8B96B;--cf-candle-glow:rgba(232,185,107,0.18);--bg:#f6f3ed;--bg-alt:#ece8df;--surface:rgba(255,255,255,0.68);--surface-strong:rgba(255,255,255,0.86);--line:rgba(26,26,24,0.1);--line-strong:rgba(26,26,24,0.18);--text:#171715;--text-soft:#302f2b;--muted:#6d6a64;--sage:#758d6c;--terracotta:#c4785c;--cobalt:#3f5d8d}
+[data-theme="cozy"]{--cft-primary:196 120 92;--cft-primary-glow:212 135 90;--cft-accent:123 145 113;--cft-cobalt:63 93 141;--cft-obsidian:245 244 240;--cft-obsidian-light:237 235 230;--cft-parchment:241 236 223;--cft-candle:232 185 107;--cft-sage:123 145 113;--cft-terracotta:196 120 92;--cft-charcoal:26 26 24}
+[data-theme="night"]{--surface:rgba(15,15,25,.72);--surface-strong:rgba(20,20,35,.88);--line:rgba(255,255,255,.09);--line-strong:rgba(255,255,255,.16);--text:#e2e8f0;--text-soft:#b4c0d0;--muted:rgba(180,192,208,.70);--bg:#050508;--bg-alt:#0a0a12}
+/* Body/html base */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:radial-gradient(circle at 0% 0%,rgba(117,141,108,.16),transparent 30%),radial-gradient(circle at 100% 15%,rgba(196,120,92,.12),transparent 30%),#f6f3ed;color:#171715;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html,body{max-width:100%;overflow-x:clip}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+[data-theme="night"] body{background:radial-gradient(circle at 0% 0%,rgba(30,58,138,.09),transparent 40%),radial-gradient(circle at 100% 20%,rgba(139,92,246,.06),transparent 35%),#050508;color:#e2e8f0}
+[data-theme="cozy"] body.theme-cozy{background:radial-gradient(circle at 0% 0%,rgba(123,145,113,.16),transparent 35%),radial-gradient(circle at 100% 10%,rgba(196,120,92,.12),transparent 35%),#F5F4F0;color:#1A1A18}
+/* glass-panel (nav pill) */
+.glass-panel{background:rgba(10,10,18,.6);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(99,102,241,.2);box-shadow:inset 0 1px 0 0 rgba(255,255,255,.05)}
+[data-theme="cozy"] body.theme-cozy .glass-panel{background:rgba(255,255,255,.72);border-color:rgba(26,26,24,.1);backdrop-filter:blur(18px);box-shadow:0 4px 24px -8px rgba(26,26,24,.1)}
+/* theme-toggle (visible in nav, must not flash) */
+.theme-toggle{position:relative;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;background:transparent;border:1px solid rgba(99,102,241,.25);cursor:pointer;color:inherit;transition:background .25s ease,border-color .25s ease}
+.theme-toggle .icon-cozy{display:inline-block}.theme-toggle .icon-night{display:none}
+[data-theme="night"] .theme-toggle .icon-cozy{display:none}[data-theme="night"] .theme-toggle .icon-night{display:inline-block}
+[data-theme="cozy"] .theme-toggle{border-color:rgba(196,120,92,.3);color:#c4785c}
+[data-theme="night"] .theme-toggle{border-color:rgba(99,102,241,.4);color:#a5b4fc}
+/* preloader gate + misc above-fold */
+html.cf-skip-preloader #preloader{display:none!important}
+.grain-overlay{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")}
+.perspective-1000{perspective:1000px}
+/* Tailwind utilities (nav + hero structure) */
 .grid{display:grid}.flex{display:flex}.inline-flex{display:inline-flex}
 .flex-col{flex-direction:column}.items-center{align-items:center}
 .justify-between{justify-content:space-between}.justify-center{justify-content:center}
 .grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}
-.w-full{width:100%}.h-full{height:100%}.max-w-7xl{max-width:80rem}
+.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}
+.top-0{top:0}.left-0{left:0}.inset-0{inset:0}
+.w-full{width:100%}.h-full{height:100%}.max-w-7xl{max-width:80rem}.w-auto{width:auto}
+.min-h-screen{min-height:100vh}
 .mx-auto{margin-left:auto;margin-right:auto}
-.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.gap-12{gap:3rem}.gap-16{gap:4rem}
-.relative{position:relative}.fixed{position:fixed}.sticky{position:sticky}
-.hidden{display:none}.overflow-hidden{overflow:hidden}
+.gap-1{gap:.25rem}.gap-2{gap:.5rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.gap-12{gap:3rem}.gap-16{gap:4rem}
+.hidden{display:none}.overflow-hidden{overflow:hidden}.overflow-x-hidden{overflow-x:hidden}
 .font-bold{font-weight:700}.font-medium{font-weight:500}
-.text-4xl{font-size:2.25rem;line-height:2.5rem}
-.text-5xl{font-size:3rem;line-height:1}
-.text-6xl{font-size:3.75rem;line-height:1}
-.text-7xl{font-size:4.5rem;line-height:1}
-.tracking-tighter{letter-spacing:-0.05em}.tracking-tight{letter-spacing:-0.025em}
+.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}
+.text-6xl{font-size:3.75rem;line-height:1}.text-7xl{font-size:4.5rem;line-height:1}
+.text-xs{font-size:.75rem;line-height:1rem}.text-sm{font-size:.875rem;line-height:1.25rem}
+.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
+.uppercase{text-transform:uppercase}
+.tracking-tighter{letter-spacing:-.05em}.tracking-tight{letter-spacing:-.025em}.tracking-wider{letter-spacing:.05em}
 .leading-none{line-height:1}.leading-tight{line-height:1.25}
-.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}
-.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}
-.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}
-.rounded-full{border-radius:9999px}.rounded-xl{border-radius:.75rem}
+.px-2{padding-left:.5rem;padding-right:.5rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}
+.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}
+.pt-32{padding-top:8rem}.pb-20{padding-bottom:5rem}
+.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-2{margin-top:.5rem}
+.rounded-full{border-radius:9999px}.rounded-xl{border-radius:.75rem}.rounded-lg{border-radius:.5rem}.rounded{border-radius:.25rem}
 .z-10{z-index:10}.z-50{z-index:50}
+.border{border-width:1px}.border-l-4{border-left-width:4px}
+.pointer-events-none{pointer-events:none}.opacity-0{opacity:0}
 @media(min-width:768px){
   .md\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}
   .md\:gap-12{gap:3rem}
   .md\:flex{display:flex}.md\:hidden{display:none}
+  .md\:px-6{padding-left:1.5rem;padding-right:1.5rem}.md\:py-6{padding-top:1.5rem;padding-bottom:1.5rem}
 }
 @media(min-width:1024px){
   .lg\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}
   .lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .lg\:col-span-7{grid-column:span 7/span 7}
-  .lg\:col-span-5{grid-column:span 5/span 5}
-  .lg\:col-span-6{grid-column:span 6/span 6}
-  .lg\:col-span-4{grid-column:span 4/span 4}
+  .lg\:col-span-7{grid-column:span 7/span 7}.lg\:col-span-5{grid-column:span 5/span 5}
+  .lg\:col-span-6{grid-column:span 6/span 6}.lg\:col-span-4{grid-column:span 4/span 4}
   .lg\:col-span-8{grid-column:span 8/span 8}
-  .lg\:text-8xl{font-size:6rem;line-height:1}
-  .lg\:px-8{padding-left:2rem;padding-right:2rem}
-  .lg\:flex{display:flex}.lg\:hidden{display:none}
+  .lg\:text-8xl{font-size:6rem;line-height:1}.lg\:px-8{padding-left:2rem;padding-right:2rem}
+  .lg\:flex{display:flex}.lg\:hidden{display:none}.lg\:inline-flex{display:inline-flex}.lg\:block{display:block}
 }
 </style>
 </head>
