@@ -769,13 +769,18 @@ body {
             background: radial-gradient(ellipse at 50% 0%, var(--cf-candle-glow), transparent 55%);
         }
 
-        /* ── Typography ─────────────────────────────────────── */
-        [data-theme="cozy"] body.theme-cozy h1,
-        [data-theme="cozy"] body.theme-cozy h2,
-        [data-theme="cozy"] body.theme-cozy h3,
-        [data-theme="cozy"] body.theme-cozy h4 {
+        /* ── Typography ─────────────────────────────────────────
+           Theme-neutral: layout (font + tracking) MUST be identical across
+           cozy/night — only colour may differ between themes. The old rule
+           forced `letter-spacing:-0.03em` in cozy only, which overrode the
+           per-heading Tailwind `tracking-*` utilities and made every heading
+           a different width than in night → theme-dependent word-wrapping.
+           Letter-spacing is now left entirely to the HTML tracking utilities
+           so wrapping matches in both themes. Low-specificity font-family keeps
+           Fraunces on any heading that lacks a font utility (won't override
+           .font-mono / .font-display). */
+        h1, h2, h3, h4 {
             font-family: "Fraunces", Georgia, serif;
-            letter-spacing: -0.03em;
         }
 
         /* ── Button overrides ───────────────────────────────── */
