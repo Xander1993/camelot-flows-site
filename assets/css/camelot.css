@@ -371,6 +371,21 @@ body {
             background: linear-gradient(135deg, rgba(25, 15, 45, 0.8) 0%, rgba(10, 10, 15, 0.95) 100%);
         }
 
+        /* ── Crawl → trust-terms handoff ──
+           #starwars-pricing is pinned and h-screen; after the crawl scrolls
+           up and fades, its own viewport-height block used to sit empty
+           before #trust-terms. Pull the next section up over that dead space
+           and drop it behind the pricing section so the opaque crawl bg hides
+           it until the crawl fades out — turning the empty gap into a
+           cross-fade. Desktop only: the mobile crawl is a different,
+           non-pinned animation that has no trailing gap. */
+        @media (min-width: 768px) {
+            #trust-terms {
+                margin-top: -92vh;
+                z-index: 10;
+            }
+        }
+
         /* ── Pricing card details toggle ── */
         .sw-details-toggle {
             display: inline-flex;
