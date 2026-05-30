@@ -4,6 +4,7 @@ module.exports = {
     "./*.html",
     "./assets/js/**/*.js",
     "./assets/site.js",
+    "./wp-theme/**/*.php",
   ],
   // Safelist anything dynamically added by JS or generated arbitrary classes
   // that scanning might miss.
