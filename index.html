@@ -829,14 +829,14 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
           </picture>
         </div>
         <div class="editorial-body">
-          <p class="editorial-kicker">// WORKSHOP_ETHOS</p>
-          <blockquote class="editorial-quote cf-reveal">
+          <p class="editorial-kicker" data-i18n="pages.index.ethos_kicker">// WORKSHOP_ETHOS</p>
+          <blockquote class="editorial-quote cf-reveal" data-i18n="pages.index.ethos_quote">
             One client at a time.<br>Done <em style="font-style:italic;color:rgb(var(--cft-primary-glow));">properly.</em>
           </blockquote>
-          <p class="cf-reveal" style="margin-top:24px;color:var(--muted);font-size:0.97rem;line-height:1.78;max-width:380px;transition-delay:0.15s">
+          <p class="cf-reveal" data-i18n="pages.index.ethos_p" style="margin-top:24px;color:var(--muted);font-size:0.97rem;line-height:1.78;max-width:380px;transition-delay:0.15s">
             No account manager in the middle. No junior off-spec. Every project gets the same attention — because I only take work I can do properly.
           </p>
-          <a href="work-with-me.html" class="button ghost cf-reveal" style="margin-top:32px;align-self:flex-start;transition-delay:0.28s">See how I work</a>
+          <a href="work-with-me.html" class="button ghost cf-reveal" data-i18n="pages.index.ethos_cta" style="margin-top:32px;align-self:flex-start;transition-delay:0.28s">See how I work</a>
         </div>
       </div>
     </section>
@@ -1795,7 +1795,7 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
 
     <script defer src="assets/js/camelot-gsap.min.js?v=2"></script>
     <script defer src="assets/site.min.js?v=1"></script>
-    <script defer src="assets/js/locales.min.js?v=2"></script>
+    <script defer src="assets/js/locales.min.js?v=3"></script>
     <script defer src="assets/js/i18n.min.js?v=1"></script>
 
 <script>(function(){var r=[].slice.call(document.querySelectorAll('.cf-rise'));if(!r.length)return;if(!('IntersectionObserver' in window)){r.forEach(function(e){e.classList.add('is-in')});return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});r.forEach(function(e){io.observe(e);});})();</script>
