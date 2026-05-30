@@ -11,6 +11,7 @@
   "devDependencies": {
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/forms": "^0.5.7",
+    "sharp": "^0.34.5",
     "tailwindcss": "^3.4.4"
   }
 }
