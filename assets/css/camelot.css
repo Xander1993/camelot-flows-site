@@ -1601,6 +1601,17 @@ body {
     line-height: 0.94 !important;
 }
 
+/* At >=2xl (1536px) the [Agencies] and [About] nav links appear (they carry
+   `hidden 2xl:block`). The panel's max-w-7xl (1280px) can't fit 9 links + the
+   right cluster, so [HIRE_ME] overflowed past the panel's right edge. Widen the
+   panel at this breakpoint — 1440px fits all 9 links (~1373px needed) and still
+   leaves margin inside a 1536px viewport. */
+@media (min-width: 1536px) {
+    nav.fixed > .glass-panel {
+        max-width: 1440px;
+    }
+}
+
 @media (max-width: 640px) {
     nav.fixed {
         padding: 1rem !important;
