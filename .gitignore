@@ -40,3 +40,4 @@ _deploy_commands.txt
 # Security: unauthenticated WP setup helper — never deploy
 _cf_setup.php
 _cf_setup.b64
+tk_home.html
