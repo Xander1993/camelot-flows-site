@@ -108,22 +108,76 @@
     </div>
 
     <nav class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-6 md:py-6">
-        <div class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
+        <div
+            class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
             <div class="flex items-center">
                 <img src="assets/images/cf-logo-wordmark.webp" alt="Camelot Flows" class="h-14 md:h-24 w-auto object-contain">
             </div>
-    
+            <div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="index.html" data-i18n="common.nav.home">[Home]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="work-with-me.html" data-i18n="common.nav.services">[Services]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
+                    href="case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block"
+                    href="for-agencies.html" data-i18n="common.nav.agencies">[Agencies]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block"
+                    href="about.html" data-i18n="common.nav.about">[About]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
+                    href="/?goto=pricing" data-i18n="common.nav.pricing">[Pricing]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="contact.html" data-i18n="common.nav.contact">[Contact]</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <a href="tel:+37369555936" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" aria-label="Call Camelot Flows" title="+373 69 555 936">
+                    <span class="material-symbols-outlined cf-phone-icon" style="font-size:18px">call</span>
+                </a>
+                <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
+                    <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 status-dot animate-pulse"></div>
+                    <span class="text-[10px] font-mono text-emerald-500/80" data-i18n="common.nav.sys_online">SYS_ONLINE</span>
+                </div>
+                <div class="lang-switcher" data-cf-lang-switcher>
+    <button class="lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Change language" data-i18n-attr="aria-label:common.lang_label">
+        <span class="lang-current" data-cf-lang-current>EN</span>
+        <span class="material-symbols-outlined lang-chevron">expand_more</span>
+    </button>
+    <ul class="lang-menu" role="listbox" hidden>
+        <li role="option" data-lang="en" tabindex="-1">EN</li>
+        <li role="option" data-lang="ro" tabindex="-1">RO</li>
+        <li role="option" data-lang="ru" tabindex="-1">RU</li>
+    </ul>
+</div>
+                <button id="mobile-menu-toggle" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 transition-all text-slate-400" aria-label="Open menu" type="button">
+                    <span class="material-symbols-outlined" style="font-size:20px">menu</span>
+                </button>
+                <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Toggle theme">
+    <span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
+    <span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
+</button>
+                <a href="contact.html?objective=build"
+                    class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong hidden lg:inline-flex items-center nav-cta"
+                    data-i18n="common.nav.summon_agent">
+                    [Hire_me]
+                </a>
+            </div>
+        </div>
+        
         <div id="mobile-nav" class="hidden mt-2 max-w-7xl mx-auto">
             <div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
                 <div class="flex flex-col gap-1">
                     <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="index.html" data-i18n="common.nav.home">[Home]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="index.html#round-table" data-i18n="common.nav.services">[Services]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="work-with-me.html" data-i18n="common.nav.services">[Services]</a>
                     <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
                     <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
                     <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
                     <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="contact.html" data-i18n="common.nav.contact">[Contact]</a>
                     <div class="mx-3 my-2 h-px bg-white/10"></div>
-                    <a href="contact.html?service=staff" class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent">[Hire_me]</a>
+                    <a href="contact.html?service=build" class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent">[Hire_me]</a>
                 </div>
             </div>
         </div>
