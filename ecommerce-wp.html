@@ -182,68 +182,81 @@ a{text-decoration:none;color:inherit;}
 
 <!-- Site nav (identical to all other pages) -->
 <nav class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-6 md:py-6">
-    <div class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
-        <div class="flex items-center">
-            <a href="index.html"><img src="assets/images/cf-logo-wordmark.webp" alt="Camelot Flows" class="h-14 md:h-24 w-auto object-contain"></a>
-        </div>
-        <div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
-            <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="index.html">[Home]</a>
-            <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="index.html#round-table">[Services]</a>
-            <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="arsenal.html">[Arsenal]</a>
-            <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="merlin.html">[Merlin]</a>
-            <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" href="case-studies.html">[Cases]</a>
-            <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block" href="for-agencies.html">[Agencies]</a>
-            <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block" href="about.html">[About]</a>
-            <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" href="index.html#pricing-cards">[Pricing]</a>
-            <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="contact.html">[Contact]</a>
-        </div>
-        <div class="flex items-center gap-2">
-            <a href="tel:+37369555936" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" aria-label="Call" title="+373 69 555 936">
-                <span class="material-symbols-outlined cf-phone-icon" style="font-size:18px">call</span>
-            </a>
-            <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
-                <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
-                <span class="text-[10px] font-mono text-emerald-500/80">SYS_ONLINE</span>
+        <div
+            class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
+            <div class="flex items-center">
+                <img src="assets/images/cf-logo-wordmark.webp" alt="Camelot Flows" class="h-14 md:h-24 w-auto object-contain">
             </div>
-            <div class="lang-switcher" data-cf-lang-switcher>
-                <button class="lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Change language">
-                    <span class="lang-current" data-cf-lang-current>EN</span>
-                    <span class="material-symbols-outlined lang-chevron">expand_more</span>
+            <div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="index.html" data-i18n="common.nav.home">[Home]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="work-with-me.html" data-i18n="common.nav.services">[Services]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
+                    href="case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block"
+                    href="for-agencies.html" data-i18n="common.nav.agencies">[Agencies]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block"
+                    href="about.html" data-i18n="common.nav.about">[About]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
+                    href="/?goto=pricing" data-i18n="common.nav.pricing">[Pricing]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="contact.html" data-i18n="common.nav.contact">[Contact]</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <a href="tel:+37369555936" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" aria-label="Call Camelot Flows" title="+373 69 555 936">
+                    <span class="material-symbols-outlined cf-phone-icon" style="font-size:18px">call</span>
+                </a>
+                <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
+                    <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 status-dot animate-pulse"></div>
+                    <span class="text-[10px] font-mono text-emerald-500/80" data-i18n="common.nav.sys_online">SYS_ONLINE</span>
+                </div>
+                <div class="lang-switcher" data-cf-lang-switcher>
+    <button class="lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Change language" data-i18n-attr="aria-label:common.lang_label">
+        <span class="lang-current" data-cf-lang-current>EN</span>
+        <span class="material-symbols-outlined lang-chevron">expand_more</span>
+    </button>
+    <ul class="lang-menu" role="listbox" hidden>
+        <li role="option" data-lang="en" tabindex="-1">EN</li>
+        <li role="option" data-lang="ro" tabindex="-1">RO</li>
+        <li role="option" data-lang="ru" tabindex="-1">RU</li>
+    </ul>
+</div>
+                <button id="mobile-menu-toggle" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 transition-all text-slate-400" aria-label="Open menu" type="button">
+                    <span class="material-symbols-outlined" style="font-size:20px">menu</span>
                 </button>
-                <ul class="lang-menu" role="listbox" hidden>
-                    <li role="option" data-lang="en" tabindex="-1">EN</li>
-                    <li role="option" data-lang="ro" tabindex="-1">RO</li>
-                    <li role="option" data-lang="ru" tabindex="-1">RU</li>
-                </ul>
+                <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Toggle theme">
+    <span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
+    <span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
+</button>
+                <a href="contact.html?objective=build"
+                    class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong hidden lg:inline-flex items-center nav-cta"
+                    data-i18n="common.nav.summon_agent">
+                    [Hire_me]
+                </a>
             </div>
-            <button id="mobile-menu-toggle" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 transition-all text-slate-400" aria-label="Open menu" type="button">
-                <span class="material-symbols-outlined" style="font-size:20px">menu</span>
-            </button>
-            <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Toggle theme">
-                <span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
-                <span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
-            </button>
-
-                        <a href="contact.html?objective=ecommerce-wp" class="lp-nav-cta border px-5 py-2.5 rounded-full text-xs font-mono font-bold transition-all hidden lg:inline-flex items-center">[Get_Started]</a>
         </div>
-    </div>
-    <div id="mobile-nav" class="hidden mt-2 max-w-7xl mx-auto">
-        <div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
-            <a class="block px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="index.html">[Home]</a>
-            <a class="block px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="index.html#round-table">[Services]</a>
-            <a class="block px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="arsenal.html">[Arsenal]</a>
-            <a class="block px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="merlin.html">[Merlin]</a>
-            <a class="block px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="case-studies.html">[Cases]</a>
-            <a class="block px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="for-agencies.html">[Agencies]</a>
-            <a class="block px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="about.html">[About]</a>
-            <a class="block px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="index.html#pricing-cards">[Pricing]</a>
-            <a class="block px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="contact.html">[Contact]</a>
-            <div class="mx-3 my-2 h-px bg-white/10"></div>
-            <a href="contact.html?objective=ecommerce-wp" class="lp-nav-cta mx-2 block text-center border px-4 py-4 rounded-full text-sm font-mono font-bold transition-all">[Get_Started]</a>
+        
+        <div id="mobile-nav" class="hidden mt-2 max-w-7xl mx-auto">
+            <div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
+                <div class="flex flex-col gap-1">
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="index.html" data-i18n="common.nav.home">[Home]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="work-with-me.html" data-i18n="common.nav.services">[Services]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="contact.html" data-i18n="common.nav.contact">[Contact]</a>
+                    <div class="mx-3 my-2 h-px bg-white/10"></div>
+                    <a href="contact.html?service=build" class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent">[Hire_me]</a>
+                </div>
+            </div>
         </div>
-    </div>
-    <script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target))menu.classList.add("hidden");});}var lDiv=document.querySelector('nav .hidden.md\\:flex');if(!lDiv)return;var links=Array.from(lDiv.querySelectorAll('a'));if(links.length<3)return;var wrap=document.createElement('div');wrap.className='nav-more-wrapper';wrap.style.display='none';var trig=document.createElement('button');trig.type='button';trig.className='nav-more-trigger';trig.setAttribute('aria-expanded','false');trig.innerHTML='<span class="nav-more-label">[More]</span><span class="material-symbols-outlined nav-more-chevron" aria-hidden="true">expand_more</span>';var mm=document.createElement('div');mm.className='nav-more-menu';mm.setAttribute('hidden','');mm.setAttribute('role','menu');wrap.appendChild(trig);wrap.appendChild(mm);lDiv.appendChild(wrap);var open=false,close=function(){open=false;mm.setAttribute('hidden','');wrap.classList.remove('is-open');trig.setAttribute('aria-expanded','false');};trig.addEventListener('click',function(e){e.stopPropagation();open=!open;if(open)mm.removeAttribute('hidden');else mm.setAttribute('hidden','');wrap.classList.toggle('is-open',open);trig.setAttribute('aria-expanded',String(open));});document.addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});var tier=function(w){if(w<768||w>=1380)return null;if(w>=1100)return 5;if(w>=900)return 4;return 3;};var last=-1,rebuild=function(t){if(t===last)return;last=t;mm.innerHTML='';links.slice(t).forEach(function(l){var c=l.cloneNode(true);c.style.removeProperty('display');c.setAttribute('role','menuitem');mm.appendChild(c);});};var update=function(){var w=window.innerWidth,t=tier(w);if(t===null){lDiv.style.removeProperty('display');links.forEach(function(l){l.style.removeProperty('display');});wrap.style.display='none';close();return;}lDiv.style.display='flex';links.forEach(function(l,i){l.style.display=i<t?'inline-block':'none';});rebuild(t);wrap.style.display='inline-flex';};update();window.addEventListener('resize',update);})();</script>
-</nav>
+        <script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");var open=!menu.classList.contains("hidden");btn.setAttribute("aria-expanded",open?"true":"false");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");}});document.querySelectorAll("#mobile-nav a").forEach(function(a){a.addEventListener("click",function(){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");});});}})();</script>
+        </nav>
 
 <!-- S1: Hero -->
 <section class="lp-hero" id="hero">
@@ -454,7 +467,7 @@ a{text-decoration:none;color:inherit;}
                 <p class="text-slate-500 mb-8 text-sm leading-relaxed font-mono">
                     <span class="text-primary">&gt;</span> Location: Chisinau, MD<br>
                     <span class="text-primary">&gt;</span> Coordinates: 47.0105° N, 28.8638° E<br>
-                    <span class="text-primary">&gt;</span> Mission: Premium builds. Measurable results.
+                    <span class="text-primary">&gt;</span> Mission: Premium builds. You own the asset.
                 </p>
                 <div class="flex gap-4">
                     <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="https://www.linkedin.com/in/alex-buzi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
