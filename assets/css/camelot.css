@@ -1612,6 +1612,17 @@ body {
     }
 }
 
+/* "Three Leaks" cards: the Tailwind md:h-[480px] hard-clips longer translations
+   (RO/RU copy runs ~2x the English). Let cards grow to fit their content while
+   keeping a 480px floor so short content still looks uniform. flex-row stretch
+   keeps all three the same (tallest) height. */
+@media (min-width: 768px) {
+    #card-stack .stack-card {
+        height: auto;
+        min-height: 480px;
+    }
+}
+
 @media (max-width: 640px) {
     nav.fixed {
         padding: 1rem !important;
