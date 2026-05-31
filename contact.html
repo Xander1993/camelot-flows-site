@@ -452,7 +452,7 @@
                                 href="for-agencies.html"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_protocol_agencies">Agencies</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="https://blog.camelotflows.dev" target="_blank"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> <span>Blog</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="https://blog.camelotflows.dev" target="_blank"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> <span data-i18n="common.footer.blog">Blog</span></a></li>
                     </ul>
                 </div>
                 <div class="md:col-span-2">
@@ -582,10 +582,11 @@
         if (new URLSearchParams(window.location.search).get('sent') === '1') {
             var shell = document.querySelector('.form-shell');
             if (shell) {
+                var _t = function (k, d) { try { var v = (window.cfI18n && window.cfI18n.t) ? window.cfI18n.t(k) : null; return (v && v !== k) ? v : d; } catch (e) { return d; } };
                 shell.innerHTML = '<div style="padding:48px 32px;text-align:center;border:1px solid rgba(255,255,255,0.08);border-radius:12px;background:rgba(255,255,255,0.03)">' +
                     '<div style="font-size:40px;margin-bottom:16px">✅</div>' +
-                    '<h3 style="margin:0 0 10px;font-size:1.4rem">Message received!</h3>' +
-                    '<p style="margin:0;opacity:0.65">I\'ll reply within 24 hours. Or call me directly: <a href="tel:+37369555936" style="color:inherit">+373 69 555 936</a></p>' +
+                    '<h3 style="margin:0 0 10px;font-size:1.4rem">' + _t('pages.contact.success_h', 'Message received!') + '</h3>' +
+                    '<p style="margin:0;opacity:0.65">' + _t('pages.contact.success_p', 'I\'ll reply within 24 hours. Or call me directly: <a href="tel:+37369555936" style="color:inherit">+373 69 555 936</a>') + '</p>' +
                     '</div>';
             }
         }
