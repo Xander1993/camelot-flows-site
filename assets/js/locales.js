@@ -1074,7 +1074,7 @@
         meta_title: "Agenți AI Merlin | Camelot Flows",
         meta_description: "Agenții Merlin se ocupă de preluarea lead-urilor, triere, follow-up, fluxuri de conținut și operațiuni de front-of-house — în jurul instrumentelor pe care deja le folosești.",
         hero_eyebrow: "Automatizare AI · Sistemul Merlin",
-        hero_title: "html:Un agent AI care îți ține <em class=\"accent\">front-of-house-ul.</em>",
+        hero_title: "html:Un agent AI care îți ține <em class=\"accent\">prima linie.</em>",
         hero_lead: "Merlin e un agent AI antrenat pe contextul afacerii tale. Califică lead-uri, răspunde pe tier-1 și ține CRM-ul sincronizat — 24/7, fără să-ți crești echipa.",
         s_cap_kicker: "Capabilități",
         s_cap_h2: "Ce înlocuiește.",
