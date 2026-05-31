@@ -10,6 +10,7 @@
   window.cfLocales.en = {
     common: {
       lang_label: "Language",
+      skip_link: "Skip to main content",
       preloader_init: "Initializing Protocols...",
       preloader_ready: "SYSTEM_READY",
       nav: {
@@ -753,6 +754,7 @@
   window.cfLocales.ro = {
     common: {
       lang_label: "Limbă",
+      skip_link: "Sari la conținutul principal",
       preloader_init: "Initializing Protocols...",
       preloader_ready: "SYSTEM_READY",
       nav: {
@@ -1494,6 +1496,7 @@
   window.cfLocales.ru = {
     common: {
       lang_label: "Язык",
+      skip_link: "Перейти к основному содержанию",
       preloader_init: "Initializing Protocols...",
       preloader_ready: "SYSTEM_READY",
       nav: {
