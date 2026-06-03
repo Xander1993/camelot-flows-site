@@ -2201,7 +2201,7 @@
       "meta_title": "Создание сайтов в Молдове — вас находят и к вам записываются | Camelot Flows",
       "meta_description": "Делаю быстрые, находимые сайты для локального бизнеса в Молдове и Румынии — чтобы тех, кто уже ищет вас, превращать в записи. И сайт ваш.",
       "hero_eyebrow": "Находят & Записывают",
-      "hero_badge": "Сольная веб-мастерская · Фиксированная цена · Сайт ваш",
+      "hero_badge": "Соло веб-мастерская · Фиксированная цена · Сайт ваш",
       "hero_h1": "html:Вы заработали репутацию.<br /><span class=\"text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400 animate-gradient-x text-glow\">Ваш сайт её теряет.</span>",
       "hero_word_1": "Находят.",
       "hero_word_2": "Записывают.",

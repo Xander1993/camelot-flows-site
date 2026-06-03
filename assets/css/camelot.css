@@ -1620,6 +1620,17 @@ body {
     }
 }
 
+/* Pricing kicker is an <h2> like the main pricing heading, so the mobile
+   `.crawl-content h2` size blew it up to ~45px ("What you get..." looked
+   huge and broken). Keep the kicker at eyebrow size. */
+@media (max-width: 767px) {
+    #starwars-pricing .crawl-content h2[data-i18n="pages.index.pricing_kicker"] {
+        font-size: 0.72rem !important;
+        letter-spacing: 0.28em !important;
+        line-height: 1.5 !important;
+    }
+}
+
 #portal-text {
     font-size: clamp(4rem, 8.1vw, 7rem) !important;
     line-height: 0.94 !important;
