@@ -1609,6 +1609,9 @@ body {
 #hero-word-1,
 #hero-word-2 {
     max-width: 100%;
+    /* Phrase headline ("A site as good as / your reputation.") — fluid from
+       tablet to desktop; mobile is further tuned in the max-width:640px block. */
+    font-size: clamp(1.8rem, 4vw, 3.4rem);
 }
 
 /* Decorative floating hero icons: on phones the single-column layout has no
@@ -1617,6 +1620,18 @@ body {
 @media (max-width: 767px) {
     #hero .parallax-float {
         display: none !important;
+    }
+    /* ...but keep the code-glyph accent visible, moved into the empty band
+       between the CTAs and the stats so it never sits on the copy. */
+    #hero #hero-float-code {
+        display: flex !important;
+        top: 46.75rem !important;
+        bottom: auto !important;
+        left: 1rem !important;
+        right: auto !important;
+        width: 2.75rem !important;
+        height: 2.75rem !important;
+        transform: rotate(10deg) !important;
     }
 }
 
@@ -1712,16 +1727,13 @@ body {
         letter-spacing: -0.045em !important;
     }
     #hero-word-1 {
-        white-space: nowrap !important;
-        font-size: clamp(2.25rem, 9.4vw, 2.55rem) !important;
-        letter-spacing: -0.055em !important;
+        font-size: clamp(2rem, 9.5vw, 3rem) !important;
+        letter-spacing: -0.02em !important;
     }
     #hero-word-2 {
-        /* Sized so the longest localized word ("Convertește." / "Записывают.")
-           never overflows the viewport on small phones (down to ~320px). */
-        font-size: clamp(1.85rem, 9vw, 3rem) !important;
+        /* Phrase headline — wraps at spaces only; no mid-word breaks. */
+        font-size: clamp(2rem, 9.5vw, 3rem) !important;
         max-width: 100%;
-        overflow-wrap: break-word;
     }
     #hero-p {
         font-size: 1.05rem !important;
