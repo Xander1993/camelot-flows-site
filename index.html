@@ -69,8 +69,8 @@
     <link rel="stylesheet" href="assets/css/tailwind.built.css">
     <link rel="stylesheet" href="assets/site.min.css?v=1" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="assets/site.min.css?v=1"></noscript>
-    <link rel="stylesheet" href="assets/css/camelot.min.css?v=11" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="assets/css/camelot.min.css?v=11"></noscript>
+    <link rel="stylesheet" href="assets/css/camelot.min.css?v=12" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="assets/css/camelot.min.css?v=12"></noscript>
     <link rel="stylesheet" href="assets/css/theme-night.min.css?v=1" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="assets/css/theme-night.min.css?v=1"></noscript>
     <link rel="stylesheet" href="assets/css/lang-switcher.css" media="print" onload="this.media='all'">
@@ -592,7 +592,7 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
     <!-- ИЗМЕНЕНИЕ: Исправлен баг "Черной дыры" (GSAP Pin Spacer Bug). Убраны ручные высоты и sticky -->
     <section id="portal-trigger" class="relative bg-obsidian z-20">
         <!-- Блок центровки без sticky, GSAP сам создаст pin -->
-        <div class="relative h-screen w-full flex items-center justify-center p-4 md:p-12 overflow-hidden">
+        <div class="relative h-screen w-full hidden md:flex items-center justify-center p-4 md:p-12 overflow-hidden">
 
             <!-- Сам Портал (изначально сжат в ромб/щит через clip-path) -->
             <div id="zentry-portal"
@@ -669,6 +669,32 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
                 <div class="absolute bottom-8 right-8 w-8 h-8 border-b-2 border-r-2 border-primary/50"></div>
             </div>
 
+        </div>
+
+        <!-- Mobile-only flows: the desktop diamond reveal doesn't run on phones,
+             so the three paths are presented directly as tappable cards. -->
+        <div class="md:hidden px-6 py-24" id="portal-mobile">
+            <div class="text-center mb-10">
+                <span class="text-primary-glow font-mono text-xs uppercase tracking-[0.35em] mb-4 block" data-i18n="pages.index.portal_sub">Select Path</span>
+                <h2 class="font-display text-4xl font-bold tracking-tighter uppercase leading-[0.95] text-primary-glow text-glow" data-i18n="pages.index.portal_text">Choose<br />Your Flow</h2>
+            </div>
+            <div class="flex flex-col gap-4 max-w-sm mx-auto">
+                <a href="#grand-armory" class="portal-flow-card group flex items-center gap-4 p-4 glass-panel rounded-xl border border-primary/20 hover:border-primary/60 transition-colors">
+                    <span class="material-symbols-outlined text-primary text-2xl shrink-0">storefront</span>
+                    <span class="flex-1 font-mono text-sm tracking-wide uppercase text-primary" data-i18n="pages.index.portal_link_1">1. Business</span>
+                    <span class="material-symbols-outlined text-primary/40 text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
+                <a href="#obsidian-vault" class="portal-flow-card group flex items-center gap-4 p-4 glass-panel rounded-xl border border-primary/20 hover:border-primary/60 transition-colors">
+                    <span class="material-symbols-outlined text-primary text-2xl shrink-0">rocket_launch</span>
+                    <span class="flex-1 font-mono text-sm tracking-wide uppercase text-primary" data-i18n="pages.index.portal_link_2">2. Founder</span>
+                    <span class="material-symbols-outlined text-primary/40 text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
+                <a href="for-agencies.html" class="portal-flow-card group flex items-center gap-4 p-4 glass-panel rounded-xl border border-primary/20 hover:border-primary/60 transition-colors">
+                    <span class="material-symbols-outlined text-primary text-2xl shrink-0">groups</span>
+                    <span class="flex-1 font-mono text-sm tracking-wide uppercase text-primary" data-i18n="pages.index.portal_link_3">3. Agency</span>
+                    <span class="material-symbols-outlined text-primary/40 text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
+            </div>
         </div>
     </section>
 

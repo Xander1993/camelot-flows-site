@@ -4,3 +4,4 @@
 @media (max-width:767px){#hero .parallax-float{display:none!important}}
 @media (max-width:767px){#starwars-pricing .crawl-content h2[data-i18n="pages.index.pricing_kicker"]{font-size:.72rem!important;letter-spacing:.28em!important;line-height:1.5!important}}
 @media (max-width:439px){nav.fixed .nav-cta{display:none!important}}
+@keyframes portalFlowRise{from{opacity:0;transform:translateY(22px)}}@media (max-width:767px){@supports (animation-timeline:view()){.portal-flow-card{animation:portalFlowRise .7s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 0% cover 22%}}}
