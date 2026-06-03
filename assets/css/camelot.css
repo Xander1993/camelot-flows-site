@@ -1697,7 +1697,11 @@ body {
         letter-spacing: -0.055em !important;
     }
     #hero-word-2 {
-        font-size: clamp(3.15rem, 15vw, 4.25rem) !important;
+        /* Sized so the longest localized word ("Convertește." / "Записывают.")
+           never overflows the viewport on small phones (down to ~320px). */
+        font-size: clamp(1.85rem, 9vw, 3rem) !important;
+        max-width: 100%;
+        overflow-wrap: break-word;
     }
     #hero-p {
         font-size: 1.05rem !important;
