@@ -69,8 +69,8 @@
     <link rel="stylesheet" href="assets/css/tailwind.built.css">
     <link rel="stylesheet" href="assets/site.min.css?v=1" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="assets/site.min.css?v=1"></noscript>
-    <link rel="stylesheet" href="assets/css/camelot.min.css?v=10" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="assets/css/camelot.min.css?v=10"></noscript>
+    <link rel="stylesheet" href="assets/css/camelot.min.css?v=11" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="assets/css/camelot.min.css?v=11"></noscript>
     <link rel="stylesheet" href="assets/css/theme-night.min.css?v=1" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="assets/css/theme-night.min.css?v=1"></noscript>
     <link rel="stylesheet" href="assets/css/lang-switcher.css" media="print" onload="this.media='all'">
@@ -496,6 +496,12 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
                         <span data-i18n="pages.index.hero_btn_view">VIEW ARSENAL</span>
                         <span class="material-symbols-outlined text-sm opacity-50">grid_view</span>
                     </a>
+                </div>
+                <!-- mobile-only code accent: lives in the CTA->stats gap (in flow), so it never overlaps copy -->
+                <div aria-hidden="true" class="md:hidden mt-12 flex justify-center">
+                    <div class="w-12 h-12 glass-panel rounded-xl rotate-12 flex items-center justify-center opacity-70 shadow-neon border-primary/40">
+                        <span class="material-symbols-outlined text-primary text-3xl drop-shadow-[0_0_15px_rgba(79,70,229,0.8)]">code_blocks</span>
+                    </div>
                 </div>
                 <div id="hero-stats" class="mt-16 flex gap-8 md:gap-12 border-t border-white/5 pt-8">
                     <div>

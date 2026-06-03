@@ -1621,18 +1621,12 @@ body {
     #hero .parallax-float {
         display: none !important;
     }
-    /* ...but keep the code-glyph accent visible, moved into the empty band
-       between the CTAs and the stats so it never sits on the copy. */
-    #hero #hero-float-code {
-        display: flex !important;
-        top: 46.75rem !important;
-        bottom: auto !important;
-        left: 1rem !important;
-        right: auto !important;
-        width: 2.75rem !important;
-        height: 2.75rem !important;
-        transform: rotate(10deg) !important;
-    }
+}
+
+/* HIRE_ME "//" nav button doesn't fit under ~439px and is redundant (it's in
+   the hamburger menu) — hide it there so the nav row never overflows. */
+@media (max-width: 439px) {
+    nav.fixed .nav-cta { display: none !important; }
 }
 
 /* Pricing kicker is an <h2> like the main pricing heading, so the mobile
