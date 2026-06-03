@@ -1611,6 +1611,15 @@ body {
     max-width: 100%;
 }
 
+/* Decorative floating hero icons: on phones the single-column layout has no
+   side whitespace, so they overlapped the headline/paragraph. Keep them on
+   tablet+ where they float in the margins; hide on mobile for clean copy. */
+@media (max-width: 767px) {
+    #hero .parallax-float {
+        display: none !important;
+    }
+}
+
 #portal-text {
     font-size: clamp(4rem, 8.1vw, 7rem) !important;
     line-height: 0.94 !important;
