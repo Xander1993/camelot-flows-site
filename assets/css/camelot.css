@@ -1422,6 +1422,14 @@ body {
     max-width: 100%;
 }
 
+/* Hero headline words — scale up on wide screens (>=1280px); base rule caps at 3.4rem */
+@media (min-width: 1280px) {
+    #hero-word-1,
+    #hero-word-2 {
+        font-size: clamp(3.4rem, 4.5vw, 6rem) !important;
+    }
+}
+
 .about-hero-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
