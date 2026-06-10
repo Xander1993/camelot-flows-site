@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-page="blog">
+
+<head>
+    <!-- CF: theme bootstrap (sync, before paint) -->
+    <script>
+      (function () {
+        var html = document.documentElement;
+        try {
+          var c = document.cookie.match('(?:^|;) ?cf_theme=([^;]*)');
+          var t = c ? c[1] : (localStorage.getItem('cf_theme') || 'cozy');
+          html.setAttribute('data-theme', t);
+        } catch (e) { html.setAttribute('data-theme', 'cozy'); }
+        try {
+          if (sessionStorage.getItem('cf_loaded') === '1') {
+            html.classList.add('cf-skip-preloader');
+          }
+        } catch (e) {}
+        html.classList.add('js');
+      })();
+    </script>
+    <!-- CF: lang bootstrap (sync, before paint) -->
+    <script>
+      (function () {
+        var html = document.documentElement;
+        try {
+          var l = localStorage.getItem('cf_lang') || 'en';
+          if (['en','ro','ru'].indexOf(l) === -1) l = 'en';
+          html.setAttribute('lang', l);
+          html.setAttribute('data-cf-lang', l);
+          if (l !== 'en') html.setAttribute('data-i18n-loading', '1');
+        } catch (e) { html.setAttribute('lang', 'en'); }
+      })();
+    </script>
+
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>What You Get for €390: Landing Page or Portfolio Site, Both With AI - Camelot Flows</title>
+    <meta name="description" content="Every 390 euro project includes either a landing page with smart AI chatbot, or a full 5-10 page portfolio site with chatbot and auto-blog. Fixed scope, fast launch, AI included.">
+<link rel="canonical" href="https://camelotflows.dev/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/">
+    <link rel="alternate" hreflang="en" href="https://camelotflows.dev/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/">
+    <link rel="alternate" hreflang="ro" href="https://camelotflows.dev/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/">
+    <link rel="alternate" hreflang="ru" href="https://camelotflows.dev/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/">
+    <link rel="alternate" hreflang="x-default" href="https://camelotflows.dev/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="What You Get for €390: Landing Page or Portfolio Site, Both With AI - Camelot Flows">
+    <meta property="og:description" content="Every 390 euro project includes either a landing page with smart AI chatbot, or a full 5-10 page portfolio site with chatbot and auto-blog. Fixed scope, fast launch, AI included.">
+    <meta property="og:image" content="https://camelotflows.dev/assets/images/blog/starter-page-breakdown.png">
+    <meta property="og:url" content="https://camelotflows.dev/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/">
+    <meta property="og:site_name" content="Camelot Flows">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What You Get for €390: Landing Page or Portfolio Site, Both With AI - Camelot Flows">
+    <meta name="twitter:description" content="Every 390 euro project includes either a landing page with smart AI chatbot, or a full 5-10 page portfolio site with chatbot and auto-blog. Fixed scope, fast launch, AI included.">
+    <meta name="twitter:image" content="https://camelotflows.dev/assets/images/blog/starter-page-breakdown.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/css/tailwind.built.css">
+    <link rel="stylesheet" href="/assets/site.css?v=2">
+    <link rel="stylesheet" href="/assets/css/camelot.css?v=6">
+    <link rel="stylesheet" href="/assets/css/theme-night.css?v=2">
+    <link rel="stylesheet" href="/assets/css/lang-switcher.css">
+    <link rel="stylesheet" href="/assets/css/blog.css?v=1">
+    <link rel="prefetch" href="/arsenal.html" as="document">
+    <link rel="prefetch" href="/merlin.html" as="document">
+    <link rel="prefetch" href="/contact.html" as="document">
+    <link rel="prefetch" href="/case-studies.html" as="document">
+    <link rel="prefetch" href="/about.html" as="document">
+    <!-- Google tag (gtag.js) — GA4 camelotflows.dev -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4ZPEG1KSR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-T4ZPEG1KSR');
+    </script>
+</head>
+
+<body class="theme-cozy font-body overflow-x-hidden selection:bg-primary selection:text-white">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999999] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm focus:font-mono focus:shadow-neon" data-i18n="common.skip_link">Skip to main content</a>
+<div id="lang-announce" role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <div id="preloader" class="fixed inset-0 z-[999999] bg-obsidian flex flex-col items-center justify-center">
+        <div class="absolute inset-0 grid-bg opacity-30"></div>
+        <div class="w-32 h-32 relative flex items-center justify-center mb-8 z-10">
+            <div class="absolute inset-0 rounded-full border-t-2 border-primary animate-spin"></div>
+            <div
+                class="absolute inset-2 rounded-full border-b-2 border-accent animate-[spin_2s_linear_infinite_reverse]">
+            </div>
+            <span class="material-symbols-outlined text-4xl text-white animate-pulse">design_services</span>
+        </div>
+        <div class="text-primary-glow font-mono text-[10px] tracking-[0.4em] uppercase mb-4 z-10" id="loader-text" data-i18n="common.preloader_init">
+            Initializing Protocols...</div>
+        <div class="w-64 h-[2px] bg-white/10 rounded-full overflow-hidden z-10">
+            <div id="loader-bar" class="w-0 h-full bg-gradient-to-r from-primary to-accent"></div>
+        </div>
+        <div id="loader-percent" class="mt-4 font-mono text-white text-sm tracking-widest z-10">0%</div>
+    </div>
+
+    <div class="grain-overlay"></div>
+    <div id="bg-orbs" class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+        <div class="bg-orb absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-cobalt/20 rounded-full blur-[120px]">
+        </div>
+        <div
+            class="bg-orb absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-accent/10 rounded-full blur-[100px]">
+        </div>
+        <div class="bg-orb absolute top-[40%] left-[30%] w-[30vw] h-[30vw] bg-primary/10 rounded-full blur-[150px]">
+        </div>
+        <div class="absolute inset-0 grid-bg"></div>
+    </div>
+
+    <!-- ИЗМЕНЕНИЕ: Zentry Orbital Badge (Вращающаяся печать в углу) -->
+    <div
+        class="fixed bottom-8 right-8 z-50 pointer-events-none mix-blend-screen opacity-60 hidden md:flex items-center justify-center w-32 h-32">
+        <svg viewBox="0 0 100 100" width="100" height="100" class="animate-[spin_12s_linear_infinite] absolute inset-0">
+            <defs>
+                <path id="circle" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
+            </defs>
+            <text font-size="10.5" fill="currentColor" class="text-primary-glow font-mono uppercase tracking-[0.15em]">
+                <textPath href="#circle">Camelot Flows • Digital Kingdom •</textPath>
+            </text>
+        </svg>
+        <span class="material-symbols-outlined text-primary text-2xl animate-pulse">change_history</span>
+    </div>
+
+    <nav class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-6 md:py-6">
+        <div
+            class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
+            <div class="flex items-center">
+                <img src="/assets/images/cf-logo-wordmark-2x.webp" alt="Camelot Flows" class="h-16 md:h-28 w-auto object-contain">
+            </div>
+            <div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="/index.html" data-i18n="common.nav.home">[Home]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="/work-with-me.html" data-i18n="common.nav.services">[Services]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="/arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="/merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
+                    href="/case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block"
+                    href="/for-agencies.html" data-i18n="common.nav.agencies">[Agencies]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
+                    href="/?goto=pricing" data-i18n="common.nav.pricing">[Pricing]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="/contact.html" data-i18n="common.nav.contact">[Contact]</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <a href="tel:+37369555936" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" aria-label="Call Camelot Flows" title="+373 69 555 936">
+                    <span class="material-symbols-outlined cf-phone-icon" style="font-size:18px">call</span>
+                </a>
+                <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
+                    <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 status-dot animate-pulse"></div>
+                    <span class="text-[10px] font-mono text-emerald-500/80" data-i18n="common.nav.sys_online">SYS_ONLINE</span>
+                </div>
+                <div class="lang-switcher" data-cf-lang-switcher>
+    <button class="lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Change language" data-i18n-attr="aria-label:common.lang_label">
+        <span class="lang-current" data-cf-lang-current>EN</span>
+        <span class="material-symbols-outlined lang-chevron">expand_more</span>
+    </button>
+    <ul class="lang-menu" role="listbox" hidden>
+        <li role="option" data-lang="en" tabindex="-1">EN</li>
+        <li role="option" data-lang="ro" tabindex="-1">RO</li>
+        <li role="option" data-lang="ru" tabindex="-1">RU</li>
+    </ul>
+</div>
+                <button id="mobile-menu-toggle" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 transition-all text-slate-400" aria-label="Open menu" type="button">
+                    <span class="material-symbols-outlined" style="font-size:20px">menu</span>
+                </button>
+                <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Toggle theme">
+    <span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
+    <span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
+</button>
+                <a href="/contact.html?objective=build"
+                    class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong hidden lg:inline-flex items-center nav-cta"
+                    data-i18n="common.nav.summon_agent">
+                    [Hire_me]
+                </a>
+            </div>
+        </div>
+        
+        <div id="mobile-nav" class="hidden mt-2 max-w-7xl mx-auto">
+            <div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
+                <div class="flex flex-col gap-1">
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/index.html" data-i18n="common.nav.home">[Home]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/work-with-me.html" data-i18n="common.nav.services">[Services]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/contact.html" data-i18n="common.nav.contact">[Contact]</a>
+                    <div class="mx-3 my-2 h-px bg-white/10"></div>
+                    <a href="/contact.html?service=build" class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent">[Hire_me]</a>
+                </div>
+            </div>
+        </div>
+        <script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");var open=!menu.classList.contains("hidden");btn.setAttribute("aria-expanded",open?"true":"false");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");}});document.querySelectorAll("#mobile-nav a").forEach(function(a){a.addEventListener("click",function(){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");});});}})();</script>
+        </nav>
+<main id="main-content">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"What You Get for €390: Landing Page or Portfolio Site, Both With AI","description":"Every 390 euro project includes either a landing page with smart AI chatbot, or a full 5-10 page portfolio site with chatbot and auto-blog. Fixed scope, fast launch, AI included.","url":"https://camelotflows.dev/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/","datePublished":"2026-05-03T11:53:49+00:00","dateModified":"2026-05-20T16:01:14+00:00","author":{"@type":"Person","name":"Alexandru Buzi","url":"https://camelotflows.dev/about.html"},"publisher":{"@type":"Organization","name":"Camelot Flows","url":"https://camelotflows.dev/","logo":{"@type":"ImageObject","url":"https://camelotflows.dev/assets/images/cf-logo-wordmark.png"}},"image":"https://camelotflows.dev/assets/images/blog/starter-page-breakdown-1024x576.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://camelotflows.dev/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/"},"wordCount":469}</script>
+
+<section class="pt-44 pb-16 px-6 relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-20 pointer-events-none"></div>
+    <div class="absolute top-0 right-0 w-[50vw] h-[50vw] bg-primary/5 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="max-w-3xl mx-auto relative">
+
+        <a href="/blog/"
+           class="inline-flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-primary-glow transition-colors mb-10 group"
+           data-i18n="blog.back">
+            <span class="material-symbols-outlined text-sm group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+            Back to Codex
+        </a>
+
+        <div class="flex flex-wrap items-center gap-3 mb-6">
+                            <a href="/blog/"
+                   class="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-primary/30 bg-primary/5 text-[10px] font-mono text-primary-glow tracking-widest uppercase hover:bg-primary/10 transition-colors">
+                    WordPress                </a>
+                        <span class="text-[10px] font-mono text-slate-600">May 3, 2026</span>
+            <span class="text-[10px] font-mono text-slate-600">
+                2 min read
+            </span>
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-display font-bold tracking-tighter cf-post-title mb-8 leading-[0.95]">
+            <span data-lang-content="en">What You Get for €390: Landing Page or Portfolio Site, Both With AI</span>
+                        <span data-lang-content="ro" hidden>Cum Construiesc Site-uri pentru 390€: Defalcarea Paginii Starter</span>
+                                    <span data-lang-content="ru" hidden>Как Я Делаю Сайты за 390€: Разбор Стартовой Страницы</span>
+                    </h1>
+
+                    <div class="cf-excerpt text-lg leading-relaxed border-l-2 border-primary/50 pl-5">
+                <div data-lang-content="en"><p>Every 390 euro project includes either a landing page with smart AI chatbot, or a full 5-10 page portfolio site with chatbot and auto-blog. Fixed scope, fast launch, AI included.</p>
+</div>
+                                <div data-lang-content="ro" hidden><p>Fiecare proiect de 390 euro include fie un landing page cu chatbot AI inteligent, fie un site portfolio complet cu 5-10 pagini, chatbot si auto-blog. Scop fix, lansare rapida, AI inclus.</p></div>
+                                                <div data-lang-content="ru" hidden><p>Kazhdyj proekt za 390 evro vklyuchaet libo lending s umnym II-chatbotom, libo polnocennyj portfolio-sajt s 5-10 stranicami, chatbotom i avto-blogom. Fiksirovannyj obem, bystryj zapusk, II vklyuchen.</p></div>
+                            </div>
+        
+    </div>
+</section>
+
+<!-- GSAP-animated post summary card -->
+<div id="post-summary" class="px-6 pb-4">
+    <div class="max-w-3xl mx-auto glass-panel rounded-xl border border-primary/20 overflow-hidden">
+        <div class="grid grid-cols-3 divide-x divide-white/5">
+            <div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
+                <span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.min_read">MIN_READ</span>
+                <span class="text-4xl font-mono font-bold text-primary-glow tabular-nums" data-count="2">2</span>
+            </div>
+            <div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
+                <span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.words">WORDS</span>
+                <span class="text-4xl font-mono font-bold text-primary-glow tabular-nums" data-count="469">469</span>
+            </div>
+            <div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
+                <span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.year">YEAR</span>
+                <span class="text-4xl font-mono font-bold text-primary-glow tabular-nums">2026</span>
+            </div>
+        </div>
+        <div class="h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+        <div class="px-8 py-3 flex items-center gap-2">
+            <div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+            <span class="text-[10px] font-mono text-slate-600 tracking-widest">May 03, 2026 — DISPATCH_008</span>
+        </div>
+    </div>
+</div>
+
+<div class="px-6 mb-8">
+    <div class="max-w-4xl mx-auto rounded-xl overflow-hidden">
+        <img width="1672" height="941" src="/assets/images/blog/starter-page-breakdown.png" class="w-full h-auto object-cover wp-post-image" alt="Abstract dark workspace visual for a starter website package" decoding="async" fetchpriority="high" srcset="/assets/images/blog/starter-page-breakdown.png 1672w, /assets/images/blog/starter-page-breakdown-300x169.png 300w, /assets/images/blog/starter-page-breakdown-1024x576.png 1024w, /assets/images/blog/starter-page-breakdown-768x432.png 768w, /assets/images/blog/starter-page-breakdown-1536x864.png 1536w, /assets/images/blog/starter-page-breakdown-800x450.png 800w" sizes="(max-width: 1672px) 100vw, 1672px" />    </div>
+</div>
+
+<article class="pb-16 px-6">
+    <div class="max-w-3xl mx-auto prose-camelot">
+        <div data-lang-content="en">
+<p class="wp-block-paragraph">A €390 website sounds like a joke or a trap. Here is the truth: it is a real, functional, client-ready web presence. And in 2025, it comes with AI built in.</p>
+
+
+
+<h2 class="wp-block-heading">Two Packages, One Price</h2>
+
+
+
+<p class="wp-block-paragraph">Every €390 project is one of two things:</p>
+
+
+
+<ul class="wp-block-list"><li><strong>Landing Page + Smart Chatbot</strong> &#8211; A single, conversion-focused page that captures leads around the clock, with a basic AI chatbot that qualifies visitors, answers FAQs, and routes serious inquiries to your inbox.</li><li><strong>Portfolio Site (5-10 pages) + Chatbot + Auto-Blog</strong> &#8211; A full multi-page WordPress site with your services, about, portfolio, and contact pages &#8211; plus the same smart chatbot, plus an auto-blog system that generates relevant content and keeps your site fresh without you writing a word.</li></ul>
+
+
+
+<p class="wp-block-paragraph">Both options are fixed-scope. You pick the one that fits your situation.</p>
+
+
+
+<h2 class="wp-block-heading">What a Smart Chatbot Actually Means</h2>
+
+
+
+<p class="wp-block-paragraph">This is not a FAQ widget. The chatbot is powered by a basic n8n workflow connected to Claude AI. It reads your service list, understands your pricing, and has natural conversations with potential clients &#8211; 24 hours a day, in whatever language they type in. When someone is ready to hire, it captures their details and sends them straight to your email or CRM.</p>
+
+
+
+<p class="wp-block-paragraph">No live chat agent required. No missed leads at 2am.</p>
+
+
+
+<h2 class="wp-block-heading">What Auto-Blog Means</h2>
+
+
+
+<p class="wp-block-paragraph">The auto-blog feature (available on the portfolio package) connects to an n8n workflow that generates and publishes relevant blog posts on a schedule. It is not spam &#8211; it is keyword-targeted, niche-specific content that builds your SEO footprint while you sleep. You can review and approve each post, or set it to fully automatic. Your call.</p>
+
+
+
+<h2 class="wp-block-heading">Why the Economics Work</h2>
+
+
+
+<p class="wp-block-paragraph">The site itself is built on a refined WordPress template &#8211; clean, fast, mobile-perfect. I have built this template dozens of times so setup time is minimal. That is what keeps the price low.</p>
+
+
+
+<p class="wp-block-paragraph">The AI layer (chatbot + auto-blog) runs on tools I have already configured for my own agency workflow. Spinning up an instance for your project costs me almost nothing extra. What you are paying for is my time to customize it to your brand, write your copy, configure the automation, and launch. That is it.</p>
+
+
+
+<h2 class="wp-block-heading">Who Is This For</h2>
+
+
+
+<ul class="wp-block-list"><li>Freelancers and consultants who need a professional web presence fast</li><li>Local businesses with zero web presence right now</li><li>Service providers who want leads coming in while they work</li><li>Anyone who has been quoted €2,000–€5,000 for a website and wants a smarter, leaner entry point</li></ul>
+
+
+
+<h2 class="wp-block-heading">What It Is Not</h2>
+
+
+
+<p class="wp-block-paragraph">This is a fixed-scope package &#8211; not a €390 custom design from scratch, not an ecommerce store, not a complex web app. If you need those things, I offer them at different prices. The €390 package is built to be fast and effective, not infinitely flexible.</p>
+
+
+
+<p class="wp-block-paragraph">Ready to start? <a href="/contact.html?objective=site">Tell me about your project</a> and I will send you a scope within 24 hours.</p>
+</div>
+                <div data-lang-content="ro" hidden>
+<p class="wp-block-paragraph">Un website de 390 euro suna a gluma sau a capcana. Iata adevarul: este o prezenta web reala, functionala, gata pentru clienti. Si in 2025, vine cu AI inclus.</p>
+
+
+
+<h2 class="wp-block-heading">Doua Pachete, Un Pret</h2>
+
+
+
+<p class="wp-block-paragraph">Fiecare proiect de 390 euro este unul din doua lucruri:</p>
+
+
+
+<ul class="wp-block-list"><li><strong>Landing Page + Chatbot Inteligent</strong> &#8211; O pagina unica, axata pe conversie, care capteaza lead-uri non-stop, cu un chatbot AI de baza ce califica vizitatorii, raspunde la intrebari frecvente si directioneaza solicitarile serioase direct in inbox-ul tau.</li><li><strong>Site Portfolio (5-10 pagini) + Chatbot + Auto-Blog</strong> &#8211; Un site WordPress complet cu pagini de servicii, despre, portofoliu si contact &#8211; plus acelasi chatbot inteligent, plus un sistem auto-blog ce genereaza continut relevant si mentine site-ul activ fara sa scrii tu un cuvant.</li></ul>
+
+
+
+<p class="wp-block-paragraph">Ambele optiuni au scop fix. Tu alegi ce se potriveste situatiei tale.</p>
+
+
+
+<h2 class="wp-block-heading">Ce Inseamna Chatbotul Inteligent</h2>
+
+
+
+<p class="wp-block-paragraph">Nu este un widget FAQ. Chatbot-ul este alimentat de un workflow n8n conectat la Claude AI. Citeste lista ta de servicii, intelege preturile tale si poarta conversatii naturale cu potentialii clienti &#8211; 24 de ore pe zi, in orice limba scriu ei. Cand cineva este gata sa angajeze, capteaza detaliile lor si le trimite direct la email-ul sau CRM-ul tau.</p>
+
+
+
+<p class="wp-block-paragraph">Fara agent de chat live. Fara lead-uri pierdute la 2 noaptea.</p>
+
+
+
+<h2 class="wp-block-heading">Ce Inseamna Auto-Blog</h2>
+
+
+
+<p class="wp-block-paragraph">Functia auto-blog (disponibila in pachetul portfolio) se conecteaza la un workflow n8n care genereaza si publica articole relevante conform unui program. Nu este spam &#8211; este continut targetat pe cuvinte cheie, specific nisei tale, care iti construieste amprenta SEO in timp ce dormi. Poti revizui si aproba fiecare articol sau il setezi pe pilot automat complet. Alegerea ta.</p>
+
+
+
+<h2 class="wp-block-heading">De Ce Functioneaza Economia</h2>
+
+
+
+<p class="wp-block-paragraph">Site-ul in sine este construit pe un template WordPress rafinat &#8211; curat, rapid, perfect pe mobil. Am construit acest template de zeci de ori, deci timpul de configurare este minimal. Asta mentine pretul scazut.</p>
+
+
+
+<p class="wp-block-paragraph">Stratul AI (chatbot + auto-blog) ruleaza pe instrumente pe care le-am configurat deja pentru workflow-ul propriei mele agentii. Pornirea unei instante pentru proiectul tau nu ma costa aproape nimic extra. Ceea ce platesti este timpul meu pentru a-l personaliza dupa brandul tau, a scrie textele, a configura automatizarea si a-l lansa. Atat.</p>
+
+
+
+<h2 class="wp-block-heading">Pentru Cine Este</h2>
+
+
+
+<ul class="wp-block-list"><li>Freelanceri si consultanti care au nevoie rapid de o prezenta web profesionala</li><li>Afaceri locale fara prezenta online acum</li><li>Furnizori de servicii care vor lead-uri ce vin in timp ce ei lucreaza</li><li>Oricine a primit o oferta de 2000-5000 euro pentru un website si vrea un punct de intrare mai inteligent</li></ul>
+
+
+
+<h2 class="wp-block-heading">Ce Nu Este</h2>
+
+
+
+<p class="wp-block-paragraph">Acesta este un pachet cu scop fix &#8211; nu un design personalizat de la zero, nu un magazin ecommerce, nu o aplicatie web complexa. Daca ai nevoie de acestea, le ofer la preturi diferite. Pachetul de 390 euro este construit pentru viteza si eficienta, nu pentru flexibilitate infinita.</p>
+
+
+
+<p class="wp-block-paragraph">Gata sa incepi? <a href="/contact.html?objective=site">Spune-mi despre proiectul tau</a> si iti trimit o schita in 24 de ore.</p>
+</div>
+                        <div data-lang-content="ru" hidden>
+<p class="wp-block-paragraph">Sajt za 390 evro zvuchit kak shutka ili lovushka. Vot pravda: eto realnoe, funkcionalnoe, gotovoe dlya klientov veb-prisutstvie. I v 2025 godu ono idyot so vstrojennym II.</p>
+
+
+
+<h2 class="wp-block-heading">Dva Paketa, Odna Cena</h2>
+
+
+
+<p class="wp-block-paragraph">Kazhdyj proekt za 390 evro &#8211; eto odno iz dvukh:</p>
+
+
+
+<ul class="wp-block-list"><li><strong>Lending + Umnyj Chatbot</strong> &#8211; Odna stranica, orientirovannaya na konversiyu, kotoraya sobiraet lidy kruglosutochno, s bazovym II-chatbotom, kotoryj kvalificiruet posetitelej, otvechaet na chastye voprosy i napravlyaet seryoznye zaprosy pryamo v vash inbox.</li><li><strong>Portfolio-sajt (5-10 stranic) + Chatbot + Avto-blog</strong> &#8211; Polnocennyj mnogostranchnyj WordPress-sajt so stranicami uslug, o kompanii, portfolio i kontaktov &#8211; plyus tot zhe umnyj chatbot, plyus sistema avto-bloga, kotoraya generiruet relevantnyj kontent i podderzhivaet aktualnost sajta bez napisaniya edinogo slova.</li></ul>
+
+
+
+<p class="wp-block-paragraph">Oba varianta s fiksirovannym ob`emom. Vy vybiraete tot, kotoryj podkhodit vashej situacii.</p>
+
+
+
+<h2 class="wp-block-heading">Chto Znachit Umnyj Chatbot</h2>
+
+
+
+<p class="wp-block-paragraph">Eto ne FAQ-vidzhet. Chatbot rabotaet na baze n8n workflow, podklyuchyonnogo k Claude AI. On chitaet vash spisok uslug, ponimaet vashi ceny i vyodet estestvennye razgovory s potencialnym klientami &#8211; 24 chasa v sutki, na kakom by yazyke oni ni pisali. Kogda kto-to gotov nanyat, on sobiraet ikh dannye i otpravlyaet pryamo na vash email ili v CRM.</p>
+
+
+
+<p class="wp-block-paragraph">Nikakogo operatora zhivogo chata. Nikakikh poteryannykh lidov v 2 chasa nochi.</p>
+
+
+
+<h2 class="wp-block-heading">Chto Znachit Avto-blog</h2>
+
+
+
+<p class="wp-block-paragraph">Funkciya avto-bloga (dostupna v pakete s portfolio) podklyuchaetsya k n8n workflow, kotoryj generiruet i publikuet relevantnye stati po raspisaniyu. Eto ne spam &#8211; eto kontent, orientirovannyj na klyuchevye slova, specificheskij dlya vashej nishi, kotoryj stroit vash SEO-sled poka vy spite. Vy mozhete proveryat i odobryat kazhdyuyu statyu ili nastroit polnyj avtopilot. Vash vybor.</p>
+
+
+
+<h2 class="wp-block-heading">Pochemu Ekonomika Rabotaet</h2>
+
+
+
+<p class="wp-block-paragraph">Sam sajt postroen na otochennom WordPress-shablone &#8211; chistom, bystrom, idealnom na mobilnykh. Ya sozdal etot shablon desyatki raz, poetomu vremya nastrojki minimalno. Imenno eto derzhit cenu nizkoj.</p>
+
+
+
+<p class="wp-block-paragraph">II-sloj (chatbot + avto-blog) rabotaet na instrumentakh, kotorye ya uzhe nastroil dlya rabochego processa svoego agentstva. Zapusk ekzemplyara dlya vashego proekta obkhoditsya mne pochti nichego dopolnitelnogo. Vy platite za moyo vremya na kastomizaciyu pod vash brend, napisanie tekstov, nastrojku avtomatizacii i zapusk. Vot i vsyo.</p>
+
+
+
+<h2 class="wp-block-heading">Dlya Kogo Eto</h2>
+
+
+
+<ul class="wp-block-list"><li>Frilansery i konsultanty, kotorym nuzhno professionalnoe veb-prisutstvie bystro</li><li>Mestnye biznes, u kotorykh sejchas net onlajn-prisutstviya</li><li>Postavshchiki uslug, kotorye khotyat lidy, prikhodyashchie poka oni rabotayut</li><li>Vse, komu nazvali cenu 2000-5000 evro za sajt, i kto khochet bolee umnuyu tochku vkhoda</li></ul>
+
+
+
+<h2 class="wp-block-heading">Chto Eto Ne</h2>
+
+
+
+<p class="wp-block-paragraph">Eto paket s fiksirovannym ob`emom &#8211; ne individualnyj dizajn s nulya, ne internet-magazin, ne slozhnoe veb-prilozhenie. Esli vam nuzhno eto, ya predlagayu takie uslugi po drugim cenam. Paket 390 evro sozdan dlya skorosti i effektivnosti, a ne dlya beskonechnoj gibkosti.</p>
+
+
+
+<p class="wp-block-paragraph">Gotovy nachat? <a href="/contact.html?objective=site">Rasskazhite o vashem proekte</a>, i ya prishlyu vam brief v techenie 24 chasov.</p>
+</div>
+            </div>
+</article>
+
+<div class="px-6 pb-12">
+    <div class="max-w-3xl mx-auto pt-8 border-t border-white/5 flex flex-wrap items-center gap-3">
+            </div>
+</div>
+
+<div class="px-6 pb-16">
+    <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div></div>
+        
+                    <a href="/blog/how-i-build-sites-for-clients/"
+               class="glass-panel rounded-xl p-6 group hover:border-primary/40 transition-all text-right">
+                <div class="flex items-center justify-end gap-2 text-[10px] font-mono text-slate-600 mb-2">
+                    Next <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </div>
+                <div class="font-display font-bold cf-nav-title text-sm group-hover:text-primary-glow transition-colors leading-snug">
+                    How I Build Sites for Clients: Simple WordPress, Custom Builds, and AI Automations                </div>
+            </a>
+            </div>
+</div>
+
+<section class="pb-28 px-6">
+    <div class="max-w-3xl mx-auto glass-panel rounded-xl p-10 md:p-14 text-center border border-primary/20">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded border border-primary/30 bg-primary/5 mb-6">
+            <span class="text-xs font-mono text-primary-glow tracking-widest uppercase">// NEXT_STEP</span>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-display font-bold cf-post-title mb-4 tracking-tighter">
+            Want this built for you?
+        </h2>
+        <p class="text-slate-400 mb-8 font-mono text-sm">Fixed scope. Fixed price. Fixed deadline.</p>
+        <a href="/contact.html?objective=blog-cta"
+           class="cf-blog-cta-btn bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-8 py-3 rounded text-sm font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong inline-flex items-center gap-2">
+            // SUMMON_AGENT
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+    </div>
+</section>
+</main>
+<footer class="bg-obsidian pt-24 pb-12 px-6 border-t border-primary/20 relative">
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+        </div>
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20">
+                <div class="md:col-span-3">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-8 rounded bg-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-lg">architecture</span>
+                        </div>
+                        <span class="font-display text-xl font-bold tracking-tighter uppercase text-white">Camelot
+                            Flows</span>
+                    </div>
+                    <p class="text-slate-500 mb-8 text-sm leading-relaxed font-mono">
+                        <span data-i18n="common.footer.location_line_1"><span class="text-primary">&gt;</span> Location: Chisinau, MD</span><br />
+                        <span data-i18n="common.footer.location_line_2"><span class="text-primary">&gt;</span> Coordinates: 47.0105° N, 28.8638° E</span><br />
+                        <span data-i18n="common.footer.location_line_3"><span class="text-primary">&gt;</span> Mission: Awwwards-Tier Design & AI Automation.</span>
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400"
+                            href="https://www.linkedin.com/in/alex-buzi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+
+                        <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400"
+                            href="/contact.html">
+                            <span class="material-symbols-outlined text-lg">mail</span>
+                        </a>
+                        <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400"
+                            href="/contact.html">
+                            <span class="material-symbols-outlined text-lg">alternate_email</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <h5
+                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_protocol">
+                        Protocol</h5>
+                    <ul class="space-y-3 text-slate-500 text-sm font-mono">
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/arsenal.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_protocol_arsenal">The Arsenal</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/merlin.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_protocol_merlin">Merlin</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/case-studies.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_protocol_cases">Case Studies</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/for-agencies.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_protocol_agencies">Agencies</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/blog/"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> <span data-i18n="common.footer.blog">Blog</span></a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <h5
+                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_services">
+                        Services</h5>
+                    <ul class="space-y-3 text-slate-500 text-sm font-mono">
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/service-creation.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_services_creation">Site Creation</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/service-maintenance.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_services_maintenance">Maintenance</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/service-automation.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_services_automation">Automations</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/service-marketing.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_services_marketing">Marketing</span></a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <h5
+                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_company">
+                        Company</h5>
+                    <ul class="space-y-3 text-slate-500 text-sm font-mono">
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/about.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_company_about">About</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/work-with-me.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_company_work">Work With</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/legal.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_company_legal">Legal</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/contact.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_company_contact">Contact</span></a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-3">
+                    <h5
+                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_vanguard">
+                        Vanguard</h5>
+                    <p class="text-slate-500 text-sm mb-6 leading-relaxed" data-i18n="common.footer.col_vanguard_lead">Weekly insights on AI automation sent
+                        directly to your terminal.</p>
+                    <div
+                        class="flex gap-2 p-1 bg-white/5 rounded border border-white/10 focus-within:border-primary/50 transition-colors">
+                        <label for="newsletter-email" class="sr-only">Email address</label>
+                        <input
+                            id="newsletter-email"
+                            class="bg-transparent border-none focus:ring-0 text-sm flex-1 px-4 text-white font-mono placeholder:text-slate-600"
+                            placeholder="ENTER_EMAIL" type="email" data-i18n-attr="placeholder:common.footer.col_vanguard_placeholder" />
+                        <button
+                            class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded text-xs font-bold transition-colors font-mono" data-i18n="common.footer.col_vanguard_submit">[SUBMIT]</button>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-xs text-slate-600 font-mono" data-i18n="common.footer.copyright">&copy; 2026 Camelot Flows. Built by Alex Buzi.</p>
+                <div class="flex flex-wrap justify-center gap-4 md:gap-8">
+                    <div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+                        <span class="material-symbols-outlined text-sm text-green-500">wifi</span>
+                        <span data-i18n="common.footer.status_optimal">System Status: Optimal</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+                        <span class="material-symbols-outlined text-sm text-blue-500">bolt</span>
+                        <span data-i18n="common.footer.status_lightning">Lightning Fast Performance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="custom-cursor"></div>
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <script src="/assets/js/locales.js"></script>
+    <script defer src="/assets/js/i18n.js"></script>
+    <script defer src="/assets/js/camelot-gsap.js"></script>
+    <script defer src="/assets/site.js"></script>
+
+</body>
+
+</html>

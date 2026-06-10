@@ -1090,10 +1090,14 @@
   "blog": {
     "back": "← Back to Codex",
     "read_dispatch": "Read dispatch",
+    "read": "Read",
     "featured": "Featured",
     "min_read": "MIN_READ",
     "words": "WORDS",
-    "year": "YEAR"
+    "year": "YEAR",
+    "archive_h1_line1": "Dispatches from",
+    "archive_h1_line2": "the Workshop.",
+    "archive_subtitle": "Build notes, AI breakdowns, and field reports from a solo WordPress developer building in public."
   }
 };
   window.cfLocales.ro = {
@@ -2181,10 +2185,14 @@
   "blog": {
     "back": "← Înapoi la Codex",
     "read_dispatch": "Citește dispatch-ul",
+    "read": "Citește",
     "featured": "Recomandat",
     "min_read": "MIN_CITIT",
     "words": "CUVINTE",
-    "year": "AN"
+    "year": "AN",
+    "archive_h1_line1": "Rapoarte din",
+    "archive_h1_line2": "Atelier.",
+    "archive_subtitle": "Note de construcție, analize AI și rapoarte de la un developer WordPress solo, construit în public."
   }
 };
   window.cfLocales.ru = {
@@ -3268,6 +3276,18 @@
       "cta_p": "Забронируй бесплатный 30-минутный звонок. Размечаем твои workflow, согласуем объём, и Merlin запускается в течение двух недель.",
       "cta_deploy": "Запустить Merlin"
     }
+  },
+  "blog": {
+    "back": "← К Кодексу",
+    "read_dispatch": "Читать выпуск",
+    "read": "Читать",
+    "featured": "Рекомендуем",
+    "min_read": "МИН_ЧТЕН",
+    "words": "СЛОВА",
+    "year": "ГОД",
+    "archive_h1_line1": "Заметки из",
+    "archive_h1_line2": "Мастерской.",
+    "archive_subtitle": "Заметки о разработке, разборы AI и полевые отчёты от solo WordPress-разработчика."
   }
 };
 })();
