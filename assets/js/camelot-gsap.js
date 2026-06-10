@@ -497,8 +497,20 @@
                     '.pricing-blueprint-system, .pricing-route-card, .hologram-sword-img, .starfield-anim'
                 );
 
-                // Start section invisible so it doesn't flash blueprint before pin
+                // Start section invisible so it doesn't flash blueprint before pin,
+                // but fade it in while it enters the viewport — snapping it on only
+                // at pin start left a full blank viewport during entry
                 gsap.set(pricingSection, { opacity: 0 });
+                gsap.to(pricingSection, {
+                    opacity: 1,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "#starwars-pricing",
+                        start: "top 95%",
+                        end: "top 40%",
+                        scrub: true,
+                    }
+                });
                 gsap.set(crawlContent, {
                     rotationX: 25,
                     yPercent: 0,
@@ -518,8 +530,6 @@
                 });
 
                 crawlTl
-                    // Snap section visible immediately as pin starts
-                    .to(pricingSection, { opacity: 1, duration: 0.04, ease: 'none' }, 0)
                     // Crawl fades in
                     .to(crawlContent, { opacity: 1, duration: 0.1 }, 0)
                     // Crawl scrolls up
