@@ -903,7 +903,7 @@ body {
         [data-theme="cozy"] body.theme-cozy #starwars-pricing .network-wires { opacity: 0.45; }
         [data-theme="cozy"] body.theme-cozy .pricing-blueprint-system {
             color: var(--cf-cobalt);
-            opacity: 0.45;
+            opacity: 0.22;
             mix-blend-mode: multiply;
         }
         [data-theme="cozy"] body.theme-cozy .pricing-blueprint-route,
