@@ -901,28 +901,31 @@ body {
             radial-gradient(1.2px 1.2px at 300px 250px, rgba(26,26,24,0.15), transparent); }
         [data-theme="cozy"] body.theme-cozy .pricing-blueprint-system {
             color: var(--cf-cobalt);
-            opacity: 0.42;
+            opacity: 0.85;
             mix-blend-mode: multiply;
         }
         [data-theme="cozy"] body.theme-cozy .pricing-blueprint-route,
         [data-theme="cozy"] body.theme-cozy .pricing-blueprint-ring {
-            stroke: rgba(63,93,141,0.28);
+            stroke: rgba(63,93,141,0.45);
         }
         [data-theme="cozy"] body.theme-cozy .pricing-blueprint-core,
         [data-theme="cozy"] body.theme-cozy .pricing-route-card {
-            background: rgba(245,244,240,0.48);
-            border-color: rgba(63,93,141,0.18);
+            background: rgba(255,255,255,0.72);
+            border-color: rgba(63,93,141,0.40);
             color: var(--cf-cobalt);
             box-shadow: 0 30px 80px -54px rgba(63,93,141,0.65);
         }
         [data-theme="cozy"] body.theme-cozy .pricing-route-card:nth-of-type(3n) {
             color: var(--cf-sage);
-            border-color: rgba(123,145,113,0.2);
+            border-color: rgba(123,145,113,0.40);
         }
         [data-theme="cozy"] body.theme-cozy .pricing-route-card:nth-of-type(3n + 1) {
             color: var(--cf-terracotta);
-            border-color: rgba(196,120,92,0.2);
+            border-color: rgba(196,120,92,0.40);
         }
+        [data-theme="cozy"] body.theme-cozy .pricing-blueprint-core span { opacity: 0.85; }
+        [data-theme="cozy"] body.theme-cozy .pricing-route-card span,
+        [data-theme="cozy"] body.theme-cozy .pricing-route-card em { opacity: 0.8; }
 
         /* ── Card & panel overrides ─────────────────────────── */
         [data-theme="cozy"] body.theme-cozy .glass-card {
