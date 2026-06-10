@@ -877,7 +877,7 @@
         // 9.5 SKEW ON SCROLL (TRENDING FLUIDITY EFFECT)
         // ------------------------------------------------------------
         let proxy = { skew: 0 },
-            skewSetter = gsap.quickSetter(".glass-panel:not(.cf-artifact-frame), .stack-card", "skewY", "deg"),
+            skewSetter = gsap.quickSetter(".glass-panel:not(.cf-artifact-frame):not(.cf-rise), .stack-card", "skewY", "deg"),
             clamp = gsap.utils.clamp(-3, 3); // Limit skew to subtle degrees to avoid layout breaking
 
         ScrollTrigger.create({
