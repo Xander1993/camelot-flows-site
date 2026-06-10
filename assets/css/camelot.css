@@ -1996,3 +1996,5 @@ nav.fixed .glass-panel > div:first-child {
 .cf-faq .cf-faq-icon { transition: transform .3s cubic-bezier(.4,0,.2,1); flex-shrink: 0; }
 .cf-faq details[open] .cf-faq-icon { transform: rotate(180deg); }
 .cf-faq summary:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; border-radius: 12px; }
+.cf-faq details[open] summary { padding-bottom: 0.75rem; }
+.cf-faq details > p { padding: 0.25rem 1.75rem 1.75rem; }
