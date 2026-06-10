@@ -899,10 +899,12 @@ body {
             radial-gradient(1.5px 1.5px at 100px 150px, rgba(123,145,113,0.4), transparent),
             radial-gradient(1px 1px at 200px 100px, rgba(196,120,92,0.3), transparent),
             radial-gradient(1.2px 1.2px at 300px 250px, rgba(26,26,24,0.15), transparent); }
+        [data-theme="cozy"] body.theme-cozy #starwars-pricing .hologram-sword-img { opacity: 0.16; }
+        [data-theme="cozy"] body.theme-cozy #starwars-pricing .network-wires { opacity: 0.45; }
         [data-theme="cozy"] body.theme-cozy .pricing-blueprint-system {
             color: var(--cf-cobalt);
-            opacity: 0.85;
-            mix-blend-mode: multiply;
+            opacity: 1;
+            mix-blend-mode: normal;
         }
         [data-theme="cozy"] body.theme-cozy .pricing-blueprint-route,
         [data-theme="cozy"] body.theme-cozy .pricing-blueprint-ring {
