@@ -77,11 +77,23 @@
             // elements, which gsap.set(autoAlpha:0) has already applied here.
             const text = element.textContent;
             element.innerHTML = '';
-            text.split('').forEach(char => {
-                const span = document.createElement('span');
-                span.className = 'inline-block hero-char';
-                span.innerHTML = char === ' ' ? '&nbsp;' : char;
-                element.appendChild(span);
+            // Chars are grouped per word inside a nowrap wrapper: bare
+            // inline-block char spans let the browser break lines mid-word
+            // ("A SITE AS GOOD A / S" on 390px). Real spaces between the
+            // wrappers keep textContent idempotent for re-wraps on language
+            // switch.
+            text.split(/\s+/).filter(Boolean).forEach((word, i) => {
+                if (i > 0) element.appendChild(document.createTextNode(' '));
+                const wordSpan = document.createElement('span');
+                wordSpan.className = 'inline-block whitespace-nowrap hero-word';
+                wordSpan.style.transformStyle = 'preserve-3d';
+                word.split('').forEach(char => {
+                    const span = document.createElement('span');
+                    span.className = 'inline-block hero-char';
+                    span.textContent = char;
+                    wordSpan.appendChild(span);
+                });
+                element.appendChild(wordSpan);
             });
         };
 
