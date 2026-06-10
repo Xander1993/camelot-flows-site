@@ -412,6 +412,13 @@
       "s_note": "Timberkids and First Line Garage Door are real client engagements — the quotes are the owners' own words. The third card is a labwork: an honest demonstration of process and capability, kept until the next client engagement replaces it.",
       "s_note_btn": "Start a project"
     },
+    "notfound": {
+      "eyebrow": "404 · wrong turn",
+      "title": "This page doesn't exist.",
+      "lead": "The address may be old, mistyped, or the page was never built. These two doors always work.",
+      "btn_home": "Back to home",
+      "btn_contact": "Contact me"
+    },
     "for-agencies": {
       "meta_title": "For Agencies | White-Label Web & AI Build Partner",
       "meta_description": "White-label website and AI automation capacity for agencies that need reliable senior delivery without adding another full-time hire.",
@@ -1496,6 +1503,13 @@
       "s_note": "Timberkids și First Line Garage Door sunt proiecte reale cu clienți — citatele sunt cuvintele proprietarilor. Al treilea card e o lucrare de laborator: o demonstrație onestă de proces și capabilitate, păstrată până când următorul proiect cu client o va înlocui.",
       "s_note_btn": "Începe un proiect"
     },
+    "notfound": {
+      "eyebrow": "404 · drum greșit",
+      "title": "Pagina asta nu există.",
+      "lead": "Adresa poate fi veche, greșită sau pagina n-a fost construită niciodată. Ușile astea două funcționează mereu.",
+      "btn_home": "Înapoi acasă",
+      "btn_contact": "Scrie-mi"
+    },
     "for-agencies": {
       "meta_title": "Pentru agenții | Partener White-Label web și AI",
       "meta_description": "Capacitate white-label de site-uri și automatizări AI pentru agențiile care au nevoie de livrare seniorală fără un nou angajat full-time.",
@@ -2579,6 +2593,13 @@
       "s_c3_result": "Цикл продажи: 2 недели → 3 дня",
       "s_note": "Timberkids и First Line Garage Door — реальные клиентские проекты, цитаты — слова самих владельцев. Третья карточка — лабораторная работа: честная демонстрация процесса и компетенции, она останется, пока её не заменит следующий клиентский проект.",
       "s_note_btn": "Начать проект"
+    },
+    "notfound": {
+      "eyebrow": "404 · не туда",
+      "title": "Такой страницы нет.",
+      "lead": "Адрес устарел, в нём опечатка — или страницы никогда не было. Эти две двери работают всегда.",
+      "btn_home": "На главную",
+      "btn_contact": "Написать мне"
     },
     "for-agencies": {
       "meta_title": "Агентствам | White-Label партнёр для веба и AI",

@@ -1,0 +1,50 @@
+# Camelot Flows
+
+> Solo web atelier of Alexandru (Alex) Buzi in Chișinău, Moldova. Fixed-price websites for
+> local service businesses — set up to be found on Google, built to convert, and owned
+> outright by the client. No agency, no account managers, no middlemen: one builder with
+> direct access. Site content is available in English, Romanian, and Russian.
+
+## Services
+
+- Website builds: WordPress / WooCommerce / custom static builds, conversion-first design
+- Local SEO setup: Google Business Profile optimization, on-page local SEO, LocalBusiness schema
+- Merlin AI automation: lead routing, client intake, tier-1 support agents (n8n, Make, Claude API)
+- Optional Hosting & Care plan: hosting, SSL, backups, updates — sold as technical work performed,
+  never as a traffic or ranking promise
+
+## Pricing (fixed, one-time — no required monthly fees)
+
+- Start one-pager: from €390
+- Found full build: €690–€1,200, fixed to page count
+- Custom premium website: from €1,200
+
+## Client work
+
+- Timberkids (timberkids.md) — WooCommerce store for a handmade kids' furniture maker,
+  launched in under two weeks; trilingual (WPML), product personalization
+- First Line Garage Door (firstlinegarage.com) — lead-gen site for a Chicago-area garage
+  door service, delivered three days ahead of deadline; click-to-call, LocalBusiness + FAQ schema
+
+## Areas served
+
+Moldova and Romania first; EU and US remotely. Everything delivered remotely with direct
+builder access.
+
+## Contact
+
+- Email: alex@camelotflows.dev
+- Phone: +373 69 555 936
+- Contact page: https://camelotflows.dev/contact
+
+## Key pages
+
+- [Home](https://camelotflows.dev/)
+- [Work with me — services & pricing](https://camelotflows.dev/work-with-me)
+- [Case studies](https://camelotflows.dev/case-studies)
+- [About Alexandru Buzi](https://camelotflows.dev/about)
+- [The Arsenal — capabilities](https://camelotflows.dev/arsenal)
+- [Merlin — AI automation](https://camelotflows.dev/merlin)
+- [For agencies — white-label](https://camelotflows.dev/for-agencies)
+- [Contact](https://camelotflows.dev/contact)
+- [Blog](https://blog.camelotflows.dev)
