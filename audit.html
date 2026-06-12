@@ -386,6 +386,8 @@
   var lockedFindings = [];
   var auditedUrl = '';
   var lastScore = 0;
+  var lastVariant = 'template';
+  var adminKey = new URLSearchParams(location.search).get('admin') || '';
 
   var SEV = {
     high:   { label: 'CRITICAL', cls: 'border-l-4', color: '#ff7a7a' },
@@ -429,7 +431,7 @@
     fetch('/api/audit', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ url: raw })
+      body: JSON.stringify(adminKey ? { url: raw, adminKey: adminKey, compare: true } : { url: raw })
     }).then(function (r) { return r.json(); }).then(function (data) {
       clearTimeout(slowTimer);
       els.status.classList.add('hidden');
@@ -443,8 +445,10 @@
       }
       auditedUrl = data.finalUrl;
       lastScore = data.score;
+      lastVariant = data.variant || 'template';
       els.score.textContent = data.score;
       els.summary.textContent = data.summary;
+      renderCompare(data.compare);
       els.list.innerHTML = '';
       var free = data.findings.slice(0, FREE_FINDINGS);
       lockedFindings = data.findings.slice(FREE_FINDINGS);
@@ -457,7 +461,7 @@
       }
       els.results.classList.remove('hidden');
       els.results.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      track('audit_complete', { audited_url: auditedUrl, score: data.score, findings: data.findings.length });
+      track('audit_complete', { audited_url: auditedUrl, score: data.score, findings: data.findings.length, model_variant: lastVariant, summary_source: data.summarySource || 'template' });
     }).catch(function () {
       clearTimeout(slowTimer);
       els.status.classList.add('hidden');
@@ -467,6 +471,34 @@
       els.err.classList.remove('hidden');
     });
   });
+
+  // Admin QA mode (?admin=KEY): every configured model's summary side by side.
+  function renderCompare(compare) {
+    var old = document.getElementById('audit-compare');
+    if (old) old.remove();
+    if (!compare || !compare.length) return;
+    var wrap = document.createElement('div');
+    wrap.id = 'audit-compare';
+    wrap.className = 'mt-10';
+    var h = document.createElement('h3');
+    h.className = 'text-white font-semibold mb-4 font-mono text-sm uppercase tracking-widest';
+    h.textContent = '// A/B compare (admin)';
+    wrap.appendChild(h);
+    compare.forEach(function (c) {
+      var card = document.createElement('div');
+      card.className = 'glass-panel rounded-lg p-5 mb-3';
+      var label = document.createElement('div');
+      label.className = 'font-mono text-[10px] tracking-[0.25em] uppercase mb-2 text-white/50';
+      label.textContent = c.model + (c.usage && c.usage.total_tokens ? ' · ' + c.usage.total_tokens + ' tokens' : '');
+      var p = document.createElement('p');
+      p.className = 'text-white/70 text-sm';
+      p.textContent = c.summary || ('ERROR: ' + (c.error || 'unknown'));
+      card.appendChild(label);
+      card.appendChild(p);
+      wrap.appendChild(card);
+    });
+    els.results.appendChild(wrap);
+  }
 
   els.unlock.addEventListener('click', function () {
     els.gateErr.classList.add('hidden');
@@ -490,7 +522,7 @@
       .then(function () {
         lockedFindings.forEach(function (x) { els.list.appendChild(findingCard(x)); });
         els.gate.classList.add('hidden');
-        track('audit_lead', { audited_url: auditedUrl, score: lastScore });
+        track('audit_lead', { audited_url: auditedUrl, score: lastScore, model_variant: lastVariant });
       })
       .catch(function () {
         // unlock anyway — the visitor held their side of the bargain

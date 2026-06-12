@@ -1,13 +1,22 @@
 /**
- * POST /api/audit  — free conversion-path website audit (no-LLM v1).
+ * POST /api/audit  — free conversion-path website audit.
  *
- * Body: { "url": "https://example.com" }
- * Returns: { ok, finalUrl, score, summary, findings[], psi|null }
+ * Body: { "url": "https://example.com", "adminKey"?, "compare"? }
+ * Returns: { ok, finalUrl, score, summary, summarySource, variant, findings[], psi|null }
  *
  * Server-side because: SSRF-guarded outbound fetch, response-size caps and
  * per-IP throttling must not run in the visitor's browser. No persistent
  * storage — nothing about the audited site is kept after the response.
+ *
+ * v2 — optional AI summary layer (degrades to the template without config):
+ *   LLM_API_KEY      secret; enables AI summaries (Nous portal / OpenRouter key)
+ *   LLM_BASE_URL     OpenAI-compatible base, default https://inference-api.nousresearch.com/v1
+ *   LLM_MODELS       comma list, default "deepseek/deepseek-v4-flash,nousresearch/hermes-4-70b" — random A/B per audit
+ *   LLM_MONTHLY_CAP  max AI calls per calendar month (default 3000; enforced when RATE_KV is bound)
+ *   ADMIN_KEY        with body.adminKey + body.compare, runs ALL models side by side (QA mode)
+ *   RATE_KV          optional KV binding for the monthly AI-call budget
  */
+import { pickModel, buildLlmMessages, callLlm } from '../_lib/llm.mjs';
 
 const MAX_BODY_BYTES = 1_500_000;
 const FETCH_TIMEOUT_MS = 10_000;
@@ -25,8 +34,9 @@ export async function onRequestPost(context) {
   }
 
   let target;
+  let body = {};
   try {
-    const body = await context.request.json();
+    body = await context.request.json();
     target = normalizeUrl(String(body.url || ''));
   } catch {
     return json({ ok: false, error: 'bad_request', message: 'Send JSON: {"url": "https://example.com"}' }, 400);
@@ -67,16 +77,74 @@ export async function onRequestPost(context) {
     }
   } catch { /* PSI is best-effort */ }
 
-  const { score, summary } = scoreAndSummarize(findings, page);
+  const { score, summary: templateSummary } = scoreAndSummarize(findings, page);
 
-  return json({
+  // --- AI summary layer (A/B between configured models; template is the fallback) ---
+  const env = context.env || {};
+  const isAdmin = Boolean(env.ADMIN_KEY && body.adminKey === env.ADMIN_KEY);
+  let summary = templateSummary;
+  let summarySource = 'template';
+  let variant = null;
+  let modelUsed = null;
+  let usage = null;
+  let compare = null;
+
+  if (env.LLM_API_KEY && (await llmBudgetOk(env))) {
+    const models = String(env.LLM_MODELS || 'deepseek/deepseek-v4-flash,nousresearch/hermes-4-70b')
+      .split(',').map((s) => s.trim()).filter(Boolean);
+    const messages = buildLlmMessages(findings, page.finalUrl, score);
+    if (isAdmin && body.compare) {
+      compare = await Promise.all(models.map(async (m) => {
+        const r = await callLlm(env, m, messages);
+        return { model: m, summary: r.text || null, error: r.error || null, usage: r.usage || null };
+      }));
+      const first = compare.find((c) => c.summary);
+      if (first) { summary = first.summary; summarySource = 'llm'; }
+    } else {
+      const idx = Math.floor(Math.random() * models.length);
+      modelUsed = pickModel(models, idx / models.length);
+      const r = await callLlm(env, modelUsed, messages);
+      if (r.text) {
+        summary = r.text;
+        summarySource = 'llm';
+        variant = String.fromCharCode(65 + idx); // 'A' | 'B' | ...
+        usage = r.usage;
+      }
+    }
+  }
+
+  const payload = {
     ok: true,
     finalUrl: page.finalUrl,
     score,
     summary,
+    summarySource,
+    variant,
     findings: findings.sort((a, b) => sevRank(b.severity) - sevRank(a.severity)),
     psi,
-  });
+  };
+  if (isAdmin) {
+    payload.model = modelUsed;
+    payload.usage = usage;
+    if (compare) payload.compare = compare;
+  }
+  return json(payload);
+}
+
+// Monthly AI-call budget. Without a KV binding we allow (per-IP limiting +
+// a provider-side key limit are the backstop); with KV the cap is global.
+async function llmBudgetOk(env) {
+  const kv = env.RATE_KV;
+  if (!kv) return true;
+  try {
+    const monthKey = 'llm:' + new Date().toISOString().slice(0, 7);
+    const used = Number((await kv.get(monthKey)) || 0);
+    if (used >= Number(env.LLM_MONTHLY_CAP || 3000)) return false;
+    await kv.put(monthKey, String(used + 1), { expirationTtl: 3_200_000 });
+    return true;
+  } catch {
+    return true;
+  }
 }
 
 /* ---------------- helpers ---------------- */
