@@ -197,37 +197,37 @@
     <main id="audit-tool" class="relative pt-32 pb-20 px-0 min-h-screen overflow-x-hidden bg-obsidian text-charcoal">
 
       <!-- Hero + form -->
-      <section class="max-w-4xl mx-auto px-6">
+      <section class="max-w-6xl mx-auto px-6">
         <div class="font-mono text-[10px] tracking-[0.4em] uppercase text-primary-glow mb-4">// FREE_WEBSITE_AUDIT</div>
-        <h1 class="font-display text-4xl md:text-6xl text-white leading-tight mb-6">Is your website quietly <span class="text-accent text-glow">losing you customers?</span></h1>
-        <p class="text-lg text-white/70 max-w-2xl mb-4">Paste your address below. In about twenty seconds you get the same conversion-path check I run before every client build: broken click-to-call links, missing business schema, dead contact paths, mobile speed.</p>
-        <p class="text-sm text-white/50 max-w-2xl mb-10">No account, no obligation. It checks the page you submit — nothing is stored about your site after the report renders.</p>
+        <h1 class="font-display text-4xl md:text-6xl text-white leading-tight mb-6 max-w-4xl" data-i18n="pages.audit.hero_h1">Is your website quietly <span class="text-accent text-glow">losing you customers?</span></h1>
+        <p class="text-lg text-white/70 max-w-2xl mb-4" data-i18n="pages.audit.hero_p1">Paste your address below. In about twenty seconds you get the same conversion-path check I run before every client build: broken click-to-call links, missing business schema, dead contact paths, mobile speed.</p>
+        <p class="text-sm text-white/50 max-w-2xl mb-10" data-i18n="pages.audit.hero_p2">No account, no obligation. It checks the page you submit — nothing is stored about your site after the report renders.</p>
 
-        <form id="audit-form" class="glass-panel rounded-lg p-6 md:p-8 border-l-4 border-l-primary/50" novalidate>
-          <label for="audit-url" class="block font-mono text-[10px] tracking-[0.3em] uppercase text-white/60 mb-3">Your website address</label>
+        <form id="audit-form" class="glass-panel rounded-lg p-6 md:p-8 border-l-4 border-l-primary/50 max-w-3xl" novalidate>
+          <label for="audit-url" class="block font-mono text-[10px] tracking-[0.3em] uppercase text-white/60 mb-3" data-i18n="pages.audit.form_label">Your website address</label>
           <div class="flex flex-col md:flex-row gap-4">
-            <input id="audit-url" name="url" type="url" required placeholder="https://your-business.md"
+            <input id="audit-url" name="url" type="url" required placeholder="https://your-business.md" data-i18n-attr="placeholder:pages.audit.form_placeholder"
                    class="flex-1 bg-white/5 border border-white/15 rounded-md px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-primary font-mono text-sm" />
-            <button id="audit-submit" type="submit"
+            <button id="audit-submit" type="submit" data-i18n="pages.audit.form_submit"
                     class="bg-primary hover:bg-primary/90 text-white font-semibold rounded-md px-8 py-3 transition-colors whitespace-nowrap">
               Run the free audit
             </button>
           </div>
           <p id="audit-error" class="text-sm mt-3 hidden" style="color:#ff7a7a"></p>
-          <p class="text-[11px] text-white/35 mt-4">By running the audit you agree to our <a href="privacy.html" class="underline hover:text-white/60">privacy policy</a>. One page is fetched once to produce the report; nothing else is touched.</p>
+          <p class="text-[11px] text-white/35 mt-4" data-i18n="pages.audit.form_privacy">By running the audit you agree to our <a href="privacy.html" class="underline hover:text-white/60">privacy policy</a>. One page is fetched once to produce the report; nothing else is touched.</p>
         </form>
 
         <!-- progress -->
-        <div id="audit-status" class="hidden mt-10 glass-panel rounded-lg p-6 text-center">
+        <div id="audit-status" class="hidden mt-10 glass-panel rounded-lg p-6 text-center max-w-3xl">
           <div class="inline-block w-8 h-8 rounded-full border-t-2 border-primary animate-spin mb-4"></div>
-          <p id="audit-status-text" class="font-mono text-xs tracking-[0.25em] uppercase text-white/60">Fetching your page…</p>
+          <p id="audit-status-text" class="font-mono text-xs tracking-[0.25em] uppercase text-white/60" data-i18n="pages.audit.status_text">Fetching your page…</p>
         </div>
 
         <!-- results -->
-        <div id="audit-results" class="hidden mt-10">
+        <div id="audit-results" class="hidden mt-10 max-w-4xl">
           <div class="glass-panel rounded-lg p-6 md:p-8 mb-6 flex flex-col md:flex-row md:items-center gap-6">
             <div class="text-center md:text-left">
-              <div class="font-mono text-[10px] tracking-[0.3em] uppercase text-white/50 mb-2">Conversion-path score</div>
+              <div class="font-mono text-[10px] tracking-[0.3em] uppercase text-white/50 mb-2" data-i18n="pages.audit.score_label">Conversion-path score</div>
               <div><span id="audit-score" class="font-display text-6xl text-white">—</span><span class="text-white/40 text-xl">/100</span></div>
             </div>
             <p id="audit-summary" class="text-white/75 text-base md:text-lg flex-1"></p>
@@ -237,26 +237,26 @@
 
           <!-- email gate for the locked tail -->
           <div id="audit-gate" class="hidden glass-panel rounded-lg p-6 md:p-8 mt-6 border-l-4 border-l-accent/60">
-            <h3 class="font-display text-2xl text-white mb-2">Unlock the remaining findings</h3>
-            <p class="text-white/60 text-sm mb-5"><span id="audit-locked-count">0</span> more findings are ready, with the fix priority I would use. Leave an email and they unlock right here — and you get the full report in your inbox.</p>
+            <h3 class="font-display text-2xl text-white mb-2" data-i18n="pages.audit.gate_title">Unlock the remaining findings</h3>
+            <p class="text-white/60 text-sm mb-5" data-i18n="pages.audit.gate_p"><span id="audit-locked-count">0</span> more findings are ready, with the fix priority I would use. Leave an email and they unlock right here — and you get the full report in your inbox.</p>
             <div class="flex flex-col md:flex-row gap-4">
-              <input id="audit-email" type="email" required placeholder="you@company.com"
+              <input id="audit-email" type="email" required placeholder="you@company.com" data-i18n-attr="placeholder:pages.audit.gate_email_ph"
                      class="flex-1 bg-white/5 border border-white/15 rounded-md px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-primary font-mono text-sm" />
-              <button id="audit-unlock" type="button"
+              <button id="audit-unlock" type="button" data-i18n="pages.audit.gate_btn"
                       class="bg-accent hover:bg-accent/90 text-white font-semibold rounded-md px-8 py-3 transition-colors whitespace-nowrap">Unlock full report</button>
             </div>
             <label class="flex items-start gap-2 text-[11px] text-white/40 mt-4 cursor-pointer">
               <input id="audit-consent" type="checkbox" class="mt-[2px]">
-              <span>I agree to receive the report and occasional practical notes by email. No spam, unsubscribe anytime. <a href="privacy.html" class="underline hover:text-white/60">Privacy</a>.</span>
+              <span data-i18n="pages.audit.gate_consent">I agree to receive the report and occasional practical notes by email. No spam, unsubscribe anytime. <a href="privacy.html" class="underline hover:text-white/60">Privacy</a>.</span>
             </label>
             <p id="audit-gate-error" class="text-sm mt-3 hidden" style="color:#ff7a7a"></p>
           </div>
 
           <!-- post-audit CTA -->
           <div class="glass-panel rounded-lg p-6 md:p-8 mt-6 text-center">
-            <h3 class="font-display text-2xl text-white mb-3">Want these fixed instead of just listed?</h3>
-            <p class="text-white/60 text-sm max-w-xl mx-auto mb-6">Most of what this tool finds is one focused work session for me. Fixed price, agreed before anything starts — no surprises, no retainers required.</p>
-            <a href="contact.html?objective=audit" class="inline-block bg-primary hover:bg-primary/90 text-white font-semibold rounded-md px-10 py-4 transition-colors">Talk to me about the fixes</a>
+            <h3 class="font-display text-2xl text-white mb-3" data-i18n="pages.audit.cta_title">Want these fixed instead of just listed?</h3>
+            <p class="text-white/60 text-sm max-w-xl mx-auto mb-6" data-i18n="pages.audit.cta_p">Most of what this tool finds is one focused work session for me. Fixed price, agreed before anything starts — no surprises, no retainers required.</p>
+            <a href="contact.html?objective=audit" class="inline-block bg-primary hover:bg-primary/90 text-white font-semibold rounded-md px-10 py-4 transition-colors" data-i18n="pages.audit.cta_btn">Talk to me about the fixes</a>
           </div>
         </div>
       </section>
@@ -264,22 +264,22 @@
       <!-- What gets checked -->
       <section class="max-w-6xl mx-auto px-6 mt-24">
         <div class="font-mono text-[10px] tracking-[0.4em] uppercase text-primary-glow mb-4">// WHAT_GETS_CHECKED</div>
-        <h2 class="font-display text-3xl md:text-4xl text-white mb-10">The defects that lose enquiries silently</h2>
+        <h2 class="font-display text-3xl md:text-4xl text-white mb-10" data-i18n="pages.audit.checks_h2">The defects that lose enquiries silently</h2>
         <div class="grid md:grid-cols-3 gap-6">
-          <div class="glass-panel rounded-lg p-6"><span class="material-symbols-outlined text-3xl text-accent mb-3">call</span><h3 class="text-white font-semibold mb-2">Click-to-call links</h3><p class="text-white/55 text-sm">Missing or broken tel: links are the most expensive silent defect for a service business — a real client of mine had six of them, all dead, on the day I checked.</p></div>
-          <div class="glass-panel rounded-lg p-6"><span class="material-symbols-outlined text-3xl text-accent mb-3">schema</span><h3 class="text-white font-semibold mb-2">Business schema</h3><p class="text-white/55 text-sm">The LocalBusiness markup Google Maps, local results and AI assistants read. Plus a check for self-serving star markup that risks a Google penalty.</p></div>
-          <div class="glass-panel rounded-lg p-6"><span class="material-symbols-outlined text-3xl text-accent mb-3">contact_mail</span><h3 class="text-white font-semibold mb-2">Contact paths</h3><p class="text-white/55 text-sm">Forms, email links, phone, contact page — can a ready-to-buy visitor actually reach you, and how many taps does it take?</p></div>
-          <div class="glass-panel rounded-lg p-6"><span class="material-symbols-outlined text-3xl text-accent mb-3">speed</span><h3 class="text-white font-semibold mb-2">Mobile speed</h3><p class="text-white/55 text-sm">Google PageSpeed scores on a mobile connection — performance score and how long your main content takes to appear.</p></div>
-          <div class="glass-panel rounded-lg p-6"><span class="material-symbols-outlined text-3xl text-accent mb-3">travel_explore</span><h3 class="text-white font-semibold mb-2">Search snippet basics</h3><p class="text-white/55 text-sm">Title, meta description, Open Graph previews — what your listing looks like in Google and in a WhatsApp share.</p></div>
-          <div class="glass-panel rounded-lg p-6"><span class="material-symbols-outlined text-3xl text-accent mb-3">translate</span><h3 class="text-white font-semibold mb-2">Multilingual hygiene</h3><p class="text-white/55 text-sm">hreflang and language declarations — done half-way they do nothing, which matters in RO/RU markets.</p></div>
+          <div class="glass-panel rounded-lg p-6"><span class="material-symbols-outlined text-3xl text-accent mb-3">call</span><h3 class="text-white font-semibold mb-2" data-i18n="pages.audit.card1_t">Click-to-call links</h3><p class="text-white/55 text-sm" data-i18n="pages.audit.card1_d">Missing or broken tel: links are the most expensive silent defect for a service business — a real client of mine had six of them, all dead, on the day I checked.</p></div>
+          <div class="glass-panel rounded-lg p-6"><span class="material-symbols-outlined text-3xl text-accent mb-3">schema</span><h3 class="text-white font-semibold mb-2" data-i18n="pages.audit.card2_t">Business schema</h3><p class="text-white/55 text-sm" data-i18n="pages.audit.card2_d">The LocalBusiness markup Google Maps, local results and AI assistants read. Plus a check for self-serving star markup that risks a Google penalty.</p></div>
+          <div class="glass-panel rounded-lg p-6"><span class="material-symbols-outlined text-3xl text-accent mb-3">contact_mail</span><h3 class="text-white font-semibold mb-2" data-i18n="pages.audit.card3_t">Contact paths</h3><p class="text-white/55 text-sm" data-i18n="pages.audit.card3_d">Forms, email links, phone, contact page — can a ready-to-buy visitor actually reach you, and how many taps does it take?</p></div>
+          <div class="glass-panel rounded-lg p-6"><span class="material-symbols-outlined text-3xl text-accent mb-3">speed</span><h3 class="text-white font-semibold mb-2" data-i18n="pages.audit.card4_t">Mobile speed</h3><p class="text-white/55 text-sm" data-i18n="pages.audit.card4_d">Google PageSpeed scores on a mobile connection — performance score and how long your main content takes to appear.</p></div>
+          <div class="glass-panel rounded-lg p-6"><span class="material-symbols-outlined text-3xl text-accent mb-3">travel_explore</span><h3 class="text-white font-semibold mb-2" data-i18n="pages.audit.card5_t">Search snippet basics</h3><p class="text-white/55 text-sm" data-i18n="pages.audit.card5_d">Title, meta description, Open Graph previews — what your listing looks like in Google and in a WhatsApp share.</p></div>
+          <div class="glass-panel rounded-lg p-6"><span class="material-symbols-outlined text-3xl text-accent mb-3">translate</span><h3 class="text-white font-semibold mb-2" data-i18n="pages.audit.card6_t">Multilingual hygiene</h3><p class="text-white/55 text-sm" data-i18n="pages.audit.card6_d">hreflang and language declarations — done half-way they do nothing, which matters in RO/RU markets.</p></div>
         </div>
       </section>
 
       <!-- Honesty note -->
-      <section class="max-w-4xl mx-auto px-6 mt-20">
-        <div class="glass-panel rounded-lg p-6 md:p-8 border-l-4 border-l-white/20">
-          <h2 class="font-display text-2xl text-white mb-3">What this audit will not tell you</h2>
-          <p class="text-white/60 text-sm leading-relaxed">It will not promise you traffic, rankings or a revenue number — nobody can promise those honestly from a single page scan. It finds <em>defects</em>: things that are measurably broken or missing on the page you submit, each one explained in plain language. What you do with the list — fix it yourself, hand it to your developer, or talk to me — is entirely your call.</p>
+      <section class="max-w-6xl mx-auto px-6 mt-20">
+        <div class="glass-panel rounded-lg p-6 md:p-8 border-l-4 border-l-white/20 max-w-4xl">
+          <h2 class="font-display text-2xl text-white mb-3" data-i18n="pages.audit.honesty_h2">What this audit will not tell you</h2>
+          <p class="text-white/60 text-sm leading-relaxed" data-i18n="pages.audit.honesty_p">It will not promise you traffic, rankings or a revenue number — nobody can promise those honestly from a single page scan. It finds <em>defects</em>: things that are measurably broken or missing on the page you submit, each one explained in plain language. What you do with the list — fix it yourself, hand it to your developer, or talk to me — is entirely your call.</p>
         </div>
       </section>
 
