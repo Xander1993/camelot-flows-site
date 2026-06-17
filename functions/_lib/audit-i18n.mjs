@@ -54,19 +54,138 @@ const FINDINGS = {
   }
 };
 
+// Per-id one-line fix instruction. EN is the source; ro/ru fall back to en.
+const FIX = {
+  en: {
+    https: 'Install a free SSL certificate (most hosts do it in one click) and force https://.',
+    tel_missing: 'Wrap the number in a tel: link, e.g. <a href="tel:+373...">.',
+    tel_broken: 'Fix the tel: targets to digits only with the country code (tel:+373...).',
+    no_contact_path: 'Add a contact form or a tappable phone/email high on the page.',
+    no_schema: 'Add LocalBusiness JSON-LD with name, address, phone and opening hours.',
+    no_business_schema: 'Add a LocalBusiness or Organization block to your existing schema.',
+    self_rating: 'Remove aggregateRating from your own entity; keep reviews on third-party platforms.',
+    no_title: 'Add a <title> with your business + main service + city.',
+    thin_title: 'Expand the title to business + main service + city (50-60 characters).',
+    no_meta_desc: 'Write a ~150-character meta description that sells the click.',
+    no_og: 'Add og:title, og:description and og:image so shared links show a preview.',
+    no_viewport: 'Add <meta name="viewport" content="width=device-width, initial-scale=1">.',
+    no_h1: 'Add a single H1 that states what the page is about.',
+    hreflang_single: 'Declare every language version plus an x-default, or remove the lone tag.',
+    no_lang: 'Set <html lang="..."> to the page language.',
+    no_favicon: 'Add a favicon (<link rel="icon">) — most builders have a one-click upload.',
+    slow_mobile: 'Compress images, defer non-critical scripts, enable caching/CDN.',
+    mediocre_mobile: 'Trim image weight and unused scripts to claw back the easy seconds.',
+    lcp: 'Optimize the largest image/banner: compress it, size it right, preload it.'
+  },
+  ro: {
+    https: 'Instalează un certificat SSL gratuit (majoritatea hostingurilor o fac dintr-un clic) și forțează https://.',
+    tel_missing: 'Pune numărul într-un link tel:, ex. <a href="tel:+373...">.',
+    tel_broken: 'Corectează țintele tel: la doar cifre cu prefixul de țară (tel:+373...).',
+    no_contact_path: 'Adaugă un formular de contact sau un telefon/email apăsabil sus pe pagină.',
+    no_schema: 'Adaugă JSON-LD LocalBusiness cu nume, adresă, telefon și program.',
+    no_business_schema: 'Adaugă un bloc LocalBusiness sau Organization la schema existentă.',
+    self_rating: 'Scoate aggregateRating de pe propria entitate; ține recenziile pe platforme terțe.',
+    no_title: 'Adaugă un <title> cu afacerea + serviciul principal + orașul.',
+    thin_title: 'Extinde titlul la afacere + serviciu principal + oraș (50-60 caractere).',
+    no_meta_desc: 'Scrie o meta description de ~150 de caractere care vinde click-ul.',
+    no_og: 'Adaugă og:title, og:description și og:image ca linkurile partajate să arate o previzualizare.',
+    no_viewport: 'Adaugă <meta name="viewport" content="width=device-width, initial-scale=1">.',
+    no_h1: 'Adaugă un singur H1 care spune despre ce e pagina.',
+    hreflang_single: 'Declară fiecare versiune de limbă plus un x-default, sau scoate tag-ul singular.',
+    no_lang: 'Setează <html lang="..."> la limba paginii.',
+    no_favicon: 'Adaugă un favicon (<link rel="icon">) — majoritatea platformelor au upload dintr-un clic.',
+    slow_mobile: 'Comprimă imaginile, amână scripturile necritice, activează caching/CDN.',
+    mediocre_mobile: 'Reduce greutatea imaginilor și scripturile nefolosite ca să recuperezi secundele ușoare.',
+    lcp: 'Optimizează imaginea/bannerul cel mai mare: comprimă, dimensionează corect, fă-i preload.'
+  },
+  ru: {
+    https: 'Установите бесплатный SSL-сертификат (у большинства хостингов это в один клик) и принудительно включите https://.',
+    tel_missing: 'Оберните номер в ссылку tel:, напр. <a href="tel:+373...">.',
+    tel_broken: 'Исправьте адреса tel: на только цифры с кодом страны (tel:+373...).',
+    no_contact_path: 'Добавьте форму контакта или кликабельный телефон/email вверху страницы.',
+    no_schema: 'Добавьте JSON-LD LocalBusiness с названием, адресом, телефоном и часами работы.',
+    no_business_schema: 'Добавьте блок LocalBusiness или Organization к существующей схеме.',
+    self_rating: 'Уберите aggregateRating со своей сущности; отзывы держите на сторонних площадках.',
+    no_title: 'Добавьте <title> с бизнесом + основной услугой + городом.',
+    thin_title: 'Расширьте title до бизнес + основная услуга + город (50-60 символов).',
+    no_meta_desc: 'Напишите meta description ~150 символов, продающую клик.',
+    no_og: 'Добавьте og:title, og:description и og:image, чтобы у ссылок было превью.',
+    no_viewport: 'Добавьте <meta name="viewport" content="width=device-width, initial-scale=1">.',
+    no_h1: 'Добавьте один H1, который говорит, о чём страница.',
+    hreflang_single: 'Объявите все языковые версии плюс x-default или уберите одиночный тег.',
+    no_lang: 'Задайте <html lang="..."> языку страницы.',
+    no_favicon: 'Добавьте favicon (<link rel="icon">) — у большинства конструкторов загрузка в один клик.',
+    slow_mobile: 'Сожмите изображения, отложите некритичные скрипты, включите кеширование/CDN.',
+    mediocre_mobile: 'Уменьшите вес картинок и неиспользуемые скрипты, чтобы вернуть лёгкие секунды.',
+    lcp: 'Оптимизируйте самое большое изображение/баннер: сжатие, правильный размер, preload.'
+  }
+};
+
+// Rough effort per id (a code token) and its localized label.
+const EFFORT = {
+  https: '30m', tel_missing: '15m', tel_broken: '15m', no_contact_path: '1h', no_schema: '1h',
+  no_business_schema: '30m', self_rating: '15m', no_title: '10m', thin_title: '10m', no_meta_desc: '15m',
+  no_og: '20m', no_viewport: '5m', no_h1: '10m', hreflang_single: '30m', no_lang: '5m', no_favicon: '10m',
+  slow_mobile: 'halfday', mediocre_mobile: '2h', lcp: '2h'
+};
+const EFFORT_LABEL = {
+  en: { '5m': '5 min', '10m': '10 min', '15m': '15 min', '20m': '20 min', '30m': '30 min', '1h': '1 hour', '2h': '2 hours', halfday: 'half a day' },
+  ro: { '5m': '5 min', '10m': '10 min', '15m': '15 min', '20m': '20 min', '30m': '30 min', '1h': '1 oră', '2h': '2 ore', halfday: 'o jumătate de zi' },
+  ru: { '5m': '5 мин', '10m': '10 мин', '15m': '15 мин', '20m': '20 мин', '30m': '30 мин', '1h': '1 час', '2h': '2 часа', halfday: 'полдня' }
+};
+
+// "What's already right" — labels for checks that passed.
+const PASSED = {
+  en: {
+    https: 'Secure HTTPS connection', tappable_phone: 'Tappable phone number', contact: 'Clear way to get in touch',
+    schema: 'Structured data present', business_schema: 'Business identity in schema', title: 'Page title set',
+    meta_desc: 'Meta description present', og: 'Social share preview tags', viewport: 'Mobile-ready viewport',
+    h1: 'Clear H1 heading', lang: 'Page language declared', favicon: 'Favicon present', fast_mobile: 'Fast on mobile'
+  },
+  ro: {
+    https: 'Conexiune HTTPS securizată', tappable_phone: 'Număr de telefon apăsabil', contact: 'Cale clară de contact',
+    schema: 'Date structurate prezente', business_schema: 'Identitatea afacerii în schema', title: 'Titlu de pagină setat',
+    meta_desc: 'Meta description prezentă', og: 'Tag-uri de previzualizare la partajare', viewport: 'Viewport pregătit pentru mobil',
+    h1: 'Titlu H1 clar', lang: 'Limba paginii declarată', favicon: 'Favicon prezent', fast_mobile: 'Rapid pe mobil'
+  },
+  ru: {
+    https: 'Защищённое HTTPS-соединение', tappable_phone: 'Кликабельный номер телефона', contact: 'Понятный способ связаться',
+    schema: 'Структурированные данные есть', business_schema: 'Идентификация бизнеса в схеме', title: 'Заголовок страницы задан',
+    meta_desc: 'Meta description присутствует', og: 'Теги превью для шаринга', viewport: 'Viewport готов к мобильным',
+    h1: 'Чёткий заголовок H1', lang: 'Язык страницы указан', favicon: 'Favicon присутствует', fast_mobile: 'Быстро на мобильном'
+  }
+};
+
 function interp(s, vars) {
   if (!vars) return s;
   return s.replace(/\{(\w+)\}/g, (m, k) => (k in vars && vars[k] != null ? String(vars[k]) : m));
 }
 
 export function localizeFindings(findings, lang) {
-  const dict = FINDINGS[lang];
-  if (!dict) return findings;
-  return findings.map((x) => {
-    const t = dict[x.id];
-    if (!t) return x; // EN fallback for any id not yet translated
-    return { id: x.id, severity: x.severity, title: interp(t.title, x.vars), detail: interp(t.detail, x.vars), vars: x.vars };
+  const dict = FINDINGS[lang] || null; // null for en — title/detail come from the API inline
+  const fixDict = FIX[lang] || FIX.en;
+  const effLabel = EFFORT_LABEL[lang] || EFFORT_LABEL.en;
+  return (findings || []).map((x) => {
+    const t = dict && dict[x.id];
+    const out = {
+      id: x.id,
+      severity: x.severity,
+      title: t ? interp(t.title, x.vars) : x.title,
+      detail: t ? interp(t.detail, x.vars) : x.detail,
+      vars: x.vars,
+    };
+    const fix = fixDict[x.id] || FIX.en[x.id];
+    if (fix) out.fix = interp(fix, x.vars);
+    const tok = EFFORT[x.id];
+    if (tok) out.effort = effLabel[tok] || EFFORT_LABEL.en[tok];
+    return out;
   });
+}
+
+// "What's already right" — map passed check ids to localized labels.
+export function localizePassed(passed, lang) {
+  const dict = PASSED[lang] || PASSED.en;
+  return (passed || []).map((id) => ({ id, label: dict[id] || PASSED.en[id] || id }));
 }
 
 // Localized template summary (fallback when the LLM summary is not used).

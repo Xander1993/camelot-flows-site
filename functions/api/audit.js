@@ -2,7 +2,8 @@
  * POST /api/audit  — free conversion-path website audit.
  *
  * Body: { "url": "https://example.com", "adminKey"?, "compare"? }
- * Returns: { ok, finalUrl, score, summary, summarySource, variant, findings[], psi|null }
+ * Returns: { ok, finalUrl, score, summary, summarySource, variant, findings[], passed[], speedPending }
+ * Mobile speed is a separate phase-2 call — see functions/api/audit-speed.js.
  *
  * Server-side because: SSRF-guarded outbound fetch, response-size caps and
  * per-IP throttling must not run in the visitor's browser. No persistent
@@ -17,11 +18,11 @@
  *   RATE_KV          optional KV binding for the monthly AI-call budget
  */
 import { pickModel, buildLlmMessages, callLlm } from '../_lib/llm.mjs';
-import { pickLang, localizeFindings, localizedSummary, errMsg } from '../_lib/audit-i18n.mjs';
+import { pickLang, localizeFindings, localizePassed, localizedSummary, errMsg } from '../_lib/audit-i18n.mjs';
+import { normalizeUrl, ssrfBlocked } from '../_lib/audit-net.mjs';
 
 const MAX_BODY_BYTES = 1_500_000;
 const FETCH_TIMEOUT_MS = 10_000;
-const PSI_TIMEOUT_MS = 12_000;
 const MAX_REDIRECTS = 4;
 const RATE_LIMIT = 5; // requests per IP per window
 const RATE_WINDOW_MS = 60_000;
@@ -59,31 +60,13 @@ export async function onRequestPost(context) {
     return json({ ok: false, error: 'fetch_failed', message: errMsg('fetch_prefix', lang, 'Could not load that site') + ' (' + (e && e.message ? e.message : 'network error') + '). ' + errMsg('fetch_suffix', lang, 'Is it online and public?') }, 502);
   }
 
-  const findings = runChecks(page);
-
-  // PageSpeed Insights (free API) — optional, never blocks the audit.
-  let psi = null;
-  try {
-    psi = await fetchPsi(page.finalUrl);
-    if (psi) {
-      if (psi.performance !== null && psi.performance < 50) {
-        findings.push(f('slow_mobile', 'high', 'Slow on mobile',
-          'Google PageSpeed scores this page ' + psi.performance + '/100 on a mobile connection. Visitors on phones bounce before slow pages finish loading.',
-          { perf: psi.performance }));
-      } else if (psi.performance !== null && psi.performance < 80) {
-        findings.push(f('mediocre_mobile', 'medium', 'Mobile speed has headroom',
-          'Mobile performance score is ' + psi.performance + '/100. Not broken, but every second of load time costs conversions.',
-          { perf: psi.performance }));
-      }
-      if (psi.lcp_ms !== null && psi.lcp_ms > 4000) {
-        findings.push(f('lcp', 'high', 'Main content takes ' + (psi.lcp_ms / 1000).toFixed(1) + 's to appear (LCP)',
-          'Largest Contentful Paint above 4 seconds is in Google’s “poor” band — it hurts both rankings and patience.',
-          { secs: (psi.lcp_ms / 1000).toFixed(1) }));
-      }
-    }
-  } catch { /* PSI is best-effort */ }
+  // Mobile speed (PageSpeed Insights) is measured in a separate phase-2 call
+  // (/api/audit-speed) so this response is fast and never blocks on Google's
+  // 15-30s API. The client streams the speed card in and adjusts the score.
+  const { findings, passed } = runChecks(page);
 
   const findingsL = localizeFindings(findings, lang);
+  const passedL = localizePassed(passed, lang);
   const { score, summary: enSummary } = scoreAndSummarize(findingsL, page);
   const templateSummary = lang === 'en' ? enSummary : (localizedSummary(findingsL, lang) || enSummary);
 
@@ -129,7 +112,8 @@ export async function onRequestPost(context) {
     summarySource,
     variant,
     findings: findingsL.sort((a, b) => sevRank(b.severity) - sevRank(a.severity)),
-    psi,
+    passed: passedL,
+    speedPending: true,
   };
   if (isAdmin) {
     payload.model = modelUsed;
@@ -172,41 +156,6 @@ function rateLimited(ip) {
   ipHits.set(ip, fresh);
   if (ipHits.size > 5000) ipHits.clear(); // memory guard
   return fresh.length > RATE_LIMIT;
-}
-
-function normalizeUrl(raw) {
-  let s = raw.trim();
-  if (!s) return null;
-  if (!/^https?:\/\//i.test(s)) s = 'https://' + s;
-  let u;
-  try { u = new URL(s); } catch { return null; }
-  if (u.protocol !== 'http:' && u.protocol !== 'https:') return null;
-  if (u.username || u.password) return null;
-  return u;
-}
-
-function ssrfBlocked(u) {
-  const host = u.hostname.toLowerCase();
-  if (u.port && u.port !== '80' && u.port !== '443') return 'Only standard web ports are audited.';
-  if (host === 'localhost' || host.endsWith('.localhost') || host.endsWith('.local') ||
-      host.endsWith('.internal') || host.endsWith('.lan') || !host.includes('.')) {
-    return 'Internal or local addresses cannot be audited.';
-  }
-  // IPv6 literal
-  if (host.startsWith('[') || host.includes(':')) return 'IP-literal addresses cannot be audited — use the domain name.';
-  // IPv4 literal
-  const m = host.match(/^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/);
-  if (m) {
-    const a = +m[1], b = +m[2];
-    if (a === 10 || a === 127 || a === 0 ||
-        (a === 172 && b >= 16 && b <= 31) ||
-        (a === 192 && b === 168) ||
-        (a === 169 && b === 254) || a >= 224) {
-      return 'Private or reserved network addresses cannot be audited.';
-    }
-    return 'IP addresses cannot be audited — use the domain name.';
-  }
-  return null;
 }
 
 async function guardedFetch(startUrl) {
@@ -266,27 +215,32 @@ function runChecks(page) {
   const html = page.html;
   const lower = html.toLowerCase();
   const findings = [];
+  const passed = [];
 
   // -- HTTPS --
   if (!page.https) {
     findings.push(f('https', 'high', 'Site served over plain HTTP',
       'Browsers mark the site “Not secure” next to your business name. This alone turns visitors away.'));
+  } else {
+    passed.push('https');
   }
 
   // -- click-to-call --
   const telLinks = [...html.matchAll(/href\s*=\s*["']tel:([^"']*)["']/gi)].map((x) => x[1].trim());
   const phonePattern = /(?:\+?\d[\d\s().-]{7,}\d)/;
   const visiblePhone = phonePattern.test(html.replace(/<script[\s\S]*?<\/script>/gi, ''));
+  const brokenTel = telLinks.filter((t) => !t || /[^\d+()\-. %]/.test(t) || t.replace(/\D/g, '').length < 6);
   if (telLinks.length === 0 && visiblePhone) {
     findings.push(f('tel_missing', 'high', 'Phone number is not tappable',
       'A phone number appears on the page but it is not a tel: link. On mobile — where most local customers are — they have to memorize and retype it. Calls are lost exactly there.'));
   }
-  const brokenTel = telLinks.filter((t) => !t || /[^\d+()\-. %]/.test(t) || t.replace(/\D/g, '').length < 6);
   if (brokenTel.length > 0) {
     const bvals = brokenTel.slice(0, 3).map((t) => '“' + (t || 'empty') + '”').join(', ');
     findings.push(f('tel_broken', 'high', brokenTel.length + ' broken click-to-call link' + (brokenTel.length > 1 ? 's' : ''),
       'tel: links exist but their targets are malformed (' + bvals + '). Tapping them does nothing — the most expensive kind of silent defect for a service business.',
       { count: brokenTel.length, vals: bvals }));
+  } else if (telLinks.length > 0) {
+    passed.push('tappable_phone');
   }
 
   // -- contact path --
@@ -296,6 +250,8 @@ function runChecks(page) {
   if (!hasForm && !hasMailto && telLinks.length === 0 && !hasContactLink) {
     findings.push(f('no_contact_path', 'high', 'No obvious way to contact you',
       'No form, no email link, no tappable phone, no contact page link found on this page. A visitor who is ready to buy has to work to reach you — most won’t.'));
+  } else {
+    passed.push('contact');
   }
 
   // -- structured data --
@@ -318,16 +274,21 @@ function runChecks(page) {
   if (ldBlocks.length === 0) {
     findings.push(f('no_schema', 'medium', 'No structured data at all',
       'Google and AI assistants read schema.org markup to understand who you are, where you operate and what you sell. Without it you are a plain wall of text to them.'));
-  } else if (!hasLocalBusiness && !hasOrg) {
-    findings.push(f('no_business_schema', 'medium', 'No LocalBusiness / Organization schema',
-      'Structured data exists but nothing identifies the business itself — name, area served, phone. That is the block local search and AI assistants actually use.'));
+  } else {
+    passed.push('schema');
+    if (!hasLocalBusiness && !hasOrg) {
+      findings.push(f('no_business_schema', 'medium', 'No LocalBusiness / Organization schema',
+        'Structured data exists but nothing identifies the business itself — name, area served, phone. That is the block local search and AI assistants actually use.'));
+    } else {
+      passed.push('business_schema');
+    }
   }
   if (hasSelfRating) {
     findings.push(f('self_rating', 'medium', 'Self-serving star rating markup',
       'aggregateRating on your own business entity violates Google’s structured-data guidelines and can earn a manual action. Stars belong on third-party review platforms.'));
   }
 
-  // -- title / meta description / OG --
+  // -- title --
   const titleM = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
   const title = titleM ? titleM[1].trim() : '';
   if (!title) {
@@ -337,20 +298,32 @@ function runChecks(page) {
     findings.push(f('thin_title', 'low', 'Page title is very short (“' + title.slice(0, 40) + '”)',
       'Short generic titles waste the single most valuable SEO field on the page.',
       { title: title.slice(0, 40) }));
+  } else {
+    passed.push('title');
   }
+
+  // -- meta description --
   if (!/<meta[^>]+name\s*=\s*["']description["'][^>]*content\s*=\s*["'][^"']{20,}/i.test(html)) {
     findings.push(f('no_meta_desc', 'medium', 'Missing meta description',
       'This is the sales copy under your Google listing. When absent, Google picks a random sentence — rarely the one that sells.'));
+  } else {
+    passed.push('meta_desc');
   }
+
+  // -- Open Graph --
   if (!/<meta[^>]+property\s*=\s*["']og:title["']/i.test(html)) {
     findings.push(f('no_og', 'low', 'No social sharing tags (Open Graph)',
       'When someone shares your site in WhatsApp, Viber or Facebook, the preview is blank or random. Shares without previews get fewer clicks.'));
+  } else {
+    passed.push('og');
   }
 
   // -- mobile viewport --
   if (!/<meta[^>]+name\s*=\s*["']viewport["']/i.test(html)) {
     findings.push(f('no_viewport', 'high', 'Not mobile-ready (no viewport tag)',
       'Without a viewport meta tag, phones render the desktop layout zoomed out. Most local-business traffic is mobile.'));
+  } else {
+    passed.push('viewport');
   }
 
   // -- h1 --
@@ -358,6 +331,8 @@ function runChecks(page) {
   if (h1Count === 0) {
     findings.push(f('no_h1', 'low', 'No H1 heading',
       'Search engines treat the H1 as the page’s topic statement. Missing it weakens an easy relevance signal.'));
+  } else {
+    passed.push('h1');
   }
 
   // -- hreflang sanity (multilingual markets) --
@@ -370,35 +345,19 @@ function runChecks(page) {
   if (!langAttr) {
     findings.push(f('no_lang', 'low', 'Missing lang attribute on <html>',
       'Screen readers and search engines have to guess the page language.'));
+  } else {
+    passed.push('lang');
   }
 
   // -- favicon (small trust touch) --
   if (!/rel\s*=\s*["'](?:shortcut )?icon["']/i.test(html)) {
     findings.push(f('no_favicon', 'low', 'No favicon declared',
       'The browser-tab icon is a small thing — its absence reads as “unfinished” in a tab bar full of polished competitors.'));
+  } else {
+    passed.push('favicon');
   }
 
-  return findings;
-}
-
-async function fetchPsi(url) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), PSI_TIMEOUT_MS);
-  try {
-    const api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?strategy=mobile&category=performance&url=' + encodeURIComponent(url);
-    const res = await fetch(api, { signal: controller.signal });
-    if (!res.ok) return null;
-    const data = await res.json();
-    const lh = data.lighthouseResult || {};
-    const audits = lh.audits || {};
-    return {
-      performance: lh.categories && lh.categories.performance ? Math.round(lh.categories.performance.score * 100) : null,
-      lcp_ms: audits['largest-contentful-paint'] ? Math.round(audits['largest-contentful-paint'].numericValue) : null,
-      cls: audits['cumulative-layout-shift'] ? +audits['cumulative-layout-shift'].numericValue.toFixed(3) : null,
-    };
-  } finally {
-    clearTimeout(timer);
-  }
+  return { findings, passed };
 }
 
 function scoreAndSummarize(findings, page) {

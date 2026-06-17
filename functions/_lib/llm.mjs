@@ -38,7 +38,7 @@ export async function callLlm(env, model, messages) {
         'content-type': 'application/json',
         authorization: `Bearer ${env.LLM_API_KEY}`,
       },
-      body: JSON.stringify({ model, messages, max_tokens: 400, temperature: 0.4 }),
+      body: JSON.stringify({ model, messages, max_tokens: 650, temperature: 0.4 }),
     });
     if (!res.ok) return { error: 'LLM HTTP ' + res.status };
     const data = await res.json();

@@ -107,6 +107,25 @@
       [data-theme="cozy"] #audit-tool .text-primary-glow{color:var(--terracotta,#c4785c)}
       [data-theme="cozy"] #audit-tool input{background:rgba(31,38,34,.04);border-color:rgba(31,38,34,.18)}
       [data-theme="cozy"] #audit-tool input::placeholder{color:rgba(31,38,34,.4)}
+      /* --- Full-report UI: soft inner boxes, dividers, pass icons, benchmark bar (built CSS lacks these arbitrary utilities, so define them) --- */
+      #audit-tool .audit-soft{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.10);border-radius:.5rem}
+      [data-theme="cozy"] #audit-tool .audit-soft{background:rgba(31,38,34,.035);border-color:rgba(31,38,34,.12)}
+      #audit-tool .audit-divide{border-top:1px solid rgba(255,255,255,.10)}
+      [data-theme="cozy"] #audit-tool .audit-divide{border-top-color:rgba(31,38,34,.12)}
+      #audit-tool .audit-pass-ic{color:#5fae7a}
+      [data-theme="cozy"] #audit-tool .audit-pass-ic{color:#3f7a52}
+      #audit-tool .audit-track{background:rgba(255,255,255,.10)}
+      [data-theme="cozy"] #audit-tool .audit-track{background:rgba(31,38,34,.10)}
+      /* --- Print / Save as PDF: show only the report, dark text on white --- */
+      @media print{
+        nav, footer, #audit-form, #audit-status, #audit-gate, #bg-orbs, .audit-noprint{display:none !important}
+        body{background:#fff !important}
+        #audit-tool{padding:0 !important}
+        #audit-results{margin-top:0 !important}
+        #audit-tool .glass-panel{background:#fff !important;box-shadow:none !important;border:1px solid #ddd !important}
+        #audit-tool, #audit-tool h1, #audit-tool h2, #audit-tool h3, #audit-tool p, #audit-tool span, #audit-tool li, #audit-tool div{color:#111 !important}
+        #audit-tool .audit-pass-ic{color:#2e7d4f !important}
+      }
     </style>
 </head>
 
@@ -245,35 +264,76 @@
 
         <!-- results -->
         <div id="audit-results" class="hidden mt-10 max-w-4xl">
-          <div class="glass-panel rounded-lg p-6 md:p-8 mb-6 flex flex-col md:flex-row md:items-center gap-6">
-            <div class="text-center md:text-left">
-              <div class="font-mono text-[10px] tracking-[0.3em] uppercase text-white/50 mb-2" data-i18n="pages.audit.score_label">Conversion-path score</div>
-              <div><span id="audit-score" class="font-display text-6xl text-white">—</span><span class="text-white/40 text-xl">/100</span></div>
+          <!-- score / grade headline -->
+          <div class="glass-panel rounded-lg p-6 md:p-8 mb-6">
+            <div class="flex flex-col md:flex-row md:items-center gap-6">
+              <div class="text-center md:text-left shrink-0">
+                <div class="font-mono text-[10px] tracking-[0.3em] uppercase text-white/50 mb-2" data-i18n="pages.audit.score_label">Conversion-path score</div>
+                <div class="flex items-baseline gap-3 justify-center md:justify-start">
+                  <span id="audit-grade" class="font-display text-6xl leading-none" style="color:var(--terracotta,#c4785c)">—</span>
+                  <span><span id="audit-score" class="font-display text-3xl text-white">—</span><span class="text-white/40 text-lg">/100</span></span>
+                </div>
+                <div id="audit-band" class="font-mono text-[11px] tracking-[0.2em] uppercase mt-2"></div>
+              </div>
+              <p id="audit-summary" class="text-white/75 text-base md:text-lg flex-1"></p>
             </div>
-            <p id="audit-summary" class="text-white/75 text-base md:text-lg flex-1"></p>
+            <!-- benchmark vs a typical local-business site -->
+            <div id="audit-bench" class="hidden mt-6 pt-5 audit-divide">
+              <div class="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-white/40 mb-2">
+                <span data-i18n="pages.audit.bench_you">Your score</span>
+                <span id="audit-bench-typ"></span>
+              </div>
+              <div class="relative h-2 rounded-full audit-track">
+                <div id="audit-bench-fill" class="h-2 rounded-full transition-all duration-1000" style="width:0%;background:var(--terracotta,#c4785c)"></div>
+                <div id="audit-bench-marker" class="absolute -top-1 w-px h-4" style="left:68%;background:currentColor;opacity:.45"></div>
+              </div>
+            </div>
           </div>
 
+          <!-- what's already working -->
+          <div id="audit-passed" class="hidden glass-panel rounded-lg p-6 md:p-8 mb-6">
+            <h3 class="font-display text-xl text-white mb-4" data-i18n="pages.audit.passed_title">What is already working</h3>
+            <ul id="audit-passed-list" class="grid sm:grid-cols-2 gap-x-6 gap-y-2"></ul>
+          </div>
+
+          <!-- findings -->
           <ol id="audit-findings" class="space-y-4"></ol>
 
-          <!-- email gate for the locked tail -->
+          <!-- mobile speed measuring (phase 2) -->
+          <div id="audit-speed-pending" class="hidden glass-panel rounded-lg p-5 mt-4 flex items-center gap-3">
+            <span class="inline-block w-4 h-4 rounded-full border-t-2 border-primary animate-spin shrink-0"></span>
+            <span class="font-mono text-xs tracking-[0.2em] uppercase text-white/60" data-i18n="pages.audit.speed_measuring">Measuring mobile speed (Google PageSpeed)…</span>
+          </div>
+
+          <!-- fix-plan lead capture (nothing above is hidden — this is an offer, not a lock) -->
           <div id="audit-gate" class="hidden glass-panel rounded-lg p-6 md:p-8 mt-6 border-l-4 border-l-accent/60">
-            <h3 class="font-display text-2xl text-white mb-2" data-i18n="pages.audit.gate_title">Unlock the remaining findings</h3>
-            <p class="text-white/60 text-sm mb-5" data-i18n="pages.audit.gate_p"><span id="audit-locked-count">0</span> more findings are ready, with the fix priority I would use. Leave an email and they unlock right here — and you get the full report in your inbox.</p>
-            <div class="flex flex-col md:flex-row gap-4">
-              <input id="audit-email" type="email" required placeholder="you@company.com" data-i18n-attr="placeholder:pages.audit.gate_email_ph"
-                     class="flex-1 bg-white/5 border border-white/15 rounded-md px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-primary font-mono text-sm" />
-              <button id="audit-unlock" type="button" data-i18n="pages.audit.gate_btn"
-                      class="bg-accent hover:bg-accent/90 text-white font-semibold rounded-md px-8 py-3 transition-colors whitespace-nowrap">Unlock full report</button>
+            <div id="audit-gate-form">
+              <h3 class="font-display text-2xl text-white mb-2" data-i18n="pages.audit.gate_title">Want this as a prioritized fix plan?</h3>
+              <p class="text-white/60 text-sm mb-5" data-i18n="pages.audit.gate_p">Everything is listed above, nothing hidden. Leave your email and I will send a prioritized PDF you can hand to any developer, plus a rough price to have each item done. No spam.</p>
+              <div class="flex flex-col md:flex-row gap-4">
+                <input id="audit-email" type="email" required placeholder="you@company.com" data-i18n-attr="placeholder:pages.audit.gate_email_ph"
+                       class="flex-1 bg-white/5 border border-white/15 rounded-md px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-primary font-mono text-sm" />
+                <button id="audit-unlock" type="button" data-i18n="pages.audit.gate_btn"
+                        class="bg-accent hover:bg-accent/90 text-white font-semibold rounded-md px-8 py-3 transition-colors whitespace-nowrap">Email me the fix plan</button>
+              </div>
+              <label class="flex items-start gap-2 text-[11px] text-white/40 mt-4 cursor-pointer">
+                <input id="audit-consent" type="checkbox" class="mt-[2px]">
+                <span data-i18n="pages.audit.gate_consent">I agree to receive the report and occasional practical notes by email. No spam, unsubscribe anytime. <a href="privacy.html" class="underline hover:text-white/60">Privacy</a>.</span>
+              </label>
+              <p id="audit-gate-error" class="text-sm mt-3 hidden" style="color:#ff7a7a"></p>
+              <div class="mt-5 pt-4 audit-divide">
+                <button id="audit-print" type="button" data-i18n="pages.audit.print_btn"
+                        class="font-mono text-[11px] tracking-[0.15em] uppercase text-white/50 hover:text-white/80 transition-colors underline underline-offset-4">Or save this report as a PDF</button>
+              </div>
             </div>
-            <label class="flex items-start gap-2 text-[11px] text-white/40 mt-4 cursor-pointer">
-              <input id="audit-consent" type="checkbox" class="mt-[2px]">
-              <span data-i18n="pages.audit.gate_consent">I agree to receive the report and occasional practical notes by email. No spam, unsubscribe anytime. <a href="privacy.html" class="underline hover:text-white/60">Privacy</a>.</span>
-            </label>
-            <p id="audit-gate-error" class="text-sm mt-3 hidden" style="color:#ff7a7a"></p>
+            <div id="audit-gate-done" class="hidden text-center py-4">
+              <span class="material-symbols-outlined audit-pass-ic text-4xl mb-2">mark_email_read</span>
+              <p class="text-white/80" data-i18n="pages.audit.gate_done">Got it. I will send your prioritized fix plan shortly. Talk soon.</p>
+            </div>
           </div>
 
           <!-- post-audit CTA -->
-          <div class="glass-panel rounded-lg p-6 md:p-8 mt-6 text-center">
+          <div class="glass-panel rounded-lg p-6 md:p-8 mt-6 text-center audit-noprint">
             <h3 class="font-display text-2xl text-white mb-3" data-i18n="pages.audit.cta_title">Want these fixed instead of just listed?</h3>
             <p class="text-white/60 text-sm max-w-xl mx-auto mb-6" data-i18n="pages.audit.cta_p">Most of what this tool finds is one focused work session for me. Fixed price, agreed before anything starts — no surprises, no retainers required.</p>
             <a href="contact.html?objective=audit" class="inline-block bg-primary hover:bg-primary/90 text-white font-semibold rounded-md px-10 py-4 transition-colors" data-i18n="pages.audit.cta_btn">Talk to me about the fixes</a>
@@ -282,7 +342,7 @@
       </section>
 
       <!-- What gets checked -->
-      <section class="max-w-6xl mx-auto px-6 mt-24">
+      <section class="max-w-6xl mx-auto px-6 mt-24 audit-noprint">
         <div class="font-mono text-[10px] tracking-[0.4em] uppercase text-primary-glow mb-4">// WHAT_GETS_CHECKED</div>
         <h2 class="font-display text-3xl md:text-4xl text-white mb-10" data-i18n="pages.audit.checks_h2">The defects that lose enquiries silently</h2>
         <div class="grid md:grid-cols-3 gap-6">
@@ -296,7 +356,7 @@
       </section>
 
       <!-- Honesty note -->
-      <section class="max-w-6xl mx-auto px-6 mt-20">
+      <section class="max-w-6xl mx-auto px-6 mt-20 audit-noprint">
         <div class="glass-panel rounded-lg p-6 md:p-8 border-l-4 border-l-white/20 max-w-4xl">
           <h2 class="font-display text-2xl text-white mb-3" data-i18n="pages.audit.honesty_h2">What this audit will not tell you</h2>
           <p class="text-white/60 text-sm leading-relaxed" data-i18n="pages.audit.honesty_p">It will not promise you traffic, rankings or a revenue number — nobody can promise those honestly from a single page scan. It finds <em>defects</em>: things that are measurably broken or missing on the page you submit, each one explained in plain language. What you do with the list — fix it yourself, hand it to your developer, or talk to me — is entirely your call.</p>
@@ -383,7 +443,6 @@
 <script>
 /* Audit tool front-end: POST /api/audit, render findings, gate the tail behind email. */
 (function () {
-  var FREE_FINDINGS = 3;
   var form = document.getElementById('audit-form');
   if (!form) return;
   var els = {
@@ -394,29 +453,66 @@
     statusText: document.getElementById('audit-status-text'),
     results: document.getElementById('audit-results'),
     score: document.getElementById('audit-score'),
+    grade: document.getElementById('audit-grade'),
+    band: document.getElementById('audit-band'),
+    bench: document.getElementById('audit-bench'),
+    benchFill: document.getElementById('audit-bench-fill'),
+    benchTyp: document.getElementById('audit-bench-typ'),
     summary: document.getElementById('audit-summary'),
+    passed: document.getElementById('audit-passed'),
+    passedList: document.getElementById('audit-passed-list'),
     list: document.getElementById('audit-findings'),
+    speedPending: document.getElementById('audit-speed-pending'),
     gate: document.getElementById('audit-gate'),
-    lockedCount: document.getElementById('audit-locked-count'),
+    gateForm: document.getElementById('audit-gate-form'),
+    gateDone: document.getElementById('audit-gate-done'),
     email: document.getElementById('audit-email'),
     unlock: document.getElementById('audit-unlock'),
     consent: document.getElementById('audit-consent'),
-    gateErr: document.getElementById('audit-gate-error')
+    gateErr: document.getElementById('audit-gate-error'),
+    print: document.getElementById('audit-print')
   };
-  var lockedFindings = [];
   var auditedUrl = '';
   var lastScore = 0;
   var lastVariant = 'template';
   var adminKey = new URLSearchParams(location.search).get('admin') || '';
+  var BENCH = 68; // typical local-business site score
 
   function curLang() { try { return (window.cfI18n && cfI18n.current && cfI18n.current()) || document.documentElement.getAttribute('lang') || 'en'; } catch (e) { return 'en'; } }
   function t(key, fb) { try { var v = (window.cfI18n && cfI18n.t) ? cfI18n.t(key) : null; return (v && v !== key) ? v : fb; } catch (e) { return fb; } }
+
+  function cozy() { return document.documentElement.getAttribute('data-theme') === 'cozy'; }
 
   var SEV = {
     high:   { label: 'CRITICAL',  dark: '#ff7a7a', cozy: '#b3402e' },
     medium: { label: 'IMPORTANT', dark: '#ffc46b', cozy: '#b07a1f' },
     low:    { label: 'POLISH',    dark: '#7ab8ff', cozy: '#5f7a55' }
   };
+  var GRADE = {
+    A: { dark: '#7ee0a8', cozy: '#3f7a52', band: 'band_a', def: 'Strong' },
+    B: { dark: '#a9e08a', cozy: '#5a7d3a', band: 'band_b', def: 'Solid' },
+    C: { dark: '#ffc46b', cozy: '#b07a1f', band: 'band_c', def: 'Needs work' },
+    D: { dark: '#ff9d5c', cozy: '#b85f2a', band: 'band_d', def: 'At risk' },
+    F: { dark: '#ff7a7a', cozy: '#b3402e', band: 'band_f', def: 'Critical' }
+  };
+  function gradeLetter(s) { return s >= 90 ? 'A' : s >= 75 ? 'B' : s >= 60 ? 'C' : s >= 40 ? 'D' : 'F'; }
+  function clampScore(v) { return Math.max(5, Math.min(100, Math.round(v))); }
+
+  // Set score + letter grade + band word + benchmark bar (called on phase 1, re-called when speed adjusts it).
+  function applyScore(score) {
+    lastScore = clampScore(score);
+    var g = GRADE[gradeLetter(lastScore)];
+    var col = cozy() ? g.cozy : g.dark;
+    els.score.textContent = lastScore;
+    els.grade.textContent = gradeLetter(lastScore);
+    els.grade.style.color = col;
+    els.band.textContent = t('pages.audit.' + g.band, g.def);
+    els.band.style.color = col;
+    els.benchFill.style.width = lastScore + '%';
+    els.benchFill.style.background = col;
+    els.benchTyp.textContent = t('pages.audit.bench_typical', 'Typical local site') + ' ≈ ' + BENCH;
+    els.bench.classList.remove('hidden');
+  }
 
   function track(name, params) {
     try { if (window.gtag) gtag('event', name, params || {}); } catch (e) {}
@@ -424,7 +520,7 @@
 
   function findingCard(x) {
     var sev = SEV[x.severity] || SEV.low;
-    var color = (document.documentElement.getAttribute('data-theme') === 'cozy') ? sev.cozy : sev.dark;
+    var color = cozy() ? sev.cozy : sev.dark;
     var li = document.createElement('li');
     li.className = 'glass-panel rounded-lg p-5 border-l-4';
     li.style.borderLeftColor = color;
@@ -434,7 +530,36 @@
       '<p class="text-white/55 text-sm"></p>';
     li.querySelector('h3').textContent = x.title;
     li.querySelector('p').textContent = x.detail;
+    if (x.fix) {
+      var box = document.createElement('div');
+      box.className = 'audit-soft p-3 mt-3';
+      var lbl = document.createElement('div');
+      lbl.className = 'font-mono text-[9px] tracking-[0.2em] uppercase text-accent mb-1';
+      lbl.textContent = t('pages.audit.fix_label', 'How to fix') + (x.effort ? ' · ' + x.effort : '');
+      var fp = document.createElement('p');
+      fp.className = 'text-white/70 text-sm';
+      fp.textContent = x.fix;
+      box.appendChild(lbl);
+      box.appendChild(fp);
+      li.appendChild(box);
+    }
     return li;
+  }
+
+  function addPassed(p) {
+    var li = document.createElement('li');
+    li.className = 'flex items-start gap-2 text-white/70 text-sm';
+    var ic = document.createElement('span');
+    ic.className = 'material-symbols-outlined audit-pass-ic shrink-0';
+    ic.style.fontSize = '18px';
+    ic.style.lineHeight = '20px';
+    ic.textContent = 'check_circle';
+    var sp = document.createElement('span');
+    sp.textContent = p.label;
+    li.appendChild(ic);
+    li.appendChild(sp);
+    els.passedList.appendChild(li);
+    els.passed.classList.remove('hidden');
   }
 
   form.addEventListener('submit', function (e) {
@@ -449,8 +574,8 @@
     els.statusText.textContent = t('pages.audit.status_text', 'Fetching your page…');
     track('audit_start', { audited_url: raw });
     var slowTimer = setTimeout(function () {
-      els.statusText.textContent = t('pages.audit.status_speed', 'Running speed checks (Google PageSpeed)…');
-    }, 6000);
+      els.statusText.textContent = t('pages.audit.status_analyzing', 'Reading the page and writing your summary…');
+    }, 3500);
 
     fetch('/api/audit?lang=' + encodeURIComponent(curLang()), {
       method: 'POST',
@@ -468,24 +593,30 @@
         return;
       }
       auditedUrl = data.finalUrl;
-      lastScore = data.score;
       lastVariant = data.variant || 'template';
-      els.score.textContent = data.score;
       els.summary.textContent = data.summary;
+      applyScore(data.score);
       renderCompare(data.compare);
+
+      // what is already working
+      els.passedList.innerHTML = '';
+      els.passed.classList.add('hidden');
+      (data.passed || []).forEach(addPassed);
+
+      // findings — all shown, nothing gated
       els.list.innerHTML = '';
-      var free = data.findings.slice(0, FREE_FINDINGS);
-      lockedFindings = data.findings.slice(FREE_FINDINGS);
-      free.forEach(function (x) { els.list.appendChild(findingCard(x)); });
-      if (lockedFindings.length > 0) {
-        els.lockedCount.textContent = lockedFindings.length;
-        els.gate.classList.remove('hidden');
-      } else {
-        els.gate.classList.add('hidden');
-      }
+      (data.findings || []).forEach(function (x) { els.list.appendChild(findingCard(x)); });
+
+      // reset the fix-plan offer to its form state and show it
+      els.gateForm.classList.remove('hidden');
+      els.gateDone.classList.add('hidden');
+      els.gate.classList.remove('hidden');
+
       els.results.classList.remove('hidden');
       els.results.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      track('audit_complete', { audited_url: auditedUrl, score: data.score, findings: data.findings.length, model_variant: lastVariant, summary_source: data.summarySource || 'template' });
+      track('audit_complete', { audited_url: auditedUrl, score: data.score, findings: (data.findings || []).length, model_variant: lastVariant, summary_source: data.summarySource || 'template' });
+
+      if (data.speedPending) startSpeedPhase(auditedUrl);
     }).catch(function () {
       clearTimeout(slowTimer);
       els.status.classList.add('hidden');
@@ -495,6 +626,32 @@
       els.err.classList.remove('hidden');
     });
   });
+
+  // Phase 2 — mobile speed streams in and nudges the score/grade once it lands.
+  function startSpeedPhase(url) {
+    els.speedPending.classList.remove('hidden');
+    fetch('/api/audit-speed?lang=' + encodeURIComponent(curLang()), {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ url: url, lang: curLang() })
+    }).then(function (r) { return r.json(); }).then(function (s) {
+      els.speedPending.classList.add('hidden');
+      if (!s || !s.ok) return;
+      if (s.measured === false) {
+        var li = document.createElement('li');
+        li.className = 'glass-panel rounded-lg p-5 border-l-4';
+        li.style.borderLeftColor = cozy() ? '#9b8c6a' : '#b8a06a';
+        li.innerHTML = '<div class="font-mono text-[10px] tracking-[0.25em] uppercase text-white/40 mb-2">' + t('pages.audit.speed_na_label', 'MOBILE SPEED') + '</div><p class="text-white/55 text-sm"></p>';
+        li.querySelector('p').textContent = t('pages.audit.speed_failed', 'Could not measure mobile speed right now (Google PageSpeed was busy). Re-run in a minute to add it.');
+        els.list.appendChild(li);
+        return;
+      }
+      (s.findings || []).forEach(function (x) { els.list.appendChild(findingCard(x)); });
+      (s.passed || []).forEach(addPassed);
+      if (typeof s.scoreDelta === 'number' && s.scoreDelta !== 0) applyScore(lastScore + s.scoreDelta);
+      track('audit_speed', { measured: true, perf: s.psi && s.psi.performance });
+    }).catch(function () { els.speedPending.classList.add('hidden'); });
+  }
 
   // Admin QA mode (?admin=KEY): every configured model's summary side by side.
   function renderCompare(compare) {
@@ -534,26 +691,25 @@
       els.gateErr.textContent = t('pages.audit.err_consent', 'Please tick the consent box, GDPR is GDPR.'); els.gateErr.classList.remove('hidden'); return;
     }
     els.unlock.disabled = true;
-    els.unlock.textContent = t('pages.audit.btn_unlocking', 'Unlocking…');
+    els.unlock.textContent = t('pages.audit.btn_unlocking', 'Sending…');
     var fd = new FormData();
     fd.append('access_key', '0b2e61e9-0981-40b8-bd8e-6f0820e3832a');
-    fd.append('subject', 'Audit lead: ' + auditedUrl + ' (score ' + lastScore + ')');
+    fd.append('subject', 'Audit fix-plan request: ' + auditedUrl + ' (score ' + lastScore + ')');
     fd.append('from_name', 'Camelot Flows Audit Tool');
     fd.append('email', email);
-    fd.append('message', 'Audit lead.\nSite: ' + auditedUrl + '\nScore: ' + lastScore + '/100\nLocked findings sent on-screen: ' + lockedFindings.map(function (x) { return x.title; }).join(' | '));
+    fd.append('message', 'Audit fix-plan request.\nSite: ' + auditedUrl + '\nScore: ' + lastScore + '/100');
+    function done() {
+      els.gateForm.classList.add('hidden');
+      els.gateDone.classList.remove('hidden');
+      track('audit_lead', { audited_url: auditedUrl, score: lastScore, model_variant: lastVariant });
+    }
     fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd })
       .then(function (r) { return r.json(); })
-      .then(function () {
-        lockedFindings.forEach(function (x) { els.list.appendChild(findingCard(x)); });
-        els.gate.classList.add('hidden');
-        track('audit_lead', { audited_url: auditedUrl, score: lastScore, model_variant: lastVariant });
-      })
-      .catch(function () {
-        // unlock anyway — the visitor held their side of the bargain
-        lockedFindings.forEach(function (x) { els.list.appendChild(findingCard(x)); });
-        els.gate.classList.add('hidden');
-      });
+      .then(done)
+      .catch(done); // the visitor held up their side — confirm regardless
   });
+
+  if (els.print) els.print.addEventListener('click', function () { window.print(); });
 })();
 </script>
 
