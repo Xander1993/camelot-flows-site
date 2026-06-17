@@ -96,7 +96,18 @@
       "card6_t": "Multilingual hygiene",
       "card6_d": "hreflang and language declarations. Done half-way they do nothing, which matters in RO/RU markets.",
       "honesty_h2": "What this audit will not tell you",
-      "honesty_p": "html:It will not promise you traffic, rankings or a revenue number; nobody can promise those honestly from a single page scan. It finds <em>defects</em>: things that are measurably broken or missing on the page you submit, each one explained in plain language. What you do with the list, fix it yourself, hand it to your developer, or talk to me, is entirely your call."
+      "honesty_p": "html:It will not promise you traffic, rankings or a revenue number; nobody can promise those honestly from a single page scan. It finds <em>defects</em>: things that are measurably broken or missing on the page you submit, each one explained in plain language. What you do with the list, fix it yourself, hand it to your developer, or talk to me, is entirely your call.",
+      "status_speed": "Running speed checks (Google PageSpeed)…",
+      "btn_auditing": "Auditing…",
+      "btn_unlocking": "Unlocking…",
+      "err_enter_url": "Enter your website address first.",
+      "err_failed": "Audit failed, try again in a minute.",
+      "err_network": "Network hiccup, try again.",
+      "err_email": "Enter a valid email to unlock.",
+      "err_consent": "Please tick the consent box, GDPR is GDPR.",
+      "sev_high": "CRITICAL",
+      "sev_medium": "IMPORTANT",
+      "sev_low": "POLISH"
     },
     "index": {
       "meta_title": "Web Design in Moldova — Get Found & Booked | Camelot Flows",
@@ -1226,7 +1237,18 @@
       "card6_t": "Igienă multilingvă",
       "card6_d": "hreflang și declarațiile de limbă. Făcute pe jumătate nu fac nimic, ceea ce contează pe piețele RO/RU.",
       "honesty_h2": "Ce nu îți va spune acest audit",
-      "honesty_p": "html:Nu îți va promite trafic, poziții sau o cifră de venit; nimeni nu poate promite asta onest dintr-o singură scanare de pagină. Găsește <em>defecte</em>: lucruri măsurabil stricate sau lipsă pe pagina pe care o trimiți, fiecare explicat în limbaj clar. Ce faci cu lista (o repari singur, o dai dezvoltatorului tău sau vorbești cu mine) ține complet de tine."
+      "honesty_p": "html:Nu îți va promite trafic, poziții sau o cifră de venit; nimeni nu poate promite asta onest dintr-o singură scanare de pagină. Găsește <em>defecte</em>: lucruri măsurabil stricate sau lipsă pe pagina pe care o trimiți, fiecare explicat în limbaj clar. Ce faci cu lista (o repari singur, o dai dezvoltatorului tău sau vorbești cu mine) ține complet de tine.",
+      "status_speed": "Verificăm viteza (Google PageSpeed)…",
+      "btn_auditing": "Se auditează…",
+      "btn_unlocking": "Se deblochează…",
+      "err_enter_url": "Introdu mai întâi adresa site-ului.",
+      "err_failed": "Auditul a eșuat, încearcă din nou într-un minut.",
+      "err_network": "Problemă de rețea, încearcă din nou.",
+      "err_email": "Introdu un email valid pentru a debloca.",
+      "err_consent": "Bifează caseta de consimțământ, GDPR e GDPR.",
+      "sev_high": "CRITIC",
+      "sev_medium": "IMPORTANT",
+      "sev_low": "DE ȘLEFUIT"
     },
     "index": {
       "meta_title": "Creare site web în Moldova — Găsit și rezervat | Camelot Flows",
@@ -2356,7 +2378,18 @@
       "card6_t": "Многоязычная гигиена",
       "card6_d": "hreflang и языковые декларации. Сделанные наполовину, они не дают ничего, что важно на рынках RO/RU.",
       "honesty_h2": "О чём этот аудит вам не скажет",
-      "honesty_p": "html:Он не пообещает вам трафик, позиции или сумму выручки; никто не может честно обещать это по одному сканированию страницы. Он находит <em>дефекты</em>: вещи, которые измеримо сломаны или отсутствуют на отправленной странице, каждая объяснена простым языком. Что делать со списком (исправить самому, отдать разработчику или обсудить со мной) полностью на ваше усмотрение."
+      "honesty_p": "html:Он не пообещает вам трафик, позиции или сумму выручки; никто не может честно обещать это по одному сканированию страницы. Он находит <em>дефекты</em>: вещи, которые измеримо сломаны или отсутствуют на отправленной странице, каждая объяснена простым языком. Что делать со списком (исправить самому, отдать разработчику или обсудить со мной) полностью на ваше усмотрение.",
+      "status_speed": "Проверяем скорость (Google PageSpeed)…",
+      "btn_auditing": "Идёт аудит…",
+      "btn_unlocking": "Открываем…",
+      "err_enter_url": "Сначала введите адрес сайта.",
+      "err_failed": "Аудит не удался, попробуйте через минуту.",
+      "err_network": "Сбой сети, попробуйте ещё раз.",
+      "err_email": "Введите корректный email, чтобы открыть.",
+      "err_consent": "Отметьте галочку согласия, GDPR есть GDPR.",
+      "sev_high": "КРИТИЧНО",
+      "sev_medium": "ВАЖНО",
+      "sev_low": "ШЛИФОВКА"
     },
     "index": {
       "meta_title": "Создание сайтов в Молдове — вас находят и к вам записываются | Camelot Flows",

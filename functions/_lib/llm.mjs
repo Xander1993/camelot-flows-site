@@ -5,13 +5,17 @@ export function pickModel(models, rand) {
   return models[Math.floor(rand * models.length)];
 }
 
-export function buildLlmMessages(findings, url, score) {
+const LANG_NAME = { en: 'English', ro: 'Romanian', ru: 'Russian' };
+
+export function buildLlmMessages(findings, url, score, lang) {
+  const language = LANG_NAME[lang] || 'English';
   const system = [
     'You write the results summary for a free website audit tool made by Camelot Flows, a web studio for local service businesses.',
     'You will receive a JSON list of technical findings for one page.',
     'Rewrite them as a short, plain-language summary for a non-technical business owner: what is wrong, why it costs them customers, what to fix first.',
     'Use ONLY the findings provided. Do not invent, assume, or add any issue, metric, or fact that is not in the list. Do not exaggerate severity.',
     'Tone: helpful expert, no hype, no scare tactics. 120-180 words. Plain prose, no markdown headers, no bullet lists.',
+    'Write the entire summary in ' + language + '. Keep proper nouns and technical tag names (such as title, tel:, hreflang, Open Graph, LCP) as-is.',
   ].join(' ');
   const user = JSON.stringify({ url, score, findings }, null, 1);
   return [

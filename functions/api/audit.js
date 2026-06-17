@@ -17,6 +17,7 @@
  *   RATE_KV          optional KV binding for the monthly AI-call budget
  */
 import { pickModel, buildLlmMessages, callLlm } from '../_lib/llm.mjs';
+import { pickLang, localizeFindings, localizedSummary, errMsg } from '../_lib/audit-i18n.mjs';
 
 const MAX_BODY_BYTES = 1_500_000;
 const FETCH_TIMEOUT_MS = 10_000;
@@ -29,8 +30,10 @@ const ipHits = new Map(); // per-isolate best-effort limiter
 
 export async function onRequestPost(context) {
   const ip = context.request.headers.get('cf-connecting-ip') || 'unknown';
+  let lang = 'en';
+  try { lang = pickLang(new URL(context.request.url).searchParams.get('lang')); } catch { /* default en */ }
   if (rateLimited(ip)) {
-    return json({ ok: false, error: 'rate_limited', message: 'Too many audits from this connection. Try again in a minute.' }, 429);
+    return json({ ok: false, error: 'rate_limited', message: errMsg('rate_limited', lang, 'Too many audits from this connection. Try again in a minute.') }, 429);
   }
 
   let target;
@@ -39,10 +42,10 @@ export async function onRequestPost(context) {
     body = await context.request.json();
     target = normalizeUrl(String(body.url || ''));
   } catch {
-    return json({ ok: false, error: 'bad_request', message: 'Send JSON: {"url": "https://example.com"}' }, 400);
+    return json({ ok: false, error: 'bad_request', message: errMsg('bad_request', lang, 'Send JSON: {"url": "https://example.com"}') }, 400);
   }
   if (!target) {
-    return json({ ok: false, error: 'invalid_url', message: 'That does not look like a public website address.' }, 400);
+    return json({ ok: false, error: 'invalid_url', message: errMsg('invalid_url', lang, 'That does not look like a public website address.') }, 400);
   }
   const blocked = ssrfBlocked(target);
   if (blocked) {
@@ -53,7 +56,7 @@ export async function onRequestPost(context) {
   try {
     page = await guardedFetch(target);
   } catch (e) {
-    return json({ ok: false, error: 'fetch_failed', message: 'Could not load that site (' + (e && e.message ? e.message : 'network error') + '). Is it online and public?' }, 502);
+    return json({ ok: false, error: 'fetch_failed', message: errMsg('fetch_prefix', lang, 'Could not load that site') + ' (' + (e && e.message ? e.message : 'network error') + '). ' + errMsg('fetch_suffix', lang, 'Is it online and public?') }, 502);
   }
 
   const findings = runChecks(page);
@@ -65,19 +68,24 @@ export async function onRequestPost(context) {
     if (psi) {
       if (psi.performance !== null && psi.performance < 50) {
         findings.push(f('slow_mobile', 'high', 'Slow on mobile',
-          'Google PageSpeed scores this page ' + psi.performance + '/100 on a mobile connection. Visitors on phones bounce before slow pages finish loading.'));
+          'Google PageSpeed scores this page ' + psi.performance + '/100 on a mobile connection. Visitors on phones bounce before slow pages finish loading.',
+          { perf: psi.performance }));
       } else if (psi.performance !== null && psi.performance < 80) {
         findings.push(f('mediocre_mobile', 'medium', 'Mobile speed has headroom',
-          'Mobile performance score is ' + psi.performance + '/100. Not broken, but every second of load time costs conversions.'));
+          'Mobile performance score is ' + psi.performance + '/100. Not broken, but every second of load time costs conversions.',
+          { perf: psi.performance }));
       }
       if (psi.lcp_ms !== null && psi.lcp_ms > 4000) {
         findings.push(f('lcp', 'high', 'Main content takes ' + (psi.lcp_ms / 1000).toFixed(1) + 's to appear (LCP)',
-          'Largest Contentful Paint above 4 seconds is in Google’s “poor” band — it hurts both rankings and patience.'));
+          'Largest Contentful Paint above 4 seconds is in Google’s “poor” band — it hurts both rankings and patience.',
+          { secs: (psi.lcp_ms / 1000).toFixed(1) }));
       }
     }
   } catch { /* PSI is best-effort */ }
 
-  const { score, summary: templateSummary } = scoreAndSummarize(findings, page);
+  const findingsL = localizeFindings(findings, lang);
+  const { score, summary: enSummary } = scoreAndSummarize(findingsL, page);
+  const templateSummary = lang === 'en' ? enSummary : (localizedSummary(findingsL, lang) || enSummary);
 
   // --- AI summary layer (A/B between configured models; template is the fallback) ---
   const env = context.env || {};
@@ -92,7 +100,7 @@ export async function onRequestPost(context) {
   if (env.LLM_API_KEY && (await llmBudgetOk(env))) {
     const models = String(env.LLM_MODELS || 'deepseek/deepseek-v4-flash,nousresearch/hermes-4-70b')
       .split(',').map((s) => s.trim()).filter(Boolean);
-    const messages = buildLlmMessages(findings, page.finalUrl, score);
+    const messages = buildLlmMessages(findingsL, page.finalUrl, score, lang);
     if (isAdmin && body.compare) {
       compare = await Promise.all(models.map(async (m) => {
         const r = await callLlm(env, m, messages);
@@ -120,7 +128,7 @@ export async function onRequestPost(context) {
     summary,
     summarySource,
     variant,
-    findings: findings.sort((a, b) => sevRank(b.severity) - sevRank(a.severity)),
+    findings: findingsL.sort((a, b) => sevRank(b.severity) - sevRank(a.severity)),
     psi,
   };
   if (isAdmin) {
@@ -249,8 +257,8 @@ async function guardedFetch(startUrl) {
   throw new Error('too many redirects');
 }
 
-function f(id, severity, title, detail) {
-  return { id, severity, title, detail };
+function f(id, severity, title, detail, vars) {
+  return { id, severity, title, detail, vars };
 }
 function sevRank(s) { return s === 'high' ? 3 : s === 'medium' ? 2 : 1; }
 
@@ -275,8 +283,10 @@ function runChecks(page) {
   }
   const brokenTel = telLinks.filter((t) => !t || /[^\d+()\-. %]/.test(t) || t.replace(/\D/g, '').length < 6);
   if (brokenTel.length > 0) {
+    const bvals = brokenTel.slice(0, 3).map((t) => '“' + (t || 'empty') + '”').join(', ');
     findings.push(f('tel_broken', 'high', brokenTel.length + ' broken click-to-call link' + (brokenTel.length > 1 ? 's' : ''),
-      'tel: links exist but their targets are malformed (' + brokenTel.slice(0, 3).map((t) => '“' + (t || 'empty') + '”').join(', ') + '). Tapping them does nothing — the most expensive kind of silent defect for a service business.'));
+      'tel: links exist but their targets are malformed (' + bvals + '). Tapping them does nothing — the most expensive kind of silent defect for a service business.',
+      { count: brokenTel.length, vals: bvals }));
   }
 
   // -- contact path --
@@ -325,7 +335,8 @@ function runChecks(page) {
       'The <title> tag is the headline of your Google result. Without it, Google improvises one for you.'));
   } else if (title.length < 15) {
     findings.push(f('thin_title', 'low', 'Page title is very short (“' + title.slice(0, 40) + '”)',
-      'Short generic titles waste the single most valuable SEO field on the page.'));
+      'Short generic titles waste the single most valuable SEO field on the page.',
+      { title: title.slice(0, 40) }));
   }
   if (!/<meta[^>]+name\s*=\s*["']description["'][^>]*content\s*=\s*["'][^"']{20,}/i.test(html)) {
     findings.push(f('no_meta_desc', 'medium', 'Missing meta description',

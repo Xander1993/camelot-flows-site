@@ -88,6 +88,24 @@
       gtag('js', new Date());
       gtag('config', 'G-T4ZPEG1KSR');
     </script>
+    <style>
+      /* Top padding: clear the fixed nav. Built CSS lacks md:pt-56, so set it here by ID (beats the utility class). */
+      #audit-tool{padding-top:160px}
+      @media(min-width:768px){#audit-tool{padding-top:224px}}
+      /* Audit tool is a dark-first design; remap its text + inputs for the cozy (light) theme so nothing turns invisible. */
+      [data-theme="cozy"] #audit-tool .text-white{color:#1f2622}
+      [data-theme="cozy"] #audit-tool .text-white\/75{color:rgba(31,38,34,.86)}
+      [data-theme="cozy"] #audit-tool .text-white\/70{color:rgba(31,38,34,.8)}
+      [data-theme="cozy"] #audit-tool .text-white\/60{color:rgba(31,38,34,.72)}
+      [data-theme="cozy"] #audit-tool .text-white\/55{color:rgba(31,38,34,.68)}
+      [data-theme="cozy"] #audit-tool .text-white\/50{color:rgba(31,38,34,.6)}
+      [data-theme="cozy"] #audit-tool .text-white\/40{color:rgba(31,38,34,.5)}
+      [data-theme="cozy"] #audit-tool .text-white\/35{color:rgba(31,38,34,.46)}
+      [data-theme="cozy"] #audit-tool .text-white\/30{color:rgba(31,38,34,.4)}
+      [data-theme="cozy"] #audit-tool .text-primary-glow{color:#4338ca}
+      [data-theme="cozy"] #audit-tool input{background:rgba(31,38,34,.04);border-color:rgba(31,38,34,.18)}
+      [data-theme="cozy"] #audit-tool input::placeholder{color:rgba(31,38,34,.4)}
+    </style>
 </head>
 
 <body class="theme-cozy font-body overflow-x-hidden selection:bg-primary selection:text-white">
@@ -194,7 +212,7 @@
 
 <a id="main-content" aria-hidden="true" tabindex="-1" style="position:absolute;opacity:0;pointer-events:none;"></a>
 <a id="main-content" aria-hidden="true" tabindex="-1" style="position:absolute;opacity:0;pointer-events:none;"></a>
-    <main id="audit-tool" class="relative pt-32 pb-20 px-0 min-h-screen overflow-x-hidden bg-obsidian text-charcoal">
+    <main id="audit-tool" class="relative pt-40 pb-20 px-0 min-h-screen overflow-x-hidden bg-obsidian text-charcoal">
 
       <!-- Hero + form -->
       <section class="max-w-6xl mx-auto px-6">
@@ -389,6 +407,9 @@
   var lastVariant = 'template';
   var adminKey = new URLSearchParams(location.search).get('admin') || '';
 
+  function curLang() { try { return (window.cfI18n && cfI18n.current && cfI18n.current()) || document.documentElement.getAttribute('lang') || 'en'; } catch (e) { return 'en'; } }
+  function t(key, fb) { try { var v = (window.cfI18n && cfI18n.t) ? cfI18n.t(key) : null; return (v && v !== key) ? v : fb; } catch (e) { return fb; } }
+
   var SEV = {
     high:   { label: 'CRITICAL', cls: 'border-l-4', color: '#ff7a7a' },
     medium: { label: 'IMPORTANT', cls: 'border-l-4', color: '#ffc46b' },
@@ -405,7 +426,7 @@
     li.className = 'glass-panel rounded-lg p-5 ' + sev.cls;
     li.style.borderLeftColor = sev.color;
     li.innerHTML =
-      '<div class="font-mono text-[10px] tracking-[0.25em] uppercase mb-2" style="color:' + sev.color + '">' + sev.label + '</div>' +
+      '<div class="font-mono text-[10px] tracking-[0.25em] uppercase mb-2" style="color:' + sev.color + '">' + t('pages.audit.sev_' + x.severity, sev.label) + '</div>' +
       '<h3 class="text-white font-semibold mb-1"></h3>' +
       '<p class="text-white/55 text-sm"></p>';
     li.querySelector('h3').textContent = x.title;
@@ -417,28 +438,28 @@
     e.preventDefault();
     els.err.classList.add('hidden');
     var raw = (els.url.value || '').trim();
-    if (!raw) { els.err.textContent = 'Enter your website address first.'; els.err.classList.remove('hidden'); return; }
+    if (!raw) { els.err.textContent = t('pages.audit.err_enter_url', 'Enter your website address first.'); els.err.classList.remove('hidden'); return; }
     els.submit.disabled = true;
-    els.submit.textContent = 'Auditing…';
+    els.submit.textContent = t('pages.audit.btn_auditing', 'Auditing…');
     els.results.classList.add('hidden');
     els.status.classList.remove('hidden');
-    els.statusText.textContent = 'Fetching your page…';
+    els.statusText.textContent = t('pages.audit.status_text', 'Fetching your page…');
     track('audit_start', { audited_url: raw });
     var slowTimer = setTimeout(function () {
-      els.statusText.textContent = 'Running speed checks (Google PageSpeed)…';
+      els.statusText.textContent = t('pages.audit.status_speed', 'Running speed checks (Google PageSpeed)…');
     }, 6000);
 
-    fetch('/api/audit', {
+    fetch('/api/audit?lang=' + encodeURIComponent(curLang()), {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(adminKey ? { url: raw, adminKey: adminKey, compare: true } : { url: raw })
+      body: JSON.stringify(adminKey ? { url: raw, adminKey: adminKey, compare: true, lang: curLang() } : { url: raw, lang: curLang() })
     }).then(function (r) { return r.json(); }).then(function (data) {
       clearTimeout(slowTimer);
       els.status.classList.add('hidden');
       els.submit.disabled = false;
-      els.submit.textContent = 'Run the free audit';
+      els.submit.textContent = t('pages.audit.form_submit', 'Run the free audit');
       if (!data.ok) {
-        els.err.textContent = data.message || 'Audit failed — try again in a minute.';
+        els.err.textContent = data.message || t('pages.audit.err_failed', 'Audit failed, try again in a minute.');
         els.err.classList.remove('hidden');
         track('audit_error', { reason: data.error || 'unknown' });
         return;
@@ -466,8 +487,8 @@
       clearTimeout(slowTimer);
       els.status.classList.add('hidden');
       els.submit.disabled = false;
-      els.submit.textContent = 'Run the free audit';
-      els.err.textContent = 'Network hiccup — try again.';
+      els.submit.textContent = t('pages.audit.form_submit', 'Run the free audit');
+      els.err.textContent = t('pages.audit.err_network', 'Network hiccup, try again.');
       els.err.classList.remove('hidden');
     });
   });
@@ -504,13 +525,13 @@
     els.gateErr.classList.add('hidden');
     var email = (els.email.value || '').trim();
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-      els.gateErr.textContent = 'Enter a valid email to unlock.'; els.gateErr.classList.remove('hidden'); return;
+      els.gateErr.textContent = t('pages.audit.err_email', 'Enter a valid email to unlock.'); els.gateErr.classList.remove('hidden'); return;
     }
     if (!els.consent.checked) {
-      els.gateErr.textContent = 'Please tick the consent box — GDPR is GDPR.'; els.gateErr.classList.remove('hidden'); return;
+      els.gateErr.textContent = t('pages.audit.err_consent', 'Please tick the consent box, GDPR is GDPR.'); els.gateErr.classList.remove('hidden'); return;
     }
     els.unlock.disabled = true;
-    els.unlock.textContent = 'Unlocking…';
+    els.unlock.textContent = t('pages.audit.btn_unlocking', 'Unlocking…');
     var fd = new FormData();
     fd.append('access_key', '0b2e61e9-0981-40b8-bd8e-6f0820e3832a');
     fd.append('subject', 'Audit lead: ' + auditedUrl + ' (score ' + lastScore + ')');
