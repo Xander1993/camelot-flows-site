@@ -92,6 +92,8 @@
       /* Top padding: clear the fixed nav. Built CSS lacks md:pt-56, so set it here by ID (beats the utility class). */
       #audit-tool{padding-top:160px}
       @media(min-width:768px){#audit-tool{padding-top:224px}}
+      /* Section separators: built CSS lacks mt-24/mt-20, so space the sections here. */
+      #audit-tool > section + section{margin-top:88px}
       /* Audit tool is a dark-first design; remap its text + inputs for the cozy (light) theme so nothing turns invisible. */
       [data-theme="cozy"] #audit-tool .text-white{color:#1f2622}
       [data-theme="cozy"] #audit-tool .text-white\/75{color:rgba(31,38,34,.86)}
