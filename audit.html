@@ -413,9 +413,9 @@
   function t(key, fb) { try { var v = (window.cfI18n && cfI18n.t) ? cfI18n.t(key) : null; return (v && v !== key) ? v : fb; } catch (e) { return fb; } }
 
   var SEV = {
-    high:   { label: 'CRITICAL', cls: 'border-l-4', color: '#ff7a7a' },
-    medium: { label: 'IMPORTANT', cls: 'border-l-4', color: '#ffc46b' },
-    low:    { label: 'POLISH', cls: 'border-l-4', color: '#7ab8ff' }
+    high:   { label: 'CRITICAL',  dark: '#ff7a7a', cozy: '#b3402e' },
+    medium: { label: 'IMPORTANT', dark: '#ffc46b', cozy: '#b07a1f' },
+    low:    { label: 'POLISH',    dark: '#7ab8ff', cozy: '#5f7a55' }
   };
 
   function track(name, params) {
@@ -424,11 +424,12 @@
 
   function findingCard(x) {
     var sev = SEV[x.severity] || SEV.low;
+    var color = (document.documentElement.getAttribute('data-theme') === 'cozy') ? sev.cozy : sev.dark;
     var li = document.createElement('li');
-    li.className = 'glass-panel rounded-lg p-5 ' + sev.cls;
-    li.style.borderLeftColor = sev.color;
+    li.className = 'glass-panel rounded-lg p-5 border-l-4';
+    li.style.borderLeftColor = color;
     li.innerHTML =
-      '<div class="font-mono text-[10px] tracking-[0.25em] uppercase mb-2" style="color:' + sev.color + '">' + t('pages.audit.sev_' + x.severity, sev.label) + '</div>' +
+      '<div class="font-mono text-[10px] tracking-[0.25em] uppercase mb-2" style="color:' + color + '">' + t('pages.audit.sev_' + x.severity, sev.label) + '</div>' +
       '<h3 class="text-white font-semibold mb-1"></h3>' +
       '<p class="text-white/55 text-sm"></p>';
     li.querySelector('h3').textContent = x.title;
