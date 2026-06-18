@@ -698,6 +698,11 @@
     }
     els.unlock.disabled = true;
     els.unlock.textContent = t('pages.audit.btn_unlocking', 'Sending…');
+    // instant operator notification (Telegram, best-effort) — never blocks the visitor
+    try {
+      fetch('/api/audit-lead', { method: 'POST', headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ email: email, url: auditedUrl, score: lastScore, lang: curLang() }) });
+    } catch (e) {}
     var fd = new FormData();
     fd.append('access_key', '0b2e61e9-0981-40b8-bd8e-6f0820e3832a');
     fd.append('subject', 'Audit fix-plan request: ' + auditedUrl + ' (score ' + lastScore + ')');
