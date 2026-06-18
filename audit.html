@@ -118,13 +118,17 @@
       [data-theme="cozy"] #audit-tool .audit-pass-ic{color:#3f7a52}
       #audit-tool .audit-track{background:rgba(255,255,255,.10)}
       [data-theme="cozy"] #audit-tool .audit-track{background:rgba(31,38,34,.10)}
-      /* --- Print / Save as PDF: show only the report, dark text on white --- */
+      /* --- Print / Save as PDF: show only the report, dark text on white.
+         Chrome's print pipeline renders backdrop-filter/blur layers as BLANK, and all
+         the report content lives inside .glass-panel (which uses backdrop-filter), so
+         those filters must be stripped or the whole PDF comes out empty. --- */
       @media print{
-        nav, footer, #audit-form, #audit-status, #audit-gate, #bg-orbs, .audit-noprint{display:none !important}
-        body{background:#fff !important}
+        nav, footer, #audit-form, #audit-status, #audit-gate, #bg-orbs, .grain-overlay, .scroll-progress, #preloader, .cf-cursor, #custom-cursor, .mix-blend-screen, .audit-noprint{display:none !important}
+        html, body{background:#fff !important}
         #audit-tool{padding:0 !important}
         #audit-results{margin-top:0 !important}
-        #audit-tool .glass-panel{background:#fff !important;box-shadow:none !important;border:1px solid #ddd !important}
+        #audit-tool *{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;filter:none !important;mix-blend-mode:normal !important;box-shadow:none !important;text-shadow:none !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+        #audit-tool .glass-panel{background:#fff !important;border:1px solid #ddd !important}
         #audit-tool, #audit-tool h1, #audit-tool h2, #audit-tool h3, #audit-tool p, #audit-tool span, #audit-tool li, #audit-tool div{color:#111 !important}
         #audit-tool .audit-pass-ic{color:#2e7d4f !important}
       }
