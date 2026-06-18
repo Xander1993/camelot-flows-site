@@ -81,6 +81,7 @@ export async function onRequestPost(context) {
   let usage = null;
   let compare = null;
   let aiRead = null;
+  let aiReadDbg = null;
 
   if (env.LLM_API_KEY && (await llmBudgetOk(env))) {
     const models = String(env.LLM_MODELS || 'deepseek/deepseek-v4-flash,nousresearch/hermes-4-70b')
@@ -121,6 +122,7 @@ export async function onRequestPost(context) {
         usage = r.usage;
       }
       if (ar.text) aiRead = parseAiRead(ar.text);
+      aiReadDbg = { hasText: Boolean(ar.text), err: ar.error || null, parsed: Boolean(aiRead), sample: (ar.text || '').slice(0, 500) };
     }
   }
 
@@ -135,6 +137,7 @@ export async function onRequestPost(context) {
     passed: passedL,
     meta,
     aiRead,
+    aiReadDebug: aiReadDbg,
     speedPending: true,
   };
   if (isAdmin) {
@@ -278,18 +281,27 @@ function visibleText(html) {
     .slice(0, 2400);
 }
 
-// Defensive parse of the AI-read JSON (model output is untrusted; bad shape -> null -> panel hidden).
+// Tolerant parse of the AI-read JSON (model output is untrusted and often slightly
+// off: markdown fences, trailing commas, ok as a string, clarity item as a string).
 function parseAiRead(s) {
   try {
     let t = String(s).trim().replace(/^```[a-z]*\s*/i, '').replace(/```\s*$/i, '').trim();
     const a = t.indexOf('{'), b = t.lastIndexOf('}');
     if (a < 0 || b < 0) return null;
-    const o = JSON.parse(t.slice(a, b + 1));
+    const js = t.slice(a, b + 1).replace(/,(\s*[}\]])/g, '$1'); // strip trailing commas
+    const o = JSON.parse(js);
     if (!o || typeof o !== 'object' || !o.clarity || !o.aeo) return null;
-    const norm = (x) => (x && typeof x === 'object') ? { ok: !!x.ok, note: String(x.note || '').slice(0, 220) } : null;
+    const truthy = (v) => v === true || v === 1 || /^(true|yes|ok|pass|good)$/i.test(String(v || ''));
+    const norm = (x) => {
+      if (x == null) return null;
+      if (typeof x === 'string') return { ok: true, note: x.slice(0, 220) };
+      if (typeof x === 'object') return { ok: truthy(x.ok), note: String(x.note || x.text || x.reason || '').slice(0, 220) };
+      return null;
+    };
     const what = norm(o.clarity.what), who = norm(o.clarity.who), why = norm(o.clarity.why);
     if (!what || !who || !why) return null;
-    const ready = ['yes', 'partial', 'no'].includes(o.aeo.ready) ? o.aeo.ready : 'partial';
+    let ready = String(o.aeo.ready || '').toLowerCase().trim();
+    if (!['yes', 'partial', 'no'].includes(ready)) ready = /(^|[^a-z])(yes|ready)([^a-z]|$)/.test(ready) ? 'yes' : (/(^|[^a-z])no([^a-z]|$)/.test(ready) ? 'no' : 'partial');
     const reasons = Array.isArray(o.aeo.reasons) ? o.aeo.reasons.slice(0, 3).map((r) => String(r).slice(0, 160)).filter(Boolean) : [];
     return { clarity: { what, who, why }, aeo: { ready, note: String(o.aeo.note || '').slice(0, 260), reasons } };
   } catch {
