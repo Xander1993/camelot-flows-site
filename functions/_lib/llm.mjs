@@ -24,6 +24,26 @@ export function buildLlmMessages(findings, url, score, lang) {
   ];
 }
 
+// "The AI read" — a strategist's judgment (5-second clarity + AI-search readiness),
+// returned as strict JSON. Grounded ONLY in the supplied page text + signals.
+export function buildAiReadMessages(text, host, lang, signals) {
+  const language = LANG_NAME[lang] || 'English';
+  const system = [
+    'You are a senior conversion + SEO strategist giving a fast read of one web page for a non-technical local business owner.',
+    'You receive the page\'s visible text and a few technical signals. Judge ONLY from what is provided; never invent facts, services, names or locations.',
+    'Return ONLY valid minified JSON — no markdown, no commentary — with EXACTLY this shape:',
+    '{"clarity":{"what":{"ok":true,"note":""},"who":{"ok":true,"note":""},"why":{"ok":true,"note":""}},"aeo":{"ready":"yes","note":"","reasons":["",""]}}',
+    'clarity is the 5-second test: can a visitor instantly tell WHAT the business does, WHO it is for, and WHY choose it over a competitor. Set ok=true only when the page clearly answers it.',
+    'aeo: could an AI assistant (ChatGPT, Google AI Overviews, Perplexity) confidently recommend this business from this page when a customer asks for one. ready is "yes", "partial" or "no". Base it on the signals (schema, business schema, contact present) plus whether the page states concrete facts: what they do, where / area served, how to reach them.',
+    'Every note is one short concrete sentence; reasons is two short specific items. Write all notes and reasons in ' + language + '. Keep technical terms (schema, LocalBusiness) as-is. Be honest, not flattering.',
+  ].join(' ');
+  const user = JSON.stringify({ host: host || '', signals: signals || {}, pageText: String(text || '') });
+  return [
+    { role: 'system', content: system },
+    { role: 'user', content: user },
+  ];
+}
+
 const LLM_TIMEOUT_MS = 15_000;
 
 export async function callLlm(env, model, messages) {

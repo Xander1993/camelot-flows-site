@@ -129,7 +129,18 @@
       "preview_social": "WhatsApp / social share",
       "preview_shot": "Mobile screenshot",
       "preview_no_title": "Google will write a title for you",
-      "preview_no_desc": "No description set — Google picks a random line, rarely the one that sells."
+      "preview_no_desc": "No description set — Google picks a random line, rarely the one that sells.",
+      "airead_title": "The AI read",
+      "airead_caveat": "An AI's read of your page, grounded only in what's on it — not a guarantee.",
+      "airead_clarity": "The 5-second test",
+      "clarity_what": "What you do",
+      "clarity_who": "Who it's for",
+      "clarity_why": "Why you, not a competitor",
+      "aeo_label": "AI search readiness",
+      "aeo_q": "Could ChatGPT or Google AI recommend you from this page?",
+      "aeo_yes": "Ready",
+      "aeo_partial": "Partial",
+      "aeo_no": "Not yet"
     },
     "index": {
       "meta_title": "Web Design in Moldova — Get Found & Booked | Camelot Flows",
@@ -1294,7 +1305,18 @@
       "preview_social": "Partajare WhatsApp / social",
       "preview_shot": "Captură pe mobil",
       "preview_no_title": "Google îți va scrie un titlu în loc",
-      "preview_no_desc": "Fără descriere — Google alege o linie la întâmplare, rareori cea care vinde."
+      "preview_no_desc": "Fără descriere — Google alege o linie la întâmplare, rareori cea care vinde.",
+      "airead_title": "Cum te citește AI-ul",
+      "airead_caveat": "Cum citește un AI pagina ta, doar pe baza a ce e pe ea — nu o garanție.",
+      "airead_clarity": "Testul de 5 secunde",
+      "clarity_what": "Ce faci",
+      "clarity_who": "Pentru cine e",
+      "clarity_why": "De ce tu, nu un concurent",
+      "aeo_label": "Pregătit pentru căutarea AI",
+      "aeo_q": "Te-ar recomanda ChatGPT sau Google AI de pe această pagină?",
+      "aeo_yes": "Pregătit",
+      "aeo_partial": "Parțial",
+      "aeo_no": "Încă nu"
     },
     "index": {
       "meta_title": "Creare site web în Moldova — Găsit și rezervat | Camelot Flows",
@@ -2459,7 +2481,18 @@
       "preview_social": "Шеринг в WhatsApp / соцсети",
       "preview_shot": "Скриншот на мобильном",
       "preview_no_title": "Google сам придумает заголовок",
-      "preview_no_desc": "Описания нет — Google берёт случайную строку, редко ту, что продаёт."
+      "preview_no_desc": "Описания нет — Google берёт случайную строку, редко ту, что продаёт.",
+      "airead_title": "Как тебя читает AI",
+      "airead_caveat": "Как ИИ читает твою страницу, только по тому, что на ней есть — не гарантия.",
+      "airead_clarity": "Тест 5 секунд",
+      "clarity_what": "Что вы делаете",
+      "clarity_who": "Для кого это",
+      "clarity_why": "Почему вы, а не конкурент",
+      "aeo_label": "Готовность к AI-поиску",
+      "aeo_q": "Порекомендует ли ChatGPT или Google AI вас с этой страницы?",
+      "aeo_yes": "Готов",
+      "aeo_partial": "Частично",
+      "aeo_no": "Пока нет"
     },
     "index": {
       "meta_title": "Создание сайтов в Молдове — вас находят и к вам записываются | Camelot Flows",

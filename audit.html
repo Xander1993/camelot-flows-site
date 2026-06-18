@@ -109,6 +109,17 @@
       [data-theme="cozy"] #audit-tool input::placeholder{color:rgba(31,38,34,.4)}
       /* A global input{width:100%} reset stretches the consent checkbox full-width (and appearance:none hides it), pushing its label into a narrow column. Restore a real, small checkbox. */
       #audit-tool input[type="checkbox"]{appearance:auto;-webkit-appearance:auto;width:1rem;height:1rem;flex:0 0 auto;margin-top:2px;accent-color:#5f8a5a;cursor:pointer;background:none;border:0}
+      /* Night theme: the cozy base CSS darkens some text-white/NN opacities and theme-night.css misses /60,/70,/75 — force the whole audit tool back to white-on-dark so nothing turns invisible. */
+      [data-theme="night"] #audit-tool .text-white{color:#fff}
+      [data-theme="night"] #audit-tool .text-white\/75{color:rgba(255,255,255,.75)}
+      [data-theme="night"] #audit-tool .text-white\/70{color:rgba(255,255,255,.7)}
+      [data-theme="night"] #audit-tool .text-white\/60{color:rgba(255,255,255,.6)}
+      [data-theme="night"] #audit-tool .text-white\/55{color:rgba(255,255,255,.55)}
+      [data-theme="night"] #audit-tool .text-white\/50{color:rgba(255,255,255,.5)}
+      [data-theme="night"] #audit-tool .text-white\/45{color:rgba(255,255,255,.45)}
+      [data-theme="night"] #audit-tool .text-white\/40{color:rgba(255,255,255,.4)}
+      [data-theme="night"] #audit-tool .text-white\/35{color:rgba(255,255,255,.35)}
+      [data-theme="night"] #audit-tool .text-white\/30{color:rgba(255,255,255,.3)}
       /* --- Full-report UI: soft inner boxes, dividers, pass icons, benchmark bar (built CSS lacks these arbitrary utilities, so define them) --- */
       #audit-tool .audit-soft{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.10);border-radius:.5rem}
       [data-theme="cozy"] #audit-tool .audit-soft{background:rgba(31,38,34,.035);border-color:rgba(31,38,34,.12)}
@@ -299,6 +310,23 @@
                 <div id="audit-bench-fill" class="h-2 rounded-full transition-all duration-1000" style="width:0%;background:var(--terracotta,#c4785c)"></div>
                 <div id="audit-bench-marker" class="absolute -top-1 w-px h-4" style="left:68%;background:currentColor;opacity:.45"></div>
               </div>
+            </div>
+          </div>
+
+          <!-- The AI read: strategist judgment (5-second clarity + AI-search readiness) -->
+          <div id="audit-airead" class="hidden glass-panel rounded-lg p-6 md:p-8 mb-6 border-l-4 border-l-accent/60">
+            <h3 class="font-display text-xl text-white mb-1" data-i18n="pages.audit.airead_title">The AI read</h3>
+            <p class="text-white/45 text-xs mb-5" data-i18n="pages.audit.airead_caveat">An AI's read of your page, grounded only in what's on it — not a guarantee.</p>
+            <div class="font-mono text-[10px] tracking-[0.2em] uppercase text-white/40 mb-3" data-i18n="pages.audit.airead_clarity">The 5-second test</div>
+            <ul id="audit-clarity" class="space-y-3 mb-6"></ul>
+            <div class="audit-soft p-4">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-white/40" data-i18n="pages.audit.aeo_label">AI search readiness</span>
+                <span id="audit-aeo-chip" class="font-mono text-[10px] tracking-[0.15em] uppercase px-2 py-[2px] rounded-full"></span>
+              </div>
+              <p class="text-white/70 text-sm mb-2" data-i18n="pages.audit.aeo_q">Could ChatGPT or Google AI recommend you from this page?</p>
+              <p id="audit-aeo-note" class="text-white/60 text-sm mb-2"></p>
+              <ul id="audit-aeo-reasons" class="space-y-1"></ul>
             </div>
           </div>
 
@@ -507,7 +535,12 @@
     serp: document.getElementById('audit-serp'),
     social: document.getElementById('audit-social'),
     shotWrap: document.getElementById('audit-shot-wrap'),
-    shot: document.getElementById('audit-shot')
+    shot: document.getElementById('audit-shot'),
+    airead: document.getElementById('audit-airead'),
+    clarity: document.getElementById('audit-clarity'),
+    aeoChip: document.getElementById('audit-aeo-chip'),
+    aeoNote: document.getElementById('audit-aeo-note'),
+    aeoReasons: document.getElementById('audit-aeo-reasons')
   };
   var auditedUrl = '';
   var lastScore = 0;
@@ -633,6 +666,46 @@
     els.preview.classList.remove('hidden');
   }
 
+  // "The AI read" — strategist judgment panel.
+  function clarityRow(label, item) {
+    var ok = item && item.ok;
+    var li = el('li', 'flex items-start gap-3');
+    var ic = el('span', 'material-symbols-outlined shrink-0', ok ? 'check_circle' : 'error');
+    ic.style.fontSize = '20px';
+    ic.style.color = ok ? (cozy() ? '#3f7a52' : '#5fae7a') : (cozy() ? '#b07a1f' : '#ffc46b');
+    var box = el('div');
+    box.appendChild(el('div', 'text-white font-medium text-sm', label));
+    box.appendChild(el('div', 'text-white/55 text-sm', (item && item.note) || ''));
+    li.appendChild(ic); li.appendChild(box);
+    return li;
+  }
+  function renderAiRead(ai) {
+    if (!ai || !els.airead) return;
+    els.clarity.innerHTML = '';
+    els.clarity.appendChild(clarityRow(t('pages.audit.clarity_what', 'What you do'), ai.clarity.what));
+    els.clarity.appendChild(clarityRow(t('pages.audit.clarity_who', 'Who it is for'), ai.clarity.who));
+    els.clarity.appendChild(clarityRow(t('pages.audit.clarity_why', 'Why you, not a competitor'), ai.clarity.why));
+    var map = {
+      yes: { k: 'aeo_yes', d: 'Ready', cz: '#3f7a52', dk: '#5fae7a' },
+      partial: { k: 'aeo_partial', d: 'Partial', cz: '#b07a1f', dk: '#ffc46b' },
+      no: { k: 'aeo_no', d: 'Not yet', cz: '#b3402e', dk: '#ff7a7a' }
+    };
+    var m = map[ai.aeo.ready] || map.partial;
+    var col = cozy() ? m.cz : m.dk;
+    els.aeoChip.textContent = t('pages.audit.' + m.k, m.d);
+    els.aeoChip.style.color = col;
+    els.aeoChip.style.border = '1px solid ' + col;
+    els.aeoNote.textContent = ai.aeo.note || '';
+    els.aeoReasons.innerHTML = '';
+    (ai.aeo.reasons || []).forEach(function (rs) {
+      var li = el('li', 'flex items-start gap-2 text-white/55 text-sm');
+      var d = el('span', 'shrink-0', '•'); d.style.opacity = '.5';
+      li.appendChild(d); li.appendChild(el('span', null, rs));
+      els.aeoReasons.appendChild(li);
+    });
+    els.airead.classList.remove('hidden');
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     els.err.classList.add('hidden');
@@ -668,6 +741,8 @@
       els.summary.textContent = data.summary;
       applyScore(data.score);
       renderCompare(data.compare);
+      els.airead.classList.add('hidden');
+      renderAiRead(data.aiRead);
       renderPreviews(data.meta);
       els.shotWrap.classList.add('hidden');
 

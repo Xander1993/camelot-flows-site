@@ -17,7 +17,7 @@
  *   ADMIN_KEY        with body.adminKey + body.compare, runs ALL models side by side (QA mode)
  *   RATE_KV          optional KV binding for the monthly AI-call budget
  */
-import { pickModel, buildLlmMessages, callLlm } from '../_lib/llm.mjs';
+import { pickModel, buildLlmMessages, buildAiReadMessages, callLlm } from '../_lib/llm.mjs';
 import { pickLang, localizeFindings, localizePassed, localizedSummary, errMsg } from '../_lib/audit-i18n.mjs';
 import { normalizeUrl, ssrfBlocked } from '../_lib/audit-net.mjs';
 
@@ -80,6 +80,7 @@ export async function onRequestPost(context) {
   let modelUsed = null;
   let usage = null;
   let compare = null;
+  let aiRead = null;
 
   if (env.LLM_API_KEY && (await llmBudgetOk(env))) {
     const models = String(env.LLM_MODELS || 'deepseek/deepseek-v4-flash,nousresearch/hermes-4-70b')
@@ -95,13 +96,24 @@ export async function onRequestPost(context) {
     } else {
       const idx = Math.floor(Math.random() * models.length);
       modelUsed = pickModel(models, idx / models.length);
-      const r = await callLlm(env, modelUsed, messages);
+      // Two LLM passes in parallel: the plain-language summary + the structured "AI read"
+      // (5-second clarity + AI-search readiness). Parallel so phase 1 stays fast.
+      const aiMsgs = buildAiReadMessages(visibleText(page.html), meta.host, lang, {
+        hasSchema: passed.includes('schema'),
+        hasBusinessSchema: passed.includes('business_schema'),
+        hasContact: passed.includes('contact'),
+      });
+      const [r, ar] = await Promise.all([
+        callLlm(env, modelUsed, messages),
+        callLlm(env, modelUsed, aiMsgs),
+      ]);
       if (r.text) {
         summary = r.text;
         summarySource = 'llm';
         variant = String.fromCharCode(65 + idx); // 'A' | 'B' | ...
         usage = r.usage;
       }
+      if (ar.text) aiRead = parseAiRead(ar.text);
     }
   }
 
@@ -115,6 +127,7 @@ export async function onRequestPost(context) {
     findings: findingsL.sort((a, b) => sevRank(b.severity) - sevRank(a.severity)),
     passed: passedL,
     meta,
+    aiRead,
     speedPending: true,
   };
   if (isAdmin) {
@@ -243,6 +256,38 @@ function parseMeta(page) {
     ogDescription: decodeEntities(metaContent('og:description', 'property')).slice(0, 320),
     ogImage: /^https?:\/\//i.test(ogImage) ? ogImage.slice(0, 600) : '',
   };
+}
+
+// Strip tags/scripts to a plain-text snippet for the "AI read" prompt.
+function visibleText(html) {
+  return String(html || '')
+    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<noscript[\s\S]*?<\/noscript>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&[a-z#0-9]+;/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 2400);
+}
+
+// Defensive parse of the AI-read JSON (model output is untrusted; bad shape -> null -> panel hidden).
+function parseAiRead(s) {
+  try {
+    let t = String(s).trim().replace(/^```[a-z]*\s*/i, '').replace(/```\s*$/i, '').trim();
+    const a = t.indexOf('{'), b = t.lastIndexOf('}');
+    if (a < 0 || b < 0) return null;
+    const o = JSON.parse(t.slice(a, b + 1));
+    if (!o || typeof o !== 'object' || !o.clarity || !o.aeo) return null;
+    const norm = (x) => (x && typeof x === 'object') ? { ok: !!x.ok, note: String(x.note || '').slice(0, 220) } : null;
+    const what = norm(o.clarity.what), who = norm(o.clarity.who), why = norm(o.clarity.why);
+    if (!what || !who || !why) return null;
+    const ready = ['yes', 'partial', 'no'].includes(o.aeo.ready) ? o.aeo.ready : 'partial';
+    const reasons = Array.isArray(o.aeo.reasons) ? o.aeo.reasons.slice(0, 3).map((r) => String(r).slice(0, 160)).filter(Boolean) : [];
+    return { clarity: { what, who, why }, aeo: { ready, note: String(o.aeo.note || '').slice(0, 260), reasons } };
+  } catch {
+    return null;
+  }
 }
 
 function runChecks(page) {
