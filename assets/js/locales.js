@@ -122,7 +122,14 @@
       "speed_na_label": "MOBILE SPEED",
       "speed_failed": "Could not measure mobile speed right now (Google PageSpeed was busy). Re-run in a minute to add it.",
       "print_btn": "Or save this report as a PDF",
-      "gate_done": "Got it. I will send your prioritized fix plan shortly. Talk soon."
+      "gate_done": "Got it. I will send your prioritized fix plan shortly. Talk soon.",
+      "preview_title": "How you show up",
+      "preview_sub": "What a customer sees before they ever reach your site.",
+      "preview_serp": "Google result",
+      "preview_social": "WhatsApp / social share",
+      "preview_shot": "Mobile screenshot",
+      "preview_no_title": "Google will write a title for you",
+      "preview_no_desc": "No description set — Google picks a random line, rarely the one that sells."
     },
     "index": {
       "meta_title": "Web Design in Moldova — Get Found & Booked | Camelot Flows",
@@ -1280,7 +1287,14 @@
       "speed_na_label": "VITEZĂ MOBIL",
       "speed_failed": "Nu am putut măsura viteza pe mobil acum (Google PageSpeed era ocupat). Reia auditul într-un minut ca să o adaugi.",
       "print_btn": "Sau salvează raportul ca PDF",
-      "gate_done": "Am primit. Îți trimit în curând planul de remediere prioritizat. Pe curând."
+      "gate_done": "Am primit. Îți trimit în curând planul de remediere prioritizat. Pe curând.",
+      "preview_title": "Cum apari",
+      "preview_sub": "Ce vede un client înainte să ajungă pe site-ul tău.",
+      "preview_serp": "Rezultat Google",
+      "preview_social": "Partajare WhatsApp / social",
+      "preview_shot": "Captură pe mobil",
+      "preview_no_title": "Google îți va scrie un titlu în loc",
+      "preview_no_desc": "Fără descriere — Google alege o linie la întâmplare, rareori cea care vinde."
     },
     "index": {
       "meta_title": "Creare site web în Moldova — Găsit și rezervat | Camelot Flows",
@@ -2438,7 +2452,14 @@
       "speed_na_label": "СКОРОСТЬ НА МОБИЛЬНОМ",
       "speed_failed": "Не удалось измерить скорость на мобильном сейчас (Google PageSpeed был занят). Перезапустите аудит через минуту, чтобы добавить её.",
       "print_btn": "Или сохраните отчёт в PDF",
-      "gate_done": "Принято. Скоро пришлю ваш приоритетный план исправлений. До связи."
+      "gate_done": "Принято. Скоро пришлю ваш приоритетный план исправлений. До связи.",
+      "preview_title": "Как ты выглядишь",
+      "preview_sub": "Что видит клиент ещё до того, как попадёт на сайт.",
+      "preview_serp": "Результат в Google",
+      "preview_social": "Шеринг в WhatsApp / соцсети",
+      "preview_shot": "Скриншот на мобильном",
+      "preview_no_title": "Google сам придумает заголовок",
+      "preview_no_desc": "Описания нет — Google берёт случайную строку, редко ту, что продаёт."
     },
     "index": {
       "meta_title": "Создание сайтов в Молдове — вас находят и к вам записываются | Camelot Flows",

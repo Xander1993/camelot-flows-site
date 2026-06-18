@@ -132,6 +132,12 @@
         #audit-tool, #audit-tool h1, #audit-tool h2, #audit-tool h3, #audit-tool p, #audit-tool span, #audit-tool li, #audit-tool div{color:#111 !important}
         #audit-tool .audit-pass-ic{color:#2e7d4f !important}
       }
+      /* SERP / social-share preview cards — faithful light mockups (Google/WhatsApp are always on white), intentionally theme-independent */
+      #audit-tool .cf-card{background:#fff;border:1px solid #e3e3e6;border-radius:.6rem;color:#202124;overflow:hidden}
+      #audit-tool .cf-serp-title{color:#1a0dab}
+      #audit-tool .cf-serp-url,#audit-tool .cf-serp-desc{color:#4d5156}
+      #audit-tool .cf-muted{color:#70757a}
+      #audit-tool .cf-ph{background:#f1f1f3;color:#a3a6ab}
     </style>
 </head>
 
@@ -293,6 +299,26 @@
                 <div id="audit-bench-fill" class="h-2 rounded-full transition-all duration-1000" style="width:0%;background:var(--terracotta,#c4785c)"></div>
                 <div id="audit-bench-marker" class="absolute -top-1 w-px h-4" style="left:68%;background:currentColor;opacity:.45"></div>
               </div>
+            </div>
+          </div>
+
+          <!-- how you show up: Google result + social share + screenshot -->
+          <div id="audit-preview" class="hidden glass-panel rounded-lg p-6 md:p-8 mb-6">
+            <h3 class="font-display text-xl text-white mb-1" data-i18n="pages.audit.preview_title">How you show up</h3>
+            <p class="text-white/50 text-sm mb-5" data-i18n="pages.audit.preview_sub">What a customer sees before they ever reach your site.</p>
+            <div class="grid md:grid-cols-2 gap-5">
+              <div>
+                <div class="font-mono text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2" data-i18n="pages.audit.preview_serp">Google result</div>
+                <div id="audit-serp" class="cf-card p-4"></div>
+              </div>
+              <div>
+                <div class="font-mono text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2" data-i18n="pages.audit.preview_social">WhatsApp / social share</div>
+                <div id="audit-social" class="cf-card"></div>
+              </div>
+            </div>
+            <div id="audit-shot-wrap" class="hidden mt-5">
+              <div class="font-mono text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2" data-i18n="pages.audit.preview_shot">Mobile screenshot</div>
+              <img id="audit-shot" alt="" class="rounded-lg border border-white/10 max-w-[280px] w-full" />
             </div>
           </div>
 
@@ -476,7 +502,12 @@
     unlock: document.getElementById('audit-unlock'),
     consent: document.getElementById('audit-consent'),
     gateErr: document.getElementById('audit-gate-error'),
-    print: document.getElementById('audit-print')
+    print: document.getElementById('audit-print'),
+    preview: document.getElementById('audit-preview'),
+    serp: document.getElementById('audit-serp'),
+    social: document.getElementById('audit-social'),
+    shotWrap: document.getElementById('audit-shot-wrap'),
+    shot: document.getElementById('audit-shot')
   };
   var auditedUrl = '';
   var lastScore = 0;
@@ -568,6 +599,40 @@
     els.passed.classList.remove('hidden');
   }
 
+  function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+
+  // "How you show up" — Google SERP + social-share mockups built from the page's own title/meta/OG.
+  function renderPreviews(meta) {
+    if (!meta || !els.preview) return;
+    var host = meta.host || '';
+    els.serp.innerHTML = '';
+    var urlRow = el('div', 'flex items-center gap-2 mb-1');
+    if (host) { var fav = document.createElement('img'); fav.width = 16; fav.height = 16; fav.alt = ''; fav.style.borderRadius = '3px'; fav.onerror = function () { fav.remove(); }; fav.src = 'https://www.google.com/s2/favicons?domain=' + encodeURIComponent(host) + '&sz=64'; urlRow.appendChild(fav); }
+    urlRow.appendChild(el('span', 'cf-serp-url text-xs truncate', host));
+    els.serp.appendChild(urlRow);
+    els.serp.appendChild(el('div', 'cf-serp-title text-[17px] leading-snug mb-1', meta.title || (host + ' — ' + t('pages.audit.preview_no_title', 'Google will write a title for you'))));
+    if (meta.description) els.serp.appendChild(el('div', 'cf-serp-desc text-sm leading-snug', meta.description));
+    else els.serp.appendChild(el('div', 'cf-muted text-sm italic leading-snug', t('pages.audit.preview_no_desc', 'No description set — Google picks a random line, rarely the one that sells.')));
+    els.social.innerHTML = '';
+    if (meta.ogImage) {
+      var im = document.createElement('img'); im.alt = ''; im.style.width = '100%'; im.style.display = 'block'; im.style.aspectRatio = '1.91 / 1'; im.style.objectFit = 'cover';
+      im.onerror = function () { im.remove(); };
+      im.src = meta.ogImage;
+      els.social.appendChild(im);
+    } else {
+      var ph = el('div', 'cf-ph flex items-center justify-center'); ph.style.aspectRatio = '1.91 / 1';
+      var ic = el('span', 'material-symbols-outlined', 'hide_image'); ic.style.fontSize = '34px';
+      ph.appendChild(ic); els.social.appendChild(ph);
+    }
+    var sb = el('div', 'p-3');
+    sb.appendChild(el('div', 'cf-muted text-[11px] uppercase tracking-wide mb-1', host));
+    sb.appendChild(el('div', 'text-sm font-semibold leading-snug', meta.ogTitle || meta.title || host));
+    var sd = meta.ogDescription || meta.description;
+    if (sd) sb.appendChild(el('div', 'cf-serp-desc text-xs mt-1 leading-snug', sd.slice(0, 120)));
+    els.social.appendChild(sb);
+    els.preview.classList.remove('hidden');
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     els.err.classList.add('hidden');
@@ -603,6 +668,8 @@
       els.summary.textContent = data.summary;
       applyScore(data.score);
       renderCompare(data.compare);
+      renderPreviews(data.meta);
+      els.shotWrap.classList.add('hidden');
 
       // what is already working
       els.passedList.innerHTML = '';
@@ -654,6 +721,7 @@
       }
       (s.findings || []).forEach(function (x) { els.list.appendChild(findingCard(x)); });
       (s.passed || []).forEach(addPassed);
+      if (s.psi && s.psi.screenshot && els.shot) { els.shot.src = s.psi.screenshot; els.shotWrap.classList.remove('hidden'); els.preview.classList.remove('hidden'); }
       if (typeof s.scoreDelta === 'number' && s.scoreDelta !== 0) applyScore(lastScore + s.scoreDelta);
       track('audit_speed', { measured: true, perf: s.psi && s.psi.performance });
     }).catch(function () { els.speedPending.classList.add('hidden'); });

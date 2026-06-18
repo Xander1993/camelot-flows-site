@@ -64,6 +64,7 @@ export async function onRequestPost(context) {
   // (/api/audit-speed) so this response is fast and never blocks on Google's
   // 15-30s API. The client streams the speed card in and adjusts the score.
   const { findings, passed } = runChecks(page);
+  const meta = parseMeta(page);
 
   const findingsL = localizeFindings(findings, lang);
   const passedL = localizePassed(passed, lang);
@@ -113,6 +114,7 @@ export async function onRequestPost(context) {
     variant,
     findings: findingsL.sort((a, b) => sevRank(b.severity) - sevRank(a.severity)),
     passed: passedL,
+    meta,
     speedPending: true,
   };
   if (isAdmin) {
@@ -210,6 +212,38 @@ function f(id, severity, title, detail, vars) {
   return { id, severity, title, detail, vars };
 }
 function sevRank(s) { return s === 'high' ? 3 : s === 'medium' ? 2 : 1; }
+
+function decodeEntities(s) {
+  if (!s) return '';
+  return s
+    .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"').replace(/&#0?39;|&apos;/g, "'").replace(/&nbsp;/g, ' ')
+    .replace(/&#(\d+);/g, (m, n) => { try { return String.fromCharCode(+n); } catch { return m; } })
+    .trim();
+}
+
+// Parse the visible-identity fields used for the SERP / social-share previews.
+function parseMeta(page) {
+  const html = page.html;
+  const grab = (re) => { const x = html.match(re); return x ? x[1].trim() : ''; };
+  const metaContent = (name, attr) =>
+    grab(new RegExp('<meta[^>]+' + attr + '\\s*=\\s*["\']' + name + '["\'][^>]+content\\s*=\\s*["\']([^"\']*)["\']', 'i')) ||
+    grab(new RegExp('<meta[^>]+content\\s*=\\s*["\']([^"\']*)["\'][^>]+' + attr + '\\s*=\\s*["\']' + name + '["\']', 'i'));
+  const title = grab(/<title[^>]*>([\s\S]*?)<\/title>/i);
+  let host = '';
+  try { host = new URL(page.finalUrl).hostname.replace(/^www\./, ''); } catch { /* ignore */ }
+  let ogImage = metaContent('og:image', 'property') || metaContent('twitter:image', 'name');
+  if (ogImage) { try { ogImage = new URL(ogImage, page.finalUrl).toString(); } catch { /* keep as-is */ } }
+  return {
+    host,
+    url: page.finalUrl,
+    title: decodeEntities(title).slice(0, 180),
+    description: decodeEntities(metaContent('description', 'name')).slice(0, 320),
+    ogTitle: decodeEntities(metaContent('og:title', 'property')).slice(0, 180),
+    ogDescription: decodeEntities(metaContent('og:description', 'property')).slice(0, 320),
+    ogImage: /^https?:\/\//i.test(ogImage) ? ogImage.slice(0, 600) : '',
+  };
+}
 
 function runChecks(page) {
   const html = page.html;

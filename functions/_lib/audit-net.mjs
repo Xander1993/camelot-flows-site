@@ -50,10 +50,12 @@ export async function fetchPsi(url, timeoutMs = 25_000, apiKey = '') {
     const data = await res.json();
     const lh = data.lighthouseResult || {};
     const audits = lh.audits || {};
+    const shot = audits['final-screenshot'] && audits['final-screenshot'].details ? audits['final-screenshot'].details.data : null;
     return {
       performance: lh.categories && lh.categories.performance ? Math.round(lh.categories.performance.score * 100) : null,
       lcp_ms: audits['largest-contentful-paint'] ? Math.round(audits['largest-contentful-paint'].numericValue) : null,
       cls: audits['cumulative-layout-shift'] ? +audits['cumulative-layout-shift'].numericValue.toFixed(3) : null,
+      screenshot: typeof shot === 'string' && shot.startsWith('data:image/') ? shot : null,
     };
   } catch {
     return null;
