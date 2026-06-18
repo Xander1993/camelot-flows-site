@@ -42,6 +42,17 @@ export async function onRequestPost(context) {
   }
 
   const env = context.env || {};
+
+  // Temporary diagnostic: /api/audit-speed?debug=1 reports the raw PSI status + error
+  // snippet (never the key value) so we can see why a keyed call fails.
+  if (new URL(context.request.url).searchParams.get('debug') === '1') {
+    let api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?strategy=mobile&category=performance&url=' + encodeURIComponent(target.toString());
+    if (env.PSI_KEY) api += '&key=' + encodeURIComponent(env.PSI_KEY);
+    let st = 0, snip = '';
+    try { const r = await fetch(api); st = r.status; snip = (await r.text()).slice(0, 400); } catch (e) { snip = 'fetch err ' + (e && e.message); }
+    return json({ debug: true, keyed: Boolean(env.PSI_KEY), psiStatus: st, snippet: snip });
+  }
+
   const keyed = Boolean(env.PSI_KEY); // diagnostic only — never exposes the value
   let psi = null;
   try { psi = await fetchPsi(target.toString(), PSI_TIMEOUT_MS, env.PSI_KEY || ''); } catch { psi = null; }
