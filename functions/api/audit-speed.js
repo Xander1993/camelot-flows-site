@@ -13,7 +13,7 @@
 import { pickLang, localizeFindings, localizePassed, errMsg } from '../_lib/audit-i18n.mjs';
 import { normalizeUrl, ssrfBlocked, fetchPsi } from '../_lib/audit-net.mjs';
 
-const PSI_TIMEOUT_MS = 24_000;
+const PSI_TIMEOUT_MS = 45_000; // PSI on heavy real sites routinely takes 25-40s
 const RATE_LIMIT = 10; // per IP per window (one per audit, plus slack)
 const RATE_WINDOW_MS = 60_000;
 const ipHits = new Map();
@@ -42,25 +42,13 @@ export async function onRequestPost(context) {
   }
 
   const env = context.env || {};
-
-  // Temporary diagnostic: /api/audit-speed?debug=1 reports the raw PSI status + error
-  // snippet (never the key value) so we can see why a keyed call fails.
-  if (new URL(context.request.url).searchParams.get('debug') === '1') {
-    let api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?strategy=mobile&category=performance&url=' + encodeURIComponent(target.toString());
-    if (env.PSI_KEY) api += '&key=' + encodeURIComponent(env.PSI_KEY);
-    let st = 0, snip = '';
-    try { const r = await fetch(api); st = r.status; snip = (await r.text()).slice(0, 400); } catch (e) { snip = 'fetch err ' + (e && e.message); }
-    return json({ debug: true, keyed: Boolean(env.PSI_KEY), psiStatus: st, snippet: snip });
-  }
-
-  const keyed = Boolean(env.PSI_KEY); // diagnostic only — never exposes the value
   let psi = null;
   try { psi = await fetchPsi(target.toString(), PSI_TIMEOUT_MS, env.PSI_KEY || ''); } catch { psi = null; }
 
   if (!psi) {
     // Couldn't measure (timeout / rate-limited / blocked). Report it honestly;
     // the rest of the audit already stands on its own.
-    return json({ ok: true, measured: false, keyed, psi: null, findings: [], passed: [], scoreDelta: 0 });
+    return json({ ok: true, measured: false, psi: null, findings: [], passed: [], scoreDelta: 0 });
   }
 
   const findings = [];
@@ -89,7 +77,7 @@ export async function onRequestPost(context) {
   let scoreDelta = 0;
   for (const x of findingsL) scoreDelta -= (x.severity === 'high' ? 18 : x.severity === 'medium' ? 9 : 4);
 
-  return json({ ok: true, measured: true, keyed, psi, findings: findingsL, passed: passedL, scoreDelta });
+  return json({ ok: true, measured: true, psi, findings: findingsL, passed: passedL, scoreDelta });
 }
 
 function f(id, severity, title, detail, vars) {
