@@ -103,9 +103,11 @@ export async function onRequestPost(context) {
         hasBusinessSchema: passed.includes('business_schema'),
         hasContact: passed.includes('contact'),
       });
+      // AI read always uses the first (fastest) model + a longer budget — structured
+      // JSON generation is slower and was timing out on the larger A/B model.
       const [r, ar] = await Promise.all([
         callLlm(env, modelUsed, messages),
-        callLlm(env, modelUsed, aiMsgs),
+        callLlm(env, models[0], aiMsgs, 24_000),
       ]);
       if (r.text) {
         summary = r.text;

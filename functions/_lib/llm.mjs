@@ -46,10 +46,10 @@ export function buildAiReadMessages(text, host, lang, signals) {
 
 const LLM_TIMEOUT_MS = 15_000;
 
-export async function callLlm(env, model, messages) {
+export async function callLlm(env, model, messages, timeoutMs = LLM_TIMEOUT_MS) {
   const base = (env.LLM_BASE_URL || 'https://inference-api.nousresearch.com/v1').replace(/\/$/, '');
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), LLM_TIMEOUT_MS);
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
     const res = await fetch(`${base}/chat/completions`, {
       method: 'POST',
