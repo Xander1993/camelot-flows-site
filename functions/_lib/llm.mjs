@@ -35,7 +35,7 @@ export function buildAiReadMessages(text, host, lang, signals) {
     '{"clarity":{"what":{"ok":true,"note":""},"who":{"ok":true,"note":""},"why":{"ok":true,"note":""}},"aeo":{"ready":"yes","note":"","reasons":["",""]}}',
     'clarity is the 5-second test: can a visitor instantly tell WHAT the business does, WHO it is for, and WHY choose it over a competitor. Set ok=true only when the page clearly answers it.',
     'aeo: could an AI assistant (ChatGPT, Google AI Overviews, Perplexity) confidently recommend this business from this page when a customer asks for one. ready is "yes", "partial" or "no". Base it on the signals (schema, business schema, contact present) plus whether the page states concrete facts: what they do, where / area served, how to reach them.',
-    'Every note is one short concrete sentence; reasons is two short specific items. Write all notes and reasons in ' + language + '. Keep technical terms (schema, LocalBusiness) as-is. Be honest, not flattering.',
+    'Every note is one short concrete sentence under 110 characters; each reason is under 90 characters. Write all notes and reasons in ' + language + '. Keep technical terms (schema, LocalBusiness) as-is. Be honest, not flattering.',
   ].join(' ');
   const user = JSON.stringify({ host: host || '', signals: signals || {}, pageText: String(text || '') });
   return [
@@ -46,7 +46,7 @@ export function buildAiReadMessages(text, host, lang, signals) {
 
 const LLM_TIMEOUT_MS = 15_000;
 
-export async function callLlm(env, model, messages, timeoutMs = LLM_TIMEOUT_MS) {
+export async function callLlm(env, model, messages, timeoutMs = LLM_TIMEOUT_MS, extra = null) {
   const base = (env.LLM_BASE_URL || 'https://inference-api.nousresearch.com/v1').replace(/\/$/, '');
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
@@ -58,7 +58,7 @@ export async function callLlm(env, model, messages, timeoutMs = LLM_TIMEOUT_MS) 
         'content-type': 'application/json',
         authorization: `Bearer ${env.LLM_API_KEY}`,
       },
-      body: JSON.stringify({ model, messages, max_tokens: 650, temperature: 0.4 }),
+      body: JSON.stringify(Object.assign({ model, messages, max_tokens: 650, temperature: 0.4 }, extra || {})),
     });
     if (!res.ok) return { error: 'LLM HTTP ' + res.status };
     const data = await res.json();

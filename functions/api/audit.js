@@ -110,8 +110,9 @@ export async function onRequestPost(context) {
       const [r, ar] = await Promise.all([
         callLlm(env, modelUsed, messages),
         (async () => {
-          let x = await callLlm(env, models[0], aiMsgs, 20_000);
-          if (!x.text) x = await callLlm(env, models[0], aiMsgs, 12_000);
+          const ex = { max_tokens: 1200, temperature: 0.2 };
+          let x = await callLlm(env, models[0], aiMsgs, 20_000, ex);
+          if (!x.text) x = await callLlm(env, models[0], aiMsgs, 12_000, ex);
           return x;
         })(),
       ]);
