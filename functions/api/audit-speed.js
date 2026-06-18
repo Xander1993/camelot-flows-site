@@ -42,13 +42,14 @@ export async function onRequestPost(context) {
   }
 
   const env = context.env || {};
+  const keyed = Boolean(env.PSI_KEY); // diagnostic only — never exposes the value
   let psi = null;
   try { psi = await fetchPsi(target.toString(), PSI_TIMEOUT_MS, env.PSI_KEY || ''); } catch { psi = null; }
 
   if (!psi) {
     // Couldn't measure (timeout / rate-limited / blocked). Report it honestly;
     // the rest of the audit already stands on its own.
-    return json({ ok: true, measured: false, psi: null, findings: [], passed: [], scoreDelta: 0 });
+    return json({ ok: true, measured: false, keyed, psi: null, findings: [], passed: [], scoreDelta: 0 });
   }
 
   const findings = [];
@@ -77,7 +78,7 @@ export async function onRequestPost(context) {
   let scoreDelta = 0;
   for (const x of findingsL) scoreDelta -= (x.severity === 'high' ? 18 : x.severity === 'medium' ? 9 : 4);
 
-  return json({ ok: true, measured: true, psi, findings: findingsL, passed: passedL, scoreDelta });
+  return json({ ok: true, measured: true, keyed, psi, findings: findingsL, passed: passedL, scoreDelta });
 }
 
 function f(id, severity, title, detail, vars) {
