@@ -32,7 +32,8 @@ const ipHits = new Map(); // per-isolate best-effort limiter
 export async function onRequestPost(context) {
   const ip = context.request.headers.get('cf-connecting-ip') || 'unknown';
   let lang = 'en';
-  try { lang = pickLang(new URL(context.request.url).searchParams.get('lang')); } catch { /* default en */ }
+  let lite = false; // compare mode: skip the LLM passes (just score + signals)
+  try { const u = new URL(context.request.url); lang = pickLang(u.searchParams.get('lang')); lite = u.searchParams.get('lite') === '1'; } catch { /* default en */ }
   if (rateLimited(ip)) {
     return json({ ok: false, error: 'rate_limited', message: errMsg('rate_limited', lang, 'Too many audits from this connection. Try again in a minute.') }, 429);
   }
@@ -82,7 +83,7 @@ export async function onRequestPost(context) {
   let compare = null;
   let aiRead = null;
 
-  if (env.LLM_API_KEY && (await llmBudgetOk(env))) {
+  if (!lite && env.LLM_API_KEY && (await llmBudgetOk(env))) {
     const models = String(env.LLM_MODELS || 'deepseek/deepseek-v4-flash,nousresearch/hermes-4-70b')
       .split(',').map((s) => s.trim()).filter(Boolean);
     const messages = buildLlmMessages(findingsL, page.finalUrl, score, lang);

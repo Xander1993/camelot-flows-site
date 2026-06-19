@@ -365,6 +365,19 @@
             <span class="font-mono text-xs tracking-[0.2em] uppercase text-white/60" data-i18n="pages.audit.speed_measuring">Measuring mobile speed (Google PageSpeed)…</span>
           </div>
 
+          <!-- competitor compare -->
+          <div id="audit-compare-box" class="hidden glass-panel rounded-lg p-6 md:p-8 mt-6">
+            <h3 class="font-display text-xl text-white mb-1" data-i18n="pages.audit.cmp_title">See how you stack up</h3>
+            <p class="text-white/50 text-sm mb-5" data-i18n="pages.audit.cmp_sub">Add up to two competitors and compare the on-page essentials side by side.</p>
+            <div class="flex flex-col md:flex-row gap-3 mb-3">
+              <input id="audit-cmp-1" type="url" placeholder="competitor1.com" data-i18n-attr="placeholder:pages.audit.cmp_ph1" class="flex-1 bg-white/5 border border-white/15 rounded-md px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-primary font-mono text-sm" />
+              <input id="audit-cmp-2" type="url" placeholder="competitor2.com (optional)" data-i18n-attr="placeholder:pages.audit.cmp_ph2" class="flex-1 bg-white/5 border border-white/15 rounded-md px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-primary font-mono text-sm" />
+              <button id="audit-cmp-go" type="button" data-i18n="pages.audit.cmp_btn" class="bg-accent hover:bg-accent/90 text-white font-semibold rounded-md px-8 py-3 transition-colors whitespace-nowrap">Compare</button>
+            </div>
+            <p id="audit-cmp-error" class="text-sm mb-3 hidden" style="color:#ff7a7a"></p>
+            <div id="audit-cmp-result" class="hidden overflow-x-auto"></div>
+          </div>
+
           <!-- fix-plan lead capture (nothing above is hidden — this is an offer, not a lock) -->
           <div id="audit-gate" class="hidden glass-panel rounded-lg p-6 md:p-8 mt-6 border-l-4 border-l-accent/60">
             <div id="audit-gate-form">
@@ -540,10 +553,17 @@
     clarity: document.getElementById('audit-clarity'),
     aeoChip: document.getElementById('audit-aeo-chip'),
     aeoNote: document.getElementById('audit-aeo-note'),
-    aeoReasons: document.getElementById('audit-aeo-reasons')
+    aeoReasons: document.getElementById('audit-aeo-reasons'),
+    compareBox: document.getElementById('audit-compare-box'),
+    cmp1: document.getElementById('audit-cmp-1'),
+    cmp2: document.getElementById('audit-cmp-2'),
+    cmpGo: document.getElementById('audit-cmp-go'),
+    cmpErr: document.getElementById('audit-cmp-error'),
+    cmpResult: document.getElementById('audit-cmp-result')
   };
   var auditedUrl = '';
   var lastScore = 0;
+  var lastAudit = null; // { host, score, ids[] } for the competitor compare
   var lastVariant = 'template';
   var adminKey = new URLSearchParams(location.search).get('admin') || '';
   var BENCH = 68; // typical local-business site score
@@ -706,6 +726,52 @@
     els.airead.classList.remove('hidden');
   }
 
+  // Competitor compare — side-by-side on-page essentials (you vs up to two rivals).
+  function buildCompare(sites) {
+    els.cmpResult.innerHTML = '';
+    var rows = [
+      { id: '__grade', label: t('pages.audit.cmp_row_grade', 'Grade') },
+      { id: 'https', label: t('pages.audit.cmp_row_https', 'Secure (HTTPS)') },
+      { id: 'viewport', label: t('pages.audit.cmp_row_mobile', 'Mobile-ready') },
+      { id: 'business_schema', label: t('pages.audit.cmp_row_schema', 'Business schema') },
+      { id: 'contact', label: t('pages.audit.cmp_row_contact', 'Contact path') },
+      { id: 'tappable_phone', label: t('pages.audit.cmp_row_phone', 'Tappable phone') },
+      { id: 'meta_desc', label: t('pages.audit.cmp_row_meta', 'Meta description') },
+      { id: 'og', label: t('pages.audit.cmp_row_og', 'Social preview') }
+    ];
+    var table = el('table', 'w-full text-sm');
+    var thead = document.createElement('thead');
+    var hr = document.createElement('tr');
+    hr.appendChild(el('th', '', ''));
+    sites.forEach(function (s, i) { hr.appendChild(el('th', 'py-2 px-3 font-semibold ' + (i === 0 ? 'text-accent' : 'text-white'), s.name)); });
+    thead.appendChild(hr); table.appendChild(thead);
+    var tb = document.createElement('tbody');
+    rows.forEach(function (row) {
+      var tr = el('tr', 'audit-divide');
+      tr.appendChild(el('td', 'text-white/60 py-2 pr-4 whitespace-nowrap', row.label));
+      sites.forEach(function (s) {
+        var td = el('td', 'text-center py-2 px-3');
+        if (row.id === '__grade') {
+          var gl = gradeLetter(s.score);
+          var sp = el('span', 'font-display text-lg', gl);
+          sp.style.color = cozy() ? GRADE[gl].cozy : GRADE[gl].dark;
+          td.appendChild(sp);
+        } else {
+          var has = s.ids.indexOf(row.id) !== -1;
+          var ic = el('span', 'material-symbols-outlined', has ? 'check_circle' : 'cancel');
+          ic.style.fontSize = '18px';
+          ic.style.color = has ? (cozy() ? '#3f7a52' : '#5fae7a') : (cozy() ? 'rgba(31,38,34,.3)' : 'rgba(255,255,255,.25)');
+          td.appendChild(ic);
+        }
+        tr.appendChild(td);
+      });
+      tb.appendChild(tr);
+    });
+    table.appendChild(tb);
+    els.cmpResult.appendChild(table);
+    els.cmpResult.classList.remove('hidden');
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     els.err.classList.add('hidden');
@@ -759,6 +825,12 @@
       els.gateForm.classList.remove('hidden');
       els.gateDone.classList.add('hidden');
       els.gate.classList.remove('hidden');
+
+      // competitor compare — stash this result as the "You" column
+      lastAudit = { host: (data.meta && data.meta.host) || auditedUrl, score: data.score, ids: (data.passed || []).map(function (x) { return x.id; }) };
+      els.cmpResult.classList.add('hidden');
+      els.cmpResult.innerHTML = '';
+      els.compareBox.classList.remove('hidden');
 
       els.results.classList.remove('hidden');
       els.results.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -861,6 +933,28 @@
       .then(function (r) { return r.json(); })
       .then(done)
       .catch(done); // the visitor held up their side — confirm regardless
+  });
+
+  if (els.cmpGo) els.cmpGo.addEventListener('click', function () {
+    els.cmpErr.classList.add('hidden');
+    if (!lastAudit) return;
+    var urls = [els.cmp1.value, els.cmp2.value].map(function (v) { return (v || '').trim(); }).filter(Boolean).slice(0, 2);
+    if (!urls.length) { els.cmpErr.textContent = t('pages.audit.cmp_err_empty', 'Add at least one competitor address.'); els.cmpErr.classList.remove('hidden'); return; }
+    els.cmpGo.disabled = true;
+    els.cmpGo.textContent = t('pages.audit.cmp_running', 'Comparing…');
+    Promise.all(urls.map(function (u) {
+      return fetch('/api/audit?lite=1&lang=' + encodeURIComponent(curLang()), { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ url: u, lang: curLang() }) })
+        .then(function (r) { return r.json(); })
+        .then(function (d) { return (d && d.ok) ? { name: (d.meta && d.meta.host) || u, score: d.score, ids: (d.passed || []).map(function (x) { return x.id; }) } : null; })
+        .catch(function () { return null; });
+    })).then(function (results) {
+      els.cmpGo.disabled = false;
+      els.cmpGo.textContent = t('pages.audit.cmp_btn', 'Compare');
+      var comps = results.filter(Boolean);
+      if (!comps.length) { els.cmpErr.textContent = t('pages.audit.cmp_err_failed', 'Could not audit those sites (some block automated checks). Try different URLs.'); els.cmpErr.classList.remove('hidden'); return; }
+      buildCompare([{ name: t('pages.audit.cmp_you', 'You'), score: lastAudit.score, ids: lastAudit.ids }].concat(comps));
+      track('audit_compare', { competitors: comps.length });
+    });
   });
 
   if (els.print) els.print.addEventListener('click', function () { window.print(); });
