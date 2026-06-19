@@ -81,7 +81,6 @@ export async function onRequestPost(context) {
   let usage = null;
   let compare = null;
   let aiRead = null;
-  let aiReadDbg = null;
 
   if (env.LLM_API_KEY && (await llmBudgetOk(env))) {
     const models = String(env.LLM_MODELS || 'deepseek/deepseek-v4-flash,nousresearch/hermes-4-70b')
@@ -123,7 +122,6 @@ export async function onRequestPost(context) {
         usage = r.usage;
       }
       if (ar.text) aiRead = parseAiRead(ar.text);
-      aiReadDbg = { hasText: Boolean(ar.text), err: ar.error || null, parsed: Boolean(aiRead), sample: (ar.text || '').slice(0, 500) };
     }
   }
 
@@ -138,7 +136,6 @@ export async function onRequestPost(context) {
     passed: passedL,
     meta,
     aiRead,
-    aiReadDebug: aiReadDbg,
     speedPending: true,
   };
   if (isAdmin) {
