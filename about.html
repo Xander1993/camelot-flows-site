@@ -64,7 +64,7 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"></noscript>
 <link rel="stylesheet" href="assets/css/tailwind.built.css">
     <link rel="stylesheet" href="assets/site.css">
-    <link rel="stylesheet" href="assets/css/camelot.css?v=6">
+    <link rel="stylesheet" href="assets/css/camelot.css?v=7">
     <link rel="stylesheet" href="assets/css/theme-night.css">
     <link rel="stylesheet" href="assets/css/lang-switcher.css">
     <link rel="prefetch" href="arsenal.html" as="document">
@@ -252,7 +252,7 @@
   <!-- Why Camelot? -->
   <section class="section" style="background:rgba(255,255,255,0.32);">
     <div class="container">
-      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start;">
+      <div class="split-2col">
         <div>
           <p class="section-kicker" data-i18n="pages.about.s_name_kicker">The Name</p>
           <h2 class="section-title" data-i18n="pages.about.s_name_h2">Why <em class="accent">Camelot?</em></h2>
@@ -305,7 +305,7 @@
   <!-- Arthur -->
   <section class="section" style="background:rgba(255,255,255,0.32);">
     <div class="container">
-      <div style="display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);gap:64px;align-items:start;">
+      <div class="collapse-mobile" style="display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);gap:64px;align-items:start;">
         <div>
           <p class="section-kicker" data-i18n="pages.about.s_calendar_kicker">The Calendar</p>
           <h2 class="section-title" data-i18n="pages.about.s_calendar_h2">Arthur's nap schedule is my <em class="accent">deep-work calendar.</em></h2>
@@ -361,7 +361,7 @@
   <!-- Game dev -->
   <section class="section">
     <div class="container">
-      <div style="display:grid;grid-template-columns:minmax(0,0.95fr) minmax(0,1.05fr);gap:64px;align-items:center;">
+      <div class="collapse-mobile" style="display:grid;grid-template-columns:minmax(0,0.95fr) minmax(0,1.05fr);gap:64px;align-items:center;">
         <div>
           <p class="section-kicker" data-i18n="pages.about.s_game_kicker">Side Project</p>
           <h2 class="section-title" data-i18n="pages.about.s_game_h2">I'm also building a <em class="accent">game.</em></h2>
@@ -388,7 +388,7 @@
         <h2 class="section-title" data-i18n="pages.about.s_moldova_h2">Moldova is an <em class="accent">asset.</em></h2>
         <p class="section-copy" style="max-width:600px;margin:16px auto 0" data-i18n="pages.about.s_moldova_p">Lower cost of living means lower overhead, which means I can take fewer clients and do better work for each one. I don't race to fill a calendar. I pick work carefully and treat it accordingly. The timezone (EET, UTC+2) overlaps fully with Western Europe and reaches US East Coast mornings with an early start.</p>
       </div>
-      <div class="proof-strip" style="margin-top:40px;grid-template-columns:repeat(3,minmax(0,1fr))">
+      <div class="proof-strip collapse-mobile" style="margin-top:40px;grid-template-columns:repeat(3,minmax(0,1fr))">
         <div class="proof-item">
           <strong data-i18n="pages.about.s_moldova_proof1_h">24-hour replies</strong>
           <span data-i18n="pages.about.s_moldova_proof1_p">Every client message answered within one business day, without exception.</span>
@@ -408,7 +408,7 @@
   <!-- The Promise -->
   <section class="section">
     <div class="container">
-      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start;">
+      <div class="split-2col">
         <div>
           <p class="section-kicker" data-i18n="pages.about.s_promise_kicker">How I work</p>
           <h2 class="section-title" data-i18n="pages.about.s_promise_h2">The <em class="accent">promise.</em></h2>

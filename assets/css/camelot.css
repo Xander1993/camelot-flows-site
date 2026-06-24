@@ -1619,6 +1619,40 @@ body {
     background-size: 50px 50px;
 }
 
+/* ── Two-column split sections (text + visual, or heading + content) ──
+   Replaces the inline `grid-template-columns:minmax(0,1fr) minmax(0,1fr)` used
+   on merlin / about / for-agencies. That inline grid never collapsed, so on
+   phones the cards/copy were squeezed to ~50% beside the visual (or beside a
+   second text column) — see the broken Merlin "How I set it up" section.
+   Below the small-tablet breakpoint we drop to one full-width column so cards
+   and copy use the section's own horizontal padding and read at 100% width. */
+.split-2col {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 56px;
+    align-items: start;
+}
+.split-2col.is-centered {
+    align-items: center;
+}
+@media (max-width: 880px) {
+    .split-2col {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+/* Force any bespoke multi-column inline grid down to one full-width column on
+   phones. Used where the desktop ratio is intentionally NOT 50/50 (e.g. 1.1/0.9,
+   1/1.4) or is a 3-up strip, so .split-2col can't express it and we must keep
+   the inline `grid-template-columns` for desktop. !important is required to beat
+   that inline declaration on small screens. Desktop layout is untouched. */
+@media (max-width: 880px) {
+    .collapse-mobile {
+        grid-template-columns: 1fr !important;
+    }
+}
+
 #hero-word-1,
 #hero-word-2 {
     max-width: 100%;
