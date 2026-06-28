@@ -558,3 +558,54 @@ Text Domain: camelot-flows
 [data-theme="cozy"] .cf-blog-cta-btn:hover {
     background: rgba(79,70,229,1) !important;
 }
+/* ================================================================
+   Camelot Codex — in-body editorial figures (floated, text wraps)
+   Tailwind float/clear utilities are purged from tailwind.built.css,
+   so these are authored here. Used by the blog engine (.cf-body-fig).
+   Mobile: full-width block. Desktop: floats 45%, alternating sides,
+   text wraps around. Double-bezel frame + gentle hover zoom. Theme-aware.
+   ================================================================ */
+.prose-camelot h2 { clear: both; }
+
+.cf-body-fig {
+    margin: 2rem 0;
+    padding: 6px;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(26, 26, 24, 0.08);
+    box-shadow: 0 18px 50px -22px rgba(26, 26, 24, 0.30);
+}
+
+.cf-body-fig-inner {
+    border-radius: 10px;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.cf-body-fig img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: 0;
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.cf-body-fig:hover img { transform: scale(1.03); }
+
+@media (min-width: 768px) {
+    .cf-body-fig { width: 45%; margin-top: 0.35rem; margin-bottom: 1rem; }
+    .cf-body-fig--right { float: right; margin-left: 2.25rem; }
+    .cf-body-fig--left  { float: left;  margin-right: 2.25rem; }
+}
+
+[data-theme="night"] .cf-body-fig {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.10);
+    box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.55);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cf-body-fig img { transition: none; }
+    .cf-body-fig:hover img { transform: none; }
+}
