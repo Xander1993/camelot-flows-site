@@ -1187,6 +1187,10 @@
   },
   "blog": {
     "back": "← Back to Codex",
+    "prev": "Previous",
+    "next": "Next",
+    "cta_title": "Want this built for you?",
+    "cta_sub": "Fixed scope. Fixed price. Fixed deadline.",
     "read_dispatch": "Read dispatch",
     "read": "Read",
     "featured": "Featured",
@@ -2380,6 +2384,10 @@
   },
   "blog": {
     "back": "← Înapoi la Codex",
+    "prev": "Anterior",
+    "next": "Următor",
+    "cta_title": "Vrei asta construit pentru tine?",
+    "cta_sub": "Scop fix. Preț fix. Termen fix.",
     "read_dispatch": "Citește dispatch-ul",
     "read": "Citește",
     "featured": "Recomandat",
@@ -3573,6 +3581,10 @@
   },
   "blog": {
     "back": "← К Кодексу",
+    "prev": "Предыдущая",
+    "next": "Следующая",
+    "cta_title": "Хотите такое для себя?",
+    "cta_sub": "Фиксированный объём. Фиксированная цена. Фиксированный срок.",
     "read_dispatch": "Читать выпуск",
     "read": "Читать",
     "featured": "Рекомендуем",
