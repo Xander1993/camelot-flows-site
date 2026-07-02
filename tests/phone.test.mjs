@@ -30,6 +30,7 @@ test('ISBNs, dates and prices are NOT phones', () => {
     'population 12 345 678 people',
     'copyright 2020-2026',
     'pi is 3.14159265358979',
+    'Winterton, Deanne (2012-02-21). Retrieved 2026-07-02.', // citation-style parenthesised date
   ];
   for (const s of notPhones) {
     assert.equal(hasVisiblePhone(s), false, 'should NOT match: ' + s);

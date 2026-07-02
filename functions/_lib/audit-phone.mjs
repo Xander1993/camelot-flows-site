@@ -19,9 +19,11 @@ export function isPhoneLike(candidate) {
   const digits = s.replace(/\D/g, '');
   if (digits.length < 8 || digits.length > 15) return false;
 
-  // Date shapes: 2026-07-02 / 02.07.2026 etc.
-  if (/^\d{4}[-./]\d{1,2}[-./]\d{1,2}$/.test(s)) return false;
-  if (/^\d{1,2}[-./]\d{1,2}[-./]\d{4}$/.test(s)) return false;
+  // Date shapes: 2026-07-02 / 02.07.2026 — also when wrapped in parentheses,
+  // e.g. Wikipedia citation dates "(2012-02-21)".
+  const bare = s.replace(/[()\s]/g, '');
+  if (/^\d{4}[-./]\d{1,2}[-./]\d{1,2}$/.test(bare)) return false;
+  if (/^\d{1,2}[-./]\d{1,2}[-./]\d{4}$/.test(bare)) return false;
 
   // International prefix is the strongest phone signal.
   if (s.startsWith('+')) return true;
