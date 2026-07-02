@@ -1,9 +1,14 @@
 // Shared network helpers for the audit endpoints (main audit + phase-2 speed).
 // Kept SSRF-guarded and timeout-bounded; no persistent storage.
 
+// Returns a URL, null (unparseable), or { error: 'unsupported_scheme' } when the
+// input names a non-http(s) scheme (ftp:// etc.) — callers surface a clear message
+// instead of letting "ftp" be treated as a hostname.
 export function normalizeUrl(raw) {
   let s = String(raw || '').trim();
   if (!s) return null;
+  const scheme = s.match(/^([a-z][a-z0-9+.-]*):\/\//i);
+  if (scheme && !/^https?$/i.test(scheme[1])) return { error: 'unsupported_scheme' };
   if (!/^https?:\/\//i.test(s)) s = 'https://' + s;
   let u;
   try { u = new URL(s); } catch { return null; }

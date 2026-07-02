@@ -512,7 +512,7 @@
     <script defer src="assets/site.js"></script>
 
 <script>
-/* Audit tool front-end: POST /api/audit, render findings, gate the tail behind email. */
+/* Audit tool front-end: POST /api/audit, render all findings (nothing is email-gated); the email form only requests the manual fix plan. */
 (function () {
   var form = document.getElementById('audit-form');
   if (!form) return;

@@ -20,6 +20,7 @@
 import { pickModel, buildLlmMessages, buildAiReadMessages, callLlm } from '../_lib/llm.mjs';
 import { pickLang, localizeFindings, localizePassed, localizedSummary, errMsg } from '../_lib/audit-i18n.mjs';
 import { normalizeUrl, ssrfBlocked } from '../_lib/audit-net.mjs';
+import { hasVisiblePhone } from '../_lib/audit-phone.mjs';
 
 const MAX_BODY_BYTES = 1_500_000;
 const FETCH_TIMEOUT_MS = 10_000;
@@ -49,6 +50,9 @@ export async function onRequestPost(context) {
   if (!target) {
     return json({ ok: false, error: 'invalid_url', message: errMsg('invalid_url', lang, 'That does not look like a public website address.') }, 400);
   }
+  if (target.error === 'unsupported_scheme') {
+    return json({ ok: false, error: 'unsupported_scheme', message: errMsg('unsupported_scheme', lang, 'Only http:// and https:// websites can be audited.') }, 400);
+  }
   const blocked = ssrfBlocked(target);
   if (blocked) {
     return json({ ok: false, error: 'blocked_url', message: blocked }, 400);
@@ -58,7 +62,9 @@ export async function onRequestPost(context) {
   try {
     page = await guardedFetch(target);
   } catch (e) {
-    return json({ ok: false, error: 'fetch_failed', message: errMsg('fetch_prefix', lang, 'Could not load that site') + ' (' + (e && e.message ? e.message : 'network error') + '). ' + errMsg('fetch_suffix', lang, 'Is it online and public?') }, 502);
+    // 422, not 502: Cloudflare replaces 502s from Pages Functions with its own
+    // plain-text error page, which destroys this JSON body before the client sees it.
+    return json({ ok: false, error: 'fetch_failed', message: errMsg('fetch_prefix', lang, 'Could not load that site') + ' (' + (e && e.message ? e.message : 'network error') + '). ' + errMsg('fetch_suffix', lang, 'Is it online and public?') }, 422);
   }
 
   // Mobile speed (PageSpeed Insights) is measured in a separate phase-2 call
@@ -293,7 +299,13 @@ function parseAiRead(s) {
     const truthy = (v) => v === true || v === 1 || /^(true|yes|ok|pass|good)$/i.test(String(v || ''));
     const norm = (x) => {
       if (x == null) return null;
-      if (typeof x === 'string') return { ok: true, note: x.slice(0, 220) };
+      if (typeof x === 'string') {
+        // A bare string is only a pass when it doesn't read like a negative
+        // ("cannot tell", "unclear", "no obvious audience", "not stated"...).
+        const t = x.trim();
+        const negative = /(cannot|unclear|no |not )/i.test(t);
+        return { ok: t.length > 0 && !negative, note: x.slice(0, 220) };
+      }
       if (typeof x === 'object') return { ok: truthy(x.ok), note: String(x.note || x.text || x.reason || '').slice(0, 220) };
       return null;
     };
@@ -324,8 +336,7 @@ function runChecks(page) {
 
   // -- click-to-call --
   const telLinks = [...html.matchAll(/href\s*=\s*["']tel:([^"']*)["']/gi)].map((x) => x[1].trim());
-  const phonePattern = /(?:\+?\d[\d\s().-]{7,}\d)/;
-  const visiblePhone = phonePattern.test(html.replace(/<script[\s\S]*?<\/script>/gi, ''));
+  const visiblePhone = hasVisiblePhone(html.replace(/<script[\s\S]*?<\/script>/gi, ''));
   const brokenTel = telLinks.filter((t) => !t || /[^\d+()\-. %]/.test(t) || t.replace(/\D/g, '').length < 6);
   if (telLinks.length === 0 && visiblePhone) {
     findings.push(f('tel_missing', 'high', 'Phone number is not tappable',

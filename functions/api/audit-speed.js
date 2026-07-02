@@ -37,6 +37,9 @@ export async function onRequestPost(context) {
   if (!target) {
     return json({ ok: false, error: 'invalid_url', message: errMsg('invalid_url', lang, 'That does not look like a public website address.') }, 400);
   }
+  if (target.error === 'unsupported_scheme') {
+    return json({ ok: false, error: 'unsupported_scheme', message: errMsg('unsupported_scheme', lang, 'Only http:// and https:// websites can be audited.') }, 400);
+  }
   if (ssrfBlocked(target)) {
     return json({ ok: false, error: 'blocked_url', message: 'That address cannot be audited.' }, 400);
   }
@@ -59,9 +62,17 @@ export async function onRequestPost(context) {
       'Google PageSpeed scores this page ' + psi.performance + '/100 on a mobile connection. Visitors on phones bounce before slow pages finish loading.',
       { perf: psi.performance }));
   } else if (psi.performance !== null && psi.performance < 80) {
-    findings.push(f('mediocre_mobile', 'medium', 'Mobile speed has headroom',
-      'Mobile performance score is ' + psi.performance + '/100. Not broken, but every second of load time costs conversions.',
-      { perf: psi.performance }));
+    if (psi.lcp_ms !== null && psi.lcp_ms > 4000) {
+      // LCP is in Google's "poor" band — "Not broken, but…" would contradict
+      // the LCP finding rendered right next to it. Use serious copy instead.
+      findings.push(f('mediocre_mobile_poor_lcp', 'medium', 'Mobile speed needs real work',
+        'Mobile performance score is ' + psi.performance + '/100 and the main content is slow enough to sit in Google’s “poor” band. On phones this is actively costing you visitors, not just polish.',
+        { perf: psi.performance }));
+    } else {
+      findings.push(f('mediocre_mobile', 'medium', 'Mobile speed has headroom',
+        'Mobile performance score is ' + psi.performance + '/100. Not broken, but every second of load time costs conversions.',
+        { perf: psi.performance }));
+    }
   } else if (psi.performance !== null) {
     passed.push('fast_mobile');
   }

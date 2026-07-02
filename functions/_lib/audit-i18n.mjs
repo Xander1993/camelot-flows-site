@@ -29,6 +29,7 @@ const FINDINGS = {
     no_favicon: { title: 'Niciun favicon declarat', detail: 'Iconița din tab e un lucru mic, dar absența ei se citește ca „neterminat” într-o bară de taburi plină de concurenți îngrijiți.' },
     slow_mobile: { title: 'Lent pe mobil', detail: 'Google PageSpeed dă acestei pagini {perf}/100 pe o conexiune mobilă. Vizitatorii de pe telefon pleacă înainte ca paginile lente să se încarce.' },
     mediocre_mobile: { title: 'Viteza pe mobil mai are loc de mai bine', detail: 'Scorul de performanță pe mobil este {perf}/100. Nu e stricat, dar fiecare secundă de încărcare costă conversii.' },
+    mediocre_mobile_poor_lcp: { title: 'Viteza pe mobil are nevoie de lucru serios', detail: 'Scorul de performanță pe mobil este {perf}/100, iar conținutul principal este atât de lent încât intră în banda „slabă” a Google. Pe telefoane asta te costă activ vizitatori, nu e doar șlefuială.' },
     lcp: { title: 'Conținutul principal apare în {secs}s (LCP)', detail: 'Largest Contentful Paint peste 4 secunde este în banda „slabă” a Google, afectează atât pozițiile, cât și răbdarea.' }
   },
   ru: {
@@ -50,6 +51,7 @@ const FINDINGS = {
     no_favicon: { title: 'Не объявлен favicon', detail: 'Иконка вкладки мелочь, но её отсутствие читается как «недоделано» в ряду вкладок с опрятными конкурентами.' },
     slow_mobile: { title: 'Медленно на мобильном', detail: 'Google PageSpeed даёт этой странице {perf}/100 на мобильном соединении. Посетители с телефонов уходят раньше, чем медленные страницы догрузятся.' },
     mediocre_mobile: { title: 'Скорость на мобильном можно улучшить', detail: 'Оценка производительности на мобильном {perf}/100. Не сломано, но каждая секунда загрузки стоит конверсий.' },
+    mediocre_mobile_poor_lcp: { title: 'Скорость на мобильном требует серьёзной работы', detail: 'Оценка производительности на мобильном {perf}/100, а основной контент настолько медленный, что попадает в «плохую» зону Google. На телефонах это активно стоит вам посетителей, а не просто полировки.' },
     lcp: { title: 'Основной контент появляется за {secs}с (LCP)', detail: 'Largest Contentful Paint выше 4 секунд в «плохой» зоне Google, это бьёт и по позициям, и по терпению.' }
   }
 };
@@ -75,6 +77,7 @@ const FIX = {
     no_favicon: 'Add a favicon (<link rel="icon">) — most builders have a one-click upload.',
     slow_mobile: 'Compress images, defer non-critical scripts, enable caching/CDN.',
     mediocre_mobile: 'Trim image weight and unused scripts to claw back the easy seconds.',
+    mediocre_mobile_poor_lcp: 'Fix the largest image/banner first (compress, right-size, preload), then defer non-critical scripts.',
     lcp: 'Optimize the largest image/banner: compress it, size it right, preload it.'
   },
   ro: {
@@ -96,6 +99,7 @@ const FIX = {
     no_favicon: 'Adaugă un favicon (<link rel="icon">) — majoritatea platformelor au upload dintr-un clic.',
     slow_mobile: 'Comprimă imaginile, amână scripturile necritice, activează caching/CDN.',
     mediocre_mobile: 'Reduce greutatea imaginilor și scripturile nefolosite ca să recuperezi secundele ușoare.',
+    mediocre_mobile_poor_lcp: 'Repară întâi imaginea/bannerul cel mai mare (comprimă, dimensionează corect, preload), apoi amână scripturile necritice.',
     lcp: 'Optimizează imaginea/bannerul cel mai mare: comprimă, dimensionează corect, fă-i preload.'
   },
   ru: {
@@ -117,6 +121,7 @@ const FIX = {
     no_favicon: 'Добавьте favicon (<link rel="icon">) — у большинства конструкторов загрузка в один клик.',
     slow_mobile: 'Сожмите изображения, отложите некритичные скрипты, включите кеширование/CDN.',
     mediocre_mobile: 'Уменьшите вес картинок и неиспользуемые скрипты, чтобы вернуть лёгкие секунды.',
+    mediocre_mobile_poor_lcp: 'Сначала займитесь самым большим изображением/баннером (сжатие, правильный размер, preload), затем отложите некритичные скрипты.',
     lcp: 'Оптимизируйте самое большое изображение/баннер: сжатие, правильный размер, preload.'
   }
 };
@@ -126,7 +131,7 @@ const EFFORT = {
   https: '30m', tel_missing: '15m', tel_broken: '15m', no_contact_path: '1h', no_schema: '1h',
   no_business_schema: '30m', self_rating: '15m', no_title: '10m', thin_title: '10m', no_meta_desc: '15m',
   no_og: '20m', no_viewport: '5m', no_h1: '10m', hreflang_single: '30m', no_lang: '5m', no_favicon: '10m',
-  slow_mobile: 'halfday', mediocre_mobile: '2h', lcp: '2h'
+  slow_mobile: 'halfday', mediocre_mobile: '2h', mediocre_mobile_poor_lcp: '2h', lcp: '2h'
 };
 const EFFORT_LABEL = {
   en: { '5m': '5 min', '10m': '10 min', '15m': '15 min', '20m': '20 min', '30m': '30 min', '1h': '1 hour', '2h': '2 hours', halfday: 'half a day' },
@@ -211,6 +216,7 @@ const ERRORS = {
     rate_limited: 'Prea multe audituri de pe această conexiune. Încearcă din nou într-un minut.',
     bad_request: 'Trimite JSON: {"url": "https://example.com"}',
     invalid_url: 'Aceasta nu pare o adresă publică de site.',
+    unsupported_scheme: 'Pot audita doar site-uri http:// sau https://.',
     fetch_prefix: 'Nu am putut încărca acel site',
     fetch_suffix: 'Este online și public?'
   },
@@ -218,6 +224,7 @@ const ERRORS = {
     rate_limited: 'Слишком много аудитов с этого соединения. Попробуйте через минуту.',
     bad_request: 'Отправьте JSON: {"url": "https://example.com"}',
     invalid_url: 'Это не похоже на публичный адрес сайта.',
+    unsupported_scheme: 'Аудит возможен только для сайтов http:// или https://.',
     fetch_prefix: 'Не удалось загрузить этот сайт',
     fetch_suffix: 'Он онлайн и публичный?'
   }
