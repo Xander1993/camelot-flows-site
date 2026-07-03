@@ -597,6 +597,8 @@ Text Domain: camelot-flows
     .cf-body-fig { width: 45%; margin-top: 0.35rem; margin-bottom: 1rem; }
     .cf-body-fig--right { float: right; margin-left: 2.25rem; }
     .cf-body-fig--left  { float: left;  margin-right: 2.25rem; }
+    /* full-width editorial break: spans the column, no text wrap */
+    .cf-body-fig--wide  { width: 100%; float: none; clear: both; margin: 2.25rem 0; }
 }
 
 [data-theme="night"] .cf-body-fig {
