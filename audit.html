@@ -129,6 +129,8 @@
       [data-theme="cozy"] #audit-tool .audit-pass-ic{color:#3f7a52}
       #audit-tool .audit-track{background:rgba(255,255,255,.10)}
       [data-theme="cozy"] #audit-tool .audit-track{background:rgba(31,38,34,.10)}
+      /* Mobile screenshot preview: built CSS lacks max-w-[280px], so the PSI shot stretched full-width (huge + blurry). Cap it at phone size. */
+      #audit-tool #audit-shot{max-width:280px;width:100%;height:auto}
       /* --- Print / Save as PDF: show only the report, dark text on white.
          Chrome's print pipeline renders backdrop-filter/blur layers as BLANK, and all
          the report content lives inside .glass-panel (which uses backdrop-filter), so
