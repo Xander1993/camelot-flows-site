@@ -7,13 +7,17 @@
  * Optional env (no-ops cleanly if unset): TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID.
  * No storage; best-effort; the token is never returned to the client.
  */
+import { rateLimit } from '../_lib/audit-ratelimit.mjs';
+
 const RATE_LIMIT = 8; // per IP per window
 const RATE_WINDOW_MS = 60_000;
-const ipHits = new Map();
 
 export async function onRequestPost(context) {
+  const env = context.env || {};
   const ip = context.request.headers.get('cf-connecting-ip') || 'unknown';
-  if (rateLimited(ip)) return json({ ok: false, error: 'rate_limited' }, 429);
+  if (await rateLimit(env, ip, { limit: RATE_LIMIT, windowMs: RATE_WINDOW_MS, prefix: 'lead' })) {
+    return json({ ok: false, error: 'rate_limited' }, 429);
+  }
 
   let body = {};
   try { body = await context.request.json(); } catch { return json({ ok: false, error: 'bad_request' }, 400); }
@@ -24,7 +28,6 @@ export async function onRequestPost(context) {
   const lang = String(body.lang || '').slice(0, 5);
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return json({ ok: false, error: 'invalid_email' }, 400);
 
-  const env = context.env || {};
   const token = env.TELEGRAM_BOT_TOKEN;
   const chat = env.TELEGRAM_CHAT_ID;
   if (!token || !chat) return json({ ok: true, notified: false }); // not configured yet — no-op
@@ -54,14 +57,4 @@ function json(obj, status = 200) {
     status,
     headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' },
   });
-}
-
-function rateLimited(ip) {
-  const now = Date.now();
-  const rec = ipHits.get(ip) || [];
-  const fresh = rec.filter((t) => now - t < RATE_WINDOW_MS);
-  fresh.push(now);
-  ipHits.set(ip, fresh);
-  if (ipHits.size > 5000) ipHits.clear();
-  return fresh.length > RATE_LIMIT;
 }

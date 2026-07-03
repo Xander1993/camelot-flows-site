@@ -21,6 +21,7 @@ import { pickModel, buildLlmMessages, buildAiReadMessages, callLlm } from '../_l
 import { pickLang, localizeFindings, localizePassed, localizedSummary, errMsg } from '../_lib/audit-i18n.mjs';
 import { normalizeUrl, ssrfBlocked } from '../_lib/audit-net.mjs';
 import { hasVisiblePhone } from '../_lib/audit-phone.mjs';
+import { rateLimit } from '../_lib/audit-ratelimit.mjs';
 
 const MAX_BODY_BYTES = 1_500_000;
 const FETCH_TIMEOUT_MS = 10_000;
@@ -28,14 +29,13 @@ const MAX_REDIRECTS = 4;
 const RATE_LIMIT = 5; // requests per IP per window
 const RATE_WINDOW_MS = 60_000;
 
-const ipHits = new Map(); // per-isolate best-effort limiter
-
 export async function onRequestPost(context) {
+  const env = context.env || {};
   const ip = context.request.headers.get('cf-connecting-ip') || 'unknown';
   let lang = 'en';
   let lite = false; // compare mode: skip the LLM passes (just score + signals)
   try { const u = new URL(context.request.url); lang = pickLang(u.searchParams.get('lang')); lite = u.searchParams.get('lite') === '1'; } catch { /* default en */ }
-  if (rateLimited(ip)) {
+  if (await rateLimit(env, ip, { limit: RATE_LIMIT, windowMs: RATE_WINDOW_MS, prefix: 'audit' })) {
     return json({ ok: false, error: 'rate_limited', message: errMsg('rate_limited', lang, 'Too many audits from this connection. Try again in a minute.') }, 429);
   }
 
@@ -79,7 +79,6 @@ export async function onRequestPost(context) {
   const templateSummary = lang === 'en' ? enSummary : (localizedSummary(findingsL, lang) || enSummary);
 
   // --- AI summary layer (A/B between configured models; template is the fallback) ---
-  const env = context.env || {};
   const isAdmin = Boolean(env.ADMIN_KEY && body.adminKey === env.ADMIN_KEY);
   let summary = templateSummary;
   let summarySource = 'template';
@@ -176,16 +175,6 @@ function json(obj, status = 200) {
     status,
     headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' },
   });
-}
-
-function rateLimited(ip) {
-  const now = Date.now();
-  const rec = ipHits.get(ip) || [];
-  const fresh = rec.filter((t) => now - t < RATE_WINDOW_MS);
-  fresh.push(now);
-  ipHits.set(ip, fresh);
-  if (ipHits.size > 5000) ipHits.clear(); // memory guard
-  return fresh.length > RATE_LIMIT;
 }
 
 async function guardedFetch(startUrl) {

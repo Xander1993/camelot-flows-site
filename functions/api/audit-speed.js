@@ -12,18 +12,19 @@
  */
 import { pickLang, localizeFindings, localizePassed, errMsg } from '../_lib/audit-i18n.mjs';
 import { normalizeUrl, ssrfBlocked, fetchPsi } from '../_lib/audit-net.mjs';
+import { rateLimit } from '../_lib/audit-ratelimit.mjs';
 
 const PSI_TIMEOUT_MS = 45_000; // PSI on heavy real sites routinely takes 25-40s
 const RATE_LIMIT = 10; // per IP per window (one per audit, plus slack)
 const RATE_WINDOW_MS = 60_000;
-const ipHits = new Map();
 
 export async function onRequestPost(context) {
+  const env = context.env || {};
   const ip = context.request.headers.get('cf-connecting-ip') || 'unknown';
   let lang = 'en';
   try { lang = pickLang(new URL(context.request.url).searchParams.get('lang')); } catch { /* default en */ }
 
-  if (rateLimited(ip)) {
+  if (await rateLimit(env, ip, { limit: RATE_LIMIT, windowMs: RATE_WINDOW_MS, prefix: 'speed' })) {
     return json({ ok: false, error: 'rate_limited', message: errMsg('rate_limited', lang, 'Too many requests. Try again in a minute.') }, 429);
   }
 
@@ -44,7 +45,6 @@ export async function onRequestPost(context) {
     return json({ ok: false, error: 'blocked_url', message: 'That address cannot be audited.' }, 400);
   }
 
-  const env = context.env || {};
   let psi = null;
   try { psi = await fetchPsi(target.toString(), PSI_TIMEOUT_MS, env.PSI_KEY || ''); } catch { psi = null; }
 
@@ -100,14 +100,4 @@ function json(obj, status = 200) {
     status,
     headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' },
   });
-}
-
-function rateLimited(ip) {
-  const now = Date.now();
-  const rec = ipHits.get(ip) || [];
-  const fresh = rec.filter((t) => now - t < RATE_WINDOW_MS);
-  fresh.push(now);
-  ipHits.set(ip, fresh);
-  if (ipHits.size > 5000) ipHits.clear();
-  return fresh.length > RATE_LIMIT;
 }
