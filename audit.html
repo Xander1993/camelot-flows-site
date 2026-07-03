@@ -129,8 +129,12 @@
       [data-theme="cozy"] #audit-tool .audit-pass-ic{color:#3f7a52}
       #audit-tool .audit-track{background:rgba(255,255,255,.10)}
       [data-theme="cozy"] #audit-tool .audit-track{background:rgba(31,38,34,.10)}
-      /* Mobile screenshot preview: built CSS lacks max-w-[280px], so the PSI shot stretched full-width (huge + blurry). Cap it at phone size. */
+      /* Mobile screenshot preview: built CSS lacks max-w-[280px], so the PSI shot stretched full-width (huge + blurry). Cap it at phone size and pair it with the "what to check" panel so the row doesn't float in empty space. */
+      #audit-tool #audit-shot-wrap{margin-top:1.25rem}
       #audit-tool #audit-shot{max-width:280px;width:100%;height:auto}
+      #audit-tool .audit-shot-row{display:flex;flex-wrap:wrap;gap:1.25rem;align-items:stretch}
+      #audit-tool .audit-shot-tips{flex:1 1 280px;min-width:250px;display:flex;flex-direction:column;justify-content:center}
+      #audit-tool .audit-shot-list{list-style:none;margin:0 0 .75rem;padding:0;display:flex;flex-direction:column;gap:.5rem}
       /* --- Print / Save as PDF: show only the report, dark text on white.
          Chrome's print pipeline renders backdrop-filter/blur layers as BLANK, and all
          the report content lives inside .glass-panel (which uses backdrop-filter), so
@@ -346,9 +350,20 @@
                 <div id="audit-social" class="cf-card"></div>
               </div>
             </div>
-            <div id="audit-shot-wrap" class="hidden mt-5">
+            <div id="audit-shot-wrap" class="hidden">
               <div class="font-mono text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2" data-i18n="pages.audit.preview_shot">Mobile screenshot</div>
-              <img id="audit-shot" alt="" class="rounded-lg border border-white/10 max-w-[280px] w-full" />
+              <div class="audit-shot-row">
+                <img id="audit-shot" alt="" class="rounded-lg border border-white/10 shrink-0" />
+                <div class="audit-soft p-5 audit-shot-tips">
+                  <p class="text-white/70 text-sm mb-3" data-i18n="pages.audit.shot_intro">This is the first screen a customer sees on a phone — where most local searches happen. The five-second check:</p>
+                  <ul class="audit-shot-list">
+                    <li class="flex items-start gap-2 text-white/70 text-sm"><span class="material-symbols-outlined text-white/35 shrink-0" style="font-size:18px" aria-hidden="true">chevron_right</span><span data-i18n="pages.audit.shot_check1">It's instantly clear what you offer and where you work.</span></li>
+                    <li class="flex items-start gap-2 text-white/70 text-sm"><span class="material-symbols-outlined text-white/35 shrink-0" style="font-size:18px" aria-hidden="true">chevron_right</span><span data-i18n="pages.audit.shot_check2">A call or message button is reachable without scrolling.</span></li>
+                    <li class="flex items-start gap-2 text-white/70 text-sm"><span class="material-symbols-outlined text-white/35 shrink-0" style="font-size:18px" aria-hidden="true">chevron_right</span><span data-i18n="pages.audit.shot_check3">Nothing looks broken, cut off or cramped.</span></li>
+                  </ul>
+                  <p class="text-white/45 text-xs" data-i18n="pages.audit.shot_note">If something fails here, it fails for every mobile visitor.</p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -508,7 +523,7 @@
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-<script src="assets/js/locales.js"></script>
+<script src="assets/js/locales.js?v=2"></script>
     <script defer src="assets/js/i18n.js"></script>
     <script defer src="assets/js/camelot-gsap.js"></script>
     <script defer src="assets/site.js"></script>
