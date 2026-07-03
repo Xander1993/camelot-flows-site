@@ -24,6 +24,10 @@ wp-theme/
 # Python build scripts (not part of static site)
 *.py
 
+# Blog generation payloads — written to STATE_DIR now, but never deploy any legacy
+# in-tree copies (raw prompt/source JSON must not be publicly served)
+blog/*/_source.json
+
 # Tailwind build intermediates
 src/tw.css.bak
 
