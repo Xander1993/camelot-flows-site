@@ -1,0 +1,20 @@
+- tabpanel [ref=e1265]:
+  - generic [ref=e1267]:
+    - generic [ref=e1269] [cursor=pointer]:
+      - button "More options" [ref=e1278]:
+        - generic [ref=e1279]: More options
+        - img [ref=e1281]
+      - link "Firstline Garage — Local Service Site with Quote Funnel" [ref=e1286]:
+        - /url: "javascript:"
+    - generic [ref=e1288] [cursor=pointer]:
+      - button "More options" [ref=e1297]:
+        - generic [ref=e1298]: More options
+        - img [ref=e1300]
+      - link "Windy City Garage — Chicago Service Business Website" [ref=e1305]:
+        - /url: "javascript:"
+    - generic [ref=e1307] [cursor=pointer]:
+      - button "More options" [ref=e1316]:
+        - generic [ref=e1317]: More options
+        - img [ref=e1319]
+      - link "Camelot Flows — Premium WordPress Site with GSAP Animations" [ref=e1324]:
+        - /url: "javascript:"

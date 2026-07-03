@@ -745,15 +745,6 @@
                 x: 80, opacity: 0, duration: 1.2, ease: "power4.out", delay: 0.2
             });
 
-            gsap.from(".aug-visual", {
-                scrollTrigger: { trigger: "#cybernetic-augmentations", start: "top 85%" },
-                x: 80, opacity: 0, duration: 1.2, ease: "power4.out"
-            });
-            gsap.from(".aug-content", {
-                scrollTrigger: { trigger: "#cybernetic-augmentations", start: "top 85%" },
-                x: -80, opacity: 0, duration: 1.2, ease: "power4.out", delay: 0.2
-            });
-
             if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
                 gsap.utils.toArray(".cf-artifact-frame").forEach((frame) => {
                     const core = frame.querySelector(".cf-artifact-core");

@@ -21,6 +21,9 @@ Solo workshop website. Static HTML site **and** WordPress theme, built from the 
 3. For any strategy/outreach/research task → use the obsidian MCP (`mcp__obsidian__read_notes`) to read the specific note before starting
 4. When research results come in or decisions are made → run `/ingest` to file immediately, don't wait to be asked
 5. When you encounter a `[[wiki link]]` in a vault note → follow it with the obsidian MCP
+6. **Check `E:\Camelot Flows\_inbox\`** — the human drop-zone (Obsidian Web Clipper target + manual dumps, the "raw/" staging from Karpathy's Obsidian-RAG pattern). If it holds files, process them: spawn a vault-ingest subagent (classify → wiki-fy → cross-reference 10–15 notes → update `🗺 index.md` → append `📋 log.md`), then move originals to `_inbox\_processed\`. Don't leave raw files unprocessed.
+
+**Summarizing a video/article for ingestion:** use the `ytx` helper in WSL — `wsl -e bash -lc "~/.local/bin/ytx '<youtube-url>' [pattern]"` (default pattern `extract_wisdom`). It pulls the transcript via `yt-dlp` and pipes it into fabric. Do **not** use `fabric -y` directly — it hangs (no `YOUTUBE_API_KEY`).
 
 **Ingest pattern (Karpathy LLM Wiki) — fully automatic, no prompt needed:**
 | Step | Action |

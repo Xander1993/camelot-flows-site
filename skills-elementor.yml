@@ -1,0 +1,116 @@
+- generic [ref=e4]:
+  - banner [ref=e7]:
+    - generic [ref=e8]:
+      - button "Skip to content" [ref=e9] [cursor=pointer]
+      - generic [ref=e10]:
+        - link "Upwork home" [ref=e12] [cursor=pointer]:
+          - /url: /nx/find-work/
+          - generic [ref=e13]: Upwork home
+          - img [ref=e15]
+        - navigation "Primary" [ref=e22]:
+          - list [ref=e23]:
+            - listitem [ref=e24]:
+              - button "Account Settings" [ref=e25] [cursor=pointer]:
+                - generic [ref=e26]:
+                  - generic [ref=e27]: Account Settings
+                  - img [ref=e29]
+  - main [ref=e35]:
+    - generic [ref=e611]:
+      - generic [ref=e612]:
+        - generic [ref=e613]:
+          - generic [ref=e617]: 3/10
+          - progressbar [ref=e620]
+        - region "Current step" [ref=e623]:
+          - generic [ref=e758]:
+            - generic [ref=e759]:
+              - heading "Nearly there! What work are you here to do?" [level=2] [ref=e760]
+              - paragraph [ref=e761]: Your skills show clients what you can offer, and help us choose which jobs to recommend to you. Add or remove the ones we’ve suggested, or start typing to pick more. It’s up to you.
+            - link "Why choosing carefully matters" [ref=e762] [cursor=pointer]:
+              - /url: "javascript:"
+            - generic [ref=e763]:
+              - generic [ref=e765]:
+                - generic [ref=e766]:
+                  - paragraph [ref=e767]: Your skills
+                  - generic [ref=e769]:
+                    - generic [ref=e773]:
+                      - list [ref=e776]:
+                        - listitem [ref=e942]:
+                          - generic [ref=e943] [cursor=pointer]:
+                            - generic [ref=e944]: WordPress
+                            - button "Remove WordPress Tag" [ref=e945]:
+                              - generic [ref=e946]: Remove WordPress Tag
+                              - img [ref=e948]
+                        - listitem [ref=e950]:
+                          - generic [ref=e951] [cursor=pointer]:
+                            - generic [ref=e952]: Web Development
+                            - button "Remove Web Development Tag" [ref=e953]:
+                              - generic [ref=e954]: Remove Web Development Tag
+                              - img [ref=e956]
+                        - listitem [ref=e959]:
+                          - generic [ref=e960] [cursor=pointer]:
+                            - generic [ref=e961]: Ecommerce
+                            - button "Remove Ecommerce Tag" [ref=e962]:
+                              - generic [ref=e963]: Remove Ecommerce Tag
+                              - img [ref=e965]
+                        - listitem [ref=e967]:
+                          - generic [ref=e968] [cursor=pointer]:
+                            - generic [ref=e969]: Artificial Intelligence
+                            - button "Remove Artificial Intelligence Tag" [ref=e970]:
+                              - generic [ref=e971]: Remove Artificial Intelligence Tag
+                              - img [ref=e973]
+                        - listitem [ref=e987]:
+                          - generic [ref=e988] [cursor=pointer]:
+                            - generic [ref=e989]: WooCommerce
+                            - button "Remove WooCommerce Tag" [ref=e990]:
+                              - generic [ref=e991]: Remove WooCommerce Tag
+                              - img [ref=e993]
+                        - listitem [ref=e1083]:
+                          - generic [ref=e1084] [cursor=pointer]:
+                            - generic [ref=e1085]: PHP
+                            - button "Remove PHP Tag" [ref=e1086]:
+                              - generic [ref=e1087]: Remove PHP Tag
+                              - img [ref=e1089]
+                        - listitem [ref=e777]:
+                          - generic [ref=e836]:
+                            - generic [ref=e840]:
+                              - combobox "Enter skills here" [expanded] [active] [ref=e841]:
+                                - text: Elementor
+                                - listbox [ref=e846]:
+                                  - option "Elementor" [ref=e1094] [cursor=pointer]:
+                                    - strong [ref=e1097]: Elementor
+                              - button "Clear Input" [ref=e1098] [cursor=pointer]:
+                                - generic [ref=e1099]: Clear Input
+                                - img [ref=e1101]
+                            - generic [ref=e941]:
+                              - alert
+                      - generic [ref=e958]: Added WordPress Tag
+                    - generic [ref=e787]: Max 15 skills
+                - generic [ref=e789]:
+                  - paragraph [ref=e790]: Suggested skills
+                  - generic "Suggested skills" [ref=e791]:
+                    - button "International Development" [ref=e792] [cursor=pointer]:
+                      - img [ref=e794]
+                      - text: International Development
+                    - button "Product Development" [ref=e796] [cursor=pointer]:
+                      - img [ref=e798]
+                      - text: Product Development
+                    - button "Web Application" [ref=e800] [cursor=pointer]:
+                      - img [ref=e802]
+                      - text: Web Application
+                    - button "Ecommerce Website" [ref=e812] [cursor=pointer]:
+                      - img [ref=e814]
+                      - text: Ecommerce Website
+                    - button "Integral Calculus" [ref=e820] [cursor=pointer]:
+                      - img [ref=e822]
+                      - text: Integral Calculus
+                    - button "Mobile App" [ref=e824] [cursor=pointer]:
+                      - img [ref=e826]
+                      - text: Mobile App
+              - generic [ref=e830]:
+                - blockquote [ref=e831]: “Upwork’s algorithm will recommend specific job posts to you based on your skills. So choose them carefully to get the best match!”
+                - paragraph [ref=e832]: Upwork Pro Tip
+          - generic [ref=e645]: step 3 of 10
+      - group [ref=e647]:
+        - button "Back" [ref=e648] [cursor=pointer]:
+          - generic [ref=e649]: Back
+        - button "Next, your profile title" [ref=e833] [cursor=pointer]

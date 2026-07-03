@@ -1,0 +1,545 @@
+- generic [ref=e1]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - banner [ref=e11]:
+        - generic [ref=e12]:
+          - button "Skip to content" [ref=e13] [cursor=pointer]
+          - generic [ref=e14]:
+            - link "Upwork home" [ref=e16] [cursor=pointer]:
+              - /url: /nx/find-work/
+              - generic [ref=e17]: Upwork home
+              - img [ref=e19]
+            - navigation "Primary" [ref=e26]:
+              - list [ref=e27]:
+                - listitem [ref=e28]:
+                  - button "Find work" [ref=e29] [cursor=pointer]:
+                    - generic [ref=e30]: Find work
+                  - button [ref=e31] [cursor=pointer]:
+                    - img [ref=e33]
+                - listitem [ref=e35]:
+                  - button "Deliver work" [ref=e36] [cursor=pointer]:
+                    - generic [ref=e37]: Deliver work
+                  - button [ref=e38] [cursor=pointer]:
+                    - img [ref=e40]
+                - listitem [ref=e42]:
+                  - button "Manage finances" [ref=e43] [cursor=pointer]:
+                    - generic [ref=e44]: Manage finances
+                  - button [ref=e45] [cursor=pointer]:
+                    - img [ref=e47]
+                - listitem [ref=e49]:
+                  - link "Messages" [ref=e50] [cursor=pointer]:
+                    - /url: /ab/messages/rooms/
+                    - generic [ref=e51]: Messages
+                - listitem [ref=e52]:
+                  - search [ref=e56]:
+                    - generic [ref=e57]:
+                      - searchbox "Search" [ref=e58]
+                      - button "Search" [ref=e59] [cursor=pointer]:
+                        - img [ref=e61]
+                    - 'button "Search category: Jobs" [ref=e64] [cursor=pointer]':
+                      - generic [ref=e65]: "Search category:"
+                      - generic [ref=e66]: Jobs
+                      - img [ref=e68]
+                - listitem [ref=e70]:
+                  - button "Dashboard" [ref=e71] [cursor=pointer]:
+                    - img [ref=e74]
+                - listitem [ref=e76]:
+                  - button "1 Notifications" [ref=e77] [cursor=pointer]:
+                    - img [ref=e80]
+                - listitem [ref=e84]:
+                  - link "Chat with Uma" [ref=e85] [cursor=pointer]:
+                    - /url: /apps/uma
+                    - img [ref=e88]
+                - listitem [ref=e90]:
+                  - button "Account Settings" [ref=e91] [cursor=pointer]:
+                    - generic [ref=e93]: Account Settings
+      - main [ref=e97]:
+        - generic [ref=e212]:
+          - generic [ref=e213]:
+            - generic [ref=e218]:
+              - generic [ref=e221]:
+                - img "Alex B." [ref=e222]
+                - 'img "Status: Online" [ref=e223]':
+                  - generic [ref=e224]: "Status: Online"
+                - button "Edit photo" [ref=e225] [cursor=pointer]:
+                  - generic [ref=e226]: Edit photo
+                  - img [ref=e228]
+              - generic [ref=e231]:
+                - generic [ref=e232]:
+                  - generic [ref=e234]:
+                    - generic [ref=e235]:
+                      - text: Alex B.
+                      - generic [ref=e250]:
+                        - button [ref=e251] [cursor=pointer]
+                        - generic [ref=e253]:
+                          - img [ref=e255]
+                          - generic [ref=e258]: Unverified
+                        - link "Verify your identity" [ref=e259] [cursor=pointer]:
+                          - /url: /ab/identity-verification/
+                    - generic [ref=e260]:
+                      - generic [ref=e261]:
+                        - generic "Chisinau , Moldova – 10:28 pm local time" [ref=e911]:
+                          - img [ref=e264]
+                        - generic [ref=e267]: Chisinau
+                        - generic [ref=e268]: ","
+                        - generic [ref=e269]: Moldova
+                      - generic [ref=e270]:
+                        - generic [ref=e271]: –
+                        - generic [ref=e912]: 10:28 pm local time
+                  - group [ref=e275]:
+                    - link "See public view" [ref=e276] [cursor=pointer]:
+                      - /url: /freelancers/~015f41b4eaecdee2a0?viewMode=1
+                    - link "Profile settings" [ref=e277] [cursor=pointer]:
+                      - /url: /freelancers/settings/profile
+                - button "Share" [ref=e282] [cursor=pointer]:
+                  - generic [ref=e283]: Share
+                  - img [ref=e285]
+            - generic [ref=e287]:
+              - complementary [ref=e290]:
+                - link "Freelancer Plus Offer Get Freelancer Plus for 50% off one month and keep your profile visible during breaks. Limited time only." [ref=e294]:
+                  - /url: /nx/plans/membership/change-plan?from=profileNudge&promoCode=FLPLUS50
+                  - generic [ref=e295] [cursor=pointer]:
+                    - generic [ref=e296]:
+                      - img [ref=e298]
+                      - generic [ref=e300]: Freelancer Plus Offer
+                      - img [ref=e302]
+                    - generic [ref=e304]: Get Freelancer Plus for 50% off one month and keep your profile visible during breaks. Limited time only.
+                - generic [ref=e305]:
+                  - generic [ref=e306]:
+                    - heading "Promote with ads" [level=4] [ref=e307]
+                    - generic [ref=e308]:
+                      - generic [ref=e309]:
+                        - heading "Availability badge" [level=5] [ref=e310]
+                        - paragraph [ref=e312]: "Off"
+                      - button "Edit availability badge" [ref=e313] [cursor=pointer]:
+                        - generic [ref=e314]: Edit availability badge
+                        - img [ref=e316]
+                    - generic [ref=e319]:
+                      - generic [ref=e320]:
+                        - heading "Boost your profile" [level=5] [ref=e322]
+                        - paragraph [ref=e324]: "Off"
+                      - button "Edit boost your profile" [ref=e325] [cursor=pointer]:
+                        - generic [ref=e326]: Edit boost your profile
+                        - img [ref=e328]
+                  - generic [ref=e332]:
+                    - 'heading "Connects: 0" [level=3] [ref=e333]'
+                    - generic [ref=e334]:
+                      - link "View details" [ref=e335] [cursor=pointer]:
+                        - /url: /nx/plans/connects/history
+                      - generic [ref=e336]: "|"
+                      - link "Buy Connects" [ref=e337] [cursor=pointer]:
+                        - /url: /nx/plans/connects/buy?from=flProfile
+                  - generic [ref=e339]:
+                    - generic [ref=e340]: Video introduction
+                    - button "Add introduction video" [ref=e341] [cursor=pointer]:
+                      - img [ref=e343]
+                  - generic [ref=e345]:
+                    - generic [ref=e346]:
+                      - text: Hours per week
+                      - button "Edit availability" [ref=e347] [cursor=pointer]:
+                        - img [ref=e349]
+                    - generic [ref=e352]: More than 30 hrs/week
+                    - generic [ref=e353]: No contract-to-hire preference set
+                  - generic [ref=e354]:
+                    - generic [ref=e355]:
+                      - text: Languages
+                      - generic [ref=e356]:
+                        - button "Add language" [ref=e357] [cursor=pointer]:
+                          - img [ref=e359]
+                        - button "Edit language" [ref=e361] [cursor=pointer]:
+                          - img [ref=e363]
+                    - list [ref=e366]:
+                      - listitem [ref=e367]:
+                        - generic [ref=e368]:
+                          - strong [ref=e369]: "English:"
+                          - generic [ref=e370]: Fluent
+                      - listitem [ref=e371]:
+                        - generic [ref=e372]:
+                          - strong [ref=e373]: "Romanian, Moldavian, Moldovan:"
+                          - generic [ref=e374]: Native or Bilingual
+                      - listitem [ref=e375]:
+                        - generic [ref=e376]:
+                          - strong [ref=e377]: "Russian:"
+                          - generic [ref=e378]: Native or Bilingual
+                  - generic [ref=e379]:
+                    - text: Verifications
+                    - generic [ref=e380]:
+                      - strong [ref=e381]: "ID:"
+                      - button "Unverified Unverified Verify your identity" [ref=e384] [cursor=pointer]:
+                        - generic [ref=e385]:
+                          - generic [ref=e386]: Unverified
+                          - generic [ref=e387]:
+                            - img [ref=e389]
+                            - generic [ref=e392]: Unverified
+                        - link "Verify your identity" [ref=e393]:
+                          - /url: /ab/identity-verification/
+                    - generic [ref=e395]:
+                      - strong [ref=e397]: Military veteran
+                      - button "Add military veteran" [ref=e398] [cursor=pointer]:
+                        - img [ref=e400]
+                  - generic [ref=e403]:
+                    - text: Licenses
+                    - generic [ref=e404]:
+                      - button "Add license" [expanded] [ref=e405] [cursor=pointer]:
+                        - img [ref=e407]
+                      - generic [ref=e411]:
+                        - button "Close the tooltip" [ref=e412] [cursor=pointer]:
+                          - generic [ref=e413]: Close the tooltip
+                          - img [ref=e415]
+                        - generic [ref=e417]:
+                          - generic [ref=e418]: New
+                          - generic [ref=e419]:
+                            - heading "Add a license" [level=2] [ref=e420]
+                            - paragraph [ref=e421]: Add a license to your profile to verify your qualifications to work in your field.
+                  - generic [ref=e422]:
+                    - generic [ref=e423]:
+                      - text: Education
+                      - button "Add education" [ref=e424] [cursor=pointer]:
+                        - img [ref=e426]
+                    - list
+                  - generic [ref=e428]:
+                    - text: Linked accounts
+                    - generic [ref=e430]:
+                      - button "GitHub" [ref=e431] [cursor=pointer]:
+                        - img [ref=e433]
+                        - generic [ref=e435]: GitHub
+                      - button "StackOverflow" [ref=e436] [cursor=pointer]:
+                        - img [ref=e438]
+                        - generic [ref=e440]: StackOverflow
+              - generic [ref=e441]:
+                - generic [ref=e442]:
+                  - generic [ref=e444]:
+                    - heading "WordPress Developer | GSAP Animations & AI-Powered Workflows Edit title" [level=3] [ref=e446]:
+                      - text: WordPress Developer | GSAP Animations & AI-Powered Workflows
+                      - button "Edit title" [ref=e448] [cursor=pointer]:
+                        - img [ref=e450]
+                    - generic [ref=e453]:
+                      - generic [ref=e455]:
+                        - text: $40.00/hr
+                        - button "Edit hourly rate" [ref=e456] [cursor=pointer]:
+                          - img [ref=e458]
+                      - button "Copy link to clipboard" [ref=e464] [cursor=pointer]:
+                        - img [ref=e466]
+                  - generic [ref=e468]:
+                    - generic [ref=e469]:
+                      - generic [ref=e470]: "I build premium WordPress websites that look and feel custom — not template-based. Over the past 5 years I've helped agencies and founders across the EU and UK ship sites that load fast, convert visitors, and reflect the real quality of their brand. What I bring: • Custom WordPress & WooCommerce development (PHP, JavaScript) — clean code, no page-builder bloat • GSAP-driven animations and smooth, modern interactions most developers can't deliver • AI-powered workflows that let me ship agency-quality work faster and at a fair price • White-label collaboration — I work behind the scenes for agencies handling overflow, on your timeline and in your EU/UK timezone Recent work: camelotflows.dev — a fully custom, dual-theme build with GSAP animations and sub-2-second load times — plus client sites across automotive, hospitality, and professional services. I keep communication clear and frequent, deliver in tight 3-5 day cycles, and treat your deadline as my deadline. If you need a reliable WordPress developer who delivers premium results without the agency price tag, let's talk."
+                      - button "more" [ref=e471] [cursor=pointer]:
+                        - generic [ref=e472]: more
+                    - button "Edit description" [ref=e474] [cursor=pointer]:
+                      - img [ref=e476]
+                - generic [ref=e481]:
+                  - generic [ref=e482]:
+                    - heading "Portfolio" [level=3] [ref=e483]
+                    - button "Add portfolio" [ref=e486] [cursor=pointer]:
+                      - img [ref=e488]
+                  - generic [ref=e491]:
+                    - tablist [ref=e494]:
+                      - tab "Published" [ref=e495] [cursor=pointer]:
+                        - generic [ref=e497]: Published
+                      - tab "Drafts" [selected] [ref=e498] [cursor=pointer]:
+                        - generic [ref=e500]: Drafts
+                    - tabpanel [ref=e502]:
+                      - generic [ref=e506] [cursor=pointer]:
+                        - generic [ref=e507]:
+                          - generic [ref=e512]: Draft
+                          - button "More options" [ref=e518]:
+                            - generic [ref=e519]: More options
+                            - img [ref=e521]
+                        - link "Firstline Garage — Local Service Site with Quote Funnel" [ref=e526]:
+                          - /url: "javascript:"
+                - generic [ref=e528]:
+                  - generic [ref=e530]: Work history
+                  - generic [ref=e532]: No items
+                - generic [ref=e534]:
+                  - generic [ref=e535]:
+                    - heading "Skills" [level=4] [ref=e536]
+                    - button "Edit skills" [ref=e537] [cursor=pointer]:
+                      - img [ref=e539]
+                  - generic [ref=e542]: Self-reported
+                  - list [ref=e543]:
+                    - listitem [ref=e544]:
+                      - button "WordPress" [ref=e548] [cursor=pointer]:
+                        - generic [ref=e550]: WordPress
+                    - listitem [ref=e551]:
+                      - button "Web Development" [ref=e555] [cursor=pointer]:
+                        - generic [ref=e557]: Web Development
+                    - listitem [ref=e558]:
+                      - generic [ref=e560]: Ecommerce
+                    - listitem [ref=e561]:
+                      - button "Artificial Intelligence" [ref=e565] [cursor=pointer]:
+                        - generic [ref=e567]: Artificial Intelligence
+                    - listitem [ref=e568]:
+                      - button "WooCommerce" [ref=e572] [cursor=pointer]:
+                        - generic [ref=e574]: WooCommerce
+                    - listitem [ref=e575]:
+                      - button "PHP" [ref=e579] [cursor=pointer]:
+                        - generic [ref=e581]: PHP
+                    - listitem [ref=e582]:
+                      - generic [ref=e584]: Elementor
+                    - listitem [ref=e585]:
+                      - button "JavaScript" [ref=e589] [cursor=pointer]:
+                        - generic [ref=e591]: JavaScript
+                    - listitem [ref=e592]:
+                      - button "Landing Page" [ref=e596] [cursor=pointer]:
+                        - generic [ref=e598]: Landing Page
+                    - listitem [ref=e599]:
+                      - button "CSS" [ref=e603] [cursor=pointer]:
+                        - generic [ref=e605]: CSS
+                    - listitem [ref=e606]:
+                      - button "Web Design" [ref=e610] [cursor=pointer]:
+                        - generic [ref=e612]: Web Design
+                  - generic [ref=e613]:
+                    - generic [ref=e614]:
+                      - text: Working style
+                      - button "Help Tip" [ref=e617] [cursor=pointer]:
+                        - img [ref=e618]
+                    - alert [ref=e621]:
+                      - img [ref=e624]
+                      - generic [ref=e628]:
+                        - text: Help clients see why you're the right fit and boost your chances of getting hired by highlighting strengths beyond hard skills.
+                        - link "Take assessment" [ref=e629] [cursor=pointer]:
+                          - /url: /nx/skills-assesment/
+                - generic [ref=e632]:
+                  - generic [ref=e633]:
+                    - heading "Your project catalog" [level=4] [ref=e636]
+                    - paragraph [ref=e639]: Projects are a new way to earn on Upwork that helps you do more of the work you love to do. Create project offerings that highlight your strengths and attract more clients.
+                  - link "Manage projects" [ref=e641] [cursor=pointer]:
+                    - /url: /nx/project-dashboard/?ref=fl_profile
+          - generic [ref=e643]:
+            - generic [ref=e644]:
+              - generic [ref=e645]:
+                - heading "Testimonials" [level=3] [ref=e646]
+                - paragraph [ref=e647]: Endorsements from past clients
+              - button "Add a testimonial" [ref=e648] [cursor=pointer]:
+                - img [ref=e650]
+            - generic [ref=e656]:
+              - img [ref=e658]
+              - text: Showcase your skills with non-Upwork client testimonials
+              - button "Request a testimonial" [ref=e688] [cursor=pointer]
+          - generic [ref=e689]:
+            - generic [ref=e690]:
+              - heading "Certifications" [level=3] [ref=e692]
+              - button "Add manually" [ref=e696] [cursor=pointer]:
+                - img [ref=e698]
+            - generic [ref=e704]:
+              - img [ref=e706]
+              - text: Listing your certifications can help prove your specific knowledge or abilities. (+10%)
+              - button "Add manually" [ref=e723] [cursor=pointer]: Add certification
+            - status [ref=e724]
+          - generic [ref=e726]:
+            - generic [ref=e727]:
+              - heading "Employment history" [level=3] [ref=e729]
+              - button "Add employment history" [ref=e731] [cursor=pointer]:
+                - img [ref=e733]
+            - generic [ref=e737]:
+              - generic [ref=e738]:
+                - generic [ref=e739]: WordPress Developer & Founder | Camelot Flows
+                - generic [ref=e740]:
+                  - button "Edit WordPress Developer & Founder | Camelot Flows Employment history item" [ref=e741] [cursor=pointer]:
+                    - img [ref=e743]
+                  - button "Delete WordPress Developer & Founder | Camelot Flows Employment history item" [ref=e746] [cursor=pointer]:
+                    - img [ref=e748]
+              - generic [ref=e750]: January 2020 - Present
+              - generic [ref=e751]:
+                - generic [ref=e753]:
+                  - text: "I design and build premium WordPress websites for businesses and agencies across the EU and UK. My work focuses on custom themes, GSAP-driven animations, WooCommerce stores, and AI-powered workflows that speed up delivery without sacrificing craft. I work white-label with agencies on overflow projects and directly with founders who want a site that reflects the quality of their business. Recent work:"
+                  - link "camelotflows.dev" [ref=e913] [cursor=pointer]:
+                    - /url: http://camelotflows.dev
+                  - text: (dual-theme custom build), plus multiple client sites in automotive, hospitality, and professional services.
+                - button "more" [ref=e755] [cursor=pointer]:
+                  - generic [ref=e756]: more
+          - generic [ref=e758]:
+            - generic [ref=e759]:
+              - heading "Other experiences" [level=3] [ref=e761]
+              - button "Add other experiences" [ref=e763] [cursor=pointer]:
+                - img [ref=e765]
+            - generic [ref=e770]:
+              - img [ref=e772]
+              - text: Add any other experiences that help you stand out
+              - button "Add an experience" [ref=e780] [cursor=pointer]
+    - contentinfo [ref=e113]:
+      - heading "Footer navigation" [level=2] [ref=e114]
+      - generic [ref=e115]:
+        - generic [ref=e116]:
+          - list [ref=e118]:
+            - listitem [ref=e119]:
+              - link "About Us" [ref=e120] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=e121]:
+              - link "Feedback" [ref=e122] [cursor=pointer]:
+                - /url: "javascript:"
+            - listitem [ref=e123]:
+              - link "Trust, Safety & Security" [ref=e124] [cursor=pointer]:
+                - /url: /trust-and-safety/security/
+          - list [ref=e126]:
+            - listitem [ref=e127]:
+              - link "Help & Support" [ref=e128] [cursor=pointer]:
+                - /url: https://support.upwork.com/login
+            - listitem [ref=e129]:
+              - link "Upwork Foundation" [ref=e130] [cursor=pointer]:
+                - /url: /ppc/foundation/
+            - listitem [ref=e131]:
+              - link "Terms of Service" [ref=e132] [cursor=pointer]:
+                - /url: /legal#terms
+          - list [ref=e134]:
+            - listitem [ref=e135]:
+              - link "Privacy Policy" [ref=e136] [cursor=pointer]:
+                - /url: /legal#privacy
+            - listitem [ref=e137]:
+              - link "CA Notice at Collection" [ref=e138] [cursor=pointer]:
+                - /url: /legal#SupplementalPrivacyNoticeforCaliforniaResidents
+            - listitem [ref=e139]:
+              - link "Your Privacy Choices California Consumer Privacy Act (CCPA) Opt-Out" [ref=e140] [cursor=pointer]:
+                - /url: "javascript:"
+                - text: Your Privacy Choices
+                - generic [ref=e141]: California Consumer Privacy Act (CCPA) Opt-Out
+            - listitem [ref=e143]:
+              - link "Accessibility" [ref=e144] [cursor=pointer]:
+                - /url: /legal#accessibility
+          - list [ref=e146]:
+            - listitem [ref=e147]:
+              - link "Desktop App" [ref=e148] [cursor=pointer]:
+                - /url: /downloads?source=Footer
+            - listitem [ref=e149]:
+              - link "Cookie Policy" [ref=e150] [cursor=pointer]:
+                - /url: /legal#cookie-policy
+            - listitem [ref=e151]:
+              - link "Enterprise Solutions" [ref=e152] [cursor=pointer]:
+                - /url: /enterprise
+            - listitem [ref=e153]:
+              - link "Release notes" [ref=e154] [cursor=pointer]:
+                - /url: /product-release-notes
+        - generic [ref=e155]:
+          - generic [ref=e156]:
+            - heading "Follow Us" [level=3] [ref=e157]
+            - list [ref=e158]:
+              - listitem [ref=e159]:
+                - link "Visit Upwork on Facebook" [ref=e160] [cursor=pointer]:
+                  - /url: https://www.facebook.com/upwork
+                  - generic [ref=e161]: Visit Upwork on Facebook
+                  - img [ref=e163]
+              - listitem [ref=e165]:
+                - link "Read Upwork company news on LinkedIn" [ref=e166] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/company/upwork
+                  - generic [ref=e167]: Read Upwork company news on LinkedIn
+                  - img [ref=e169]
+              - listitem [ref=e171]:
+                - link "Follow @Upwork on Twitter" [ref=e172] [cursor=pointer]:
+                  - /url: https://twitter.com/Upwork
+                  - generic [ref=e173]: Follow @Upwork on Twitter
+                  - img [ref=e175]
+              - listitem [ref=e177]:
+                - link "Watch Upwork videos on YouTube" [ref=e178] [cursor=pointer]:
+                  - /url: https://www.youtube.com/channel/UCvxGFOnwUBDHHcxuPqhe4CQ
+                  - generic [ref=e179]: Watch Upwork videos on YouTube
+                  - img [ref=e181]
+              - listitem [ref=e183]:
+                - link "Follow Upwork on Instagram" [ref=e184] [cursor=pointer]:
+                  - /url: https://www.instagram.com/upwork/
+                  - generic [ref=e185]: Follow Upwork on Instagram
+                  - img [ref=e187]
+          - generic [ref=e191]:
+            - heading "Mobile app" [level=3] [ref=e192]
+            - list [ref=e193]:
+              - listitem [ref=e194]:
+                - link "Download Upwork app from iTunes" [ref=e195] [cursor=pointer]:
+                  - /url: https://apps.apple.com/us/developer/upwork-global-inc/id329377609
+                  - generic [ref=e196]: Download Upwork app from iTunes
+                  - img [ref=e198]
+              - listitem [ref=e201]:
+                - link "Download Upwork app from Google Play" [ref=e202] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/dev?id=8802639270489632480
+                  - generic [ref=e203]: Download Upwork app from Google Play
+                  - img [ref=e205]
+        - paragraph [ref=e207]: © 2015 - 2026 Upwork® Global LLC
+  - dialog [active] [ref=e916]:
+    - generic [ref=e918]:
+      - generic [ref=e919]:
+        - generic [ref=e922]:
+          - heading "Edit portfolio project" [level=2] [ref=e923]
+          - generic [ref=e924]: All fields are required unless otherwise indicated.
+        - button "Close the dialog" [ref=e925] [cursor=pointer]:
+          - generic [ref=e926]: Close the dialog
+          - img [ref=e928]
+      - generic [ref=e933]:
+        - generic [ref=e935]:
+          - generic [ref=e936]: Project title *
+          - textbox "Project title" [ref=e938]:
+            - /placeholder: Enter a brief but descriptive title.
+            - text: Firstline Garage — Local Service Site with Quote Funnel
+          - status [ref=e942]: 15 characters left
+        - generic [ref=e943]:
+          - generic [ref=e945]:
+            - generic [ref=e946]: Your role (optional)
+            - textbox "Your role (optional)" [ref=e948]:
+              - /placeholder: e.g., Front-end engineer or Marketing analyst
+              - text: WordPress Developer & Designer
+            - status [ref=e952]: 70 characters left
+          - generic [ref=e954]:
+            - generic [ref=e955]: Project description *
+            - textbox "Project description" [ref=e957]:
+              - /placeholder: Briefly describe the project's goals, your solution and the impact you made here.
+              - text: A clean, trust-building website for a US garage-door repair company. Clear value proposition above the fold, prominent click-to-call and quote CTAs, and service pages structured for local SEO. Designed to convert mobile visitors searching for same-day service into booked appointments. WordPress build with a custom theme, fast load times, and an easy-to-update content structure for the client.
+            - status [ref=e961]: 205 characters left
+          - generic [ref=e963]:
+            - generic [ref=e964]: Skills and deliverables *
+            - generic [ref=e965]:
+              - list [ref=e972]:
+                - listitem [ref=e973]:
+                  - generic [ref=e974] [cursor=pointer]:
+                    - generic [ref=e975]: WordPress
+                    - button "Remove WordPress Tag" [ref=e976]:
+                      - generic [ref=e977]: Remove WordPress Tag
+                      - img [ref=e979]
+                - listitem [ref=e981]:
+                  - searchbox "Skills and deliverables *" [ref=e987]
+              - generic [ref=e994]: 4 skills left
+        - generic [ref=e998]:
+          - generic [ref=e1004]:
+            - textbox "image description." [ref=e1021]:
+              - /placeholder: Type image description here (optional)
+            - generic:
+              - generic:
+                - generic:
+                  - button [disabled]:
+                    - generic:
+                      - img
+                  - button [disabled]:
+                    - generic:
+                      - img
+                  - separator
+                  - button:
+                    - generic:
+                      - img
+          - generic [ref=e1025]:
+            - generic:
+              - button [disabled]:
+                - generic:
+                  - img
+            - button [ref=e1027] [cursor=pointer]:
+              - img [ref=e1029]
+            - generic:
+              - button "Upload images [light](up to 10 MB)[/]" [disabled]:
+                - generic:
+                  - img
+              - button "Link a video [light](YouTube or Vimeo)[/] or upload [light](up to 100 MB)[/]" [disabled]:
+                - generic:
+                  - img
+              - button "Add text block" [disabled]:
+                - generic:
+                  - img
+              - button "Add a web link [light](articles or websites)[/]" [disabled]:
+                - generic:
+                  - img
+              - button "Add PDF files [light](up to 10 MB, max 5 files)[/]" [disabled]:
+                - generic:
+                  - img
+              - button "Add audio files [light](up to 10 MB)[/]" [disabled]:
+                - generic:
+                  - img
+            - paragraph [ref=e1031]: Add content
+      - generic [ref=e1037]:
+        - button "Save as draft" [ref=e1039] [cursor=pointer]:
+          - generic [ref=e1040]: Save as draft
+        - 'button "Next: Preview" [ref=e1041] [cursor=pointer]':
+          - generic [ref=e1044]: "Next: Preview"

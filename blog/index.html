@@ -39,8 +39,6 @@
     <meta name="description" content="Build notes, AI breakdowns, and field reports from a solo WordPress developer building in public.">
 <link rel="canonical" href="https://camelotflows.dev/blog/">
     <link rel="alternate" hreflang="en" href="https://camelotflows.dev/blog/">
-    <link rel="alternate" hreflang="ro" href="https://camelotflows.dev/blog/">
-    <link rel="alternate" hreflang="ru" href="https://camelotflows.dev/blog/">
     <link rel="alternate" hreflang="x-default" href="https://camelotflows.dev/blog/">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
@@ -78,9 +76,11 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+      try { if (localStorage.getItem('cf_consent') === 'granted') { gtag('consent', 'update', { analytics_storage: 'granted' }); } } catch (e) {}      gtag('js', new Date());
       gtag('config', 'G-T4ZPEG1KSR');
     </script>
+    <script defer src="/assets/js/cf-consent.js?v=1"></script>
 </head>
 
 <body class="theme-cozy font-body overflow-x-hidden selection:bg-primary selection:text-white">
@@ -139,7 +139,7 @@
             </div>
             <div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="/index.html" data-i18n="common.nav.home">[Home]</a>
+                    href="/" data-i18n="common.nav.home">[Home]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
                     href="/work-with-me.html" data-i18n="common.nav.services">[Services]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
@@ -192,7 +192,7 @@
         <div id="mobile-nav" class="hidden mt-2 max-w-7xl mx-auto">
             <div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
                 <div class="flex flex-col gap-1">
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/index.html" data-i18n="common.nav.home">[Home]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/" data-i18n="common.nav.home">[Home]</a>
                     <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/work-with-me.html" data-i18n="common.nav.services">[Services]</a>
                     <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
                     <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
@@ -306,6 +306,33 @@
                                 <span data-lang-content="ru" hidden>Вы заплатили за свой сайт, но владеете ли вы им на самом деле? Ответ решают пять аккаунтов, и вы можете проверить каждый сегодня вечером примерно за пять минут.</span>
                             </p>
                             <a href="/blog/do-i-own-my-website-checklist/" class="inline-flex items-center gap-2 text-xs font-mono text-primary-glow hover:gap-3 transition-all w-fit">
+                                <span data-i18n="blog.read">Read</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="glass-panel rounded-xl overflow-hidden group hover:border-primary/40 transition-all duration-300 flex flex-col">
+                        <a href="/blog/automate-import-back-office-before-hiring/" class="block overflow-hidden aspect-[16/9]">
+                            <img width="768" height="432" src="/assets/images/blog/import-backoffice-automation-768x432.webp" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Import back-office automation workflows" decoding="async" loading="lazy" />
+                        </a>
+                        <div class="p-6 flex flex-col flex-1">
+                            <div class="flex flex-wrap items-center gap-3 mb-4">
+                                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-primary/30 bg-primary/5 text-[10px] font-mono text-primary-glow tracking-widest uppercase">AI Automation</span>
+                                <span class="text-[10px] font-mono text-slate-600">June 19, 2026</span>
+                            </div>
+                            <h2 class="text-xl font-display font-bold text-white mb-3 leading-snug group-hover:text-primary-glow transition-colors flex-1">
+                                <a href="/blog/automate-import-back-office-before-hiring/">
+                                    <span data-lang-content="en">The Import Back-Office Tax: 5 Jobs to Automate Before You Hire</span>
+                                    <span data-lang-content="ro" hidden>Taxa pe Back-Office-ul de Import: 5 Sarcini de Automatizat Înainte să Angajezi</span>
+                                    <span data-lang-content="ru" hidden>Налог на бэк-офис импорта: 5 задач для автоматизации до найма</span>
+                                </a>
+                            </h2>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                <span data-lang-content="en">An import back office runs on manual follow-ups, EUR.1 paperwork, and copy-paste order entry. Here are five of those jobs you can hand to a system &mdash; before you hire another person.</span>
+                                <span data-lang-content="ro" hidden>Back-office-ul unui importator funcționează pe follow-up-uri manuale, acte EUR.1 și introducerea comenzilor prin copy-paste. Iată cinci sarcini pe care le poți preda unui sistem &mdash; înainte să mai angajezi pe cineva.</span>
+                                <span data-lang-content="ru" hidden>Бэк-офис импортёра держится на ручных напоминаниях, бумагах EUR.1 и копипасте заказов. Вот пять задач, которые можно отдать системе &mdash; ещё до найма.</span>
+                            </p>
+                            <a href="/blog/automate-import-back-office-before-hiring/" class="inline-flex items-center gap-2 text-xs font-mono text-primary-glow hover:gap-3 transition-all w-fit">
                                 <span data-i18n="blog.read">Read</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
                             </a>
                         </div>

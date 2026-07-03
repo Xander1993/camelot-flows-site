@@ -1,0 +1,20 @@
+- generic [ref=e481]:
+  - generic [ref=e482]:
+    - heading "Portfolio" [level=3] [ref=e483]
+    - button "Add portfolio" [ref=e486] [cursor=pointer]:
+      - img [ref=e488]
+  - generic [ref=e491]:
+    - tablist [ref=e494]:
+      - tab "Published" [ref=e495] [cursor=pointer]:
+        - generic [ref=e497]: Published
+      - tab "Drafts" [selected] [ref=e498] [cursor=pointer]:
+        - generic [ref=e500]: Drafts
+    - tabpanel [ref=e502]:
+      - generic [ref=e506] [cursor=pointer]:
+        - generic [ref=e507]:
+          - generic [ref=e512]: Draft
+          - button "More options" [ref=e518]:
+            - generic [ref=e519]: More options
+            - img [ref=e521]
+        - link "Firstline Garage — Local Service Site with Quote Funnel" [active] [ref=e526]:
+          - /url: "javascript:"

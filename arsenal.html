@@ -38,10 +38,8 @@
     <title>Tools & Stack — WordPress, GSAP & n8n Automation | Camelot Flows</title>
     <meta name="description" content="See the tools Alex Buzi uses: WordPress, GSAP animations, n8n automation, Claude API agents. The full stack behind conversion-focused sites built in Chisinau.">
     <link rel="canonical" href="https://camelotflows.dev/arsenal">
-    <link rel="alternate" hreflang="en" href="https://camelotflows.dev/arsenal.html">
-    <link rel="alternate" hreflang="ro" href="https://camelotflows.dev/arsenal.html">
-    <link rel="alternate" hreflang="ru" href="https://camelotflows.dev/arsenal.html">
-    <link rel="alternate" hreflang="x-default" href="https://camelotflows.dev/arsenal.html">
+    <link rel="alternate" hreflang="en" href="https://camelotflows.dev/arsenal">
+    <link rel="alternate" hreflang="x-default" href="https://camelotflows.dev/arsenal">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -81,9 +79,11 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+      try { if (localStorage.getItem('cf_consent') === 'granted') { gtag('consent', 'update', { analytics_storage: 'granted' }); } } catch (e) {}      gtag('js', new Date());
       gtag('config', 'G-T4ZPEG1KSR');
     </script>
+    <script defer src="/assets/js/cf-consent.js?v=1"></script>
 </head>
 
 <body class="theme-cozy font-body overflow-x-hidden selection:bg-primary selection:text-white">
