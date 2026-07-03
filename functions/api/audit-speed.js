@@ -13,6 +13,7 @@
 import { pickLang, localizeFindings, localizePassed, errMsg } from '../_lib/audit-i18n.mjs';
 import { normalizeUrl, ssrfBlocked, fetchPsi } from '../_lib/audit-net.mjs';
 import { rateLimit } from '../_lib/audit-ratelimit.mjs';
+import { mergeSpeed } from '../_lib/audit-report-store.mjs';
 
 const PSI_TIMEOUT_MS = 45_000; // PSI on heavy real sites routinely takes 25-40s
 const RATE_LIMIT = 10; // per IP per window (one per audit, plus slack)
@@ -29,9 +30,10 @@ export async function onRequestPost(context) {
   }
 
   let target;
+  let reqBody = {};
   try {
-    const body = await context.request.json();
-    target = normalizeUrl(String((body && body.url) || ''));
+    reqBody = await context.request.json();
+    target = normalizeUrl(String((reqBody && reqBody.url) || ''));
   } catch {
     return json({ ok: false, error: 'bad_request', message: errMsg('bad_request', lang, 'Send JSON: {"url": "https://example.com"}') }, 400);
   }
@@ -87,6 +89,12 @@ export async function onRequestPost(context) {
   const passedL = localizePassed(passed, lang);
   let scoreDelta = 0;
   for (const x of findingsL) scoreDelta -= (x.severity === 'high' ? 18 : x.severity === 'medium' ? 9 : 4);
+
+  // If this audit was persisted in phase 1 (reportId echoed back by the client),
+  // fold the speed result into the stored report so a shared /audit?r=<id> shows
+  // the same final score. Best-effort — mergeSpeed is fail-open and never throws.
+  const reportId = reqBody && reqBody.reportId ? String(reqBody.reportId) : '';
+  if (reportId) await mergeSpeed(env, reportId, { findings: findingsL, passed: passedL, scoreDelta });
 
   return json({ ok: true, measured: true, psi, findings: findingsL, passed: passedL, scoreDelta });
 }

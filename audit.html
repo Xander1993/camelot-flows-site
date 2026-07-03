@@ -295,6 +295,11 @@
 
         <!-- results -->
         <div id="audit-results" class="hidden mt-10 max-w-4xl">
+          <!-- shared-report notice (shown only when re-rendering a saved /audit?r=<id> link) -->
+          <div id="audit-shared-notice" class="hidden glass-panel rounded-lg p-4 mb-6 border-l-4 border-l-accent/60 flex items-center gap-3 audit-noprint">
+            <span class="material-symbols-outlined text-accent shrink-0" style="font-size:20px">link</span>
+            <p class="text-white/70 text-sm" data-i18n="pages.audit.shared_notice">You are viewing a saved audit report. Run a fresh one below anytime.</p>
+          </div>
           <!-- score / grade headline -->
           <div class="glass-panel rounded-lg p-6 md:p-8 mb-6">
             <div class="flex flex-col md:flex-row md:items-center gap-6">
@@ -413,9 +418,11 @@
                 <span data-i18n="pages.audit.gate_consent">I agree to receive the report and occasional practical notes by email. No spam, unsubscribe anytime. <a href="privacy.html" class="underline hover:text-white/60">Privacy</a>.</span>
               </label>
               <p id="audit-gate-error" class="text-sm mt-3 hidden" style="color:#ff7a7a"></p>
-              <div class="mt-5 pt-4 audit-divide">
+              <div class="mt-5 pt-4 audit-divide flex flex-wrap items-center gap-x-6 gap-y-2">
                 <button id="audit-print" type="button" data-i18n="pages.audit.print_btn"
                         class="font-mono text-[11px] tracking-[0.15em] uppercase text-white/50 hover:text-white/80 transition-colors underline underline-offset-4">Or save this report as a PDF</button>
+                <button id="audit-copy-link" type="button" data-i18n="pages.audit.copy_link_btn"
+                        class="hidden font-mono text-[11px] tracking-[0.15em] uppercase text-accent hover:text-white transition-colors underline underline-offset-4">Copy shareable link</button>
               </div>
             </div>
             <div id="audit-gate-done" class="hidden text-center py-4">
@@ -561,6 +568,8 @@
     consent: document.getElementById('audit-consent'),
     gateErr: document.getElementById('audit-gate-error'),
     print: document.getElementById('audit-print'),
+    copyLink: document.getElementById('audit-copy-link'),
+    sharedNotice: document.getElementById('audit-shared-notice'),
     preview: document.getElementById('audit-preview'),
     serp: document.getElementById('audit-serp'),
     social: document.getElementById('audit-social'),
@@ -582,6 +591,8 @@
   var lastScore = 0;
   var lastAudit = null; // { host, score, ids[] } for the competitor compare
   var lastVariant = 'template';
+  var shareUrl = '';    // /audit?r=<id> for the current report, when it was persisted
+  var sharedId = '';    // set when the page is opened as /audit?r=<id> (re-render mode)
   var adminKey = new URLSearchParams(location.search).get('admin') || '';
   var BENCH = 68; // typical local-business site score
 
@@ -789,6 +800,70 @@
     els.cmpResult.classList.remove('hidden');
   }
 
+  // Offer (or hide) the "copy shareable link" button for the current report.
+  function setShareLink(id) {
+    if (id && /^[a-z0-9]{6,24}$/.test(id)) {
+      shareUrl = location.origin + location.pathname + '?r=' + id;
+      els.copyLink.textContent = t('pages.audit.copy_link_btn', 'Copy shareable link');
+      els.copyLink.classList.remove('hidden');
+    } else {
+      shareUrl = '';
+      els.copyLink.classList.add('hidden');
+    }
+  }
+
+  // Single render path for a finished report — used by both a live audit and a
+  // re-rendered saved report (/audit?r=<id>). `data.shared` is true for the latter.
+  function renderReport(data) {
+    els.err.classList.add('hidden');
+    auditedUrl = data.finalUrl;
+    lastVariant = data.variant || 'template';
+    els.summary.textContent = data.summary || '';
+    applyScore(data.score);
+    renderCompare(data.compare);
+    els.airead.classList.add('hidden');
+    renderAiRead(data.aiRead);
+    renderPreviews(data.meta);
+    els.shotWrap.classList.add('hidden');
+
+    // what is already working
+    els.passedList.innerHTML = '';
+    els.passed.classList.add('hidden');
+    (data.passed || []).forEach(addPassed);
+
+    // findings — all shown, nothing gated
+    els.list.innerHTML = '';
+    (data.findings || []).forEach(function (x) { els.list.appendChild(findingCard(x)); });
+
+    // reset the fix-plan offer to its form state and show it
+    els.gateForm.classList.remove('hidden');
+    els.gateDone.classList.add('hidden');
+    els.gate.classList.remove('hidden');
+
+    // competitor compare — stash this result as the "You" column
+    lastAudit = { host: (data.meta && data.meta.host) || auditedUrl, score: data.score, ids: (data.passed || []).map(function (x) { return x.id; }) };
+    els.cmpResult.classList.add('hidden');
+    els.cmpResult.innerHTML = '';
+    els.compareBox.classList.remove('hidden');
+
+    // shareable link + saved-report notice
+    setShareLink(data.reportId || (data.shared ? sharedId : ''));
+    if (data.shared) els.sharedNotice.classList.remove('hidden');
+    else els.sharedNotice.classList.add('hidden');
+
+    els.results.classList.remove('hidden');
+    els.results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    if (data.shared) {
+      track('audit_shared_view', { audited_url: auditedUrl, score: data.score });
+    } else {
+      track('audit_complete', { audited_url: auditedUrl, score: data.score, findings: (data.findings || []).length, model_variant: lastVariant, summary_source: data.summarySource || 'template' });
+    }
+
+    // Phase 2 (live audits only — a saved report already has its speed folded in).
+    if (data.speedPending) startSpeedPhase(auditedUrl, data.reportId || '');
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     els.err.classList.add('hidden');
@@ -819,41 +894,7 @@
         track('audit_error', { reason: data.error || 'unknown' });
         return;
       }
-      auditedUrl = data.finalUrl;
-      lastVariant = data.variant || 'template';
-      els.summary.textContent = data.summary;
-      applyScore(data.score);
-      renderCompare(data.compare);
-      els.airead.classList.add('hidden');
-      renderAiRead(data.aiRead);
-      renderPreviews(data.meta);
-      els.shotWrap.classList.add('hidden');
-
-      // what is already working
-      els.passedList.innerHTML = '';
-      els.passed.classList.add('hidden');
-      (data.passed || []).forEach(addPassed);
-
-      // findings — all shown, nothing gated
-      els.list.innerHTML = '';
-      (data.findings || []).forEach(function (x) { els.list.appendChild(findingCard(x)); });
-
-      // reset the fix-plan offer to its form state and show it
-      els.gateForm.classList.remove('hidden');
-      els.gateDone.classList.add('hidden');
-      els.gate.classList.remove('hidden');
-
-      // competitor compare — stash this result as the "You" column
-      lastAudit = { host: (data.meta && data.meta.host) || auditedUrl, score: data.score, ids: (data.passed || []).map(function (x) { return x.id; }) };
-      els.cmpResult.classList.add('hidden');
-      els.cmpResult.innerHTML = '';
-      els.compareBox.classList.remove('hidden');
-
-      els.results.classList.remove('hidden');
-      els.results.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      track('audit_complete', { audited_url: auditedUrl, score: data.score, findings: (data.findings || []).length, model_variant: lastVariant, summary_source: data.summarySource || 'template' });
-
-      if (data.speedPending) startSpeedPhase(auditedUrl);
+      renderReport(data);
     }).catch(function () {
       clearTimeout(slowTimer);
       els.status.classList.add('hidden');
@@ -865,12 +906,15 @@
   });
 
   // Phase 2 — mobile speed streams in and nudges the score/grade once it lands.
-  function startSpeedPhase(url) {
+  // reportId (when the phase-1 report was persisted) is echoed back so the server
+  // folds the speed result into the stored report — a shared link then shows the
+  // same final score.
+  function startSpeedPhase(url, reportId) {
     els.speedPending.classList.remove('hidden');
     fetch('/api/audit-speed?lang=' + encodeURIComponent(curLang()), {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ url: url, lang: curLang() })
+      body: JSON.stringify(reportId ? { url: url, lang: curLang(), reportId: reportId } : { url: url, lang: curLang() })
     }).then(function (r) { return r.json(); }).then(function (s) {
       els.speedPending.classList.add('hidden');
       if (!s || !s.ok) return;
@@ -975,6 +1019,72 @@
   });
 
   if (els.print) els.print.addEventListener('click', function () { window.print(); });
+
+  // Copy the shareable /audit?r=<id> link to the clipboard.
+  function fallbackCopy(text) {
+    try {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute'; ta.style.left = '-9999px';
+      document.body.appendChild(ta); ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    } catch (e) { /* clipboard blocked — the URL is still in the address bar for saved reports */ }
+  }
+  if (els.copyLink) els.copyLink.addEventListener('click', function () {
+    if (!shareUrl) return;
+    var flash = function () {
+      els.copyLink.textContent = t('pages.audit.copy_link_done', 'Link copied ✓');
+      setTimeout(function () { els.copyLink.textContent = t('pages.audit.copy_link_btn', 'Copy shareable link'); }, 2200);
+    };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(shareUrl).then(flash, function () { fallbackCopy(shareUrl); flash(); });
+        return;
+      }
+    } catch (e) { /* fall through */ }
+    fallbackCopy(shareUrl); flash();
+  });
+
+  // Re-render a saved report when the page is opened as /audit?r=<id>.
+  function startSharedLoad() {
+    els.err.classList.add('hidden');
+    els.status.classList.remove('hidden');
+    els.statusText.textContent = t('pages.audit.status_loading_saved', 'Loading saved report…');
+    fetch('/api/audit?r=' + encodeURIComponent(sharedId) + '&lang=' + encodeURIComponent(curLang()))
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        els.status.classList.add('hidden');
+        if (!data || !data.ok) {
+          els.err.textContent = (data && data.message) || t('pages.audit.report_not_found_msg', 'This audit link has expired or was not found. Run a fresh audit below.');
+          els.err.classList.remove('hidden');
+          return;
+        }
+        renderReport(data);
+      })
+      .catch(function () {
+        els.status.classList.add('hidden');
+        els.err.textContent = t('pages.audit.err_network', 'Network hiccup, try again.');
+        els.err.classList.remove('hidden');
+      });
+  }
+  // Defer the saved-report render until the i18n dictionary is applied (i18n.js is
+  // deferred; cfI18n.ready resolves once the visitor's language labels are ready)
+  // so finding-card chrome renders in the right language, not English fallbacks.
+  var rParam = new URLSearchParams(location.search).get('r') || '';
+  if (rParam) {
+    sharedId = rParam;
+    var chain = function () {
+      if (window.cfI18n && window.cfI18n.ready && typeof window.cfI18n.ready.then === 'function') {
+        window.cfI18n.ready.then(startSharedLoad, startSharedLoad);
+      } else {
+        startSharedLoad();
+      }
+    };
+    if (window.cfI18n && window.cfI18n.ready) chain();
+    else if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', chain);
+    else chain();
+  }
 })();
 </script>
 

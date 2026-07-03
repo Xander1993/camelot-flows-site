@@ -22,12 +22,30 @@ import { pickLang, localizeFindings, localizePassed, localizedSummary, errMsg } 
 import { normalizeUrl, ssrfBlocked } from '../_lib/audit-net.mjs';
 import { hasVisiblePhone } from '../_lib/audit-phone.mjs';
 import { rateLimit } from '../_lib/audit-ratelimit.mjs';
+import { saveReport, getReport } from '../_lib/audit-report-store.mjs';
 
 const MAX_BODY_BYTES = 1_500_000;
 const FETCH_TIMEOUT_MS = 10_000;
 const MAX_REDIRECTS = 4;
 const RATE_LIMIT = 5; // requests per IP per window
 const RATE_WINDOW_MS = 60_000;
+
+// GET /api/audit?r=<id> — re-render a previously saved report (shareable link).
+// Read-only KV lookup by an unguessable id; nothing is computed or fetched.
+export async function onRequestGet(context) {
+  const env = context.env || {};
+  let lang = 'en';
+  let id = '';
+  try { const u = new URL(context.request.url); lang = pickLang(u.searchParams.get('lang')); id = u.searchParams.get('r') || ''; } catch { /* default en */ }
+  if (!id) {
+    return json({ ok: false, error: 'bad_request', message: errMsg('bad_request', lang, 'Send JSON: {"url": "https://example.com"}') }, 400);
+  }
+  const report = await getReport(env, id);
+  if (!report) {
+    return json({ ok: false, error: 'not_found', message: errMsg('report_not_found', lang, 'This audit link has expired or was not found. Run a fresh audit below.') }, 404);
+  }
+  return json(report);
+}
 
 export async function onRequestPost(context) {
   const env = context.env || {};
@@ -148,6 +166,14 @@ export async function onRequestPost(context) {
     payload.model = modelUsed;
     payload.usage = usage;
     if (compare) payload.compare = compare;
+  }
+  // Persist the finished report so /audit?r=<id> can re-render it and the visitor
+  // can share a link. Skipped in lite mode (the competitor-compare path discards
+  // everything but the score). Fail-open: no KV binding => no reportId => no share
+  // link offered, exactly as before.
+  if (!lite) {
+    const reportId = await saveReport(env, payload);
+    if (reportId) payload.reportId = reportId;
   }
   return json(payload);
 }

@@ -218,7 +218,8 @@ const ERRORS = {
     invalid_url: 'Aceasta nu pare o adresă publică de site.',
     unsupported_scheme: 'Pot audita doar site-uri http:// sau https://.',
     fetch_prefix: 'Nu am putut încărca acel site',
-    fetch_suffix: 'Este online și public?'
+    fetch_suffix: 'Este online și public?',
+    report_not_found: 'Acest link de audit a expirat sau nu a fost găsit. Rulează un audit nou mai jos.'
   },
   ru: {
     rate_limited: 'Слишком много аудитов с этого соединения. Попробуйте через минуту.',
@@ -226,7 +227,8 @@ const ERRORS = {
     invalid_url: 'Это не похоже на публичный адрес сайта.',
     unsupported_scheme: 'Аудит возможен только для сайтов http:// или https://.',
     fetch_prefix: 'Не удалось загрузить этот сайт',
-    fetch_suffix: 'Он онлайн и публичный?'
+    fetch_suffix: 'Он онлайн и публичный?',
+    report_not_found: 'Ссылка на аудит устарела или не найдена. Запустите новый аудит ниже.'
   }
 };
 
