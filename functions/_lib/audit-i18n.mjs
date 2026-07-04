@@ -30,7 +30,12 @@ const FINDINGS = {
     slow_mobile: { title: 'Lent pe mobil', detail: 'Google PageSpeed dă acestei pagini {perf}/100 pe o conexiune mobilă. Vizitatorii de pe telefon pleacă înainte ca paginile lente să se încarce.' },
     mediocre_mobile: { title: 'Viteza pe mobil mai are loc de mai bine', detail: 'Scorul de performanță pe mobil este {perf}/100. Nu e stricat, dar fiecare secundă de încărcare costă conversii.' },
     mediocre_mobile_poor_lcp: { title: 'Viteza pe mobil are nevoie de lucru serios', detail: 'Scorul de performanță pe mobil este {perf}/100, iar conținutul principal este atât de lent încât intră în banda „slabă” a Google. Pe telefoane asta te costă activ vizitatori, nu e doar șlefuială.' },
-    lcp: { title: 'Conținutul principal apare în {secs}s (LCP)', detail: 'Largest Contentful Paint peste 4 secunde este în banda „slabă” a Google, afectează atât pozițiile, cât și răbdarea.' }
+    lcp: { title: 'Conținutul principal apare în {secs}s (LCP)', detail: 'Largest Contentful Paint peste 4 secunde este în banda „slabă” a Google, afectează atât pozițiile, cât și răbdarea.' },
+    img_alt: { title: '{missing} din {total} imagini nu au text alt', detail: 'Cititoarele de ecran și Google Images se bazează pe textul alt ca să știe ce arată o imagine. {missing} din cele {total} imagini de pe pagină nu au deloc, invizibile pentru tehnologiile asistive și pentru căutarea de imagini.' },
+    mixed_content: { title: '{count} resurse nesigure pe o pagină securizată', detail: 'Pagina se încarcă prin HTTPS, dar aduce {count} resurse prin http:// simplu. Browserele le blochează sau avertizează, ceea ce poate strica imagini sau scripturi și scoate lacătul care inspiră încredere.' },
+    no_robots: { title: 'Nu există robots.txt', detail: 'Nu există /robots.txt. Motoarele de căutare tot te vor accesa, dar nu ai cum să le ghidezi sau să le arăți sitemap-ul, iar absența lui semnalează adesea un site negestionat.' },
+    no_sitemap: { title: 'Nu există sitemap XML', detail: 'Nu există /sitemap.xml și nicio linie Sitemap: în robots.txt. Un sitemap este modul prin care Google descoperă sigur fiecare pagină; fără el, paginile mai adânci pot rămâne neindexate săptămâni întregi.' },
+    redirect_chain: { title: '{count} redirecționări până la pagina reală', detail: 'Adresa introdusă trece prin {count} redirecționări înainte să ajungă la pagina finală. Fiecare pas adaugă întârziere pe mobil și pierde puțin din valoarea SEO; lanțurile lungi se strică și mai ușor.' }
   },
   ru: {
     https: { title: 'Сайт отдаётся по простому HTTP', detail: 'Браузеры помечают сайт «Не защищено» рядом с названием вашего бизнеса. Уже одного этого достаточно, чтобы отпугнуть посетителей.' },
@@ -52,7 +57,12 @@ const FINDINGS = {
     slow_mobile: { title: 'Медленно на мобильном', detail: 'Google PageSpeed даёт этой странице {perf}/100 на мобильном соединении. Посетители с телефонов уходят раньше, чем медленные страницы догрузятся.' },
     mediocre_mobile: { title: 'Скорость на мобильном можно улучшить', detail: 'Оценка производительности на мобильном {perf}/100. Не сломано, но каждая секунда загрузки стоит конверсий.' },
     mediocre_mobile_poor_lcp: { title: 'Скорость на мобильном требует серьёзной работы', detail: 'Оценка производительности на мобильном {perf}/100, а основной контент настолько медленный, что попадает в «плохую» зону Google. На телефонах это активно стоит вам посетителей, а не просто полировки.' },
-    lcp: { title: 'Основной контент появляется за {secs}с (LCP)', detail: 'Largest Contentful Paint выше 4 секунд в «плохой» зоне Google, это бьёт и по позициям, и по терпению.' }
+    lcp: { title: 'Основной контент появляется за {secs}с (LCP)', detail: 'Largest Contentful Paint выше 4 секунд в «плохой» зоне Google, это бьёт и по позициям, и по терпению.' },
+    img_alt: { title: '{missing} из {total} изображений без alt-текста', detail: 'Скринридеры и Google Картинки опираются на alt-текст, чтобы понять, что на изображении. У {missing} из {total} изображений на странице его нет, они невидимы для вспомогательных технологий и для поиска по картинкам.' },
+    mixed_content: { title: '{count} небезопасных ресурсов на защищённой странице', detail: 'Страница загружается по HTTPS, но подтягивает {count} ресурсов по простому http://. Браузеры блокируют их или предупреждают, из-за чего могут ломаться картинки или скрипты, и пропадает замок, вызывающий доверие.' },
+    no_robots: { title: 'Файл robots.txt не найден', detail: 'Нет /robots.txt. Поисковики всё равно будут вас сканировать, но вы никак не управляете ими и не указываете им карту сайта, а его отсутствие часто говорит о заброшенном сайте.' },
+    no_sitemap: { title: 'XML-карта сайта не найдена', detail: 'Нет /sitemap.xml и нет строки Sitemap: в robots.txt. Карта сайта это то, как Google надёжно находит каждую страницу; без неё глубокие страницы могут неделями оставаться неиндексированными.' },
+    redirect_chain: { title: '{count} редиректов до настоящей страницы', detail: 'Введённый адрес проходит через {count} редиректов, прежде чем попасть на конечную страницу. Каждый переход добавляет задержку на мобильном и теряет немного SEO-веса; длинные цепочки чаще ломаются.' }
   }
 };
 
@@ -78,7 +88,12 @@ const FIX = {
     slow_mobile: 'Compress images, defer non-critical scripts, enable caching/CDN.',
     mediocre_mobile: 'Trim image weight and unused scripts to claw back the easy seconds.',
     mediocre_mobile_poor_lcp: 'Fix the largest image/banner first (compress, right-size, preload), then defer non-critical scripts.',
-    lcp: 'Optimize the largest image/banner: compress it, size it right, preload it.'
+    lcp: 'Optimize the largest image/banner: compress it, size it right, preload it.',
+    img_alt: 'Add descriptive alt text to every content image; use alt="" only for purely decorative ones.',
+    mixed_content: 'Switch the http:// asset links to https:// (or protocol-relative //) so nothing loads insecurely.',
+    no_robots: 'Add a /robots.txt (even a permissive one) and point it at your sitemap.',
+    no_sitemap: 'Publish an XML sitemap and reference it in robots.txt so search engines find every page.',
+    redirect_chain: 'Link and reference the final https:// URL directly to cut the extra redirect hops.'
   },
   ro: {
     https: 'Instalează un certificat SSL gratuit (majoritatea hostingurilor o fac dintr-un clic) și forțează https://.',
@@ -100,7 +115,12 @@ const FIX = {
     slow_mobile: 'Comprimă imaginile, amână scripturile necritice, activează caching/CDN.',
     mediocre_mobile: 'Reduce greutatea imaginilor și scripturile nefolosite ca să recuperezi secundele ușoare.',
     mediocre_mobile_poor_lcp: 'Repară întâi imaginea/bannerul cel mai mare (comprimă, dimensionează corect, preload), apoi amână scripturile necritice.',
-    lcp: 'Optimizează imaginea/bannerul cel mai mare: comprimă, dimensionează corect, fă-i preload.'
+    lcp: 'Optimizează imaginea/bannerul cel mai mare: comprimă, dimensionează corect, fă-i preload.',
+    img_alt: 'Adaugă text alt descriptiv la fiecare imagine de conținut; folosește alt="" doar pentru cele pur decorative.',
+    mixed_content: 'Schimbă linkurile de resurse http:// în https:// (sau protocol-relative //) ca nimic să nu se încarce nesigur.',
+    no_robots: 'Adaugă un /robots.txt (chiar și permisiv) și indică-i sitemap-ul.',
+    no_sitemap: 'Publică un sitemap XML și referă-l în robots.txt ca motoarele de căutare să găsească fiecare pagină.',
+    redirect_chain: 'Leagă și referă direct URL-ul final https:// ca să elimini pașii de redirecționare în plus.'
   },
   ru: {
     https: 'Установите бесплатный SSL-сертификат (у большинства хостингов это в один клик) и принудительно включите https://.',
@@ -122,7 +142,12 @@ const FIX = {
     slow_mobile: 'Сожмите изображения, отложите некритичные скрипты, включите кеширование/CDN.',
     mediocre_mobile: 'Уменьшите вес картинок и неиспользуемые скрипты, чтобы вернуть лёгкие секунды.',
     mediocre_mobile_poor_lcp: 'Сначала займитесь самым большим изображением/баннером (сжатие, правильный размер, preload), затем отложите некритичные скрипты.',
-    lcp: 'Оптимизируйте самое большое изображение/баннер: сжатие, правильный размер, preload.'
+    lcp: 'Оптимизируйте самое большое изображение/баннер: сжатие, правильный размер, preload.',
+    img_alt: 'Добавьте описательный alt-текст к каждому смысловому изображению; alt="" оставьте только для чисто декоративных.',
+    mixed_content: 'Замените http:// ссылки на ресурсы на https:// (или протокол-относительные //), чтобы ничего не грузилось небезопасно.',
+    no_robots: 'Добавьте /robots.txt (пусть даже разрешающий) и укажите в нём карту сайта.',
+    no_sitemap: 'Опубликуйте XML-карту сайта и сошлитесь на неё в robots.txt, чтобы поисковики находили каждую страницу.',
+    redirect_chain: 'Ссылайтесь сразу на конечный https:// URL, чтобы убрать лишние переходы-редиректы.'
   }
 };
 
@@ -131,7 +156,8 @@ const EFFORT = {
   https: '30m', tel_missing: '15m', tel_broken: '15m', no_contact_path: '1h', no_schema: '1h',
   no_business_schema: '30m', self_rating: '15m', no_title: '10m', thin_title: '10m', no_meta_desc: '15m',
   no_og: '20m', no_viewport: '5m', no_h1: '10m', hreflang_single: '30m', no_lang: '5m', no_favicon: '10m',
-  slow_mobile: 'halfday', mediocre_mobile: '2h', mediocre_mobile_poor_lcp: '2h', lcp: '2h'
+  slow_mobile: 'halfday', mediocre_mobile: '2h', mediocre_mobile_poor_lcp: '2h', lcp: '2h',
+  img_alt: '30m', mixed_content: '30m', no_robots: '10m', no_sitemap: '30m', redirect_chain: '30m'
 };
 const EFFORT_LABEL = {
   en: { '5m': '5 min', '10m': '10 min', '15m': '15 min', '20m': '20 min', '30m': '30 min', '1h': '1 hour', '2h': '2 hours', halfday: 'half a day' },
@@ -145,19 +171,22 @@ const PASSED = {
     https: 'Secure HTTPS connection', tappable_phone: 'Tappable phone number', contact: 'Clear way to get in touch',
     schema: 'Structured data present', business_schema: 'Business identity in schema', title: 'Page title set',
     meta_desc: 'Meta description present', og: 'Social share preview tags', viewport: 'Mobile-ready viewport',
-    h1: 'Clear H1 heading', lang: 'Page language declared', favicon: 'Favicon present', fast_mobile: 'Fast on mobile'
+    h1: 'Clear H1 heading', lang: 'Page language declared', favicon: 'Favicon present', fast_mobile: 'Fast on mobile',
+    img_alt: 'Images have alt text', no_mixed_content: 'No insecure (mixed) content', robots: 'robots.txt present', sitemap: 'XML sitemap present'
   },
   ro: {
     https: 'Conexiune HTTPS securizată', tappable_phone: 'Număr de telefon apăsabil', contact: 'Cale clară de contact',
     schema: 'Date structurate prezente', business_schema: 'Identitatea afacerii în schema', title: 'Titlu de pagină setat',
     meta_desc: 'Meta description prezentă', og: 'Tag-uri de previzualizare la partajare', viewport: 'Viewport pregătit pentru mobil',
-    h1: 'Titlu H1 clar', lang: 'Limba paginii declarată', favicon: 'Favicon prezent', fast_mobile: 'Rapid pe mobil'
+    h1: 'Titlu H1 clar', lang: 'Limba paginii declarată', favicon: 'Favicon prezent', fast_mobile: 'Rapid pe mobil',
+    img_alt: 'Imaginile au text alt', no_mixed_content: 'Fără conținut nesigur (mixt)', robots: 'robots.txt prezent', sitemap: 'Sitemap XML prezent'
   },
   ru: {
     https: 'Защищённое HTTPS-соединение', tappable_phone: 'Кликабельный номер телефона', contact: 'Понятный способ связаться',
     schema: 'Структурированные данные есть', business_schema: 'Идентификация бизнеса в схеме', title: 'Заголовок страницы задан',
     meta_desc: 'Meta description присутствует', og: 'Теги превью для шаринга', viewport: 'Viewport готов к мобильным',
-    h1: 'Чёткий заголовок H1', lang: 'Язык страницы указан', favicon: 'Favicon присутствует', fast_mobile: 'Быстро на мобильном'
+    h1: 'Чёткий заголовок H1', lang: 'Язык страницы указан', favicon: 'Favicon присутствует', fast_mobile: 'Быстро на мобильном',
+    img_alt: 'У изображений есть alt-текст', no_mixed_content: 'Нет небезопасного (смешанного) контента', robots: 'robots.txt присутствует', sitemap: 'XML-карта сайта присутствует'
   }
 };
 

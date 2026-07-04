@@ -29,6 +29,9 @@ const FETCH_TIMEOUT_MS = 10_000;
 const MAX_REDIRECTS = 4;
 const RATE_LIMIT = 5; // requests per IP per window
 const RATE_WINDOW_MS = 60_000;
+const AUDIT_UA = 'Mozilla/5.0 (compatible; CamelotFlowsAudit/1.0; +https://camelotflows.dev/audit)';
+const PROBE_TIMEOUT_MS = 5_000;   // robots.txt / sitemap.xml existence probes
+const PROBE_MAX_BYTES = 100_000;  // enough to find a Sitemap: line; caps a hostile robots.txt
 
 // GET /api/audit?r=<id> — re-render a previously saved report (shareable link).
 // Read-only KV lookup by an unguessable id; nothing is computed or fetched.
@@ -89,6 +92,10 @@ export async function onRequestPost(context) {
   // (/api/audit-speed) so this response is fast and never blocks on Google's
   // 15-30s API. The client streams the speed card in and adjusts the score.
   const { findings, passed } = runChecks(page);
+  // Two extra same-origin, SSRF-guarded existence probes (robots.txt / sitemap.xml).
+  // Fail-safe: a network error adds neither a finding nor a pass; only a real 404
+  // flags "missing". Runs before scoring so the results feed the score + summary.
+  await addOriginProbes(page, findings, passed);
   const meta = parseMeta(page);
 
   const findingsL = localizeFindings(findings, lang);
@@ -214,7 +221,7 @@ async function guardedFetch(startUrl) {
         redirect: 'manual',
         signal: controller.signal,
         headers: {
-          'user-agent': 'Mozilla/5.0 (compatible; CamelotFlowsAudit/1.0; +https://camelotflows.dev/audit)',
+          'user-agent': AUDIT_UA,
           'accept': 'text/html,application/xhtml+xml',
           'accept-language': 'en,ro;q=0.9,ru;q=0.8',
         },
@@ -246,10 +253,101 @@ async function guardedFetch(startUrl) {
     let off = 0;
     for (const c of chunks) { buf.set(c.subarray(0, Math.min(c.length, received - off)), off); off += c.length; if (off >= received) break; }
     const html = new TextDecoder('utf-8', { fatal: false }).decode(buf);
-    return { finalUrl: url.toString(), https: url.protocol === 'https:', status: res.status, html };
+    // `hop` == number of redirects followed to reach this final response.
+    return { finalUrl: url.toString(), https: url.protocol === 'https:', status: res.status, html, redirects: hop };
   }
   throw new Error('too many redirects');
 }
+
+// Lightweight, SSRF-guarded existence probe for a same-origin resource. Follows a
+// couple of safe redirects (http->https / www), caps the body, and never throws:
+// returns { ok, status, text } or null (couldn't determine — e.g. timeout/network).
+async function probe(rawUrl, wantText) {
+  let u;
+  try { u = new URL(rawUrl); } catch { return null; }
+  for (let hop = 0; hop <= 2; hop++) {
+    if (ssrfBlocked(u)) return null;
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), PROBE_TIMEOUT_MS);
+    let res;
+    try {
+      res = await fetch(u.toString(), {
+        redirect: 'manual',
+        signal: controller.signal,
+        headers: { 'user-agent': AUDIT_UA, 'accept': '*/*' },
+      });
+    } catch {
+      return null;
+    } finally {
+      clearTimeout(timer);
+    }
+    if (res.status >= 300 && res.status < 400) {
+      const loc = res.headers.get('location');
+      if (!loc) return { ok: false, status: res.status, text: '' };
+      let next;
+      try { next = new URL(loc, u); } catch { return { ok: false, status: res.status, text: '' }; }
+      u = next;
+      continue;
+    }
+    let text = '';
+    if (wantText && res.ok && res.body) {
+      try { text = await readCappedText(res, PROBE_MAX_BYTES); } catch { text = ''; }
+    } else {
+      try { await res.body?.cancel?.(); } catch { /* already consumed */ }
+    }
+    return { ok: res.ok, status: res.status, text };
+  }
+  return null; // too many redirects => unknown
+}
+
+async function readCappedText(res, maxBytes) {
+  const reader = res.body.getReader();
+  let received = 0;
+  const chunks = [];
+  while (received < maxBytes) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    chunks.push(value);
+    received += value.length;
+  }
+  try { await reader.cancel(); } catch { /* already done */ }
+  const total = Math.min(received, maxBytes);
+  const buf = new Uint8Array(total);
+  let off = 0;
+  for (const c of chunks) {
+    if (off >= total) break;
+    buf.set(c.subarray(0, Math.min(c.length, total - off)), off);
+    off += c.length;
+  }
+  return new TextDecoder('utf-8', { fatal: false }).decode(buf);
+}
+
+// robots.txt + sitemap.xml presence. A Sitemap: directive in robots.txt counts as
+// a sitemap even when /sitemap.xml itself is absent. Mutates findings/passed.
+async function addOriginProbes(page, findings, passed) {
+  let origin;
+  try { origin = new URL(page.finalUrl).origin; } catch { return; }
+  const [rob, sm] = await Promise.all([
+    probe(origin + '/robots.txt', true),
+    probe(origin + '/sitemap.xml', false),
+  ]);
+
+  if (rob && rob.ok) {
+    passed.push('robots');
+  } else if (rob && isMissingStatus(rob.status)) {
+    findings.push(f('no_robots', 'low', 'No robots.txt found',
+      'There is no /robots.txt. Search engines still crawl you, but you cannot steer them or point them at your sitemap — and its absence often signals an unmanaged site.'));
+  }
+
+  const declaresSitemap = !!(rob && rob.text && /^[ \t]*sitemap[ \t]*:/im.test(rob.text));
+  if ((sm && sm.ok) || declaresSitemap) {
+    passed.push('sitemap');
+  } else if (sm && isMissingStatus(sm.status) && !declaresSitemap) {
+    findings.push(f('no_sitemap', 'low', 'No XML sitemap found',
+      'No /sitemap.xml and no Sitemap: line in robots.txt. A sitemap is how Google reliably discovers every page — without one, deeper pages can go unindexed for weeks.'));
+  }
+}
+function isMissingStatus(s) { return s === 404 || s === 410; }
 
 function f(id, severity, title, detail, vars) {
   return { id, severity, title, detail, vars };
@@ -478,6 +576,38 @@ function runChecks(page) {
       'The browser-tab icon is a small thing — its absence reads as “unfinished” in a tab bar full of polished competitors.'));
   } else {
     passed.push('favicon');
+  }
+
+  // -- image alt text (accessibility + image SEO) --
+  const imgTags = html.match(/<img\b[^>]*>/gi) || [];
+  if (imgTags.length > 0) {
+    const noAlt = imgTags.filter((tg) => !/[\s"']alt\s*=/i.test(tg)).length;
+    if (noAlt >= 2) {
+      findings.push(f('img_alt', 'low', noAlt + ' of ' + imgTags.length + ' images have no alt text',
+        'Screen readers and Google Images rely on alt text to know what a picture shows. ' + noAlt + ' of the ' + imgTags.length + ' images on this page have none — invisible to assistive tech and to image search.',
+        { missing: noAlt, total: imgTags.length }));
+    } else {
+      passed.push('img_alt');
+    }
+  }
+
+  // -- mixed content (insecure sub-resources on an https page) --
+  if (page.https) {
+    const mixed = (html.match(/[\s"'](?:src|srcset)\s*=\s*["']http:\/\//gi) || []).length;
+    if (mixed > 0) {
+      findings.push(f('mixed_content', 'medium', mixed + ' insecure resource' + (mixed > 1 ? 's' : '') + ' on a secure page',
+        'The page loads over HTTPS but pulls ' + mixed + ' resource' + (mixed > 1 ? 's' : '') + ' over plain http://. Browsers block or warn on these, which can break images or scripts and removes the padlock that signals trust.',
+        { count: mixed }));
+    } else {
+      passed.push('no_mixed_content');
+    }
+  }
+
+  // -- redirect chain (long chains waste mobile time + dilute link equity) --
+  if (page.redirects >= 3) {
+    findings.push(f('redirect_chain', 'low', page.redirects + ' redirects before the real page loads',
+      'The address entered bounces through ' + page.redirects + ' redirects before reaching the final page. Each hop adds delay on mobile and leaks a little SEO value; long chains also break more easily.',
+      { count: page.redirects }));
   }
 
   return { findings, passed };
