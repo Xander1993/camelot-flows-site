@@ -2,9 +2,10 @@
 // CAMELOT FLOWS — i18n LOADER
 // ------------------------------------------------------------
 // Reads dictionaries from window.cfLocales (loaded by locales.js
-// as a regular <script>, so it works on file:// AND http://).
-// Falls back to fetch() of /assets/locales/<lang>.json if the
-// global isn't present.
+// as a blocking <script> before this file on every page, so it
+// works on file:// AND http://). window.cfLocales is the SOLE
+// source of truth. If it is absent, translation degrades to each
+// element's built-in English text (no JSON fetch fallback).
 //
 // Public API on window.cfI18n:
 //   .current()  -> 'en' | 'ro' | 'ru'
@@ -67,8 +68,11 @@
         return undefined;
     }
 
-    // Source of truth: window.cfLocales (set by assets/js/locales.js).
-    // Resolves synchronously when the global is present.
+    // Source of truth: window.cfLocales (set by assets/js/locales.js, loaded as a
+    // blocking <script> before this file on every page). Resolves synchronously.
+    // If the global is somehow absent we degrade to an empty dict so applyDom
+    // leaves each element's built-in English text in place — no network fallback,
+    // no risk of serving a stale partial dictionary.
     function loadDict(lang) {
         if (dicts[lang]) return Promise.resolve(dicts[lang]);
 
@@ -77,15 +81,9 @@
             return Promise.resolve(dicts[lang]);
         }
 
-        // Fallback: try fetching JSON (works on http://, fails on file://).
-        return fetch('assets/locales/' + lang + '.json', { cache: 'force-cache' })
-            .then(function (r) { return r.ok ? r.json() : {}; })
-            .then(function (json) { dicts[lang] = json || {}; return dicts[lang]; })
-            .catch(function () {
-                console.warn('[cfI18n] Could not load dictionary for "' + lang + '". Did locales.js load before i18n.js?');
-                dicts[lang] = {};
-                return dicts[lang];
-            });
+        console.warn('[cfI18n] window.cfLocales["' + lang + '"] missing — did locales.js load before i18n.js? Falling back to built-in text.');
+        dicts[lang] = {};
+        return Promise.resolve(dicts[lang]);
     }
 
     // Dictionary values may opt into raw HTML via the "html:" prefix.
