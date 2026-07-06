@@ -323,7 +323,7 @@
               </div>
               <div class="relative h-2 rounded-full audit-track">
                 <div id="audit-bench-fill" class="h-2 rounded-full transition-all duration-1000" style="width:0%;background:var(--terracotta,#c4785c)"></div>
-                <div id="audit-bench-marker" class="absolute -top-1 w-px h-4" style="left:68%;background:currentColor;opacity:.45"></div>
+                <div id="audit-bench-marker" class="absolute -top-1 w-px h-4" style="left:75%;background:currentColor;opacity:.45"></div>
               </div>
             </div>
           </div>
@@ -557,6 +557,7 @@
     bench: document.getElementById('audit-bench'),
     benchFill: document.getElementById('audit-bench-fill'),
     benchTyp: document.getElementById('audit-bench-typ'),
+    benchMarker: document.getElementById('audit-bench-marker'),
     summary: document.getElementById('audit-summary'),
     passed: document.getElementById('audit-passed'),
     passedList: document.getElementById('audit-passed-list'),
@@ -596,7 +597,10 @@
   var shareUrl = '';    // /audit?r=<id> for the current report, when it was persisted
   var sharedId = '';    // set when the page is opened as /audit?r=<id> (re-render mode)
   var adminKey = new URLSearchParams(location.search).get('admin') || '';
-  var BENCH = 68; // typical local-business site score
+  // Healthy-target reference for the score bar. Anchored to THIS tool's own grade
+  // rubric — 75 is the "Solid" B-grade floor (gradeLetter() returns B at >=75) — not
+  // an empirical "typical local site" figure. An honest heuristic target, no fabricated benchmark.
+  var TARGET = 75;
 
   function curLang() { try { return (window.cfI18n && cfI18n.current && cfI18n.current()) || document.documentElement.getAttribute('lang') || 'en'; } catch (e) { return 'en'; } }
   function t(key, fb) { try { var v = (window.cfI18n && cfI18n.t) ? cfI18n.t(key) : null; return (v && v !== key) ? v : fb; } catch (e) { return fb; } }
@@ -630,7 +634,8 @@
     els.band.style.color = col;
     els.benchFill.style.width = lastScore + '%';
     els.benchFill.style.background = col;
-    els.benchTyp.textContent = t('pages.audit.bench_typical', 'Typical local site') + ' ≈ ' + BENCH;
+    els.benchTyp.textContent = t('pages.audit.bench_target', 'Healthy target') + ' · ' + TARGET;
+    if (els.benchMarker) els.benchMarker.style.left = TARGET + '%';
     els.bench.classList.remove('hidden');
   }
 
