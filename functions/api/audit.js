@@ -83,6 +83,12 @@ export async function onRequestPost(context) {
   try {
     page = await guardedFetch(target);
   } catch (e) {
+    // The URL loaded fine but isn't a web page (PDF / image / JSON / file). Say so
+    // honestly instead of scoring the decoded bytes as a broken site. Same 422 class
+    // as below (survives Cloudflare's 502-body replacement).
+    if (e && e.code === 'not_html') {
+      return json({ ok: false, error: 'not_html', message: errMsg('not_html_prefix', lang, "That address doesn't return a web page (its content type is ") + (e.contentType || 'non-HTML') + errMsg('not_html_suffix', lang, "). Enter your site's homepage URL, e.g. https://example.com.") }, 422);
+    }
     // 422, not 502: Cloudflare replaces 502s from Pages Functions with its own
     // plain-text error page, which destroys this JSON body before the client sees it.
     return json({ ok: false, error: 'fetch_failed', message: errMsg('fetch_prefix', lang, 'Could not load that site') + ' (' + (e && e.message ? e.message : 'network error') + '). ' + errMsg('fetch_suffix', lang, 'Is it online and public?') }, 422);
@@ -239,6 +245,18 @@ async function guardedFetch(startUrl) {
       continue;
     }
     if (!res.ok) throw new Error('HTTP ' + res.status);
+    // Content-type gate: only decode + score real web pages. A URL that returns a
+    // PDF / image / JSON API / file download would otherwise be UTF-8-decoded as
+    // "HTML" and scored as a broken site (no title, no H1, no viewport...) — a
+    // misleading result on a lead-gen tool. Allow text/html and application/xhtml+xml;
+    // an absent/empty content-type is still attempted (some servers omit it).
+    const ctype = String(res.headers.get('content-type') || '').split(';')[0].trim().toLowerCase();
+    if (ctype && ctype !== 'text/html' && ctype !== 'application/xhtml+xml') {
+      const err = new Error('not a web page (' + ctype + ')');
+      err.code = 'not_html';
+      err.contentType = ctype.replace(/[^a-z0-9!#$&^_.+/-]/g, '').slice(0, 60) || 'non-HTML';
+      throw err;
+    }
     const reader = res.body.getReader();
     let received = 0;
     const chunks = [];

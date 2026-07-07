@@ -248,6 +248,8 @@ const ERRORS = {
     unsupported_scheme: 'Pot audita doar site-uri http:// sau https://.',
     fetch_prefix: 'Nu am putut încărca acel site',
     fetch_suffix: 'Este online și public?',
+    not_html_prefix: 'Acea adresă nu returnează o pagină web (tipul de conținut este ',
+    not_html_suffix: '). Introdu adresa paginii principale a site-ului tău, ex. https://example.com.',
     report_not_found: 'Acest link de audit a expirat sau nu a fost găsit. Rulează un audit nou mai jos.'
   },
   ru: {
@@ -257,6 +259,8 @@ const ERRORS = {
     unsupported_scheme: 'Аудит возможен только для сайтов http:// или https://.',
     fetch_prefix: 'Не удалось загрузить этот сайт',
     fetch_suffix: 'Он онлайн и публичный?',
+    not_html_prefix: 'Этот адрес не возвращает веб-страницу (тип содержимого — ',
+    not_html_suffix: '). Введите адрес главной страницы вашего сайта, напр. https://example.com.',
     report_not_found: 'Ссылка на аудит устарела или не найдена. Запустите новый аудит ниже.'
   }
 };
