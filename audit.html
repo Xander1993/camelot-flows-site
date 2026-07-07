@@ -995,26 +995,45 @@
     }
     els.unlock.disabled = true;
     els.unlock.textContent = t('pages.audit.btn_unlocking', 'Sending…');
-    // instant operator notification (Telegram, best-effort) — never blocks the visitor
-    try {
-      fetch('/api/audit-lead', { method: 'POST', headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ email: email, url: auditedUrl, score: lastScore, lang: curLang() }) });
-    } catch (e) {}
+    // Server backstop: durably store the lead + best-effort Telegram push. Resolves
+    // true only if the server actually accepted it (stored OR notified).
+    var serverOk = fetch('/api/audit-lead', { method: 'POST', headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ email: email, url: auditedUrl, score: lastScore, lang: curLang() }) })
+      .then(function (r) { return r.json(); })
+      .then(function (d) { return !!(d && (d.stored || d.notified)); })
+      .catch(function () { return false; });
     var fd = new FormData();
     fd.append('access_key', '0b2e61e9-0981-40b8-bd8e-6f0820e3832a');
     fd.append('subject', 'Audit fix-plan request: ' + auditedUrl + ' (score ' + lastScore + ')');
     fd.append('from_name', 'Camelot Flows Audit Tool');
     fd.append('email', email);
     fd.append('message', 'Audit fix-plan request.\nSite: ' + auditedUrl + '\nScore: ' + lastScore + '/100');
+    // Web3Forms receipt email: resolves true only on an explicit success:true.
+    var web3Ok = fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd })
+      .then(function (r) { return r.json(); })
+      .then(function (d) { return !!(d && d.success); })
+      .catch(function () { return false; });
     function done() {
       els.gateForm.classList.add('hidden');
       els.gateDone.classList.remove('hidden');
       track('audit_lead', { audited_url: auditedUrl, score: lastScore, model_variant: lastVariant });
     }
-    fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd })
-      .then(function (r) { return r.json(); })
-      .then(done)
-      .catch(done); // the visitor held up their side — confirm regardless
+    function failHonestly() {
+      // No channel accepted the lead — never show a false confirmation. Tell the
+      // visitor plainly and give them a direct way through.
+      els.unlock.disabled = false;
+      els.unlock.textContent = t('pages.audit.gate_btn', 'Email me the fix plan');
+      var mail = 'alex@camelotflows.dev';
+      els.gateErr.innerHTML = t('pages.audit.lead_failed',
+        "Couldn't send that automatically. Please email me directly at") +
+        ' <a href="mailto:' + mail + '?subject=' +
+        encodeURIComponent('Audit fix-plan request: ' + auditedUrl) +
+        '" class="underline" style="color:#ff7a7a">' + mail + '</a>.';
+      els.gateErr.classList.remove('hidden');
+    }
+    Promise.all([serverOk, web3Ok]).then(function (res) {
+      if (res[0] || res[1]) done(); else failHonestly();
+    });
   });
 
   if (els.cmpGo) els.cmpGo.addEventListener('click', function () {

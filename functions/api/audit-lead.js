@@ -1,13 +1,21 @@
 /**
- * POST /api/audit-lead — instant operator notification when a visitor requests a
- * fix plan from the free audit. The Web3Forms email (sent from the client) is the
- * visitor-facing receipt + a backup; this adds a Telegram push so leads aren't missed
- * (the privacy policy promises a manual fix-plan + price, so they must be honoured).
+ * POST /api/audit-lead — capture a visitor who requests a fix plan from the free
+ * audit. Three layers, so a lead is never silently lost:
+ *   1. durable KV backstop (saveLead) — persisted BEFORE any push, independent of it,
+ *      so even if every push channel fails the lead survives on the server;
+ *   2. instant operator Telegram push (best-effort, no-op unless configured);
+ *   3. (client-side) a Web3Forms receipt email.
+ * The privacy policy promises a manual fix-plan + price, so leads must be honoured.
  *
- * Optional env (no-ops cleanly if unset): TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID.
- * No storage; best-effort; the token is never returned to the client.
+ * Returns { ok, stored, notified } so the client can show an HONEST result: a green
+ * confirmation only when at least one channel actually accepted the lead.
+ *
+ * Optional env (all no-op cleanly if unset): RATE_KV (durable store; also gates the
+ * rate limiter + LLM budget), TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID. The token is
+ * never returned to the client.
  */
 import { rateLimit } from '../_lib/audit-ratelimit.mjs';
+import { saveLead } from '../_lib/audit-lead-store.mjs';
 
 const RATE_LIMIT = 8; // per IP per window
 const RATE_WINDOW_MS = 60_000;
@@ -28,9 +36,13 @@ export async function onRequestPost(context) {
   const lang = String(body.lang || '').slice(0, 5);
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return json({ ok: false, error: 'invalid_email' }, 400);
 
+  // 1) Durable backstop FIRST, independent of any push channel: persist the lead to
+  // KV so it survives even if Telegram is unconfigured and the client email fails.
+  const stored = await saveLead(env, { email, url, score, lang, ip });
+
   const token = env.TELEGRAM_BOT_TOKEN;
   const chat = env.TELEGRAM_CHAT_ID;
-  if (!token || !chat) return json({ ok: true, notified: false }); // not configured yet — no-op
+  if (!token || !chat) return json({ ok: true, stored, notified: false }); // no push configured
 
   const text =
     '\u{1F514} New audit fix-plan lead\n' +
@@ -49,7 +61,7 @@ export async function onRequestPost(context) {
     notified = r.ok;
   } catch { notified = false; }
 
-  return json({ ok: true, notified });
+  return json({ ok: true, stored, notified });
 }
 
 function json(obj, status = 200) {
