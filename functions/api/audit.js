@@ -542,7 +542,16 @@ function runChecks(page) {
   }
 
   // -- meta description --
-  if (!/<meta[^>]+name\s*=\s*["']description["'][^>]*content\s*=\s*["'][^"']{20,}/i.test(html)) {
+  // Attribute order is not spec-mandated, so accept both name-first and
+  // content-first — mirrors parseMeta.metaContent (~L388) which extracts the
+  // description for the SERP preview regardless of order. Keeping the same
+  // both-orders logic here stops the check from reporting "Missing meta
+  // description" while the preview shows one (content-first tags like
+  // <meta content="…" name="description">).
+  const metaDescMatch =
+    html.match(/<meta[^>]+name\s*=\s*["']description["'][^>]+content\s*=\s*["']([^"']*)["']/i) ||
+    html.match(/<meta[^>]+content\s*=\s*["']([^"']*)["'][^>]+name\s*=\s*["']description["']/i);
+  if (!metaDescMatch || metaDescMatch[1].trim().length < 20) {
     findings.push(f('no_meta_desc', 'medium', 'Missing meta description',
       'This is the sales copy under your Google listing. When absent, Google picks a random sentence — rarely the one that sells.'));
   } else {
