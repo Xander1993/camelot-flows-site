@@ -18,6 +18,7 @@
  *   RATE_KV          optional KV binding for the monthly AI-call budget
  */
 import { pickModel, buildLlmMessages, buildAiReadMessages, callLlm } from '../_lib/llm.mjs';
+import { llmBudgetOk, chargeLlmBudget } from '../_lib/audit-llm-budget.mjs';
 import { pickLang, localizeFindings, localizePassed, localizedSummary, errMsg } from '../_lib/audit-i18n.mjs';
 import { normalizeUrl, ssrfBlocked } from '../_lib/audit-net.mjs';
 import { hasVisiblePhone } from '../_lib/audit-phone.mjs';
@@ -119,12 +120,17 @@ export async function onRequestPost(context) {
   let compare = null;
   let aiRead = null;
 
+  // Monthly AI-call budget is charged by ACTUAL provider calls, not per audit:
+  // check the cap up-front (read-only), fire the calls, then charge the exact
+  // number of callLlm() invocations that ran (llmCalls). See audit-llm-budget.mjs.
+  let llmCalls = 0;
   if (!lite && env.LLM_API_KEY && (await llmBudgetOk(env))) {
     const models = String(env.LLM_MODELS || 'deepseek/deepseek-v4-flash,nousresearch/hermes-4-70b')
       .split(',').map((s) => s.trim()).filter(Boolean);
     const messages = buildLlmMessages(findingsL, page.finalUrl, score, lang);
     if (isAdmin && body.compare) {
       compare = await Promise.all(models.map(async (m) => {
+        llmCalls++;
         const r = await callLlm(env, m, messages);
         return { model: m, summary: r.text || null, error: r.error || null, usage: r.usage || null };
       }));
@@ -144,11 +150,12 @@ export async function onRequestPost(context) {
       // JSON generation is slower and was timing out on the larger A/B model. One
       // quick retry on an empty/errored response (transient provider hiccups).
       const [r, ar] = await Promise.all([
-        callLlm(env, modelUsed, messages),
+        (async () => { llmCalls++; return callLlm(env, modelUsed, messages); })(),
         (async () => {
           const ex = { max_tokens: 1200, temperature: 0.2 };
+          llmCalls++;
           let x = await callLlm(env, models[0], aiMsgs, 20_000, ex);
-          if (!x.text) x = await callLlm(env, models[0], aiMsgs, 12_000, ex);
+          if (!x.text) { llmCalls++; x = await callLlm(env, models[0], aiMsgs, 12_000, ex); }
           return x;
         })(),
       ]);
@@ -161,6 +168,10 @@ export async function onRequestPost(context) {
       if (ar.text) aiRead = parseAiRead(ar.text);
     }
   }
+  // Charge the monthly budget by the real number of provider calls that fired
+  // (2-3 on the summary+aiRead path, one per model in admin-compare). No-op when
+  // RATE_KV is unbound or no call ran, so behaviour is unchanged until KV binds.
+  if (llmCalls > 0) await chargeLlmBudget(env, llmCalls);
 
   const payload = {
     ok: true,
@@ -189,22 +200,6 @@ export async function onRequestPost(context) {
     if (reportId) payload.reportId = reportId;
   }
   return json(payload);
-}
-
-// Monthly AI-call budget. Without a KV binding we allow (per-IP limiting +
-// a provider-side key limit are the backstop); with KV the cap is global.
-async function llmBudgetOk(env) {
-  const kv = env.RATE_KV;
-  if (!kv) return true;
-  try {
-    const monthKey = 'llm:' + new Date().toISOString().slice(0, 7);
-    const used = Number((await kv.get(monthKey)) || 0);
-    if (used >= Number(env.LLM_MONTHLY_CAP || 3000)) return false;
-    await kv.put(monthKey, String(used + 1), { expirationTtl: 3_200_000 });
-    return true;
-  } catch {
-    return true;
-  }
 }
 
 /* ---------------- helpers ---------------- */
