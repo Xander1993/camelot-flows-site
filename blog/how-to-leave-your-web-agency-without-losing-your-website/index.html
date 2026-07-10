@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-page="blog">
+
+<head>
+    <!-- CF: theme bootstrap (sync, before paint) -->
+    <script>
+      (function () {
+        var html = document.documentElement;
+        try {
+          var c = document.cookie.match('(?:^|;) ?cf_theme=([^;]*)');
+          var t = c ? c[1] : (localStorage.getItem('cf_theme') || 'cozy');
+          html.setAttribute('data-theme', t);
+        } catch (e) { html.setAttribute('data-theme', 'cozy'); }
+        try {
+          if (sessionStorage.getItem('cf_loaded') === '1') {
+            html.classList.add('cf-skip-preloader');
+          }
+        } catch (e) {}
+        html.classList.add('js');
+      })();
+    </script>
+    <!-- CF: lang bootstrap (sync, before paint) -->
+    <script>
+      (function () {
+        var html = document.documentElement;
+        try {
+          var l = localStorage.getItem('cf_lang') || 'en';
+          if (['en','ro','ru'].indexOf(l) === -1) l = 'en';
+          html.setAttribute('lang', l);
+          html.setAttribute('data-cf-lang', l);
+          if (l !== 'en') html.setAttribute('data-i18n-loading', '1');
+        } catch (e) { html.setAttribute('lang', 'en'); }
+      })();
+    </script>
+
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>How to Leave Your Web Agency Without Losing Your Site - Camelot Flows</title>
+    <meta name="description" content="The exact order to secure your domain, backup, hosting and email before you tell your web agency you are leaving, so you never lose your website.">
+<link rel="canonical" href="https://camelotflows.dev/blog/how-to-leave-your-web-agency-without-losing-your-website/">
+    <link rel="alternate" hreflang="en" href="https://camelotflows.dev/blog/how-to-leave-your-web-agency-without-losing-your-website/">
+    <link rel="alternate" hreflang="x-default" href="https://camelotflows.dev/blog/how-to-leave-your-web-agency-without-losing-your-website/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How to Leave Your Web Agency Without Losing Your Site - Camelot Flows">
+    <meta property="og:description" content="The exact order to secure your domain, backup, hosting and email before you tell your web agency you are leaving, so you never lose your website.">
+    <meta property="og:image" content="https://camelotflows.dev/assets/images/blog/how-to-leave-your-web-agency-without-losing-your-website.png">
+    <meta property="og:url" content="https://camelotflows.dev/blog/how-to-leave-your-web-agency-without-losing-your-website/">
+    <meta property="og:site_name" content="Camelot Flows">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Leave Your Web Agency Without Losing Your Site - Camelot Flows">
+    <meta name="twitter:description" content="The exact order to secure your domain, backup, hosting and email before you tell your web agency you are leaving, so you never lose your website.">
+    <meta name="twitter:image" content="https://camelotflows.dev/assets/images/blog/how-to-leave-your-web-agency-without-losing-your-website.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/css/tailwind.built.css">
+    <link rel="stylesheet" href="/assets/site.css?v=2">
+    <link rel="stylesheet" href="/assets/css/camelot.css?v=6">
+    <link rel="stylesheet" href="/assets/css/theme-night.css?v=2">
+    <link rel="stylesheet" href="/assets/css/lang-switcher.css">
+    <link rel="stylesheet" href="/assets/css/blog.css?v=3">
+    <link rel="prefetch" href="/arsenal.html" as="document">
+    <link rel="prefetch" href="/merlin.html" as="document">
+    <link rel="prefetch" href="/contact.html" as="document">
+    <link rel="prefetch" href="/case-studies.html" as="document">
+    <link rel="prefetch" href="/about.html" as="document">
+    <!-- Google tag (gtag.js) — GA4 camelotflows.dev -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4ZPEG1KSR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+      try { if (localStorage.getItem('cf_consent') === 'granted') { gtag('consent', 'update', { analytics_storage: 'granted' }); } } catch (e) {}      gtag('js', new Date());
+      gtag('config', 'G-T4ZPEG1KSR');
+    </script>
+    <script defer src="/assets/js/cf-consent.js?v=1"></script>
+</head>
+
+<body class="theme-cozy font-body overflow-x-hidden selection:bg-primary selection:text-white">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999999] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm focus:font-mono focus:shadow-neon" data-i18n="common.skip_link">Skip to main content</a>
+<div id="lang-announce" role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <div id="preloader" class="fixed inset-0 z-[999999] bg-obsidian flex flex-col items-center justify-center">
+        <div class="absolute inset-0 grid-bg opacity-30"></div>
+        <div class="w-32 h-32 relative flex items-center justify-center mb-8 z-10">
+            <div class="absolute inset-0 rounded-full border-t-2 border-primary animate-spin"></div>
+            <div
+                class="absolute inset-2 rounded-full border-b-2 border-accent animate-[spin_2s_linear_infinite_reverse]">
+            </div>
+            <span class="material-symbols-outlined text-4xl text-white animate-pulse">design_services</span>
+        </div>
+        <div class="text-primary-glow font-mono text-[10px] tracking-[0.4em] uppercase mb-4 z-10" id="loader-text" data-i18n="common.preloader_init">
+            Initializing Protocols...</div>
+        <div class="w-64 h-[2px] bg-white/10 rounded-full overflow-hidden z-10">
+            <div id="loader-bar" class="w-0 h-full bg-gradient-to-r from-primary to-accent"></div>
+        </div>
+        <div id="loader-percent" class="mt-4 font-mono text-white text-sm tracking-widest z-10">0%</div>
+    </div>
+
+    <div class="grain-overlay"></div>
+    <div id="bg-orbs" class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+        <div class="bg-orb absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-cobalt/20 rounded-full blur-[120px]">
+        </div>
+        <div
+            class="bg-orb absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-accent/10 rounded-full blur-[100px]">
+        </div>
+        <div class="bg-orb absolute top-[40%] left-[30%] w-[30vw] h-[30vw] bg-primary/10 rounded-full blur-[150px]">
+        </div>
+        <div class="absolute inset-0 grid-bg"></div>
+    </div>
+
+    <!-- ИЗМЕНЕНИЕ: Zentry Orbital Badge (Вращающаяся печать в углу) -->
+    <div
+        class="fixed bottom-8 right-8 z-50 pointer-events-none mix-blend-screen opacity-60 hidden md:flex items-center justify-center w-32 h-32">
+        <svg viewBox="0 0 100 100" width="100" height="100" class="animate-[spin_12s_linear_infinite] absolute inset-0">
+            <defs>
+                <path id="circle" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
+            </defs>
+            <text font-size="10.5" fill="currentColor" class="text-primary-glow font-mono uppercase tracking-[0.15em]">
+                <textPath href="#circle">Camelot Flows • Digital Kingdom •</textPath>
+            </text>
+        </svg>
+        <span class="material-symbols-outlined text-primary text-2xl animate-pulse">change_history</span>
+    </div>
+
+    <nav class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-6 md:py-6">
+        <div
+            class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
+            <div class="flex items-center">
+                <img src="/assets/images/cf-logo-wordmark-2x.webp" alt="Camelot Flows" class="h-16 md:h-28 w-auto object-contain">
+            </div>
+            <div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="/" data-i18n="common.nav.home">[Home]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="/work-with-me.html" data-i18n="common.nav.services">[Services]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="/arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="/merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
+                    href="/case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block"
+                    href="/for-agencies.html" data-i18n="common.nav.agencies">[Agencies]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
+                    href="/?goto=pricing" data-i18n="common.nav.pricing">[Pricing]</a>
+                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
+                    href="/contact.html" data-i18n="common.nav.contact">[Contact]</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <a href="tel:+37369555936" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" aria-label="Call Camelot Flows" title="+373 69 555 936">
+                    <span class="material-symbols-outlined cf-phone-icon" style="font-size:18px">call</span>
+                </a>
+                <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
+                    <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 status-dot animate-pulse"></div>
+                    <span class="text-[10px] font-mono text-emerald-500/80" data-i18n="common.nav.sys_online">SYS_ONLINE</span>
+                </div>
+                <div class="lang-switcher" data-cf-lang-switcher>
+    <button class="lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Change language" data-i18n-attr="aria-label:common.lang_label">
+        <span class="lang-current" data-cf-lang-current>EN</span>
+        <span class="material-symbols-outlined lang-chevron">expand_more</span>
+    </button>
+    <ul class="lang-menu" role="listbox" hidden>
+        <li role="option" data-lang="en" tabindex="-1">EN</li>
+        <li role="option" data-lang="ro" tabindex="-1">RO</li>
+        <li role="option" data-lang="ru" tabindex="-1">RU</li>
+    </ul>
+</div>
+                <button id="mobile-menu-toggle" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 transition-all text-slate-400" aria-label="Open menu" type="button">
+                    <span class="material-symbols-outlined" style="font-size:20px">menu</span>
+                </button>
+                <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Toggle theme">
+    <span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
+    <span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
+</button>
+                <a href="/contact.html?objective=build"
+                    class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong hidden lg:inline-flex items-center nav-cta"
+                    data-i18n="common.nav.summon_agent">
+                    [Hire_me]
+                </a>
+            </div>
+        </div>
+        
+        <div id="mobile-nav" class="hidden mt-2 max-w-7xl mx-auto">
+            <div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
+                <div class="flex flex-col gap-1">
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/" data-i18n="common.nav.home">[Home]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/work-with-me.html" data-i18n="common.nav.services">[Services]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/contact.html" data-i18n="common.nav.contact">[Contact]</a>
+                    <div class="mx-3 my-2 h-px bg-white/10"></div>
+                    <a href="/contact.html?service=build" class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent">[Hire_me]</a>
+                </div>
+            </div>
+        </div>
+        <script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");var open=!menu.classList.contains("hidden");btn.setAttribute("aria-expanded",open?"true":"false");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");}});document.querySelectorAll("#mobile-nav a").forEach(function(a){a.addEventListener("click",function(){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");});});}})();</script>
+        </nav>
+<main id="main-content">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to Leave Your Web Agency Without Losing Your Site", "description": "The exact order to secure your domain, backup, hosting and email before you tell your web agency you are leaving, so you never lose your website.", "url": "https://camelotflows.dev/blog/how-to-leave-your-web-agency-without-losing-your-website/", "datePublished": "2026-07-10T09:47:09+00:00", "dateModified": "2026-07-10T09:47:09+00:00", "author": {"@type": "Person", "@id": "https://camelotflows.dev/#alexandru-buzi", "name": "Alexandru Buzi", "url": "https://camelotflows.dev/about.html"}, "publisher": {"@type": "Organization", "name": "Camelot Flows", "url": "https://camelotflows.dev/", "logo": {"@type": "ImageObject", "url": "https://camelotflows.dev/assets/images/cf-logo-wordmark.png"}}, "image": "https://camelotflows.dev/assets/images/blog/how-to-leave-your-web-agency-without-losing-your-website.png", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://camelotflows.dev/blog/how-to-leave-your-web-agency-without-losing-your-website/"}, "wordCount": 917}</script>
+
+<section class="pt-44 pb-16 px-6 relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-20 pointer-events-none"></div>
+    <div class="absolute top-0 right-0 w-[50vw] h-[50vw] bg-primary/5 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="max-w-3xl mx-auto relative">
+        <a href="/blog/" class="inline-flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-primary-glow transition-colors mb-10 group" data-i18n="blog.back">
+            <span class="material-symbols-outlined text-sm group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+            Back to Codex
+        </a>
+        <div class="flex flex-wrap items-center gap-3 mb-6">
+            <a href="/blog/" class="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-primary/30 bg-primary/5 text-[10px] font-mono text-primary-glow tracking-widest uppercase hover:bg-primary/10 transition-colors">Ownership</a>
+            <span class="text-[10px] font-mono text-slate-600">July 10, 2026</span>
+            <span class="text-[10px] font-mono text-slate-600">5 min read</span>
+        </div>
+        <h1 class="text-4xl md:text-6xl font-display font-bold tracking-tighter cf-post-title mb-8 leading-[0.95]">
+            <span data-lang-content="en">How to Leave Your Web Agency Without Losing Your Site</span>
+            <span data-lang-content="ro" hidden>Cum să pleci de la agenția web fără să-ți pierzi site-ul</span>
+            <span data-lang-content="ru" hidden>Как уйти от веб-агентства и не потерять сайт</span>
+        </h1>
+        <div class="cf-excerpt text-lg leading-relaxed border-l-2 border-primary/50 pl-5">
+            <div data-lang-content="en"><p>Leaving your web agency is where sites get lost. Here is the exact order to secure the domain, a full backup, hosting and email before you say a word, and the one mistake that gets a live site deleted.</p></div>
+            <div data-lang-content="ro" hidden><p>Plecarea de la agenția web e momentul în care se pierd site-urile. Iată ordinea exactă în care îți asiguri domeniul, o copie completă, găzduirea și emailul înainte să spui un cuvânt, plus greșeala care șterge un site live.</p></div>
+            <div data-lang-content="ru" hidden><p>Уход от веб-агентства — момент, когда теряются сайты. Вот точный порядок, в котором нужно защитить домен, полную копию, хостинг и почту, прежде чем сказать хоть слово, и одна ошибка, которая удаляет живой сайт.</p></div>
+        </div>
+    </div>
+</section>
+
+<div id="post-summary" class="px-6 pb-4">
+    <div class="max-w-3xl mx-auto glass-panel rounded-xl border border-primary/20 overflow-hidden">
+        <div class="grid grid-cols-3 divide-x divide-white/5">
+            <div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
+                <span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.min_read">MIN_READ</span>
+                <span class="text-4xl font-mono font-bold text-primary-glow tabular-nums" data-count="5">5</span>
+            </div>
+            <div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
+                <span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.words">WORDS</span>
+                <span class="text-4xl font-mono font-bold text-primary-glow tabular-nums" data-count="917">917</span>
+            </div>
+            <div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
+                <span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.year">YEAR</span>
+                <span class="text-4xl font-mono font-bold text-primary-glow tabular-nums">2026</span>
+            </div>
+        </div>
+        <div class="h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+        <div class="px-8 py-3 flex items-center gap-2">
+            <div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+            <span class="text-[10px] font-mono text-slate-600 tracking-widest">Jul 10, 2026 — DISPATCH_019</span>
+        </div>
+    </div>
+</div>
+
+<div class="px-6 mb-8">
+    <div class="max-w-4xl mx-auto rounded-xl overflow-hidden">
+        <img width="1024" height="576" src="/assets/images/blog/how-to-leave-your-web-agency-without-losing-your-website.png" class="w-full h-auto object-cover wp-post-image" alt="Abstract glowing key dissolving into fine network lines on a dark indigo background" decoding="async" fetchpriority="high" />
+    </div>
+</div>
+
+<article class="pb-16 px-6">
+    <div class="max-w-3xl mx-auto prose-camelot">
+        <div data-lang-content="en">
+<p class="wp-block-paragraph">Before you tell your web agency you are leaving, there are four things you need to control. Get the order wrong and you can wake up to a website that is gone.</p><p class="wp-block-paragraph">I have taken over sites that agencies built, and the pattern is always the same. The founder is nervous, the relationship has soured, and their instinct is to send the breakup email first and sort out the technical side later. That instinct is exactly backwards. The moment an agency knows you are leaving is the moment they have the least reason to help you. So you secure everything while they still think you are a happy client, and you tell them last.</p><h2 class="wp-block-heading">Why the fear is real</h2><figure class="cf-body-fig cf-body-fig--left"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/how-to-leave-your-web-agency-without-losing-your-website-b1.png" alt="Four stacked translucent layers glowing in ordered sequence on a dark background" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">Most small business owners do not actually own the pieces of their website. They own the invoices. The domain is registered inside the agency's account. The hosting is a slice of the agency's reseller plan. The site email runs through the same panel. On paper the founder paid for all of it. In practice they can touch none of it without asking permission from the people they are about to fire.</p><p class="wp-block-paragraph">This is not always malice. A lot of agencies bundle everything into their own accounts because it is easier for them, not because they are plotting a hostage situation. But easier for them means fragile for you, and when the split turns cold, that fragility is where sites disappear.</p><h2 class="wp-block-heading">The order that keeps you safe</h2><p class="wp-block-paragraph">Do these in sequence, and do them before any conversation about leaving.</p><p class="wp-block-paragraph">First, the domain. This is the one thing that matters more than the website itself. If you control the domain, you can always point it at a new site. Log in to the registrar (GoDaddy, Namecheap, Cloudflare, whoever) and confirm the account is in your name, with your email and your payment card. If you cannot log in, that is your first red flag, and getting your own registrar account with the domain transferred into it is job number one. Ask for the authorization code (the EPP or transfer code) as a routine housekeeping request, not as a declaration of war.</p><p class="wp-block-paragraph">Second, a full backup. Before you touch anything else, get a complete copy of the site off the agency's server and onto a drive you own. Not screenshots. A real export: the files and the database. For a WordPress site that means a full-site backup, not just a theme export. This is your insurance policy. Even in the worst case where the agency pulls the plug the day you leave, a full backup means the site can be rebuilt somewhere else in hours.</p><p class="wp-block-paragraph">Third, the hosting account. Find out where the site actually lives and whether you have your own login or a login inside their reseller panel. If it is their panel, you do not need to fight over it once you have the backup and the domain. You spin up your own hosting, restore the backup, and repoint the domain when you are ready. Clean and quiet.</p><p class="wp-block-paragraph">Fourth, email. This is the one people forget and it hurts the most. If your business email runs through the agency's hosting or reseller panel, cutting ties can kill your inbox the same day it kills your site. Move email to something independent (Google Workspace, Microsoft 365, or a mailbox on hosting you control) before the split, so your customers never notice.</p><h2 class="wp-block-heading">The one mistake that deletes sites</h2><figure class="cf-body-fig cf-body-fig--right"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/how-to-leave-your-web-agency-without-losing-your-website-b2.png" alt="A stream of light splitting into two identical copies" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">The mistake is repointing the domain to new hosting before you have a working copy of the site running there. People get excited, flip the DNS, and the domain now points at an empty server while the old host, seeing the traffic gone and the relationship over, wipes the account. Now the live site is blank and the only copy was on the server that just got erased. Always in this order: full backup first, new site standing and tested on a temporary URL, and only then move the domain. Never move the domain to prove a point.</p><p class="wp-block-paragraph">I keep a <a href="/audit">free website audit</a> for exactly this reason. Half the value of it is not the SEO or the speed score, it is telling a founder, in plain language, which of these four pieces they actually control and which ones an agency is quietly holding. It is a strange feeling to tell someone they do not own their own website, and a good feeling to hand them the checklist that fixes it.</p><h2 class="wp-block-heading">After the handover</h2><figure class="cf-body-fig cf-body-fig--left"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/how-to-leave-your-web-agency-without-losing-your-website-b3.png" alt="A dim server rack fading into dark empty space" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">Once the domain is yours, the backup is safe, hosting is under your login, and email is independent, the leaving email is a formality. You are not asking for permission any more. You are informing. That shift in power is the entire point of doing the work in this order.</p><p class="wp-block-paragraph">If you are moving to someone new, this is worth saying out loud to them before you sign anything: I want the domain in my account, the hosting in my name, and a backup I can download whenever I want. Any decent partner will say yes without blinking. When I take on a build, ownership sits with the client from day one, which is the whole idea behind how I <a href="/work-with-me.html">work with clients</a> and the <a href="/service-maintenance.html">care plans</a> that keep a site healthy without ever locking it away.</p><p class="wp-block-paragraph">Owning your website is not a technical detail. It is the difference between a supplier you can leave and a supplier who can end your business with a single click.</p>
+        </div>
+        <div data-lang-content="ro" hidden>
+<p class="wp-block-paragraph">Înainte să anunți agenția web că pleci, sunt patru lucruri pe care trebuie să le controlezi. Dacă greșești ordinea, te poți trezi dimineața fără site.</p><p class="wp-block-paragraph">Am preluat site-uri construite de agenții, iar tiparul e mereu același. Antreprenorul e nervos, relația s-a răcit, iar primul lui impuls e să trimită mailul de despărțire și să rezolve partea tehnică mai târziu. Impulsul ăsta e exact pe dos. Momentul în care agenția află că pleci e momentul în care are cele mai puține motive să te ajute. Așa că îți asiguri totul cât timp încă te cred client mulțumit, și le spui la final.</p><h2 class="wp-block-heading">De ce frica e reală</h2><figure class="cf-body-fig cf-body-fig--left"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/how-to-leave-your-web-agency-without-losing-your-website-b1.png" alt="Four stacked translucent layers glowing in ordered sequence on a dark background" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">Majoritatea proprietarilor de afaceri mici nu dețin de fapt bucățile site-ului lor. Dețin facturile. Domeniul e înregistrat în contul agenției. Găzduirea e o felie din planul de reseller al agenției. Emailul afacerii trece prin același panou. Pe hârtie, antreprenorul a plătit totul. În practică, nu poate atinge nimic fără să ceară voie chiar oamenilor pe care e pe cale să-i concedieze.</p><p class="wp-block-paragraph">Nu e mereu rea-voință. Multe agenții pun totul în conturile lor pentru că așa e mai simplu pentru ele, nu pentru că plănuiesc să te ia ostatic. Dar mai simplu pentru ele înseamnă fragil pentru tine, iar când despărțirea devine rece, exact acolo dispar site-urile.</p><h2 class="wp-block-heading">Ordinea care te ține în siguranță</h2><p class="wp-block-paragraph">Fă-le în această ordine, și fă-le înainte de orice discuție despre plecare.</p><p class="wp-block-paragraph">Întâi, domeniul. E singurul lucru care contează mai mult decât site-ul în sine. Dacă deții domeniul, poți oricând să-l îndrepți spre un site nou. Intră în contul de la registrator (GoDaddy, Namecheap, Cloudflare, oricare ar fi) și verifică dacă e pe numele tău, cu emailul tău și cardul tău. Dacă nu poți intra, ăsta e primul semnal roșu, iar prima ta sarcină e să-ți faci propriul cont de registrator și să transferi domeniul în el. Cere codul de autorizare (codul EPP sau de transfer) ca pe o cerere de rutină, nu ca pe o declarație de război.</p><p class="wp-block-paragraph">Al doilea, o copie completă. Înainte să atingi altceva, ia o copie completă a site-ului de pe serverul agenției pe un disc al tău. Nu capturi de ecran. Un export real: fișierele și baza de date. Pentru un site WordPress asta înseamnă o copie completă a site-ului, nu doar un export al temei. Asta e polița ta de asigurare. Chiar și în cel mai rău caz, în care agenția trage ștecărul în ziua în care pleci, o copie completă înseamnă că site-ul poate fi refăcut în altă parte în câteva ore.</p><p class="wp-block-paragraph">Al treilea, contul de găzduire. Află unde stă de fapt site-ul și dacă ai propriul login sau unul în panoul lor de reseller. Dacă e panoul lor, nu trebuie să te lupți pentru el odată ce ai copia și domeniul. Îți pornești propria găzduire, restaurezi copia și reîndrepți domeniul când ești gata. Curat și liniștit.</p><p class="wp-block-paragraph">Al patrulea, emailul. Ăsta e cel pe care oamenii îl uită și doare cel mai tare. Dacă emailul afacerii tale trece prin găzduirea sau panoul agenției, ruperea legăturii îți poate omorî inboxul în aceeași zi în care îți omoară site-ul. Mută emailul pe ceva independent (Google Workspace, Microsoft 365 sau o cutie poștală pe o găzduire pe care o controlezi) înainte de despărțire, ca să nu observe clienții nimic.</p><h2 class="wp-block-heading">Greșeala care șterge site-uri</h2><figure class="cf-body-fig cf-body-fig--right"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/how-to-leave-your-web-agency-without-losing-your-website-b2.png" alt="A stream of light splitting into two identical copies" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">Greșeala e să reîndrepți domeniul spre noua găzduire înainte să ai acolo o copie funcțională a site-ului. Oamenii se entuziasmează, schimbă DNS-ul, iar domeniul acum arată spre un server gol, în timp ce vechea găzduire, văzând că traficul a dispărut și relația s-a terminat, șterge contul. Acum site-ul live e alb, iar singura copie era pe serverul tocmai șters. Mereu în această ordine: întâi copia completă, apoi noul site pornit și testat pe o adresă temporară, și abia apoi muți domeniul. Nu muta niciodată domeniul ca să demonstrezi ceva.</p><p class="wp-block-paragraph">Țin un <a href="/audit">audit gratuit de site</a> exact din motivul ăsta. Jumătate din valoarea lui nu e scorul de SEO sau de viteză, ci faptul că îi spun antreprenorului, pe înțelesul lui, care dintre aceste patru bucăți le controlează de fapt și pe care le ține o agenție pe tăcute. E o senzație ciudată să-i spui cuiva că nu-și deține propriul site, și o senzație bună să-i întinzi lista care rezolvă asta.</p><h2 class="wp-block-heading">După predare</h2><figure class="cf-body-fig cf-body-fig--left"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/how-to-leave-your-web-agency-without-losing-your-website-b3.png" alt="A dim server rack fading into dark empty space" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">Odată ce domeniul e al tău, copia e în siguranță, găzduirea e sub loginul tău, iar emailul e independent, mailul de plecare e o formalitate. Nu mai ceri voie. Doar informezi. Schimbarea asta de putere e tot rostul de a face lucrurile în această ordine.</p><p class="wp-block-paragraph">Dacă treci la cineva nou, merită spus cu voce tare înainte să semnezi ceva: vreau domeniul în contul meu, găzduirea pe numele meu și o copie pe care o pot descărca oricând. Orice partener decent va spune da fără să clipească. Când preiau o construcție, dreptul de proprietate stă la client din prima zi, care e toată ideea din spatele felului în care <a href="/work-with-me.html">lucrez cu clienții</a> și a <a href="/service-maintenance.html">planurilor de întreținere</a> care țin un site sănătos fără să-l încuie vreodată.</p><p class="wp-block-paragraph">A-ți deține site-ul nu e un detaliu tehnic. E diferența dintre un furnizor de la care poți pleca și un furnizor care îți poate încheia afacerea cu un singur clic.</p>
+        </div>
+        <div data-lang-content="ru" hidden>
+<p class="wp-block-paragraph">Прежде чем сообщить веб-агентству, что вы уходите, нужно взять под контроль четыре вещи. Ошибётесь с порядком — и можете проснуться без сайта.</p><p class="wp-block-paragraph">Я забирал сайты, построенные агентствами, и схема всегда одна и та же. Владелец бизнеса нервничает, отношения испортились, и первый его порыв — отправить прощальное письмо, а с технической стороной разобраться потом. Этот порыв в точности неверен. Момент, когда агентство узнаёт, что вы уходите, — это момент, когда у него меньше всего причин вам помогать. Поэтому вы обеспечиваете всё, пока они ещё считают вас довольным клиентом, и говорите им в последнюю очередь.</p><h2 class="wp-block-heading">Почему страх реален</h2><figure class="cf-body-fig cf-body-fig--left"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/how-to-leave-your-web-agency-without-losing-your-website-b1.png" alt="Four stacked translucent layers glowing in ordered sequence on a dark background" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">Большинство владельцев малого бизнеса на самом деле не владеют частями своего сайта. Они владеют счетами. Домен зарегистрирован в аккаунте агентства. Хостинг — это кусок реселлерского плана агентства. Почта бизнеса проходит через ту же панель. На бумаге владелец заплатил за всё. На практике он не может тронуть ничего, не спросив разрешения у тех самых людей, которых собирается уволить.</p><p class="wp-block-paragraph">Это не всегда злой умысел. Многие агентства складывают всё в свои аккаунты, потому что так им проще, а не потому что задумали захват заложника. Но проще для них означает хрупко для вас, и когда расставание становится холодным, именно там сайты и исчезают.</p><h2 class="wp-block-heading">Порядок, который вас убережёт</h2><p class="wp-block-paragraph">Делайте это по порядку и делайте до любого разговора об уходе.</p><p class="wp-block-paragraph">Первое — домен. Это единственное, что важнее самого сайта. Если вы владеете доменом, вы всегда можете направить его на новый сайт. Зайдите в аккаунт регистратора (GoDaddy, Namecheap, Cloudflare, любой) и убедитесь, что он на ваше имя, с вашей почтой и вашей картой. Если войти не получается — это первый тревожный знак, и завести собственный аккаунт регистратора с переносом домена в него становится задачей номер один. Попросите код авторизации (код EPP или код переноса) как рутинную уборку, а не как объявление войны.</p><p class="wp-block-paragraph">Второе — полная резервная копия. Прежде чем трогать что-либо ещё, снимите полную копию сайта с сервера агентства на свой диск. Не скриншоты. Настоящий экспорт: файлы и база данных. Для сайта на WordPress это означает полную копию сайта, а не только экспорт темы. Это ваша страховка. Даже в худшем случае, когда агентство выдёргивает вилку в день вашего ухода, полная копия означает, что сайт можно восстановить в другом месте за считанные часы.</p><p class="wp-block-paragraph">Третье — хостинг-аккаунт. Выясните, где сайт на самом деле живёт и есть ли у вас собственный логин или логин внутри их реселлерской панели. Если это их панель, вам не нужно за неё бороться, как только у вас есть копия и домен. Вы поднимаете свой хостинг, восстанавливаете копию и перенаправляете домен, когда будете готовы. Чисто и тихо.</p><p class="wp-block-paragraph">Четвёртое — почта. Это то, о чём забывают, и это бьёт сильнее всего. Если рабочая почта вашего бизнеса проходит через хостинг или панель агентства, разрыв связи может убить ваш ящик в тот же день, что и сайт. Перенесите почту на что-то независимое (Google Workspace, Microsoft 365 или ящик на хостинге, которым вы управляете) до расставания, чтобы клиенты ничего не заметили.</p><h2 class="wp-block-heading">Одна ошибка, которая удаляет сайты</h2><figure class="cf-body-fig cf-body-fig--right"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/how-to-leave-your-web-agency-without-losing-your-website-b2.png" alt="A stream of light splitting into two identical copies" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">Ошибка — перенаправить домен на новый хостинг раньше, чем там заработает рабочая копия сайта. Люди радуются, переключают DNS, и домен теперь указывает на пустой сервер, а старый хостинг, видя, что трафик ушёл и отношения закончены, стирает аккаунт. Теперь живой сайт пустой, а единственная копия была на только что стёртом сервере. Всегда в таком порядке: сначала полная копия, затем новый сайт, поднятый и проверенный по временному адресу, и только потом перенос домена. Никогда не переносите домен, чтобы что-то доказать.</p><p class="wp-block-paragraph">Я держу <a href="/audit">бесплатный аудит сайта</a> именно по этой причине. Половина его ценности — не оценка SEO или скорости, а то, что я объясняю владельцу простыми словами, какими из этих четырёх частей он на самом деле владеет, а какие агентство тихо держит у себя. Странное чувство — говорить человеку, что он не владеет собственным сайтом, и хорошее чувство — вручить ему список, который это исправляет.</p><h2 class="wp-block-heading">После передачи</h2><figure class="cf-body-fig cf-body-fig--left"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/how-to-leave-your-web-agency-without-losing-your-website-b3.png" alt="A dim server rack fading into dark empty space" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">Как только домен ваш, копия в безопасности, хостинг под вашим логином, а почта независима, письмо об уходе — формальность. Вы больше не просите разрешения. Вы сообщаете. Этот сдвиг власти — весь смысл того, чтобы делать всё в таком порядке.</p><p class="wp-block-paragraph">Если вы переходите к кому-то новому, стоит сказать это вслух до того, как что-то подпишете: я хочу домен в своём аккаунте, хостинг на своё имя и копию, которую могу скачать когда угодно. Любой достойный партнёр скажет да без колебаний. Когда я берусь за проект, право собственности с первого дня у клиента, и в этом вся идея того, как я <a href="/work-with-me.html">работаю с клиентами</a>, и <a href="/service-maintenance.html">планов поддержки</a>, которые держат сайт здоровым, никогда не запирая его.</p><p class="wp-block-paragraph">Владеть своим сайтом — не техническая деталь. Это разница между поставщиком, от которого можно уйти, и поставщиком, который может закончить ваш бизнес одним кликом.</p>
+        </div>
+    </div>
+</article>
+
+<div class="px-6 pb-16">
+    <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a href="/blog/how-chatgpt-decides-which-local-businesses-to-recommend/" class="glass-panel rounded-xl p-6 group hover:border-primary/40 transition-all">
+            <div class="flex items-center gap-2 text-[10px] font-mono text-slate-600 mb-2">
+                <span class="material-symbols-outlined text-sm">arrow_back</span> <span data-i18n="blog.prev">Previous</span>
+            </div>
+            <div class="font-display font-bold cf-nav-title text-sm group-hover:text-primary-glow transition-colors leading-snug"><span data-lang-content="en">How ChatGPT Decides Which Local Businesses to Recommend</span><span data-lang-content="ro" hidden>Cum decide ChatGPT ce afaceri locale recomandă</span><span data-lang-content="ru" hidden>Как ChatGPT выбирает, какие местные компании советовать</span></div>
+        </a>
+    </div>
+</div>
+
+<section class="pb-28 px-6">
+    <div class="max-w-3xl mx-auto glass-panel rounded-xl p-10 md:p-14 text-center border border-primary/20">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded border border-primary/30 bg-primary/5 mb-6">
+            <span class="text-xs font-mono text-primary-glow tracking-widest uppercase">// NEXT_STEP</span>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-display font-bold cf-post-title mb-4 tracking-tighter" data-i18n="blog.cta_title">Want this built for you?</h2>
+        <p class="text-slate-400 mb-8 font-mono text-sm" data-i18n="blog.cta_sub">Fixed scope. Fixed price. Fixed deadline.</p>
+        <a href="/contact.html?objective=blog-cta" class="cf-blog-cta-btn bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-8 py-3 rounded text-sm font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong inline-flex items-center gap-2">
+            // SUMMON_AGENT
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+    </div>
+</section>
+</main>
+<footer class="bg-obsidian pt-24 pb-12 px-6 border-t border-primary/20 relative">
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+        </div>
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20">
+                <div class="md:col-span-3">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="/assets/images/cf-mark.png?v=3" alt="Camelot Flows" class="object-contain" style="height:56px;width:auto" />
+                        <span class="font-display text-xl font-bold tracking-tighter uppercase text-white">Camelot
+                            Flows</span>
+                    </div>
+                    <p class="text-slate-500 mb-8 text-sm leading-relaxed font-mono">
+                        <span data-i18n="common.footer.location_line_1"><span class="text-primary">&gt;</span> Location: Chisinau, MD</span><br />
+                        <span data-i18n="common.footer.location_line_2"><span class="text-primary">&gt;</span> Coordinates: 47.0105° N, 28.8638° E</span><br />
+                        <span data-i18n="common.footer.location_line_3"><span class="text-primary">&gt;</span> Mission: Awwwards-Tier Design & AI Automation.</span>
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400"
+                            href="https://www.linkedin.com/in/alex-buzi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+
+                        <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400"
+                            href="/contact.html">
+                            <span class="material-symbols-outlined text-lg">mail</span>
+                        </a>
+                        <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400"
+                            href="/contact.html">
+                            <span class="material-symbols-outlined text-lg">alternate_email</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <h5
+                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_protocol">
+                        Protocol</h5>
+                    <ul class="space-y-3 text-slate-500 text-sm font-mono">
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/arsenal.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_protocol_arsenal">The Arsenal</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/merlin.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_protocol_merlin">Merlin</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/case-studies.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_protocol_cases">Case Studies</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/for-agencies.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_protocol_agencies">Agencies</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/blog/"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> <span data-i18n="common.footer.blog">Blog</span></a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <h5
+                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_services">
+                        Services</h5>
+                    <ul class="space-y-3 text-slate-500 text-sm font-mono">
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/service-creation.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_services_creation">Site Creation</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/service-maintenance.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_services_maintenance">Maintenance</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/service-automation.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_services_automation">Automations</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/service-marketing.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_services_marketing">Marketing</span></a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/audit"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_services_audit">Free Website Audit</span></a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <h5
+                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_company">
+                        Company</h5>
+                    <ul class="space-y-3 text-slate-500 text-sm font-mono">
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/about.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_company_about">About</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/work-with-me.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_company_work">Work With</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/legal.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_company_legal">Legal</span></a></li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
+                                href="/contact.html"><span
+                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+                                <span data-i18n="common.footer.col_company_contact">Contact</span></a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-3">
+                    <h5
+                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_vanguard">
+                        Vanguard</h5>
+                    <p class="text-slate-500 text-sm mb-6 leading-relaxed" data-i18n="common.footer.col_vanguard_lead">Weekly insights on AI automation sent
+                        directly to your terminal.</p>
+                    <div
+                        class="flex gap-2 p-1 bg-white/5 rounded border border-white/10 focus-within:border-primary/50 transition-colors">
+                        <label for="newsletter-email" class="sr-only">Email address</label>
+                        <input
+                            id="newsletter-email"
+                            class="bg-transparent border-none focus:ring-0 text-sm flex-1 px-4 text-white font-mono placeholder:text-slate-600"
+                            placeholder="ENTER_EMAIL" type="email" data-i18n-attr="placeholder:common.footer.col_vanguard_placeholder" />
+                        <button
+                            class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded text-xs font-bold transition-colors font-mono" data-i18n="common.footer.col_vanguard_submit">[SUBMIT]</button>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-xs text-slate-600 font-mono" data-i18n="common.footer.copyright">&copy; 2026 Camelot Flows. Built by Alex Buzi.</p>
+                <div class="flex flex-wrap justify-center gap-4 md:gap-8">
+                    <div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+                        <span class="material-symbols-outlined text-sm text-green-500">wifi</span>
+                        <span data-i18n="common.footer.status_optimal">System Status: Optimal</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+                        <span class="material-symbols-outlined text-sm text-blue-500">bolt</span>
+                        <span data-i18n="common.footer.status_lightning">Lightning Fast Performance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="custom-cursor"></div>
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <script src="/assets/js/locales.js"></script>
+    <script defer src="/assets/js/i18n.js"></script>
+    <script defer src="/assets/js/camelot-gsap.js"></script>
+    <script defer src="/assets/site.js"></script>
+
+</body>
+
+</html>
