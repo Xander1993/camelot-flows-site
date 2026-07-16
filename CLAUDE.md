@@ -182,22 +182,26 @@ Originally the site was the dark Neon Knight design. The cozy variant kept the m
 
 ## Deployment architecture — CRITICAL
 
-Two completely separate deployment targets. Changes to one do NOT affect the other.
+**Cloudflare Pages serves everything.** There is one live deployment target.
 
 | What | Where served | How to deploy |
 |---|---|---|
 | `camelotflows.dev` (root) | **Cloudflare Pages** (`camelot-flows-site-git.pages.dev`) | `git push origin master` — auto-deploys |
-| `www.camelotflows.dev` | **DigitalOcean VPS** `46.101.150.59` port 8080 SSH | Manual `scp` to `/var/www/html/` |
-| `blog.camelotflows.dev` | Same VPS | Same |
+| `www.camelotflows.dev` | CF-proxied → **301 to `https://camelotflows.dev/`** | n/a — redirect only |
+| `blog.camelotflows.dev` | CF-proxied → **301 to `https://camelotflows.dev/blog/`** | n/a — redirect only |
 
-DNS proof: `camelotflows.dev` is a CNAME → `camelot-flows-site-git.pages.dev`. Static HTML + `assets/` are served by Pages. WordPress serves `/work-with-me/`, `/contact/` etc. via page templates.
+DNS proof (re-verified 2026-07-16): apex, `www` and `blog` all resolve to the **same Cloudflare anycast IPs** (`172.67.221.28` / `104.21.53.245`); the apex is a CNAME → `camelot-flows-site-git.pages.dev`, flattened to A records by Cloudflare. Pages serves the static HTML, `assets/`, **and** `/work-with-me`, `/contact`, `/blog/` — all from the `.html` files in this repo, *not* from WordPress page templates.
 
-**The trap:** editing `assets/js/camelot-gsap.js` only takes effect after `git push`. The VPS has `camelot-gsap.v2.js` as a parallel copy for WP theme use — keep both in sync. Cloudflare Pages serves `index.html` for 404s (SPA fallback), so a missing asset URL returns HTML, not a 404.
+`_headers` (HSTS, X-Frame-Options, frame-ancestors, Permissions-Policy) is scoped `/*`, which covers **both static assets and `/api/*` Functions** — verified 4/4 headers on `/`, `/audit`, `/contact` and `/api/audit`.
+
+**The DigitalOcean VPS (`46.101.150.59`) is GONE.** It no longer answers ICMP, `:80` or `:8080` (re-verified 2026-07-16). `wp-theme/` and `build_wp.py` are still in this repo but are **vestigial — they deploy nowhere.** Do not `scp` to it and do not edit WP templates expecting a live page to change; the page you want is the `.html` file at the repo root.
+
+**The trap:** editing `assets/js/camelot-gsap.js` only takes effect after `git push`. Cloudflare Pages serves `index.html` for 404s (SPA fallback), so a missing asset URL returns HTML, not a 404.
 
 ## Build & deploy
 
 - **Static site (CF Pages):** edit HTML + `assets/` directly, then `git push origin master`. Pages deploys in ~30–60s.
-- **WordPress theme (VPS):** `python build_wp.py` rewrites the static pages into `wp-theme/camelot-flows/page-*.php` template files. Run `python fix_wp_buttons.py` after to fix CTA wrappers. Then `scp` changed files to VPS.
+- **WordPress theme (`wp-theme/`): DEAD PATH — do not use.** `build_wp.py` / `fix_wp_buttons.py` rewrite the static pages into `wp-theme/camelot-flows/page-*.php`, but their only deploy target was the DigitalOcean VPS, which is gone (see *Deployment architecture*). Editing these changes nothing live.
 - **Tailwind:** if `assets/css/tailwind.built.css` exists, it has been compiled locally — do not edit. Source: `src/tw.css`, `tailwind.config.js`. Rebuild with `npx tailwindcss -i src/tw.css -o assets/css/tailwind.built.css --minify`.
 
 ---
