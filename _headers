@@ -1,0 +1,16 @@
+# Cloudflare Pages security headers.
+#
+# NOTE: no Content-Security-Policy beyond frame-ancestors. The site runs inline
+# scripts, GA4/gtag, Google Fonts, Tailwind and Web3Forms, so an unscoped policy
+# would break rendering and the lead forms. Land one separately as
+# Content-Security-Policy-Report-Only first.
+#
+# HSTS has no `preload`: that is an effectively irreversible browser-preload-list
+# commitment and needs owner sign-off. includeSubDomains is safe — www and blog
+# are the only subdomains and both serve valid HTTPS (301 -> apex).
+
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Frame-Options: DENY
+  Content-Security-Policy: frame-ancestors 'none'
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
