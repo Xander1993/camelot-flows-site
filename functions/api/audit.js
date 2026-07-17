@@ -24,6 +24,7 @@ import { normalizeUrl, ssrfBlocked } from '../_lib/audit-net.mjs';
 import { hasVisiblePhone } from '../_lib/audit-phone.mjs';
 import { rateLimit } from '../_lib/audit-ratelimit.mjs';
 import { saveReport, getReport } from '../_lib/audit-report-store.mjs';
+import { json } from '../_lib/http.mjs';
 
 const MAX_BODY_BYTES = 1_500_000;
 const FETCH_TIMEOUT_MS = 10_000;
@@ -203,13 +204,6 @@ export async function onRequestPost(context) {
 }
 
 /* ---------------- helpers ---------------- */
-
-function json(obj, status = 200) {
-  return new Response(JSON.stringify(obj), {
-    status,
-    headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' },
-  });
-}
 
 async function guardedFetch(startUrl) {
   let url = startUrl;

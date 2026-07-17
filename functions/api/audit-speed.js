@@ -14,6 +14,7 @@ import { pickLang, localizeFindings, localizePassed, errMsg } from '../_lib/audi
 import { normalizeUrl, ssrfBlocked, fetchPsi } from '../_lib/audit-net.mjs';
 import { rateLimit } from '../_lib/audit-ratelimit.mjs';
 import { mergeSpeed } from '../_lib/audit-report-store.mjs';
+import { json } from '../_lib/http.mjs';
 
 const PSI_TIMEOUT_MS = 45_000; // PSI on heavy real sites routinely takes 25-40s
 const RATE_LIMIT = 10; // per IP per window (one per audit, plus slack)
@@ -101,11 +102,4 @@ export async function onRequestPost(context) {
 
 function f(id, severity, title, detail, vars) {
   return { id, severity, title, detail, vars };
-}
-
-function json(obj, status = 200) {
-  return new Response(JSON.stringify(obj), {
-    status,
-    headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' },
-  });
 }

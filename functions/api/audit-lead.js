@@ -16,6 +16,7 @@
  */
 import { rateLimit } from '../_lib/audit-ratelimit.mjs';
 import { saveLead } from '../_lib/audit-lead-store.mjs';
+import { json } from '../_lib/http.mjs';
 
 const RATE_LIMIT = 8; // per IP per window
 const RATE_WINDOW_MS = 60_000;
@@ -62,11 +63,4 @@ export async function onRequestPost(context) {
   } catch { notified = false; }
 
   return json({ ok: true, stored, notified });
-}
-
-function json(obj, status = 200) {
-  return new Response(JSON.stringify(obj), {
-    status,
-    headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' },
-  });
 }
