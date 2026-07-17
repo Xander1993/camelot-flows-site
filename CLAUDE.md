@@ -66,14 +66,21 @@ When you give a strategic answer that involved real synthesis — comparing opti
 
 ## Servers
 
-| Server | IP | SSH port | SSH user | Key | Hosts |
-|--------|----|----------|----------|-----|-------|
-| DigitalOcean VPS | `46.101.150.59` | `8080` | `root` | `C:\Users\user\.ssh\id_ed25519` | www.camelotflows.dev, blog.camelotflows.dev |
-| Hostinger VPS | `72.62.45.144` | `22` | `developer` | `C:\Users\user\.ssh\id_ed25519` | camelotflows + client sites |
+**Infrastructure specifics (IPs, SSH ports, users, key paths) are deliberately NOT in this file.**
+This repo is public on GitHub *and* Cloudflare Pages serves the repo root verbatim, so anything
+written here is world-readable at `https://camelotflows.dev/<path>`. Keep server details in the
+private ops note on the automation box: `goal-perfect-apps/ops/camelot-servers.md`.
 
-**SSH rule:** Always use PowerShell tool for SSH/SCP — Bash mangles Windows key paths.
-**DO Console:** broken (Bitnami disables password auth). Use SCP only.
-**SCP to DO:** `scp -P 8080 -i "C:\Users\user\.ssh\id_ed25519" file root@46.101.150.59:/var/www/html/...`
+What you actually need here:
+
+- **Deploying the live site needs no server access at all.** `camelotflows.dev` is served entirely
+  by Cloudflare Pages from this repo — deploy is `git push origin master`. There is no SSH or SCP
+  step in the deploy path.
+- **The DigitalOcean VPS is decommissioned** (re-verified 2026-07-17 — nothing listening). Its old
+  console/SCP instructions are gone with it. `wp-theme/` and `build_wp.py` are vestigial: they
+  deploy nowhere. See *Deployment architecture* below.
+- **SSH rule:** for the ops box, use the PowerShell tool for SSH/SCP — Bash mangles Windows key
+  paths.
 
 ---
 
@@ -194,9 +201,18 @@ DNS proof (re-verified 2026-07-16): apex, `www` and `blog` all resolve to the **
 
 `_headers` (HSTS, X-Frame-Options, frame-ancestors, Permissions-Policy) is scoped `/*`, which covers **both static assets and `/api/*` Functions** — verified 4/4 headers on `/`, `/audit`, `/contact` and `/api/audit`.
 
-**The DigitalOcean VPS (`46.101.150.59`) is GONE.** It no longer answers ICMP, `:80` or `:8080` (re-verified 2026-07-16). `wp-theme/` and `build_wp.py` are still in this repo but are **vestigial — they deploy nowhere.** Do not `scp` to it and do not edit WP templates expecting a live page to change; the page you want is the `.html` file at the repo root.
+**The DigitalOcean VPS is GONE.** It no longer answers ICMP, `:80` or `:8080` (re-verified 2026-07-17; its address is in the private ops note, and since DO recycles IPs it may now belong to an unrelated third party — do not probe it). `wp-theme/` and `build_wp.py` are still in this repo but are **vestigial — they deploy nowhere.** Do not `scp` to it and do not edit WP templates expecting a live page to change; the page you want is the `.html` file at the repo root.
 
-**The trap:** editing `assets/js/camelot-gsap.js` only takes effect after `git push`. Cloudflare Pages serves `index.html` for 404s (SPA fallback), so a missing asset URL returns HTML, not a 404.
+**The trap:** editing `assets/js/camelot-gsap.js` only takes effect after `git push`.
+
+**Pages publishes the whole repo root — every file in this repo is public.** There is no ignore
+mechanism on the Pages git integration (`.assetsignore` is a *Workers* Static Assets feature and is
+not honoured here), and there is no separate build output directory. So the rule is simply: **if you
+do not want it on the public internet, do not commit it to this repo.** Verified 2026-07-17 — a
+missing path (`/nope.html`) correctly returns **404** with the custom `404.html`; there is *no* SPA
+fallback to `index.html`. But any file that *exists* at the repo root is served verbatim at its own
+path with its own content type (this is how `CLAUDE.md` was publicly readable for months — the old
+version of this note wrongly claimed a 404 fallback and hid the problem).
 
 ## Build & deploy
 
