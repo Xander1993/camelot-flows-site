@@ -14,3 +14,8 @@
   X-Frame-Options: DENY
   Content-Security-Policy: frame-ancestors 'none'
   Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# Serve the blog feed with its canonical RSS MIME type (CF Pages otherwise labels
+# .xml as application/xml). Feed readers accept both, but application/rss+xml is correct.
+/blog/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
