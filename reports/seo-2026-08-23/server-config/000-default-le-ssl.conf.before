@@ -1,0 +1,27 @@
+<IfModule mod_ssl.c>
+<VirtualHost *:443>
+        ServerAdmin webmaster@localhost
+
+        ServerName camelotflows.dev
+        ServerAlias www.camelotflows.dev
+
+        DocumentRoot /var/www/html
+
+        RewriteEngine On
+        RewriteCond %{HTTP_HOST} ^www\.camelotflows\.dev$ [NC]
+        RewriteRule ^ https://camelotflows.dev%{REQUEST_URI} [L,R=301]
+
+        <Directory /var/www/html/>
+            Options FollowSymLinks
+            AllowOverride All
+            Require all granted
+        </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+Include /etc/letsencrypt/options-ssl-apache.conf
+SSLCertificateFile /etc/letsencrypt/live/camelotflows.dev/fullchain.pem
+SSLCertificateKeyFile /etc/letsencrypt/live/camelotflows.dev/privkey.pem
+</VirtualHost>
+</IfModule>

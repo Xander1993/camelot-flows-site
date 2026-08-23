@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-08-23T12:52:05.033Z",
+  "baseCommit": "534bffde6a6b009d6b9986f1d222ad1cc24cc88b",
+  "branch": "seo/technical-repair-2026-08-23",
+  "sitemapStatus": 200,
+  "sitemapUrls": 30,
+  "crawledUrls": 60,
+  "canonical200Pages": 30,
+  "permanentRedirectAliases": 30,
+  "redirectChainsOverOneHop": 0,
+  "unexpectedFinal404or5xx": 0,
+  "htmlPagesMissingCanonical": 0,
+  "htmlPagesMissingDescription": 0,
+  "htmlPagesMissingH1": 0,
+  "htmlPagesWithoutInitialMainContent": 0,
+  "sourcePagesWithHtmlAliasLinks": 60,
+  "distinctHtmlAliasReferences": 49,
+  "localizedHtmlLanguages": [
+    "en"
+  ],
+  "pagesWithRoHreflang": 0,
+  "pagesWithRuHreflang": 0,
+  "migratedBlogOneHopPass": 11,
+  "migratedBlogSeedCount": 11
+}

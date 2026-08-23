@@ -1016,11 +1016,16 @@
         // 13. ACTIVE NAV ITEM — highlight the link that matches the current page
         // ============================================================
         (() => {
-            // Normalize to bare filename ("case-studies.html"), fallback to index.
-            const page = (window.location.pathname.split('/').pop() || 'index.html').split('?')[0] || 'index.html';
+            const normalizeRoute = (value) => {
+                const path = new URL(value, window.location.origin).pathname
+                    .replace(/^\/(?:ro|ru)(?=\/|$)/, '')
+                    .replace(/\.html$/, '')
+                    .replace(/\/$/, '');
+                return path || '/';
+            };
+            const page = normalizeRoute(window.location.href);
             document.querySelectorAll('nav a[href]').forEach((link) => {
-                const href = (link.getAttribute('href') || '').split('#')[0].split('?')[0];
-                if (href === page) {
+                if (normalizeRoute(link.href) === page) {
                     link.classList.add('nav-current');
                 }
             });
@@ -1028,9 +1033,8 @@
 
         // ============================================================
         // 14. LANGUAGE SWITCHER (vertical letter stack)
-        //     Opens a stacked menu (EN / RO / RU). Selected option flies
-        //     into the trigger slot, then cfI18n.set() swaps content
-        //     inside a view transition.
+        //     Opens a stacked menu (EN / RO / RU). Each option contains a
+        //     normal crawlable link to the corresponding language URL.
         // ============================================================
         (() => {
             const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1084,23 +1088,15 @@
 
                 const menu = switcher.querySelector('.lang-menu');
                 const target = menu && menu.querySelector('[data-lang="' + lang + '"]');
+                const targetLink = target && target.querySelector('a[href]');
                 const trigger = switcher.querySelector('.lang-trigger');
                 const triggerLabel = trigger && trigger.querySelector('[data-cf-lang-current]');
 
                 const finish = () => {
-                    window.cfI18n.set(lang).then(() => {
-                        // Re-order menu so chosen lang is on top for next open
-                        if (menu) reorderMenuItems(menu, lang);
-                        syncTriggerLabel(switcher, lang);
-                        closeSwitcher(switcher);
-                        // Announce language change to screen readers
-                        const announcer = document.getElementById('lang-announce');
-                        if (announcer) {
-                            const names = { en: 'English selected', ro: 'Română selectată', ru: 'Русский выбран' };
-                            announcer.textContent = '';
-                            requestAnimationFrame(() => { announcer.textContent = names[lang] || lang; });
-                        }
-                    });
+                    if (!targetLink) { closeSwitcher(switcher); return; }
+                    try { localStorage.setItem('cf_lang', lang); } catch (_) { }
+                    try { document.cookie = 'cf_lang=' + lang + '; path=/; domain=.camelotflows.dev; max-age=31536000; SameSite=Lax'; } catch (_) { }
+                    window.location.assign(targetLink.href);
                 };
 
                 if (REDUCED || !target || !triggerLabel || !window.gsap) {
@@ -1133,7 +1129,7 @@
                         gsap.set(target, { clearProps: 'all' });
                         gsap.set(others, { clearProps: 'all' });
                         target.classList.remove('is-flying');
-                        finish(); // cfI18n.set → closeSwitcher is a safe no-op
+                        finish();
                     }
                 });
             }

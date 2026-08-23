@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html data-cf-static-lang="ru" data-i18n-page="blog" lang="ru">
+<head>
+<!-- CF: theme bootstrap (sync, before paint) -->
+<script>
+      (function () {
+        var html = document.documentElement;
+        try {
+          var c = document.cookie.match('(?:^|;) ?cf_theme=([^;]*)');
+          var t = c ? c[1] : (localStorage.getItem('cf_theme') || 'cozy');
+          html.setAttribute('data-theme', t);
+        } catch (e) { html.setAttribute('data-theme', 'cozy'); }
+        try {
+          if (sessionStorage.getItem('cf_loaded') === '1') {
+            html.classList.add('cf-skip-preloader');
+          }
+        } catch (e) {}
+        html.classList.add('js');
+      })();
+    </script>
+<!-- CF: lang bootstrap (sync, before paint) -->
+<script>
+      (function () {
+        var html = document.documentElement;
+        try {
+          var l = document.documentElement.lang || 'en';
+          if (['en','ro','ru'].indexOf(l) === -1) l = 'en';
+          html.setAttribute('lang', l);
+          html.setAttribute('data-cf-lang', l);
+          if (l !== 'en') html.setAttribute('data-i18n-loading', '1');
+        } catch (e) { html.setAttribute('lang', 'en'); }
+      })();
+    </script>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Налог на бэк-офис импорта: 5 задач для автоматизации до найма | Camelot Flows</title>
+<meta content="Бэк-офис импортёра держится на ручных напоминаниях, бумагах EUR.1 и копипасте заказов. Вот пять таких задач, которые можно отдать системе — ещё до того, как нан" name="description">
+<link href="https://camelotflows.dev/ru/blog/automate-import-back-office-before-hiring/" rel="canonical"><link href="https://camelotflows.dev/blog/automate-import-back-office-before-hiring/" hreflang="en" rel="alternate"><link href="https://camelotflows.dev/ro/blog/automate-import-back-office-before-hiring/" hreflang="ro" rel="alternate"><link href="https://camelotflows.dev/ru/blog/automate-import-back-office-before-hiring/" hreflang="ru" rel="alternate"><link href="https://camelotflows.dev/blog/automate-import-back-office-before-hiring/" hreflang="x-default" rel="alternate">
+
+
+
+
+<link href="/favicon.ico" rel="icon" type="image/x-icon">
+<link href="/favicon.png" rel="icon" sizes="32x32" type="image/png">
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+<!-- Open Graph -->
+<meta content="article" property="og:type">
+<meta content="Налог на бэк-офис импорта: 5 задач для автоматизации до найма | Camelot Flows" property="og:title">
+<meta content="Бэк-офис импортёра держится на ручных напоминаниях, бумагах EUR.1 и копипасте заказов. Вот пять таких задач, которые можно отдать системе — ещё до того, как нан" property="og:description">
+<meta content="https://camelotflows.dev/assets/images/blog/import-backoffice-automation-og.jpg" property="og:image">
+<meta content="https://camelotflows.dev/blog/automate-import-back-office-before-hiring/" property="og:url">
+<meta content="Camelot Flows" property="og:site_name">
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card">
+<meta content="Налог на бэк-офис импорта: 5 задач для автоматизации до найма | Camelot Flows" name="twitter:title">
+<meta content="Бэк-офис импортёра держится на ручных напоминаниях, бумагах EUR.1 и копипасте заказов. Вот пять таких задач, которые можно отдать системе — ещё до того, как нан" name="twitter:description">
+<meta content="https://camelotflows.dev/assets/images/blog/import-backoffice-automation-og.jpg" name="twitter:image">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="preload">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"></noscript>
+<link href="/assets/css/tailwind.built.css" rel="stylesheet">
+<link href="/assets/site.css?v=2" rel="stylesheet">
+<link href="/assets/css/camelot.css?v=6" rel="stylesheet">
+<link href="/assets/css/theme-night.css?v=2" rel="stylesheet">
+<link href="/assets/css/lang-switcher.css" rel="stylesheet">
+<link href="/assets/css/blog.css?v=1" rel="stylesheet">
+<link as="document" href="/ru/arsenal" rel="prefetch">
+<link as="document" href="/ru/merlin" rel="prefetch">
+<link as="document" href="/ru/contact" rel="prefetch">
+<link as="document" href="/ru/case-studies" rel="prefetch">
+<link as="document" href="/ru/about" rel="prefetch">
+<!-- Google tag (gtag.js) — GA4 camelotflows.dev -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T4ZPEG1KSR"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+      try { if (localStorage.getItem('cf_consent') === 'granted') { gtag('consent', 'update', { analytics_storage: 'granted' }); } } catch (e) {}      gtag('js', new Date());
+      gtag('config', 'G-T4ZPEG1KSR');
+    </script>
+<script defer="" src="/assets/js/cf-consent.js?v=1"></script>
+</head>
+<body class="theme-cozy font-body overflow-x-hidden selection:bg-primary selection:text-white">
+<a class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999999] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm focus:font-mono focus:shadow-neon" data-i18n="common.skip_link" href="#main-content">Перейти к основному содержанию</a>
+<div aria-atomic="true" aria-live="polite" class="sr-only" id="lang-announce" role="status"></div>
+<div aria-hidden="true" class="scroll-progress"></div>
+<div class="fixed inset-0 z-[999999] bg-obsidian flex flex-col items-center justify-center" id="preloader">
+<div class="absolute inset-0 grid-bg opacity-30"></div>
+<div class="w-32 h-32 relative flex items-center justify-center mb-8 z-10">
+<div class="absolute inset-0 rounded-full border-t-2 border-primary animate-spin"></div>
+<div class="absolute inset-2 rounded-full border-b-2 border-accent animate-[spin_2s_linear_infinite_reverse]">
+</div>
+<span class="material-symbols-outlined text-4xl text-white animate-pulse">design_services</span>
+</div>
+<div class="text-primary-glow font-mono text-[10px] tracking-[0.4em] uppercase mb-4 z-10" data-i18n="common.preloader_init" id="loader-text">Initializing Protocols...</div>
+<div class="w-64 h-[2px] bg-white/10 rounded-full overflow-hidden z-10">
+<div class="w-0 h-full bg-gradient-to-r from-primary to-accent" id="loader-bar"></div>
+</div>
+<div class="mt-4 font-mono text-white text-sm tracking-widest z-10" id="loader-percent">0%</div>
+</div>
+<div class="grain-overlay"></div>
+<div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none" id="bg-orbs">
+<div class="bg-orb absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-cobalt/20 rounded-full blur-[120px]">
+</div>
+<div class="bg-orb absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-accent/10 rounded-full blur-[100px]">
+</div>
+<div class="bg-orb absolute top-[40%] left-[30%] w-[30vw] h-[30vw] bg-primary/10 rounded-full blur-[150px]">
+</div>
+<div class="absolute inset-0 grid-bg"></div>
+</div>
+<!-- ИЗМЕНЕНИЕ: Zentry Orbital Badge (Вращающаяся печать в углу) -->
+<div class="fixed bottom-8 right-8 z-50 pointer-events-none mix-blend-screen opacity-60 hidden md:flex items-center justify-center w-32 h-32">
+<svg class="animate-[spin_12s_linear_infinite] absolute inset-0" height="100" viewbox="0 0 100 100" width="100">
+<defs>
+<path d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" id="circle"></path>
+</defs>
+<text class="text-primary-glow font-mono uppercase tracking-[0.15em]" fill="currentColor" font-size="10.5">
+<textpath href="#circle">Camelot Flows • Digital Kingdom •</textpath>
+</text>
+</svg>
+<span class="material-symbols-outlined text-primary text-2xl animate-pulse">change_history</span>
+</div>
+<nav class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-6 md:py-6">
+<div class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
+<div class="flex items-center">
+<img alt="Camelot Flows" class="h-16 md:h-28 w-auto object-contain" src="/assets/images/cf-logo-wordmark-2x.webp">
+</div>
+<div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.home" href="/ru/">[Главная]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.services" href="/ru/work-with-me">[Услуги]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.arsenal" href="/ru/arsenal">[Arsenal]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.merlin" href="/ru/merlin">[Merlin]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" data-i18n="common.nav.cases" href="/ru/case-studies">[Кейсы]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block" data-i18n="common.nav.agencies" href="/ru/for-agencies">[Агентствам]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" data-i18n="common.nav.pricing" href="/ru/?goto=pricing">[Цены]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.contact" href="/ru/contact">[Контакты]</a>
+</div>
+<div class="flex items-center gap-2">
+<a aria-label="Call Camelot Flows" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="tel:+37369555936" title="+373 69 555 936">
+<span class="material-symbols-outlined cf-phone-icon" style="font-size:18px">call</span>
+</a>
+<div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-500 status-dot animate-pulse"></div>
+<span class="text-[10px] font-mono text-emerald-500/80" data-i18n="common.nav.sys_online">SYS_ONLINE</span>
+</div>
+<div class="lang-switcher" data-cf-lang-switcher="">
+<button aria-expanded="false" aria-haspopup="listbox" aria-label="Язык" class="lang-trigger" data-i18n-attr="aria-label:common.lang_label" type="button">
+<span class="lang-current" data-cf-lang-current="">EN</span>
+<span class="material-symbols-outlined lang-chevron">expand_more</span>
+</button>
+<ul class="lang-menu" hidden="" role="listbox">
+<li data-lang="en" role="option" tabindex="-1"><a href="/blog/automate-import-back-office-before-hiring/" hreflang="en">EN</a></li>
+<li data-lang="ro" role="option" tabindex="-1"><a href="/ro/blog/automate-import-back-office-before-hiring/" hreflang="ro">RO</a></li>
+<li data-lang="ru" role="option" tabindex="-1"><a href="/ru/blog/automate-import-back-office-before-hiring/" hreflang="ru">RU</a></li>
+</ul>
+</div>
+<button aria-label="Open menu" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 transition-all text-slate-400" id="mobile-menu-toggle" type="button">
+<span class="material-symbols-outlined" style="font-size:20px">menu</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="theme-toggle" type="button">
+<span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
+<span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
+</button>
+<a class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong hidden lg:inline-flex items-center nav-cta" data-i18n="common.nav.summon_agent" href="/ru/contact?objective=build">[Hire_me]</a>
+</div>
+</div>
+<div class="hidden mt-2 max-w-7xl mx-auto" id="mobile-nav">
+<div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
+<div class="flex flex-col gap-1">
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.home" href="/ru/">[Главная]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.services" href="/ru/work-with-me">[Услуги]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.arsenal" href="/ru/arsenal">[Arsenal]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.merlin" href="/ru/merlin">[Merlin]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.cases" href="/ru/case-studies">[Кейсы]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.contact" href="/ru/contact">[Контакты]</a>
+<div class="mx-3 my-2 h-px bg-white/10"></div>
+<a class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent" href="/ru/contact?service=build">[Hire_me]</a>
+</div>
+</div>
+</div>
+<script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");var open=!menu.classList.contains("hidden");btn.setAttribute("aria-expanded",open?"true":"false");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");}});document.querySelectorAll("#mobile-nav a").forEach(function(a){a.addEventListener("click",function(){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");});});}})();</script>
+</nav>
+<main id="main-content">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"The Import Back-Office Tax: 5 Jobs to Automate Before You Hire","description":"An import back office runs on manual follow-ups, EUR.1 paperwork, and copy-paste order entry. Here are five of those jobs you can hand to a system — before you hire another person.","url":"https://camelotflows.dev/ru/blog/automate-import-back-office-before-hiring/","datePublished":"2026-06-19T09:00:00+00:00","dateModified":"2026-06-19T09:00:00+00:00","author":{"@type":"Person","@id":"https://camelotflows.dev/#alexandru-buzi","name":"Alexandru Buzi","url":"https://camelotflows.dev/ru/about"},"publisher":{"@type":"Organization","name":"Camelot Flows","url":"https://camelotflows.dev/ru/","logo":{"@type":"ImageObject","url":"https://camelotflows.dev/assets/images/cf-logo-wordmark.png"}},"image":"https://camelotflows.dev/assets/images/blog/import-backoffice-automation-og.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://camelotflows.dev/ru/blog/automate-import-back-office-before-hiring/"},"wordCount":640,"inLanguage":"ru"}</script>
+<section class="pt-44 pb-16 px-6 relative overflow-hidden">
+<div class="absolute inset-0 grid-bg opacity-20 pointer-events-none"></div>
+<div class="absolute top-0 right-0 w-[50vw] h-[50vw] bg-primary/5 rounded-full blur-[140px] pointer-events-none"></div>
+<div class="max-w-3xl mx-auto relative">
+<a class="inline-flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-primary-glow transition-colors mb-10 group" data-i18n="blog.back" href="/ru/blog/">← К Кодексу</a>
+<div class="flex flex-wrap items-center gap-3 mb-6">
+<a class="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-primary/30 bg-primary/5 text-[10px] font-mono text-primary-glow tracking-widest uppercase hover:bg-primary/10 transition-colors" href="/ru/blog/">
+                    AI Automation                </a>
+<span class="text-[10px] font-mono text-slate-600">June 19, 2026</span>
+<span class="text-[10px] font-mono text-slate-600">
+                3 min read
+            </span>
+</div>
+<h1 class="text-4xl md:text-6xl font-display font-bold tracking-tighter cf-post-title mb-8 leading-[0.95]">
+<span>Налог на бэк-офис импорта: 5 задач для автоматизации до найма</span>
+</h1>
+<div class="cf-excerpt text-lg leading-relaxed border-l-2 border-primary/50 pl-5">
+<div><p>Бэк-офис импортёра держится на ручных напоминаниях, бумагах EUR.1 и копипасте заказов. Вот пять таких задач, которые можно отдать системе — ещё до того, как нанимать человека.</p></div>
+</div>
+</div>
+</section>
+<!-- GSAP-animated post summary card -->
+<div class="px-6 pb-4" id="post-summary">
+<div class="max-w-3xl mx-auto glass-panel rounded-xl border border-primary/20 overflow-hidden">
+<div class="grid grid-cols-3 divide-x divide-white/5">
+<div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
+<span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.min_read">МИН_ЧТЕН</span>
+<span class="text-4xl font-mono font-bold text-primary-glow tabular-nums" data-count="3">3</span>
+</div>
+<div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
+<span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.words">СЛОВА</span>
+<span class="text-4xl font-mono font-bold text-primary-glow tabular-nums" data-count="640">640</span>
+</div>
+<div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
+<span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.year">ГОД</span>
+<span class="text-4xl font-mono font-bold text-primary-glow tabular-nums">2026</span>
+</div>
+</div>
+<div class="h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+<div class="px-8 py-3 flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+<span class="text-[10px] font-mono text-slate-600 tracking-widest">June 19, 2026 — DISPATCH_010</span>
+</div>
+</div>
+</div>
+<div class="px-6 mb-8">
+<div class="max-w-4xl mx-auto rounded-xl overflow-hidden">
+<img alt="Abstract 3D visual of import back-office automation — shipping container, customs document, warehouse, truck and dashboard wired into a central automation hub" class="w-full h-auto object-cover wp-post-image" decoding="async" fetchpriority="high" height="864" sizes="(max-width: 1536px) 100vw, 1536px" src="/assets/images/blog/import-backoffice-automation.webp" srcset="/assets/images/blog/import-backoffice-automation.webp 1536w, /assets/images/blog/import-backoffice-automation-768x432.webp 768w" width="1536"> </div>
+</div>
+<article class="pb-16 px-6">
+<div class="max-w-3xl mx-auto prose-camelot">
+<div><p>Растущий импортный бизнес ломается редко из-за того, что товар перестаёт продаваться. Он ломается, потому что один человек тихо становится клеем между поставщиками, перевозчиками, таможней и клиентами — а этот клей состоит из таблиц, переписок в WhatsApp и «вечером пришлю».</p>
+<p>Я вижу это изнутри. Часть моей недели уходит на поиск товара, выбивание у поставщика исправленного сертификата EUR.1, погоню за перевозчиком ради слота на погрузку и переписку с таможенным брокером. Ничего из этого не сложно. Всё это — рутина, и каждая повторяющаяся операция это место, где уставший человек роняет мяч: не отправленный follow-up, пропавший документ, когда фура уже загружена.</p>
+<h2>Что Я Автоматизировал Бы Первым</h2>
+<p>Тебе не нужен корпоративный ERP, чтобы это починить. Нужно несколько чётко выстроенных воркфлоу поверх инструментов, которыми ты уже пользуешься. Вот пять задач, которые я отдал бы системе первыми.</p>
+<p><strong>1. Напоминания поставщикам.</strong> Система отслеживает каждый открытый заказ, пингует поставщика по расписанию и подсвечивает просроченное до того, как оно станет проблемой — вместо того чтобы ты вспоминал про подтверждение в девять вечера.</p>
+<p><strong>2. Приём заказов и запросов.</strong> Запросы приходят по почте и в WhatsApp обычным языком. AI-шаг читает сообщение, вытаскивает товар, количество и Incoterm, кладёт чистую строку в твою таблицу или CRM и готовит ответ тебе на утверждение.</p>
+<p><strong>3. Документооборот.</strong> На каждую поставку заводится чек-лист — инвойс, packing list, EUR.1, CMR. Система собирает и единообразно называет файлы и предупреждает о недостающем документе <em>до</em> отгрузки, а не когда груз уже застрял на границе.</p>
+<p><strong>4. Остатки и сигналы дозаказа.</strong> Уровни отслеживаются автоматически, и ты получаешь сигнал на пороге дозаказа — с уже учтённым реальным сроком поставки, так что «закончилось» перестаёт быть сюрпризом.</p>
+<p><strong>5. Статусы для клиентов.</strong> «Где мой заказ?» получает ответ прямо из статуса поставки, автоматически, вместо того чтобы выдёргивать тебя из настоящей работы ради копирования трек-номера в чат.</p>
+<h2>Честная Часть</h2>
+<p>Автоматизация не заменяет суждение — переговоры о цене, выбор перевозчика, которому можно доверять, чтение между строк поставщика, который вот-вот опоздает. Она убирает копипаст <em>вокруг</em> этого суждения. Вот эту часть и стоит снять.</p>
+<p>Начни с одной задачи. Замерь часы, которые она реально возвращает. Потом добавь следующую. Бизнес, который автоматизирует хаос до найма, обычно обнаруживает, что людей нужно меньше, чем он боялся — а те, кто есть, тратят день на решения, а не на ввод данных.</p>
+</div>
+</div>
+</article>
+<div class="px-6 pb-12">
+<div class="max-w-3xl mx-auto pt-8 border-t border-white/5 flex flex-wrap items-center gap-3">
+</div>
+</div>
+<div class="px-6 pb-16">
+<div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+<a class="glass-panel rounded-xl p-6 group hover:border-primary/40 transition-all" href="/blog/ai-intake-assistant-small-service-business/">
+<div class="flex items-center gap-2 text-[10px] font-mono text-slate-600 mb-2">
+<span class="material-symbols-outlined text-sm">arrow_back</span> Previous
+                </div>
+<div class="font-display font-bold cf-nav-title text-sm group-hover:text-primary-glow transition-colors leading-snug">
+                    What an AI Intake Assistant Actually Does for a Small Service Business                </div>
+</a>
+<a class="glass-panel rounded-xl p-6 group hover:border-primary/40 transition-all text-right" href="/ru/blog/how-i-build-sites-for-clients/">
+<div class="flex items-center justify-end gap-2 text-[10px] font-mono text-slate-600 mb-2">
+                    Next <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+<div class="font-display font-bold cf-nav-title text-sm group-hover:text-primary-glow transition-colors leading-snug">
+                    How I Build Sites for Clients: Simple WordPress, Custom Builds, and AI Automations                </div>
+</a>
+</div>
+</div>
+<section class="pb-28 px-6">
+<div class="max-w-3xl mx-auto glass-panel rounded-xl p-10 md:p-14 text-center border border-primary/20">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded border border-primary/30 bg-primary/5 mb-6">
+<span class="text-xs font-mono text-primary-glow tracking-widest uppercase">// NEXT_STEP</span>
+</div>
+<h2 class="text-3xl md:text-4xl font-display font-bold cf-post-title mb-4 tracking-tighter">
+            Want this built for you?
+        </h2>
+<p class="text-slate-400 mb-8 font-mono text-sm">Fixed scope. Fixed price. Fixed deadline.</p>
+<a class="cf-blog-cta-btn bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-8 py-3 rounded text-sm font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong inline-flex items-center gap-2" href="/ru/contact?objective=blog-cta">
+            // SUMMON_AGENT
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</section>
+</main>
+<footer class="bg-obsidian pt-24 pb-12 px-6 border-t border-primary/20 relative">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+</div>
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20">
+<div class="md:col-span-3">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-lg">architecture</span>
+</div>
+<span class="font-display text-xl font-bold tracking-tighter uppercase text-white">Camelot
+                            Flows</span>
+</div>
+<p class="text-slate-500 mb-8 text-sm leading-relaxed font-mono">
+<span data-i18n="common.footer.location_line_1"><span class="text-primary">&gt;</span> Локация: Кишинёв, MD</span><br>
+<span data-i18n="common.footer.location_line_2"><span class="text-primary">&gt;</span> Координаты: 47.0105° N, 28.8638° E</span><br>
+<span data-i18n="common.footer.location_line_3"><span class="text-primary">&gt;</span> Миссия: Премиальные сайты. Актив — ваш.</span>
+</p>
+<div class="flex gap-4">
+<a aria-label="LinkedIn" class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="https://www.linkedin.com/in/alex-buzi/" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+</a>
+<a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="/ru/contact">
+<span class="material-symbols-outlined text-lg">mail</span>
+</a>
+<a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="/ru/contact">
+<span class="material-symbols-outlined text-lg">alternate_email</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_protocol">Протокол</h5>
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/arsenal"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_protocol_arsenal">Arsenal</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/merlin"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_protocol_merlin">Merlin</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/case-studies"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_protocol_cases">Кейсы</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/for-agencies"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_protocol_agencies">Агентствам</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/blog/"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> <span data-i18n="common.footer.blog">Блог</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_services">Услуги</h5>
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/service-creation"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_creation">Создание сайта</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/service-maintenance"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_maintenance">Поддержка</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/service-automation"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_automation">Автоматизация</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/service-marketing"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_marketing">Чтобы находили</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/audit"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_audit">Бесплатный аудит сайта</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_company">Мастерская</h5>
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/about"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_company_about">Обо мне</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/work-with-me"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_company_work">Сотрудничество</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/legal"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_company_legal">Условия</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/contact"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_company_contact">Контакты</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-3">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_vanguard">Авангард</h5>
+<p class="text-slate-500 text-sm mb-6 leading-relaxed" data-i18n="common.footer.col_vanguard_lead">Раз в неделю — материалы об AI-автоматизации, прямо в твой инбокс.</p>
+<div class="flex gap-2 p-1 bg-white/5 rounded border border-white/10 focus-within:border-primary/50 transition-colors">
+<label class="sr-only" for="newsletter-email">Email address</label>
+<input class="bg-transparent border-none focus:ring-0 text-sm flex-1 px-4 text-white font-mono placeholder:text-slate-600" data-i18n-attr="placeholder:common.footer.col_vanguard_placeholder" id="newsletter-email" placeholder="ENTER_EMAIL" type="email">
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded text-xs font-bold transition-colors font-mono" data-i18n="common.footer.col_vanguard_submit">[SUBMIT]</button>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-xs text-slate-600 font-mono" data-i18n="common.footer.copyright">© 2026 Camelot Flows. Сделано Alex Buzi.</p>
+<div class="flex flex-wrap justify-center gap-4 md:gap-8">
+<div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+<span class="material-symbols-outlined text-sm text-green-500">wifi</span>
+<span data-i18n="common.footer.status_optimal">Состояние системы: оптимальное</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+<span class="material-symbols-outlined text-sm text-blue-500">bolt</span>
+<span data-i18n="common.footer.status_lightning">Молниеносная скорость</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<div id="custom-cursor"></div>
+<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="/assets/js/locales.js"></script>
+<script defer="" src="/assets/js/i18n.js"></script>
+<script defer="" src="/assets/js/camelot-gsap.js"></script>
+<script defer="" src="/assets/site.js"></script>
+</body>
+</html>

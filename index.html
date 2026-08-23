@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-i18n-page="index">
+<html lang="en" data-i18n-page="index" data-cf-static-lang="en">
 
 <head>
     <!-- CF: theme bootstrap (sync, before paint) -->
@@ -24,7 +24,7 @@
       (function () {
         var html = document.documentElement;
         try {
-          var l = localStorage.getItem('cf_lang') || 'en';
+          var l = document.documentElement.lang || 'en';
           if (['en','ro','ru'].indexOf(l) === -1) l = 'en';
           html.setAttribute('lang', l);
           html.setAttribute('data-cf-lang', l);
@@ -35,25 +35,27 @@
 
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Web Design for Small Businesses in Romania & Europe — Get Found & Booked | Camelot Flows</title>
-    <meta name="description" content="I design fast, findable websites for small businesses in Romania, Moldova & across Europe — built to turn the people already searching for you into bookings. You own it.">
+    <title>Web Development, WooCommerce & AI Automation | Camelot Flows</title>
+    <meta name="description" content="WordPress and WooCommerce development, redesigns, migrations, AI integrations, and maintenance for businesses in Moldova, Romania, Europe, and the USA.">
     <link rel="canonical" href="https://camelotflows.dev/">
     <link rel="alternate" hreflang="en" href="https://camelotflows.dev/">
+    <link rel="alternate" hreflang="ro" href="https://camelotflows.dev/ro/">
+    <link rel="alternate" hreflang="ru" href="https://camelotflows.dev/ru/">
     <link rel="alternate" hreflang="x-default" href="https://camelotflows.dev/">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Web Design for Small Businesses in Romania & Europe | Camelot Flows">
-    <meta property="og:description" content="I design fast, findable websites for small businesses in Romania, Moldova & across Europe — built to turn the people already searching for you into bookings. You own it.">
+    <meta property="og:title" content="Web Development, WooCommerce & AI Automation | Camelot Flows">
+    <meta property="og:description" content="WordPress and WooCommerce development, redesigns, migrations, AI integrations, and maintenance for businesses in Moldova, Romania, Europe, and the USA.">
     <meta property="og:image" content="https://camelotflows.dev/assets/images/cozy-freelancer/cf-cozy-og-default.webp">
     <meta property="og:url" content="https://camelotflows.dev/">
     <meta property="og:site_name" content="Camelot Flows">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Web Design for Small Businesses in Romania & Europe | Camelot Flows">
-    <meta name="twitter:description" content="I design fast, findable websites for small businesses in Romania, Moldova & across Europe — built to turn the people already searching for you into bookings. You own it.">
+    <meta name="twitter:title" content="Web Development, WooCommerce & AI Automation | Camelot Flows">
+    <meta name="twitter:description" content="WordPress and WooCommerce development, redesigns, migrations, AI integrations, and maintenance for businesses in Moldova, Romania, Europe, and the USA.">
     <meta name="twitter:image" content="https://camelotflows.dev/assets/images/cozy-freelancer/cf-cozy-og-default.webp">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -75,25 +77,25 @@
     <noscript><link rel="stylesheet" href="assets/css/theme-night.min.css?v=1"></noscript>
     <link rel="stylesheet" href="assets/css/lang-switcher.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="assets/css/lang-switcher.css"></noscript>
-    <link rel="prefetch" href="arsenal.html" as="document">
-    <link rel="prefetch" href="merlin.html" as="document">
-    <link rel="prefetch" href="contact.html" as="document">
-    <link rel="prefetch" href="case-studies.html" as="document">
-    <link rel="prefetch" href="about.html" as="document">
+    <link rel="prefetch" href="/arsenal" as="document">
+    <link rel="prefetch" href="/merlin" as="document">
+    <link rel="prefetch" href="/contact" as="document">
+    <link rel="prefetch" href="/case-studies" as="document">
+    <link rel="prefetch" href="/about" as="document">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "Organization",
   "@id": "https://camelotflows.dev/#organization",
   "name": "Camelot Flows",
   "alternateName": "Camelot Flows Atelier",
-  "description": "Solo web atelier building local-business websites that are set up to be found on Google and built to convert — owned outright by the client. Premium, fixed-price, direct builder access. No agency, no middlemen.",
+  "description": "Solo web development studio providing WordPress and WooCommerce builds, redesigns, migrations, AI integrations, and maintenance.",
   "url": "https://camelotflows.dev/",
   "image": "https://camelotflows.dev/assets/images/cozy-freelancer/cf-cozy-og-default.webp",
-  "founder": { "@id": "https://camelotflows.dev/#alexandru-buzi", "@type": "Person", "name": "Alexandru Buzi", "url": "https://camelotflows.dev/about.html" },
+  "founder": { "@id": "https://camelotflows.dev/#alexandru-buzi", "@type": "Person", "name": "Alexandru Buzi", "url": "https://camelotflows.dev/about" },
   "priceRange": "€€",
   "knowsLanguage": ["en", "ro", "ru"],
-  "knowsAbout": ["Web Design", "WordPress Development", "Local SEO", "Google Business Profile", "Conversion Optimization"],
+  "knowsAbout": ["Web Development", "WordPress Development", "WooCommerce", "Website Migration", "AI Automation", "Website Maintenance"],
   "slogan": "You've earned the reputation. Make sure your website isn't losing it.",
   "telephone": "+37369555936",
   "email": "alex@camelotflows.dev",
@@ -108,7 +110,7 @@
     { "@type": "AdministrativeArea", "name": "European Union" },
     { "@type": "Country", "name": "United States" }
   ],
-  "sameAs": ["https://www.linkedin.com/in/alex-buzi/", "https://camelotflows.dev/about.html"],
+  "sameAs": ["https://www.linkedin.com/in/alex-buzi/", "https://camelotflows.dev/about"],
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "sales",
@@ -364,21 +366,21 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
             </div>
             <div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="index.html" data-i18n="common.nav.home">[Home]</a>
+                    href="/" data-i18n="common.nav.home">[Home]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="work-with-me.html" data-i18n="common.nav.services">[Services]</a>
+                    href="/work-with-me" data-i18n="common.nav.services">[Services]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
+                    href="/arsenal" data-i18n="common.nav.arsenal">[Arsenal]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
+                    href="/merlin" data-i18n="common.nav.merlin">[Merlin]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
-                    href="case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
+                    href="/case-studies" data-i18n="common.nav.cases">[Cases]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block"
-                    href="for-agencies.html" data-i18n="common.nav.agencies">[Agencies]</a>
+                    href="/for-agencies" data-i18n="common.nav.agencies">[Agencies]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
                     href="#pricing-cards" data-i18n="common.nav.pricing">[Pricing]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="contact.html" data-i18n="common.nav.contact">[Contact]</a>
+                    href="/contact" data-i18n="common.nav.contact">[Contact]</a>
             </div>
             <div class="flex items-center gap-2">
                 <a href="tel:+37369555936" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" aria-label="Call Camelot Flows" title="+373 69 555 936">
@@ -394,9 +396,9 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
         <span class="material-symbols-outlined lang-chevron">expand_more</span>
     </button>
     <ul class="lang-menu" role="listbox" hidden>
-        <li role="option" data-lang="en" tabindex="-1">EN</li>
-        <li role="option" data-lang="ro" tabindex="-1">RO</li>
-        <li role="option" data-lang="ru" tabindex="-1">RU</li>
+        <li role="option" data-lang="en" tabindex="-1"><a href="/" hreflang="en">EN</a></li>
+        <li role="option" data-lang="ro" tabindex="-1"><a href="/ro/" hreflang="ro">RO</a></li>
+        <li role="option" data-lang="ru" tabindex="-1"><a href="/ru/" hreflang="ru">RU</a></li>
     </ul>
 </div>
                 <button id="mobile-menu-toggle" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 transition-all text-slate-400" aria-label="Open menu" type="button">
@@ -406,7 +408,7 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
     <span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
     <span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
 </button>
-                <a href="contact.html?objective=build"
+                <a href="/contact?objective=build"
                     class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong hidden lg:inline-flex items-center nav-cta"
                     data-i18n="common.nav.summon_agent">
                     [Hire_me]
@@ -417,14 +419,14 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
         <div id="mobile-nav" class="hidden mt-2 max-w-7xl mx-auto">
             <div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
                 <div class="flex flex-col gap-1">
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="index.html" data-i18n="common.nav.home">[Home]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="work-with-me.html" data-i18n="common.nav.services">[Services]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="contact.html" data-i18n="common.nav.contact">[Contact]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/" data-i18n="common.nav.home">[Home]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/work-with-me" data-i18n="common.nav.services">[Services]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/arsenal" data-i18n="common.nav.arsenal">[Arsenal]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/merlin" data-i18n="common.nav.merlin">[Merlin]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/case-studies" data-i18n="common.nav.cases">[Cases]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/contact" data-i18n="common.nav.contact">[Contact]</a>
                     <div class="mx-3 my-2 h-px bg-white/10"></div>
-                    <a href="contact.html?service=build" class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent">[Hire_me]</a>
+                    <a href="/contact?service=build" class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent">[Hire_me]</a>
                 </div>
             </div>
         </div>
@@ -480,10 +482,10 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
                 </h1>
                 <p id="hero-p"
                     class="text-lg md:text-xl text-slate-400 max-w-xl mb-10 leading-relaxed font-light border-l border-white/10 pl-6" data-i18n="pages.index.hero_p">
-                    I build the website that wins you clients. Then I build the <span class="text-white font-medium">system that handles them while you sleep.</span>
+                    Websites, WooCommerce stores, and AI automations for businesses in Moldova, Romania, and beyond — built, migrated, and maintained by one accountable developer.
                 </p>
                 <div id="hero-btns" class="flex flex-wrap gap-5">
-                    <a href="contact.html"
+                    <a href="/contact"
                         class="group relative px-8 py-4 bg-primary text-white font-mono font-bold text-sm tracking-wide overflow-hidden rounded-sm hover:scale-[1.02] transition-transform">
                         <div
                             class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000">
@@ -493,7 +495,7 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
                             <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </span>
                     </a>
-                    <a href="arsenal.html"
+                    <a href="/arsenal"
                         class="px-8 py-4 glass-panel text-slate-300 font-mono font-bold text-sm tracking-wide rounded-sm hover:bg-white/5 border border-white/10 hover:border-primary/50 transition-colors flex items-center gap-3">
                         <span data-i18n="pages.index.hero_btn_view">VIEW ARSENAL</span>
                         <span class="material-symbols-outlined text-sm opacity-50">grid_view</span>
@@ -658,7 +660,7 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
                             class="font-mono text-xs text-purple-400 tracking-[0.2em] uppercase hover:underline" data-i18n="pages.index.portal_link_2">2.
                             Founder</a>
                         <span class="text-white/30">|</span>
-                        <a href="for-agencies.html"
+                        <a href="/for-agencies"
                             class="font-mono text-xs text-blue-400 tracking-[0.2em] uppercase hover:underline" data-i18n="pages.index.portal_link_3">3.
                             Agency</a>
                     </div>
@@ -691,7 +693,7 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
                     <span class="flex-1 font-mono text-sm tracking-wide uppercase text-primary" data-i18n="pages.index.portal_link_2">2. Founder</span>
                     <span class="material-symbols-outlined text-primary/40 text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </a>
-                <a href="for-agencies.html" class="portal-flow-card group flex items-center gap-4 p-4 glass-panel rounded-xl border border-primary/20 hover:border-primary/60 transition-colors">
+                <a href="/for-agencies" class="portal-flow-card group flex items-center gap-4 p-4 glass-panel rounded-xl border border-primary/20 hover:border-primary/60 transition-colors">
                     <span class="material-symbols-outlined text-primary text-2xl shrink-0">groups</span>
                     <span class="flex-1 font-mono text-sm tracking-wide uppercase text-primary" data-i18n="pages.index.portal_link_3">3. Agency</span>
                     <span class="material-symbols-outlined text-primary/40 text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
@@ -870,7 +872,7 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
           <p class="cf-reveal" data-i18n="pages.index.ethos_p" style="margin-top:24px;color:var(--muted);font-size:0.97rem;line-height:1.78;max-width:380px;transition-delay:0.15s">
             No account manager in the middle. No junior off-spec. Every project gets the same attention — because I only take work I can do properly.
           </p>
-          <a href="work-with-me.html" class="button ghost cf-reveal" data-i18n="pages.index.ethos_cta" style="margin-top:32px;align-self:flex-start;transition-delay:0.28s">See how I work</a>
+          <a href="/work-with-me" class="button ghost cf-reveal" data-i18n="pages.index.ethos_cta" style="margin-top:32px;align-self:flex-start;transition-delay:0.28s">See how I work</a>
         </div>
       </div>
     </section>
@@ -1025,7 +1027,7 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
                         Pipelines</span>
                     </li>
                 </ul>
-                <a href="arsenal.html"
+                <a href="/arsenal"
                     class="bg-obsidian border border-neon-cyan/50 text-neon-cyan px-8 py-4 rounded text-xs font-bold font-mono uppercase tracking-[0.2em] hover:bg-neon-cyan hover:text-obsidian transition-colors shadow-[0_0_15px_rgba(0,242,255,0.2)]" data-i18n="pages.index.armory_btn">
                     ENTER THE FORGE
                 </a>
@@ -1063,7 +1065,7 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
                         Execution</span>
                     </li>
                 </ul>
-                <a href="merlin.html"
+                <a href="/merlin"
                     class="bg-obsidian border border-neon-purple/50 text-neon-purple px-8 py-4 rounded text-xs font-bold font-mono uppercase tracking-[0.2em] hover:bg-neon-purple hover:text-obsidian transition-colors shadow-[0_0_15px_rgba(191,0,255,0.2)]" data-i18n="pages.index.alchemy_btn">
                     VIEW AUTOMATIONS
                 </a>
@@ -1379,7 +1381,7 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
                     <div class="flex flex-col items-end gap-4 min-w-[200px] border-l border-white/10 pl-8 ml-4 relative z-10">
                         <div class="text-neon-cyan text-5xl md:text-6xl font-black font-mono tracking-tighter neon-text-cyan">from €390</div>
                         <div class="text-white/40 text-xs font-mono tracking-widest uppercase mb-4">fixed scope · fast launch</div>
-                        <a href="launch-site.html" class="bg-neon-cyan/10 border border-neon-cyan/50 text-neon-cyan w-full py-4 rounded-xl text-sm font-black font-mono tracking-widest uppercase hover:bg-neon-cyan hover:text-obsidian transition-all duration-300 text-center block" data-i18n="pages.index.sw_c1_cta">Start a Project</a>
+                        <a href="/launch-site" class="bg-neon-cyan/10 border border-neon-cyan/50 text-neon-cyan w-full py-4 rounded-xl text-sm font-black font-mono tracking-widest uppercase hover:bg-neon-cyan hover:text-obsidian transition-all duration-300 text-center block" data-i18n="pages.index.sw_c1_cta">Start a Project</a>
                     </div>
                 </div>
 
@@ -1413,7 +1415,7 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
                     <div class="flex flex-col items-end gap-4 min-w-[200px] border-l border-white/10 pl-8 ml-4 relative z-10">
                         <div class="text-neon-purple text-5xl md:text-6xl font-black font-mono tracking-tighter neon-text-purple">from €690</div>
                         <div class="text-white/40 text-xs font-mono tracking-widest uppercase mb-4">setup + optional support</div>
-                        <a href="merlin-automation.html" class="bg-neon-purple text-obsidian w-full py-4 rounded-xl text-sm font-black font-mono tracking-widest uppercase hover:bg-white hover:text-black transition-colors text-center block shadow-[0_0_20px_rgba(191,0,255,0.4)]" data-i18n="pages.index.sw_c2_cta">Discuss Automation</a>
+                        <a href="/merlin-automation" class="bg-neon-purple text-obsidian w-full py-4 rounded-xl text-sm font-black font-mono tracking-widest uppercase hover:bg-white hover:text-black transition-colors text-center block shadow-[0_0_20px_rgba(191,0,255,0.4)]" data-i18n="pages.index.sw_c2_cta">Discuss Automation</a>
                     </div>
                 </div>
 
@@ -1447,7 +1449,7 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
                     <div class="flex flex-col items-end gap-4 min-w-[200px] border-l border-white/10 pl-8 ml-4 relative z-10">
                         <div class="text-neon-amber text-5xl md:text-6xl font-black font-mono tracking-tighter neon-text-amber">from €990</div>
                         <div class="text-white/40 text-xs font-mono tracking-widest uppercase mb-4">includes merlin setup</div>
-                        <a href="ecommerce-wp.html" class="bg-neon-amber-10 border border-neon-amber-50 text-neon-amber w-full py-4 rounded-xl text-sm font-black font-mono tracking-widest uppercase hover:bg-neon-amber hover:text-obsidian transition-all duration-300 text-center block" data-i18n="pages.index.sw_c3_cta">Build My Store</a>
+                        <a href="/ecommerce-wp" class="bg-neon-amber-10 border border-neon-amber-50 text-neon-amber w-full py-4 rounded-xl text-sm font-black font-mono tracking-widest uppercase hover:bg-neon-amber hover:text-obsidian transition-all duration-300 text-center block" data-i18n="pages.index.sw_c3_cta">Build My Store</a>
                     </div>
                 </div>
 
@@ -1481,7 +1483,7 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
                     <div class="flex flex-col items-end gap-4 min-w-[200px] border-l border-white/10 pl-8 ml-4 relative z-10">
                         <div class="text-neon-blue text-5xl md:text-6xl font-black font-mono tracking-tighter neon-text-blue">from €1,200</div>
                         <div class="text-white/40 text-xs font-mono tracking-widest uppercase mb-4">bespoke, no templates</div>
-                        <a href="custom-premium.html" class="bg-neon-blue/10 border border-neon-blue/50 text-neon-blue w-full py-4 rounded-xl text-sm font-black font-mono tracking-widest uppercase hover:bg-neon-blue hover:text-white transition-all duration-300 text-center block" data-i18n="pages.index.sw_c4_cta">Start Premium Build</a>
+                        <a href="/custom-premium" class="bg-neon-blue/10 border border-neon-blue/50 text-neon-blue w-full py-4 rounded-xl text-sm font-black font-mono tracking-widest uppercase hover:bg-neon-blue hover:text-white transition-all duration-300 text-center block" data-i18n="pages.index.sw_c4_cta">Start Premium Build</a>
                     </div>
                 </div>
 
@@ -1543,7 +1545,7 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
                 </h2>
                 <p class="text-slate-400 text-sm max-w-xl mx-auto leading-relaxed" data-i18n="pages.index.testi_lead">Every project is a working partnership — these clients describe what that actually felt like.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
 
                 <!-- Vasile – Timberkids -->
                 <div class="glass-card rounded-xl p-8 relative border border-primary/20 transition-all duration-300">
@@ -1573,22 +1575,6 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
                         <div>
                             <strong class="text-white text-sm font-semibold block leading-tight">Owner</strong>
                             <a href="https://firstlinegarage.com" target="_blank" rel="noopener noreferrer" class="text-primary-glow text-xs font-mono hover:underline">First Line Garage Door</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Andrei – Legal Point -->
-                <div class="glass-card rounded-xl p-8 relative border border-primary/20 transition-all duration-300">
-                    <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-cobalt/70 to-primary/50 rounded-l-xl" aria-hidden="true"></div>
-                    <div class="mb-5 pl-1" style="color:#f59e0b;font-size:1.05rem;letter-spacing:3px" aria-label="5 stars">★★★★★</div>
-                    <blockquote class="text-white/70 text-sm leading-relaxed mb-8 pl-1" data-i18n="pages.index.testi_3_quote">
-                        "We needed a site that reflected the seriousness of our firm without feeling cold. Alexandru understood immediately — clean, authoritative, and the Merlin AI contact flow saves our team hours every week."
-                    </blockquote>
-                    <div class="flex items-center gap-3 pl-1">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-cobalt/60 to-primary/60 flex items-center justify-center text-white font-bold font-mono text-sm flex-shrink-0" aria-hidden="true">A</div>
-                        <div>
-                            <strong class="text-white text-sm font-semibold block leading-tight">Andrei Harghel</strong>
-                            <a href="https://legalpoint.md" target="_blank" rel="noopener noreferrer" class="text-primary-glow text-xs font-mono hover:underline">Legal Point</a>
                         </div>
                     </div>
                 </div>
@@ -1735,19 +1721,19 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
                         Protocol</h3>
                     <ul class="space-y-3 text-slate-500 text-sm font-mono">
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="arsenal.html"><span
+                                href="/arsenal"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_protocol_arsenal">The Arsenal</span></a></li>
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="merlin.html"><span
+                                href="/merlin"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_protocol_merlin">Merlin</span></a></li>
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="case-studies.html"><span
+                                href="/case-studies"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_protocol_cases">Case Studies</span></a></li>
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="for-agencies.html"><span
+                                href="/for-agencies"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_protocol_agencies">Agencies</span></a></li>
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/blog/"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> <span data-i18n="common.footer.blog">Blog</span></a></li>
@@ -1759,23 +1745,23 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
                         Services</h3>
                     <ul class="space-y-3 text-slate-500 text-sm font-mono">
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="service-creation.html"><span
+                                href="/service-creation"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_services_creation">Site Creation</span></a></li>
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="service-maintenance.html"><span
+                                href="/service-maintenance"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_services_maintenance">Maintenance</span></a></li>
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="service-automation.html"><span
+                                href="/service-automation"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_services_automation">Automations</span></a></li>
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="service-marketing.html"><span
+                                href="/service-marketing"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_services_marketing">Marketing</span></a></li>
                     <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="audit.html"><span
+                                href="/audit"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_services_audit">Free Website Audit</span></a></li>
                     </ul>
@@ -1786,19 +1772,19 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
                         Company</h3>
                     <ul class="space-y-3 text-slate-500 text-sm font-mono">
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="about.html"><span
+                                href="/about"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_company_about">About</span></a></li>
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="work-with-me.html"><span
+                                href="/work-with-me"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_company_work">Work With</span></a></li>
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="legal.html"><span
+                                href="/legal"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_company_legal">Legal</span></a></li>
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="contact.html"><span
+                                href="/contact"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_company_contact">Contact</span></a></li>
                     </ul>

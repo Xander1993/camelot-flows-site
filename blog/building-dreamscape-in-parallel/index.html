@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-i18n-page="blog">
 
+<html data-cf-static-lang="en" data-i18n-page="blog" lang="en">
 <head>
-    <!-- CF: theme bootstrap (sync, before paint) -->
-    <script>
+<!-- CF: theme bootstrap (sync, before paint) -->
+<script>
       (function () {
         var html = document.documentElement;
         try {
@@ -19,12 +19,12 @@
         html.classList.add('js');
       })();
     </script>
-    <!-- CF: lang bootstrap (sync, before paint) -->
-    <script>
+<!-- CF: lang bootstrap (sync, before paint) -->
+<script>
       (function () {
         var html = document.documentElement;
         try {
-          var l = localStorage.getItem('cf_lang') || 'en';
+          var l = document.documentElement.lang || 'en';
           if (['en','ro','ru'].indexOf(l) === -1) l = 'en';
           html.setAttribute('lang', l);
           html.setAttribute('data-cf-lang', l);
@@ -32,541 +32,370 @@
         } catch (e) { html.setAttribute('lang', 'en'); }
       })();
     </script>
-
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Building Dreamscape in Parallel: How Game Dev Is Sharpening My Skills - Camelot Flows</title>
-    <meta name="description" content="Building a narrative RPG in Ren&#039;Py while doing client web work full-time sounds like a contradiction. It isn&#039;t. Here is how game dev sharpens the exact muscles that make better web projects.">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Building Dreamscape in Parallel: How Game Dev Is Sharpening My Skills - Camelot Flows</title>
+<meta content="Building a narrative RPG in Ren'Py while doing client web work full-time sounds like a contradiction. It isn't. Here is how game dev sharpens the exact muscles that make better web projects." name="description">
 <link rel="canonical" href="https://camelotflows.dev/blog/building-dreamscape-in-parallel/">
     <link rel="alternate" hreflang="en" href="https://camelotflows.dev/blog/building-dreamscape-in-parallel/">
+    <link rel="alternate" hreflang="ro" href="https://camelotflows.dev/ro/blog/building-dreamscape-in-parallel/">
+    <link rel="alternate" hreflang="ru" href="https://camelotflows.dev/ru/blog/building-dreamscape-in-parallel/">
     <link rel="alternate" hreflang="x-default" href="https://camelotflows.dev/blog/building-dreamscape-in-parallel/">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <!-- Open Graph -->
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Building Dreamscape in Parallel: How Game Dev Is Sharpening My Skills - Camelot Flows">
-    <meta property="og:description" content="Building a narrative RPG in Ren&#039;Py while doing client web work full-time sounds like a contradiction. It isn&#039;t. Here is how game dev sharpens the exact muscles that make better web projects.">
-    <meta property="og:image" content="https://camelotflows.dev/assets/images/blog/dreamscape-game-dev.png">
-    <meta property="og:url" content="https://camelotflows.dev/blog/building-dreamscape-in-parallel/">
-    <meta property="og:site_name" content="Camelot Flows">
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Building Dreamscape in Parallel: How Game Dev Is Sharpening My Skills - Camelot Flows">
-    <meta name="twitter:description" content="Building a narrative RPG in Ren&#039;Py while doing client web work full-time sounds like a contradiction. It isn&#039;t. Here is how game dev sharpens the exact muscles that make better web projects.">
-    <meta name="twitter:image" content="https://camelotflows.dev/assets/images/blog/dreamscape-game-dev.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"></noscript>
-<link rel="stylesheet" href="/assets/css/tailwind.built.css">
-    <link rel="stylesheet" href="/assets/site.css?v=2">
-    <link rel="stylesheet" href="/assets/css/camelot.css?v=6">
-    <link rel="stylesheet" href="/assets/css/theme-night.css?v=2">
-    <link rel="stylesheet" href="/assets/css/lang-switcher.css">
-    <link rel="stylesheet" href="/assets/css/blog.css?v=1">
-    <link rel="prefetch" href="/arsenal.html" as="document">
-    <link rel="prefetch" href="/merlin.html" as="document">
-    <link rel="prefetch" href="/contact.html" as="document">
-    <link rel="prefetch" href="/case-studies.html" as="document">
-    <link rel="prefetch" href="/about.html" as="document">
-    <!-- Google tag (gtag.js) — GA4 camelotflows.dev -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4ZPEG1KSR"></script>
-    <script>
+<link href="/favicon.ico" rel="icon" type="image/x-icon">
+<link href="/favicon.png" rel="icon" sizes="32x32" type="image/png">
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+<!-- Open Graph -->
+<meta content="article" property="og:type">
+<meta content="Building Dreamscape in Parallel: How Game Dev Is Sharpening My Skills - Camelot Flows" property="og:title">
+<meta content="Building a narrative RPG in Ren'Py while doing client web work full-time sounds like a contradiction. It isn't. Here is how game dev sharpens the exact muscles that make better web projects." property="og:description">
+<meta content="https://camelotflows.dev/assets/images/blog/dreamscape-game-dev.png" property="og:image">
+<meta content="https://camelotflows.dev/blog/building-dreamscape-in-parallel/" property="og:url">
+<meta content="Camelot Flows" property="og:site_name">
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card">
+<meta content="Building Dreamscape in Parallel: How Game Dev Is Sharpening My Skills - Camelot Flows" name="twitter:title">
+<meta content="Building a narrative RPG in Ren'Py while doing client web work full-time sounds like a contradiction. It isn't. Here is how game dev sharpens the exact muscles that make better web projects." name="twitter:description">
+<meta content="https://camelotflows.dev/assets/images/blog/dreamscape-game-dev.png" name="twitter:image">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="preload">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"></noscript>
+<link href="/assets/css/tailwind.built.css" rel="stylesheet">
+<link href="/assets/site.css?v=2" rel="stylesheet">
+<link href="/assets/css/camelot.css?v=6" rel="stylesheet">
+<link href="/assets/css/theme-night.css?v=2" rel="stylesheet">
+<link href="/assets/css/lang-switcher.css" rel="stylesheet">
+<link href="/assets/css/blog.css?v=1" rel="stylesheet">
+<link as="document" href="/arsenal" rel="prefetch">
+<link as="document" href="/merlin" rel="prefetch">
+<link as="document" href="/contact" rel="prefetch">
+<link as="document" href="/case-studies" rel="prefetch">
+<link as="document" href="/about" rel="prefetch">
+<!-- Google tag (gtag.js) — GA4 camelotflows.dev -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T4ZPEG1KSR"></script>
+<script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
       try { if (localStorage.getItem('cf_consent') === 'granted') { gtag('consent', 'update', { analytics_storage: 'granted' }); } } catch (e) {}      gtag('js', new Date());
       gtag('config', 'G-T4ZPEG1KSR');
     </script>
-    <script defer src="/assets/js/cf-consent.js?v=1"></script>
+<script defer="" src="/assets/js/cf-consent.js?v=1"></script>
 </head>
-
 <body class="theme-cozy font-body overflow-x-hidden selection:bg-primary selection:text-white">
-<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999999] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm focus:font-mono focus:shadow-neon" data-i18n="common.skip_link">Skip to main content</a>
-<div id="lang-announce" role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
-    <div class="scroll-progress" aria-hidden="true"></div>
-
-    <div id="preloader" class="fixed inset-0 z-[999999] bg-obsidian flex flex-col items-center justify-center">
-        <div class="absolute inset-0 grid-bg opacity-30"></div>
-        <div class="w-32 h-32 relative flex items-center justify-center mb-8 z-10">
-            <div class="absolute inset-0 rounded-full border-t-2 border-primary animate-spin"></div>
-            <div
-                class="absolute inset-2 rounded-full border-b-2 border-accent animate-[spin_2s_linear_infinite_reverse]">
-            </div>
-            <span class="material-symbols-outlined text-4xl text-white animate-pulse">design_services</span>
-        </div>
-        <div class="text-primary-glow font-mono text-[10px] tracking-[0.4em] uppercase mb-4 z-10" id="loader-text" data-i18n="common.preloader_init">
-            Initializing Protocols...</div>
-        <div class="w-64 h-[2px] bg-white/10 rounded-full overflow-hidden z-10">
-            <div id="loader-bar" class="w-0 h-full bg-gradient-to-r from-primary to-accent"></div>
-        </div>
-        <div id="loader-percent" class="mt-4 font-mono text-white text-sm tracking-widest z-10">0%</div>
-    </div>
-
-    <div class="grain-overlay"></div>
-    <div id="bg-orbs" class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div class="bg-orb absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-cobalt/20 rounded-full blur-[120px]">
-        </div>
-        <div
-            class="bg-orb absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-accent/10 rounded-full blur-[100px]">
-        </div>
-        <div class="bg-orb absolute top-[40%] left-[30%] w-[30vw] h-[30vw] bg-primary/10 rounded-full blur-[150px]">
-        </div>
-        <div class="absolute inset-0 grid-bg"></div>
-    </div>
-
-    <!-- ИЗМЕНЕНИЕ: Zentry Orbital Badge (Вращающаяся печать в углу) -->
-    <div
-        class="fixed bottom-8 right-8 z-50 pointer-events-none mix-blend-screen opacity-60 hidden md:flex items-center justify-center w-32 h-32">
-        <svg viewBox="0 0 100 100" width="100" height="100" class="animate-[spin_12s_linear_infinite] absolute inset-0">
-            <defs>
-                <path id="circle" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
-            </defs>
-            <text font-size="10.5" fill="currentColor" class="text-primary-glow font-mono uppercase tracking-[0.15em]">
-                <textPath href="#circle">Camelot Flows • Digital Kingdom •</textPath>
-            </text>
-        </svg>
-        <span class="material-symbols-outlined text-primary text-2xl animate-pulse">change_history</span>
-    </div>
-
-    <nav class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-6 md:py-6">
-        <div
-            class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
-            <div class="flex items-center">
-                <img src="/assets/images/cf-logo-wordmark-2x.webp" alt="Camelot Flows" class="h-16 md:h-28 w-auto object-contain">
-            </div>
-            <div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="/" data-i18n="common.nav.home">[Home]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="/work-with-me.html" data-i18n="common.nav.services">[Services]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="/arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="/merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
-                    href="/case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block"
-                    href="/for-agencies.html" data-i18n="common.nav.agencies">[Agencies]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
-                    href="/?goto=pricing" data-i18n="common.nav.pricing">[Pricing]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="/contact.html" data-i18n="common.nav.contact">[Contact]</a>
-            </div>
-            <div class="flex items-center gap-2">
-                <a href="tel:+37369555936" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" aria-label="Call Camelot Flows" title="+373 69 555 936">
-                    <span class="material-symbols-outlined cf-phone-icon" style="font-size:18px">call</span>
-                </a>
-                <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
-                    <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 status-dot animate-pulse"></div>
-                    <span class="text-[10px] font-mono text-emerald-500/80" data-i18n="common.nav.sys_online">SYS_ONLINE</span>
-                </div>
-                <div class="lang-switcher" data-cf-lang-switcher>
-    <button class="lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Change language" data-i18n-attr="aria-label:common.lang_label">
-        <span class="lang-current" data-cf-lang-current>EN</span>
-        <span class="material-symbols-outlined lang-chevron">expand_more</span>
-    </button>
-    <ul class="lang-menu" role="listbox" hidden>
-        <li role="option" data-lang="en" tabindex="-1">EN</li>
-        <li role="option" data-lang="ro" tabindex="-1">RO</li>
-        <li role="option" data-lang="ru" tabindex="-1">RU</li>
-    </ul>
+<a class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999999] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm focus:font-mono focus:shadow-neon" data-i18n="common.skip_link" href="#main-content">Skip to main content</a>
+<div aria-atomic="true" aria-live="polite" class="sr-only" id="lang-announce" role="status"></div>
+<div aria-hidden="true" class="scroll-progress"></div>
+<div class="fixed inset-0 z-[999999] bg-obsidian flex flex-col items-center justify-center" id="preloader">
+<div class="absolute inset-0 grid-bg opacity-30"></div>
+<div class="w-32 h-32 relative flex items-center justify-center mb-8 z-10">
+<div class="absolute inset-0 rounded-full border-t-2 border-primary animate-spin"></div>
+<div class="absolute inset-2 rounded-full border-b-2 border-accent animate-[spin_2s_linear_infinite_reverse]">
 </div>
-                <button id="mobile-menu-toggle" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 transition-all text-slate-400" aria-label="Open menu" type="button">
-                    <span class="material-symbols-outlined" style="font-size:20px">menu</span>
-                </button>
-                <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Toggle theme">
-    <span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
-    <span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
+<span class="material-symbols-outlined text-4xl text-white animate-pulse">design_services</span>
+</div>
+<div class="text-primary-glow font-mono text-[10px] tracking-[0.4em] uppercase mb-4 z-10" data-i18n="common.preloader_init" id="loader-text">
+            Initializing Protocols...</div>
+<div class="w-64 h-[2px] bg-white/10 rounded-full overflow-hidden z-10">
+<div class="w-0 h-full bg-gradient-to-r from-primary to-accent" id="loader-bar"></div>
+</div>
+<div class="mt-4 font-mono text-white text-sm tracking-widest z-10" id="loader-percent">0%</div>
+</div>
+<div class="grain-overlay"></div>
+<div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none" id="bg-orbs">
+<div class="bg-orb absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-cobalt/20 rounded-full blur-[120px]">
+</div>
+<div class="bg-orb absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-accent/10 rounded-full blur-[100px]">
+</div>
+<div class="bg-orb absolute top-[40%] left-[30%] w-[30vw] h-[30vw] bg-primary/10 rounded-full blur-[150px]">
+</div>
+<div class="absolute inset-0 grid-bg"></div>
+</div>
+<!-- ИЗМЕНЕНИЕ: Zentry Orbital Badge (Вращающаяся печать в углу) -->
+<div class="fixed bottom-8 right-8 z-50 pointer-events-none mix-blend-screen opacity-60 hidden md:flex items-center justify-center w-32 h-32">
+<svg class="animate-[spin_12s_linear_infinite] absolute inset-0" height="100" viewbox="0 0 100 100" width="100">
+<defs>
+<path d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" id="circle"></path>
+</defs>
+<text class="text-primary-glow font-mono uppercase tracking-[0.15em]" fill="currentColor" font-size="10.5">
+<textpath href="#circle">Camelot Flows • Digital Kingdom •</textpath>
+</text>
+</svg>
+<span class="material-symbols-outlined text-primary text-2xl animate-pulse">change_history</span>
+</div>
+<nav class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-6 md:py-6">
+<div class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
+<div class="flex items-center">
+<img alt="Camelot Flows" class="h-16 md:h-28 w-auto object-contain" src="/assets/images/cf-logo-wordmark-2x.webp">
+</div>
+<div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.home" href="/">[Home]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.services" href="/work-with-me">[Services]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.arsenal" href="/arsenal">[Arsenal]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.merlin" href="/merlin">[Merlin]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" data-i18n="common.nav.cases" href="/case-studies">[Cases]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block" data-i18n="common.nav.agencies" href="/for-agencies">[Agencies]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" data-i18n="common.nav.pricing" href="/?goto=pricing">[Pricing]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.contact" href="/contact">[Contact]</a>
+</div>
+<div class="flex items-center gap-2">
+<a aria-label="Call Camelot Flows" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="tel:+37369555936" title="+373 69 555 936">
+<span class="material-symbols-outlined cf-phone-icon" style="font-size:18px">call</span>
+</a>
+<div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-500 status-dot animate-pulse"></div>
+<span class="text-[10px] font-mono text-emerald-500/80" data-i18n="common.nav.sys_online">SYS_ONLINE</span>
+</div>
+<div class="lang-switcher" data-cf-lang-switcher="">
+<button aria-expanded="false" aria-haspopup="listbox" aria-label="Change language" class="lang-trigger" data-i18n-attr="aria-label:common.lang_label" type="button">
+<span class="lang-current" data-cf-lang-current="">EN</span>
+<span class="material-symbols-outlined lang-chevron">expand_more</span>
 </button>
-                <a href="/contact.html?objective=build"
-                    class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong hidden lg:inline-flex items-center nav-cta"
-                    data-i18n="common.nav.summon_agent">
+<ul class="lang-menu" hidden="" role="listbox">
+<li data-lang="en" role="option" tabindex="-1"><a href="/blog/building-dreamscape-in-parallel/" hreflang="en">EN</a></li>
+<li data-lang="ro" role="option" tabindex="-1"><a href="/ro/blog/building-dreamscape-in-parallel/" hreflang="ro">RO</a></li>
+<li data-lang="ru" role="option" tabindex="-1"><a href="/ru/blog/building-dreamscape-in-parallel/" hreflang="ru">RU</a></li>
+</ul>
+</div>
+<button aria-label="Open menu" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 transition-all text-slate-400" id="mobile-menu-toggle" type="button">
+<span class="material-symbols-outlined" style="font-size:20px">menu</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="theme-toggle" type="button">
+<span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
+<span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
+</button>
+<a class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong hidden lg:inline-flex items-center nav-cta" data-i18n="common.nav.summon_agent" href="/contact?objective=build">
                     [Hire_me]
                 </a>
-            </div>
-        </div>
-        
-        <div id="mobile-nav" class="hidden mt-2 max-w-7xl mx-auto">
-            <div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
-                <div class="flex flex-col gap-1">
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/" data-i18n="common.nav.home">[Home]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/work-with-me.html" data-i18n="common.nav.services">[Services]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/contact.html" data-i18n="common.nav.contact">[Contact]</a>
-                    <div class="mx-3 my-2 h-px bg-white/10"></div>
-                    <a href="/contact.html?service=build" class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent">[Hire_me]</a>
-                </div>
-            </div>
-        </div>
-        <script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");var open=!menu.classList.contains("hidden");btn.setAttribute("aria-expanded",open?"true":"false");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");}});document.querySelectorAll("#mobile-nav a").forEach(function(a){a.addEventListener("click",function(){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");});});}})();</script>
-        </nav>
+</div>
+</div>
+<div class="hidden mt-2 max-w-7xl mx-auto" id="mobile-nav">
+<div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
+<div class="flex flex-col gap-1">
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.home" href="/">[Home]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.services" href="/work-with-me">[Services]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.arsenal" href="/arsenal">[Arsenal]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.merlin" href="/merlin">[Merlin]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.cases" href="/case-studies">[Cases]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.contact" href="/contact">[Contact]</a>
+<div class="mx-3 my-2 h-px bg-white/10"></div>
+<a class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent" href="/contact?service=build">[Hire_me]</a>
+</div>
+</div>
+</div>
+<script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");var open=!menu.classList.contains("hidden");btn.setAttribute("aria-expanded",open?"true":"false");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");}});document.querySelectorAll("#mobile-nav a").forEach(function(a){a.addEventListener("click",function(){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");});});}})();</script>
+</nav>
 <main id="main-content">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Building Dreamscape in Parallel: How Game Dev Is Sharpening My Skills","description":"Building a narrative RPG in Ren'Py while doing client web work full-time sounds like a contradiction. It isn't. Here is how game dev sharpens the exact muscles that make better web projects.","url":"https://camelotflows.dev/blog/building-dreamscape-in-parallel/","datePublished":"2026-05-03T16:21:32+00:00","dateModified":"2026-05-19T23:40:37+00:00","author":{"@type":"Person","@id":"https://camelotflows.dev/#alexandru-buzi","name":"Alexandru Buzi","url":"https://camelotflows.dev/about.html"},"publisher":{"@type":"Organization","name":"Camelot Flows","url":"https://camelotflows.dev/","logo":{"@type":"ImageObject","url":"https://camelotflows.dev/assets/images/cf-logo-wordmark.png"}},"image":"https://camelotflows.dev/assets/images/blog/dreamscape-game-dev-1024x576.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://camelotflows.dev/blog/building-dreamscape-in-parallel/"},"wordCount":370}</script>
-
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Building Dreamscape in Parallel: How Game Dev Is Sharpening My Skills","description":"Building a narrative RPG in Ren'Py while doing client web work full-time sounds like a contradiction. It isn't. Here is how game dev sharpens the exact muscles that make better web projects.","url":"https://camelotflows.dev/blog/building-dreamscape-in-parallel/","datePublished":"2026-05-03T16:21:32+00:00","dateModified":"2026-05-19T23:40:37+00:00","author":{"@type":"Person","@id":"https://camelotflows.dev/#alexandru-buzi","name":"Alexandru Buzi","url":"https://camelotflows.dev/about"},"publisher":{"@type":"Organization","name":"Camelot Flows","url":"https://camelotflows.dev/","logo":{"@type":"ImageObject","url":"https://camelotflows.dev/assets/images/cf-logo-wordmark.png"}},"image":"https://camelotflows.dev/assets/images/blog/dreamscape-game-dev-1024x576.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://camelotflows.dev/blog/building-dreamscape-in-parallel/"},"wordCount":370}</script>
 <section class="pt-44 pb-16 px-6 relative overflow-hidden">
-    <div class="absolute inset-0 grid-bg opacity-20 pointer-events-none"></div>
-    <div class="absolute top-0 right-0 w-[50vw] h-[50vw] bg-primary/5 rounded-full blur-[140px] pointer-events-none"></div>
-    <div class="max-w-3xl mx-auto relative">
-
-        <a href="/blog/"
-           class="inline-flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-primary-glow transition-colors mb-10 group"
-           data-i18n="blog.back">
-            <span class="material-symbols-outlined text-sm group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+<div class="absolute inset-0 grid-bg opacity-20 pointer-events-none"></div>
+<div class="absolute top-0 right-0 w-[50vw] h-[50vw] bg-primary/5 rounded-full blur-[140px] pointer-events-none"></div>
+<div class="max-w-3xl mx-auto relative">
+<a class="inline-flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-primary-glow transition-colors mb-10 group" data-i18n="blog.back" href="/blog/">
+<span class="material-symbols-outlined text-sm group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
             Back to Codex
         </a>
-
-        <div class="flex flex-wrap items-center gap-3 mb-6">
-                            <a href="/blog/"
-                   class="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-primary/30 bg-primary/5 text-[10px] font-mono text-primary-glow tracking-widest uppercase hover:bg-primary/10 transition-colors">
+<div class="flex flex-wrap items-center gap-3 mb-6">
+<a class="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-primary/30 bg-primary/5 text-[10px] font-mono text-primary-glow tracking-widest uppercase hover:bg-primary/10 transition-colors" href="/blog/">
                     Freelance                </a>
-                        <span class="text-[10px] font-mono text-slate-600">May 3, 2026</span>
-            <span class="text-[10px] font-mono text-slate-600">
+<span class="text-[10px] font-mono text-slate-600">May 3, 2026</span>
+<span class="text-[10px] font-mono text-slate-600">
                 2 min read
             </span>
-        </div>
-
-        <h1 class="text-4xl md:text-6xl font-display font-bold tracking-tighter cf-post-title mb-8 leading-[0.95]">
-            <span data-lang-content="en">Building Dreamscape in Parallel: How Game Dev Is Sharpening My Skills</span>
-                        <span data-lang-content="ro" hidden>Construind Dreamscape în Paralel: Cum Mă Ascute Game Dev-ul</span>
-                                    <span data-lang-content="ru" hidden>Строю Dreamscape Параллельно: Как Геймдев Точит Мои Навыки</span>
-                    </h1>
-
-                    <div class="cf-excerpt text-lg leading-relaxed border-l-2 border-primary/50 pl-5">
-                <div data-lang-content="en"><p>Building a narrative RPG in Ren&#8217;Py while doing client web work full-time sounds like a contradiction. It isn&#8217;t. Here is how game dev sharpens the exact muscles that make better web projects.</p>
 </div>
-                                <div data-lang-content="ro" hidden><p>Construirea unui RPG narativ în Ren&#039;Py în paralel cu proiecte web pentru clienți sună ca o contradicție. Nu este. Iată cum game dev-ul ascute exact mușchii care fac proiecte web mai bune.</p></div>
-                                                <div data-lang-content="ru" hidden><p>Днём я строю сайты для клиентов, а в свободное время — нарративную RPG под названием Dreamscape. Вот почему это не так разрознено, как кажется.</p></div>
-                            </div>
-        
-    </div>
+<h1 class="text-4xl md:text-6xl font-display font-bold tracking-tighter cf-post-title mb-8 leading-[0.95]">
+<span data-cf-translation-group="0">Building Dreamscape in Parallel: How Game Dev Is Sharpening My Skills</span>
+</h1>
+<div class="cf-excerpt text-lg leading-relaxed border-l-2 border-primary/50 pl-5">
+<div data-cf-translation-group="1"><p>Building a narrative RPG in Ren’Py while doing client web work full-time sounds like a contradiction. It isn’t. Here is how game dev sharpens the exact muscles that make better web projects.</p>
+</div>
+</div>
+</div>
 </section>
-
 <!-- GSAP-animated post summary card -->
-<div id="post-summary" class="px-6 pb-4">
-    <div class="max-w-3xl mx-auto glass-panel rounded-xl border border-primary/20 overflow-hidden">
-        <div class="grid grid-cols-3 divide-x divide-white/5">
-            <div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
-                <span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.min_read">MIN_READ</span>
-                <span class="text-4xl font-mono font-bold text-primary-glow tabular-nums" data-count="2">2</span>
-            </div>
-            <div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
-                <span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.words">WORDS</span>
-                <span class="text-4xl font-mono font-bold text-primary-glow tabular-nums" data-count="370">370</span>
-            </div>
-            <div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
-                <span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.year">YEAR</span>
-                <span class="text-4xl font-mono font-bold text-primary-glow tabular-nums">2026</span>
-            </div>
-        </div>
-        <div class="h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
-        <div class="px-8 py-3 flex items-center gap-2">
-            <div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
-            <span class="text-[10px] font-mono text-slate-600 tracking-widest">May 03, 2026 — DISPATCH_010</span>
-        </div>
-    </div>
+<div class="px-6 pb-4" id="post-summary">
+<div class="max-w-3xl mx-auto glass-panel rounded-xl border border-primary/20 overflow-hidden">
+<div class="grid grid-cols-3 divide-x divide-white/5">
+<div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
+<span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.min_read">MIN_READ</span>
+<span class="text-4xl font-mono font-bold text-primary-glow tabular-nums" data-count="2">2</span>
 </div>
-
+<div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
+<span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.words">WORDS</span>
+<span class="text-4xl font-mono font-bold text-primary-glow tabular-nums" data-count="370">370</span>
+</div>
+<div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
+<span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.year">YEAR</span>
+<span class="text-4xl font-mono font-bold text-primary-glow tabular-nums">2026</span>
+</div>
+</div>
+<div class="h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+<div class="px-8 py-3 flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+<span class="text-[10px] font-mono text-slate-600 tracking-widest">May 03, 2026 — DISPATCH_010</span>
+</div>
+</div>
+</div>
 <div class="px-6 mb-8">
-    <div class="max-w-4xl mx-auto rounded-xl overflow-hidden">
-        <img width="1672" height="941" src="/assets/images/blog/dreamscape-game-dev.png" class="w-full h-auto object-cover wp-post-image" alt="Abstract workspace visual connecting web development and narrative game design" decoding="async" fetchpriority="high" srcset="/assets/images/blog/dreamscape-game-dev.png 1672w, /assets/images/blog/dreamscape-game-dev-300x169.png 300w, /assets/images/blog/dreamscape-game-dev-1024x576.png 1024w, /assets/images/blog/dreamscape-game-dev-768x432.png 768w, /assets/images/blog/dreamscape-game-dev-1536x864.png 1536w, /assets/images/blog/dreamscape-game-dev-800x450.png 800w" sizes="(max-width: 1672px) 100vw, 1672px" />    </div>
+<div class="max-w-4xl mx-auto rounded-xl overflow-hidden">
+<img alt="Abstract workspace visual connecting web development and narrative game design" class="w-full h-auto object-cover wp-post-image" decoding="async" fetchpriority="high" height="941" sizes="(max-width: 1672px) 100vw, 1672px" src="/assets/images/blog/dreamscape-game-dev.png" srcset="/assets/images/blog/dreamscape-game-dev.png 1672w, /assets/images/blog/dreamscape-game-dev-300x169.png 300w, /assets/images/blog/dreamscape-game-dev-1024x576.png 1024w, /assets/images/blog/dreamscape-game-dev-768x432.png 768w, /assets/images/blog/dreamscape-game-dev-1536x864.png 1536w, /assets/images/blog/dreamscape-game-dev-800x450.png 800w" width="1672"> </div>
 </div>
-
 <article class="pb-16 px-6">
-    <div class="max-w-3xl mx-auto prose-camelot">
-        <div data-lang-content="en">
-<p class="wp-block-paragraph">I build websites for a living. In the hours that are left — early mornings, late nights, the odd weekend — I&#8217;m building a game called Dreamscape. These two things sound like they compete. They don&#8217;t. They feed each other in ways I didn&#8217;t expect when I started.</p>
-
-
-
+<div class="max-w-3xl mx-auto prose-camelot">
+<div data-cf-translation-group="2">
+<p class="wp-block-paragraph">I build websites for a living. In the hours that are left — early mornings, late nights, the odd weekend — I’m building a game called Dreamscape. These two things sound like they compete. They don’t. They feed each other in ways I didn’t expect when I started.</p>
 <h2 class="wp-block-heading">What Dreamscape Actually Is</h2>
-
-
-
-<p class="wp-block-paragraph">Dreamscape is a narrative RPG being built in Ren&#8217;Py, the visual novel engine. The story is set in a world where people can enter shared dreams — think part mystery, part psychological thriller, part lore-heavy adventure. I&#8217;m doing the writing, the design, the code, the art direction. It&#8217;s a solo project in every sense of the word.</p>
-
-
-
-<p class="wp-block-paragraph">That sounds insane next to a full-time job and a freelance schedule. It kind of is. But it&#8217;s also the most useful thing I do for my craft.</p>
-
-
-
+<p class="wp-block-paragraph">Dreamscape is a narrative RPG being built in Ren’Py, the visual novel engine. The story is set in a world where people can enter shared dreams — think part mystery, part psychological thriller, part lore-heavy adventure. I’m doing the writing, the design, the code, the art direction. It’s a solo project in every sense of the word.</p>
+<p class="wp-block-paragraph">That sounds insane next to a full-time job and a freelance schedule. It kind of is. But it’s also the most useful thing I do for my craft.</p>
 <h2 class="wp-block-heading">What Game Dev Teaches You About Web Dev</h2>
-
-
-
 <p class="wp-block-paragraph">Games have no tolerance for bad UX. A confusing menu, a slow transition, a piece of dialogue that goes on two sentences too long — players quit. Web users are more patient, but not by much. Working on Dreamscape has made me ruthless about flow: what happens after someone clicks? What do they feel? Where does their eye go?</p>
-
-
-
-<p class="wp-block-paragraph">Ren&#8217;Py also forces clean state management in a way that maps directly to how I think about WordPress data flows. Characters have states. Scenes have conditions. If you don&#8217;t track state carefully, your story branches break. If you don&#8217;t track WordPress form states carefully, your automation pipelines break. Same problem, different surface.</p>
-
-
-
+<p class="wp-block-paragraph">Ren’Py also forces clean state management in a way that maps directly to how I think about WordPress data flows. Characters have states. Scenes have conditions. If you don’t track state carefully, your story branches break. If you don’t track WordPress form states carefully, your automation pipelines break. Same problem, different surface.</p>
 <h2 class="wp-block-heading">The Real Reason I Do This</h2>
-
-
-
 <p class="wp-block-paragraph">Client work pays the bills and sharpens specific skills — shipping fast, communicating clearly, solving real problems under time pressure. Game dev builds different muscles: long-term vision, creative stamina, the ability to work on something for months without external validation.</p>
-
-
-
-<p class="wp-block-paragraph">Those are exactly the muscles that separate a freelancer who burns out after two years from one who compounds their value over a decade. Dreamscape is slow. It&#8217;s uncertain. It might not go anywhere beyond my own satisfaction. But it keeps me building for the right reasons — because I want to, not just because someone is paying me to.</p>
-
-
-
-<p class="wp-block-paragraph">That&#8217;s the best kind of side project: one that makes the main work better.</p>
+<p class="wp-block-paragraph">Those are exactly the muscles that separate a freelancer who burns out after two years from one who compounds their value over a decade. Dreamscape is slow. It’s uncertain. It might not go anywhere beyond my own satisfaction. But it keeps me building for the right reasons — because I want to, not just because someone is paying me to.</p>
+<p class="wp-block-paragraph">That’s the best kind of side project: one that makes the main work better.</p>
 </div>
-                <div data-lang-content="ro" hidden>
-<p class="wp-block-paragraph">Construiesc site-uri web ca profesie. În orele rămase — dimineți devreme, nopți târzii, câte un weekend — construiesc un joc numit Dreamscape. Cele două lucruri sună ca și cum ar fi în competiție. Nu sunt. Se alimentează reciproc în moduri la care nu m-aș fi gândit când am început.</p>
-
-
-
-<h2 class="wp-block-heading">Ce este de fapt Dreamscape</h2>
-
-
-
-<p class="wp-block-paragraph">Dreamscape este un RPG narativ construit în Ren&#8217;Py, motorul de visual novel. Povestea este plasată într-o lume unde oamenii pot intra în vise comune — un mix de mister, thriller psihologic și aventură bogată în lore. Eu fac scrierea, designul, codul, direcția artistică. Este un proiect solo în orice sens al cuvântului.</p>
-
-
-
-<p class="wp-block-paragraph">Asta sună nebunesc alături de un job full-time și un program de freelancing. Într-un fel, chiar este. Dar este și cel mai util lucru pe care îl fac pentru meșteșugul meu.</p>
-
-
-
-<h2 class="wp-block-heading">Ce îți învață game dev-ul despre web dev</h2>
-
-
-
-<p class="wp-block-paragraph">Jocurile nu tolerează UX-ul prost. Un meniu confuz, o tranziție lentă, un dialog cu două propoziții prea mult — jucătorii renunță. Utilizatorii web sunt mai răbdători, dar nu cu mult. Lucrând la Dreamscape am devenit nemilos în privința fluxului: ce se întâmplă după ce cineva dă click? Ce simt? Unde se duce privirea lor?</p>
-
-
-
-<p class="wp-block-paragraph">Ren&#8217;Py forțează și un management curat al stării care se mapează direct la modul în care gândesc despre fluxurile de date WordPress. Personajele au stări. Scenele au condiții. Dacă nu urmărești starea cu atenție, ramificațiile poveștii se strică. Dacă nu urmărești stările formularelor WordPress cu atenție, pipeline-urile de automatizare se strică. Aceeași problemă, suprafețe diferite.</p>
-
-
-
-<h2 class="wp-block-heading">Adevăratul motiv pentru care fac asta</h2>
-
-
-
-<p class="wp-block-paragraph">Munca cu clienții plătește facturile și ascute abilități specifice — livrare rapidă, comunicare clară, rezolvarea problemelor reale sub presiunea timpului. Game dev construiește alți mușchi: viziune pe termen lung, rezistență creativă, capacitatea de a lucra luni de zile fără validare externă.</p>
-
-
-
-<p class="wp-block-paragraph">Aceștia sunt exact mușchii care îi diferențiază pe freelancerii care se epuizează după doi ani de cei care își multiplică valoarea de-a lungul unui deceniu. Dreamscape este lent. Este incert. Poate nu va merge nicăieri în afara propriei mele satisfacții. Dar mă menține să construiesc din motive corecte — pentru că vreau, nu doar pentru că cineva mă plătește.</p>
-
-
-
-<p class="wp-block-paragraph">Acesta este cel mai bun tip de proiect secundar: unul care îmbunătățește munca principală.</p>
 </div>
-                        <div data-lang-content="ru" hidden><p>Я строю сайты на жизнь. В оставшиеся часы — ранние утра, поздние вечера, редкие выходные — я строю игру под названием Dreamscape. Звучит так, будто они конкурируют. Нет. Они питают друг друга способами, которых я не ожидал в начале.</p>
-<h2>Что такое Dreamscape</h2>
-<p>Dreamscape — нарративная RPG на Ren&#8217;Py, движке для визуальных новелл. История разворачивается в мире, где люди могут входить в общие сны — что-то среднее между детективом, психологическим триллером и приключением с богатым лором. Я делаю текст, дизайн, код, художественное руководство. Полностью сольный проект во всех смыслах.</p>
-<p>Это звучит безумно рядом с основной работой и фрилансом. Немного так и есть. Но это и самое полезное, что я делаю для своего мастерства.</p>
-<h2>Чему геймдев учит в веб-разработке</h2>
-<p>Игры не терпят плохой UX. Запутанное меню, медленный переход, диалог на две лишние фразы — игроки уходят. Пользователи интернета терпеливее, но ненамного. Работа над Dreamscape сделала меня беспощадным к флоу: что происходит после клика? Что они чувствуют? Куда идёт взгляд?</p>
-<p>Ren&#8217;Py также принуждает к чистому управлению состоянием, которое напрямую отображается на то, как я думаю о потоках данных WordPress. У персонажей есть состояния. У сцен — условия. Если не следишь за состоянием внимательно — ветки истории ломаются. Если не следишь за состояниями форм WordPress — ломаются пайплайны автоматизации. Одна и та же проблема, разные поверхности.</p>
-<h2>Настоящая причина, почему я это делаю</h2>
-<p>Клиентская работа оплачивает счета и точит конкретные навыки — быстрая сдача, чёткая коммуникация, решение реальных задач под давлением дедлайнов. Геймдев строит другие мышцы: долгосрочное видение, творческая выносливость, способность работать над чем-то месяцами без внешней валидации.</p>
-<p>Это именно те мышцы, которые отличают фрилансера, выгорающего через два года, от того, кто накапливает ценность в течение десятилетия. Dreamscape — медленный. Неопределённый. Может, не выйдет ничего дальше собственного удовлетворения. Но он держит меня в строю по правильным причинам — потому что я хочу, а не потому что кто-то платит.</p>
-<p>Лучший вид побочного проекта — тот, который улучшает основную работу.</p>
-</div>
-            </div>
 </article>
-
 <div class="px-6 pb-12">
-    <div class="max-w-3xl mx-auto pt-8 border-t border-white/5 flex flex-wrap items-center gap-3">
-            </div>
+<div class="max-w-3xl mx-auto pt-8 border-t border-white/5 flex flex-wrap items-center gap-3">
 </div>
-
+</div>
 <div class="px-6 pb-16">
-    <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <a href="/blog/how-i-build-sites-for-clients/"
-               class="glass-panel rounded-xl p-6 group hover:border-primary/40 transition-all">
-                <div class="flex items-center gap-2 text-[10px] font-mono text-slate-600 mb-2">
-                    <span class="material-symbols-outlined text-sm">arrow_back</span> <span data-i18n="blog.prev">Previous</span>
-                </div>
-                <div class="font-display font-bold cf-nav-title text-sm group-hover:text-primary-glow transition-colors leading-snug"><span data-lang-content="en">How I Build Sites for Clients: Simple WordPress, Custom Builds, and AI Automations</span><span data-lang-content="ro" hidden>Cum Construiesc Site-uri pentru Clienți: WordPress Simplu, Build-uri Custom și Automatizări AI</span><span data-lang-content="ru" hidden>Как Я Строю Сайты для Клиентов: Простой WordPress, Кастомные Сборки и AI-Автоматизации</span></div>
-            </a>
-        
-            </div>
+<div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+<a class="glass-panel rounded-xl p-6 group hover:border-primary/40 transition-all" href="/blog/how-i-build-sites-for-clients/">
+<div class="flex items-center gap-2 text-[10px] font-mono text-slate-600 mb-2">
+<span class="material-symbols-outlined text-sm">arrow_back</span> <span data-i18n="blog.prev">Previous</span>
 </div>
-
+<div class="font-display font-bold cf-nav-title text-sm group-hover:text-primary-glow transition-colors leading-snug"><span data-cf-translation-group="3">How I Build Sites for Clients: Simple WordPress, Custom Builds, and AI Automations</span></div>
+</a>
+</div>
+</div>
 <section class="pb-28 px-6">
-    <div class="max-w-3xl mx-auto glass-panel rounded-xl p-10 md:p-14 text-center border border-primary/20">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded border border-primary/30 bg-primary/5 mb-6">
-            <span class="text-xs font-mono text-primary-glow tracking-widest uppercase">// NEXT_STEP</span>
-        </div>
-        <h2 class="text-3xl md:text-4xl font-display font-bold cf-post-title mb-4 tracking-tighter" data-i18n="blog.cta_title">
+<div class="max-w-3xl mx-auto glass-panel rounded-xl p-10 md:p-14 text-center border border-primary/20">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded border border-primary/30 bg-primary/5 mb-6">
+<span class="text-xs font-mono text-primary-glow tracking-widest uppercase">// NEXT_STEP</span>
+</div>
+<h2 class="text-3xl md:text-4xl font-display font-bold cf-post-title mb-4 tracking-tighter" data-i18n="blog.cta_title">
             Want this built for you?
         </h2>
-        <p class="text-slate-400 mb-8 font-mono text-sm" data-i18n="blog.cta_sub">Fixed scope. Fixed price. Fixed deadline.</p>
-        <a href="/contact.html?objective=blog-cta"
-           class="cf-blog-cta-btn bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-8 py-3 rounded text-sm font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong inline-flex items-center gap-2">
+<p class="text-slate-400 mb-8 font-mono text-sm" data-i18n="blog.cta_sub">Fixed scope. Fixed price. Fixed deadline.</p>
+<a class="cf-blog-cta-btn bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-8 py-3 rounded text-sm font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong inline-flex items-center gap-2" href="/contact?objective=blog-cta">
             // SUMMON_AGENT
             <span class="material-symbols-outlined text-sm">arrow_forward</span>
-        </a>
-    </div>
+</a>
+</div>
 </section>
 </main>
 <footer class="bg-obsidian pt-24 pb-12 px-6 border-t border-primary/20 relative">
-        <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent shadow-[0_0_15px_rgba(99,102,241,0.5)]">
-        </div>
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20">
-                <div class="md:col-span-3">
-                    <div class="flex items-center gap-3 mb-6">
-                        <img src="/assets/images/cf-mark.png?v=3" alt="Camelot Flows" class="object-contain" style="height:56px;width:auto" />
-                        <span class="font-display text-xl font-bold tracking-tighter uppercase text-white">Camelot
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+</div>
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20">
+<div class="md:col-span-3">
+<div class="flex items-center gap-3 mb-6">
+<img alt="Camelot Flows" class="object-contain" src="/assets/images/cf-mark.png?v=3" style="height:56px;width:auto">
+<span class="font-display text-xl font-bold tracking-tighter uppercase text-white">Camelot
                             Flows</span>
-                    </div>
-                    <p class="text-slate-500 mb-8 text-sm leading-relaxed font-mono">
-                        <span data-i18n="common.footer.location_line_1"><span class="text-primary">&gt;</span> Location: Chisinau, MD</span><br />
-                        <span data-i18n="common.footer.location_line_2"><span class="text-primary">&gt;</span> Coordinates: 47.0105° N, 28.8638° E</span><br />
-                        <span data-i18n="common.footer.location_line_3"><span class="text-primary">&gt;</span> Mission: Awwwards-Tier Design & AI Automation.</span>
-                    </p>
-                    <div class="flex gap-4">
-                        <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400"
-                            href="https://www.linkedin.com/in/alex-buzi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        </a>
-
-                        <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400"
-                            href="/contact.html">
-                            <span class="material-symbols-outlined text-lg">mail</span>
-                        </a>
-                        <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400"
-                            href="/contact.html">
-                            <span class="material-symbols-outlined text-lg">alternate_email</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="md:col-span-2">
-                    <h5
-                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_protocol">
+</div>
+<p class="text-slate-500 mb-8 text-sm leading-relaxed font-mono">
+<span data-i18n="common.footer.location_line_1"><span class="text-primary">&gt;</span> Location: Chisinau, MD</span><br>
+<span data-i18n="common.footer.location_line_2"><span class="text-primary">&gt;</span> Coordinates: 47.0105° N, 28.8638° E</span><br>
+<span data-i18n="common.footer.location_line_3"><span class="text-primary">&gt;</span> Mission: Awwwards-Tier Design &amp; AI Automation.</span>
+</p>
+<div class="flex gap-4">
+<a aria-label="LinkedIn" class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="https://www.linkedin.com/in/alex-buzi/" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+</a>
+<a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="/contact">
+<span class="material-symbols-outlined text-lg">mail</span>
+</a>
+<a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="/contact">
+<span class="material-symbols-outlined text-lg">alternate_email</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_protocol">
                         Protocol</h5>
-                    <ul class="space-y-3 text-slate-500 text-sm font-mono">
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/arsenal.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_protocol_arsenal">The Arsenal</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/merlin.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_protocol_merlin">Merlin</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/case-studies.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_protocol_cases">Case Studies</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/for-agencies.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_protocol_agencies">Agencies</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/blog/"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> <span data-i18n="common.footer.blog">Blog</span></a></li>
-                    </ul>
-                </div>
-                <div class="md:col-span-2">
-                    <h5
-                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_services">
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/arsenal"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_protocol_arsenal">The Arsenal</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/merlin"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_protocol_merlin">Merlin</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/case-studies"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_protocol_cases">Case Studies</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/for-agencies"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_protocol_agencies">Agencies</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/blog/"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> <span data-i18n="common.footer.blog">Blog</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_services">
                         Services</h5>
-                    <ul class="space-y-3 text-slate-500 text-sm font-mono">
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/service-creation.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_services_creation">Site Creation</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/service-maintenance.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_services_maintenance">Maintenance</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/service-automation.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_services_automation">Automations</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/service-marketing.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_services_marketing">Marketing</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/audit"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_services_audit">Free Website Audit</span></a></li>
-                    </ul>
-                </div>
-                <div class="md:col-span-2">
-                    <h5
-                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_company">
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-creation"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_creation">Site Creation</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-maintenance"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_maintenance">Maintenance</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-automation"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_automation">Automations</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-marketing"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_marketing">Marketing</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/audit"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_audit">Free Website Audit</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_company">
                         Company</h5>
-                    <ul class="space-y-3 text-slate-500 text-sm font-mono">
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/about.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_company_about">About</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/work-with-me.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_company_work">Work With</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/legal.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_company_legal">Legal</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/contact.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_company_contact">Contact</span></a></li>
-                    </ul>
-                </div>
-                <div class="md:col-span-3">
-                    <h5
-                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_vanguard">
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/about"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_company_about">About</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/work-with-me"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_company_work">Work With</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/legal"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_company_legal">Legal</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/contact"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_company_contact">Contact</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-3">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_vanguard">
                         Vanguard</h5>
-                    <p class="text-slate-500 text-sm mb-6 leading-relaxed" data-i18n="common.footer.col_vanguard_lead">Weekly insights on AI automation sent
+<p class="text-slate-500 text-sm mb-6 leading-relaxed" data-i18n="common.footer.col_vanguard_lead">Weekly insights on AI automation sent
                         directly to your terminal.</p>
-                    <div
-                        class="flex gap-2 p-1 bg-white/5 rounded border border-white/10 focus-within:border-primary/50 transition-colors">
-                        <label for="newsletter-email" class="sr-only">Email address</label>
-                        <input
-                            id="newsletter-email"
-                            class="bg-transparent border-none focus:ring-0 text-sm flex-1 px-4 text-white font-mono placeholder:text-slate-600"
-                            placeholder="ENTER_EMAIL" type="email" data-i18n-attr="placeholder:common.footer.col_vanguard_placeholder" />
-                        <button
-                            class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded text-xs font-bold transition-colors font-mono" data-i18n="common.footer.col_vanguard_submit">[SUBMIT]</button>
-                    </div>
-                </div>
-            </div>
-            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-                <p class="text-xs text-slate-600 font-mono" data-i18n="common.footer.copyright">&copy; 2026 Camelot Flows. Built by Alex Buzi.</p>
-                <div class="flex flex-wrap justify-center gap-4 md:gap-8">
-                    <div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
-                        <span class="material-symbols-outlined text-sm text-green-500">wifi</span>
-                        <span data-i18n="common.footer.status_optimal">System Status: Optimal</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
-                        <span class="material-symbols-outlined text-sm text-blue-500">bolt</span>
-                        <span data-i18n="common.footer.status_lightning">Lightning Fast Performance</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <div id="custom-cursor"></div>
-
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-
-    <script src="/assets/js/locales.js"></script>
-    <script defer src="/assets/js/i18n.js"></script>
-    <script defer src="/assets/js/camelot-gsap.js"></script>
-    <script defer src="/assets/site.js"></script>
-
+<div class="flex gap-2 p-1 bg-white/5 rounded border border-white/10 focus-within:border-primary/50 transition-colors">
+<label class="sr-only" for="newsletter-email">Email address</label>
+<input class="bg-transparent border-none focus:ring-0 text-sm flex-1 px-4 text-white font-mono placeholder:text-slate-600" data-i18n-attr="placeholder:common.footer.col_vanguard_placeholder" id="newsletter-email" placeholder="ENTER_EMAIL" type="email">
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded text-xs font-bold transition-colors font-mono" data-i18n="common.footer.col_vanguard_submit">[SUBMIT]</button>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-xs text-slate-600 font-mono" data-i18n="common.footer.copyright">© 2026 Camelot Flows. Built by Alex Buzi.</p>
+<div class="flex flex-wrap justify-center gap-4 md:gap-8">
+<div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+<span class="material-symbols-outlined text-sm text-green-500">wifi</span>
+<span data-i18n="common.footer.status_optimal">System Status: Optimal</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+<span class="material-symbols-outlined text-sm text-blue-500">bolt</span>
+<span data-i18n="common.footer.status_lightning">Lightning Fast Performance</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<div id="custom-cursor"></div>
+<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="/assets/js/locales.js"></script>
+<script defer="" src="/assets/js/i18n.js"></script>
+<script defer="" src="/assets/js/camelot-gsap.js"></script>
+<script defer="" src="/assets/site.js"></script>
 </body>
-
 </html>

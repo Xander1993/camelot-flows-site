@@ -10,7 +10,7 @@
   if (stored === 'granted' || stored === 'denied') return; // choice already made
 
   var lang = 'en';
-  try { lang = document.documentElement.getAttribute('data-cf-lang') || localStorage.getItem('cf_lang') || 'en'; } catch (e) {}
+  try { lang = document.documentElement.getAttribute('data-cf-static-lang') || document.documentElement.getAttribute('data-cf-lang') || localStorage.getItem('cf_lang') || 'en'; } catch (e) {}
   if (['en', 'ro', 'ru'].indexOf(lang) === -1) lang = 'en';
 
   var T = {
@@ -33,6 +33,7 @@
       decline: 'Отклонить'
     }
   }[lang];
+  var privacyHref = lang === 'en' ? '/privacy' : '/' + lang + '/privacy';
 
   function decide(granted) {
     try { localStorage.setItem(KEY, granted ? 'granted' : 'denied'); } catch (e) {}
@@ -79,7 +80,7 @@
     box.setAttribute('aria-live', 'polite');
     box.setAttribute('aria-label', 'Cookie consent');
     box.innerHTML =
-      '<p>' + T.text + ' <a href="/privacy">' + T.more + '</a></p>' +
+      '<p>' + T.text + ' <a href="' + privacyHref + '">' + T.more + '</a></p>' +
       '<div class="cf-consent-actions">' +
       '<button type="button" class="cf-decline">' + T.decline + '</button>' +
       '<button type="button" class="cf-accept">' + T.accept + '</button>' +

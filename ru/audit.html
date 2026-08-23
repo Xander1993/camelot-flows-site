@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+
+<html data-cf-static-lang="ru" data-i18n-page="audit" lang="ru">
+<head>
+<!-- CF: theme bootstrap (sync, before paint) -->
+<script>
+      (function () {
+        var html = document.documentElement;
+        try {
+          var c = document.cookie.match('(?:^|;) ?cf_theme=([^;]*)');
+          var t = c ? c[1] : (localStorage.getItem('cf_theme') || 'cozy');
+          html.setAttribute('data-theme', t);
+        } catch (e) { html.setAttribute('data-theme', 'cozy'); }
+        try {
+          if (sessionStorage.getItem('cf_loaded') === '1') {
+            html.classList.add('cf-skip-preloader');
+          }
+        } catch (e) {}
+        html.classList.add('js');
+      })();
+    </script>
+<!-- CF: lang bootstrap (sync, before paint) -->
+<script>
+      (function () {
+        var html = document.documentElement;
+        try {
+          var l = document.documentElement.lang || 'en';
+          if (['en','ro','ru'].indexOf(l) === -1) l = 'en';
+          html.setAttribute('lang', l);
+          html.setAttribute('data-cf-lang', l);
+          if (l !== 'en') html.setAttribute('data-i18n-loading', '1');
+        } catch (e) { html.setAttribute('lang', 'en'); }
+      })();
+    </script>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Ваш сайт незаметно теряет клиентов? | Camelot Flows</title>
+<meta content="Вставьте адрес ниже. Примерно за двадцать секунд вы получите ту же проверку пути к конверсии, которую я делаю перед каждым проектом: битые ссылки click-to-call," name="description">
+<link href="https://camelotflows.dev/ru/audit" rel="canonical"><link href="https://camelotflows.dev/audit" hreflang="en" rel="alternate"><link href="https://camelotflows.dev/ro/audit" hreflang="ro" rel="alternate"><link href="https://camelotflows.dev/ru/audit" hreflang="ru" rel="alternate"><link href="https://camelotflows.dev/audit" hreflang="x-default" rel="alternate">
+
+
+
+
+<meta content="website" property="og:type">
+<meta content="Ваш сайт незаметно теряет клиентов? | Camelot Flows" property="og:title">
+<meta content="Вставьте адрес ниже. Примерно за двадцать секунд вы получите ту же проверку пути к конверсии, которую я делаю перед каждым проектом: битые ссылки click-to-call," property="og:description">
+<meta content="https://camelotflows.dev/assets/images/cozy-freelancer/cf-cozy-og-default.webp" property="og:image">
+<meta content="https://camelotflows.dev/audit" property="og:url">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="Ваш сайт незаметно теряет клиентов? | Camelot Flows" name="twitter:title">
+<meta content="Вставьте адрес ниже. Примерно за двадцать секунд вы получите ту же проверку пути к конверсии, которую я делаю перед каждым проектом: битые ссылки click-to-call," name="twitter:description">
+<meta content="https://camelotflows.dev/assets/images/cozy-freelancer/cf-cozy-og-default.webp" name="twitter:image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Camelot Flows Free Website Audit","url":"https://camelotflows.dev/ru/audit","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"provider":{"@type":"Organization","name":"Camelot Flows","url":"https://camelotflows.dev/ru/"},"description":"Free conversion-path website audit: click-to-call defects, business schema, contact paths, search snippet basics and mobile speed — explained in plain language.","inLanguage":"ru"}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="preload">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"></noscript>
+<link href="/assets/css/tailwind.built.css" rel="stylesheet">
+<link href="/assets/site.css?v=2" rel="stylesheet">
+<link href="/assets/css/camelot.css?v=6" rel="stylesheet">
+<link href="/assets/css/theme-night.css?v=2" rel="stylesheet">
+<link href="/assets/css/lang-switcher.css" rel="stylesheet">
+<link as="document" href="/ru/arsenal" rel="prefetch">
+<link as="document" href="/ru/merlin" rel="prefetch">
+<link as="document" href="/ru/contact" rel="prefetch">
+<link as="document" href="/ru/case-studies" rel="prefetch">
+<link as="document" href="/ru/about" rel="prefetch">
+<link href="/favicon.ico" rel="icon" type="image/x-icon">
+<link href="/favicon.png" rel="icon" sizes="32x32" type="image/png">
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+<!-- Google tag (gtag.js) — GA4 camelotflows.dev -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T4ZPEG1KSR"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+      try { if (localStorage.getItem('cf_consent') === 'granted') { gtag('consent', 'update', { analytics_storage: 'granted' }); } } catch (e) {}      gtag('js', new Date());
+      // Keep the admin QA key (?admin=KEY) out of GA4 page_location + browser history:
+      // capture it in memory, then strip the param from the URL BEFORE GA reads document.location
+      // for its first page_view (gtag.js loads async, so this synchronous strip wins the race).
+      try {
+        var _ap = new URLSearchParams(location.search);
+        if (_ap.get('admin')) {
+          window.__cfAdmin = _ap.get('admin');
+          _ap.delete('admin');
+          var _aq = _ap.toString();
+          history.replaceState(null, '', location.pathname + (_aq ? '?' + _aq : '') + location.hash);
+        }
+      } catch (e) {}
+      gtag('config', 'G-T4ZPEG1KSR');
+    </script>
+<style>
+      /* Top padding: clear the fixed nav. Built CSS lacks md:pt-56, so set it here by ID (beats the utility class). */
+      #audit-tool{padding-top:160px}
+      @media(min-width:768px){#audit-tool{padding-top:224px}}
+      /* Section separators: built CSS lacks mt-24/mt-20, so space the sections here. */
+      #audit-tool > section + section{margin-top:88px}
+      /* Audit tool is a dark-first design; remap its text + inputs for the cozy (light) theme so nothing turns invisible. */
+      [data-theme="cozy"] #audit-tool .text-white{color:#1f2622}
+      [data-theme="cozy"] #audit-tool .text-white\/75{color:rgba(31,38,34,.86)}
+      [data-theme="cozy"] #audit-tool .text-white\/70{color:rgba(31,38,34,.8)}
+      [data-theme="cozy"] #audit-tool .text-white\/60{color:rgba(31,38,34,.72)}
+      [data-theme="cozy"] #audit-tool .text-white\/55{color:rgba(31,38,34,.68)}
+      [data-theme="cozy"] #audit-tool .text-white\/50{color:rgba(31,38,34,.6)}
+      [data-theme="cozy"] #audit-tool .text-white\/40{color:rgba(31,38,34,.5)}
+      [data-theme="cozy"] #audit-tool .text-white\/35{color:rgba(31,38,34,.46)}
+      [data-theme="cozy"] #audit-tool .text-white\/30{color:rgba(31,38,34,.4)}
+      [data-theme="cozy"] #audit-tool .text-primary-glow{color:var(--terracotta,#c4785c)}
+      [data-theme="cozy"] #audit-tool input:not([type="checkbox"]){background:rgba(31,38,34,.04);border-color:rgba(31,38,34,.18)}
+      [data-theme="cozy"] #audit-tool input::placeholder{color:rgba(31,38,34,.4)}
+      /* A global input{width:100%} reset stretches the consent checkbox full-width (and appearance:none hides it), pushing its label into a narrow column. Restore a real, small checkbox. */
+      #audit-tool input[type="checkbox"]{appearance:auto;-webkit-appearance:auto;width:1rem;height:1rem;flex:0 0 auto;margin-top:2px;accent-color:#5f8a5a;cursor:pointer;background:none;border:0}
+      /* Night theme: the cozy base CSS darkens some text-white/NN opacities and theme-night.css misses /60,/70,/75 — force the whole audit tool back to white-on-dark so nothing turns invisible. */
+      [data-theme="night"] #audit-tool .text-white{color:#fff}
+      [data-theme="night"] #audit-tool .text-white\/75{color:rgba(255,255,255,.75)}
+      [data-theme="night"] #audit-tool .text-white\/70{color:rgba(255,255,255,.7)}
+      [data-theme="night"] #audit-tool .text-white\/60{color:rgba(255,255,255,.6)}
+      [data-theme="night"] #audit-tool .text-white\/55{color:rgba(255,255,255,.55)}
+      [data-theme="night"] #audit-tool .text-white\/50{color:rgba(255,255,255,.5)}
+      [data-theme="night"] #audit-tool .text-white\/45{color:rgba(255,255,255,.45)}
+      [data-theme="night"] #audit-tool .text-white\/40{color:rgba(255,255,255,.4)}
+      [data-theme="night"] #audit-tool .text-white\/35{color:rgba(255,255,255,.35)}
+      [data-theme="night"] #audit-tool .text-white\/30{color:rgba(255,255,255,.3)}
+      /* --- Full-report UI: soft inner boxes, dividers, pass icons, benchmark bar (built CSS lacks these arbitrary utilities, so define them) --- */
+      #audit-tool .audit-soft{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.10);border-radius:.5rem}
+      [data-theme="cozy"] #audit-tool .audit-soft{background:rgba(31,38,34,.035);border-color:rgba(31,38,34,.12)}
+      #audit-tool .audit-divide{border-top:1px solid rgba(255,255,255,.10)}
+      [data-theme="cozy"] #audit-tool .audit-divide{border-top-color:rgba(31,38,34,.12)}
+      #audit-tool .audit-pass-ic{color:#5fae7a}
+      [data-theme="cozy"] #audit-tool .audit-pass-ic{color:#3f7a52}
+      #audit-tool .audit-track{background:rgba(255,255,255,.10)}
+      [data-theme="cozy"] #audit-tool .audit-track{background:rgba(31,38,34,.10)}
+      /* Mobile screenshot preview: built CSS lacks max-w-[280px], so the PSI shot stretched full-width (huge + blurry). Cap it at phone size and pair it with the "what to check" panel so the row doesn't float in empty space. */
+      #audit-tool #audit-shot-wrap{margin-top:1.25rem}
+      #audit-tool #audit-shot{max-width:280px;width:100%;height:auto}
+      #audit-tool .audit-shot-row{display:flex;flex-wrap:wrap;gap:1.25rem;align-items:stretch}
+      #audit-tool .audit-shot-tips{flex:1 1 280px;min-width:250px;display:flex;flex-direction:column;justify-content:center}
+      #audit-tool .audit-shot-list{list-style:none;margin:0 0 .75rem;padding:0;display:flex;flex-direction:column;gap:.5rem}
+      /* --- Print / Save as PDF: show only the report, dark text on white.
+         Chrome's print pipeline renders backdrop-filter/blur layers as BLANK, and all
+         the report content lives inside .glass-panel (which uses backdrop-filter), so
+         those filters must be stripped or the whole PDF comes out empty. --- */
+      @media print{
+        nav, footer, #audit-form, #audit-status, #audit-gate, #bg-orbs, .grain-overlay, .scroll-progress, #preloader, .cf-cursor, #custom-cursor, .mix-blend-screen, .audit-noprint{display:none !important}
+        html, body{background:#fff !important}
+        #audit-tool{padding:0 !important}
+        #audit-results{margin-top:0 !important}
+        #audit-tool *{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;filter:none !important;mix-blend-mode:normal !important;box-shadow:none !important;text-shadow:none !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+        #audit-tool .glass-panel{background:#fff !important;border:1px solid #ddd !important}
+        #audit-tool, #audit-tool h1, #audit-tool h2, #audit-tool h3, #audit-tool p, #audit-tool span, #audit-tool li, #audit-tool div{color:#111 !important}
+        #audit-tool .audit-pass-ic{color:#2e7d4f !important}
+      }
+      /* SERP / social-share preview cards — faithful light mockups (Google/WhatsApp are always on white), intentionally theme-independent */
+      #audit-tool .cf-card{background:#fff;border:1px solid #e3e3e6;border-radius:.6rem;color:#202124;overflow:hidden}
+      #audit-tool .cf-serp-title{color:#1a0dab}
+      #audit-tool .cf-serp-url,#audit-tool .cf-serp-desc{color:#4d5156}
+      #audit-tool .cf-muted{color:#70757a}
+      #audit-tool .cf-ph{background:#f1f1f3;color:#a3a6ab}
+    </style>
+<script defer="" src="/assets/js/cf-consent.js?v=1"></script>
+</head>
+<body class="theme-cozy font-body overflow-x-hidden selection:bg-primary selection:text-white">
+<a class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999999] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm focus:font-mono focus:shadow-neon" data-i18n="common.skip_link" href="#main-content">Перейти к основному содержанию</a>
+<div aria-atomic="true" aria-live="polite" class="sr-only" id="lang-announce" role="status"></div>
+<div aria-hidden="true" class="scroll-progress"></div>
+<div class="fixed inset-0 z-[999999] bg-obsidian flex flex-col items-center justify-center" id="preloader">
+<div class="absolute inset-0 grid-bg opacity-30"></div>
+<div class="w-32 h-32 relative flex items-center justify-center mb-8 z-10">
+<div class="absolute inset-0 rounded-full border-t-2 border-primary animate-spin"></div>
+<div class="absolute inset-2 rounded-full border-b-2 border-accent animate-[spin_2s_linear_infinite_reverse]"></div>
+<span class="material-symbols-outlined text-4xl text-white animate-pulse">design_services</span>
+</div>
+<div class="text-primary-glow font-mono text-[10px] tracking-[0.4em] uppercase mb-4 z-10" data-i18n="common.preloader_init" id="loader-text">Initializing Protocols...</div>
+<div class="w-64 h-[2px] bg-white/10 rounded-full overflow-hidden z-10">
+<div class="w-0 h-full bg-gradient-to-r from-primary to-accent" id="loader-bar"></div>
+</div>
+<div class="mt-4 font-mono text-white text-sm tracking-widest z-10" id="loader-percent">0%</div>
+</div>
+<div class="grain-overlay"></div>
+<div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none" id="bg-orbs">
+<div class="bg-orb absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-cobalt/20 rounded-full blur-[120px]"></div>
+<div class="bg-orb absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-accent/10 rounded-full blur-[100px]"></div>
+<div class="bg-orb absolute top-[40%] left-[30%] w-[30vw] h-[30vw] bg-primary/10 rounded-full blur-[150px]"></div>
+<div class="absolute inset-0 grid-bg"></div>
+</div>
+<nav class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-6 md:py-6">
+<div class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
+<div class="flex items-center">
+<img alt="Camelot Flows" class="h-16 md:h-28 w-auto object-contain" src="/assets/images/cf-logo-wordmark-2x.webp">
+</div>
+<div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.home" href="/ru/">[Главная]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.services" href="/ru/work-with-me">[Услуги]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.arsenal" href="/ru/arsenal">[Arsenal]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.merlin" href="/ru/merlin">[Merlin]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" data-i18n="common.nav.cases" href="/ru/case-studies">[Кейсы]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block" data-i18n="common.nav.agencies" href="/ru/for-agencies">[Агентствам]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" data-i18n="common.nav.pricing" href="/ru/?goto=pricing">[Цены]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.contact" href="/ru/contact">[Контакты]</a>
+</div>
+<div class="flex items-center gap-2">
+<a aria-label="Call Camelot Flows" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="tel:+37369555936" title="+373 69 555 936">
+<span class="material-symbols-outlined cf-phone-icon" style="font-size:18px">call</span>
+</a>
+<div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-500 status-dot animate-pulse"></div>
+<span class="text-[10px] font-mono text-emerald-500/80" data-i18n="common.nav.sys_online">SYS_ONLINE</span>
+</div>
+<div class="lang-switcher" data-cf-lang-switcher="">
+<button aria-expanded="false" aria-haspopup="listbox" aria-label="Язык" class="lang-trigger" data-i18n-attr="aria-label:common.lang_label" type="button">
+<span class="lang-current" data-cf-lang-current="">EN</span>
+<span class="material-symbols-outlined lang-chevron">expand_more</span>
+</button>
+<ul class="lang-menu" hidden="" role="listbox">
+<li data-lang="en" role="option" tabindex="-1"><a href="/audit" hreflang="en">EN</a></li>
+<li data-lang="ro" role="option" tabindex="-1"><a href="/ro/audit" hreflang="ro">RO</a></li>
+<li data-lang="ru" role="option" tabindex="-1"><a href="/ru/audit" hreflang="ru">RU</a></li>
+</ul>
+</div>
+<button aria-label="Open menu" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 transition-all text-slate-400" id="mobile-menu-toggle" type="button">
+<span class="material-symbols-outlined" style="font-size:20px">menu</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="theme-toggle" type="button">
+<span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
+<span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
+</button>
+<a class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong hidden lg:inline-flex items-center nav-cta" data-i18n="common.nav.summon_agent" href="/ru/contact?objective=build">[Hire_me]</a>
+</div>
+</div>
+<div class="hidden mt-2 max-w-7xl mx-auto" id="mobile-nav">
+<div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
+<div class="flex flex-col gap-1">
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.home" href="/ru/">[Главная]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.services" href="/ru/work-with-me">[Услуги]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.arsenal" href="/ru/arsenal">[Arsenal]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.merlin" href="/ru/merlin">[Merlin]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.cases" href="/ru/case-studies">[Кейсы]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.contact" href="/ru/contact">[Контакты]</a>
+<div class="mx-3 my-2 h-px bg-white/10"></div>
+<a class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent" href="/ru/contact?service=build">[Hire_me]</a>
+</div>
+</div>
+</div>
+<script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");var open=!menu.classList.contains("hidden");btn.setAttribute("aria-expanded",open?"true":"false");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");}});document.querySelectorAll("#mobile-nav a").forEach(function(a){a.addEventListener("click",function(){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");});});}})();</script>
+</nav>
+<a aria-hidden="true" id="main-content" style="position:absolute;opacity:0;pointer-events:none;" tabindex="-1"></a>
+<a aria-hidden="true" id="main-content" style="position:absolute;opacity:0;pointer-events:none;" tabindex="-1"></a>
+<main class="relative pt-40 pb-20 px-0 min-h-screen overflow-x-hidden bg-obsidian text-charcoal" id="audit-tool">
+<!-- Hero + form -->
+<section class="max-w-6xl mx-auto px-6">
+<div class="font-mono text-[10px] tracking-[0.4em] uppercase text-primary-glow mb-4">// FREE_WEBSITE_AUDIT</div>
+<h1 class="font-display text-4xl md:text-6xl text-white leading-tight mb-6 max-w-4xl" data-i18n="pages.audit.hero_h1">Ваш сайт незаметно <span class="text-accent text-glow">теряет клиентов?</span></h1>
+<p class="text-lg text-white/70 max-w-2xl mb-4" data-i18n="pages.audit.hero_p1">Вставьте адрес ниже. Примерно за двадцать секунд вы получите ту же проверку пути к конверсии, которую я делаю перед каждым проектом: битые ссылки click-to-call, отсутствующая бизнес-схема, мёртвые контактные пути, скорость на мобильном.</p>
+<p class="text-sm text-white/50 max-w-2xl mb-10" data-i18n="pages.audit.hero_p2">Без аккаунта и без обязательств. Проверяется только та страница, которую вы отправили, и ничего о вашем сайте не сохраняется после формирования отчёта.</p>
+<form class="glass-panel rounded-lg p-6 md:p-8 border-l-4 border-l-primary/50 max-w-3xl" id="audit-form" novalidate="">
+<label class="block font-mono text-[10px] tracking-[0.3em] uppercase text-white/60 mb-3" data-i18n="pages.audit.form_label" for="audit-url">Адрес вашего сайта</label>
+<div class="flex flex-col md:flex-row gap-4">
+<input class="flex-1 bg-white/5 border border-white/15 rounded-md px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-primary font-mono text-sm" data-i18n-attr="placeholder:pages.audit.form_placeholder" id="audit-url" name="url" placeholder="https://your-business.md" required="" type="url">
+<button class="bg-primary hover:bg-primary/90 text-white font-semibold rounded-md px-8 py-3 transition-colors whitespace-nowrap" data-i18n="pages.audit.form_submit" id="audit-submit" type="submit">Запустить бесплатный аудит</button>
+</div>
+<p class="text-sm mt-3 hidden" id="audit-error" style="color:#ff7a7a"></p>
+<p class="text-[11px] text-white/35 mt-4" data-i18n="pages.audit.form_privacy">Запуская аудит, вы соглашаетесь с <a class="underline hover:text-white/60" href="/ru/privacy">политикой конфиденциальности</a>. Одна страница запрашивается один раз для формирования отчёта; больше ничего не затрагивается.</p>
+</form>
+<!-- progress -->
+<div class="hidden mt-10 glass-panel rounded-lg p-6 text-center max-w-3xl" id="audit-status">
+<div class="inline-block w-8 h-8 rounded-full border-t-2 border-primary animate-spin mb-4"></div>
+<p class="font-mono text-xs tracking-[0.25em] uppercase text-white/60" data-i18n="pages.audit.status_text" id="audit-status-text">Загружаем вашу страницу…</p>
+</div>
+<!-- results -->
+<div class="hidden mt-10 max-w-4xl" id="audit-results">
+<!-- shared-report notice (shown only when re-rendering a saved /audit?r=<id> link) -->
+<div class="hidden glass-panel rounded-lg p-4 mb-6 border-l-4 border-l-accent/60 flex items-center gap-3 audit-noprint" id="audit-shared-notice">
+<span class="material-symbols-outlined text-accent shrink-0" style="font-size:20px">link</span>
+<p class="text-white/70 text-sm" data-i18n="pages.audit.shared_notice">Вы смотрите сохранённый отчёт аудита. В любой момент можно запустить новый ниже.</p>
+</div>
+<!-- score / grade headline -->
+<div class="glass-panel rounded-lg p-6 md:p-8 mb-6">
+<div class="flex flex-col md:flex-row md:items-center gap-6">
+<div class="text-center md:text-left shrink-0">
+<div class="font-mono text-[10px] tracking-[0.3em] uppercase text-white/50 mb-2" data-i18n="pages.audit.score_label">Оценка пути к конверсии</div>
+<div class="flex items-baseline gap-3 justify-center md:justify-start">
+<span class="font-display text-6xl leading-none" id="audit-grade" style="color:var(--terracotta,#c4785c)">—</span>
+<span><span class="font-display text-3xl text-white" id="audit-score">—</span><span class="text-white/40 text-lg">/100</span></span>
+</div>
+<div class="font-mono text-[11px] tracking-[0.2em] uppercase mt-2" id="audit-band"></div>
+</div>
+<p class="text-white/75 text-base md:text-lg flex-1" id="audit-summary"></p>
+</div>
+<!-- honest scope: this tool checks a single page, not the whole site -->
+<p class="font-mono text-[10px] tracking-[0.15em] uppercase text-white/35 mt-4" data-i18n="pages.audit.scope_note">Аудит только одной страницы — проверяется отправленная страница, а не весь сайт.</p>
+<!-- benchmark vs a typical local-business site -->
+<div class="hidden mt-6 pt-5 audit-divide" id="audit-bench">
+<div class="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-white/40 mb-2">
+<span data-i18n="pages.audit.bench_you">Ваша оценка</span>
+<span id="audit-bench-typ"></span>
+</div>
+<div class="relative h-2 rounded-full audit-track">
+<div class="h-2 rounded-full transition-all duration-1000" id="audit-bench-fill" style="width:0%;background:var(--terracotta,#c4785c)"></div>
+<div class="absolute -top-1 w-px h-4" id="audit-bench-marker" style="left:75%;background:currentColor;opacity:.45"></div>
+</div>
+</div>
+</div>
+<!-- The AI read: strategist judgment (5-second clarity + AI-search readiness) -->
+<div class="hidden glass-panel rounded-lg p-6 md:p-8 mb-6 border-l-4 border-l-accent/60" id="audit-airead">
+<h3 class="font-display text-xl text-white mb-1" data-i18n="pages.audit.airead_title">Как тебя читает AI</h3>
+<p class="text-white/45 text-xs mb-5" data-i18n="pages.audit.airead_caveat">Как ИИ читает твою страницу, только по тому, что на ней есть — не гарантия.</p>
+<div class="font-mono text-[10px] tracking-[0.2em] uppercase text-white/40 mb-3" data-i18n="pages.audit.airead_clarity">Тест 5 секунд</div>
+<ul class="space-y-3 mb-6" id="audit-clarity"></ul>
+<div class="audit-soft p-4">
+<div class="flex items-center gap-3 mb-2">
+<span class="font-mono text-[10px] tracking-[0.2em] uppercase text-white/40" data-i18n="pages.audit.aeo_label">Готовность к AI-поиску</span>
+<span class="font-mono text-[10px] tracking-[0.15em] uppercase px-2 py-[2px] rounded-full" id="audit-aeo-chip"></span>
+</div>
+<p class="text-white/70 text-sm mb-2" data-i18n="pages.audit.aeo_q">Порекомендует ли ChatGPT или Google AI вас с этой страницы?</p>
+<p class="text-white/60 text-sm mb-2" id="audit-aeo-note"></p>
+<ul class="space-y-1" id="audit-aeo-reasons"></ul>
+</div>
+</div>
+<!-- how you show up: Google result + social share + screenshot -->
+<div class="hidden glass-panel rounded-lg p-6 md:p-8 mb-6" id="audit-preview">
+<h3 class="font-display text-xl text-white mb-1" data-i18n="pages.audit.preview_title">Как ты выглядишь</h3>
+<p class="text-white/50 text-sm mb-5" data-i18n="pages.audit.preview_sub">Что видит клиент ещё до того, как попадёт на сайт.</p>
+<div class="grid md:grid-cols-2 gap-5">
+<div>
+<div class="font-mono text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2" data-i18n="pages.audit.preview_serp">Результат в Google</div>
+<div class="cf-card p-4" id="audit-serp"></div>
+</div>
+<div>
+<div class="font-mono text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2" data-i18n="pages.audit.preview_social">Шеринг в WhatsApp / соцсети</div>
+<div class="cf-card" id="audit-social"></div>
+</div>
+</div>
+<div class="hidden" id="audit-shot-wrap">
+<div class="font-mono text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2" data-i18n="pages.audit.preview_shot">Скриншот на мобильном</div>
+<div class="audit-shot-row">
+<img alt="" class="rounded-lg border border-white/10 shrink-0" id="audit-shot">
+<div class="audit-soft p-5 audit-shot-tips">
+<p class="text-white/70 text-sm mb-3" data-i18n="pages.audit.shot_intro">Это первый экран, который клиент видит на телефоне — именно там происходит большинство локальных поисков. Проверка за пять секунд:</p>
+<ul class="audit-shot-list">
+<li class="flex items-start gap-2 text-white/70 text-sm"><span aria-hidden="true" class="material-symbols-outlined text-white/35 shrink-0" style="font-size:18px">chevron_right</span><span data-i18n="pages.audit.shot_check1">Сразу понятно, что вы предлагаете и где работаете.</span></li>
+<li class="flex items-start gap-2 text-white/70 text-sm"><span aria-hidden="true" class="material-symbols-outlined text-white/35 shrink-0" style="font-size:18px">chevron_right</span><span data-i18n="pages.audit.shot_check2">Кнопка звонка или сообщения доступна без прокрутки.</span></li>
+<li class="flex items-start gap-2 text-white/70 text-sm"><span aria-hidden="true" class="material-symbols-outlined text-white/35 shrink-0" style="font-size:18px">chevron_right</span><span data-i18n="pages.audit.shot_check3">Ничего не выглядит сломанным, обрезанным или сжатым.</span></li>
+</ul>
+<p class="text-white/45 text-xs" data-i18n="pages.audit.shot_note">Если что-то не проходит проверку здесь, это видит каждый мобильный посетитель.</p>
+</div>
+</img></div>
+</div>
+</div>
+<!-- what's already working -->
+<div class="hidden glass-panel rounded-lg p-6 md:p-8 mb-6" id="audit-passed">
+<h3 class="font-display text-xl text-white mb-4" data-i18n="pages.audit.passed_title">Что уже работает</h3>
+<ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2" id="audit-passed-list"></ul>
+</div>
+<!-- findings -->
+<ol class="space-y-4" id="audit-findings"></ol>
+<!-- mobile speed measuring (phase 2) -->
+<div class="hidden glass-panel rounded-lg p-5 mt-4 flex items-center gap-3" id="audit-speed-pending">
+<span class="inline-block w-4 h-4 rounded-full border-t-2 border-primary animate-spin shrink-0"></span>
+<span class="font-mono text-xs tracking-[0.2em] uppercase text-white/60" data-i18n="pages.audit.speed_measuring">Измеряю скорость на мобильном (Google PageSpeed)…</span>
+</div>
+<!-- competitor compare -->
+<div class="hidden glass-panel rounded-lg p-6 md:p-8 mt-6" id="audit-compare-box">
+<h3 class="font-display text-xl text-white mb-1" data-i18n="pages.audit.cmp_title">Сравни себя с конкурентами</h3>
+<p class="text-white/50 text-sm mb-5" data-i18n="pages.audit.cmp_sub">Добавь до двух конкурентов и сравни ключевое на странице бок о бок.</p>
+<div class="flex flex-col md:flex-row gap-3 mb-3">
+<input class="flex-1 bg-white/5 border border-white/15 rounded-md px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-primary font-mono text-sm" data-i18n-attr="placeholder:pages.audit.cmp_ph1" id="audit-cmp-1" placeholder="konkurent1.ru" type="url">
+<input class="flex-1 bg-white/5 border border-white/15 rounded-md px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-primary font-mono text-sm" data-i18n-attr="placeholder:pages.audit.cmp_ph2" id="audit-cmp-2" placeholder="konkurent2.ru (необязательно)" type="url">
+<button class="bg-accent hover:bg-accent/90 text-white font-semibold rounded-md px-8 py-3 transition-colors whitespace-nowrap" data-i18n="pages.audit.cmp_btn" id="audit-cmp-go" type="button">Сравнить</button>
+</div>
+<p class="text-sm mb-3 hidden" id="audit-cmp-error" style="color:#ff7a7a"></p>
+<div class="hidden overflow-x-auto" id="audit-cmp-result"></div>
+</div>
+<!-- fix-plan lead capture (nothing above is hidden — this is an offer, not a lock) -->
+<div class="hidden glass-panel rounded-lg p-6 md:p-8 mt-6 border-l-4 border-l-accent/60" id="audit-gate">
+<div id="audit-gate-form">
+<h3 class="font-display text-2xl text-white mb-2" data-i18n="pages.audit.gate_title">Хотите это как приоритетный план исправлений?</h3>
+<p class="text-white/60 text-sm mb-5" data-i18n="pages.audit.gate_p">Всё перечислено выше, ничего не скрыто. Оставьте email, и я пришлю приоритетный PDF, который можно отдать любому разработчику, плюс примерную цену, чтобы сделать каждый пункт. Без спама.</p>
+<div class="flex flex-col md:flex-row gap-4">
+<input class="flex-1 bg-white/5 border border-white/15 rounded-md px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-primary font-mono text-sm" data-i18n-attr="placeholder:pages.audit.gate_email_ph" id="audit-email" placeholder="you@company.com" required="" type="email">
+<button class="bg-accent hover:bg-accent/90 text-white font-semibold rounded-md px-8 py-3 transition-colors whitespace-nowrap" data-i18n="pages.audit.gate_btn" id="audit-unlock" type="button">Пришлите мне план исправлений</button>
+</div>
+<label class="flex items-start gap-2 text-[11px] text-white/40 mt-4 cursor-pointer">
+<input class="mt-[2px]" id="audit-consent" type="checkbox">
+<span data-i18n="pages.audit.gate_consent">Согласен получать отчёт и иногда практические заметки по email. Без спама, отписаться можно в любой момент. <a class="underline hover:text-white/60" href="/ru/privacy">Конфиденциальность</a>.</span>
+</label>
+<p class="text-sm mt-3 hidden" id="audit-gate-error" style="color:#ff7a7a"></p>
+<div class="mt-5 pt-4 audit-divide flex flex-wrap items-center gap-x-6 gap-y-2">
+<button class="font-mono text-[11px] tracking-[0.15em] uppercase text-white/50 hover:text-white/80 transition-colors underline underline-offset-4" data-i18n="pages.audit.print_btn" id="audit-print" type="button">Или сохраните отчёт в PDF</button>
+<button class="hidden font-mono text-[11px] tracking-[0.15em] uppercase text-accent hover:text-white transition-colors underline underline-offset-4" data-i18n="pages.audit.copy_link_btn" id="audit-copy-link" type="button">Скопировать ссылку</button>
+</div>
+</div>
+<div class="hidden text-center py-4" id="audit-gate-done">
+<span class="material-symbols-outlined audit-pass-ic text-4xl mb-2">mark_email_read</span>
+<p class="text-white/80" data-i18n="pages.audit.gate_done">Принято. Скоро пришлю ваш приоритетный план исправлений. До связи.</p>
+</div>
+</div>
+<!-- post-audit CTA -->
+<div class="glass-panel rounded-lg p-6 md:p-8 mt-6 text-center audit-noprint">
+<h3 class="font-display text-2xl text-white mb-3" data-i18n="pages.audit.cta_title">Хотите, чтобы я это исправил, а не просто перечислил?</h3>
+<p class="text-white/60 text-sm max-w-xl mx-auto mb-6" data-i18n="pages.audit.cta_p">Большая часть того, что находит этот инструмент, для меня одна сфокусированная рабочая сессия. Фиксированная цена, согласованная до начала, без сюрпризов и без обязательных абонементов.</p>
+<a class="inline-block bg-primary hover:bg-primary/90 text-white font-semibold rounded-md px-10 py-4 transition-colors" data-i18n="pages.audit.cta_btn" href="/ru/contact?objective=audit">Обсудить исправления</a>
+</div>
+</div>
+</section>
+<!-- What gets checked -->
+<section class="max-w-6xl mx-auto px-6 mt-24 audit-noprint">
+<div class="font-mono text-[10px] tracking-[0.4em] uppercase text-primary-glow mb-4">// WHAT_GETS_CHECKED</div>
+<h2 class="font-display text-3xl md:text-4xl text-white mb-10" data-i18n="pages.audit.checks_h2">Дефекты, которые незаметно теряют заявки</h2>
+<div class="grid md:grid-cols-3 gap-6">
+<div class="glass-panel rounded-lg p-6"><span class="material-symbols-outlined text-3xl text-accent mb-3">call</span><h3 class="text-white font-semibold mb-2" data-i18n="pages.audit.card1_t">Ссылки click-to-call</h3><p class="text-white/55 text-sm" data-i18n="pages.audit.card1_d">Отсутствующие или битые ссылки tel: самый дорогой незаметный дефект для сервисного бизнеса. У реального клиента их было шесть, все мёртвые, в день проверки.</p></div>
+<div class="glass-panel rounded-lg p-6"><span class="material-symbols-outlined text-3xl text-accent mb-3">schema</span><h3 class="text-white font-semibold mb-2" data-i18n="pages.audit.card2_t">Бизнес-схема</h3><p class="text-white/55 text-sm" data-i18n="pages.audit.card2_d">Разметка LocalBusiness, которую читают Google Maps, локальная выдача и AI-ассистенты. Плюс проверка самовыставленной разметки звёзд, которая рискует штрафом Google.</p></div>
+<div class="glass-panel rounded-lg p-6"><span class="material-symbols-outlined text-3xl text-accent mb-3">contact_mail</span><h3 class="text-white font-semibold mb-2" data-i18n="pages.audit.card3_t">Контактные пути</h3><p class="text-white/55 text-sm" data-i18n="pages.audit.card3_d">Формы, email-ссылки, телефон, страница контактов. Сможет ли готовый купить посетитель реально до вас добраться, и за сколько касаний?</p></div>
+<div class="glass-panel rounded-lg p-6"><span class="material-symbols-outlined text-3xl text-accent mb-3">speed</span><h3 class="text-white font-semibold mb-2" data-i18n="pages.audit.card4_t">Скорость на мобильном</h3><p class="text-white/55 text-sm" data-i18n="pages.audit.card4_d">Оценки Google PageSpeed на мобильном соединении: оценка производительности и за сколько появляется основной контент.</p></div>
+<div class="glass-panel rounded-lg p-6"><span class="material-symbols-outlined text-3xl text-accent mb-3">travel_explore</span><h3 class="text-white font-semibold mb-2" data-i18n="pages.audit.card5_t">Основы поискового сниппета</h3><p class="text-white/55 text-sm" data-i18n="pages.audit.card5_d">Title, meta description, превью Open Graph. Как ваша страница выглядит в Google и в шаринге WhatsApp.</p></div>
+<div class="glass-panel rounded-lg p-6"><span class="material-symbols-outlined text-3xl text-accent mb-3">translate</span><h3 class="text-white font-semibold mb-2" data-i18n="pages.audit.card6_t">Многоязычная гигиена</h3><p class="text-white/55 text-sm" data-i18n="pages.audit.card6_d">hreflang и языковые декларации. Сделанные наполовину, они не дают ничего, что важно на рынках RO/RU.</p></div>
+</div>
+</section>
+<!-- Honesty note -->
+<section class="max-w-6xl mx-auto px-6 mt-20 audit-noprint">
+<div class="glass-panel rounded-lg p-6 md:p-8 border-l-4 border-l-white/20 max-w-4xl">
+<h2 class="font-display text-2xl text-white mb-3" data-i18n="pages.audit.honesty_h2">О чём этот аудит вам не скажет</h2>
+<p class="text-white/60 text-sm leading-relaxed" data-i18n="pages.audit.honesty_p">Он не пообещает вам трафик, позиции или сумму выручки; никто не может честно обещать это по одному сканированию страницы. Он находит <em>дефекты</em>: вещи, которые измеримо сломаны или отсутствуют на отправленной странице, каждая объяснена простым языком. Что делать со списком (исправить самому, отдать разработчику или обсудить со мной) полностью на ваше усмотрение.</p>
+</div>
+</section>
+</main>
+<footer class="bg-obsidian pt-24 pb-12 px-6 border-t border-primary/20 relative">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent shadow-[0_0_15px_rgba(99,102,241,0.5)]"></div>
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20">
+<div class="md:col-span-3">
+<div class="flex items-center gap-3 mb-6">
+<img alt="Camelot Flows" class="object-contain" src="/assets/images/cf-mark.png?v=3" style="height:56px;width:auto">
+<span class="font-display text-xl font-bold tracking-tighter uppercase text-white">Camelot Flows</span>
+</div>
+<p class="text-slate-500 mb-8 text-sm leading-relaxed font-mono">
+<span data-i18n="common.footer.location_line_1"><span class="text-primary">&gt;</span> Локация: Кишинёв, MD</span><br>
+<span data-i18n="common.footer.location_line_2"><span class="text-primary">&gt;</span> Координаты: 47.0105° N, 28.8638° E</span><br>
+<span data-i18n="common.footer.location_line_3"><span class="text-primary">&gt;</span> Миссия: Премиальные сайты. Актив — ваш.</span>
+</p>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_protocol">Протокол</h5>
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors" href="/ru/arsenal"><span data-i18n="common.footer.col_protocol_arsenal">Arsenal</span></a></li>
+<li><a class="hover:text-primary transition-colors" href="/ru/merlin"><span data-i18n="common.footer.col_protocol_merlin">Merlin</span></a></li>
+<li><a class="hover:text-primary transition-colors" href="/ru/case-studies"><span data-i18n="common.footer.col_protocol_cases">Кейсы</span></a></li>
+<li><a class="hover:text-primary transition-colors" href="/ru/for-agencies"><span data-i18n="common.footer.col_protocol_agencies">Агентствам</span></a></li>
+<li><a class="hover:text-primary transition-colors" href="/ru/blog/">Blog</a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_services">Услуги</h5>
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors" href="/ru/service-creation"><span data-i18n="common.footer.col_services_creation">Создание сайта</span></a></li>
+<li><a class="hover:text-primary transition-colors" href="/ru/service-maintenance"><span data-i18n="common.footer.col_services_maintenance">Поддержка</span></a></li>
+<li><a class="hover:text-primary transition-colors" href="/ru/service-automation"><span data-i18n="common.footer.col_services_automation">Автоматизация</span></a></li>
+<li><a class="hover:text-primary transition-colors" href="/ru/service-marketing"><span data-i18n="common.footer.col_services_marketing">Чтобы находили</span></a></li>
+<li><a class="hover:text-primary transition-colors" href="/ru/audit"><span data-i18n="common.footer.col_services_audit">Бесплатный аудит сайта</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_company">Мастерская</h5>
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors" href="/ru/about"><span data-i18n="common.footer.col_company_about">Обо мне</span></a></li>
+<li><a class="hover:text-primary transition-colors" href="/ru/work-with-me"><span data-i18n="common.footer.col_company_work">Сотрудничество</span></a></li>
+<li><a class="hover:text-primary transition-colors" href="/ru/legal"><span data-i18n="common.footer.col_company_legal">Условия</span></a></li>
+<li><a class="hover:text-primary transition-colors" href="/ru/contact"><span data-i18n="common.footer.col_company_contact">Контакты</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-3">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_vanguard">Авангард</h5>
+<p class="text-slate-500 text-sm mb-6 leading-relaxed" data-i18n="common.footer.col_vanguard_lead">Раз в неделю — материалы об AI-автоматизации, прямо в твой инбокс.</p>
+<form action="/ru/contact" class="flex gap-2 p-1 bg-white/5 rounded border border-white/10 focus-within:border-primary/50 transition-colors" method="get">
+<label class="sr-only" for="newsletter-email">Email address</label>
+<input class="bg-transparent border-none focus:ring-0 text-sm flex-1 px-4 text-white font-mono placeholder:text-slate-600" id="newsletter-email" name="email" placeholder="ENTER_EMAIL" required="" type="email">
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded text-xs font-bold transition-colors font-mono" data-i18n="common.footer.col_vanguard_submit">[SUBMIT]</button>
+</input></form>
+</div>
+</div>
+<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-xs text-slate-600 font-mono" data-i18n="common.footer.copyright">© 2026 Camelot Flows. Сделано Alex Buzi.</p>
+<div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+<span class="material-symbols-outlined text-sm text-green-500">wifi</span>
+<span data-i18n="common.footer.status_optimal">Состояние системы: оптимальное</span>
+</div>
+</div>
+</div>
+</footer>
+<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="/assets/js/locales.js?v=2"></script>
+<script defer="" src="/assets/js/i18n.js"></script>
+<script defer="" src="/assets/js/camelot-gsap.js"></script>
+<script defer="" src="/assets/site.js"></script>
+<script>
+/* Audit tool front-end: POST /api/audit, render all findings (nothing is email-gated); the email form only requests the manual fix plan. */
+(function () {
+  var form = document.getElementById('audit-form');
+  if (!form) return;
+  var els = {
+    url: document.getElementById('audit-url'),
+    submit: document.getElementById('audit-submit'),
+    err: document.getElementById('audit-error'),
+    status: document.getElementById('audit-status'),
+    statusText: document.getElementById('audit-status-text'),
+    results: document.getElementById('audit-results'),
+    score: document.getElementById('audit-score'),
+    grade: document.getElementById('audit-grade'),
+    band: document.getElementById('audit-band'),
+    bench: document.getElementById('audit-bench'),
+    benchFill: document.getElementById('audit-bench-fill'),
+    benchTyp: document.getElementById('audit-bench-typ'),
+    benchMarker: document.getElementById('audit-bench-marker'),
+    summary: document.getElementById('audit-summary'),
+    passed: document.getElementById('audit-passed'),
+    passedList: document.getElementById('audit-passed-list'),
+    list: document.getElementById('audit-findings'),
+    speedPending: document.getElementById('audit-speed-pending'),
+    gate: document.getElementById('audit-gate'),
+    gateForm: document.getElementById('audit-gate-form'),
+    gateDone: document.getElementById('audit-gate-done'),
+    email: document.getElementById('audit-email'),
+    unlock: document.getElementById('audit-unlock'),
+    consent: document.getElementById('audit-consent'),
+    gateErr: document.getElementById('audit-gate-error'),
+    print: document.getElementById('audit-print'),
+    copyLink: document.getElementById('audit-copy-link'),
+    sharedNotice: document.getElementById('audit-shared-notice'),
+    preview: document.getElementById('audit-preview'),
+    serp: document.getElementById('audit-serp'),
+    social: document.getElementById('audit-social'),
+    shotWrap: document.getElementById('audit-shot-wrap'),
+    shot: document.getElementById('audit-shot'),
+    airead: document.getElementById('audit-airead'),
+    clarity: document.getElementById('audit-clarity'),
+    aeoChip: document.getElementById('audit-aeo-chip'),
+    aeoNote: document.getElementById('audit-aeo-note'),
+    aeoReasons: document.getElementById('audit-aeo-reasons'),
+    compareBox: document.getElementById('audit-compare-box'),
+    cmp1: document.getElementById('audit-cmp-1'),
+    cmp2: document.getElementById('audit-cmp-2'),
+    cmpGo: document.getElementById('audit-cmp-go'),
+    cmpErr: document.getElementById('audit-cmp-error'),
+    cmpResult: document.getElementById('audit-cmp-result')
+  };
+  var auditedUrl = '';
+  var lastScore = 0;
+  var lastAudit = null; // { host, score, ids[] } for the competitor compare
+  var lastVariant = 'template';
+  var shareUrl = '';    // /audit?r=<id> for the current report, when it was persisted
+  var sharedId = '';    // set when the page is opened as /audit?r=<id> (re-render mode)
+  // Read the admin key from the in-memory stash set (and stripped from the URL) in the head;
+  // fall back to location.search only if that early block didn't run.
+  var adminKey = (window.__cfAdmin || new URLSearchParams(location.search).get('admin')) || '';
+  // Healthy-target reference for the score bar. Anchored to THIS tool's own grade
+  // rubric — 75 is the "Solid" B-grade floor (gradeLetter() returns B at >=75) — not
+  // an empirical "typical local site" figure. An honest heuristic target, no fabricated benchmark.
+  var TARGET = 75;
+
+  function curLang() { try { return (window.cfI18n && cfI18n.current && cfI18n.current()) || document.documentElement.getAttribute('lang') || 'en'; } catch (e) { return 'en'; } }
+  function t(key, fb) { try { var v = (window.cfI18n && cfI18n.t) ? cfI18n.t(key) : null; return (v && v !== key) ? v : fb; } catch (e) { return fb; } }
+
+  function cozy() { return document.documentElement.getAttribute('data-theme') === 'cozy'; }
+
+  var SEV = {
+    high:   { label: 'CRITICAL',  dark: '#ff7a7a', cozy: '#b3402e' },
+    medium: { label: 'IMPORTANT', dark: '#ffc46b', cozy: '#b07a1f' },
+    low:    { label: 'POLISH',    dark: '#7ab8ff', cozy: '#5f7a55' }
+  };
+  var GRADE = {
+    A: { dark: '#7ee0a8', cozy: '#3f7a52', band: 'band_a', def: 'Strong' },
+    B: { dark: '#a9e08a', cozy: '#5a7d3a', band: 'band_b', def: 'Solid' },
+    C: { dark: '#ffc46b', cozy: '#b07a1f', band: 'band_c', def: 'Needs work' },
+    D: { dark: '#ff9d5c', cozy: '#b85f2a', band: 'band_d', def: 'At risk' },
+    F: { dark: '#ff7a7a', cozy: '#b3402e', band: 'band_f', def: 'Critical' }
+  };
+  function gradeLetter(s) { return s >= 90 ? 'A' : s >= 75 ? 'B' : s >= 60 ? 'C' : s >= 40 ? 'D' : 'F'; }
+  function clampScore(v) { return Math.max(5, Math.min(100, Math.round(v))); }
+
+  // Set score + letter grade + band word + benchmark bar (called on phase 1, re-called when speed adjusts it).
+  function applyScore(score) {
+    lastScore = clampScore(score);
+    var g = GRADE[gradeLetter(lastScore)];
+    var col = cozy() ? g.cozy : g.dark;
+    els.score.textContent = lastScore;
+    els.grade.textContent = gradeLetter(lastScore);
+    els.grade.style.color = col;
+    els.band.textContent = t('pages.audit.' + g.band, g.def);
+    els.band.style.color = col;
+    els.benchFill.style.width = lastScore + '%';
+    els.benchFill.style.background = col;
+    els.benchTyp.textContent = t('pages.audit.bench_target', 'Healthy target') + ' · ' + TARGET;
+    if (els.benchMarker) els.benchMarker.style.left = TARGET + '%';
+    els.bench.classList.remove('hidden');
+  }
+
+  function track(name, params) {
+    try { if (window.gtag) gtag('event', name, params || {}); } catch (e) {}
+  }
+
+  function findingCard(x) {
+    var sev = SEV[x.severity] || SEV.low;
+    var color = cozy() ? sev.cozy : sev.dark;
+    var li = document.createElement('li');
+    li.className = 'glass-panel rounded-lg p-5 border-l-4';
+    li.style.borderLeftColor = color;
+    li.innerHTML =
+      '<div class="font-mono text-[10px] tracking-[0.25em] uppercase mb-2" style="color:' + color + '">' + t('pages.audit.sev_' + x.severity, sev.label) + '</div>' +
+      '<h3 class="text-white font-semibold mb-1"></h3>' +
+      '<p class="text-white/55 text-sm"></p>';
+    li.querySelector('h3').textContent = x.title;
+    li.querySelector('p').textContent = x.detail;
+    if (x.fix) {
+      var box = document.createElement('div');
+      box.className = 'audit-soft p-3 mt-3';
+      var lbl = document.createElement('div');
+      lbl.className = 'font-mono text-[9px] tracking-[0.2em] uppercase text-accent mb-1';
+      lbl.textContent = t('pages.audit.fix_label', 'How to fix') + (x.effort ? ' · ' + x.effort : '');
+      var fp = document.createElement('p');
+      fp.className = 'text-white/70 text-sm';
+      fp.textContent = x.fix;
+      box.appendChild(lbl);
+      box.appendChild(fp);
+      li.appendChild(box);
+    }
+    return li;
+  }
+
+  function addPassed(p) {
+    var li = document.createElement('li');
+    li.className = 'flex items-start gap-2 text-white/70 text-sm';
+    var ic = document.createElement('span');
+    ic.className = 'material-symbols-outlined audit-pass-ic shrink-0';
+    ic.style.fontSize = '18px';
+    ic.style.lineHeight = '20px';
+    ic.textContent = 'check_circle';
+    var sp = document.createElement('span');
+    sp.textContent = p.label;
+    li.appendChild(ic);
+    li.appendChild(sp);
+    els.passedList.appendChild(li);
+    els.passed.classList.remove('hidden');
+  }
+
+  function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+
+  // "How you show up" — Google SERP + social-share mockups built from the page's own title/meta/OG.
+  function renderPreviews(meta) {
+    if (!meta || !els.preview) return;
+    var host = meta.host || '';
+    els.serp.innerHTML = '';
+    var urlRow = el('div', 'flex items-center gap-2 mb-1');
+    if (host) { var fav = document.createElement('img'); fav.width = 16; fav.height = 16; fav.alt = ''; fav.style.borderRadius = '3px'; fav.onerror = function () { fav.remove(); }; fav.src = 'https://www.google.com/s2/favicons?domain=' + encodeURIComponent(host) + '&sz=64'; urlRow.appendChild(fav); }
+    urlRow.appendChild(el('span', 'cf-serp-url text-xs truncate', host));
+    els.serp.appendChild(urlRow);
+    els.serp.appendChild(el('div', 'cf-serp-title text-[17px] leading-snug mb-1', meta.title || (host + ' — ' + t('pages.audit.preview_no_title', 'Google will write a title for you'))));
+    if (meta.description) els.serp.appendChild(el('div', 'cf-serp-desc text-sm leading-snug', meta.description));
+    else els.serp.appendChild(el('div', 'cf-muted text-sm italic leading-snug', t('pages.audit.preview_no_desc', 'No description set — Google picks a random line, rarely the one that sells.')));
+    els.social.innerHTML = '';
+    if (meta.ogImage) {
+      var im = document.createElement('img'); im.alt = ''; im.style.width = '100%'; im.style.display = 'block'; im.style.aspectRatio = '1.91 / 1'; im.style.objectFit = 'cover';
+      im.onerror = function () { im.remove(); };
+      im.src = meta.ogImage;
+      els.social.appendChild(im);
+    } else {
+      var ph = el('div', 'cf-ph flex items-center justify-center'); ph.style.aspectRatio = '1.91 / 1';
+      var ic = el('span', 'material-symbols-outlined', 'hide_image'); ic.style.fontSize = '34px';
+      ph.appendChild(ic); els.social.appendChild(ph);
+    }
+    var sb = el('div', 'p-3');
+    sb.appendChild(el('div', 'cf-muted text-[11px] uppercase tracking-wide mb-1', host));
+    sb.appendChild(el('div', 'text-sm font-semibold leading-snug', meta.ogTitle || meta.title || host));
+    var sd = meta.ogDescription || meta.description;
+    if (sd) sb.appendChild(el('div', 'cf-serp-desc text-xs mt-1 leading-snug', sd.slice(0, 120)));
+    els.social.appendChild(sb);
+    els.preview.classList.remove('hidden');
+  }
+
+  // "The AI read" — strategist judgment panel.
+  function clarityRow(label, item) {
+    var ok = item && item.ok;
+    var li = el('li', 'flex items-start gap-3');
+    var ic = el('span', 'material-symbols-outlined shrink-0', ok ? 'check_circle' : 'error');
+    ic.style.fontSize = '20px';
+    ic.style.color = ok ? (cozy() ? '#3f7a52' : '#5fae7a') : (cozy() ? '#b07a1f' : '#ffc46b');
+    var box = el('div');
+    box.appendChild(el('div', 'text-white font-medium text-sm', label));
+    box.appendChild(el('div', 'text-white/55 text-sm', (item && item.note) || ''));
+    li.appendChild(ic); li.appendChild(box);
+    return li;
+  }
+  function renderAiRead(ai) {
+    if (!ai || !els.airead) return;
+    els.clarity.innerHTML = '';
+    els.clarity.appendChild(clarityRow(t('pages.audit.clarity_what', 'What you do'), ai.clarity.what));
+    els.clarity.appendChild(clarityRow(t('pages.audit.clarity_who', 'Who it is for'), ai.clarity.who));
+    els.clarity.appendChild(clarityRow(t('pages.audit.clarity_why', 'Why you, not a competitor'), ai.clarity.why));
+    var map = {
+      yes: { k: 'aeo_yes', d: 'Ready', cz: '#3f7a52', dk: '#5fae7a' },
+      partial: { k: 'aeo_partial', d: 'Partial', cz: '#b07a1f', dk: '#ffc46b' },
+      no: { k: 'aeo_no', d: 'Not yet', cz: '#b3402e', dk: '#ff7a7a' }
+    };
+    var m = map[ai.aeo.ready] || map.partial;
+    var col = cozy() ? m.cz : m.dk;
+    els.aeoChip.textContent = t('pages.audit.' + m.k, m.d);
+    els.aeoChip.style.color = col;
+    els.aeoChip.style.border = '1px solid ' + col;
+    els.aeoNote.textContent = ai.aeo.note || '';
+    els.aeoReasons.innerHTML = '';
+    (ai.aeo.reasons || []).forEach(function (rs) {
+      var li = el('li', 'flex items-start gap-2 text-white/55 text-sm');
+      var d = el('span', 'shrink-0', '•'); d.style.opacity = '.5';
+      li.appendChild(d); li.appendChild(el('span', null, rs));
+      els.aeoReasons.appendChild(li);
+    });
+    els.airead.classList.remove('hidden');
+  }
+
+  // Competitor compare — side-by-side on-page essentials (you vs up to two rivals).
+  function buildCompare(sites) {
+    els.cmpResult.innerHTML = '';
+    var rows = [
+      { id: '__grade', label: t('pages.audit.cmp_row_grade', 'Grade') },
+      { id: 'https', label: t('pages.audit.cmp_row_https', 'Secure (HTTPS)') },
+      { id: 'viewport', label: t('pages.audit.cmp_row_mobile', 'Mobile-ready') },
+      { id: 'business_schema', label: t('pages.audit.cmp_row_schema', 'Business schema') },
+      { id: 'contact', label: t('pages.audit.cmp_row_contact', 'Contact path') },
+      { id: 'tappable_phone', label: t('pages.audit.cmp_row_phone', 'Tappable phone') },
+      { id: 'meta_desc', label: t('pages.audit.cmp_row_meta', 'Meta description') },
+      { id: 'og', label: t('pages.audit.cmp_row_og', 'Social preview') }
+    ];
+    var table = el('table', 'w-full text-sm');
+    var thead = document.createElement('thead');
+    var hr = document.createElement('tr');
+    hr.appendChild(el('th', '', ''));
+    sites.forEach(function (s, i) { hr.appendChild(el('th', 'py-2 px-3 font-semibold ' + (i === 0 ? 'text-accent' : 'text-white'), s.name)); });
+    thead.appendChild(hr); table.appendChild(thead);
+    var tb = document.createElement('tbody');
+    rows.forEach(function (row) {
+      var tr = el('tr', 'audit-divide');
+      tr.appendChild(el('td', 'text-white/60 py-2 pr-4 whitespace-nowrap', row.label));
+      sites.forEach(function (s) {
+        var td = el('td', 'text-center py-2 px-3');
+        if (row.id === '__grade') {
+          var gl = gradeLetter(s.score);
+          var sp = el('span', 'font-display text-lg', gl);
+          sp.style.color = cozy() ? GRADE[gl].cozy : GRADE[gl].dark;
+          td.appendChild(sp);
+        } else {
+          var has = s.ids.indexOf(row.id) !== -1;
+          var ic = el('span', 'material-symbols-outlined', has ? 'check_circle' : 'cancel');
+          ic.style.fontSize = '18px';
+          ic.style.color = has ? (cozy() ? '#3f7a52' : '#5fae7a') : (cozy() ? 'rgba(31,38,34,.3)' : 'rgba(255,255,255,.25)');
+          td.appendChild(ic);
+        }
+        tr.appendChild(td);
+      });
+      tb.appendChild(tr);
+    });
+    table.appendChild(tb);
+    els.cmpResult.appendChild(table);
+    els.cmpResult.classList.remove('hidden');
+  }
+
+  // Offer (or hide) the "copy shareable link" button for the current report.
+  function setShareLink(id) {
+    if (id && /^[a-z0-9]{6,24}$/.test(id)) {
+      shareUrl = location.origin + location.pathname + '?r=' + id;
+      els.copyLink.textContent = t('pages.audit.copy_link_btn', 'Copy shareable link');
+      els.copyLink.classList.remove('hidden');
+    } else {
+      shareUrl = '';
+      els.copyLink.classList.add('hidden');
+    }
+  }
+
+  // Single render path for a finished report — used by both a live audit and a
+  // re-rendered saved report (/audit?r=<id>). `data.shared` is true for the latter.
+  function renderReport(data) {
+    els.err.classList.add('hidden');
+    auditedUrl = data.finalUrl;
+    lastVariant = data.variant || 'template';
+    els.summary.textContent = data.summary || '';
+    applyScore(data.score);
+    renderCompare(data.compare);
+    els.airead.classList.add('hidden');
+    renderAiRead(data.aiRead);
+    renderPreviews(data.meta);
+    els.shotWrap.classList.add('hidden');
+
+    // what is already working
+    els.passedList.innerHTML = '';
+    els.passed.classList.add('hidden');
+    (data.passed || []).forEach(addPassed);
+
+    // findings — all shown, nothing gated
+    els.list.innerHTML = '';
+    (data.findings || []).forEach(function (x) { els.list.appendChild(findingCard(x)); });
+
+    // reset the fix-plan offer to its form state and show it
+    els.gateForm.classList.remove('hidden');
+    els.gateDone.classList.add('hidden');
+    els.gate.classList.remove('hidden');
+
+    // competitor compare — stash this result as the "You" column
+    lastAudit = { host: (data.meta && data.meta.host) || auditedUrl, score: data.score, ids: (data.passed || []).map(function (x) { return x.id; }) };
+    els.cmpResult.classList.add('hidden');
+    els.cmpResult.innerHTML = '';
+    els.compareBox.classList.remove('hidden');
+
+    // shareable link + saved-report notice
+    setShareLink(data.reportId || (data.shared ? sharedId : ''));
+    if (data.shared) els.sharedNotice.classList.remove('hidden');
+    else els.sharedNotice.classList.add('hidden');
+
+    els.results.classList.remove('hidden');
+    els.results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    if (data.shared) {
+      track('audit_shared_view', { audited_url: auditedUrl, score: data.score });
+    } else {
+      track('audit_complete', { audited_url: auditedUrl, score: data.score, findings: (data.findings || []).length, model_variant: lastVariant, summary_source: data.summarySource || 'template' });
+    }
+
+    // Phase 2 (live audits only — a saved report already has its speed folded in).
+    if (data.speedPending) startSpeedPhase(auditedUrl, data.reportId || '');
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    els.err.classList.add('hidden');
+    var raw = (els.url.value || '').trim();
+    if (!raw) { els.err.textContent = t('pages.audit.err_enter_url', 'Enter your website address first.'); els.err.classList.remove('hidden'); return; }
+    els.submit.disabled = true;
+    els.submit.textContent = t('pages.audit.btn_auditing', 'Auditing…');
+    els.results.classList.add('hidden');
+    els.status.classList.remove('hidden');
+    els.statusText.textContent = t('pages.audit.status_text', 'Fetching your page…');
+    track('audit_start', { audited_url: raw });
+    var slowTimer = setTimeout(function () {
+      els.statusText.textContent = t('pages.audit.status_analyzing', 'Reading the page and writing your summary…');
+    }, 3500);
+
+    fetch('/api/audit?lang=' + encodeURIComponent(curLang()), {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(adminKey ? { url: raw, adminKey: adminKey, compare: true, lang: curLang() } : { url: raw, lang: curLang() })
+    }).then(function (r) { return r.json(); }).then(function (data) {
+      clearTimeout(slowTimer);
+      els.status.classList.add('hidden');
+      els.submit.disabled = false;
+      els.submit.textContent = t('pages.audit.form_submit', 'Run the free audit');
+      if (!data.ok) {
+        els.err.textContent = data.message || t('pages.audit.err_failed', 'Audit failed, try again in a minute.');
+        els.err.classList.remove('hidden');
+        track('audit_error', { reason: data.error || 'unknown' });
+        return;
+      }
+      renderReport(data);
+    }).catch(function () {
+      clearTimeout(slowTimer);
+      els.status.classList.add('hidden');
+      els.submit.disabled = false;
+      els.submit.textContent = t('pages.audit.form_submit', 'Run the free audit');
+      els.err.textContent = t('pages.audit.err_network', 'Network hiccup, try again.');
+      els.err.classList.remove('hidden');
+    });
+  });
+
+  // Phase 2 — mobile speed streams in and nudges the score/grade once it lands.
+  // reportId (when the phase-1 report was persisted) is echoed back so the server
+  // folds the speed result into the stored report — a shared link then shows the
+  // same final score.
+  function startSpeedPhase(url, reportId) {
+    els.speedPending.classList.remove('hidden');
+    fetch('/api/audit-speed?lang=' + encodeURIComponent(curLang()), {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(reportId ? { url: url, lang: curLang(), reportId: reportId } : { url: url, lang: curLang() })
+    }).then(function (r) { return r.json(); }).then(function (s) {
+      els.speedPending.classList.add('hidden');
+      if (!s || !s.ok) return;
+      if (s.measured === false) {
+        var li = document.createElement('li');
+        li.className = 'glass-panel rounded-lg p-5 border-l-4';
+        li.style.borderLeftColor = cozy() ? '#9b8c6a' : '#b8a06a';
+        li.innerHTML = '<div class="font-mono text-[10px] tracking-[0.25em] uppercase text-white/40 mb-2">' + t('pages.audit.speed_na_label', 'MOBILE SPEED') + '</div><p class="text-white/55 text-sm"></p>';
+        li.querySelector('p').textContent = t('pages.audit.speed_failed', 'Could not measure mobile speed right now (Google PageSpeed was busy). Re-run in a minute to add it.');
+        els.list.appendChild(li);
+        return;
+      }
+      (s.findings || []).forEach(function (x) { els.list.appendChild(findingCard(x)); });
+      (s.passed || []).forEach(addPassed);
+      if (s.psi && s.psi.screenshot && els.shot) { els.shot.src = s.psi.screenshot; els.shotWrap.classList.remove('hidden'); els.preview.classList.remove('hidden'); }
+      if (typeof s.scoreDelta === 'number' && s.scoreDelta !== 0) applyScore(lastScore + s.scoreDelta);
+      track('audit_speed', { measured: true, perf: s.psi && s.psi.performance });
+    }).catch(function () { els.speedPending.classList.add('hidden'); });
+  }
+
+  // Admin QA mode (?admin=KEY): every configured model's summary side by side.
+  function renderCompare(compare) {
+    var old = document.getElementById('audit-compare');
+    if (old) old.remove();
+    if (!compare || !compare.length) return;
+    var wrap = document.createElement('div');
+    wrap.id = 'audit-compare';
+    wrap.className = 'mt-10';
+    var h = document.createElement('h3');
+    h.className = 'text-white font-semibold mb-4 font-mono text-sm uppercase tracking-widest';
+    h.textContent = '// A/B compare (admin)';
+    wrap.appendChild(h);
+    compare.forEach(function (c) {
+      var card = document.createElement('div');
+      card.className = 'glass-panel rounded-lg p-5 mb-3';
+      var label = document.createElement('div');
+      label.className = 'font-mono text-[10px] tracking-[0.25em] uppercase mb-2 text-white/50';
+      label.textContent = c.model + (c.usage && c.usage.total_tokens ? ' · ' + c.usage.total_tokens + ' tokens' : '');
+      var p = document.createElement('p');
+      p.className = 'text-white/70 text-sm';
+      p.textContent = c.summary || ('ERROR: ' + (c.error || 'unknown'));
+      card.appendChild(label);
+      card.appendChild(p);
+      wrap.appendChild(card);
+    });
+    els.results.appendChild(wrap);
+  }
+
+  els.unlock.addEventListener('click', function () {
+    els.gateErr.classList.add('hidden');
+    var email = (els.email.value || '').trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      els.gateErr.textContent = t('pages.audit.err_email', 'Enter a valid email to unlock.'); els.gateErr.classList.remove('hidden'); return;
+    }
+    if (!els.consent.checked) {
+      els.gateErr.textContent = t('pages.audit.err_consent', 'Please tick the consent box, GDPR is GDPR.'); els.gateErr.classList.remove('hidden'); return;
+    }
+    els.unlock.disabled = true;
+    els.unlock.textContent = t('pages.audit.btn_unlocking', 'Sending…');
+    // Server backstop: durably store the lead + best-effort Telegram push. Resolves
+    // true only if the server actually accepted it (stored OR notified).
+    var serverOk = fetch('/api/audit-lead', { method: 'POST', headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ email: email, url: auditedUrl, score: lastScore, lang: curLang() }) })
+      .then(function (r) { return r.json(); })
+      .then(function (d) { return !!(d && (d.stored || d.notified)); })
+      .catch(function () { return false; });
+    var fd = new FormData();
+    fd.append('access_key', '0b2e61e9-0981-40b8-bd8e-6f0820e3832a');
+    fd.append('subject', 'Audit fix-plan request: ' + auditedUrl + ' (score ' + lastScore + ')');
+    fd.append('from_name', 'Camelot Flows Audit Tool');
+    fd.append('email', email);
+    fd.append('message', 'Audit fix-plan request.\nSite: ' + auditedUrl + '\nScore: ' + lastScore + '/100');
+    // Web3Forms receipt email: resolves true only on an explicit success:true.
+    var web3Ok = fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd })
+      .then(function (r) { return r.json(); })
+      .then(function (d) { return !!(d && d.success); })
+      .catch(function () { return false; });
+    function done() {
+      els.gateForm.classList.add('hidden');
+      els.gateDone.classList.remove('hidden');
+      track('audit_lead', { audited_url: auditedUrl, score: lastScore, model_variant: lastVariant });
+    }
+    function failHonestly() {
+      // No channel accepted the lead — never show a false confirmation. Tell the
+      // visitor plainly and give them a direct way through.
+      els.unlock.disabled = false;
+      els.unlock.textContent = t('pages.audit.gate_btn', 'Email me the fix plan');
+      var mail = 'alex@camelotflows.dev';
+      els.gateErr.innerHTML = t('pages.audit.lead_failed',
+        "Couldn't send that automatically. Please email me directly at") +
+        ' <a href="mailto:' + mail + '?subject=' +
+        encodeURIComponent('Audit fix-plan request: ' + auditedUrl) +
+        '" class="underline" style="color:#ff7a7a">' + mail + '</a>.';
+      els.gateErr.classList.remove('hidden');
+    }
+    Promise.all([serverOk, web3Ok]).then(function (res) {
+      if (res[0] || res[1]) done(); else failHonestly();
+    });
+  });
+
+  if (els.cmpGo) els.cmpGo.addEventListener('click', function () {
+    els.cmpErr.classList.add('hidden');
+    if (!lastAudit) return;
+    var urls = [els.cmp1.value, els.cmp2.value].map(function (v) { return (v || '').trim(); }).filter(Boolean).slice(0, 2);
+    if (!urls.length) { els.cmpErr.textContent = t('pages.audit.cmp_err_empty', 'Add at least one competitor address.'); els.cmpErr.classList.remove('hidden'); return; }
+    els.cmpGo.disabled = true;
+    els.cmpGo.textContent = t('pages.audit.cmp_running', 'Comparing…');
+    Promise.all(urls.map(function (u) {
+      return fetch('/api/audit?lite=1&lang=' + encodeURIComponent(curLang()), { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ url: u, lang: curLang() }) })
+        .then(function (r) { return r.json(); })
+        .then(function (d) { return (d && d.ok) ? { name: (d.meta && d.meta.host) || u, score: d.score, ids: (d.passed || []).map(function (x) { return x.id; }) } : null; })
+        .catch(function () { return null; });
+    })).then(function (results) {
+      els.cmpGo.disabled = false;
+      els.cmpGo.textContent = t('pages.audit.cmp_btn', 'Compare');
+      var comps = results.filter(Boolean);
+      if (!comps.length) { els.cmpErr.textContent = t('pages.audit.cmp_err_failed', 'Could not audit those sites (some block automated checks). Try different URLs.'); els.cmpErr.classList.remove('hidden'); return; }
+      buildCompare([{ name: t('pages.audit.cmp_you', 'You'), score: lastAudit.score, ids: lastAudit.ids }].concat(comps));
+      track('audit_compare', { competitors: comps.length });
+    });
+  });
+
+  if (els.print) els.print.addEventListener('click', function () { window.print(); });
+
+  // Copy the shareable /audit?r=<id> link to the clipboard.
+  function fallbackCopy(text) {
+    try {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute'; ta.style.left = '-9999px';
+      document.body.appendChild(ta); ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    } catch (e) { /* clipboard blocked — the URL is still in the address bar for saved reports */ }
+  }
+  if (els.copyLink) els.copyLink.addEventListener('click', function () {
+    if (!shareUrl) return;
+    var flash = function () {
+      els.copyLink.textContent = t('pages.audit.copy_link_done', 'Link copied ✓');
+      setTimeout(function () { els.copyLink.textContent = t('pages.audit.copy_link_btn', 'Copy shareable link'); }, 2200);
+    };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(shareUrl).then(flash, function () { fallbackCopy(shareUrl); flash(); });
+        return;
+      }
+    } catch (e) { /* fall through */ }
+    fallbackCopy(shareUrl); flash();
+  });
+
+  // Re-render a saved report when the page is opened as /audit?r=<id>.
+  function startSharedLoad() {
+    els.err.classList.add('hidden');
+    els.status.classList.remove('hidden');
+    els.statusText.textContent = t('pages.audit.status_loading_saved', 'Loading saved report…');
+    fetch('/api/audit?r=' + encodeURIComponent(sharedId) + '&lang=' + encodeURIComponent(curLang()))
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        els.status.classList.add('hidden');
+        if (!data || !data.ok) {
+          els.err.textContent = (data && data.message) || t('pages.audit.report_not_found_msg', 'This audit link has expired or was not found. Run a fresh audit below.');
+          els.err.classList.remove('hidden');
+          return;
+        }
+        renderReport(data);
+      })
+      .catch(function () {
+        els.status.classList.add('hidden');
+        els.err.textContent = t('pages.audit.err_network', 'Network hiccup, try again.');
+        els.err.classList.remove('hidden');
+      });
+  }
+  // Defer the saved-report render until the i18n dictionary is applied (i18n.js is
+  // deferred; cfI18n.ready resolves once the visitor's language labels are ready)
+  // so finding-card chrome renders in the right language, not English fallbacks.
+  var rParam = new URLSearchParams(location.search).get('r') || '';
+  if (rParam) {
+    sharedId = rParam;
+    var chain = function () {
+      if (window.cfI18n && window.cfI18n.ready && typeof window.cfI18n.ready.then === 'function') {
+        window.cfI18n.ready.then(startSharedLoad, startSharedLoad);
+      } else {
+        startSharedLoad();
+      }
+    };
+    if (window.cfI18n && window.cfI18n.ready) chain();
+    else if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', chain);
+    else chain();
+  }
+})();
+</script>
+</body>
+</html>

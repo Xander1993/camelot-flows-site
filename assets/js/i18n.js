@@ -26,6 +26,8 @@
     var readyPromise = new Promise(function (r) { readyResolve = r; });
 
     function readStoredLang() {
+        var fixed = document.documentElement.getAttribute('data-cf-static-lang');
+        if (fixed && SUPPORTED.indexOf(fixed) !== -1) return fixed;
         try {
             var c = document.cookie.match('(?:^|;) ?cf_lang=([^;]*)');
             var v = c ? c[1] : localStorage.getItem(STORAGE_KEY);

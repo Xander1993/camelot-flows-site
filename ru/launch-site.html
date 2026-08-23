@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+
+<html data-cf-static-lang="ru" data-i18n-page="launch-site" lang="ru">
+<head>
+<script>(function(){var h=document.documentElement;try{var c=document.cookie.match('(?:^|;) ?cf_theme=([^;]*)');var t=c?c[1]:(localStorage.getItem('cf_theme')||'cozy');h.setAttribute('data-theme',t);}catch(e){h.setAttribute('data-theme','cozy');}try{if(sessionStorage.getItem('cf_loaded')==='1')h.classList.add('cf-skip-preloader');}catch(e){}h.classList.add('js');})();</script>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Твой сайт, запуск за 7 дней. | Camelot Flows</title>
+<meta content="Fixed-scope website. Up to 3 pages, mobile responsive, contact form, GA4, lead-capture automation. Delivered in 5–7 days from €390." name="description">
+<link href="https://camelotflows.dev/ru/launch-site" rel="canonical"><link href="https://camelotflows.dev/launch-site" hreflang="en" rel="alternate"><link href="https://camelotflows.dev/ro/launch-site" hreflang="ro" rel="alternate"><link href="https://camelotflows.dev/ru/launch-site" hreflang="ru" rel="alternate"><link href="https://camelotflows.dev/launch-site" hreflang="x-default" rel="alternate">
+
+
+
+
+<link href="/favicon.png" rel="icon" sizes="32x32" type="image/png">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=Space+Grotesk:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet">
+<link href="/assets/css/tailwind.built.css" rel="stylesheet">
+<link href="/assets/site.css?v=2" rel="stylesheet">
+<link href="/assets/css/camelot.css?v=9" rel="stylesheet">
+<link href="/assets/css/theme-night.css?v=2" rel="stylesheet">
+<link href="/assets/css/lang-switcher.css" rel="stylesheet">
+<noscript><style>.sr,.hero-word,.hero-price,.hero-cta{opacity:1!important;transform:none!important;}</style></noscript>
+<style>
+/* ── Accent tokens (launch-site = cyan / terracotta) ── */
+:root,[data-theme="night"]{
+  --lp-accent:#00f2ff;--lp-accent-rgb:0,242,255;
+  --lp-bg:#050508;--lp-surface:#0A0A12;
+  --lp-text:#e2e8f0;--lp-muted:rgba(226,232,240,.45);
+  --lp-border:rgba(255,255,255,.08);
+  --lp-card:rgba(255,255,255,.04);--lp-shine:rgba(255,255,255,.10);
+}
+[data-theme="cozy"]{
+  --lp-accent:#C4785C;--lp-accent-rgb:196,120,92;
+  --lp-bg:#F5F4F0;--lp-surface:#EDEBE6;
+  --lp-text:#1A1A18;--lp-muted:rgba(26,26,24,.50);
+  --lp-border:rgba(26,26,24,.10);
+  --lp-card:rgba(26,26,24,.03);--lp-shine:rgba(255,255,255,.80);
+}
+body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--lp-bg);color:var(--lp-text);overflow-x:hidden;line-height:1.7;}
+a{text-decoration:none;color:inherit;}
+.lp-grain{position:fixed;inset:0;z-index:50;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.04;mix-blend-mode:overlay;}
+[data-theme="cozy"] .lp-grain{opacity:.09;}
+.lp-wrap{max-width:80rem;margin-inline:auto;padding-inline:1.5rem;}
+@media(min-width:1024px){.lp-wrap{padding-inline:3rem;}}
+.lp-section{padding-top:5rem;padding-bottom:5rem;}
+@media(min-width:768px){.lp-section{padding-top:8rem;padding-bottom:8rem;}}
+.pill{display:inline-flex;align-items:center;padding:.25rem .875rem;border-radius:999px;background:rgba(var(--lp-accent-rgb),.12);border:1px solid rgba(var(--lp-accent-rgb),.28);color:var(--lp-accent);font-family:'Fraunces',serif;font-size:.6875rem;font-weight:500;text-transform:uppercase;letter-spacing:.18em;margin-bottom:1.25rem;}
+.lp-hero{position:relative;min-height:100dvh;display:flex;align-items:center;padding-top:9rem;padding-bottom:4rem;overflow:hidden;}
+.hero-orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(80px);will-change:transform;}
+.hero-orb-1{width:40vw;height:40vw;top:-10%;right:5%;background:radial-gradient(circle,rgba(var(--lp-accent-rgb),.18) 0%,transparent 70%);}
+.hero-orb-2{width:30vw;height:30vw;bottom:10%;left:-5%;background:radial-gradient(circle,rgba(var(--lp-accent-rgb),.08) 0%,transparent 70%);}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:3rem;align-items:center;width:100%;}
+@media(min-width:768px){.hero-grid{grid-template-columns:3fr 2fr;gap:4rem;}}
+.hero-h1{font-family:'Fraunces',serif;font-size:clamp(3rem,5.5vw,5.5rem);font-weight:500;line-height:1.05;letter-spacing:-.025em;max-width:44rem;margin-bottom:1.75rem;}
+.hero-h1 .accent{color:var(--lp-accent);}
+.hero-sub{font-size:1.0625rem;line-height:1.7;color:var(--lp-muted);max-width:38rem;margin-bottom:2.5rem;}
+.hero-actions{display:flex;align-items:stretch;flex-wrap:wrap;gap:1rem;}
+.cta-pill{display:inline-flex;align-items:center;gap:.75rem;padding:.875rem .875rem .875rem 1.75rem;border-radius:999px;background:var(--lp-accent);color:#050508;font-size:1rem;font-weight:600;transition:transform .4s cubic-bezier(.32,.72,0,1),box-shadow .4s cubic-bezier(.32,.72,0,1);}
+.cta-pill:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(var(--lp-accent-rgb),.28);}
+.cta-arrow{width:2.25rem;height:2.25rem;border-radius:999px;background:rgba(0,0,0,.20);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .35s cubic-bezier(.32,.72,0,1);}
+.cta-pill:hover .cta-arrow{transform:translate(3px,-2px) scale(1.1);}
+.cta-arrow svg{width:1rem;height:1rem;stroke:#050508;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.cta-ghost{display:inline-flex;align-items:center;gap:.5rem;padding:.875rem 1.75rem;border-radius:999px;border:1px solid var(--lp-border);background:transparent;color:var(--lp-muted);font-size:1rem;transition:border-color .3s ease,background .3s ease,color .3s ease;}
+.cta-ghost:hover{background:rgba(var(--lp-accent-rgb),.06);border-color:rgba(var(--lp-accent-rgb),.35);color:var(--lp-text);}
+.price-card-outer{border-radius:2rem;padding:6px;max-width:280px;width:100%;border:1px solid rgba(var(--lp-accent-rgb),.22);background:rgba(var(--lp-accent-rgb),.04);}
+.price-card-inner{border-radius:calc(2rem - 6px);background:rgba(var(--lp-accent-rgb),.06);box-shadow:inset 0 1px 1px rgba(var(--lp-accent-rgb),.15);padding:2.5rem 2rem;display:flex;flex-direction:column;gap:1.5rem;}
+[data-theme="cozy"] .price-card-inner{background:rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.9);}
+.price-from{font-size:.75rem;color:var(--lp-muted);text-transform:uppercase;letter-spacing:.12em;}
+.price-amount{font-family:'JetBrains Mono',monospace;font-size:clamp(3.5rem,6vw,5rem);font-weight:400;line-height:1;color:var(--lp-accent);letter-spacing:-.03em;}
+.price-checks{list-style:none;display:flex;flex-direction:column;gap:.625rem;}
+.price-check-item{display:flex;align-items:center;gap:.625rem;font-size:.875rem;color:var(--lp-muted);}
+.check-dot{width:.375rem;height:.375rem;border-radius:50%;background:var(--lp-accent);flex-shrink:0;}
+.marquee-wrap{padding:1.375rem 0;border-top:1px solid var(--lp-border);border-bottom:1px solid var(--lp-border);overflow:hidden;}
+.marquee-track{display:flex;gap:2.5rem;width:max-content;animation:marquee 26s linear infinite;}
+.m-item{font-size:1.0625rem;font-weight:500;color:var(--lp-muted);white-space:nowrap;letter-spacing:.04em;}
+.m-dot{color:var(--lp-accent);opacity:.7;}
+@keyframes marquee{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none;}}
+.feat-grid{display:grid;grid-template-columns:1fr;gap:3rem;align-items:start;}
+@media(min-width:768px){.feat-grid{grid-template-columns:2fr 3fr;gap:4rem;align-items:center;}}
+.feat-list{display:flex;flex-direction:column;gap:.75rem;}
+.feat-item{padding:1.125rem 1.375rem;border-radius:1rem;border:1px solid transparent;cursor:default;}
+.feat-item-name{font-family:'Fraunces',serif;font-size:1.125rem;font-weight:400;margin-bottom:.2rem;}
+.feat-item-sub{font-size:.8125rem;color:var(--lp-muted);}
+.feat-details{position:relative;}
+.feat-detail{opacity:0;transform:translateY(14px);pointer-events:none;}
+.feat-detail:first-child{opacity:1;transform:translateY(0);pointer-events:auto;}
+@media(min-width:768px){.feat-detail:not(:first-child){position:absolute;top:0;left:0;width:100%;}}
+@media(max-width:767px){.feat-detail{opacity:1!important;transform:none!important;pointer-events:auto;margin-bottom:1.25rem;}}
+.feat-detail-card{border-radius:2rem;padding:6px;border:1px solid var(--lp-border);background:rgba(var(--lp-accent-rgb),.03);}
+.feat-detail-inner{border-radius:calc(2rem - 6px);background:var(--lp-card);box-shadow:inset 0 1px 1px var(--lp-shine);padding:2.5rem;}
+[data-theme="cozy"] .feat-detail-inner{background:rgba(255,255,255,.60);}
+.feat-icon{width:2.75rem;height:2.75rem;margin-bottom:1.5rem;}
+.feat-icon svg{width:100%;height:100%;stroke:var(--lp-accent);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+.feat-title{font-family:'Fraunces',serif;font-size:1.875rem;font-weight:400;line-height:1.15;margin-bottom:.875rem;}
+.feat-desc{font-size:1rem;line-height:1.75;color:var(--lp-muted);}
+.section-h{font-family:'Fraunces',serif;font-size:clamp(2.25rem,4vw,3.5rem);font-weight:400;line-height:1.1;letter-spacing:-.02em;margin-bottom:1rem;}
+.section-sub{font-size:1.0625rem;color:var(--lp-muted);max-width:40rem;line-height:1.7;margin-bottom:3.5rem;}
+.deliverables{display:grid;grid-template-columns:1fr;gap:1.5rem;max-width:46rem;}
+@media(min-width:600px){.deliverables{grid-template-columns:1fr 1fr;}}
+.deliv-item{display:flex;align-items:flex-start;gap:1rem;}
+.check-svg{flex-shrink:0;width:2rem;height:2rem;margin-top:.125rem;}
+.check-bg{fill:rgba(var(--lp-accent-rgb),.12);}
+.check-path{stroke:var(--lp-accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.deliv-name{font-size:1rem;font-weight:600;margin-bottom:.25rem;}
+.deliv-desc{font-size:.875rem;color:var(--lp-muted);line-height:1.6;}
+.timeline-scroll{overflow-x:auto;margin-top:3.5rem;padding-bottom:.5rem;}
+.timeline-svg-wrap{min-width:580px;height:150px;}
+.timeline-svg{width:100%;height:100%;overflow:visible;}
+.t-track{fill:none;stroke:var(--lp-border);stroke-width:2;stroke-linecap:round;}
+.t-path{fill:none;stroke:var(--lp-accent);stroke-width:2;stroke-linecap:round;}
+.t-ring{fill:var(--lp-bg);stroke:var(--lp-accent);stroke-width:2;}
+.t-dot{fill:var(--lp-accent);}
+.t-day{font-family:'JetBrains Mono',monospace;font-size:10px;fill:var(--lp-accent);font-weight:500;}
+.t-label{font-family:'Space Grotesk',sans-serif;font-size:12px;fill:var(--lp-text);font-weight:500;}
+.t-sub{font-family:'Space Grotesk',sans-serif;font-size:11px;fill:var(--lp-muted);}
+.risk-outer{max-width:680px;margin-inline:auto;border-radius:2rem;padding:6px;border:1px solid rgba(var(--lp-accent-rgb),.22);background:rgba(var(--lp-accent-rgb),.04);}
+.risk-inner{border-radius:calc(2rem - 6px);background:var(--lp-card);box-shadow:inset 0 1px 1px var(--lp-shine);padding:3rem 2.5rem;text-align:center;}
+[data-theme="cozy"] .risk-inner{background:rgba(255,255,255,.60);}
+.risk-icon{width:2.75rem;height:2.75rem;margin:0 auto 1.25rem;}
+.risk-icon svg{width:100%;height:100%;stroke:var(--lp-accent);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+.risk-h{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:500;margin-bottom:.875rem;}
+.risk-copy{font-family:'Fraunces',serif;font-style:italic;font-size:1.125rem;line-height:1.7;color:var(--lp-muted);max-width:36rem;margin:0 auto 1.5rem;}
+.risk-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.375rem 1rem;border-radius:999px;background:rgba(var(--lp-accent-rgb),.12);border:1px solid rgba(var(--lp-accent-rgb),.25);font-size:.8125rem;font-weight:500;color:var(--lp-accent);}
+.risk-badge svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.faq-wrap{max-width:680px;margin-top:3rem;}
+.faq-item{border-bottom:1px solid var(--lp-border);}
+.faq-btn{display:flex;justify-content:space-between;align-items:center;width:100%;padding:1.375rem 0;background:transparent;border:none;cursor:pointer;color:var(--lp-text);text-align:left;gap:1rem;}
+.faq-q{font-size:1.0625rem;font-weight:500;line-height:1.4;}
+.faq-arrow{flex-shrink:0;width:1.625rem;height:1.625rem;border-radius:50%;background:rgba(var(--lp-accent-rgb),.1);border:1px solid rgba(var(--lp-accent-rgb),.3);display:flex;align-items:center;justify-content:center;transition:transform .35s cubic-bezier(.32,.72,0,1),background .25s;}
+.faq-arrow::before{content:'›';color:var(--lp-accent);font-size:1.1rem;line-height:1;font-weight:700;margin-top:-1px;}
+.faq-item.open .faq-arrow{transform:rotate(90deg);background:rgba(var(--lp-accent-rgb),.22);}
+#faq{padding-bottom:5rem;}
+.lp-cta-sect{min-height:auto;padding-top:5rem;padding-bottom:6rem;align-items:flex-start;}
+.faq-body{max-height:0;overflow:hidden;opacity:0;transition:max-height .45s cubic-bezier(.4,0,.2,1),opacity .3s ease .05s;}
+.faq-item.open .faq-body{max-height:320px;opacity:1;}
+.faq-ans{font-size:.9375rem;line-height:1.75;color:var(--lp-muted);padding-bottom:1.375rem;}
+.lp-cta-sect{min-height:auto;display:flex;align-items:flex-start;justify-content:center;text-align:center;padding:4.5rem 1.5rem 6rem;position:relative;overflow:hidden;}
+.cta-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 50% 60%,rgba(var(--lp-accent-rgb),.11) 0%,transparent 70%);}
+.cta-content{position:relative;z-index:2;max-width:48rem;width:100%;}
+.cta-h{font-family:'Fraunces',serif;font-size:clamp(2.75rem,5.5vw,5rem);font-weight:400;line-height:1.05;letter-spacing:-.025em;margin-bottom:1.375rem;}
+.cta-h .accent{color:var(--lp-accent);}
+.cta-p{font-size:1.0625rem;color:var(--lp-muted);margin-bottom:2.5rem;line-height:1.7;}
+.cta-row{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:1rem;}
+.sr{opacity:0;transform:translateY(40px);}
+.hero-word{opacity:0;transform:translateY(60px);}
+.hero-price{opacity:0;transform:translateX(80px);}
+.hero-cta{opacity:0;transform:translateY(20px);}
+.lp-nav-cta{transition:color .3s ease,background .3s ease,border-color .3s ease;color:var(--lp-accent);border-color:rgba(var(--lp-accent-rgb),.45);background:transparent;}
+.lp-nav-cta:hover{background:rgba(var(--lp-accent-rgb),.12);border-color:rgba(var(--lp-accent-rgb),.70);}
+[data-theme="cozy"] .lp-nav-cta{color:rgb(196,120,92);border-color:rgba(196,120,92,.45);background:transparent;}
+[data-theme="cozy"] .lp-nav-cta:hover{background:rgba(196,120,92,.12);border-color:rgba(196,120,92,.70);color:rgb(175,95,65);}
+#custom-cursor{background:var(--lp-accent)!important;box-shadow:0 0 20px 6px rgba(var(--lp-accent-rgb),.6)!important;}
+@media(max-width:1180px){nav.fixed > div:not(#mobile-nav) .lp-nav-cta{width:44px;height:44px;padding:0!important;border-radius:999px!important;justify-content:center;flex:0 0 44px;overflow:hidden;color:transparent!important;font-size:0!important;letter-spacing:0!important;display:inline-flex!important;}nav.fixed > div:not(#mobile-nav) .lp-nav-cta::before{content:"//";color:rgb(var(--cft-terracotta));font:700 12px/1 "JetBrains Mono",monospace;letter-spacing:.06em;}[data-theme="night"] nav.fixed > div:not(#mobile-nav) .lp-nav-cta::before{color:#a5b4fc;}}
+@keyframes deco-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}@keyframes deco-spin-slow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}@keyframes deco-pulse{0%,100%{opacity:.15}50%{opacity:.38}}.hero-deco{position:absolute;pointer-events:none;z-index:0;overflow:visible;}.hero-deco-browser{top:8%;right:3%;width:175px;animation:deco-float 6s ease-in-out infinite;}.hero-deco-rocket{bottom:22%;right:7%;width:62px;animation:deco-float 5s ease-in-out infinite 1s;}@media(max-width:767px){.hero-deco{display:none;}}
+@media(max-width:767px){nav.fixed > div:not(#mobile-nav) .lp-nav-cta{display:none!important;}}
+</style>
+<!-- Google tag (gtag.js) — GA4 camelotflows.dev -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T4ZPEG1KSR"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+      try { if (localStorage.getItem('cf_consent') === 'granted') { gtag('consent', 'update', { analytics_storage: 'granted' }); } } catch (e) {}      gtag('js', new Date());
+      gtag('config', 'G-T4ZPEG1KSR');
+    </script>
+<script defer="" src="/assets/js/cf-consent.js?v=1"></script>
+</head>
+<body class="theme-cozy font-body overflow-x-hidden">
+<div aria-hidden="true" class="lp-grain"></div>
+<div id="custom-cursor"></div>
+<!-- Site nav (identical to all other pages) -->
+<nav class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-6 md:py-6">
+<div class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
+<div class="flex items-center">
+<img alt="Camelot Flows" class="h-16 md:h-28 w-auto object-contain" src="/assets/images/cf-logo-wordmark-2x.webp">
+</div>
+<div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.home" href="/ru/">[Главная]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.services" href="/ru/work-with-me">[Услуги]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.arsenal" href="/ru/arsenal">[Arsenal]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.merlin" href="/ru/merlin">[Merlin]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" data-i18n="common.nav.cases" href="/ru/case-studies">[Кейсы]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block" data-i18n="common.nav.agencies" href="/ru/for-agencies">[Агентствам]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" data-i18n="common.nav.pricing" href="/ru/?goto=pricing">[Цены]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.contact" href="/ru/contact">[Контакты]</a>
+</div>
+<div class="flex items-center gap-2">
+<a aria-label="Call Camelot Flows" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="tel:+37369555936" title="+373 69 555 936">
+<span class="material-symbols-outlined cf-phone-icon" style="font-size:18px">call</span>
+</a>
+<div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-500 status-dot animate-pulse"></div>
+<span class="text-[10px] font-mono text-emerald-500/80" data-i18n="common.nav.sys_online">SYS_ONLINE</span>
+</div>
+<div class="lang-switcher" data-cf-lang-switcher="">
+<button aria-expanded="false" aria-haspopup="listbox" aria-label="Язык" class="lang-trigger" data-i18n-attr="aria-label:common.lang_label" type="button">
+<span class="lang-current" data-cf-lang-current="">EN</span>
+<span class="material-symbols-outlined lang-chevron">expand_more</span>
+</button>
+<ul class="lang-menu" hidden="" role="listbox">
+<li data-lang="en" role="option" tabindex="-1"><a href="/launch-site" hreflang="en">EN</a></li>
+<li data-lang="ro" role="option" tabindex="-1"><a href="/ro/launch-site" hreflang="ro">RO</a></li>
+<li data-lang="ru" role="option" tabindex="-1"><a href="/ru/launch-site" hreflang="ru">RU</a></li>
+</ul>
+</div>
+<button aria-label="Open menu" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 transition-all text-slate-400" id="mobile-menu-toggle" type="button">
+<span class="material-symbols-outlined" style="font-size:20px">menu</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="theme-toggle" type="button">
+<span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
+<span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
+</button>
+<a class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong hidden lg:inline-flex items-center nav-cta" data-i18n="common.nav.summon_agent" href="/ru/contact?objective=build">[Hire_me]</a>
+</div>
+</div>
+<div class="hidden mt-2 max-w-7xl mx-auto" id="mobile-nav">
+<div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
+<div class="flex flex-col gap-1">
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.home" href="/ru/">[Главная]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.services" href="/ru/work-with-me">[Услуги]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.arsenal" href="/ru/arsenal">[Arsenal]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.merlin" href="/ru/merlin">[Merlin]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.cases" href="/ru/case-studies">[Кейсы]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.contact" href="/ru/contact">[Контакты]</a>
+<div class="mx-3 my-2 h-px bg-white/10"></div>
+<a class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent" href="/ru/contact?service=build">[Hire_me]</a>
+</div>
+</div>
+</div>
+<script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");var open=!menu.classList.contains("hidden");btn.setAttribute("aria-expanded",open?"true":"false");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");}});document.querySelectorAll("#mobile-nav a").forEach(function(a){a.addEventListener("click",function(){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");});});}})();</script>
+</nav>
+<!-- S1: Hero -->
+<section class="lp-hero" id="hero">
+<div aria-hidden="true" class="hero-orb hero-orb-1"></div>
+<svg aria-hidden="true" class="hero-deco hero-deco-browser" fill="none" viewbox="0 0 200 148" xmlns="http://www.w3.org/2000/svg"><rect fill="rgba(var(--lp-accent-rgb),.04)" height="140" rx="10" stroke="rgba(var(--lp-accent-rgb),.28)" stroke-width="1.5" width="192" x="4" y="4"></rect><line stroke="rgba(var(--lp-accent-rgb),.2)" stroke-width="1" x1="4" x2="196" y1="37" y2="37"></line><circle cx="20" cy="21" fill="rgba(var(--lp-accent-rgb),.38)" r="5"></circle><circle cx="36" cy="21" fill="rgba(var(--lp-accent-rgb),.05)" r="5" stroke="rgba(var(--lp-accent-rgb),.25)" stroke-width="1"></circle><circle cx="52" cy="21" fill="rgba(var(--lp-accent-rgb),.05)" r="5" stroke="rgba(var(--lp-accent-rgb),.25)" stroke-width="1"></circle><rect fill="rgba(var(--lp-accent-rgb),.04)" height="14" rx="7" stroke="rgba(var(--lp-accent-rgb),.2)" stroke-width="1" width="88" x="70" y="14"></rect><rect fill="rgba(var(--lp-accent-rgb),.16)" height="8" rx="3" width="72" x="16" y="51"></rect><rect fill="rgba(var(--lp-accent-rgb),.1)" height="5" rx="2" width="110" x="16" y="67"></rect><rect fill="rgba(var(--lp-accent-rgb),.1)" height="5" rx="2" width="90" x="16" y="80"></rect><rect fill="rgba(var(--lp-accent-rgb),.18)" height="18" rx="6" width="48" x="16" y="95"></rect><rect fill="rgba(var(--lp-accent-rgb),.06)" height="62" rx="6" stroke="rgba(var(--lp-accent-rgb),.2)" stroke-width="1" width="74" x="108" y="51"></rect></svg>
+<svg aria-hidden="true" class="hero-deco hero-deco-rocket" fill="none" viewbox="0 0 70 100" xmlns="http://www.w3.org/2000/svg"><path d="M35 5 C50 5 62 22 62 50 L62 66 L35 80 L8 66 L8 50 C8 22 20 5 35 5 Z" fill="rgba(var(--lp-accent-rgb),.06)" stroke="rgba(var(--lp-accent-rgb),.28)" stroke-width="1.5"></path><circle cx="35" cy="38" fill="rgba(var(--lp-accent-rgb),.08)" r="9" stroke="rgba(var(--lp-accent-rgb),.25)" stroke-width="1.5"></circle><path d="M8 58 L1 76 L16 66" fill="rgba(var(--lp-accent-rgb),.04)" stroke="rgba(var(--lp-accent-rgb),.22)" stroke-linejoin="round" stroke-width="1.5"></path><path d="M62 58 L69 76 L54 66" fill="rgba(var(--lp-accent-rgb),.04)" stroke="rgba(var(--lp-accent-rgb),.22)" stroke-linejoin="round" stroke-width="1.5"></path><path d="M28 80 Q28 94 35 90 Q42 94 42 80" fill="none" stroke="rgba(var(--lp-accent-rgb),.18)" stroke-dasharray="3 3" stroke-width="1"></path></svg>
+<div class="lp-wrap hero-grid">
+<div>
+<span class="pill" data-i18n="pages.launch-site.hero_pill">Launch Site · Фиксированный объём</span>
+<h1 class="hero-h1">
+<span class="hero-word" data-i18n="pages.launch-site.hero_w1">Твой сайт,</span><br>
+<span class="hero-word" data-i18n="pages.launch-site.hero_w2">запуск за</span><br>
+<span class="hero-word accent" data-i18n="pages.launch-site.hero_w3">7 дней.</span>
+</h1>
+<p class="hero-sub" data-i18n="pages.launch-site.hero_sub">До 3 страниц, адаптив под мобильные, форма контакта, аналитика GA4 и автоматизация захвата лидов — всё подключено. Фиксированная цена. Никаких сюрпризов.</p>
+<div class="hero-actions">
+<a class="cta-pill hero-cta" href="/ru/contact?objective=launch-site">
+<span data-i18n="pages.launch-site.hero_cta_start">Начать мой проект</span>
+<span aria-hidden="true" class="cta-arrow"><svg viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+</a>
+<a class="cta-ghost hero-cta" data-i18n="pages.launch-site.hero_cta_included" href="#deliverables">Что входит</a>
+</div>
+</div>
+<div style="display:flex;justify-content:center;">
+<div class="price-card-outer hero-price">
+<div class="price-card-inner">
+<div><div class="price-from" data-i18n="pages.launch-site.price_from">От</div><div class="price-amount">€390</div></div>
+<ul class="price-checks">
+<li class="price-check-item"><span class="check-dot"></span><span data-i18n="pages.launch-site.pc_1">До 3 страниц</span></li>
+<li class="price-check-item"><span class="check-dot"></span><span data-i18n="pages.launch-site.pc_2">5–7 рабочих дней</span></li>
+<li class="price-check-item"><span class="check-dot"></span><span data-i18n="pages.launch-site.pc_3">Фиксированная цена</span></li>
+<li class="price-check-item"><span class="check-dot"></span><span data-i18n="pages.launch-site.pc_4">2 раунда правок</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- S2: Trust marquee -->
+<div aria-hidden="true" class="marquee-wrap">
+<div class="marquee-track">
+<span class="m-item">Fixed Scope</span><span class="m-dot m-item">·</span><span class="m-item">WordPress + Claude AI</span><span class="m-dot m-item">·</span><span class="m-item">Clean Handoff</span><span class="m-dot m-item">·</span><span class="m-item">5–7 Day Delivery</span><span class="m-dot m-item">·</span><span class="m-item">Mobile Responsive</span><span class="m-dot m-item">·</span><span class="m-item">GA4 Included</span><span class="m-dot m-item">·</span>
+<span class="m-item">Fixed Scope</span><span class="m-dot m-item">·</span><span class="m-item">WordPress + Claude AI</span><span class="m-dot m-item">·</span><span class="m-item">Clean Handoff</span><span class="m-dot m-item">·</span><span class="m-item">5–7 Day Delivery</span><span class="m-dot m-item">·</span><span class="m-item">Mobile Responsive</span><span class="m-dot m-item">·</span><span class="m-item">GA4 Included</span><span class="m-dot m-item">·</span>
+</div>
+</div>
+<!-- S3: Feature Spotlight (GSAP PIN) -->
+<section class="lp-section" id="feature-spotlight">
+<div class="lp-wrap">
+<div class="sr" style="margin-bottom:3rem;">
+<span class="pill" data-i18n="pages.launch-site.s3_pill">Как это работает</span>
+<h2 class="section-h" data-i18n="pages.launch-site.s3_h">Сделано правильно с первого раза.</h2>
+</div>
+<div class="feat-grid">
+<div class="feat-list">
+<div class="feat-item" data-fi="0"><div class="feat-item-name" data-i18n="pages.launch-site.fi1_name">Скорость</div><div class="feat-item-sub" data-i18n="pages.launch-site.fi1_sub">Запуск за 5–7 рабочих дней</div></div>
+<div class="feat-item" data-fi="1"><div class="feat-item-name" data-i18n="pages.launch-site.fi2_name">Фиксация объёма</div><div class="feat-item-sub" data-i18n="pages.launch-site.fi2_sub">Названная цена — это цена в счёте</div></div>
+<div class="feat-item" data-fi="2"><div class="feat-item-name" data-i18n="pages.launch-site.fi3_name">Mobile-first</div><div class="feat-item-sub" data-i18n="pages.launch-site.fi3_sub">Спроектировано под 375px, масштабируется вверх</div></div>
+<div class="feat-item" data-fi="3"><div class="feat-item-name" data-i18n="pages.launch-site.fi4_name">Аналитика</div><div class="feat-item-sub" data-i18n="pages.launch-site.fi4_sub">Цели GA4 настроены, а не просто установлены</div></div>
+</div>
+<div class="feat-details">
+<div class="feat-detail" data-fd="0"><div class="feat-detail-card"><div class="feat-detail-inner">
+<div class="feat-icon"><svg viewbox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg></div>
+<h3 class="feat-title" data-i18n="pages.launch-site.fd1_title">Запуск до понедельника.</h3>
+<p class="feat-desc" data-i18n="pages.launch-site.fd1_desc">Большинству фрилансеров нужны недели. Я сдаю за 5–7 рабочих дней — гарантировано договором. Ежедневные обновления в Slack, ключи от живого сайта к пятнице.</p>
+</div></div></div>
+<div class="feat-detail" data-fd="1"><div class="feat-detail-card"><div class="feat-detail-inner">
+<div class="feat-icon"><svg viewbox="0 0 24 24"><rect height="11" rx="2" width="18" x="3" y="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>
+<h3 class="feat-title" data-i18n="pages.launch-site.fd2_title">Цена, которую ты видишь, — это цена, которую ты платишь.</h3>
+<p class="feat-desc" data-i18n="pages.launch-site.fd2_desc">Фиксированный объём означает фиксированный счёт. Результаты и исключения согласуются до начала разработки.</p>
+</div></div></div>
+<div class="feat-detail" data-fd="2"><div class="feat-detail-card"><div class="feat-detail-inner">
+<div class="feat-icon"><svg viewbox="0 0 24 24"><rect height="20" rx="2" width="14" x="5" y="2"></rect><circle cx="12" cy="17" r="1"></circle></svg></div>
+<h3 class="feat-title" data-i18n="pages.launch-site.fd3_title">Сначала мобильная версия.</h3>
+<p class="feat-desc" data-i18n="pages.launch-site.fd3_desc">Каждая кнопка под размер касания. Каждое изображение оптимизировано под медленные соединения. Каждый макет протестирован на реальных устройствах перед передачей.</p>
+</div></div></div>
+<div class="feat-detail" data-fd="3"><div class="feat-detail-card"><div class="feat-detail-inner">
+<div class="feat-icon"><svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
+<h3 class="feat-title" data-i18n="pages.launch-site.fd4_title">Знай, кто приходит. Знай, почему уходят.</h3>
+<p class="feat-desc" data-i18n="pages.launch-site.fd4_desc">GA4 настроен, цели заданы, а твой первый инсайт ждёт уже в первый день. Автоматизация захвата лидов срабатывает в момент отправки формы.</p>
+</div></div></div>
+</div>
+</div>
+</div>
+</section>
+<!-- S4: Deliverables -->
+<section class="lp-section" id="deliverables">
+<div class="lp-wrap">
+<div class="sr">
+<span class="pill" data-i18n="pages.launch-site.deliv_pill">Что входит</span>
+<h2 class="section-h" data-i18n="pages.launch-site.deliv_h">Всё, что нужно. Ничего лишнего.</h2>
+<p class="section-sub" data-i18n="pages.launch-site.deliv_sub">Пакет с фиксированным объёмом означает именно это — не больше и не меньше.</p>
+</div>
+<div class="deliverables">
+<div class="deliv-item sr"><svg class="check-svg" viewbox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"></circle><path class="check-path" d="M10 16l4 4 8-8"></path></svg><div><div class="deliv-name" data-i18n="pages.launch-site.deliv1_name">До 3 страниц</div><div class="deliv-desc" data-i18n="pages.launch-site.deliv1_desc">Главная, О нас, Контакты — или любые 3, что тебе нужны. Чистая сборка на WordPress.</div></div></div>
+<div class="deliv-item sr"><svg class="check-svg" viewbox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"></circle><path class="check-path" d="M10 16l4 4 8-8"></path></svg><div><div class="deliv-name" data-i18n="pages.launch-site.deliv2_name">Форма контакта + email</div><div class="deliv-desc" data-i18n="pages.launch-site.deliv2_desc">Рабочая форма с доставкой тебе на почту. С фильтром спама, протестирована на мобильном.</div></div></div>
+<div class="deliv-item sr"><svg class="check-svg" viewbox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"></circle><path class="check-path" d="M10 16l4 4 8-8"></path></svg><div><div class="deliv-name" data-i18n="pages.launch-site.deliv3_name">Аналитика GA4</div><div class="deliv-desc" data-i18n="pages.launch-site.deliv3_desc">Цели настроены, события отслеживаются, данные идут с первого дня.</div></div></div>
+<div class="deliv-item sr"><svg class="check-svg" viewbox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"></circle><path class="check-path" d="M10 16l4 4 8-8"></path></svg><div><div class="deliv-name" data-i18n="pages.launch-site.deliv4_name">Автоматизация захвата лидов</div><div class="deliv-desc" data-i18n="pages.launch-site.deliv4_desc">Отправка формы → запись в CRM + письмо-follow-up срабатывают автоматически.</div></div></div>
+<div class="deliv-item sr"><svg class="check-svg" viewbox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"></circle><path class="check-path" d="M10 16l4 4 8-8"></path></svg><div><div class="deliv-name" data-i18n="pages.launch-site.deliv5_name">2 раунда правок</div><div class="deliv-desc" data-i18n="pages.launch-site.deliv5_desc">Два полных цикла. Запрашиваешь изменения — внедряю в течение 24 часов.</div></div></div>
+<div class="deliv-item sr"><svg class="check-svg" viewbox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"></circle><path class="check-path" d="M10 16l4 4 8-8"></path></svg><div><div class="deliv-name" data-i18n="pages.launch-site.deliv6_name">Адаптив под мобильные</div><div class="deliv-desc" data-i18n="pages.launch-site.deliv6_desc">Протестировано на iPhone, Android, планшете. Не шаблон — настоящая мобильная сборка.</div></div></div>
+</div>
+</div>
+</section>
+<!-- S5: Timeline -->
+<section class="lp-section" id="timeline-section">
+<div class="lp-wrap">
+<div class="sr"><span class="pill" data-i18n="pages.launch-site.timeline_pill">График поставки</span><h2 class="section-h" data-i18n="pages.launch-site.timeline_h">От звонка до запуска за 7 дней.</h2><p class="section-sub" data-i18n="pages.launch-site.timeline_sub">График закрепляется в объёме проекта, а даты проверки и передачи согласуются до начала работы.</p></div>
+<div class="timeline-scroll"><div class="timeline-svg-wrap">
+<svg class="timeline-svg" preserveaspectratio="xMidYMid meet" viewbox="0 0 860 140">
+<line class="t-track" x1="60" x2="800" y1="70" y2="70"></line>
+<line class="t-path" id="t-line" x1="60" x2="60" y1="70" y2="70"></line>
+<circle class="t-ring" cx="60" cy="70" r="9"></circle><circle class="t-dot" cx="60" cy="70" r="4"></circle>
+<text class="t-day" data-i18n="pages.launch-site.tl1_day" text-anchor="middle" x="60" y="28">ДЕНЬ 1</text><text class="t-label" data-i18n="pages.launch-site.tl1_label" text-anchor="middle" x="60" y="46">Стартовый звонок</text><text class="t-sub" data-i18n="pages.launch-site.tl1_sub1" text-anchor="middle" x="60" y="97">Бриф + материалы</text><text class="t-sub" data-i18n="pages.launch-site.tl1_sub2" text-anchor="middle" x="60" y="112">собраны</text>
+<circle class="t-ring" cx="430" cy="70" r="9"></circle><circle class="t-dot" cx="430" cy="70" r="4"></circle>
+<text class="t-day" data-i18n="pages.launch-site.tl2_day" text-anchor="middle" x="430" y="28">ДЕНЬ 3–4</text><text class="t-label" data-i18n="pages.launch-site.tl2_label" text-anchor="middle" x="430" y="46">Первый драфт</text><text class="t-sub" data-i18n="pages.launch-site.tl2_sub1" text-anchor="middle" x="430" y="97">Staging запущен,</text><text class="t-sub" data-i18n="pages.launch-site.tl2_sub2" text-anchor="middle" x="430" y="112">раунд правок 1</text>
+<circle class="t-ring" cx="800" cy="70" r="9"></circle><circle class="t-dot" cx="800" cy="70" r="4"></circle>
+<text class="t-day" data-i18n="pages.launch-site.tl3_day" text-anchor="middle" x="800" y="28">ДЕНЬ 7</text><text class="t-label" data-i18n="pages.launch-site.tl3_label" text-anchor="middle" x="800" y="46">Запуск</text><text class="t-sub" data-i18n="pages.launch-site.tl3_sub1" text-anchor="middle" x="800" y="97">Домен подключён,</text><text class="t-sub" data-i18n="pages.launch-site.tl3_sub2" text-anchor="middle" x="800" y="112">GA4 + автоматизация включены</text>
+</svg>
+</div></div>
+</div>
+</section>
+<!-- S6: Risk Reversal -->
+<section class="lp-section" id="guarantee">
+<div class="lp-wrap">
+<div class="risk-outer sr"><div class="risk-inner">
+<div class="risk-icon"><svg viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+<h2 class="risk-h" data-i18n="pages.launch-site.guarantee_h">Гарантия запуска за 7 дней</h2>
+<p class="risk-copy" data-i18n="pages.launch-site.guarantee_copy">«Если твой сайт не запущен в течение 7 рабочих дней с нашего стартового звонка, ты получаешь полный возврат. Без вопросов, без неловких писем.»</p>
+<span class="risk-badge"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-i18n="pages.launch-site.guarantee_badge">Закреплено договором</span></span>
+</div></div>
+</div>
+</section>
+<!-- S7: FAQ -->
+<section class="lp-section" id="faq">
+<div class="lp-wrap">
+<div class="sr"><span class="pill" data-i18n="pages.launch-site.faq_pill">Вопросы</span><h2 class="section-h" data-i18n="pages.launch-site.faq_h">Всё, о чём ты можешь задуматься.</h2></div>
+<div class="faq-wrap">
+<div class="faq-item"><button aria-expanded="false" class="faq-btn" type="button"><span class="faq-q" data-i18n="pages.launch-site.faq1_q">Что входит в «до 3 страниц»?</span><span aria-hidden="true" class="faq-arrow"></span></button><div class="faq-body"><p class="faq-ans" data-i18n="pages.launch-site.faq1_a">Любые 3 страницы — большинство клиентов выбирают Главную, О нас/Услуги и Контакты. Страницы собраны в WordPress, так что ты можешь редактировать их сам после передачи.</p></div></div>
+<div class="faq-item"><button aria-expanded="false" class="faq-btn" type="button"><span class="faq-q" data-i18n="pages.launch-site.faq2_q">Нужно ли мне предоставлять текст и изображения?</span><span aria-hidden="true" class="faq-arrow"></span></button><div class="faq-body"><p class="faq-ans" data-i18n="pages.launch-site.faq2_a">В идеале да — твои слова, твои фото. Если текста нет, я могу написать первый драфт на основе 30-минутного брифинга. Сток-фото включены как заглушки.</p></div></div>
+<div class="faq-item"><button aria-expanded="false" class="faq-btn" type="button"><span class="faq-q" data-i18n="pages.launch-site.faq3_q">Входит ли хостинг в €390?</span><span aria-hidden="true" class="faq-arrow"></span></button><div class="faq-body"><p class="faq-ans" data-i18n="pages.launch-site.faq3_a">Нет — хостинг оплачивается отдельно напрямую тобой (обычно €3–6/месяц). Я его настраиваю, конфигурирую и передаю тебе доступы. Ты владеешь всем.</p></div></div>
+<div class="faq-item"><button aria-expanded="false" class="faq-btn" type="button"><span class="faq-q" data-i18n="pages.launch-site.faq4_q">Что если я захочу изменения после 2 раундов правок?</span><span aria-hidden="true" class="faq-arrow"></span></button><div class="faq-body"><p class="faq-ans" data-i18n="pages.launch-site.faq4_a">Дополнительные правки — €45/час. Если правка нужна потому, что я неправильно понял бриф, это за мой счёт, а не за счёт счётчика правок.</p></div></div>
+<div class="faq-item"><button aria-expanded="false" class="faq-btn" type="button"><span class="faq-q" data-i18n="pages.launch-site.faq5_q">Могу ли я позже расширить до большего числа страниц?</span><span aria-hidden="true" class="faq-arrow"></span></button><div class="faq-body"><p class="faq-ans" data-i18n="pages.launch-site.faq5_a">Да. Действующие клиенты получают €90/страницу за дополнения. Можно перейти на Ecommerce или Custom Premium — уплаченная сумма засчитывается в разницу.</p></div></div>
+</div>
+</div>
+</section>
+<!-- S8: Final CTA -->
+<section class="lp-cta-sect" id="book">
+<div aria-hidden="true" class="cta-glow"></div>
+<div class="cta-content sr">
+<span class="pill" data-i18n="pages.launch-site.cta_pill">Готов начать?</span>
+<h2 class="cta-h" data-i18n="pages.launch-site.cta_h">Твой сайт, запуск<br>до <span class="accent">понедельника.</span></h2>
+<p class="cta-p" data-i18n="pages.launch-site.cta_p">Забронируй бесплатный 20-минутный звонок. Определяем объём проекта, согласуем цену, и я начинаю собирать в тот же день.</p>
+<div class="cta-row">
+<a class="cta-pill" href="/ru/contact?objective=launch-site">
+<span data-i18n="pages.launch-site.cta_btn">Забронировать бесплатный звонок</span>
+<span aria-hidden="true" class="cta-arrow"><svg viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+</a>
+</div>
+</div>
+</section>
+<!-- Site footer (identical to all other pages) -->
+<footer class="bg-obsidian pt-24 pb-12 px-6 border-t border-primary/20 relative">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20">
+<div class="md:col-span-3">
+<div class="flex items-center gap-3 mb-6">
+<img alt="Camelot Flows" class="object-contain" src="/assets/images/cf-mark.png?v=3" style="height:56px;width:auto">
+<span class="font-display text-xl font-bold tracking-tighter uppercase text-white">Camelot Flows</span>
+</img></div>
+<p class="text-slate-500 mb-8 text-sm leading-relaxed font-mono">
+<span data-i18n="common.footer.location_line_1"><span class="text-primary">&gt;</span> Локация: Кишинёв, MD</span><br>
+<span data-i18n="common.footer.location_line_2"><span class="text-primary">&gt;</span> Координаты: 47.0105° N, 28.8638° E</span><br>
+<span data-i18n="common.footer.location_line_3"><span class="text-primary">&gt;</span> Миссия: Премиальные сайты. Актив — ваш.</span>
+</p>
+<div class="flex gap-4">
+<a aria-label="LinkedIn" class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="https://www.linkedin.com/in/alex-buzi/" rel="noopener noreferrer" target="_blank">
+<svg fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+</a>
+<a aria-label="Email" class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="mailto:alex@camelotflows.dev">
+<span class="material-symbols-outlined text-lg">mail</span>
+</a>
+<a aria-label="Call" class="nav-phone-btn w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="tel:+37369555936">
+<span class="material-symbols-outlined cf-phone-icon text-lg">call</span>
+</a>
+</div>
+<a class="nav-phone-btn mt-4 flex items-center gap-2 text-slate-500 hover:text-primary transition-colors text-xs font-mono" href="tel:+37369555936">
+<span class="material-symbols-outlined cf-phone-icon" style="font-size:14px">call</span>
+                    +373 69 555 936
+                </a>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_protocol">Протокол</h5>
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/arsenal"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_arsenal">Arsenal</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/merlin"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_merlin">Merlin</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/case-studies"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_cases">Кейсы</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/for-agencies"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_agencies">Агентствам</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/blog/"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.blog">Блог</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_services">Услуги</h5>
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/service-creation"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_creation">Создание сайта</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/service-maintenance"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_maintenance">Поддержка</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/service-automation"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_automation">Автоматизация</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/service-marketing"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_marketing">Чтобы находили</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/audit"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_audit">Бесплатный аудит сайта</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_company">Мастерская</h5>
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/about"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_about">Обо мне</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/work-with-me"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_work">Сотрудничество</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/legal"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_legal">Условия</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ru/contact"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_contact">Контакты</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-3">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_vanguard">Авангард</h5>
+<p class="text-slate-500 text-sm mb-6 leading-relaxed" data-i18n="common.footer.col_vanguard_lead">Раз в неделю — материалы об AI-автоматизации, прямо в твой инбокс.</p>
+<div class="flex gap-2 p-1 bg-white/5 rounded border border-white/10">
+<label class="sr-only" for="nl-email">Email address</label>
+<input class="bg-transparent border-none focus:ring-0 text-sm flex-1 px-4 text-white font-mono placeholder:text-slate-600" data-i18n-attr="placeholder:common.footer.col_vanguard_placeholder" id="nl-email" placeholder="ENTER_EMAIL" type="email">
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded text-xs font-bold transition-colors font-mono" data-i18n="common.footer.col_vanguard_submit">[SUBMIT]</button>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-xs text-slate-600 font-mono" data-i18n="common.footer.copyright">© 2026 Camelot Flows. Сделано Alex Buzi.</p>
+<div class="flex flex-wrap justify-center gap-4 md:gap-8">
+<div class="flex items-center gap-2 text-xs text-slate-500 font-mono"><span class="material-symbols-outlined text-sm text-green-500">wifi</span><span data-i18n="common.footer.status_optimal">Состояние системы: оптимальное</span></div>
+<div class="flex items-center gap-2 text-xs text-slate-500 font-mono"><span class="material-symbols-outlined text-sm text-blue-500">bolt</span><span data-i18n="common.footer.status_lightning">Молниеносная скорость</span></div>
+</div>
+</div>
+</div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="/assets/js/locales.js"></script>
+<script defer="" src="/assets/js/i18n.js"></script>
+<script defer="" src="/assets/site.js?v=2"></script>
+<script>
+// Theme toggle (site nav button)
+(function(){
+  var btn=document.getElementById('theme-toggle');
+  if(!btn)return;
+  btn.addEventListener('click',function(){
+    var h=document.documentElement;
+    var next=h.getAttribute('data-theme')==='night'?'cozy':'night';
+    if(document.startViewTransition){document.startViewTransition(function(){h.setAttribute('data-theme',next);});}
+    else{h.setAttribute('data-theme',next);}
+    try{localStorage.setItem('cf_theme',next);document.cookie='cf_theme='+next+';path=/;max-age=31536000';}catch(e){}
+  });
+})();
+
+// FAQ
+document.querySelectorAll('.faq-btn').forEach(function(btn){btn.addEventListener('click',function(){var item=this.closest('.faq-item');var isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(o){o.classList.remove('open');o.querySelector('.faq-btn').setAttribute('aria-expanded','false');});if(!isOpen){item.classList.add('open');this.setAttribute('aria-expanded','true');}});});
+
+// GSAP
+window.addEventListener('DOMContentLoaded',function(){
+  if(typeof gsap==='undefined'){document.querySelectorAll('.sr,.hero-word,.hero-price,.hero-cta').forEach(function(el){el.style.opacity='1';el.style.transform='none';});return;}
+  gsap.registerPlugin(ScrollTrigger);
+  var noMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!noMotion){
+    gsap.timeline({delay:.25}).fromTo('.hero-word',{y:60,opacity:0},{y:0,opacity:1,stagger:.09,duration:1,ease:'power4.out'}).fromTo('.hero-price',{x:80,opacity:0},{x:0,opacity:1,duration:1,ease:'back.out(1.7)'},'-=.55').fromTo('.hero-cta',{y:20,opacity:0},{y:0,opacity:1,stagger:.1,duration:.7,ease:'power3.out'},'-.45');
+    var orbs=document.querySelectorAll('.hero-orb');
+    window.addEventListener('mousemove',function(e){var dx=e.clientX/window.innerWidth-.5;var dy=e.clientY/window.innerHeight-.5;orbs.forEach(function(o,i){gsap.to(o,{x:dx*(i+1)*40,y:dy*(i+1)*30,duration:1.2,ease:'power1.out'});});});
+  }else{gsap.set(['.hero-word','.hero-price','.hero-cta'],{opacity:1,x:0,y:0});}
+  var desktop=window.innerWidth>=768;
+  var feats=gsap.utils.toArray('.feat-item');
+  var details=gsap.utils.toArray('.feat-detail');
+  if(desktop&&!noMotion&&feats.length){
+    feats.forEach(function(f,i){gsap.set(f,{opacity:i===0?1:.2,scale:i===0?1:.95});});
+    details.forEach(function(d,i){gsap.set(d,i===0?{opacity:1,y:0}:{opacity:0,y:14});});
+    ScrollTrigger.create({trigger:'#feature-spotlight',pin:true,scrub:.6,invalidateOnRefresh:true,start:'top top',end:function(){return'+='+feats.length*window.innerHeight*.45;},onUpdate:function(self){var idx=Math.min(Math.floor(self.progress*feats.length),feats.length-1);feats.forEach(function(f,i){gsap.to(f,{opacity:i===idx?1:.2,scale:i===idx?1:.95,duration:.3,ease:'power2.out'});});details.forEach(function(d,i){gsap.to(d,{opacity:i===idx?1:0,y:i===idx?0:14,duration:.3,ease:'power2.out'});});}});
+  }else{gsap.set('.feat-detail',{opacity:1,y:0});gsap.set('.feat-item',{opacity:1,scale:1});}
+  document.querySelectorAll('.check-path').forEach(function(p,i){var len=p.getTotalLength();if(noMotion){gsap.set(p,{strokeDasharray:len,strokeDashoffset:0});return;}gsap.set(p,{strokeDasharray:len,strokeDashoffset:len});gsap.to(p,{strokeDashoffset:0,duration:.55,ease:'power2.out',delay:i*.12,scrollTrigger:{trigger:p,start:'top 83%',toggleActions:'play none none reverse'}});});
+  if(!noMotion){gsap.fromTo('#t-line',{attr:{x2:60}},{attr:{x2:800},ease:'none',scrollTrigger:{trigger:'#timeline-section',start:'top 70%',end:'bottom 30%',scrub:1}});}else{gsap.set('#t-line',{attr:{x2:800}});}
+  if(!noMotion){gsap.utils.toArray('.sr').forEach(function(el){gsap.to(el,{y:0,opacity:1,duration:.85,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 83%',toggleActions:'play none none reverse'}});});}else{gsap.set('.sr',{opacity:1,y:0});}
+  if(!noMotion&&!window.matchMedia('(hover:none)').matches){var cur=document.createElement('div');cur.className='cf-cursor';cur.setAttribute('aria-hidden','true');document.body.appendChild(cur);var xTo=gsap.quickTo(cur,'x',{duration:.4,ease:'power3'});var yTo=gsap.quickTo(cur,'y',{duration:.4,ease:'power3'});window.addEventListener('mousemove',function(e){xTo(e.clientX);yTo(e.clientY);});var iSel='a,button,[role=button],input,textarea,select,.lp-feat-item';document.body.addEventListener('mouseover',function(e){if(e.target.closest(iSel))cur.classList.add('is-hover');});document.body.addEventListener('mouseout',function(e){if(e.target.closest(iSel))cur.classList.remove('is-hover');});if(window.matchMedia('(pointer:fine)').matches){var cc=document.getElementById('custom-cursor');var ccVis=false,lastPt=0;gsap.set(cc,{xPercent:-50,yPercent:-50,zIndex:99999});window.addEventListener('mousemove',function(e2){if(!ccVis){ccVis=true;gsap.to(cc,{opacity:1,duration:.3});}gsap.to(cc,{x:e2.clientX,y:e2.clientY,duration:.15,ease:'power2.out'});var now=Date.now();if(now-lastPt>12){lastPt=now;var p=document.createElement('div');p.style.cssText='position:fixed;width:6px;height:6px;border-radius:50%;background:rgba(var(--lp-accent-rgb),1);pointer-events:none;z-index:9998;mix-blend-mode:screen;filter:blur(1px);box-shadow:0 0 20px 4px rgba(var(--lp-accent-rgb),.6);';document.body.appendChild(p);gsap.set(p,{x:e2.clientX,y:e2.clientY,xPercent:-50,yPercent:-50});gsap.to(p,{x:e2.clientX+(Math.random()-.5)*15,y:e2.clientY+(Math.random()-.5)*15,scale:0,opacity:0,duration:Math.random()*.4+.4,ease:'power2.out',onComplete:function(){p.remove();}});}});document.addEventListener('mouseleave',function(){ccVis=false;gsap.to(cc,{opacity:0,duration:.3});});document.querySelectorAll('a,button,input').forEach(function(el){el.addEventListener('mouseenter',function(){gsap.to(cc,{scale:3.5,opacity:.3,duration:.3,ease:'power2.out'});});el.addEventListener('mouseleave',function(){gsap.to(cc,{scale:1,opacity:1,duration:.3,ease:'power2.out'});});});}}
+});
+</script>
+</body>
+</html>

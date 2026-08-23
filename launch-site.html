@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-i18n-page="launch-site">
+<html lang="en" data-i18n-page="launch-site" data-cf-static-lang="en">
 <head>
 <script>(function(){var h=document.documentElement;try{var c=document.cookie.match('(?:^|;) ?cf_theme=([^;]*)');var t=c?c[1]:(localStorage.getItem('cf_theme')||'cozy');h.setAttribute('data-theme',t);}catch(e){h.setAttribute('data-theme','cozy');}try{if(sessionStorage.getItem('cf_loaded')==='1')h.classList.add('cf-skip-preloader');}catch(e){}h.classList.add('js');})();</script>
 <meta charset="UTF-8">
@@ -7,6 +7,10 @@
 <title>Launch Site — Live in 7 Days · €390 | Camelot Flows</title>
 <meta name="description" content="Fixed-scope website. Up to 3 pages, mobile responsive, contact form, GA4, lead-capture automation. Delivered in 5–7 days from €390.">
 <link rel="canonical" href="https://camelotflows.dev/launch-site">
+    <link rel="alternate" hreflang="en" href="https://camelotflows.dev/launch-site">
+    <link rel="alternate" hreflang="ro" href="https://camelotflows.dev/ro/launch-site">
+    <link rel="alternate" hreflang="ru" href="https://camelotflows.dev/ru/launch-site">
+    <link rel="alternate" hreflang="x-default" href="https://camelotflows.dev/launch-site">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -177,21 +181,21 @@ a{text-decoration:none;color:inherit;}
             </div>
             <div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="index.html" data-i18n="common.nav.home">[Home]</a>
+                    href="/" data-i18n="common.nav.home">[Home]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="work-with-me.html" data-i18n="common.nav.services">[Services]</a>
+                    href="/work-with-me" data-i18n="common.nav.services">[Services]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
+                    href="/arsenal" data-i18n="common.nav.arsenal">[Arsenal]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
+                    href="/merlin" data-i18n="common.nav.merlin">[Merlin]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
-                    href="case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
+                    href="/case-studies" data-i18n="common.nav.cases">[Cases]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block"
-                    href="for-agencies.html" data-i18n="common.nav.agencies">[Agencies]</a>
+                    href="/for-agencies" data-i18n="common.nav.agencies">[Agencies]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
                     href="/?goto=pricing" data-i18n="common.nav.pricing">[Pricing]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="contact.html" data-i18n="common.nav.contact">[Contact]</a>
+                    href="/contact" data-i18n="common.nav.contact">[Contact]</a>
             </div>
             <div class="flex items-center gap-2">
                 <a href="tel:+37369555936" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" aria-label="Call Camelot Flows" title="+373 69 555 936">
@@ -207,9 +211,9 @@ a{text-decoration:none;color:inherit;}
         <span class="material-symbols-outlined lang-chevron">expand_more</span>
     </button>
     <ul class="lang-menu" role="listbox" hidden>
-        <li role="option" data-lang="en" tabindex="-1">EN</li>
-        <li role="option" data-lang="ro" tabindex="-1">RO</li>
-        <li role="option" data-lang="ru" tabindex="-1">RU</li>
+        <li role="option" data-lang="en" tabindex="-1"><a href="/launch-site" hreflang="en">EN</a></li>
+        <li role="option" data-lang="ro" tabindex="-1"><a href="/ro/launch-site" hreflang="ro">RO</a></li>
+        <li role="option" data-lang="ru" tabindex="-1"><a href="/ru/launch-site" hreflang="ru">RU</a></li>
     </ul>
 </div>
                 <button id="mobile-menu-toggle" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 transition-all text-slate-400" aria-label="Open menu" type="button">
@@ -219,7 +223,7 @@ a{text-decoration:none;color:inherit;}
     <span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
     <span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
 </button>
-                <a href="contact.html?objective=build"
+                <a href="/contact?objective=build"
                     class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong hidden lg:inline-flex items-center nav-cta"
                     data-i18n="common.nav.summon_agent">
                     [Hire_me]
@@ -230,14 +234,14 @@ a{text-decoration:none;color:inherit;}
         <div id="mobile-nav" class="hidden mt-2 max-w-7xl mx-auto">
             <div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
                 <div class="flex flex-col gap-1">
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="index.html" data-i18n="common.nav.home">[Home]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="work-with-me.html" data-i18n="common.nav.services">[Services]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="contact.html" data-i18n="common.nav.contact">[Contact]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/" data-i18n="common.nav.home">[Home]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/work-with-me" data-i18n="common.nav.services">[Services]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/arsenal" data-i18n="common.nav.arsenal">[Arsenal]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/merlin" data-i18n="common.nav.merlin">[Merlin]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/case-studies" data-i18n="common.nav.cases">[Cases]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/contact" data-i18n="common.nav.contact">[Contact]</a>
                     <div class="mx-3 my-2 h-px bg-white/10"></div>
-                    <a href="contact.html?service=build" class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent">[Hire_me]</a>
+                    <a href="/contact?service=build" class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent">[Hire_me]</a>
                 </div>
             </div>
         </div>
@@ -259,7 +263,7 @@ a{text-decoration:none;color:inherit;}
       </h1>
       <p class="hero-sub" data-i18n="pages.launch-site.hero_sub">Up to 3 pages, mobile responsive, contact form, GA4 analytics, and lead-capture automation wired in. Fixed price. Zero surprises.</p>
       <div class="hero-actions">
-        <a href="contact.html?objective=launch-site" class="cta-pill hero-cta">
+        <a href="/contact?objective=launch-site" class="cta-pill hero-cta">
           <span data-i18n="pages.launch-site.hero_cta_start">Start my project</span>
           <span class="cta-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
         </a>
@@ -313,11 +317,11 @@ a{text-decoration:none;color:inherit;}
         <div class="feat-detail" data-fd="1"><div class="feat-detail-card"><div class="feat-detail-inner">
           <div class="feat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
           <h3 class="feat-title" data-i18n="pages.launch-site.fd2_title">The price you see is what you pay.</h3>
-          <p class="feat-desc" data-i18n="pages.launch-site.fd2_desc">A fixed scope means a fixed invoice. After 47 projects I know exactly what to budget — surprises are on me, not you.</p>
+          <p class="feat-desc" data-i18n="pages.launch-site.fd2_desc">A fixed scope means a fixed invoice. Deliverables and exclusions are agreed before the build starts.</p>
         </div></div></div>
         <div class="feat-detail" data-fd="2"><div class="feat-detail-card"><div class="feat-detail-inner">
           <div class="feat-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1"/></svg></div>
-          <h3 class="feat-title" data-i18n="pages.launch-site.fd3_title">63% of your visitors are on mobile.</h3>
+          <h3 class="feat-title" data-i18n="pages.launch-site.fd3_title">Built mobile-first.</h3>
           <p class="feat-desc" data-i18n="pages.launch-site.fd3_desc">Every button is touch-target sized. Every image optimised for slow connections. Every layout tested on real devices before handoff.</p>
         </div></div></div>
         <div class="feat-detail" data-fd="3"><div class="feat-detail-card"><div class="feat-detail-inner">
@@ -352,7 +356,7 @@ a{text-decoration:none;color:inherit;}
 <!-- S5: Timeline -->
 <section id="timeline-section" class="lp-section">
   <div class="lp-wrap">
-    <div class="sr"><span class="pill" data-i18n="pages.launch-site.timeline_pill">Delivery timeline</span><h2 class="section-h" data-i18n="pages.launch-site.timeline_h">From call to live in 7 days.</h2><p class="section-sub" data-i18n="pages.launch-site.timeline_sub">This is the actual schedule, not the optimistic one. The process is dialled after 47 projects.</p></div>
+        <div class="sr"><span class="pill" data-i18n="pages.launch-site.timeline_pill">Delivery timeline</span><h2 class="section-h" data-i18n="pages.launch-site.timeline_h">From call to live in 7 days.</h2><p class="section-sub" data-i18n="pages.launch-site.timeline_sub">The schedule is written into the project scope, with review and handoff dates agreed before work begins.</p></div>
     <div class="timeline-scroll"><div class="timeline-svg-wrap">
       <svg class="timeline-svg" viewBox="0 0 860 140" preserveAspectRatio="xMidYMid meet">
         <line class="t-track" x1="60" y1="70" x2="800" y2="70"/>
@@ -402,7 +406,7 @@ a{text-decoration:none;color:inherit;}
     <h2 class="cta-h" data-i18n="pages.launch-site.cta_h">Your site, live<br>before <span class="accent">Monday.</span></h2>
     <p class="cta-p" data-i18n="pages.launch-site.cta_p">Book a free 20-minute call. We scope the project, agree the price, and I start building the same day.</p>
     <div class="cta-row">
-      <a href="contact.html?objective=launch-site" class="cta-pill">
+      <a href="/contact?objective=launch-site" class="cta-pill">
         <span data-i18n="pages.launch-site.cta_btn">Book a free call</span>
         <span class="cta-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
       </a>
@@ -444,30 +448,30 @@ a{text-decoration:none;color:inherit;}
             <div class="md:col-span-2">
                 <h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_protocol">Protocol</h5>
                 <ul class="space-y-3 text-slate-500 text-sm font-mono">
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="arsenal.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_arsenal">The Arsenal</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="merlin.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_merlin">Merlin</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="case-studies.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_cases">Case Studies</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="for-agencies.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_agencies">Agencies</span></a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/arsenal"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_arsenal">The Arsenal</span></a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/merlin"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_merlin">Merlin</span></a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/case-studies"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_cases">Case Studies</span></a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/for-agencies"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_agencies">Agencies</span></a></li>
                     <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/blog/"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.blog">Blog</span></a></li>
                 </ul>
             </div>
             <div class="md:col-span-2">
                 <h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_services">Services</h5>
                 <ul class="space-y-3 text-slate-500 text-sm font-mono">
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="service-creation.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_creation">Site Creation</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="service-maintenance.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_maintenance">Maintenance</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="service-automation.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_automation">Automations</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="service-marketing.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_marketing">Marketing</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="audit.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_audit">Free Website Audit</span></a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-creation"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_creation">Site Creation</span></a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-maintenance"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_maintenance">Maintenance</span></a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-automation"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_automation">Automations</span></a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-marketing"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_marketing">Marketing</span></a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/audit"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_audit">Free Website Audit</span></a></li>
                 </ul>
             </div>
             <div class="md:col-span-2">
                 <h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_company">Company</h5>
                 <ul class="space-y-3 text-slate-500 text-sm font-mono">
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="about.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_about">About</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="work-with-me.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_work">Work With</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="legal.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_legal">Legal</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="contact.html"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_contact">Contact</span></a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/about"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_about">About</span></a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/work-with-me"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_work">Work With</span></a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/legal"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_legal">Legal</span></a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/contact"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_contact">Contact</span></a></li>
                 </ul>
             </div>
             <div class="md:col-span-3">

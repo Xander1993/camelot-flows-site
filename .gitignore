@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 .env
 node_modules/
+.npm-cache/
 .netlify
 
 # Build output

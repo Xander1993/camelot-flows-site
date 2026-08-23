@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-i18n-page="service-creation">
+<html lang="en" data-i18n-page="service-creation" data-cf-static-lang="en">
 
 <head>
     <!-- CF: theme bootstrap (sync, before paint) -->
@@ -24,7 +24,7 @@
       (function () {
         var html = document.documentElement;
         try {
-          var l = localStorage.getItem('cf_lang') || 'en';
+          var l = document.documentElement.lang || 'en';
           if (['en','ro','ru'].indexOf(l) === -1) l = 'en';
           html.setAttribute('lang', l);
           html.setAttribute('data-cf-lang', l);
@@ -39,6 +39,8 @@
     <meta name="description" content="Launch Page from €390, Signature Landing from €650, Site Sprint from €900. Fixed scope, hand-built, from a solo workshop in Chisinau.">
     <link rel="canonical" href="https://camelotflows.dev/service-creation">
     <link rel="alternate" hreflang="en" href="https://camelotflows.dev/service-creation">
+    <link rel="alternate" hreflang="ro" href="https://camelotflows.dev/ro/service-creation">
+    <link rel="alternate" hreflang="ru" href="https://camelotflows.dev/ru/service-creation">
     <link rel="alternate" hreflang="x-default" href="https://camelotflows.dev/service-creation">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Fixed-Price Website Builds from €390 - Camelot Flows">
@@ -69,11 +71,11 @@
     <link rel="stylesheet" href="assets/css/camelot.css?v=6">
     <link rel="stylesheet" href="assets/css/theme-night.css?v=2">
     <link rel="stylesheet" href="assets/css/lang-switcher.css">
-    <link rel="prefetch" href="arsenal.html" as="document">
-    <link rel="prefetch" href="merlin.html" as="document">
-    <link rel="prefetch" href="contact.html" as="document">
-    <link rel="prefetch" href="case-studies.html" as="document">
-    <link rel="prefetch" href="about.html" as="document">
+    <link rel="prefetch" href="/arsenal" as="document">
+    <link rel="prefetch" href="/merlin" as="document">
+    <link rel="prefetch" href="/contact" as="document">
+    <link rel="prefetch" href="/case-studies" as="document">
+    <link rel="prefetch" href="/about" as="document">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -124,21 +126,21 @@
             </div>
             <div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="index.html" data-i18n="common.nav.home">[Home]</a>
+                    href="/" data-i18n="common.nav.home">[Home]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="work-with-me.html" data-i18n="common.nav.services">[Services]</a>
+                    href="/work-with-me" data-i18n="common.nav.services">[Services]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
+                    href="/arsenal" data-i18n="common.nav.arsenal">[Arsenal]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
+                    href="/merlin" data-i18n="common.nav.merlin">[Merlin]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
-                    href="case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
+                    href="/case-studies" data-i18n="common.nav.cases">[Cases]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block"
-                    href="for-agencies.html" data-i18n="common.nav.agencies">[Agencies]</a>
+                    href="/for-agencies" data-i18n="common.nav.agencies">[Agencies]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
                     href="/?goto=pricing" data-i18n="common.nav.pricing">[Pricing]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="contact.html" data-i18n="common.nav.contact">[Contact]</a>
+                    href="/contact" data-i18n="common.nav.contact">[Contact]</a>
             </div>
             <div class="flex items-center gap-2">
                 <a href="tel:+37369555936" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" aria-label="Call Camelot Flows" title="+373 69 555 936">
@@ -154,9 +156,9 @@
         <span class="material-symbols-outlined lang-chevron">expand_more</span>
     </button>
     <ul class="lang-menu" role="listbox" hidden>
-        <li role="option" data-lang="en" tabindex="-1">EN</li>
-        <li role="option" data-lang="ro" tabindex="-1">RO</li>
-        <li role="option" data-lang="ru" tabindex="-1">RU</li>
+        <li role="option" data-lang="en" tabindex="-1"><a href="/service-creation" hreflang="en">EN</a></li>
+        <li role="option" data-lang="ro" tabindex="-1"><a href="/ro/service-creation" hreflang="ro">RO</a></li>
+        <li role="option" data-lang="ru" tabindex="-1"><a href="/ru/service-creation" hreflang="ru">RU</a></li>
     </ul>
 </div>
                 <button id="mobile-menu-toggle" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 transition-all text-slate-400" aria-label="Open menu" type="button">
@@ -166,7 +168,7 @@
     <span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
     <span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
 </button>
-                <a href="contact.html?objective=build"
+                <a href="/contact?objective=build"
                     class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong hidden lg:inline-flex items-center nav-cta"
                     data-i18n="common.nav.summon_agent">
                     [Hire_me]
@@ -177,14 +179,14 @@
         <div id="mobile-nav" class="hidden mt-2 max-w-7xl mx-auto">
             <div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
                 <div class="flex flex-col gap-1">
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="index.html" data-i18n="common.nav.home">[Home]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="work-with-me.html" data-i18n="common.nav.services">[Services]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="contact.html" data-i18n="common.nav.contact">[Contact]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/" data-i18n="common.nav.home">[Home]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/work-with-me" data-i18n="common.nav.services">[Services]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/arsenal" data-i18n="common.nav.arsenal">[Arsenal]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/merlin" data-i18n="common.nav.merlin">[Merlin]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/case-studies" data-i18n="common.nav.cases">[Cases]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/contact" data-i18n="common.nav.contact">[Contact]</a>
                     <div class="mx-3 my-2 h-px bg-white/10"></div>
-                    <a href="contact.html?service=build" class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent">[Hire_me]</a>
+                    <a href="/contact?service=build" class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent">[Hire_me]</a>
                 </div>
             </div>
         </div>
@@ -207,26 +209,26 @@
             Starter scope, custom execution. Every page is hand-built around your brand voice and conversion goals — no templates, no agency overhead, no scope creep. Launch Page from €390 · Signature Landing from €650 · Site Sprint from €900.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 mb-16">
-            <a href="contact.html?objective=creation" class="button primary inline-flex items-center justify-center gap-3 px-7 py-4 rounded-full bg-gradient-to-br from-primary to-accent text-white font-mono text-sm uppercase tracking-widest shadow-neon-strong hover:scale-[1.02] transition-transform">
+            <a href="/contact?objective=creation" class="button primary inline-flex items-center justify-center gap-3 px-7 py-4 rounded-full bg-gradient-to-br from-primary to-accent text-white font-mono text-sm uppercase tracking-widest shadow-neon-strong hover:scale-[1.02] transition-transform">
                 <span class="material-symbols-outlined text-xl">east</span>
                 <span data-i18n="pages.service-creation.hero_btn_brief">Brief a build</span>
             </a>
-            <a href="case-studies.html" class="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-full border border-white/15 text-slate-200 font-mono text-sm uppercase tracking-widest hover:border-primary/40 hover:text-white transition-colors" data-i18n="pages.service-creation.hero_btn_recent">
+            <a href="/case-studies" class="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-full border border-white/15 text-slate-200 font-mono text-sm uppercase tracking-widest hover:border-primary/40 hover:text-white transition-colors" data-i18n="pages.service-creation.hero_btn_recent">
                 See recent builds
             </a>
         </div>
         <div class="grid grid-cols-3 gap-8 max-w-2xl">
             <div>
-                <div class="font-display text-3xl md:text-4xl text-white">5–14d</div>
-                <div class="font-mono text-[10px] uppercase tracking-[0.25em] text-slate-500 mt-1">Build time by scope</div>
+                <div class="font-display text-3xl md:text-4xl text-white" data-i18n="pages.service-creation.hero_stat_time_value">5–14d</div>
+                <div class="font-mono text-[10px] uppercase tracking-[0.25em] text-slate-500 mt-1" data-i18n="pages.service-creation.hero_stat_time_label">Build time by scope</div>
             </div>
             <div>
-                <div class="font-display text-3xl md:text-4xl text-white">100</div>
-                <div class="font-mono text-[10px] uppercase tracking-[0.25em] text-slate-500 mt-1">Lighthouse target</div>
+                <div class="font-display text-3xl md:text-4xl text-white" data-i18n="pages.service-creation.hero_stat_audit_value">Audited</div>
+                <div class="font-mono text-[10px] uppercase tracking-[0.25em] text-slate-500 mt-1" data-i18n="pages.service-creation.hero_stat_audit_label">Pre-launch checks</div>
             </div>
             <div>
-                <div class="font-display text-3xl md:text-4xl text-white">1</div>
-                <div class="font-mono text-[10px] uppercase tracking-[0.25em] text-slate-500 mt-1">Direct line to the builder</div>
+                <div class="font-display text-3xl md:text-4xl text-white" data-i18n="pages.service-creation.hero_stat_owner_value">1</div>
+                <div class="font-mono text-[10px] uppercase tracking-[0.25em] text-slate-500 mt-1" data-i18n="pages.service-creation.hero_stat_owner_label">Direct line to the builder</div>
             </div>
         </div>
         </div>
@@ -259,7 +261,7 @@
                     <span class="material-symbols-outlined text-white text-2xl">code_blocks</span>
                 </div>
                 <h3 class="font-display text-2xl text-white mb-3" data-i18n="pages.service-creation.s_del_c3_h">Engineered build</h3>
-                <p class="text-slate-400 leading-relaxed" data-i18n="pages.service-creation.s_del_c3_p">Hand-coded HTML, Tailwind, GSAP — or WordPress / Webflow if your team prefers. 90+ Lighthouse, AA accessibility, view transitions.</p>
+                <p class="text-slate-400 leading-relaxed" data-i18n="pages.service-creation.s_del_c3_p">Hand-coded HTML, Tailwind, GSAP — or WordPress / Webflow if your team prefers. Lighthouse and accessibility checks, with view transitions where appropriate.</p>
             </div>
             </div>
         </div>
@@ -330,7 +332,7 @@
             <h2 class="font-display text-4xl md:text-5xl text-white max-w-3xl leading-[1.05] mb-12" data-i18n="pages.service-creation.s_out_h2">What changes when this ships.</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                 <div class="border-l-2 border-primary/50 pl-5">
-                <div class="font-display text-2xl text-white mb-1" data-i18n="pages.service-creation.s_out_i1_h">90+ Lighthouse</div>
+                <div class="font-display text-2xl text-white mb-1" data-i18n="pages.service-creation.s_out_i1_h">Audited</div>
                 <div class="text-slate-400 text-sm leading-relaxed" data-i18n="pages.service-creation.s_out_i1_p">across performance, accessibility, best-practices, SEO.</div>
             </div>
 
@@ -356,22 +358,22 @@
         <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-10" data-i18n="pages.service-creation.s_cta_p">
             Tell me what you're trying to ship. I'll come back with a scope, a fixed price, and a launch date — usually within 48 hours. Launch Page from €390 · Signature Landing from €650 · Site Sprint from €900.
         </p>
-        <a href="contact.html?objective=creation" class="button primary inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-br from-primary to-accent text-white font-mono text-sm uppercase tracking-widest shadow-neon-strong hover:scale-[1.02] transition-transform">
+        <a href="/contact?objective=creation" class="button primary inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-br from-primary to-accent text-white font-mono text-sm uppercase tracking-widest shadow-neon-strong hover:scale-[1.02] transition-transform">
             <span class="material-symbols-outlined text-xl">east</span>
             <span data-i18n="pages.service-creation.hero_btn_brief">Brief a build</span>
         </a>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-16 text-left">
-            <a href="merlin.html" class="glass-card rounded-xl p-5 group transition-transform hover:-translate-y-1">
+            <a href="/merlin" class="glass-card rounded-xl p-5 group transition-transform hover:-translate-y-1">
                 <div class="font-display text-lg text-white mb-1 group-hover:text-primary-glow transition-colors">Merlin AI</div>
                 <div class="text-xs text-slate-500 font-mono" data-i18n="pages.service-creation.s_cta_link1_p">Add agentic automation to your new site.</div>
             </a>
 
-            <a href="service-maintenance.html" class="glass-card rounded-xl p-5 group transition-transform hover:-translate-y-1">
+            <a href="/service-maintenance" class="glass-card rounded-xl p-5 group transition-transform hover:-translate-y-1">
                 <div class="font-display text-lg text-white mb-1 group-hover:text-primary-glow transition-colors">Maintenance</div>
                 <div class="text-xs text-slate-500 font-mono" data-i18n="pages.service-creation.s_cta_link2_p">Keep it tuned after launch.</div>
             </a>
 
-            <a href="case-studies.html" class="glass-card rounded-xl p-5 group transition-transform hover:-translate-y-1">
+            <a href="/case-studies" class="glass-card rounded-xl p-5 group transition-transform hover:-translate-y-1">
                 <div class="font-display text-lg text-white mb-1 group-hover:text-primary-glow transition-colors">Case studies</div>
                 <div class="text-xs text-slate-500 font-mono" data-i18n="pages.service-creation.s_cta_link3_p">Recent builds and outcomes.</div>
             </a>
@@ -398,36 +400,36 @@
             <div class="md:col-span-2">
                 <h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_protocol">Protocol</h5>
                 <ul class="space-y-3 text-slate-500 text-sm font-mono">
-                    <li><a class="hover:text-primary transition-colors" href="arsenal.html"><span data-i18n="common.footer.col_protocol_arsenal">The Arsenal</span></a></li>
-                    <li><a class="hover:text-primary transition-colors" href="merlin.html"><span data-i18n="common.footer.col_protocol_merlin">Merlin</span></a></li>
-                    <li><a class="hover:text-primary transition-colors" href="case-studies.html"><span data-i18n="common.footer.col_protocol_cases">Case Studies</span></a></li>
-                    <li><a class="hover:text-primary transition-colors" href="for-agencies.html"><span data-i18n="common.footer.col_protocol_agencies">Agencies</span></a></li>
+                    <li><a class="hover:text-primary transition-colors" href="/arsenal"><span data-i18n="common.footer.col_protocol_arsenal">The Arsenal</span></a></li>
+                    <li><a class="hover:text-primary transition-colors" href="/merlin"><span data-i18n="common.footer.col_protocol_merlin">Merlin</span></a></li>
+                    <li><a class="hover:text-primary transition-colors" href="/case-studies"><span data-i18n="common.footer.col_protocol_cases">Case Studies</span></a></li>
+                    <li><a class="hover:text-primary transition-colors" href="/for-agencies"><span data-i18n="common.footer.col_protocol_agencies">Agencies</span></a></li>
                     <li><a class="hover:text-primary transition-colors" href="/blog/">Blog</a></li>
                 </ul>
             </div>
             <div class="md:col-span-2">
                 <h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_services">Services</h5>
                 <ul class="space-y-3 text-slate-500 text-sm font-mono">
-                    <li><a class="hover:text-primary transition-colors" href="service-creation.html"><span data-i18n="common.footer.col_services_creation">Site Creation</span></a></li>
-                    <li><a class="hover:text-primary transition-colors" href="service-maintenance.html"><span data-i18n="common.footer.col_services_maintenance">Maintenance</span></a></li>
-                    <li><a class="hover:text-primary transition-colors" href="service-automation.html"><span data-i18n="common.footer.col_services_automation">Automations</span></a></li>
-                    <li><a class="hover:text-primary transition-colors" href="service-marketing.html"><span data-i18n="common.footer.col_services_marketing">Marketing</span></a></li>
-                    <li><a class="hover:text-primary transition-colors" href="audit.html"><span data-i18n="common.footer.col_services_audit">Free Website Audit</span></a></li>
+                    <li><a class="hover:text-primary transition-colors" href="/service-creation"><span data-i18n="common.footer.col_services_creation">Site Creation</span></a></li>
+                    <li><a class="hover:text-primary transition-colors" href="/service-maintenance"><span data-i18n="common.footer.col_services_maintenance">Maintenance</span></a></li>
+                    <li><a class="hover:text-primary transition-colors" href="/service-automation"><span data-i18n="common.footer.col_services_automation">Automations</span></a></li>
+                    <li><a class="hover:text-primary transition-colors" href="/service-marketing"><span data-i18n="common.footer.col_services_marketing">Marketing</span></a></li>
+                    <li><a class="hover:text-primary transition-colors" href="/audit"><span data-i18n="common.footer.col_services_audit">Free Website Audit</span></a></li>
                 </ul>
             </div>
             <div class="md:col-span-2">
                 <h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_company">Company</h5>
                 <ul class="space-y-3 text-slate-500 text-sm font-mono">
-                    <li><a class="hover:text-primary transition-colors" href="about.html"><span data-i18n="common.footer.col_company_about">About</span></a></li>
-                    <li><a class="hover:text-primary transition-colors" href="work-with-me.html"><span data-i18n="common.footer.col_company_work">Work With</span></a></li>
-                    <li><a class="hover:text-primary transition-colors" href="legal.html"><span data-i18n="common.footer.col_company_legal">Legal</span></a></li>
-                    <li><a class="hover:text-primary transition-colors" href="contact.html"><span data-i18n="common.footer.col_company_contact">Contact</span></a></li>
+                    <li><a class="hover:text-primary transition-colors" href="/about"><span data-i18n="common.footer.col_company_about">About</span></a></li>
+                    <li><a class="hover:text-primary transition-colors" href="/work-with-me"><span data-i18n="common.footer.col_company_work">Work With</span></a></li>
+                    <li><a class="hover:text-primary transition-colors" href="/legal"><span data-i18n="common.footer.col_company_legal">Legal</span></a></li>
+                    <li><a class="hover:text-primary transition-colors" href="/contact"><span data-i18n="common.footer.col_company_contact">Contact</span></a></li>
                 </ul>
             </div>
             <div class="md:col-span-3">
                 <h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_vanguard">Vanguard</h5>
                 <p class="text-slate-500 text-sm mb-6 leading-relaxed" data-i18n="common.footer.col_vanguard_lead">Weekly insights on AI automation sent directly to your terminal.</p>
-                <form class="flex gap-2 p-1 bg-white/5 rounded border border-white/10 focus-within:border-primary/50 transition-colors" action="contact.html" method="get">
+                <form class="flex gap-2 p-1 bg-white/5 rounded border border-white/10 focus-within:border-primary/50 transition-colors" action="/contact" method="get">
                     <label for="newsletter-email" class="sr-only">Email address</label>
                     <input id="newsletter-email" class="bg-transparent border-none focus:ring-0 text-sm flex-1 px-4 text-white font-mono placeholder:text-slate-600" placeholder="ENTER_EMAIL" type="email" name="email" required />
                     <button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded text-xs font-bold transition-colors font-mono" data-i18n="common.footer.col_vanguard_submit">[SUBMIT]</button>

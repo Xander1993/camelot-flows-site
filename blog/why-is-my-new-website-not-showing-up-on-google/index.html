@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-i18n-page="blog">
 
+<html data-cf-static-lang="en" data-i18n-page="blog" lang="en">
 <head>
-    <!-- CF: theme bootstrap (sync, before paint) -->
-    <script>
+<!-- CF: theme bootstrap (sync, before paint) -->
+<script>
       (function () {
         var html = document.documentElement;
         try {
@@ -19,12 +19,12 @@
         html.classList.add('js');
       })();
     </script>
-    <!-- CF: lang bootstrap (sync, before paint) -->
-    <script>
+<!-- CF: lang bootstrap (sync, before paint) -->
+<script>
       (function () {
         var html = document.documentElement;
         try {
-          var l = localStorage.getItem('cf_lang') || 'en';
+          var l = document.documentElement.lang || 'en';
           if (['en','ro','ru'].indexOf(l) === -1) l = 'en';
           html.setAttribute('lang', l);
           html.setAttribute('data-cf-lang', l);
@@ -32,430 +32,350 @@
         } catch (e) { html.setAttribute('lang', 'en'); }
       })();
     </script>
-
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Why Is My New Website Not Showing Up on Google? - Camelot Flows</title>
-    <meta name="description" content="Two different reasons a new site is missing from Google, and a fifteen minute check to tell which problem you actually have.">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Why Is My New Website Not Showing Up on Google? - Camelot Flows</title>
+<meta content="Two different reasons a new site is missing from Google, and a fifteen minute check to tell which problem you actually have." name="description">
 <link rel="canonical" href="https://camelotflows.dev/blog/why-is-my-new-website-not-showing-up-on-google/">
     <link rel="alternate" hreflang="en" href="https://camelotflows.dev/blog/why-is-my-new-website-not-showing-up-on-google/">
+    <link rel="alternate" hreflang="ro" href="https://camelotflows.dev/ro/blog/why-is-my-new-website-not-showing-up-on-google/">
+    <link rel="alternate" hreflang="ru" href="https://camelotflows.dev/ru/blog/why-is-my-new-website-not-showing-up-on-google/">
     <link rel="alternate" hreflang="x-default" href="https://camelotflows.dev/blog/why-is-my-new-website-not-showing-up-on-google/">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <!-- Open Graph -->
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Why Is My New Website Not Showing Up on Google? - Camelot Flows">
-    <meta property="og:description" content="Two different reasons a new site is missing from Google, and a fifteen minute check to tell which problem you actually have.">
-    <meta property="og:image" content="https://camelotflows.dev/assets/images/blog/why-is-my-new-website-not-showing-up-on-google.png">
-    <meta property="og:url" content="https://camelotflows.dev/blog/why-is-my-new-website-not-showing-up-on-google/">
-    <meta property="og:site_name" content="Camelot Flows">
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Why Is My New Website Not Showing Up on Google? - Camelot Flows">
-    <meta name="twitter:description" content="Two different reasons a new site is missing from Google, and a fifteen minute check to tell which problem you actually have.">
-    <meta name="twitter:image" content="https://camelotflows.dev/assets/images/blog/why-is-my-new-website-not-showing-up-on-google.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"></noscript>
-<link rel="stylesheet" href="/assets/css/tailwind.built.css">
-    <link rel="stylesheet" href="/assets/site.css?v=2">
-    <link rel="stylesheet" href="/assets/css/camelot.css?v=6">
-    <link rel="stylesheet" href="/assets/css/theme-night.css?v=2">
-    <link rel="stylesheet" href="/assets/css/lang-switcher.css">
-    <link rel="stylesheet" href="/assets/css/blog.css?v=2">
-    <link rel="prefetch" href="/arsenal.html" as="document">
-    <link rel="prefetch" href="/merlin.html" as="document">
-    <link rel="prefetch" href="/contact.html" as="document">
-    <link rel="prefetch" href="/case-studies.html" as="document">
-    <link rel="prefetch" href="/about.html" as="document">
-    <!-- Google tag (gtag.js) — GA4 camelotflows.dev -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4ZPEG1KSR"></script>
-    <script>
+<link href="/favicon.ico" rel="icon" type="image/x-icon">
+<link href="/favicon.png" rel="icon" sizes="32x32" type="image/png">
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+<!-- Open Graph -->
+<meta content="article" property="og:type">
+<meta content="Why Is My New Website Not Showing Up on Google? - Camelot Flows" property="og:title">
+<meta content="Two different reasons a new site is missing from Google, and a fifteen minute check to tell which problem you actually have." property="og:description">
+<meta content="https://camelotflows.dev/assets/images/blog/why-is-my-new-website-not-showing-up-on-google.png" property="og:image">
+<meta content="https://camelotflows.dev/blog/why-is-my-new-website-not-showing-up-on-google/" property="og:url">
+<meta content="Camelot Flows" property="og:site_name">
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card">
+<meta content="Why Is My New Website Not Showing Up on Google? - Camelot Flows" name="twitter:title">
+<meta content="Two different reasons a new site is missing from Google, and a fifteen minute check to tell which problem you actually have." name="twitter:description">
+<meta content="https://camelotflows.dev/assets/images/blog/why-is-my-new-website-not-showing-up-on-google.png" name="twitter:image">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="preload">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"></noscript>
+<link href="/assets/css/tailwind.built.css" rel="stylesheet">
+<link href="/assets/site.css?v=2" rel="stylesheet">
+<link href="/assets/css/camelot.css?v=6" rel="stylesheet">
+<link href="/assets/css/theme-night.css?v=2" rel="stylesheet">
+<link href="/assets/css/lang-switcher.css" rel="stylesheet">
+<link href="/assets/css/blog.css?v=2" rel="stylesheet">
+<link as="document" href="/arsenal" rel="prefetch">
+<link as="document" href="/merlin" rel="prefetch">
+<link as="document" href="/contact" rel="prefetch">
+<link as="document" href="/case-studies" rel="prefetch">
+<link as="document" href="/about" rel="prefetch">
+<!-- Google tag (gtag.js) — GA4 camelotflows.dev -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T4ZPEG1KSR"></script>
+<script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
       try { if (localStorage.getItem('cf_consent') === 'granted') { gtag('consent', 'update', { analytics_storage: 'granted' }); } } catch (e) {}      gtag('js', new Date());
       gtag('config', 'G-T4ZPEG1KSR');
     </script>
-    <script defer src="/assets/js/cf-consent.js?v=1"></script>
+<script defer="" src="/assets/js/cf-consent.js?v=1"></script>
 </head>
-
 <body class="theme-cozy font-body overflow-x-hidden selection:bg-primary selection:text-white">
-<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999999] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm focus:font-mono focus:shadow-neon" data-i18n="common.skip_link">Skip to main content</a>
-<div id="lang-announce" role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
-    <div class="scroll-progress" aria-hidden="true"></div>
-
-    <div id="preloader" class="fixed inset-0 z-[999999] bg-obsidian flex flex-col items-center justify-center">
-        <div class="absolute inset-0 grid-bg opacity-30"></div>
-        <div class="w-32 h-32 relative flex items-center justify-center mb-8 z-10">
-            <div class="absolute inset-0 rounded-full border-t-2 border-primary animate-spin"></div>
-            <div
-                class="absolute inset-2 rounded-full border-b-2 border-accent animate-[spin_2s_linear_infinite_reverse]">
-            </div>
-            <span class="material-symbols-outlined text-4xl text-white animate-pulse">design_services</span>
-        </div>
-        <div class="text-primary-glow font-mono text-[10px] tracking-[0.4em] uppercase mb-4 z-10" id="loader-text" data-i18n="common.preloader_init">
-            Initializing Protocols...</div>
-        <div class="w-64 h-[2px] bg-white/10 rounded-full overflow-hidden z-10">
-            <div id="loader-bar" class="w-0 h-full bg-gradient-to-r from-primary to-accent"></div>
-        </div>
-        <div id="loader-percent" class="mt-4 font-mono text-white text-sm tracking-widest z-10">0%</div>
-    </div>
-
-    <div class="grain-overlay"></div>
-    <div id="bg-orbs" class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div class="bg-orb absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-cobalt/20 rounded-full blur-[120px]">
-        </div>
-        <div
-            class="bg-orb absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-accent/10 rounded-full blur-[100px]">
-        </div>
-        <div class="bg-orb absolute top-[40%] left-[30%] w-[30vw] h-[30vw] bg-primary/10 rounded-full blur-[150px]">
-        </div>
-        <div class="absolute inset-0 grid-bg"></div>
-    </div>
-
-    <!-- ИЗМЕНЕНИЕ: Zentry Orbital Badge (Вращающаяся печать в углу) -->
-    <div
-        class="fixed bottom-8 right-8 z-50 pointer-events-none mix-blend-screen opacity-60 hidden md:flex items-center justify-center w-32 h-32">
-        <svg viewBox="0 0 100 100" width="100" height="100" class="animate-[spin_12s_linear_infinite] absolute inset-0">
-            <defs>
-                <path id="circle" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
-            </defs>
-            <text font-size="10.5" fill="currentColor" class="text-primary-glow font-mono uppercase tracking-[0.15em]">
-                <textPath href="#circle">Camelot Flows • Digital Kingdom •</textPath>
-            </text>
-        </svg>
-        <span class="material-symbols-outlined text-primary text-2xl animate-pulse">change_history</span>
-    </div>
-
-    <nav class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-6 md:py-6">
-        <div
-            class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
-            <div class="flex items-center">
-                <img src="/assets/images/cf-logo-wordmark-2x.webp" alt="Camelot Flows" class="h-16 md:h-28 w-auto object-contain">
-            </div>
-            <div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="/" data-i18n="common.nav.home">[Home]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="/work-with-me.html" data-i18n="common.nav.services">[Services]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="/arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="/merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
-                    href="/case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block"
-                    href="/for-agencies.html" data-i18n="common.nav.agencies">[Agencies]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
-                    href="/?goto=pricing" data-i18n="common.nav.pricing">[Pricing]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="/contact.html" data-i18n="common.nav.contact">[Contact]</a>
-            </div>
-            <div class="flex items-center gap-2">
-                <a href="tel:+37369555936" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" aria-label="Call Camelot Flows" title="+373 69 555 936">
-                    <span class="material-symbols-outlined cf-phone-icon" style="font-size:18px">call</span>
-                </a>
-                <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
-                    <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 status-dot animate-pulse"></div>
-                    <span class="text-[10px] font-mono text-emerald-500/80" data-i18n="common.nav.sys_online">SYS_ONLINE</span>
-                </div>
-                <div class="lang-switcher" data-cf-lang-switcher>
-    <button class="lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Change language" data-i18n-attr="aria-label:common.lang_label">
-        <span class="lang-current" data-cf-lang-current>EN</span>
-        <span class="material-symbols-outlined lang-chevron">expand_more</span>
-    </button>
-    <ul class="lang-menu" role="listbox" hidden>
-        <li role="option" data-lang="en" tabindex="-1">EN</li>
-        <li role="option" data-lang="ro" tabindex="-1">RO</li>
-        <li role="option" data-lang="ru" tabindex="-1">RU</li>
-    </ul>
+<a class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999999] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm focus:font-mono focus:shadow-neon" data-i18n="common.skip_link" href="#main-content">Skip to main content</a>
+<div aria-atomic="true" aria-live="polite" class="sr-only" id="lang-announce" role="status"></div>
+<div aria-hidden="true" class="scroll-progress"></div>
+<div class="fixed inset-0 z-[999999] bg-obsidian flex flex-col items-center justify-center" id="preloader">
+<div class="absolute inset-0 grid-bg opacity-30"></div>
+<div class="w-32 h-32 relative flex items-center justify-center mb-8 z-10">
+<div class="absolute inset-0 rounded-full border-t-2 border-primary animate-spin"></div>
+<div class="absolute inset-2 rounded-full border-b-2 border-accent animate-[spin_2s_linear_infinite_reverse]">
 </div>
-                <button id="mobile-menu-toggle" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 transition-all text-slate-400" aria-label="Open menu" type="button">
-                    <span class="material-symbols-outlined" style="font-size:20px">menu</span>
-                </button>
-                <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Toggle theme">
-    <span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
-    <span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
+<span class="material-symbols-outlined text-4xl text-white animate-pulse">design_services</span>
+</div>
+<div class="text-primary-glow font-mono text-[10px] tracking-[0.4em] uppercase mb-4 z-10" data-i18n="common.preloader_init" id="loader-text">
+            Initializing Protocols...</div>
+<div class="w-64 h-[2px] bg-white/10 rounded-full overflow-hidden z-10">
+<div class="w-0 h-full bg-gradient-to-r from-primary to-accent" id="loader-bar"></div>
+</div>
+<div class="mt-4 font-mono text-white text-sm tracking-widest z-10" id="loader-percent">0%</div>
+</div>
+<div class="grain-overlay"></div>
+<div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none" id="bg-orbs">
+<div class="bg-orb absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-cobalt/20 rounded-full blur-[120px]">
+</div>
+<div class="bg-orb absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-accent/10 rounded-full blur-[100px]">
+</div>
+<div class="bg-orb absolute top-[40%] left-[30%] w-[30vw] h-[30vw] bg-primary/10 rounded-full blur-[150px]">
+</div>
+<div class="absolute inset-0 grid-bg"></div>
+</div>
+<!-- ИЗМЕНЕНИЕ: Zentry Orbital Badge (Вращающаяся печать в углу) -->
+<div class="fixed bottom-8 right-8 z-50 pointer-events-none mix-blend-screen opacity-60 hidden md:flex items-center justify-center w-32 h-32">
+<svg class="animate-[spin_12s_linear_infinite] absolute inset-0" height="100" viewbox="0 0 100 100" width="100">
+<defs>
+<path d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" id="circle"></path>
+</defs>
+<text class="text-primary-glow font-mono uppercase tracking-[0.15em]" fill="currentColor" font-size="10.5">
+<textpath href="#circle">Camelot Flows • Digital Kingdom •</textpath>
+</text>
+</svg>
+<span class="material-symbols-outlined text-primary text-2xl animate-pulse">change_history</span>
+</div>
+<nav class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-6 md:py-6">
+<div class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
+<div class="flex items-center">
+<img alt="Camelot Flows" class="h-16 md:h-28 w-auto object-contain" src="/assets/images/cf-logo-wordmark-2x.webp">
+</div>
+<div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.home" href="/">[Home]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.services" href="/work-with-me">[Services]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.arsenal" href="/arsenal">[Arsenal]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.merlin" href="/merlin">[Merlin]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" data-i18n="common.nav.cases" href="/case-studies">[Cases]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block" data-i18n="common.nav.agencies" href="/for-agencies">[Agencies]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" data-i18n="common.nav.pricing" href="/?goto=pricing">[Pricing]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.contact" href="/contact">[Contact]</a>
+</div>
+<div class="flex items-center gap-2">
+<a aria-label="Call Camelot Flows" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="tel:+37369555936" title="+373 69 555 936">
+<span class="material-symbols-outlined cf-phone-icon" style="font-size:18px">call</span>
+</a>
+<div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-500 status-dot animate-pulse"></div>
+<span class="text-[10px] font-mono text-emerald-500/80" data-i18n="common.nav.sys_online">SYS_ONLINE</span>
+</div>
+<div class="lang-switcher" data-cf-lang-switcher="">
+<button aria-expanded="false" aria-haspopup="listbox" aria-label="Change language" class="lang-trigger" data-i18n-attr="aria-label:common.lang_label" type="button">
+<span class="lang-current" data-cf-lang-current="">EN</span>
+<span class="material-symbols-outlined lang-chevron">expand_more</span>
 </button>
-                <a href="/contact.html?objective=build"
-                    class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong hidden lg:inline-flex items-center nav-cta"
-                    data-i18n="common.nav.summon_agent">
+<ul class="lang-menu" hidden="" role="listbox">
+<li data-lang="en" role="option" tabindex="-1"><a href="/blog/why-is-my-new-website-not-showing-up-on-google/" hreflang="en">EN</a></li>
+<li data-lang="ro" role="option" tabindex="-1"><a href="/ro/blog/why-is-my-new-website-not-showing-up-on-google/" hreflang="ro">RO</a></li>
+<li data-lang="ru" role="option" tabindex="-1"><a href="/ru/blog/why-is-my-new-website-not-showing-up-on-google/" hreflang="ru">RU</a></li>
+</ul>
+</div>
+<button aria-label="Open menu" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 transition-all text-slate-400" id="mobile-menu-toggle" type="button">
+<span class="material-symbols-outlined" style="font-size:20px">menu</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="theme-toggle" type="button">
+<span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
+<span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
+</button>
+<a class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong hidden lg:inline-flex items-center nav-cta" data-i18n="common.nav.summon_agent" href="/contact?objective=build">
                     [Hire_me]
                 </a>
-            </div>
-        </div>
-        
-        <div id="mobile-nav" class="hidden mt-2 max-w-7xl mx-auto">
-            <div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
-                <div class="flex flex-col gap-1">
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/" data-i18n="common.nav.home">[Home]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/work-with-me.html" data-i18n="common.nav.services">[Services]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/contact.html" data-i18n="common.nav.contact">[Contact]</a>
-                    <div class="mx-3 my-2 h-px bg-white/10"></div>
-                    <a href="/contact.html?service=build" class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent">[Hire_me]</a>
-                </div>
-            </div>
-        </div>
-        <script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");var open=!menu.classList.contains("hidden");btn.setAttribute("aria-expanded",open?"true":"false");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");}});document.querySelectorAll("#mobile-nav a").forEach(function(a){a.addEventListener("click",function(){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");});});}})();</script>
-        </nav>
+</div>
+</div>
+<div class="hidden mt-2 max-w-7xl mx-auto" id="mobile-nav">
+<div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
+<div class="flex flex-col gap-1">
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.home" href="/">[Home]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.services" href="/work-with-me">[Services]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.arsenal" href="/arsenal">[Arsenal]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.merlin" href="/merlin">[Merlin]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.cases" href="/case-studies">[Cases]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.contact" href="/contact">[Contact]</a>
+<div class="mx-3 my-2 h-px bg-white/10"></div>
+<a class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent" href="/contact?service=build">[Hire_me]</a>
+</div>
+</div>
+</div>
+<script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");var open=!menu.classList.contains("hidden");btn.setAttribute("aria-expanded",open?"true":"false");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");}});document.querySelectorAll("#mobile-nav a").forEach(function(a){a.addEventListener("click",function(){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");});});}})();</script>
+</nav>
 <main id="main-content">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Why Is My New Website Not Showing Up on Google?", "description": "Two different reasons a new site is missing from Google, and a fifteen minute check to tell which problem you actually have.", "url": "https://camelotflows.dev/blog/why-is-my-new-website-not-showing-up-on-google/", "datePublished": "2026-07-03T09:45:37+00:00", "dateModified": "2026-07-03T09:45:37+00:00", "author": {"@type": "Person", "@id": "https://camelotflows.dev/#alexandru-buzi", "name": "Alexandru Buzi", "url": "https://camelotflows.dev/about.html"}, "publisher": {"@type": "Organization", "name": "Camelot Flows", "url": "https://camelotflows.dev/", "logo": {"@type": "ImageObject", "url": "https://camelotflows.dev/assets/images/cf-logo-wordmark.png"}}, "image": "https://camelotflows.dev/assets/images/blog/why-is-my-new-website-not-showing-up-on-google.png", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://camelotflows.dev/blog/why-is-my-new-website-not-showing-up-on-google/"}, "wordCount": 838}</script>
-
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Why Is My New Website Not Showing Up on Google?", "description": "Two different reasons a new site is missing from Google, and a fifteen minute check to tell which problem you actually have.", "url": "https://camelotflows.dev/blog/why-is-my-new-website-not-showing-up-on-google/", "datePublished": "2026-07-03T09:45:37+00:00", "dateModified": "2026-07-03T09:45:37+00:00", "author": {"@type": "Person", "@id": "https://camelotflows.dev/#alexandru-buzi", "name": "Alexandru Buzi", "url": "https://camelotflows.dev/about"}, "publisher": {"@type": "Organization", "name": "Camelot Flows", "url": "https://camelotflows.dev/", "logo": {"@type": "ImageObject", "url": "https://camelotflows.dev/assets/images/cf-logo-wordmark.png"}}, "image": "https://camelotflows.dev/assets/images/blog/why-is-my-new-website-not-showing-up-on-google.png", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://camelotflows.dev/blog/why-is-my-new-website-not-showing-up-on-google/"}, "wordCount": 838}</script>
 <section class="pt-44 pb-16 px-6 relative overflow-hidden">
-    <div class="absolute inset-0 grid-bg opacity-20 pointer-events-none"></div>
-    <div class="absolute top-0 right-0 w-[50vw] h-[50vw] bg-primary/5 rounded-full blur-[140px] pointer-events-none"></div>
-    <div class="max-w-3xl mx-auto relative">
-        <a href="/blog/" class="inline-flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-primary-glow transition-colors mb-10 group" data-i18n="blog.back">
-            <span class="material-symbols-outlined text-sm group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+<div class="absolute inset-0 grid-bg opacity-20 pointer-events-none"></div>
+<div class="absolute top-0 right-0 w-[50vw] h-[50vw] bg-primary/5 rounded-full blur-[140px] pointer-events-none"></div>
+<div class="max-w-3xl mx-auto relative">
+<a class="inline-flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-primary-glow transition-colors mb-10 group" data-i18n="blog.back" href="/blog/">
+<span class="material-symbols-outlined text-sm group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
             Back to Codex
         </a>
-        <div class="flex flex-wrap items-center gap-3 mb-6">
-            <a href="/blog/" class="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-primary/30 bg-primary/5 text-[10px] font-mono text-primary-glow tracking-widest uppercase hover:bg-primary/10 transition-colors">Getting Found</a>
-            <span class="text-[10px] font-mono text-slate-600">July 3, 2026</span>
-            <span class="text-[10px] font-mono text-slate-600">4 min read</span>
-        </div>
-        <h1 class="text-4xl md:text-6xl font-display font-bold tracking-tighter cf-post-title mb-8 leading-[0.95]">
-            <span data-lang-content="en">Why Is My New Website Not Showing Up on Google?</span>
-            <span data-lang-content="ro" hidden>De ce nu apare noul meu site pe Google?</span>
-            <span data-lang-content="ru" hidden>Почему мой новый сайт не появляется в Google?</span>
-        </h1>
-        <div class="cf-excerpt text-lg leading-relaxed border-l-2 border-primary/50 pl-5">
-            <div data-lang-content="en"><p>A new site can be missing from Google for two completely different reasons, and the fix for one does nothing for the other. Here is the fifteen minute check I run on every freshly launched client site to tell which problem it actually has, before anyone panics.</p></div>
-            <div data-lang-content="ro" hidden><p>Un site nou poate lipsi de pe Google din două motive complet diferite, iar soluția pentru unul nu ajută cu nimic celălalt. Uite verificarea de cincisprezece minute pe care o fac pe orice site de client abia lansat, ca să știu care e problema reală înainte să intre cineva în panică.</p></div>
-            <div data-lang-content="ru" hidden><p>Нового сайта может не быть в Google по двум совершенно разным причинам, и решение одной ничего не даёт для другой. Вот пятнадцатиминутная проверка, которую я делаю на каждом только что запущенном сайте клиента, чтобы понять, в чём реальная проблема, пока никто не запаниковал.</p></div>
-        </div>
-    </div>
+<div class="flex flex-wrap items-center gap-3 mb-6">
+<a class="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-primary/30 bg-primary/5 text-[10px] font-mono text-primary-glow tracking-widest uppercase hover:bg-primary/10 transition-colors" href="/blog/">Getting Found</a>
+<span class="text-[10px] font-mono text-slate-600">July 3, 2026</span>
+<span class="text-[10px] font-mono text-slate-600">4 min read</span>
+</div>
+<h1 class="text-4xl md:text-6xl font-display font-bold tracking-tighter cf-post-title mb-8 leading-[0.95]">
+<span data-cf-translation-group="0">Why Is My New Website Not Showing Up on Google?</span>
+</h1>
+<div class="cf-excerpt text-lg leading-relaxed border-l-2 border-primary/50 pl-5">
+<div data-cf-translation-group="1"><p>A new site can be missing from Google for two completely different reasons, and the fix for one does nothing for the other. Here is the fifteen minute check I run on every freshly launched client site to tell which problem it actually has, before anyone panics.</p></div>
+</div>
+</div>
 </section>
-
-<div id="post-summary" class="px-6 pb-4">
-    <div class="max-w-3xl mx-auto glass-panel rounded-xl border border-primary/20 overflow-hidden">
-        <div class="grid grid-cols-3 divide-x divide-white/5">
-            <div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
-                <span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.min_read">MIN_READ</span>
-                <span class="text-4xl font-mono font-bold text-primary-glow tabular-nums" data-count="4">4</span>
-            </div>
-            <div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
-                <span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.words">WORDS</span>
-                <span class="text-4xl font-mono font-bold text-primary-glow tabular-nums" data-count="838">838</span>
-            </div>
-            <div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
-                <span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.year">YEAR</span>
-                <span class="text-4xl font-mono font-bold text-primary-glow tabular-nums">2026</span>
-            </div>
-        </div>
-        <div class="h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
-        <div class="px-8 py-3 flex items-center gap-2">
-            <div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
-            <span class="text-[10px] font-mono text-slate-600 tracking-widest">Jul 03, 2026 — DISPATCH_016</span>
-        </div>
-    </div>
+<div class="px-6 pb-4" id="post-summary">
+<div class="max-w-3xl mx-auto glass-panel rounded-xl border border-primary/20 overflow-hidden">
+<div class="grid grid-cols-3 divide-x divide-white/5">
+<div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
+<span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.min_read">MIN_READ</span>
+<span class="text-4xl font-mono font-bold text-primary-glow tabular-nums" data-count="4">4</span>
 </div>
-
+<div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
+<span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.words">WORDS</span>
+<span class="text-4xl font-mono font-bold text-primary-glow tabular-nums" data-count="838">838</span>
+</div>
+<div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
+<span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.year">YEAR</span>
+<span class="text-4xl font-mono font-bold text-primary-glow tabular-nums">2026</span>
+</div>
+</div>
+<div class="h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+<div class="px-8 py-3 flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+<span class="text-[10px] font-mono text-slate-600 tracking-widest">Jul 03, 2026 — DISPATCH_016</span>
+</div>
+</div>
+</div>
 <div class="px-6 mb-8">
-    <div class="max-w-4xl mx-auto rounded-xl overflow-hidden">
-        <img width="1024" height="576" src="/assets/images/blog/why-is-my-new-website-not-showing-up-on-google.png" class="w-full h-auto object-cover wp-post-image" alt="Abstract dark editorial image of a search index grid with a single node glowing in indigo and cyan" decoding="async" fetchpriority="high" />
-    </div>
+<div class="max-w-4xl mx-auto rounded-xl overflow-hidden">
+<img alt="Abstract dark editorial image of a search index grid with a single node glowing in indigo and cyan" class="w-full h-auto object-cover wp-post-image" decoding="async" fetchpriority="high" height="576" src="/assets/images/blog/why-is-my-new-website-not-showing-up-on-google.png" width="1024">
 </div>
-
+</div>
 <article class="pb-16 px-6">
-    <div class="max-w-3xl mx-auto prose-camelot">
-        <div data-lang-content="en">
-<p class="wp-block-paragraph">There are two very different reasons a new website goes missing from Google, and treating one like the other can waste you a month.</p><p class="wp-block-paragraph">Before you panic or blame whoever built the site, you can find out which problem you actually have in about fifteen minutes, using tools that are already free. The single most useful thing I can tell you is this: "not indexed" and "not ranking" are separate diseases with separate cures. Fix the wrong one and nothing moves.</p><h2 class="wp-block-heading">The one search that splits the whole problem</h2><figure class="cf-body-fig cf-body-fig--right"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/why-is-my-new-website-not-showing-up-on-google-b1.png" alt="Abstract lens of light over a field of dots with one dot dimmed, indexing concept" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">Open Google and type site:yourdomain.com (your real domain after the colon, no space). Google shows you every page it has stored from your site.</p><p class="wp-block-paragraph">If you get zero results, your site is not indexed. Google does not have your pages yet, so it cannot show them to anyone, for any search. If you get results but your business never appears when you search for what you actually do, you are indexed but not ranking. Same symptom on the surface, completely different cause underneath.</p><h2 class="wp-block-heading">Not indexed: the four checks I run first</h2><p class="wp-block-paragraph">When a freshly launched client site shows nothing under site:, I do not guess. I run the same four checks in the same order, because the cheap, embarrassing causes are also the most common.</p><p class="wp-block-paragraph">First, the noindex tag. Half the "we are invisible" emergencies I have seen came down to one setting a previous builder left switched on. In WordPress it lives under Settings, then Reading, as a checkbox that discourages search engines. Staging sites ship with it on by default, and it quietly travels to the live site if nobody unticks it. Two clicks and you are done.</p><p class="wp-block-paragraph">Second, robots.txt. Visit yourdomain.com/robots.txt in the browser. If you see Disallow: / sitting there, the whole site is being waved away from crawlers. That line belongs on a staging site, never on the one you want customers to find.</p><p class="wp-block-paragraph">Third, the sitemap. In Google Search Console, open the Sitemaps report and confirm your sitemap was actually fetched, with a status of Success and a recent read date. Submitting a sitemap and Google reading it are not the same event, and people assume the first automatically means the second.</p><p class="wp-block-paragraph">Fourth, request indexing. Paste a real page URL into the URL Inspection tool at the top of Search Console, and if it reports the page is not on Google, press Request Indexing. This does not force a ranking. It just moves your page into the queue to be looked at.</p><h2 class="wp-block-heading">Reading the Search Console coverage states</h2><figure class="cf-body-fig cf-body-fig--left"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/why-is-my-new-website-not-showing-up-on-google-b2.png" alt="Two diverging glowing paths splitting from one point, indexing versus ranking concept" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">Once you are inside Search Console, the Pages report tells you exactly what Google decided, if you know how to read the labels. These are the ones that actually matter.</p><p class="wp-block-paragraph">"Discovered, currently not indexed" means Google knows your URL exists but has not crawled it yet. On a new domain this is normal and mostly a waiting game, helped along by internal links and a little authority coming in.</p><p class="wp-block-paragraph">"Crawled, currently not indexed" is a sharper signal. Google visited the page and chose not to keep it. That usually points at thin, duplicate, or near-empty content, not a technical bug. The cure is a better page, not another indexing request.</p><p class="wp-block-paragraph">"Excluded by noindex tag" means the page is telling Google to stay away, so go back to check number one. "Alternate page with proper canonical tag" is usually fine and means Google folded that URL into another version on purpose.</p><h2 class="wp-block-heading">Indexed but not ranking is a different disease</h2><p class="wp-block-paragraph">If site: does return your pages, stop running indexing fixes. They will do nothing, because indexing was never the problem. Ranking is not permission to appear, it is competition for position, and a brand new domain starts with almost no trust built up.</p><p class="wp-block-paragraph">For the first few months a new site can be fully indexed and still sit far down the results while Google works out whether to take it seriously. That is expected, not a defect. This is also where a genuine, well-built site earns its place over time, through real content, clean structure, and other sites eventually pointing back to it. If you want a second pair of eyes on where your site actually stands, a plain-language <a href="/audit">free website audit</a> will tell you which of the two diseases you are dealing with before you spend money treating the wrong one.</p><p class="wp-block-paragraph">The reason this matters is money and calm. Owners who confuse the two problems either wait patiently for rankings on a site Google literally cannot see, or they frantically resubmit sitemaps for a site that is already indexed and simply young. When I take on a <a href="/service-creation.html">new website build</a>, the technical side of getting found is handled from day one, and the ongoing climb is something a <a href="/service-maintenance.html">steady care plan</a> keeps pushing. The fifteen minute check above is not a substitute for that work. It is how you stop guessing, so the next decision you make is the right one.</p><p class="wp-block-paragraph">Run the site: search first. Everything you do next depends on that single answer.</p>
-        </div>
-        <div data-lang-content="ro" hidden>
-<p class="wp-block-paragraph">Sunt două motive complet diferite pentru care un site nou dispare de pe Google, iar dacă îl tratezi pe unul ca pe celălalt poți pierde o lună întreagă.</p><p class="wp-block-paragraph">Înainte să intri în panică sau să dai vina pe cine ți-a făcut site-ul, poți afla în cam cincisprezece minute care e problema reală, cu unelte care sunt deja gratuite. Cel mai util lucru pe care ți-l pot spune este acesta: "neindexat" și "nu se clasează" sunt două boli diferite, cu tratamente diferite. Dacă îl repari pe cel greșit, nu se mișcă nimic.</p><h2 class="wp-block-heading">Căutarea care împarte toată problema în două</h2><figure class="cf-body-fig cf-body-fig--right"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/why-is-my-new-website-not-showing-up-on-google-b1.png" alt="Abstract lens of light over a field of dots with one dot dimmed, indexing concept" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">Deschide Google și scrie site:domeniultau.com (domeniul tău real după două puncte, fără spațiu). Google îți arată fiecare pagină pe care o are salvată de pe site-ul tău.</p><p class="wp-block-paragraph">Dacă nu apare niciun rezultat, site-ul tău nu este indexat. Google nu are paginile tale, deci nu le poate arăta nimănui, la nicio căutare. Dacă apar rezultate, dar afacerea ta nu apare niciodată când cauți exact ce faci, atunci ești indexat, dar nu te clasezi. Același simptom la suprafață, o cauză total diferită dedesubt.</p><h2 class="wp-block-heading">Neindexat: primele patru verificări pe care le fac</h2><p class="wp-block-paragraph">Când un site de client abia lansat nu arată nimic la site:, nu ghicesc. Fac aceleași patru verificări în aceeași ordine, pentru că motivele ieftine și jenante sunt și cele mai frecvente.</p><p class="wp-block-paragraph">Prima, eticheta noindex. Jumătate dintre urgențele de tip "suntem invizibili" pe care le-am văzut veneau de la o singură setare pe care cine făcuse site-ul înainte o lăsase pornită. În WordPress se află la Setări, apoi Citire, ca o bifă care descurajează motoarele de căutare. Site-urile de test vin cu ea pornită din start și ajunge fără să vrei pe site-ul live dacă nu o debifează nimeni. Două clicuri și ai rezolvat.</p><p class="wp-block-paragraph">A doua, robots.txt. Intră pe domeniultau.com/robots.txt în browser. Dacă vezi acolo Disallow: /, tot site-ul este ținut departe de motoarele de căutare. Rândul acela e bun pe un site de test, niciodată pe site-ul pe care vrei să te găsească clienții.</p><p class="wp-block-paragraph">A treia, harta site-ului (sitemap). În Google Search Console, deschide raportul Sitemaps și verifică dacă sitemap-ul chiar a fost citit, cu status Succes și o dată recentă. Să trimiți un sitemap și ca Google să îl citească nu sunt același lucru, iar oamenii presupun că primul înseamnă automat al doilea.</p><p class="wp-block-paragraph">A patra, cererea de indexare. Pune adresa unei pagini reale în unealta de Inspectare a adresei URL din partea de sus a Search Console, iar dacă îți spune că pagina nu este pe Google, apasă Solicită indexarea. Asta nu forțează o clasare. Doar îți mută pagina în coada celor care urmează să fie analizate.</p><h2 class="wp-block-heading">Cum citești stările de acoperire din Search Console</h2><figure class="cf-body-fig cf-body-fig--left"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/why-is-my-new-website-not-showing-up-on-google-b2.png" alt="Two diverging glowing paths splitting from one point, indexing versus ranking concept" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">Odată intrat în Search Console, raportul Pagini îți spune exact ce a decis Google, dacă știi să citești etichetele. Astea sunt cele care contează cu adevărat.</p><p class="wp-block-paragraph">"Descoperită, momentan neindexată" înseamnă că Google știe că adresa ta există, dar încă nu a vizitat-o. Pe un domeniu nou e ceva normal și mai ales o chestiune de răbdare, ajutată de linkuri interne și de puțină autoritate care începe să vină.</p><p class="wp-block-paragraph">"Accesată cu crawlere, momentan neindexată" e un semnal mai serios. Google a vizitat pagina și a ales să nu o păstreze. De obicei asta arată conținut subțire, duplicat sau aproape gol, nu o problemă tehnică. Leacul e o pagină mai bună, nu încă o cerere de indexare.</p><p class="wp-block-paragraph">"Exclusă prin eticheta noindex" înseamnă că pagina îi spune lui Google să stea deoparte, așa că întoarce-te la verificarea numărul unu. "Pagină alternativă cu etichetă canonică potrivită" e de obicei în regulă și înseamnă că Google a inclus intenționat acea adresă într-o altă versiune.</p><h2 class="wp-block-heading">Indexat, dar fără clasare, e o cu totul altă boală</h2><p class="wp-block-paragraph">Dacă site: chiar îți întoarce paginile, oprește-te din verificările de indexare. Nu vor face nimic, pentru că indexarea nu a fost niciodată problema. Clasarea nu e permisiunea de a apărea, e competiția pentru poziție, iar un domeniu nou-nouț pornește cu aproape zero încredere strânsă.</p><p class="wp-block-paragraph">În primele luni un site poate fi complet indexat și totuși să stea mult mai jos în rezultate, cât timp Google se lămurește dacă să îl ia în serios. E de așteptat, nu e un defect. Aici un site bine făcut își câștigă locul în timp, prin conținut real, o structură curată și alte site-uri care ajung să trimită către el. Dacă vrei o a doua părere despre unde stă de fapt site-ul tău, un <a href="/audit">audit gratuit al site-ului</a> în limbaj clar îți spune cu care dintre cele două boli ai de-a face înainte să dai bani pe tratamentul greșit.</p><p class="wp-block-paragraph">Motivul pentru care contează sunt banii și liniștea. Proprietarii care confundă cele două probleme fie așteaptă cuminți clasări pe un site pe care Google chiar nu îl vede, fie retrimit disperați sitemap-uri pentru un site care e deja indexat și pur și simplu tânăr. Când preiau un <a href="/service-creation.html">site nou</a>, partea tehnică a vizibilității e rezolvată din prima zi, iar urcușul de mai departe e ceva pe care un <a href="/service-maintenance.html">plan de întreținere constant</a> îl împinge înainte. Verificarea de cincisprezece minute de mai sus nu înlocuiește munca aceea. E felul în care nu mai ghicești, ca următoarea decizie pe care o iei să fie cea corectă.</p><p class="wp-block-paragraph">Fă mai întâi căutarea cu site:. Tot ce urmează depinde de acel singur răspuns.</p>
-        </div>
-        <div data-lang-content="ru" hidden>
-<p class="wp-block-paragraph">Есть две совершенно разные причины, по которым новый сайт пропадает из Google, и если лечить одну как другую, можно потерять целый месяц.</p><p class="wp-block-paragraph">Прежде чем впадать в панику или винить того, кто делал сайт, вы примерно за пятнадцать минут можете понять, в чём настоящая проблема, с помощью инструментов, которые уже бесплатны. Самое полезное, что я могу сказать, вот что: "не проиндексирован" и "не ранжируется" - это две разные болезни с разным лечением. Вылечите не ту, и ничего не сдвинется.</p><h2 class="wp-block-heading">Один поиск, который делит всю проблему надвое</h2><figure class="cf-body-fig cf-body-fig--right"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/why-is-my-new-website-not-showing-up-on-google-b1.png" alt="Abstract lens of light over a field of dots with one dot dimmed, indexing concept" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">Откройте Google и наберите site:вашдомен.com (ваш настоящий домен после двоеточия, без пробела). Google покажет каждую страницу, которую он сохранил с вашего сайта.</p><p class="wp-block-paragraph">Если результатов ноль, ваш сайт не проиндексирован. У Google просто нет ваших страниц, поэтому он не может показать их никому и ни по какому запросу. Если результаты есть, но ваш бизнес никогда не появляется, когда вы ищете то, чем на самом деле занимаетесь, значит, вы проиндексированы, но не ранжируетесь. Симптом сверху одинаковый, а причина внизу совсем другая.</p><h2 class="wp-block-heading">Не проиндексирован: четыре проверки, которые я делаю первыми</h2><p class="wp-block-paragraph">Когда только что запущенный сайт клиента ничего не показывает по site:, я не гадаю. Я делаю одни и те же четыре проверки в одном и том же порядке, потому что дешёвые и неловкие причины они же и самые частые.</p><p class="wp-block-paragraph">Первое, тег noindex. Половина авралов "мы невидимы", которые я видел, сводилась к одной настройке, которую прежний создатель сайта оставил включённой. В WordPress она находится в разделе Настройки, затем Чтение, в виде галочки, которая просит поисковики не индексировать сайт. Тестовые сайты идут с ней включённой по умолчанию, и она тихо переезжает на боевой сайт, если её никто не снимет. Два клика и готово.</p><p class="wp-block-paragraph">Второе, robots.txt. Зайдите на вашдомен.com/robots.txt в браузере. Если там стоит Disallow: /, весь сайт закрыт от поисковых роботов. Эта строка уместна на тестовом сайте, но никогда на том, где вас должны находить клиенты.</p><p class="wp-block-paragraph">Третье, карта сайта (sitemap). В Google Search Console откройте отчёт Файлы Sitemap и убедитесь, что карта действительно была прочитана, со статусом Успешно и свежей датой. Отправить sitemap и чтобы Google его прочитал - это не одно и то же событие, а люди думают, что первое автоматически значит второе.</p><p class="wp-block-paragraph">Четвёртое, запрос на индексирование. Вставьте адрес реальной страницы в инструмент Проверка URL наверху Search Console, и если он сообщает, что страницы нет в Google, нажмите Запросить индексирование. Это не заставит вас ранжироваться. Это лишь ставит страницу в очередь на рассмотрение.</p><h2 class="wp-block-heading">Как читать статусы покрытия в Search Console</h2><figure class="cf-body-fig cf-body-fig--left"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/why-is-my-new-website-not-showing-up-on-google-b2.png" alt="Two diverging glowing paths splitting from one point, indexing versus ranking concept" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">Когда вы уже в Search Console, отчёт Страницы точно говорит, что решил Google, если уметь читать ярлыки. Вот те, что действительно важны.</p><p class="wp-block-paragraph">"Обнаружена, не проиндексирована" значит, что Google знает о существовании вашего адреса, но ещё не заходил на него. На новом домене это нормально и в основном вопрос терпения, которому помогают внутренние ссылки и понемногу набираемый авторитет.</p><p class="wp-block-paragraph">"Просканирована, не проиндексирована" - сигнал посерьёзнее. Google зашёл на страницу и решил её не сохранять. Обычно это указывает на тонкий, дублированный или почти пустой контент, а не на техническую ошибку. Лечение это страница получше, а не ещё один запрос на индексирование.</p><p class="wp-block-paragraph">"Исключена тегом noindex" значит, что страница сама просит Google держаться подальше, так что вернитесь к проверке номер один. "Альтернативная страница с правильным каноническим тегом" обычно в порядке и значит, что Google намеренно объединил этот адрес с другой версией.</p><h2 class="wp-block-heading">Проиндексирован, но не ранжируется - это другая болезнь</h2><p class="wp-block-paragraph">Если site: всё-таки возвращает ваши страницы, прекратите делать проверки индексации. Они ничего не дадут, потому что индексация никогда не была проблемой. Ранжирование это не разрешение появиться, это борьба за место, а совсем новый домен стартует почти без накопленного доверия.</p><p class="wp-block-paragraph">Первые несколько месяцев сайт может быть полностью проиндексирован и всё равно стоять далеко внизу выдачи, пока Google разбирается, стоит ли принимать его всерьёз. Это ожидаемо, а не дефект. Именно здесь хорошо сделанный сайт со временем и зарабатывает своё место, через настоящий контент, чистую структуру и другие сайты, которые в итоге начинают на него ссылаться. Если хотите второй взгляд на то, где ваш сайт стоит на самом деле, простой и понятный <a href="/audit">бесплатный аудит сайта</a> скажет, с какой из двух болезней вы имеете дело, до того как вы потратите деньги на неверное лечение.</p><p class="wp-block-paragraph">Причина, по которой это важно, - деньги и спокойствие. Владельцы, которые путают две проблемы, либо смирно ждут позиций на сайте, который Google буквально не видит, либо отчаянно перезагружают карты сайта для сайта, который уже проиндексирован и просто молод. Когда я берусь за <a href="/service-creation.html">создание нового сайта</a>, техническая сторона видимости решена с первого дня, а дальнейший подъём поддерживает постоянный <a href="/service-maintenance.html">план обслуживания</a>. Пятнадцатиминутная проверка выше не заменяет эту работу. Это способ перестать гадать, чтобы следующее ваше решение было верным.</p><p class="wp-block-paragraph">Сначала сделайте поиск через site:. Всё, что дальше, зависит от этого единственного ответа.</p>
-        </div>
-    </div>
-</article>
-
-<div class="px-6 pb-16">
-    <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-        <a href="/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/" class="glass-panel rounded-xl p-6 group hover:border-primary/40 transition-all">
-            <div class="flex items-center gap-2 text-[10px] font-mono text-slate-600 mb-2">
-                <span class="material-symbols-outlined text-sm">arrow_back</span> <span data-i18n="blog.prev">Previous</span>
-            </div>
-            <div class="font-display font-bold cf-nav-title text-sm group-hover:text-primary-glow transition-colors leading-snug"><span data-lang-content="en">What You Get for €390: Landing Page or Portfolio Site, Both With AI</span><span data-lang-content="ro" hidden>Cum Construiesc Site-uri pentru 390€: Defalcarea Paginii Starter</span><span data-lang-content="ru" hidden>Как Я Делаю Сайты за 390€: Разбор Стартовой Страницы</span></div>
-        </a>
-    </div>
+<div class="max-w-3xl mx-auto prose-camelot">
+<div data-cf-translation-group="2">
+<p class="wp-block-paragraph">There are two very different reasons a new website goes missing from Google, and treating one like the other can waste you a month.</p><p class="wp-block-paragraph">Before you panic or blame whoever built the site, you can find out which problem you actually have in about fifteen minutes, using tools that are already free. The single most useful thing I can tell you is this: "not indexed" and "not ranking" are separate diseases with separate cures. Fix the wrong one and nothing moves.</p><h2 class="wp-block-heading">The one search that splits the whole problem</h2><figure class="cf-body-fig cf-body-fig--right"><div class="cf-body-fig-inner"><img alt="Abstract lens of light over a field of dots with one dot dimmed, indexing concept" decoding="async" height="576" loading="lazy" src="/assets/images/blog/why-is-my-new-website-not-showing-up-on-google-b1.png" width="1024"></div></figure><p class="wp-block-paragraph">Open Google and type site:yourdomain.com (your real domain after the colon, no space). Google shows you every page it has stored from your site.</p><p class="wp-block-paragraph">If you get zero results, your site is not indexed. Google does not have your pages yet, so it cannot show them to anyone, for any search. If you get results but your business never appears when you search for what you actually do, you are indexed but not ranking. Same symptom on the surface, completely different cause underneath.</p><h2 class="wp-block-heading">Not indexed: the four checks I run first</h2><p class="wp-block-paragraph">When a freshly launched client site shows nothing under site:, I do not guess. I run the same four checks in the same order, because the cheap, embarrassing causes are also the most common.</p><p class="wp-block-paragraph">First, the noindex tag. Half the "we are invisible" emergencies I have seen came down to one setting a previous builder left switched on. In WordPress it lives under Settings, then Reading, as a checkbox that discourages search engines. Staging sites ship with it on by default, and it quietly travels to the live site if nobody unticks it. Two clicks and you are done.</p><p class="wp-block-paragraph">Second, robots.txt. Visit yourdomain.com/robots.txt in the browser. If you see Disallow: / sitting there, the whole site is being waved away from crawlers. That line belongs on a staging site, never on the one you want customers to find.</p><p class="wp-block-paragraph">Third, the sitemap. In Google Search Console, open the Sitemaps report and confirm your sitemap was actually fetched, with a status of Success and a recent read date. Submitting a sitemap and Google reading it are not the same event, and people assume the first automatically means the second.</p><p class="wp-block-paragraph">Fourth, request indexing. Paste a real page URL into the URL Inspection tool at the top of Search Console, and if it reports the page is not on Google, press Request Indexing. This does not force a ranking. It just moves your page into the queue to be looked at.</p><h2 class="wp-block-heading">Reading the Search Console coverage states</h2><figure class="cf-body-fig cf-body-fig--left"><div class="cf-body-fig-inner"><img alt="Two diverging glowing paths splitting from one point, indexing versus ranking concept" decoding="async" height="576" loading="lazy" src="/assets/images/blog/why-is-my-new-website-not-showing-up-on-google-b2.png" width="1024"></div></figure><p class="wp-block-paragraph">Once you are inside Search Console, the Pages report tells you exactly what Google decided, if you know how to read the labels. These are the ones that actually matter.</p><p class="wp-block-paragraph">"Discovered, currently not indexed" means Google knows your URL exists but has not crawled it yet. On a new domain this is normal and mostly a waiting game, helped along by internal links and a little authority coming in.</p><p class="wp-block-paragraph">"Crawled, currently not indexed" is a sharper signal. Google visited the page and chose not to keep it. That usually points at thin, duplicate, or near-empty content, not a technical bug. The cure is a better page, not another indexing request.</p><p class="wp-block-paragraph">"Excluded by noindex tag" means the page is telling Google to stay away, so go back to check number one. "Alternate page with proper canonical tag" is usually fine and means Google folded that URL into another version on purpose.</p><h2 class="wp-block-heading">Indexed but not ranking is a different disease</h2><p class="wp-block-paragraph">If site: does return your pages, stop running indexing fixes. They will do nothing, because indexing was never the problem. Ranking is not permission to appear, it is competition for position, and a brand new domain starts with almost no trust built up.</p><p class="wp-block-paragraph">For the first few months a new site can be fully indexed and still sit far down the results while Google works out whether to take it seriously. That is expected, not a defect. This is also where a genuine, well-built site earns its place over time, through real content, clean structure, and other sites eventually pointing back to it. If you want a second pair of eyes on where your site actually stands, a plain-language <a href="/audit">free website audit</a> will tell you which of the two diseases you are dealing with before you spend money treating the wrong one.</p><p class="wp-block-paragraph">The reason this matters is money and calm. Owners who confuse the two problems either wait patiently for rankings on a site Google literally cannot see, or they frantically resubmit sitemaps for a site that is already indexed and simply young. When I take on a <a href="/service-creation">new website build</a>, the technical side of getting found is handled from day one, and the ongoing climb is something a <a href="/service-maintenance">steady care plan</a> keeps pushing. The fifteen minute check above is not a substitute for that work. It is how you stop guessing, so the next decision you make is the right one.</p><p class="wp-block-paragraph">Run the site: search first. Everything you do next depends on that single answer.</p>
 </div>
-
+</div>
+</article>
+<div class="px-6 pb-16">
+<div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+<a class="glass-panel rounded-xl p-6 group hover:border-primary/40 transition-all" href="/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/">
+<div class="flex items-center gap-2 text-[10px] font-mono text-slate-600 mb-2">
+<span class="material-symbols-outlined text-sm">arrow_back</span> <span data-i18n="blog.prev">Previous</span>
+</div>
+<div class="font-display font-bold cf-nav-title text-sm group-hover:text-primary-glow transition-colors leading-snug"><span data-cf-translation-group="3">What You Get for €390: Landing Page or Portfolio Site, Both With AI</span></div>
+</a>
+</div>
+</div>
 <section class="pb-28 px-6">
-    <div class="max-w-3xl mx-auto glass-panel rounded-xl p-10 md:p-14 text-center border border-primary/20">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded border border-primary/30 bg-primary/5 mb-6">
-            <span class="text-xs font-mono text-primary-glow tracking-widest uppercase">// NEXT_STEP</span>
-        </div>
-        <h2 class="text-3xl md:text-4xl font-display font-bold cf-post-title mb-4 tracking-tighter" data-i18n="blog.cta_title">Want this built for you?</h2>
-        <p class="text-slate-400 mb-8 font-mono text-sm" data-i18n="blog.cta_sub">Fixed scope. Fixed price. Fixed deadline.</p>
-        <a href="/contact.html?objective=blog-cta" class="cf-blog-cta-btn bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-8 py-3 rounded text-sm font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong inline-flex items-center gap-2">
+<div class="max-w-3xl mx-auto glass-panel rounded-xl p-10 md:p-14 text-center border border-primary/20">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded border border-primary/30 bg-primary/5 mb-6">
+<span class="text-xs font-mono text-primary-glow tracking-widest uppercase">// NEXT_STEP</span>
+</div>
+<h2 class="text-3xl md:text-4xl font-display font-bold cf-post-title mb-4 tracking-tighter" data-i18n="blog.cta_title">Want this built for you?</h2>
+<p class="text-slate-400 mb-8 font-mono text-sm" data-i18n="blog.cta_sub">Fixed scope. Fixed price. Fixed deadline.</p>
+<a class="cf-blog-cta-btn bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-8 py-3 rounded text-sm font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong inline-flex items-center gap-2" href="/contact?objective=blog-cta">
             // SUMMON_AGENT
             <span class="material-symbols-outlined text-sm">arrow_forward</span>
-        </a>
-    </div>
+</a>
+</div>
 </section>
 </main>
 <footer class="bg-obsidian pt-24 pb-12 px-6 border-t border-primary/20 relative">
-        <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent shadow-[0_0_15px_rgba(99,102,241,0.5)]">
-        </div>
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20">
-                <div class="md:col-span-3">
-                    <div class="flex items-center gap-3 mb-6">
-                        <img src="/assets/images/cf-mark.png?v=3" alt="Camelot Flows" class="object-contain" style="height:56px;width:auto" />
-                        <span class="font-display text-xl font-bold tracking-tighter uppercase text-white">Camelot
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+</div>
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20">
+<div class="md:col-span-3">
+<div class="flex items-center gap-3 mb-6">
+<img alt="Camelot Flows" class="object-contain" src="/assets/images/cf-mark.png?v=3" style="height:56px;width:auto">
+<span class="font-display text-xl font-bold tracking-tighter uppercase text-white">Camelot
                             Flows</span>
-                    </div>
-                    <p class="text-slate-500 mb-8 text-sm leading-relaxed font-mono">
-                        <span data-i18n="common.footer.location_line_1"><span class="text-primary">&gt;</span> Location: Chisinau, MD</span><br />
-                        <span data-i18n="common.footer.location_line_2"><span class="text-primary">&gt;</span> Coordinates: 47.0105° N, 28.8638° E</span><br />
-                        <span data-i18n="common.footer.location_line_3"><span class="text-primary">&gt;</span> Mission: Awwwards-Tier Design & AI Automation.</span>
-                    </p>
-                    <div class="flex gap-4">
-                        <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400"
-                            href="https://www.linkedin.com/in/alex-buzi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        </a>
-
-                        <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400"
-                            href="/contact.html">
-                            <span class="material-symbols-outlined text-lg">mail</span>
-                        </a>
-                        <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400"
-                            href="/contact.html">
-                            <span class="material-symbols-outlined text-lg">alternate_email</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="md:col-span-2">
-                    <h5
-                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_protocol">
+</div>
+<p class="text-slate-500 mb-8 text-sm leading-relaxed font-mono">
+<span data-i18n="common.footer.location_line_1"><span class="text-primary">&gt;</span> Location: Chisinau, MD</span><br>
+<span data-i18n="common.footer.location_line_2"><span class="text-primary">&gt;</span> Coordinates: 47.0105° N, 28.8638° E</span><br>
+<span data-i18n="common.footer.location_line_3"><span class="text-primary">&gt;</span> Mission: Awwwards-Tier Design &amp; AI Automation.</span>
+</p>
+<div class="flex gap-4">
+<a aria-label="LinkedIn" class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="https://www.linkedin.com/in/alex-buzi/" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+</a>
+<a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="/contact">
+<span class="material-symbols-outlined text-lg">mail</span>
+</a>
+<a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="/contact">
+<span class="material-symbols-outlined text-lg">alternate_email</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_protocol">
                         Protocol</h5>
-                    <ul class="space-y-3 text-slate-500 text-sm font-mono">
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/arsenal.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_protocol_arsenal">The Arsenal</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/merlin.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_protocol_merlin">Merlin</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/case-studies.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_protocol_cases">Case Studies</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/for-agencies.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_protocol_agencies">Agencies</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/blog/"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> <span data-i18n="common.footer.blog">Blog</span></a></li>
-                    </ul>
-                </div>
-                <div class="md:col-span-2">
-                    <h5
-                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_services">
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/arsenal"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_protocol_arsenal">The Arsenal</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/merlin"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_protocol_merlin">Merlin</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/case-studies"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_protocol_cases">Case Studies</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/for-agencies"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_protocol_agencies">Agencies</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/blog/"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> <span data-i18n="common.footer.blog">Blog</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_services">
                         Services</h5>
-                    <ul class="space-y-3 text-slate-500 text-sm font-mono">
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/service-creation.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_services_creation">Site Creation</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/service-maintenance.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_services_maintenance">Maintenance</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/service-automation.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_services_automation">Automations</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/service-marketing.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_services_marketing">Marketing</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/audit"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_services_audit">Free Website Audit</span></a></li>
-                    </ul>
-                </div>
-                <div class="md:col-span-2">
-                    <h5
-                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_company">
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-creation"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_creation">Site Creation</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-maintenance"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_maintenance">Maintenance</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-automation"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_automation">Automations</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-marketing"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_marketing">Marketing</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/audit"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_audit">Free Website Audit</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_company">
                         Company</h5>
-                    <ul class="space-y-3 text-slate-500 text-sm font-mono">
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/about.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_company_about">About</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/work-with-me.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_company_work">Work With</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/legal.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_company_legal">Legal</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/contact.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_company_contact">Contact</span></a></li>
-                    </ul>
-                </div>
-                <div class="md:col-span-3">
-                    <h5
-                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_vanguard">
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/about"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_company_about">About</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/work-with-me"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_company_work">Work With</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/legal"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_company_legal">Legal</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/contact"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_company_contact">Contact</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-3">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_vanguard">
                         Vanguard</h5>
-                    <p class="text-slate-500 text-sm mb-6 leading-relaxed" data-i18n="common.footer.col_vanguard_lead">Weekly insights on AI automation sent
+<p class="text-slate-500 text-sm mb-6 leading-relaxed" data-i18n="common.footer.col_vanguard_lead">Weekly insights on AI automation sent
                         directly to your terminal.</p>
-                    <div
-                        class="flex gap-2 p-1 bg-white/5 rounded border border-white/10 focus-within:border-primary/50 transition-colors">
-                        <label for="newsletter-email" class="sr-only">Email address</label>
-                        <input
-                            id="newsletter-email"
-                            class="bg-transparent border-none focus:ring-0 text-sm flex-1 px-4 text-white font-mono placeholder:text-slate-600"
-                            placeholder="ENTER_EMAIL" type="email" data-i18n-attr="placeholder:common.footer.col_vanguard_placeholder" />
-                        <button
-                            class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded text-xs font-bold transition-colors font-mono" data-i18n="common.footer.col_vanguard_submit">[SUBMIT]</button>
-                    </div>
-                </div>
-            </div>
-            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-                <p class="text-xs text-slate-600 font-mono" data-i18n="common.footer.copyright">&copy; 2026 Camelot Flows. Built by Alex Buzi.</p>
-                <div class="flex flex-wrap justify-center gap-4 md:gap-8">
-                    <div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
-                        <span class="material-symbols-outlined text-sm text-green-500">wifi</span>
-                        <span data-i18n="common.footer.status_optimal">System Status: Optimal</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
-                        <span class="material-symbols-outlined text-sm text-blue-500">bolt</span>
-                        <span data-i18n="common.footer.status_lightning">Lightning Fast Performance</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <div id="custom-cursor"></div>
-
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-
-    <script src="/assets/js/locales.js"></script>
-    <script defer src="/assets/js/i18n.js"></script>
-    <script defer src="/assets/js/camelot-gsap.js"></script>
-    <script defer src="/assets/site.js"></script>
-
+<div class="flex gap-2 p-1 bg-white/5 rounded border border-white/10 focus-within:border-primary/50 transition-colors">
+<label class="sr-only" for="newsletter-email">Email address</label>
+<input class="bg-transparent border-none focus:ring-0 text-sm flex-1 px-4 text-white font-mono placeholder:text-slate-600" data-i18n-attr="placeholder:common.footer.col_vanguard_placeholder" id="newsletter-email" placeholder="ENTER_EMAIL" type="email">
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded text-xs font-bold transition-colors font-mono" data-i18n="common.footer.col_vanguard_submit">[SUBMIT]</button>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-xs text-slate-600 font-mono" data-i18n="common.footer.copyright">© 2026 Camelot Flows. Built by Alex Buzi.</p>
+<div class="flex flex-wrap justify-center gap-4 md:gap-8">
+<div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+<span class="material-symbols-outlined text-sm text-green-500">wifi</span>
+<span data-i18n="common.footer.status_optimal">System Status: Optimal</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+<span class="material-symbols-outlined text-sm text-blue-500">bolt</span>
+<span data-i18n="common.footer.status_lightning">Lightning Fast Performance</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<div id="custom-cursor"></div>
+<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="/assets/js/locales.js"></script>
+<script defer="" src="/assets/js/i18n.js"></script>
+<script defer="" src="/assets/js/camelot-gsap.js"></script>
+<script defer="" src="/assets/site.js"></script>
 </body>
-
 </html>

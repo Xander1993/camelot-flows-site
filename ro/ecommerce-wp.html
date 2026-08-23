@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+
+<html data-cf-static-lang="ro" data-i18n-page="ecommerce-wp" lang="ro">
+<head>
+<script>(function(){var h=document.documentElement;try{var c=document.cookie.match('(?:^|;) ?cf_theme=([^;]*)');var t=c?c[1]:(localStorage.getItem('cf_theme')||'cozy');h.setAttribute('data-theme',t);}catch(e){h.setAttribute('data-theme','cozy');}try{if(sessionStorage.getItem('cf_loaded')==='1')h.classList.add('cf-skip-preloader');}catch(e){}h.classList.add('js');})();</script>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Dezvoltare, redesign și migrare WooCommerce | Camelot Flows</title>
+<meta content="Dezvoltare, redesign și migrare WooCommerce cu produse, comenzi, clienți, plăți, livrare, CRM și automatizări adaptate afacerii existente." name="description">
+<link href="https://camelotflows.dev/ro/ecommerce-wp" rel="canonical"><link href="https://camelotflows.dev/ecommerce-wp" hreflang="en" rel="alternate"><link href="https://camelotflows.dev/ro/ecommerce-wp" hreflang="ro" rel="alternate"><link href="https://camelotflows.dev/ru/ecommerce-wp" hreflang="ru" rel="alternate"><link href="https://camelotflows.dev/ecommerce-wp" hreflang="x-default" rel="alternate">
+
+
+
+
+<link href="/favicon.png" rel="icon" sizes="32x32" type="image/png">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=Space+Grotesk:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet">
+<link href="/assets/css/tailwind.built.css" rel="stylesheet">
+<link href="/assets/site.css?v=2" rel="stylesheet">
+<link href="/assets/css/camelot.css?v=9" rel="stylesheet">
+<link href="/assets/css/theme-night.css?v=2" rel="stylesheet">
+<link href="/assets/css/lang-switcher.css" rel="stylesheet">
+<noscript><style>.sr,.hero-word,.hero-price,.hero-cta{opacity:1!important;transform:none!important;}</style></noscript>
+<style>
+/* ── Accent tokens (ecommerce-wp = neon amber / deep amber) ── */
+:root,[data-theme="night"]{
+  --lp-accent:#f59e0b;--lp-accent-rgb:245,158,11;
+  --lp-bg:#050508;--lp-surface:#0A0A12;
+  --lp-text:#e2e8f0;--lp-muted:rgba(226,232,240,.45);
+  --lp-border:rgba(255,255,255,.08);
+  --lp-card:rgba(255,255,255,.04);--lp-shine:rgba(255,255,255,.10);
+}
+[data-theme="cozy"]{
+  --lp-accent:#D97706;--lp-accent-rgb:217,119,6;
+  --lp-bg:#F5F4F0;--lp-surface:#EDEBE6;
+  --lp-text:#1A1A18;--lp-muted:rgba(26,26,24,.50);
+  --lp-border:rgba(26,26,24,.10);
+  --lp-card:rgba(26,26,24,.03);--lp-shine:rgba(255,255,255,.80);
+}
+body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--lp-bg);color:var(--lp-text);overflow-x:hidden;line-height:1.7;}
+a{text-decoration:none;color:inherit;}
+.lp-grain{position:fixed;inset:0;z-index:50;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.04;mix-blend-mode:overlay;}
+[data-theme="cozy"] .lp-grain{opacity:.09;}
+.lp-wrap{max-width:80rem;margin-inline:auto;padding-inline:1.5rem;}
+@media(min-width:1024px){.lp-wrap{padding-inline:3rem;}}
+.lp-section{padding-top:5rem;padding-bottom:5rem;}
+@media(min-width:768px){.lp-section{padding-top:8rem;padding-bottom:8rem;}}
+.pill{display:inline-flex;align-items:center;padding:.25rem .875rem;border-radius:999px;background:rgba(var(--lp-accent-rgb),.12);border:1px solid rgba(var(--lp-accent-rgb),.28);color:var(--lp-accent);font-family:'Fraunces',serif;font-size:.6875rem;font-weight:500;text-transform:uppercase;letter-spacing:.18em;margin-bottom:1.25rem;}
+.lp-hero{position:relative;min-height:100dvh;display:flex;align-items:center;padding-top:9rem;padding-bottom:4rem;overflow:hidden;}
+.hero-orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(80px);will-change:transform;}
+.hero-orb-1{width:40vw;height:40vw;top:-10%;right:5%;background:radial-gradient(circle,rgba(var(--lp-accent-rgb),.18) 0%,transparent 70%);}
+.hero-orb-2{width:30vw;height:30vw;bottom:10%;left:-5%;background:radial-gradient(circle,rgba(var(--lp-accent-rgb),.08) 0%,transparent 70%);}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:3rem;align-items:center;width:100%;}
+@media(min-width:768px){.hero-grid{grid-template-columns:3fr 2fr;gap:4rem;}}
+.hero-h1{font-family:'Fraunces',serif;font-size:clamp(3rem,5.5vw,5.5rem);font-weight:500;line-height:1.05;letter-spacing:-.025em;max-width:44rem;margin-bottom:1.75rem;}
+.hero-h1 .accent{color:var(--lp-accent);}
+.hero-sub{font-size:1.0625rem;line-height:1.7;color:var(--lp-muted);max-width:38rem;margin-bottom:2.5rem;}
+.hero-actions{display:flex;align-items:stretch;flex-wrap:wrap;gap:1rem;}
+.cta-pill{display:inline-flex;align-items:center;gap:.75rem;padding:.875rem .875rem .875rem 1.75rem;border-radius:999px;background:var(--lp-accent);color:#050508;font-size:1rem;font-weight:600;transition:transform .4s cubic-bezier(.32,.72,0,1),box-shadow .4s cubic-bezier(.32,.72,0,1);}
+.cta-pill:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(var(--lp-accent-rgb),.28);}
+.cta-arrow{width:2.25rem;height:2.25rem;border-radius:999px;background:rgba(0,0,0,.20);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .35s cubic-bezier(.32,.72,0,1);}
+.cta-pill:hover .cta-arrow{transform:translate(3px,-2px) scale(1.1);}
+.cta-arrow svg{width:1rem;height:1rem;stroke:#050508;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.cta-ghost{display:inline-flex;align-items:center;gap:.5rem;padding:.875rem 1.75rem;border-radius:999px;border:1px solid var(--lp-border);background:transparent;color:var(--lp-muted);font-size:1rem;transition:border-color .3s ease,background .3s ease,color .3s ease;}
+.cta-ghost:hover{background:rgba(var(--lp-accent-rgb),.06);border-color:rgba(var(--lp-accent-rgb),.35);color:var(--lp-text);}
+.price-card-outer{border-radius:2rem;padding:6px;max-width:280px;width:100%;border:1px solid rgba(var(--lp-accent-rgb),.22);background:rgba(var(--lp-accent-rgb),.04);}
+.price-card-inner{border-radius:calc(2rem - 6px);background:rgba(var(--lp-accent-rgb),.06);box-shadow:inset 0 1px 1px rgba(var(--lp-accent-rgb),.15);padding:2.5rem 2rem;display:flex;flex-direction:column;gap:1.5rem;}
+[data-theme="cozy"] .price-card-inner{background:rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.9);}
+.price-from{font-size:.75rem;color:var(--lp-muted);text-transform:uppercase;letter-spacing:.12em;}
+.price-amount{font-family:'JetBrains Mono',monospace;font-size:clamp(3.5rem,6vw,5rem);font-weight:400;line-height:1;color:var(--lp-accent);letter-spacing:-.03em;}
+.price-checks{list-style:none;display:flex;flex-direction:column;gap:.625rem;}
+.price-check-item{display:flex;align-items:center;gap:.625rem;font-size:.875rem;color:var(--lp-muted);}
+.check-dot{width:.375rem;height:.375rem;border-radius:50%;background:var(--lp-accent);flex-shrink:0;}
+.marquee-wrap{padding:1.375rem 0;border-top:1px solid var(--lp-border);border-bottom:1px solid var(--lp-border);overflow:hidden;}
+.marquee-track{display:flex;gap:2.5rem;width:max-content;animation:marquee 26s linear infinite;}
+.m-item{font-size:1.0625rem;font-weight:500;color:var(--lp-muted);white-space:nowrap;letter-spacing:.04em;}
+.m-dot{color:var(--lp-accent);opacity:.7;}
+@keyframes marquee{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none;}}
+.feat-grid{display:grid;grid-template-columns:1fr;gap:3rem;align-items:start;}
+@media(min-width:768px){.feat-grid{grid-template-columns:2fr 3fr;gap:4rem;align-items:center;}}
+.feat-list{display:flex;flex-direction:column;gap:.75rem;}
+.feat-item{padding:1.125rem 1.375rem;border-radius:1rem;border:1px solid transparent;cursor:default;}
+.feat-item-name{font-family:'Fraunces',serif;font-size:1.125rem;font-weight:400;margin-bottom:.2rem;}
+.feat-item-sub{font-size:.8125rem;color:var(--lp-muted);}
+.feat-details{position:relative;}
+.feat-detail{opacity:0;transform:translateY(14px);pointer-events:none;}
+.feat-detail:first-child{opacity:1;transform:translateY(0);pointer-events:auto;}
+@media(min-width:768px){.feat-detail:not(:first-child){position:absolute;top:0;left:0;width:100%;}}
+@media(max-width:767px){.feat-detail{opacity:1!important;transform:none!important;pointer-events:auto;margin-bottom:1.25rem;}}
+.feat-detail-card{border-radius:2rem;padding:6px;border:1px solid var(--lp-border);background:rgba(var(--lp-accent-rgb),.03);}
+.feat-detail-inner{border-radius:calc(2rem - 6px);background:var(--lp-card);box-shadow:inset 0 1px 1px var(--lp-shine);padding:2.5rem;}
+[data-theme="cozy"] .feat-detail-inner{background:rgba(255,255,255,.60);}
+.feat-vis{width:100%;height:160px;border-radius:1rem;margin-bottom:1.75rem;overflow:hidden;position:relative;background:rgba(var(--lp-accent-rgb),.05);border:1px solid rgba(var(--lp-accent-rgb),.12);}
+.feat-vis--store{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;padding:.75rem;}
+.fv-product{border-radius:.5rem;background:rgba(var(--lp-accent-rgb),.07);overflow:hidden;display:flex;flex-direction:column;}
+.fv-product-img{flex:1;background:rgba(var(--lp-accent-rgb),.13);}
+.fv-product-text{padding:.35rem;display:flex;flex-direction:column;gap:.2rem;}
+.fv-line{height:.35rem;border-radius:4px;background:rgba(var(--lp-accent-rgb),.25);}
+.fv-line-s{width:60%;height:.35rem;border-radius:4px;background:rgba(var(--lp-accent-rgb),.15);}
+.feat-vis--cart{padding:1rem;display:flex;flex-direction:column;gap:.25rem;}
+.fv-email{display:flex;align-items:center;gap:.625rem;padding:.5rem .75rem;border-radius:.5rem;background:rgba(var(--lp-accent-rgb),.06);border:1px solid rgba(var(--lp-accent-rgb),.10);}
+.fv-email-dot{width:.4rem;height:.4rem;border-radius:50%;background:var(--lp-accent);flex-shrink:0;}
+.fv-email-bar{height:.375rem;border-radius:4px;background:rgba(var(--lp-accent-rgb),.3);flex:1;}
+.fv-email-time{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--lp-accent);white-space:nowrap;opacity:.7;}
+.fv-conn{width:.35rem;height:.35rem;border-radius:50%;background:rgba(var(--lp-accent-rgb),.15);margin:.1rem 0 .1rem 1rem;}
+.feat-vis--pay{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.625rem;padding:1.25rem;}
+.fv-pay{padding:.4rem 1rem;border-radius:999px;background:rgba(var(--lp-accent-rgb),.07);border:1px solid rgba(var(--lp-accent-rgb),.16);font-family:'JetBrains Mono',monospace;font-size:.6875rem;font-weight:500;color:var(--lp-text);display:flex;align-items:center;gap:.4rem;}
+.fv-pay-dot{width:.35rem;height:.35rem;border-radius:50%;background:var(--lp-accent);}
+.feat-vis--crm{padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;}
+.fv-stage{display:flex;flex-direction:column;align-items:center;gap:.4rem;}
+.fv-stage-icon{width:2.25rem;height:2.25rem;border-radius:.625rem;background:rgba(var(--lp-accent-rgb),.09);border:1px solid rgba(var(--lp-accent-rgb),.16);display:flex;align-items:center;justify-content:center;}
+.fv-stage-icon svg{width:.875rem;height:.875rem;stroke:var(--lp-accent);fill:none;stroke-width:1.5;}
+.fv-stage-lbl{font-size:.55rem;font-family:'JetBrains Mono',monospace;color:var(--lp-muted);text-transform:uppercase;letter-spacing:.06em;}
+.fv-arr{color:rgba(var(--lp-accent-rgb),.4);font-size:.875rem;margin-top:-.75rem;}
+.feat-icon{width:2.75rem;height:2.75rem;margin-bottom:1.5rem;}
+.feat-icon svg{width:100%;height:100%;stroke:var(--lp-accent);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+.feat-title{font-family:'Fraunces',serif;font-size:1.875rem;font-weight:400;line-height:1.15;margin-bottom:.875rem;}
+.feat-desc{font-size:1rem;line-height:1.75;color:var(--lp-muted);}
+.section-h{font-family:'Fraunces',serif;font-size:clamp(2.25rem,4vw,3.5rem);font-weight:400;line-height:1.1;letter-spacing:-.02em;margin-bottom:1rem;}
+.section-sub{font-size:1.0625rem;color:var(--lp-muted);max-width:40rem;line-height:1.7;margin-bottom:3.5rem;}
+.deliverables{display:grid;grid-template-columns:1fr;gap:1.5rem;max-width:46rem;}
+@media(min-width:600px){.deliverables{grid-template-columns:1fr 1fr;}}
+.deliv-item{display:flex;align-items:flex-start;gap:1rem;}
+.check-svg{flex-shrink:0;width:2rem;height:2rem;margin-top:.125rem;}
+.check-bg{fill:rgba(var(--lp-accent-rgb),.12);}
+.check-path{stroke:var(--lp-accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.deliv-name{font-size:1rem;font-weight:600;margin-bottom:.25rem;}
+.deliv-desc{font-size:.875rem;color:var(--lp-muted);line-height:1.6;}
+.timeline-scroll{overflow-x:auto;margin-top:3.5rem;padding-bottom:.5rem;}
+.timeline-svg-wrap{min-width:580px;height:150px;}
+.timeline-svg{width:100%;height:100%;overflow:visible;}
+.t-track{fill:none;stroke:var(--lp-border);stroke-width:2;stroke-linecap:round;}
+.t-path{fill:none;stroke:var(--lp-accent);stroke-width:2;stroke-linecap:round;}
+.t-ring{fill:var(--lp-bg);stroke:var(--lp-accent);stroke-width:2;}
+.t-dot{fill:var(--lp-accent);}
+.t-day{font-family:'JetBrains Mono',monospace;font-size:10px;fill:var(--lp-accent);font-weight:500;}
+.t-label{font-family:'Space Grotesk',sans-serif;font-size:12px;fill:var(--lp-text);font-weight:500;}
+.t-sub{font-family:'Space Grotesk',sans-serif;font-size:11px;fill:var(--lp-muted);}
+.risk-outer{max-width:680px;margin-inline:auto;border-radius:2rem;padding:6px;border:1px solid rgba(var(--lp-accent-rgb),.22);background:rgba(var(--lp-accent-rgb),.04);}
+.risk-inner{border-radius:calc(2rem - 6px);background:var(--lp-card);box-shadow:inset 0 1px 1px var(--lp-shine);padding:3rem 2.5rem;text-align:center;}
+[data-theme="cozy"] .risk-inner{background:rgba(255,255,255,.60);}
+.risk-icon{width:2.75rem;height:2.75rem;margin:0 auto 1.25rem;}
+.risk-icon svg{width:100%;height:100%;stroke:var(--lp-accent);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+.risk-h{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:500;margin-bottom:.875rem;}
+.risk-copy{font-family:'Fraunces',serif;font-style:italic;font-size:1.125rem;line-height:1.7;color:var(--lp-muted);max-width:36rem;margin:0 auto 1.5rem;}
+.risk-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.375rem 1rem;border-radius:999px;background:rgba(var(--lp-accent-rgb),.12);border:1px solid rgba(var(--lp-accent-rgb),.25);font-size:.8125rem;font-weight:500;color:var(--lp-accent);}
+.risk-badge svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.faq-wrap{max-width:680px;margin-top:3rem;}
+.faq-item{border-bottom:1px solid var(--lp-border);}
+.faq-btn{display:flex;justify-content:space-between;align-items:center;width:100%;padding:1.375rem 0;background:transparent;border:none;cursor:pointer;color:var(--lp-text);text-align:left;gap:1rem;}
+.faq-q{font-size:1.0625rem;font-weight:500;line-height:1.4;}
+.faq-arrow{flex-shrink:0;width:1.625rem;height:1.625rem;border-radius:50%;background:rgba(var(--lp-accent-rgb),.1);border:1px solid rgba(var(--lp-accent-rgb),.3);display:flex;align-items:center;justify-content:center;transition:transform .35s cubic-bezier(.32,.72,0,1),background .25s;}
+.faq-arrow::before{content:'›';color:var(--lp-accent);font-size:1.1rem;line-height:1;font-weight:700;margin-top:-1px;}
+.faq-item.open .faq-arrow{transform:rotate(90deg);background:rgba(var(--lp-accent-rgb),.22);}
+#faq{padding-bottom:5rem;}
+.lp-cta-sect{min-height:auto;padding-top:5rem;padding-bottom:6rem;align-items:flex-start;}
+.faq-body{max-height:0;overflow:hidden;opacity:0;transition:max-height .45s cubic-bezier(.4,0,.2,1),opacity .3s ease .05s;}
+.faq-item.open .faq-body{max-height:320px;opacity:1;}
+.faq-ans{font-size:.9375rem;line-height:1.75;color:var(--lp-muted);padding-bottom:1.375rem;}
+.lp-cta-sect{min-height:auto;display:flex;align-items:flex-start;justify-content:center;text-align:center;padding:4.5rem 1.5rem 6rem;position:relative;overflow:hidden;}
+.cta-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 50% 60%,rgba(var(--lp-accent-rgb),.11) 0%,transparent 70%);}
+.cta-content{position:relative;z-index:2;max-width:48rem;width:100%;}
+.cta-h{font-family:'Fraunces',serif;font-size:clamp(2.75rem,5.5vw,5rem);font-weight:400;line-height:1.05;letter-spacing:-.025em;margin-bottom:1.375rem;}
+.cta-h .accent{color:var(--lp-accent);}
+.cta-p{font-size:1.0625rem;color:var(--lp-muted);margin-bottom:2.5rem;line-height:1.7;}
+.cta-row{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:1rem;}
+.sr{opacity:0;transform:translateY(40px);}
+.hero-word{opacity:0;transform:translateY(60px);}
+.hero-price{opacity:0;transform:translateX(80px);}
+.hero-cta{opacity:0;transform:translateY(20px);}
+.lp-nav-cta{transition:color .3s ease,background .3s ease,border-color .3s ease;color:var(--lp-accent);border-color:rgba(var(--lp-accent-rgb),.45);background:transparent;}
+.lp-nav-cta:hover{background:rgba(var(--lp-accent-rgb),.12);border-color:rgba(var(--lp-accent-rgb),.70);}
+[data-theme="cozy"] .lp-nav-cta{color:rgb(196,120,92);border-color:rgba(196,120,92,.45);background:transparent;}
+[data-theme="cozy"] .lp-nav-cta:hover{background:rgba(196,120,92,.12);border-color:rgba(196,120,92,.70);color:rgb(175,95,65);}
+#custom-cursor{background:var(--lp-accent)!important;box-shadow:0 0 20px 6px rgba(var(--lp-accent-rgb),.6)!important;}
+@media(max-width:1180px){nav.fixed > div:not(#mobile-nav) .lp-nav-cta{width:44px;height:44px;padding:0!important;border-radius:999px!important;justify-content:center;flex:0 0 44px;overflow:hidden;color:transparent!important;font-size:0!important;letter-spacing:0!important;display:inline-flex!important;}nav.fixed > div:not(#mobile-nav) .lp-nav-cta::before{content:"//";color:rgb(var(--cft-terracotta));font:700 12px/1 "JetBrains Mono",monospace;letter-spacing:.06em;}[data-theme="night"] nav.fixed > div:not(#mobile-nav) .lp-nav-cta::before{color:#a5b4fc;}}
+@keyframes deco-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}@keyframes deco-spin-slow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}@keyframes deco-pulse{0%,100%{opacity:.15}50%{opacity:.38}}.hero-deco{position:absolute;pointer-events:none;z-index:0;overflow:visible;}.hero-deco-bag{top:8%;right:5%;width:92px;animation:deco-float 6s ease-in-out infinite;}.hero-deco-chart{bottom:16%;left:4%;width:122px;animation:deco-float 8s ease-in-out infinite 2.5s;}.hero-deco-prodgrid{top:44%;right:3%;width:76px;animation:deco-pulse 5s ease-in-out infinite;}@media(max-width:767px){.hero-deco{display:none;}}
+@media(max-width:767px){nav.fixed > div:not(#mobile-nav) .lp-nav-cta{display:none!important;}}
+</style>
+<!-- Google tag (gtag.js) — GA4 camelotflows.dev -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T4ZPEG1KSR"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+      try { if (localStorage.getItem('cf_consent') === 'granted') { gtag('consent', 'update', { analytics_storage: 'granted' }); } } catch (e) {}      gtag('js', new Date());
+      gtag('config', 'G-T4ZPEG1KSR');
+    </script>
+<script defer="" src="/assets/js/cf-consent.js?v=1"></script>
+</head>
+<body class="theme-cozy font-body overflow-x-hidden">
+<div aria-hidden="true" class="lp-grain"></div>
+<div id="custom-cursor"></div>
+<!-- Site nav (identical to all other pages) -->
+<nav class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-6 md:py-6">
+<div class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
+<div class="flex items-center">
+<img alt="Camelot Flows" class="h-16 md:h-28 w-auto object-contain" src="/assets/images/cf-logo-wordmark-2x.webp">
+</div>
+<div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.home" href="/ro/">[Acasă]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.services" href="/ro/work-with-me">[Servicii]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.arsenal" href="/ro/arsenal">[Arsenal]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.merlin" href="/ro/merlin">[Merlin]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" data-i18n="common.nav.cases" href="/ro/case-studies">[Cazuri]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block" data-i18n="common.nav.agencies" href="/ro/for-agencies">[Agenții]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" data-i18n="common.nav.pricing" href="/ro/?goto=pricing">[Prețuri]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.contact" href="/ro/contact">[Contact]</a>
+</div>
+<div class="flex items-center gap-2">
+<a aria-label="Call Camelot Flows" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="tel:+37369555936" title="+373 69 555 936">
+<span class="material-symbols-outlined cf-phone-icon" style="font-size:18px">call</span>
+</a>
+<div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-500 status-dot animate-pulse"></div>
+<span class="text-[10px] font-mono text-emerald-500/80" data-i18n="common.nav.sys_online">SYS_ONLINE</span>
+</div>
+<div class="lang-switcher" data-cf-lang-switcher="">
+<button aria-expanded="false" aria-haspopup="listbox" aria-label="Limbă" class="lang-trigger" data-i18n-attr="aria-label:common.lang_label" type="button">
+<span class="lang-current" data-cf-lang-current="">EN</span>
+<span class="material-symbols-outlined lang-chevron">expand_more</span>
+</button>
+<ul class="lang-menu" hidden="" role="listbox">
+<li data-lang="en" role="option" tabindex="-1"><a href="/ecommerce-wp" hreflang="en">EN</a></li>
+<li data-lang="ro" role="option" tabindex="-1"><a href="/ro/ecommerce-wp" hreflang="ro">RO</a></li>
+<li data-lang="ru" role="option" tabindex="-1"><a href="/ru/ecommerce-wp" hreflang="ru">RU</a></li>
+</ul>
+</div>
+<button aria-label="Open menu" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 transition-all text-slate-400" id="mobile-menu-toggle" type="button">
+<span class="material-symbols-outlined" style="font-size:20px">menu</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="theme-toggle" type="button">
+<span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
+<span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
+</button>
+<a class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong hidden lg:inline-flex items-center nav-cta" data-i18n="common.nav.summon_agent" href="/ro/contact?objective=build">[Hire_me]</a>
+</div>
+</div>
+<div class="hidden mt-2 max-w-7xl mx-auto" id="mobile-nav">
+<div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
+<div class="flex flex-col gap-1">
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.home" href="/ro/">[Acasă]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.services" href="/ro/work-with-me">[Servicii]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.arsenal" href="/ro/arsenal">[Arsenal]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.merlin" href="/ro/merlin">[Merlin]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.cases" href="/ro/case-studies">[Cazuri]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.contact" href="/ro/contact">[Contact]</a>
+<div class="mx-3 my-2 h-px bg-white/10"></div>
+<a class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent" href="/ro/contact?service=build">[Hire_me]</a>
+</div>
+</div>
+</div>
+<script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");var open=!menu.classList.contains("hidden");btn.setAttribute("aria-expanded",open?"true":"false");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");}});document.querySelectorAll("#mobile-nav a").forEach(function(a){a.addEventListener("click",function(){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");});});}})();</script>
+</nav>
+<!-- S1: Hero -->
+<section class="lp-hero" id="hero">
+<div aria-hidden="true" class="hero-orb hero-orb-1"></div>
+<svg aria-hidden="true" class="hero-deco hero-deco-bag" fill="none" viewbox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><rect fill="rgba(var(--lp-accent-rgb),.05)" height="74" rx="9" stroke="rgba(var(--lp-accent-rgb),.28)" stroke-width="1.5" width="84" x="8" y="38"></rect><path d="M30 38 C30 18 70 18 70 38" fill="none" stroke="rgba(var(--lp-accent-rgb),.28)" stroke-width="1.5"></path><line stroke="rgba(var(--lp-accent-rgb),.16)" stroke-width="1" x1="8" x2="92" y1="62" y2="62"></line><rect fill="rgba(var(--lp-accent-rgb),.06)" height="13" rx="3" stroke="rgba(var(--lp-accent-rgb),.22)" stroke-width="1" width="20" x="40" y="27"></rect><circle cx="50" cy="35" fill="rgba(var(--lp-accent-rgb),.38)" r="3.5"></circle><line stroke="rgba(var(--lp-accent-rgb),.14)" stroke-width="1" x1="28" x2="72" y1="82" y2="82"></line><line stroke="rgba(var(--lp-accent-rgb),.1)" stroke-width="1" x1="28" x2="55" y1="94" y2="94"></line></svg>
+<svg aria-hidden="true" class="hero-deco hero-deco-chart" fill="none" viewbox="0 0 140 100" xmlns="http://www.w3.org/2000/svg"><line stroke="rgba(var(--lp-accent-rgb),.22)" stroke-linecap="round" stroke-width="1.5" x1="18" x2="132" y1="88" y2="88"></line><line stroke="rgba(var(--lp-accent-rgb),.22)" stroke-linecap="round" stroke-width="1.5" x1="18" x2="18" y1="8" y2="88"></line><rect fill="rgba(var(--lp-accent-rgb),.18)" height="26" rx="3" width="16" x="28" y="62"></rect><rect fill="rgba(var(--lp-accent-rgb),.22)" height="42" rx="3" width="16" x="53" y="46"></rect><rect fill="rgba(var(--lp-accent-rgb),.27)" height="60" rx="3" width="16" x="78" y="28"></rect><rect fill="rgba(var(--lp-accent-rgb),.33)" height="78" rx="3" width="16" x="103" y="10"></rect><polyline fill="none" points="113,6 120,2 127,6" stroke="rgba(var(--lp-accent-rgb),.45)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></polyline><line stroke="rgba(var(--lp-accent-rgb),.45)" stroke-linecap="round" stroke-width="1.5" x1="120" x2="120" y1="2" y2="16"></line></svg>
+<svg aria-hidden="true" class="hero-deco hero-deco-prodgrid" fill="none" viewbox="0 0 90 90" xmlns="http://www.w3.org/2000/svg"><rect fill="rgba(var(--lp-accent-rgb),.06)" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.25)" stroke-width="1.5" width="23" x="4" y="4"></rect><rect fill="rgba(var(--lp-accent-rgb),.06)" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.25)" stroke-width="1.5" width="23" x="33" y="4"></rect><rect fill="rgba(var(--lp-accent-rgb),.1)" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.3)" stroke-width="1.5" width="23" x="62" y="4"></rect><rect fill="rgba(var(--lp-accent-rgb),.04)" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.2)" stroke-width="1.5" width="23" x="4" y="33"></rect><rect fill="rgba(var(--lp-accent-rgb),.08)" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.3)" stroke-width="1.5" width="23" x="33" y="33"></rect><rect fill="rgba(var(--lp-accent-rgb),.04)" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.2)" stroke-width="1.5" width="23" x="62" y="33"></rect><rect fill="rgba(var(--lp-accent-rgb),.04)" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.2)" stroke-width="1.5" width="23" x="4" y="62"></rect><rect fill="rgba(var(--lp-accent-rgb),.04)" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.2)" stroke-width="1.5" width="23" x="33" y="62"></rect><rect fill="rgba(var(--lp-accent-rgb),.06)" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.25)" stroke-width="1.5" width="23" x="62" y="62"></rect></svg>
+<div class="lp-wrap hero-grid">
+<div>
+<span class="pill" data-i18n="pages.ecommerce-wp.hero_pill">Ecommerce &amp; WP avansat</span>
+<h1 class="hero-h1" data-i18n="pages.ecommerce-wp.hero_h1"><span class="hero-word">WooCommerce,</span><br><span class="hero-word">construit, refăcut</span><br><span class="hero-word accent">sau migrat.</span></h1>
+<p class="hero-sub" data-i18n="pages.ecommerce-wp.hero_sub">Magazine WooCommerce noi, redesign și migrări atente — inclusiv produse, comenzi, datele clienților, plăți, livrare, CRM și automatizări, atunci când proiectul le cere.</p>
+<div class="hero-actions">
+<a class="cta-pill hero-cta" href="/ro/contact?objective=ecommerce-wp">
+<span data-i18n="pages.ecommerce-wp.hero_cta_primary">Începe magazinul</span>
+<span aria-hidden="true" class="cta-arrow"><svg viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+</a>
+<a class="cta-ghost hero-cta" data-i18n="pages.ecommerce-wp.hero_cta_ghost" href="#deliverables">Ce e inclus</a>
+</div>
+</div>
+<div style="display:flex;justify-content:center;">
+<div class="price-card-outer hero-price">
+<div class="price-card-inner">
+<div><div class="price-from" data-i18n="pages.ecommerce-wp.price_from">De la</div><div class="price-amount">€990</div></div>
+<ul class="price-checks">
+<li class="price-check-item"><span class="check-dot"></span><span data-i18n="pages.ecommerce-wp.price_check_1">Build WooCommerce complet</span></li>
+<li class="price-check-item"><span class="check-dot"></span><span data-i18n="pages.ecommerce-wp.price_check_2">Automatizare AI inclusă</span></li>
+<li class="price-check-item"><span class="check-dot"></span><span data-i18n="pages.ecommerce-wp.price_check_3">Recuperare coș abandonat</span></li>
+<li class="price-check-item"><span class="check-dot"></span><span data-i18n="pages.ecommerce-wp.price_check_4">Sincronizare CRM inclusă</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- S2: Trust marquee -->
+<div aria-hidden="true" class="marquee-wrap">
+<div class="marquee-track">
+<span class="m-item">WooCommerce Expert</span><span class="m-dot m-item">·</span><span class="m-item">AI Automation Included</span><span class="m-dot m-item">·</span><span class="m-item">Cart Recovery Automation</span><span class="m-dot m-item">·</span><span class="m-item">CRM Sync</span><span class="m-dot m-item">·</span><span class="m-item">Payment Gateway Setup</span><span class="m-dot m-item">·</span><span class="m-item">Mobile Commerce</span><span class="m-dot m-item">·</span>
+<span class="m-item">WooCommerce Expert</span><span class="m-dot m-item">·</span><span class="m-item">AI Automation Included</span><span class="m-dot m-item">·</span><span class="m-item">Cart Recovery Automation</span><span class="m-dot m-item">·</span><span class="m-item">CRM Sync</span><span class="m-dot m-item">·</span><span class="m-item">Payment Gateway Setup</span><span class="m-dot m-item">·</span><span class="m-item">Mobile Commerce</span><span class="m-dot m-item">·</span>
+</div>
+</div>
+<!-- S3: Feature Spotlight (GSAP PIN) -->
+<section class="lp-section" id="feature-spotlight">
+<div class="lp-wrap">
+<div class="sr" style="margin-bottom:3rem;">
+<span class="pill" data-i18n="pages.ecommerce-wp.s3_pill">Ce primești</span>
+<h2 class="section-h" data-i18n="pages.ecommerce-wp.s3_h">Comerț cu un creier.</h2>
+</div>
+<div class="feat-grid">
+<div class="feat-list">
+<div class="feat-item" data-fi="0"><div class="feat-item-name" data-i18n="pages.ecommerce-wp.feat1_name">WooCommerce complet</div><div class="feat-item-sub" data-i18n="pages.ecommerce-wp.feat1_sub">Magazin complet, nu un demo de temă</div></div>
+<div class="feat-item" data-fi="1"><div class="feat-item-name" data-i18n="pages.ecommerce-wp.feat2_name">Recuperare coș</div><div class="feat-item-sub" data-i18n="pages.ecommerce-wp.feat2_sub">AI prinde abandonurile înainte să fie pierdute</div></div>
+<div class="feat-item" data-fi="2"><div class="feat-item-name" data-i18n="pages.ecommerce-wp.feat3_name">Gateway-uri de plată</div><div class="feat-item-sub" data-i18n="pages.ecommerce-wp.feat3_sub">Stripe, PayPal, Revolut, metode locale</div></div>
+<div class="feat-item" data-fi="3"><div class="feat-item-name" data-i18n="pages.ecommerce-wp.feat4_name">Inteligență CRM</div><div class="feat-item-sub" data-i18n="pages.ecommerce-wp.feat4_sub">Fiecare comandă sincronizată în pipeline-ul tău</div></div>
+</div>
+<div class="feat-details">
+<div class="feat-detail" data-fd="0"><div class="feat-detail-card"><div class="feat-detail-inner">
+<div class="feat-vis feat-vis--store">
+<div class="fv-product"><div class="fv-product-img"></div><div class="fv-product-text"><div class="fv-line"></div><div class="fv-line-s"></div></div></div>
+<div class="fv-product"><div class="fv-product-img"></div><div class="fv-product-text"><div class="fv-line"></div><div class="fv-line-s"></div></div></div>
+<div class="fv-product"><div class="fv-product-img"></div><div class="fv-product-text"><div class="fv-line"></div><div class="fv-line-s"></div></div></div>
+</div>
+<div class="feat-icon"><svg viewbox="0 0 24 24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></div>
+<h3 class="feat-title" data-i18n="pages.ecommerce-wp.feat1_title">Un magazin real, construit ca să vândă.</h3>
+<p class="feat-desc" data-i18n="pages.ecommerce-wp.feat1_desc">WooCommerce construit de la zero — pagini de produs optimizate pentru conversie, flux de checkout testat pe mobil, gestiune de stoc cablată și reguli de livrare configurate. Nu un demo de temă: un motor de comerț de producție.</p>
+</div></div></div>
+<div class="feat-detail" data-fd="1"><div class="feat-detail-card"><div class="feat-detail-inner">
+<div class="feat-vis feat-vis--cart">
+<div class="fv-email"><div class="fv-email-dot"></div><div class="fv-email-bar" style="width:65%"></div><div class="fv-email-time">0 min</div></div>
+<div class="fv-conn"></div>
+<div class="fv-email"><div class="fv-email-dot" style="opacity:.55"></div><div class="fv-email-bar" style="width:45%;opacity:.6"></div><div class="fv-email-time">1 hr</div></div>
+<div class="fv-conn"></div>
+<div class="fv-email"><div class="fv-email-dot" style="opacity:.3"></div><div class="fv-email-bar" style="width:55%;opacity:.4"></div><div class="fv-email-time">24 hr</div></div>
+</div>
+<div class="feat-icon"><svg viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.56 2 2 0 0 1 3.6 1.38h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.1a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.5 16h.5z"></path></svg></div>
+<h3 class="feat-title" data-i18n="pages.ecommerce-wp.feat2_title">Coșul abandonat primește o a doua șansă.</h3>
+<p class="feat-desc" data-i18n="pages.ecommerce-wp.feat2_desc">Când proiectul o cere, o automatizare poate monitoriza evenimentele coșului și trimite, cu respectarea consimțământului, o secvență de reamintire cu produsele lăsate. Fluxul și raportarea sunt configurate în jurul instrumentelor reale ale magazinului.</p>
+</div></div></div>
+<div class="feat-detail" data-fd="2"><div class="feat-detail-card"><div class="feat-detail-inner">
+<div class="feat-vis feat-vis--pay">
+<div class="fv-pay"><div class="fv-pay-dot"></div>Stripe</div>
+<div class="fv-pay"><div class="fv-pay-dot" style="opacity:.5"></div>PayPal</div>
+<div class="fv-pay"><div class="fv-pay-dot" style="opacity:.7"></div>Revolut</div>
+<div class="fv-pay"><div class="fv-pay-dot" style="opacity:.4"></div>Local</div>
+</div>
+<div class="feat-icon"><svg viewbox="0 0 24 24"><rect height="16" rx="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg></div>
+<h3 class="feat-title" data-i18n="pages.ecommerce-wp.feat3_title">Acceptă plăți în care clienții tăi au încredere.</h3>
+<p class="feat-desc" data-i18n="pages.ecommerce-wp.feat3_desc">Stripe, PayPal, Revolut Business și metode locale de plată configurate cap-coadă. SSL, conformitate PCI și fluxuri de chitanță testate înainte de lansare. Tu alegi ce gateway-uri oferi — eu le cablez și testez fiecare caz limită.</p>
+</div></div></div>
+<div class="feat-detail" data-fd="3"><div class="feat-detail-card"><div class="feat-detail-inner">
+<div class="feat-vis feat-vis--crm">
+<div class="fv-stage"><div class="fv-stage-icon"><svg viewbox="0 0 24 24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></div><div class="fv-stage-lbl" data-i18n="pages.ecommerce-wp.feat4_stage_order">Comandă</div></div>
+<div class="fv-arr">›</div>
+<div class="fv-stage"><div class="fv-stage-icon"><svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div><div class="fv-stage-lbl" data-i18n="pages.ecommerce-wp.feat4_stage_trigger">Declanșator</div></div>
+<div class="fv-arr">›</div>
+<div class="fv-stage"><div class="fv-stage-icon"><svg viewbox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg></div><div class="fv-stage-lbl" data-i18n="pages.ecommerce-wp.feat4_stage_crm">CRM</div></div>
+<div class="fv-arr">›</div>
+<div class="fv-stage"><div class="fv-stage-icon"><svg viewbox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div><div class="fv-stage-lbl" data-i18n="pages.ecommerce-wp.feat4_stage_email">Email</div></div>
+</div>
+<div class="feat-icon"><svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
+<h3 class="feat-title" data-i18n="pages.ecommerce-wp.feat4_title">Fiecare comandă ajunge în pipeline-ul tău.</h3>
+<p class="feat-desc" data-i18n="pages.ecommerce-wp.feat4_desc">Automatizarea AI împinge fiecare comandă finalizată în CRM-ul tău — nume client, produs, valoare și etapa din ciclul de viață. Clienții noi intră automat într-o secvență de bun venit. Cumpărătorii fideli sunt recunoscuți. Datele tale de vânzări și pipeline-ul rămân sincronizate fără introducere manuală.</p>
+</div></div></div>
+</div>
+</div>
+</div>
+</section>
+<!-- S4: Deliverables -->
+<section class="lp-section" id="deliverables">
+<div class="lp-wrap">
+<div class="sr">
+<span class="pill" data-i18n="pages.ecommerce-wp.deliv_pill">Ce e inclus</span>
+<h2 class="section-h" data-i18n="pages.ecommerce-wp.deliv_h">Tot ce are nevoie magazinul tău.</h2>
+<p class="section-sub" data-i18n="pages.ecommerce-wp.deliv_sub">Un stack de comerț complet — magazin, plăți, automatizare AI și sincronizare CRM — livrat și gata de producție.</p>
+</div>
+<div class="deliverables">
+<div class="deliv-item sr"><svg class="check-svg" viewbox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"></circle><path class="check-path" d="M10 16l4 4 8-8"></path></svg><div><div class="deliv-name" data-i18n="pages.ecommerce-wp.deliv1_name">Magazin WooCommerce complet</div><div class="deliv-desc" data-i18n="pages.ecommerce-wp.deliv1_desc">Pagini de produs, categorii, filtre, stoc — construite pentru catalogul tău.</div></div></div>
+<div class="deliv-item sr"><svg class="check-svg" viewbox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"></circle><path class="check-path" d="M10 16l4 4 8-8"></path></svg><div><div class="deliv-name" data-i18n="pages.ecommerce-wp.deliv2_name">Configurare gateway de plată</div><div class="deliv-desc" data-i18n="pages.ecommerce-wp.deliv2_desc">Stripe, PayPal, Revolut — sau metode locale. Testate cap-coadă.</div></div></div>
+<div class="deliv-item sr"><svg class="check-svg" viewbox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"></circle><path class="check-path" d="M10 16l4 4 8-8"></path></svg><div><div class="deliv-name" data-i18n="pages.ecommerce-wp.deliv3_name">Recuperare coș cu AI</div><div class="deliv-desc" data-i18n="pages.ecommerce-wp.deliv3_desc">Automatizare de coș abandonat cablată. Secvențe de recuperare personalizate.</div></div></div>
+<div class="deliv-item sr"><svg class="check-svg" viewbox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"></circle><path class="check-path" d="M10 16l4 4 8-8"></path></svg><div><div class="deliv-name" data-i18n="pages.ecommerce-wp.deliv4_name">Sincronizare CRM</div><div class="deliv-desc" data-i18n="pages.ecommerce-wp.deliv4_desc">Fiecare comandă împinsă în HubSpot, Notion, Airtable sau CRM-ul tău preferat.</div></div></div>
+<div class="deliv-item sr"><svg class="check-svg" viewbox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"></circle><path class="check-path" d="M10 16l4 4 8-8"></path></svg><div><div class="deliv-name" data-i18n="pages.ecommerce-wp.deliv5_name">Urmărire ecommerce GA4</div><div class="deliv-desc" data-i18n="pages.ecommerce-wp.deliv5_desc">Evenimente de achiziție, analiză de funnel și performanța produselor din prima zi.</div></div></div>
+<div class="deliv-item sr"><svg class="check-svg" viewbox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"></circle><path class="check-path" d="M10 16l4 4 8-8"></path></svg><div><div class="deliv-name" data-i18n="pages.ecommerce-wp.deliv6_name">Checkout optimizat pentru mobil</div><div class="deliv-desc" data-i18n="pages.ecommerce-wp.deliv6_desc">Coș și checkout native pentru atingere, testate pe dispozitive reale. Mai puține abandonuri.</div></div></div>
+</div>
+</div>
+</section>
+<!-- S5: Timeline -->
+<section class="lp-section" id="timeline-section">
+<div class="lp-wrap">
+<div class="sr"><span class="pill" data-i18n="pages.ecommerce-wp.timeline_pill">Calendar de build</span><h2 class="section-h" data-i18n="pages.ecommerce-wp.timeline_h">Magazin live în 4 săptămâni.</h2><p class="section-sub" data-i18n="pages.ecommerce-wp.timeline_sub">Programul e gândit în jurul complexității naturale a unui build de comerț — fără scurtături care creează refacere.</p></div>
+<div class="timeline-scroll"><div class="timeline-svg-wrap">
+<svg class="timeline-svg" preserveaspectratio="xMidYMid meet" viewbox="0 0 860 140">
+<line class="t-track" x1="60" x2="800" y1="70" y2="70"></line>
+<line class="t-path" id="t-line" x1="60" x2="60" y1="70" y2="70"></line>
+<circle class="t-ring" cx="60" cy="70" r="9"></circle><circle class="t-dot" cx="60" cy="70" r="4"></circle>
+<text class="t-day" data-i18n="pages.ecommerce-wp.tl1_day" text-anchor="middle" x="60" y="28">SĂPTĂMÂNA 1</text><text class="t-label" data-i18n="pages.ecommerce-wp.tl1_label" text-anchor="middle" x="60" y="46">Scop + build</text><text class="t-sub" data-i18n="pages.ecommerce-wp.tl1_sub1" text-anchor="middle" x="60" y="97">Kick-off, catalog</text><text class="t-sub" data-i18n="pages.ecommerce-wp.tl1_sub2" text-anchor="middle" x="60" y="112">definit + început</text>
+<circle class="t-ring" cx="430" cy="70" r="9"></circle><circle class="t-dot" cx="430" cy="70" r="4"></circle>
+<text class="t-day" data-i18n="pages.ecommerce-wp.tl2_day" text-anchor="middle" x="430" y="28">SĂPTĂMÂNA 2–3</text><text class="t-label" data-i18n="pages.ecommerce-wp.tl2_label" text-anchor="middle" x="430" y="46">Plăți + AI</text><text class="t-sub" data-i18n="pages.ecommerce-wp.tl2_sub1" text-anchor="middle" x="430" y="97">Gateway-uri live,</text><text class="t-sub" data-i18n="pages.ecommerce-wp.tl2_sub2" text-anchor="middle" x="430" y="112">recuperare coș cablată</text>
+<circle class="t-ring" cx="800" cy="70" r="9"></circle><circle class="t-dot" cx="800" cy="70" r="4"></circle>
+<text class="t-day" data-i18n="pages.ecommerce-wp.tl3_day" text-anchor="middle" x="800" y="28">SĂPTĂMÂNA 4</text><text class="t-label" data-i18n="pages.ecommerce-wp.tl3_label" text-anchor="middle" x="800" y="46">Live</text><text class="t-sub" data-i18n="pages.ecommerce-wp.tl3_sub1" text-anchor="middle" x="800" y="97">Domeniu conectat,</text><text class="t-sub" data-i18n="pages.ecommerce-wp.tl3_sub2" text-anchor="middle" x="800" y="112">primele comenzi gata</text>
+</svg>
+</div></div>
+</div>
+</section>
+<!-- S6: Risk Reversal -->
+<section class="lp-section" id="guarantee">
+<div class="lp-wrap">
+<div class="risk-outer sr"><div class="risk-inner">
+<div class="risk-icon"><svg viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+<h2 class="risk-h" data-i18n="pages.ecommerce-wp.guarantee_h">Garanție de lansare</h2>
+<p class="risk-copy" data-i18n="pages.ecommerce-wp.guarantee_copy">„Dacă magazinul tău nu primește comenzi reale în 4 săptămâni de la apelul nostru de kick-off, continui să lucrez fără cost suplimentar până când o face.”</p>
+<span class="risk-badge"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-i18n="pages.ecommerce-wp.guarantee_badge">Susținut prin contract</span></span>
+</div></div>
+</div>
+</section>
+<!-- S7: FAQ -->
+<section class="lp-section" id="faq">
+<div class="lp-wrap">
+<div class="sr"><span class="pill" data-i18n="pages.ecommerce-wp.faq_pill">Întrebări</span><h2 class="section-h" data-i18n="pages.ecommerce-wp.faq_h">Tot ce te-ai putea întreba.</h2></div>
+<div class="faq-wrap">
+<div class="faq-item"><button aria-expanded="false" class="faq-btn" type="button"><span class="faq-q" data-i18n="pages.ecommerce-wp.faq1_q">E WooCommerce platforma potrivită pentru magazinul meu?</span><span aria-hidden="true" class="faq-arrow"></span></button><div class="faq-body"><p class="faq-ans" data-i18n="pages.ecommerce-wp.faq1_a">WooCommerce e alegerea potrivită pentru magazinele unde ai nevoie de control complet — tipuri de produs personalizate, reguli complexe și posibilitatea de a-ți deține datele. Dacă vinzi 5 SKU-uri și vrei simplitatea Shopify, îți spun cinstit. Dacă ai nevoie de un motor de comerț real, WooCommerce e răspunsul.</p></div></div>
+<div class="faq-item"><button aria-expanded="false" class="faq-btn" type="button"><span class="faq-q" data-i18n="pages.ecommerce-wp.faq2_q">Cum funcționează de fapt recuperarea coșului cu AI?</span><span aria-hidden="true" class="faq-arrow"></span></button><div class="faq-body"><p class="faq-ans" data-i18n="pages.ecommerce-wp.faq2_a">Când WooCommerce detectează un coș abandonat (clientul a adăugat produse, dar nu a finalizat checkout-ul), pornește o secvență automată — email personalizat cu exact produsele lăsate, apoi un imbold de urmărire. Rulează pe propria ta infrastructură — fără abonament de recuperare coș de la terți.</p></div></div>
+<div class="faq-item"><button aria-expanded="false" class="faq-btn" type="button"><span class="faq-q" data-i18n="pages.ecommerce-wp.faq3_q">Trebuie să furnizez tot conținutul produselor?</span><span aria-hidden="true" class="faq-arrow"></span></button><div class="faq-body"><p class="faq-ans" data-i18n="pages.ecommerce-wp.faq3_a">Da — numele produselor, descrierile, prețurile și imaginile trebuie să vină de la tine. Te pot ajuta să le structurez și formatez în WordPress, iar AI poate genera descrieri de produs în primă variantă dacă pornești de la zero.</p></div></div>
+<div class="faq-item"><button aria-expanded="false" class="faq-btn" type="button"><span class="faq-q" data-i18n="pages.ecommerce-wp.faq4_q">Cu ce CRM-uri se conectează sincronizarea?</span><span aria-hidden="true" class="faq-arrow"></span></button><div class="faq-body"><p class="faq-ans" data-i18n="pages.ecommerce-wp.faq4_a">HubSpot, Notion, Airtable, Pipedrive și majoritatea instrumentelor cu API sau conector Zapier. Definim integrarea exactă în timpul kick-off-ului — dacă CRM-ul tău e pe lista de integrări n8n, se conectează.</p></div></div>
+<div class="faq-item"><button aria-expanded="false" class="faq-btn" type="button"><span class="faq-q" data-i18n="pages.ecommerce-wp.faq5_q">Pot adăuga mai multe produse sau categorii după lansare?</span><span aria-hidden="true" class="faq-arrow"></span></button><div class="faq-body"><p class="faq-ans" data-i18n="pages.ecommerce-wp.faq5_a">Da. Panoul de administrare WooCommerce e conceput pentru utilizatori non-tehnici, ca să-și gestioneze propriul catalog. Îți arăt cum în timpul predării. Dacă ai nevoie de modificări structurale (tipuri noi de produs, zone noi de livrare), acestea se facturează la 65 €/oră.</p></div></div>
+</div>
+</div>
+</section>
+<!-- S8: Final CTA -->
+<section class="lp-cta-sect" id="book">
+<div aria-hidden="true" class="cta-glow"></div>
+<div class="cta-content sr">
+<span class="pill" data-i18n="pages.ecommerce-wp.cta_pill">Gata de lansare?</span>
+<h2 class="cta-h" data-i18n="pages.ecommerce-wp.cta_h">Magazinul tău,<br>construit ca să <span class="accent">vândă.</span></h2>
+<p class="cta-p" data-i18n="pages.ecommerce-wp.cta_p">Rezervă un apel gratuit de 30 de minute de definire a scopului. Definim catalogul, stabilim specificațiile și încep să construiesc în aceeași săptămână.</p>
+<div class="cta-row">
+<a class="cta-pill" href="/ro/contact?objective=ecommerce-wp">
+<span data-i18n="pages.ecommerce-wp.cta_btn">Rezervă un apel gratuit</span>
+<span aria-hidden="true" class="cta-arrow"><svg viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+</a>
+</div>
+</div>
+</section>
+<!-- Site footer (identical to all other pages) -->
+<footer class="bg-obsidian pt-24 pb-12 px-6 border-t border-primary/20 relative">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20">
+<div class="md:col-span-3">
+<div class="flex items-center gap-3 mb-6">
+<img alt="Camelot Flows" class="object-contain" src="/assets/images/cf-mark.png?v=3" style="height:56px;width:auto">
+<span class="font-display text-xl font-bold tracking-tighter uppercase text-white">Camelot Flows</span>
+</img></div>
+<p class="text-slate-500 mb-8 text-sm leading-relaxed font-mono">
+<span data-i18n="common.footer.location_line_1"><span class="text-primary">&gt;</span> Locație: Chișinău, MD</span><br>
+<span data-i18n="common.footer.location_line_2"><span class="text-primary">&gt;</span> Coordonate: 47.0105° N, 28.8638° E</span><br>
+<span data-i18n="common.footer.location_line_3"><span class="text-primary">&gt;</span> Misiune: Construcții premium. Activul e al tău.</span>
+</p>
+<div class="flex gap-4">
+<a aria-label="LinkedIn" class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="https://www.linkedin.com/in/alex-buzi/" rel="noopener noreferrer" target="_blank">
+<svg fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+</a>
+<a aria-label="Email" class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="mailto:alex@camelotflows.dev">
+<span class="material-symbols-outlined text-lg">mail</span>
+</a>
+<a aria-label="Call" class="nav-phone-btn w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="tel:+37369555936">
+<span class="material-symbols-outlined cf-phone-icon text-lg">call</span>
+</a>
+</div>
+<a class="nav-phone-btn mt-4 flex items-center gap-2 text-slate-500 hover:text-primary transition-colors text-xs font-mono" href="tel:+37369555936">
+<span class="material-symbols-outlined cf-phone-icon" style="font-size:14px">call</span>
+                    +373 69 555 936
+                </a>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_protocol">Protocol</h5>
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/arsenal"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_arsenal">Arsenalul</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/merlin"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_merlin">Merlin</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/case-studies"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_cases">Studii de caz</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/for-agencies"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_agencies">Agenții</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/blog/"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.blog">Blog</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_services">Servicii</h5>
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/service-creation"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_creation">Creare site</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/service-maintenance"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_maintenance">Mentenanță</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/service-automation"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_automation">Automatizări</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/service-marketing"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_marketing">Fii găsit</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/audit"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_audit">Audit gratuit de site</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_company">Atelier</h5>
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/about"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_about">Despre</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/work-with-me"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_work">Colaborare</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/legal"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_legal">Termeni</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/contact"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_contact">Contact</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-3">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_vanguard">Avangardă</h5>
+<p class="text-slate-500 text-sm mb-6 leading-relaxed" data-i18n="common.footer.col_vanguard_lead">Săptămânal — idei despre automatizare AI, direct în terminalul tău.</p>
+<div class="flex gap-2 p-1 bg-white/5 rounded border border-white/10">
+<label class="sr-only" for="nl-email-ec">Email address</label>
+<input class="bg-transparent border-none focus:ring-0 text-sm flex-1 px-4 text-white font-mono placeholder:text-slate-600" data-i18n-attr="placeholder:common.footer.col_vanguard_placeholder" id="nl-email-ec" placeholder="ENTER_EMAIL" type="email">
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded text-xs font-bold transition-colors font-mono" data-i18n="common.footer.col_vanguard_submit">[SUBMIT]</button>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-xs text-slate-600 font-mono" data-i18n="common.footer.copyright">© 2026 Camelot Flows. Construit de Alex Buzi.</p>
+<div class="flex flex-wrap justify-center gap-4 md:gap-8">
+<div class="flex items-center gap-2 text-xs text-slate-500 font-mono"><span class="material-symbols-outlined text-sm text-green-500">wifi</span><span data-i18n="common.footer.status_optimal">Stare sistem: optimă</span></div>
+<div class="flex items-center gap-2 text-xs text-slate-500 font-mono"><span class="material-symbols-outlined text-sm text-blue-500">bolt</span><span data-i18n="common.footer.status_lightning">Performanță fulgerătoare</span></div>
+</div>
+</div>
+</div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="/assets/js/locales.js"></script>
+<script defer="" src="/assets/js/i18n.js"></script>
+<script defer="" src="/assets/site.js?v=2"></script>
+<script>
+// Theme toggle (site nav button)
+(function(){
+  var btn=document.getElementById('theme-toggle');
+  if(!btn)return;
+  btn.addEventListener('click',function(){
+    var h=document.documentElement;
+    var next=h.getAttribute('data-theme')==='night'?'cozy':'night';
+    if(document.startViewTransition){document.startViewTransition(function(){h.setAttribute('data-theme',next);});}
+    else{h.setAttribute('data-theme',next);}
+    try{localStorage.setItem('cf_theme',next);document.cookie='cf_theme='+next+';path=/;max-age=31536000';}catch(e){}
+  });
+})();
+
+// FAQ
+document.querySelectorAll('.faq-btn').forEach(function(btn){btn.addEventListener('click',function(){var item=this.closest('.faq-item');var isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(o){o.classList.remove('open');o.querySelector('.faq-btn').setAttribute('aria-expanded','false');});if(!isOpen){item.classList.add('open');this.setAttribute('aria-expanded','true');}});});
+
+// GSAP
+window.addEventListener('DOMContentLoaded',function(){
+  if(typeof gsap==='undefined'){document.querySelectorAll('.sr,.hero-word,.hero-price,.hero-cta').forEach(function(el){el.style.opacity='1';el.style.transform='none';});return;}
+  gsap.registerPlugin(ScrollTrigger);
+  var noMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!noMotion){
+    gsap.timeline({delay:.25}).fromTo('.hero-word',{y:60,opacity:0},{y:0,opacity:1,stagger:.09,duration:1,ease:'power4.out'}).fromTo('.hero-price',{x:80,opacity:0},{x:0,opacity:1,duration:1,ease:'back.out(1.7)'},'-=.55').fromTo('.hero-cta',{y:20,opacity:0},{y:0,opacity:1,stagger:.1,duration:.7,ease:'power3.out'},'-.45');
+    var orbs=document.querySelectorAll('.hero-orb');
+    window.addEventListener('mousemove',function(e){var dx=e.clientX/window.innerWidth-.5;var dy=e.clientY/window.innerHeight-.5;orbs.forEach(function(o,i){gsap.to(o,{x:dx*(i+1)*40,y:dy*(i+1)*30,duration:1.2,ease:'power1.out'});});});
+  }else{gsap.set(['.hero-word','.hero-price','.hero-cta'],{opacity:1,x:0,y:0});}
+  var desktop=window.innerWidth>=768;
+  var feats=gsap.utils.toArray('.feat-item');
+  var details=gsap.utils.toArray('.feat-detail');
+  if(desktop&&!noMotion&&feats.length){
+    feats.forEach(function(f,i){gsap.set(f,{opacity:i===0?1:.2,scale:i===0?1:.95});});
+    details.forEach(function(d,i){gsap.set(d,i===0?{opacity:1,y:0}:{opacity:0,y:14});});
+    ScrollTrigger.create({trigger:'#feature-spotlight',pin:true,scrub:.6,invalidateOnRefresh:true,start:'top top',end:function(){return'+='+feats.length*window.innerHeight*.45;},onUpdate:function(self){var idx=Math.min(Math.floor(self.progress*feats.length),feats.length-1);feats.forEach(function(f,i){gsap.to(f,{opacity:i===idx?1:.2,scale:i===idx?1:.95,duration:.3,ease:'power2.out'});});details.forEach(function(d,i){gsap.to(d,{opacity:i===idx?1:0,y:i===idx?0:14,duration:.3,ease:'power2.out'});});}});
+  }else{gsap.set('.feat-detail',{opacity:1,y:0});gsap.set('.feat-item',{opacity:1,scale:1});}
+  document.querySelectorAll('.check-path').forEach(function(p,i){var len=p.getTotalLength();if(noMotion){gsap.set(p,{strokeDasharray:len,strokeDashoffset:0});return;}gsap.set(p,{strokeDasharray:len,strokeDashoffset:len});gsap.to(p,{strokeDashoffset:0,duration:.55,ease:'power2.out',delay:i*.12,scrollTrigger:{trigger:p,start:'top 83%',toggleActions:'play none none reverse'}});});
+  if(!noMotion){gsap.fromTo('#t-line',{attr:{x2:60}},{attr:{x2:800},ease:'none',scrollTrigger:{trigger:'#timeline-section',start:'top 70%',end:'bottom 30%',scrub:1}});}else{gsap.set('#t-line',{attr:{x2:800}});}
+  if(!noMotion){gsap.utils.toArray('.sr').forEach(function(el){gsap.to(el,{y:0,opacity:1,duration:.85,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 83%',toggleActions:'play none none reverse'}});});}else{gsap.set('.sr',{opacity:1,y:0});}
+  if(!noMotion&&!window.matchMedia('(hover:none)').matches){var cur=document.createElement('div');cur.className='cf-cursor';cur.setAttribute('aria-hidden','true');document.body.appendChild(cur);var xTo=gsap.quickTo(cur,'x',{duration:.4,ease:'power3'});var yTo=gsap.quickTo(cur,'y',{duration:.4,ease:'power3'});window.addEventListener('mousemove',function(e){xTo(e.clientX);yTo(e.clientY);});var iSel='a,button,[role=button],input,textarea,select,.lp-feat-item';document.body.addEventListener('mouseover',function(e){if(e.target.closest(iSel))cur.classList.add('is-hover');});document.body.addEventListener('mouseout',function(e){if(e.target.closest(iSel))cur.classList.remove('is-hover');});if(window.matchMedia('(pointer:fine)').matches){var cc=document.getElementById('custom-cursor');var ccVis=false,lastPt=0;gsap.set(cc,{xPercent:-50,yPercent:-50,zIndex:99999});window.addEventListener('mousemove',function(e2){if(!ccVis){ccVis=true;gsap.to(cc,{opacity:1,duration:.3});}gsap.to(cc,{x:e2.clientX,y:e2.clientY,duration:.15,ease:'power2.out'});var now=Date.now();if(now-lastPt>12){lastPt=now;var p=document.createElement('div');p.style.cssText='position:fixed;width:6px;height:6px;border-radius:50%;background:rgba(var(--lp-accent-rgb),1);pointer-events:none;z-index:9998;mix-blend-mode:screen;filter:blur(1px);box-shadow:0 0 20px 4px rgba(var(--lp-accent-rgb),.6);';document.body.appendChild(p);gsap.set(p,{x:e2.clientX,y:e2.clientY,xPercent:-50,yPercent:-50});gsap.to(p,{x:e2.clientX+(Math.random()-.5)*15,y:e2.clientY+(Math.random()-.5)*15,scale:0,opacity:0,duration:Math.random()*.4+.4,ease:'power2.out',onComplete:function(){p.remove();}});}});document.addEventListener('mouseleave',function(){ccVis=false;gsap.to(cc,{opacity:0,duration:.3});});document.querySelectorAll('a,button,input').forEach(function(el){el.addEventListener('mouseenter',function(){gsap.to(cc,{scale:3.5,opacity:.3,duration:.3,ease:'power2.out'});});el.addEventListener('mouseleave',function(){gsap.to(cc,{scale:1,opacity:1,duration:.3,ease:'power2.out'});});});}}
+});
+</script>
+</body>
+</html>

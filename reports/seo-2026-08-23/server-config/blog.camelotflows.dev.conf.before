@@ -1,0 +1,11 @@
+<VirtualHost *:80>
+    ServerName blog.camelotflows.dev
+    DocumentRoot /var/www/html
+    <Directory /var/www/html/>
+        Options FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+    ErrorLog ${APACHE_LOG_DIR}/blog-error.log
+    CustomLog ${APACHE_LOG_DIR}/blog-access.log combined
+</VirtualHost>

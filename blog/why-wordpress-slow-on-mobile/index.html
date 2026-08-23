@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-i18n-page="blog">
 
+<html data-cf-static-lang="en" data-i18n-page="blog" lang="en">
 <head>
-    <!-- CF: theme bootstrap (sync, before paint) -->
-    <script>
+<!-- CF: theme bootstrap (sync, before paint) -->
+<script>
       (function () {
         var html = document.documentElement;
         try {
@@ -19,12 +19,12 @@
         html.classList.add('js');
       })();
     </script>
-    <!-- CF: lang bootstrap (sync, before paint) -->
-    <script>
+<!-- CF: lang bootstrap (sync, before paint) -->
+<script>
       (function () {
         var html = document.documentElement;
         try {
-          var l = localStorage.getItem('cf_lang') || 'en';
+          var l = document.documentElement.lang || 'en';
           if (['en','ro','ru'].indexOf(l) === -1) l = 'en';
           html.setAttribute('lang', l);
           html.setAttribute('data-cf-lang', l);
@@ -32,430 +32,350 @@
         } catch (e) { html.setAttribute('lang', 'en'); }
       })();
     </script>
-
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Why Your WordPress Site Feels Slow on Your Phone - Camelot Flows</title>
-    <meta name="description" content="The three things that quietly slow almost every WordPress site on a phone, the one number that tells the truth, and how to check yours tonight.">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Why Your WordPress Site Feels Slow on Your Phone - Camelot Flows</title>
+<meta content="The three things that quietly slow almost every WordPress site on a phone, the one number that tells the truth, and how to check yours tonight." name="description">
 <link rel="canonical" href="https://camelotflows.dev/blog/why-wordpress-slow-on-mobile/">
     <link rel="alternate" hreflang="en" href="https://camelotflows.dev/blog/why-wordpress-slow-on-mobile/">
+    <link rel="alternate" hreflang="ro" href="https://camelotflows.dev/ro/blog/why-wordpress-slow-on-mobile/">
+    <link rel="alternate" hreflang="ru" href="https://camelotflows.dev/ru/blog/why-wordpress-slow-on-mobile/">
     <link rel="alternate" hreflang="x-default" href="https://camelotflows.dev/blog/why-wordpress-slow-on-mobile/">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <!-- Open Graph -->
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Why Your WordPress Site Feels Slow on Your Phone - Camelot Flows">
-    <meta property="og:description" content="The three things that quietly slow almost every WordPress site on a phone, the one number that tells the truth, and how to check yours tonight.">
-    <meta property="og:image" content="https://camelotflows.dev/assets/images/blog/why-wordpress-slow-on-mobile.webp">
-    <meta property="og:url" content="https://camelotflows.dev/blog/why-wordpress-slow-on-mobile/">
-    <meta property="og:site_name" content="Camelot Flows">
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Why Your WordPress Site Feels Slow on Your Phone - Camelot Flows">
-    <meta name="twitter:description" content="The three things that quietly slow almost every WordPress site on a phone, the one number that tells the truth, and how to check yours tonight.">
-    <meta name="twitter:image" content="https://camelotflows.dev/assets/images/blog/why-wordpress-slow-on-mobile.webp">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"></noscript>
-<link rel="stylesheet" href="/assets/css/tailwind.built.css">
-    <link rel="stylesheet" href="/assets/site.css?v=2">
-    <link rel="stylesheet" href="/assets/css/camelot.css?v=6">
-    <link rel="stylesheet" href="/assets/css/theme-night.css?v=2">
-    <link rel="stylesheet" href="/assets/css/lang-switcher.css">
-    <link rel="stylesheet" href="/assets/css/blog.css?v=3">
-    <link rel="prefetch" href="/arsenal.html" as="document">
-    <link rel="prefetch" href="/merlin.html" as="document">
-    <link rel="prefetch" href="/contact.html" as="document">
-    <link rel="prefetch" href="/case-studies.html" as="document">
-    <link rel="prefetch" href="/about.html" as="document">
-    <!-- Google tag (gtag.js) — GA4 camelotflows.dev -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4ZPEG1KSR"></script>
-    <script>
+<link href="/favicon.ico" rel="icon" type="image/x-icon">
+<link href="/favicon.png" rel="icon" sizes="32x32" type="image/png">
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+<!-- Open Graph -->
+<meta content="article" property="og:type">
+<meta content="Why Your WordPress Site Feels Slow on Your Phone - Camelot Flows" property="og:title">
+<meta content="The three things that quietly slow almost every WordPress site on a phone, the one number that tells the truth, and how to check yours tonight." property="og:description">
+<meta content="https://camelotflows.dev/assets/images/blog/why-wordpress-slow-on-mobile.webp" property="og:image">
+<meta content="https://camelotflows.dev/blog/why-wordpress-slow-on-mobile/" property="og:url">
+<meta content="Camelot Flows" property="og:site_name">
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card">
+<meta content="Why Your WordPress Site Feels Slow on Your Phone - Camelot Flows" name="twitter:title">
+<meta content="The three things that quietly slow almost every WordPress site on a phone, the one number that tells the truth, and how to check yours tonight." name="twitter:description">
+<meta content="https://camelotflows.dev/assets/images/blog/why-wordpress-slow-on-mobile.webp" name="twitter:image">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="preload">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"></noscript>
+<link href="/assets/css/tailwind.built.css" rel="stylesheet">
+<link href="/assets/site.css?v=2" rel="stylesheet">
+<link href="/assets/css/camelot.css?v=6" rel="stylesheet">
+<link href="/assets/css/theme-night.css?v=2" rel="stylesheet">
+<link href="/assets/css/lang-switcher.css" rel="stylesheet">
+<link href="/assets/css/blog.css?v=3" rel="stylesheet">
+<link as="document" href="/arsenal" rel="prefetch">
+<link as="document" href="/merlin" rel="prefetch">
+<link as="document" href="/contact" rel="prefetch">
+<link as="document" href="/case-studies" rel="prefetch">
+<link as="document" href="/about" rel="prefetch">
+<!-- Google tag (gtag.js) — GA4 camelotflows.dev -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T4ZPEG1KSR"></script>
+<script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
       try { if (localStorage.getItem('cf_consent') === 'granted') { gtag('consent', 'update', { analytics_storage: 'granted' }); } } catch (e) {}      gtag('js', new Date());
       gtag('config', 'G-T4ZPEG1KSR');
     </script>
-    <script defer src="/assets/js/cf-consent.js?v=1"></script>
+<script defer="" src="/assets/js/cf-consent.js?v=1"></script>
 </head>
-
 <body class="theme-cozy font-body overflow-x-hidden selection:bg-primary selection:text-white">
-<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999999] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm focus:font-mono focus:shadow-neon" data-i18n="common.skip_link">Skip to main content</a>
-<div id="lang-announce" role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
-    <div class="scroll-progress" aria-hidden="true"></div>
-
-    <div id="preloader" class="fixed inset-0 z-[999999] bg-obsidian flex flex-col items-center justify-center">
-        <div class="absolute inset-0 grid-bg opacity-30"></div>
-        <div class="w-32 h-32 relative flex items-center justify-center mb-8 z-10">
-            <div class="absolute inset-0 rounded-full border-t-2 border-primary animate-spin"></div>
-            <div
-                class="absolute inset-2 rounded-full border-b-2 border-accent animate-[spin_2s_linear_infinite_reverse]">
-            </div>
-            <span class="material-symbols-outlined text-4xl text-white animate-pulse">design_services</span>
-        </div>
-        <div class="text-primary-glow font-mono text-[10px] tracking-[0.4em] uppercase mb-4 z-10" id="loader-text" data-i18n="common.preloader_init">
-            Initializing Protocols...</div>
-        <div class="w-64 h-[2px] bg-white/10 rounded-full overflow-hidden z-10">
-            <div id="loader-bar" class="w-0 h-full bg-gradient-to-r from-primary to-accent"></div>
-        </div>
-        <div id="loader-percent" class="mt-4 font-mono text-white text-sm tracking-widest z-10">0%</div>
-    </div>
-
-    <div class="grain-overlay"></div>
-    <div id="bg-orbs" class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div class="bg-orb absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-cobalt/20 rounded-full blur-[120px]">
-        </div>
-        <div
-            class="bg-orb absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-accent/10 rounded-full blur-[100px]">
-        </div>
-        <div class="bg-orb absolute top-[40%] left-[30%] w-[30vw] h-[30vw] bg-primary/10 rounded-full blur-[150px]">
-        </div>
-        <div class="absolute inset-0 grid-bg"></div>
-    </div>
-
-    <!-- ИЗМЕНЕНИЕ: Zentry Orbital Badge (Вращающаяся печать в углу) -->
-    <div
-        class="fixed bottom-8 right-8 z-50 pointer-events-none mix-blend-screen opacity-60 hidden md:flex items-center justify-center w-32 h-32">
-        <svg viewBox="0 0 100 100" width="100" height="100" class="animate-[spin_12s_linear_infinite] absolute inset-0">
-            <defs>
-                <path id="circle" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
-            </defs>
-            <text font-size="10.5" fill="currentColor" class="text-primary-glow font-mono uppercase tracking-[0.15em]">
-                <textPath href="#circle">Camelot Flows • Digital Kingdom •</textPath>
-            </text>
-        </svg>
-        <span class="material-symbols-outlined text-primary text-2xl animate-pulse">change_history</span>
-    </div>
-
-    <nav class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-6 md:py-6">
-        <div
-            class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
-            <div class="flex items-center">
-                <img src="/assets/images/cf-logo-wordmark-2x.webp" alt="Camelot Flows" class="h-16 md:h-28 w-auto object-contain">
-            </div>
-            <div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="/" data-i18n="common.nav.home">[Home]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="/work-with-me.html" data-i18n="common.nav.services">[Services]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="/arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="/merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
-                    href="/case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block"
-                    href="/for-agencies.html" data-i18n="common.nav.agencies">[Agencies]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
-                    href="/?goto=pricing" data-i18n="common.nav.pricing">[Pricing]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="/contact.html" data-i18n="common.nav.contact">[Contact]</a>
-            </div>
-            <div class="flex items-center gap-2">
-                <a href="tel:+37369555936" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" aria-label="Call Camelot Flows" title="+373 69 555 936">
-                    <span class="material-symbols-outlined cf-phone-icon" style="font-size:18px">call</span>
-                </a>
-                <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
-                    <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 status-dot animate-pulse"></div>
-                    <span class="text-[10px] font-mono text-emerald-500/80" data-i18n="common.nav.sys_online">SYS_ONLINE</span>
-                </div>
-                <div class="lang-switcher" data-cf-lang-switcher>
-    <button class="lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Change language" data-i18n-attr="aria-label:common.lang_label">
-        <span class="lang-current" data-cf-lang-current>EN</span>
-        <span class="material-symbols-outlined lang-chevron">expand_more</span>
-    </button>
-    <ul class="lang-menu" role="listbox" hidden>
-        <li role="option" data-lang="en" tabindex="-1">EN</li>
-        <li role="option" data-lang="ro" tabindex="-1">RO</li>
-        <li role="option" data-lang="ru" tabindex="-1">RU</li>
-    </ul>
+<a class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999999] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm focus:font-mono focus:shadow-neon" data-i18n="common.skip_link" href="#main-content">Skip to main content</a>
+<div aria-atomic="true" aria-live="polite" class="sr-only" id="lang-announce" role="status"></div>
+<div aria-hidden="true" class="scroll-progress"></div>
+<div class="fixed inset-0 z-[999999] bg-obsidian flex flex-col items-center justify-center" id="preloader">
+<div class="absolute inset-0 grid-bg opacity-30"></div>
+<div class="w-32 h-32 relative flex items-center justify-center mb-8 z-10">
+<div class="absolute inset-0 rounded-full border-t-2 border-primary animate-spin"></div>
+<div class="absolute inset-2 rounded-full border-b-2 border-accent animate-[spin_2s_linear_infinite_reverse]">
 </div>
-                <button id="mobile-menu-toggle" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 transition-all text-slate-400" aria-label="Open menu" type="button">
-                    <span class="material-symbols-outlined" style="font-size:20px">menu</span>
-                </button>
-                <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Toggle theme">
-    <span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
-    <span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
+<span class="material-symbols-outlined text-4xl text-white animate-pulse">design_services</span>
+</div>
+<div class="text-primary-glow font-mono text-[10px] tracking-[0.4em] uppercase mb-4 z-10" data-i18n="common.preloader_init" id="loader-text">
+            Initializing Protocols...</div>
+<div class="w-64 h-[2px] bg-white/10 rounded-full overflow-hidden z-10">
+<div class="w-0 h-full bg-gradient-to-r from-primary to-accent" id="loader-bar"></div>
+</div>
+<div class="mt-4 font-mono text-white text-sm tracking-widest z-10" id="loader-percent">0%</div>
+</div>
+<div class="grain-overlay"></div>
+<div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none" id="bg-orbs">
+<div class="bg-orb absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-cobalt/20 rounded-full blur-[120px]">
+</div>
+<div class="bg-orb absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-accent/10 rounded-full blur-[100px]">
+</div>
+<div class="bg-orb absolute top-[40%] left-[30%] w-[30vw] h-[30vw] bg-primary/10 rounded-full blur-[150px]">
+</div>
+<div class="absolute inset-0 grid-bg"></div>
+</div>
+<!-- ИЗМЕНЕНИЕ: Zentry Orbital Badge (Вращающаяся печать в углу) -->
+<div class="fixed bottom-8 right-8 z-50 pointer-events-none mix-blend-screen opacity-60 hidden md:flex items-center justify-center w-32 h-32">
+<svg class="animate-[spin_12s_linear_infinite] absolute inset-0" height="100" viewbox="0 0 100 100" width="100">
+<defs>
+<path d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" id="circle"></path>
+</defs>
+<text class="text-primary-glow font-mono uppercase tracking-[0.15em]" fill="currentColor" font-size="10.5">
+<textpath href="#circle">Camelot Flows • Digital Kingdom •</textpath>
+</text>
+</svg>
+<span class="material-symbols-outlined text-primary text-2xl animate-pulse">change_history</span>
+</div>
+<nav class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-6 md:py-6">
+<div class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
+<div class="flex items-center">
+<img alt="Camelot Flows" class="h-16 md:h-28 w-auto object-contain" src="/assets/images/cf-logo-wordmark-2x.webp">
+</div>
+<div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.home" href="/">[Home]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.services" href="/work-with-me">[Services]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.arsenal" href="/arsenal">[Arsenal]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.merlin" href="/merlin">[Merlin]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" data-i18n="common.nav.cases" href="/case-studies">[Cases]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block" data-i18n="common.nav.agencies" href="/for-agencies">[Agencies]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" data-i18n="common.nav.pricing" href="/?goto=pricing">[Pricing]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.contact" href="/contact">[Contact]</a>
+</div>
+<div class="flex items-center gap-2">
+<a aria-label="Call Camelot Flows" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="tel:+37369555936" title="+373 69 555 936">
+<span class="material-symbols-outlined cf-phone-icon" style="font-size:18px">call</span>
+</a>
+<div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-500 status-dot animate-pulse"></div>
+<span class="text-[10px] font-mono text-emerald-500/80" data-i18n="common.nav.sys_online">SYS_ONLINE</span>
+</div>
+<div class="lang-switcher" data-cf-lang-switcher="">
+<button aria-expanded="false" aria-haspopup="listbox" aria-label="Change language" class="lang-trigger" data-i18n-attr="aria-label:common.lang_label" type="button">
+<span class="lang-current" data-cf-lang-current="">EN</span>
+<span class="material-symbols-outlined lang-chevron">expand_more</span>
 </button>
-                <a href="/contact.html?objective=build"
-                    class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong hidden lg:inline-flex items-center nav-cta"
-                    data-i18n="common.nav.summon_agent">
+<ul class="lang-menu" hidden="" role="listbox">
+<li data-lang="en" role="option" tabindex="-1"><a href="/blog/why-wordpress-slow-on-mobile/" hreflang="en">EN</a></li>
+<li data-lang="ro" role="option" tabindex="-1"><a href="/ro/blog/why-wordpress-slow-on-mobile/" hreflang="ro">RO</a></li>
+<li data-lang="ru" role="option" tabindex="-1"><a href="/ru/blog/why-wordpress-slow-on-mobile/" hreflang="ru">RU</a></li>
+</ul>
+</div>
+<button aria-label="Open menu" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 transition-all text-slate-400" id="mobile-menu-toggle" type="button">
+<span class="material-symbols-outlined" style="font-size:20px">menu</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="theme-toggle" type="button">
+<span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
+<span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
+</button>
+<a class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong hidden lg:inline-flex items-center nav-cta" data-i18n="common.nav.summon_agent" href="/contact?objective=build">
                     [Hire_me]
                 </a>
-            </div>
-        </div>
-        
-        <div id="mobile-nav" class="hidden mt-2 max-w-7xl mx-auto">
-            <div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
-                <div class="flex flex-col gap-1">
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/" data-i18n="common.nav.home">[Home]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/work-with-me.html" data-i18n="common.nav.services">[Services]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/contact.html" data-i18n="common.nav.contact">[Contact]</a>
-                    <div class="mx-3 my-2 h-px bg-white/10"></div>
-                    <a href="/contact.html?service=build" class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent">[Hire_me]</a>
-                </div>
-            </div>
-        </div>
-        <script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");var open=!menu.classList.contains("hidden");btn.setAttribute("aria-expanded",open?"true":"false");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");}});document.querySelectorAll("#mobile-nav a").forEach(function(a){a.addEventListener("click",function(){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");});});}})();</script>
-        </nav>
+</div>
+</div>
+<div class="hidden mt-2 max-w-7xl mx-auto" id="mobile-nav">
+<div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
+<div class="flex flex-col gap-1">
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.home" href="/">[Home]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.services" href="/work-with-me">[Services]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.arsenal" href="/arsenal">[Arsenal]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.merlin" href="/merlin">[Merlin]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.cases" href="/case-studies">[Cases]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.contact" href="/contact">[Contact]</a>
+<div class="mx-3 my-2 h-px bg-white/10"></div>
+<a class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent" href="/contact?service=build">[Hire_me]</a>
+</div>
+</div>
+</div>
+<script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");var open=!menu.classList.contains("hidden");btn.setAttribute("aria-expanded",open?"true":"false");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");}});document.querySelectorAll("#mobile-nav a").forEach(function(a){a.addEventListener("click",function(){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");});});}})();</script>
+</nav>
 <main id="main-content">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Why Your WordPress Site Feels Slow on Your Phone", "description": "The three things that quietly slow almost every WordPress site on a phone, the one number that tells the truth, and how to check yours tonight.", "url": "https://camelotflows.dev/blog/why-wordpress-slow-on-mobile/", "datePublished": "2026-07-17T09:48:21+00:00", "dateModified": "2026-07-17T09:48:21+00:00", "author": {"@type": "Person", "@id": "https://camelotflows.dev/#alexandru-buzi", "name": "Alexandru Buzi", "url": "https://camelotflows.dev/about.html"}, "publisher": {"@type": "Organization", "name": "Camelot Flows", "url": "https://camelotflows.dev/", "logo": {"@type": "ImageObject", "url": "https://camelotflows.dev/assets/images/cf-logo-wordmark.png"}}, "image": "https://camelotflows.dev/assets/images/blog/why-wordpress-slow-on-mobile.webp", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://camelotflows.dev/blog/why-wordpress-slow-on-mobile/"}, "wordCount": 930}</script>
-
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Why Your WordPress Site Feels Slow on Your Phone", "description": "The three things that quietly slow almost every WordPress site on a phone, the one number that tells the truth, and how to check yours tonight.", "url": "https://camelotflows.dev/blog/why-wordpress-slow-on-mobile/", "datePublished": "2026-07-17T09:48:21+00:00", "dateModified": "2026-07-17T09:48:21+00:00", "author": {"@type": "Person", "@id": "https://camelotflows.dev/#alexandru-buzi", "name": "Alexandru Buzi", "url": "https://camelotflows.dev/about"}, "publisher": {"@type": "Organization", "name": "Camelot Flows", "url": "https://camelotflows.dev/", "logo": {"@type": "ImageObject", "url": "https://camelotflows.dev/assets/images/cf-logo-wordmark.png"}}, "image": "https://camelotflows.dev/assets/images/blog/why-wordpress-slow-on-mobile.webp", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://camelotflows.dev/blog/why-wordpress-slow-on-mobile/"}, "wordCount": 930}</script>
 <section class="pt-44 pb-16 px-6 relative overflow-hidden">
-    <div class="absolute inset-0 grid-bg opacity-20 pointer-events-none"></div>
-    <div class="absolute top-0 right-0 w-[50vw] h-[50vw] bg-primary/5 rounded-full blur-[140px] pointer-events-none"></div>
-    <div class="max-w-3xl mx-auto relative">
-        <a href="/blog/" class="inline-flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-primary-glow transition-colors mb-10 group" data-i18n="blog.back">
-            <span class="material-symbols-outlined text-sm group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+<div class="absolute inset-0 grid-bg opacity-20 pointer-events-none"></div>
+<div class="absolute top-0 right-0 w-[50vw] h-[50vw] bg-primary/5 rounded-full blur-[140px] pointer-events-none"></div>
+<div class="max-w-3xl mx-auto relative">
+<a class="inline-flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-primary-glow transition-colors mb-10 group" data-i18n="blog.back" href="/blog/">
+<span class="material-symbols-outlined text-sm group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
             Back to Codex
         </a>
-        <div class="flex flex-wrap items-center gap-3 mb-6">
-            <a href="/blog/" class="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-primary/30 bg-primary/5 text-[10px] font-mono text-primary-glow tracking-widest uppercase hover:bg-primary/10 transition-colors">Speed</a>
-            <span class="text-[10px] font-mono text-slate-600">July 17, 2026</span>
-            <span class="text-[10px] font-mono text-slate-600">5 min read</span>
-        </div>
-        <h1 class="text-4xl md:text-6xl font-display font-bold tracking-tighter cf-post-title mb-8 leading-[0.95]">
-            <span data-lang-content="en">Why Your WordPress Site Feels Slow on Your Phone</span>
-            <span data-lang-content="ro" hidden>De ce site-ul tău WordPress pare lent pe telefon</span>
-            <span data-lang-content="ru" hidden>Почему ваш сайт на WordPress тормозит на телефоне</span>
-        </h1>
-        <div class="cf-excerpt text-lg leading-relaxed border-l-2 border-primary/50 pl-5">
-            <div data-lang-content="en"><p>Open your own site on a phone, on mobile data, and count the seconds. In nearly every audit I run, the same three problems drag WordPress sites to a crawl on mobile. Here is each one in plain language, plus the single measurement that actually tells you the truth.</p></div>
-            <div data-lang-content="ro" hidden><p>Deschide-ți propriul site pe telefon, pe date mobile, și numără secundele. În aproape fiecare audit pe care îl fac, aceleași trei probleme târăsc site-urile WordPress pe mobil. Iată-le pe fiecare, pe înțelesul tuturor, plus singura măsurătoare care îți spune adevărul.</p></div>
-            <div data-lang-content="ru" hidden><p>Откройте свой сайт на телефоне, на мобильном интернете, и сосчитайте секунды. Почти в каждом аудите, который я делаю, одни и те же три проблемы замедляют сайты на WordPress на телефоне. Вот каждая из них простыми словами, плюс единственное измерение, которое говорит правду.</p></div>
-        </div>
-    </div>
+<div class="flex flex-wrap items-center gap-3 mb-6">
+<a class="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-primary/30 bg-primary/5 text-[10px] font-mono text-primary-glow tracking-widest uppercase hover:bg-primary/10 transition-colors" href="/blog/">Speed</a>
+<span class="text-[10px] font-mono text-slate-600">July 17, 2026</span>
+<span class="text-[10px] font-mono text-slate-600">5 min read</span>
+</div>
+<h1 class="text-4xl md:text-6xl font-display font-bold tracking-tighter cf-post-title mb-8 leading-[0.95]">
+<span data-cf-translation-group="0">Why Your WordPress Site Feels Slow on Your Phone</span>
+</h1>
+<div class="cf-excerpt text-lg leading-relaxed border-l-2 border-primary/50 pl-5">
+<div data-cf-translation-group="1"><p>Open your own site on a phone, on mobile data, and count the seconds. In nearly every audit I run, the same three problems drag WordPress sites to a crawl on mobile. Here is each one in plain language, plus the single measurement that actually tells you the truth.</p></div>
+</div>
+</div>
 </section>
-
-<div id="post-summary" class="px-6 pb-4">
-    <div class="max-w-3xl mx-auto glass-panel rounded-xl border border-primary/20 overflow-hidden">
-        <div class="grid grid-cols-3 divide-x divide-white/5">
-            <div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
-                <span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.min_read">MIN_READ</span>
-                <span class="text-4xl font-mono font-bold text-primary-glow tabular-nums" data-count="5">5</span>
-            </div>
-            <div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
-                <span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.words">WORDS</span>
-                <span class="text-4xl font-mono font-bold text-primary-glow tabular-nums" data-count="930">930</span>
-            </div>
-            <div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
-                <span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.year">YEAR</span>
-                <span class="text-4xl font-mono font-bold text-primary-glow tabular-nums">2026</span>
-            </div>
-        </div>
-        <div class="h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
-        <div class="px-8 py-3 flex items-center gap-2">
-            <div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
-            <span class="text-[10px] font-mono text-slate-600 tracking-widest">Jul 17, 2026 · DISPATCH_020</span>
-        </div>
-    </div>
+<div class="px-6 pb-4" id="post-summary">
+<div class="max-w-3xl mx-auto glass-panel rounded-xl border border-primary/20 overflow-hidden">
+<div class="grid grid-cols-3 divide-x divide-white/5">
+<div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
+<span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.min_read">MIN_READ</span>
+<span class="text-4xl font-mono font-bold text-primary-glow tabular-nums" data-count="5">5</span>
 </div>
-
+<div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
+<span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.words">WORDS</span>
+<span class="text-4xl font-mono font-bold text-primary-glow tabular-nums" data-count="930">930</span>
+</div>
+<div class="summary-stat flex flex-col items-center gap-2 py-7 px-4">
+<span class="text-[10px] font-mono text-slate-600 tracking-widest uppercase" data-i18n="blog.year">YEAR</span>
+<span class="text-4xl font-mono font-bold text-primary-glow tabular-nums">2026</span>
+</div>
+</div>
+<div class="h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+<div class="px-8 py-3 flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+<span class="text-[10px] font-mono text-slate-600 tracking-widest">Jul 17, 2026 · DISPATCH_020</span>
+</div>
+</div>
+</div>
 <div class="px-6 mb-8">
-    <div class="max-w-4xl mx-auto rounded-xl overflow-hidden">
-        <img width="1024" height="576" src="/assets/images/blog/why-wordpress-slow-on-mobile.webp" class="w-full h-auto object-cover wp-post-image" alt="Abstract dark illustration of a phone screen slowly filling as a page loads, indigo and cyan glow" decoding="async" fetchpriority="high" />
-    </div>
+<div class="max-w-4xl mx-auto rounded-xl overflow-hidden">
+<img alt="Abstract dark illustration of a phone screen slowly filling as a page loads, indigo and cyan glow" class="w-full h-auto object-cover wp-post-image" decoding="async" fetchpriority="high" height="576" src="/assets/images/blog/why-wordpress-slow-on-mobile.webp" width="1024">
 </div>
-
+</div>
 <article class="pb-16 px-6">
-    <div class="max-w-3xl mx-auto prose-camelot">
-        <div data-lang-content="en">
-<p class="wp-block-paragraph">Open your own site on your phone, on mobile data, not the office wifi. Count the seconds until you can actually read something. That wait is costing you customers, and in almost every audit I run, it comes down to the same three problems. Here they are, in plain language, plus the one number that tells you the truth about your speed.</p><h2 class="wp-block-heading">The number that actually matters</h2><figure class="cf-body-fig cf-body-fig--left"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/why-wordpress-slow-on-mobile-b1.webp" alt="Macro close-up of a heavy image breaking into light particles" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">Most speed advice points you at a score out of 100. Ignore it for a moment. The measurement that decides whether a visitor stays is simpler: how many seconds pass before the main thing on the screen appears. Google has a name for it, Largest Contentful Paint, but you do not need the jargon. Just watch your homepage load on a phone and time when the big image or headline finishes drawing. Under two and a half seconds feels instant. Past four, people are already tapping back to Google.</p><p class="wp-block-paragraph">A lab score can look green while real phones on real networks crawl. So test the way your customer does: your actual phone, mobile data, from cold. What you see in those first seconds is the honest answer.</p><h2 class="wp-block-heading">Leak one: the giant hero image nobody shrank</h2><figure class="cf-body-fig cf-body-fig--right"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/why-wordpress-slow-on-mobile-b2.webp" alt="Top-down stacked translucent layers, most dim, one glowing" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">The photo across the top of your homepage is usually the single heaviest thing on the page. I regularly open sites where that one image is four or five megabytes, exported straight from a camera or a stock library and dropped in at full size. On a laptop it loads before you notice. On a phone over patchy data, it is the wall everyone waits behind.</p><p class="wp-block-paragraph">Sliders make it worse. A rotating banner with five slides is five heavy images loading at once, plus the script that spins them. Your visitor only ever sees the first one before deciding to stay or leave, so the other four are pure weight for nothing. The fix is unglamorous and it works: one right-sized image, compressed properly, in a modern format, sized for the phone screen instead of a cinema. On a bakery site I rebuilt last year, resizing and compressing the hero alone took the first paint from around six seconds to under two, and I had not touched anything else yet.</p><h2 class="wp-block-heading">Leak two: a page builder loading everything, everywhere</h2><p class="wp-block-paragraph">Most WordPress sites are built with a visual page builder. They are wonderful for building fast. The catch is that many of them load their entire toolbox on every single page, whether that page uses it or not. Animations, icon libraries, extra fonts, layout scripts, all delivered to a phone that just wanted your opening hours.</p><p class="wp-block-paragraph">You feel this as a page that shows something quickly, then freezes for a beat while the phone chews through code before you can scroll or tap. The design is rarely the weight. The invisible toolbox behind it is. Fixing it means turning off what the page does not use, trimming the fonts down to the one or two you actually chose, and letting parts of the page below the fold load only when someone scrolls to them. Done carefully, the page looks identical and feels twice as quick.</p><h2 class="wp-block-heading">Leak three: cheap hosting hiding behind a cache plugin</h2><p class="wp-block-paragraph">This is the one nobody wants to hear. A cache plugin stores a ready-made copy of your page so the server does not rebuild it every visit. It genuinely helps, and that is exactly why it hides the real problem. When the cache is fresh, the site feels fine. The moment it expires, or a logged-in visitor lands, or someone hits a page the cache missed, your visitor waits on the same slow, oversold server the plugin was papering over.</p><p class="wp-block-paragraph">Cheap shared hosting packs hundreds of sites onto one machine. Your speed then depends on what every neighbour is doing at that second. A cache plugin is a good idea on good hosting and a disguise on bad hosting. If your site is quick some visits and painfully slow others for no obvious reason, the hosting underneath is usually the reason.</p><h2 class="wp-block-heading">How to find your own leak tonight</h2><figure class="cf-body-fig cf-body-fig--left"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/why-wordpress-slow-on-mobile-b3.webp" alt="Wide dark scene of a crowded server rack behind a thin veil" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">You can diagnose most of this yourself in ten minutes. Open your homepage on your phone on mobile data and time the first paint. Right-click your hero image on a computer and check its size; anything over a few hundred kilobytes for one image is a red flag. Then load a fresh page you rarely visit, so the cache is cold, and see if it drags. Three quick checks, and you will usually know which of the three is hurting you.</p><p class="wp-block-paragraph">If you would rather someone measure it properly, that is the whole point of a <a href="/audit">free website audit</a>: I open your site the way your customers do and tell you which leak is real. Speed is not a one-time job either. Images get re-uploaded, plugins update, hosting fills up, and a site that was quick in spring can sag by autumn, which is why <a href="/service-maintenance">ongoing care</a> keeps the number honest. And when a site is too far gone, sometimes a clean <a href="/service-creation">rebuild on the right foundation</a> is faster and cheaper than patching the old one forever.</p><p class="wp-block-paragraph">The trap with mobile speed is that it is invisible to you. You visit your own site on fast wifi, from cache, and it feels fine, so you assume it is fine for everyone. Your customer, standing outside on one bar of signal, is having a completely different experience, and they never tell you. They just leave. The number in those first few seconds is the only one that knows.</p>
-        </div>
-        <div data-lang-content="ro" hidden>
-<p class="wp-block-paragraph">Deschide-ți propriul site pe telefon, pe date mobile, nu pe wifi-ul de la birou. Numără secundele până când chiar poți citi ceva. Acea așteptare te costă clienți și, în aproape fiecare audit pe care îl fac, totul se reduce la aceleași trei probleme. Iată-le, pe înțelesul tuturor, plus singurul număr care îți spune adevărul despre viteza ta.</p><h2 class="wp-block-heading">Numărul care contează cu adevărat</h2><figure class="cf-body-fig cf-body-fig--left"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/why-wordpress-slow-on-mobile-b1.webp" alt="Macro close-up of a heavy image breaking into light particles" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">Majoritatea sfaturilor despre viteză te trimit către un scor din 100. Ignoră-l pentru o clipă. Măsurătoarea care decide dacă un vizitator rămâne e mai simplă: câte secunde trec până apare pe ecran lucrul principal. Google îi zice Largest Contentful Paint, dar nu ai nevoie de termeni tehnici. Uită-te doar cum se încarcă pagina principală pe un telefon și cronometrează momentul în care imaginea mare sau titlul termină de afișat. Sub două secunde și jumătate pare instantaneu. Peste patru, oamenii deja apasă înapoi spre Google.</p><p class="wp-block-paragraph">Un scor de laborator poate arăta verde în timp ce telefoanele reale, pe rețele reale, se târăsc. Așa că testează așa cum face clientul tău: telefonul tău real, date mobile, de la zero. Ce vezi în acele prime secunde e răspunsul cinstit.</p><h2 class="wp-block-heading">Scurgerea unu: imaginea uriașă din antet pe care nimeni nu a micșorat-o</h2><figure class="cf-body-fig cf-body-fig--right"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/why-wordpress-slow-on-mobile-b2.webp" alt="Top-down stacked translucent layers, most dim, one glowing" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">Poza din partea de sus a paginii principale e de obicei cel mai greu element de pe pagină. Deschid regulat site-uri unde acea singură imagine are patru sau cinci megabytes, exportată direct dintr-un aparat foto sau dintr-o bibliotecă de stock și pusă la dimensiune maximă. Pe un laptop se încarcă înainte să observi. Pe un telefon cu semnal slab, e zidul în spatele căruia așteaptă toată lumea.</p><p class="wp-block-paragraph">Slider-ele o fac și mai rău. Un banner rotativ cu cinci imagini înseamnă cinci poze grele care se încarcă deodată, plus scriptul care le rotește. Vizitatorul vede oricum doar prima înainte să decidă dacă rămâne, deci celelalte patru sunt greutate pură, degeaba. Soluția e banală și funcționează: o singură imagine de dimensiunea potrivită, comprimată cum trebuie, într-un format modern, adaptată ecranului de telefon, nu unui cinema. La un site de brutărie pe care l-am reconstruit anul trecut, doar redimensionarea și comprimarea imaginii din antet au scăzut prima afișare de la vreo șase secunde la sub două, și încă nu atinsesem nimic altceva.</p><h2 class="wp-block-heading">Scurgerea doi: un page builder care încarcă tot, peste tot</h2><p class="wp-block-paragraph">Majoritatea site-urilor WordPress sunt făcute cu un page builder vizual. Sunt minunate pentru construit rapid. Problema e că multe dintre ele își încarcă întreaga trusă de unelte pe fiecare pagină, fie că pagina o folosește sau nu. Animații, biblioteci de iconițe, fonturi în plus, scripturi de layout, toate livrate unui telefon care voia doar programul tău de lucru.</p><p class="wp-block-paragraph">Simți asta ca pe o pagină care afișează ceva repede, apoi îngheață o clipă în timp ce telefonul mestecă codul înainte să poți derula sau apăsa. Nu designul e greu. Trusa invizibilă din spatele lui e cea grea. Rezolvarea înseamnă să oprești ce nu folosește pagina, să reduci fonturile la cele unul sau două pe care chiar le-ai ales și să lași părțile de jos ale paginii să se încarce doar când cineva ajunge la ele. Făcut cu grijă, pagina arată identic și pare de două ori mai rapidă.</p><h2 class="wp-block-heading">Scurgerea trei: găzduire ieftină ascunsă în spatele unui plugin de cache</h2><p class="wp-block-paragraph">Asta e cea pe care nimeni nu vrea s-o audă. Un plugin de cache păstrează o copie gata făcută a paginii, ca serverul să nu o reconstruiască la fiecare vizită. Chiar ajută, și tocmai de asta ascunde problema reală. Când cache-ul e proaspăt, site-ul pare în regulă. În clipa în care expiră, sau ajunge un vizitator logat, sau cineva deschide o pagină pe care cache-ul a ratat-o, vizitatorul așteaptă pe același server lent și supravândut pe care pluginul îl mascase.</p><p class="wp-block-paragraph">Găzduirea ieftină de tip shared înghesuie sute de site-uri pe o singură mașină. Viteza ta depinde atunci de ce fac toți vecinii în secunda aceea. Un plugin de cache e o idee bună pe o găzduire bună și o deghizare pe una proastă. Dacă site-ul tău e rapid la unele vizite și dureros de lent la altele fără motiv clar, de obicei găzduirea de dedesubt e explicația.</p><h2 class="wp-block-heading">Cum să-ți găsești propria scurgere chiar diseară</h2><figure class="cf-body-fig cf-body-fig--left"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/why-wordpress-slow-on-mobile-b3.webp" alt="Wide dark scene of a crowded server rack behind a thin veil" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">Poți diagnostica singur cea mai mare parte în zece minute. Deschide pagina principală pe telefon, pe date mobile, și cronometrează prima afișare. Dă click dreapta pe imaginea din antet pe un calculator și verifică-i dimensiunea; orice peste câteva sute de kilobytes pentru o singură imagine e un semnal de alarmă. Apoi deschide o pagină nouă pe care o vizitezi rar, ca să fie cache-ul rece, și vezi dacă se târăște. Trei verificări rapide și de obicei vei ști care dintre cele trei te doare.</p><p class="wp-block-paragraph">Dacă preferi să măsoare cineva ca lumea, exact ăsta e rostul unui <a href="/audit">audit gratuit al site-ului</a>: îți deschid site-ul așa cum o fac clienții tăi și îți spun care scurgere e reală. Viteza nu e nici o treabă de o singură dată. Imaginile se reîncarcă, pluginurile se actualizează, găzduirea se umple, iar un site care era rapid primăvara poate să se lase până toamna, motiv pentru care <a href="/service-maintenance">întreținerea continuă</a> ține numărul cinstit. Iar când un site e prea departe dus, uneori o <a href="/service-creation">reconstrucție pe o fundație bună</a> e mai rapidă și mai ieftină decât să tot cârpești vechiul site la nesfârșit.</p><p class="wp-block-paragraph">Capcana cu viteza pe telefon e că ție îți e invizibilă. Îți vizitezi propriul site pe wifi rapid, din cache, și ți se pare în regulă, așa că presupui că e în regulă pentru toată lumea. Clientul tău, stând afară cu o liniuță de semnal, are o experiență complet diferită și nu-ți spune niciodată. Pur și simplu pleacă. Numărul din acele prime secunde e singurul care știe.</p>
-        </div>
-        <div data-lang-content="ru" hidden>
-<p class="wp-block-paragraph">Откройте свой сайт на телефоне, на мобильном интернете, а не на офисном вайфае. Сосчитайте секунды, пока вы реально сможете что-то прочитать. Это ожидание стоит вам клиентов, и почти в каждом аудите, который я делаю, всё сводится к одним и тем же трём проблемам. Вот они, простыми словами, плюс единственное число, которое говорит правду о вашей скорости.</p><h2 class="wp-block-heading">Число, которое действительно важно</h2><figure class="cf-body-fig cf-body-fig--left"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/why-wordpress-slow-on-mobile-b1.webp" alt="Macro close-up of a heavy image breaking into light particles" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">Большинство советов о скорости показывают вам оценку из 100. Забудьте о ней на минуту. Измерение, которое решает, останется ли посетитель, проще: сколько секунд проходит, пока на экране появится главное. У Google для этого есть название — Largest Contentful Paint, но термины вам не нужны. Просто посмотрите, как загружается главная страница на телефоне, и засеките момент, когда большая картинка или заголовок дорисовались. Меньше двух с половиной секунд ощущается мгновенно. Больше четырёх — люди уже жмут «назад» к Google.</p><p class="wp-block-paragraph">Лабораторная оценка может гореть зелёным, пока настоящие телефоны на настоящих сетях еле ползут. Так что проверяйте так, как это делает ваш клиент: ваш настоящий телефон, мобильный интернет, с холодного старта. То, что вы видите в эти первые секунды, — честный ответ.</p><h2 class="wp-block-heading">Утечка первая: огромная картинка в шапке, которую никто не уменьшил</h2><figure class="cf-body-fig cf-body-fig--right"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/why-wordpress-slow-on-mobile-b2.webp" alt="Top-down stacked translucent layers, most dim, one glowing" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">Фото в верхней части главной страницы обычно самый тяжёлый элемент на ней. Я регулярно открываю сайты, где одна эта картинка весит четыре или пять мегабайт, выгруженная прямо из камеры или из стокового банка и вставленная в полном размере. На ноутбуке она загружается раньше, чем вы заметите. На телефоне со слабым сигналом это стена, за которой все ждут.</p><p class="wp-block-paragraph">Слайдеры делают ещё хуже. Вращающийся баннер из пяти слайдов — это пять тяжёлых картинок, которые грузятся разом, плюс скрипт, который их крутит. Посетитель всё равно видит только первую, прежде чем решить, остаться ли, так что остальные четыре — чистый вес впустую. Решение простое и работает: одна картинка нужного размера, правильно сжатая, в современном формате, подогнанная под экран телефона, а не под кинозал. На сайте пекарни, который я пересобрал в прошлом году, одно только изменение размера и сжатие картинки в шапке снизили первую отрисовку примерно с шести секунд до менее чем двух, и я ещё ничего другого не трогал.</p><h2 class="wp-block-heading">Утечка вторая: конструктор страниц, который грузит всё и везде</h2><p class="wp-block-paragraph">Большинство сайтов на WordPress собраны на визуальном конструкторе страниц. Они прекрасны для быстрой сборки. Загвоздка в том, что многие из них грузят весь свой набор инструментов на каждой странице, использует она его или нет. Анимации, библиотеки иконок, лишние шрифты, скрипты вёрстки — всё это доставляется телефону, который хотел лишь узнать ваш график работы.</p><p class="wp-block-paragraph">Вы чувствуете это как страницу, которая быстро что-то показывает, а потом на миг застывает, пока телефон пережёвывает код, прежде чем вы сможете прокрутить или нажать. Тяжёл не дизайн. Тяжёл невидимый набор инструментов за ним. Чтобы это исправить, нужно отключить то, что страница не использует, урезать шрифты до тех одного-двух, которые вы действительно выбрали, и позволить нижним частям страницы грузиться только тогда, когда до них кто-то доскроллит. Сделанная аккуратно, страница выглядит так же и ощущается вдвое быстрее.</p><h2 class="wp-block-heading">Утечка третья: дешёвый хостинг, спрятанный за плагином кэша</h2><p class="wp-block-paragraph">Вот это никто не хочет слышать. Плагин кэша хранит готовую копию страницы, чтобы сервер не пересобирал её при каждом визите. Он действительно помогает, и именно поэтому он прячет настоящую проблему. Пока кэш свежий, сайт кажется нормальным. В момент, когда он истекает, или заходит авторизованный посетитель, или кто-то открывает страницу, которую кэш пропустил, посетитель ждёт на том же медленном, перепроданном сервере, который плагин прикрывал.</p><p class="wp-block-paragraph">Дешёвый общий хостинг набивает сотни сайтов на одну машину. Ваша скорость тогда зависит от того, что делают все соседи в эту секунду. Плагин кэша — хорошая идея на хорошем хостинге и маскировка на плохом. Если ваш сайт то быстрый, то мучительно медленный без явной причины, обычно причина в хостинге под ним.</p><h2 class="wp-block-heading">Как найти свою утечку сегодня вечером</h2><figure class="cf-body-fig cf-body-fig--left"><div class="cf-body-fig-inner"><img width="1024" height="576" src="/assets/images/blog/why-wordpress-slow-on-mobile-b3.webp" alt="Wide dark scene of a crowded server rack behind a thin veil" loading="lazy" decoding="async" /></div></figure><p class="wp-block-paragraph">Большую часть этого вы можете продиагностировать сами за десять минут. Откройте главную страницу на телефоне на мобильном интернете и засеките первую отрисовку. Кликните правой кнопкой по картинке в шапке на компьютере и проверьте её размер; всё, что больше нескольких сотен килобайт для одной картинки, — тревожный знак. Потом откройте новую страницу, которую вы редко посещаете, чтобы кэш был холодным, и посмотрите, тормозит ли она. Три быстрые проверки, и вы обычно поймёте, какая из трёх вас мучает.</p><p class="wp-block-paragraph">Если вы предпочитаете, чтобы кто-то измерил как следует, именно в этом смысл <a href="/audit">бесплатного аудита сайта</a>: я открываю ваш сайт так, как это делают ваши клиенты, и говорю, какая утечка настоящая. Скорость — это тоже не разовая работа. Картинки перезагружают, плагины обновляются, хостинг забивается, и сайт, который был быстрым весной, к осени может просесть, поэтому <a href="/service-maintenance">постоянный уход</a> держит число честным. А когда сайт зашёл слишком далеко, иногда чистая <a href="/service-creation">пересборка на правильном фундаменте</a> быстрее и дешевле, чем бесконечно латать старый.</p><p class="wp-block-paragraph">Ловушка со скоростью на телефоне в том, что для вас она невидима. Вы заходите на свой сайт по быстрому вайфаю, из кэша, и вам кажется, что всё нормально, поэтому вы полагаете, что нормально для всех. Ваш клиент, стоящий на улице с одной палочкой сигнала, переживает совершенно другое и никогда вам об этом не скажет. Он просто уходит. Число в эти первые секунды — единственное, которое знает.</p>
-        </div>
-    </div>
-</article>
-
-<div class="px-6 pb-16">
-    <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-        <a href="/blog/how-to-leave-your-web-agency-without-losing-your-website/" class="glass-panel rounded-xl p-6 group hover:border-primary/40 transition-all">
-            <div class="flex items-center gap-2 text-[10px] font-mono text-slate-600 mb-2">
-                <span class="material-symbols-outlined text-sm">arrow_back</span> <span data-i18n="blog.prev">Previous</span>
-            </div>
-            <div class="font-display font-bold cf-nav-title text-sm group-hover:text-primary-glow transition-colors leading-snug"><span data-lang-content="en">How to Leave Your Web Agency Without Losing Your Site</span><span data-lang-content="ro" hidden>Cum să pleci de la agenția web fără să-ți pierzi site-ul</span><span data-lang-content="ru" hidden>Как уйти от веб-агентства и не потерять сайт</span></div>
-        </a>
-    </div>
+<div class="max-w-3xl mx-auto prose-camelot">
+<div data-cf-translation-group="2">
+<p class="wp-block-paragraph">Open your own site on your phone, on mobile data, not the office wifi. Count the seconds until you can actually read something. That wait is costing you customers, and in almost every audit I run, it comes down to the same three problems. Here they are, in plain language, plus the one number that tells you the truth about your speed.</p><h2 class="wp-block-heading">The number that actually matters</h2><figure class="cf-body-fig cf-body-fig--left"><div class="cf-body-fig-inner"><img alt="Macro close-up of a heavy image breaking into light particles" decoding="async" height="576" loading="lazy" src="/assets/images/blog/why-wordpress-slow-on-mobile-b1.webp" width="1024"></div></figure><p class="wp-block-paragraph">Most speed advice points you at a score out of 100. Ignore it for a moment. The measurement that decides whether a visitor stays is simpler: how many seconds pass before the main thing on the screen appears. Google has a name for it, Largest Contentful Paint, but you do not need the jargon. Just watch your homepage load on a phone and time when the big image or headline finishes drawing. Under two and a half seconds feels instant. Past four, people are already tapping back to Google.</p><p class="wp-block-paragraph">A lab score can look green while real phones on real networks crawl. So test the way your customer does: your actual phone, mobile data, from cold. What you see in those first seconds is the honest answer.</p><h2 class="wp-block-heading">Leak one: the giant hero image nobody shrank</h2><figure class="cf-body-fig cf-body-fig--right"><div class="cf-body-fig-inner"><img alt="Top-down stacked translucent layers, most dim, one glowing" decoding="async" height="576" loading="lazy" src="/assets/images/blog/why-wordpress-slow-on-mobile-b2.webp" width="1024"></div></figure><p class="wp-block-paragraph">The photo across the top of your homepage is usually the single heaviest thing on the page. I regularly open sites where that one image is four or five megabytes, exported straight from a camera or a stock library and dropped in at full size. On a laptop it loads before you notice. On a phone over patchy data, it is the wall everyone waits behind.</p><p class="wp-block-paragraph">Sliders make it worse. A rotating banner with five slides is five heavy images loading at once, plus the script that spins them. Your visitor only ever sees the first one before deciding to stay or leave, so the other four are pure weight for nothing. The fix is unglamorous and it works: one right-sized image, compressed properly, in a modern format, sized for the phone screen instead of a cinema. On a bakery site I rebuilt last year, resizing and compressing the hero alone took the first paint from around six seconds to under two, and I had not touched anything else yet.</p><h2 class="wp-block-heading">Leak two: a page builder loading everything, everywhere</h2><p class="wp-block-paragraph">Most WordPress sites are built with a visual page builder. They are wonderful for building fast. The catch is that many of them load their entire toolbox on every single page, whether that page uses it or not. Animations, icon libraries, extra fonts, layout scripts, all delivered to a phone that just wanted your opening hours.</p><p class="wp-block-paragraph">You feel this as a page that shows something quickly, then freezes for a beat while the phone chews through code before you can scroll or tap. The design is rarely the weight. The invisible toolbox behind it is. Fixing it means turning off what the page does not use, trimming the fonts down to the one or two you actually chose, and letting parts of the page below the fold load only when someone scrolls to them. Done carefully, the page looks identical and feels twice as quick.</p><h2 class="wp-block-heading">Leak three: cheap hosting hiding behind a cache plugin</h2><p class="wp-block-paragraph">This is the one nobody wants to hear. A cache plugin stores a ready-made copy of your page so the server does not rebuild it every visit. It genuinely helps, and that is exactly why it hides the real problem. When the cache is fresh, the site feels fine. The moment it expires, or a logged-in visitor lands, or someone hits a page the cache missed, your visitor waits on the same slow, oversold server the plugin was papering over.</p><p class="wp-block-paragraph">Cheap shared hosting packs hundreds of sites onto one machine. Your speed then depends on what every neighbour is doing at that second. A cache plugin is a good idea on good hosting and a disguise on bad hosting. If your site is quick some visits and painfully slow others for no obvious reason, the hosting underneath is usually the reason.</p><h2 class="wp-block-heading">How to find your own leak tonight</h2><figure class="cf-body-fig cf-body-fig--left"><div class="cf-body-fig-inner"><img alt="Wide dark scene of a crowded server rack behind a thin veil" decoding="async" height="576" loading="lazy" src="/assets/images/blog/why-wordpress-slow-on-mobile-b3.webp" width="1024"></div></figure><p class="wp-block-paragraph">You can diagnose most of this yourself in ten minutes. Open your homepage on your phone on mobile data and time the first paint. Right-click your hero image on a computer and check its size; anything over a few hundred kilobytes for one image is a red flag. Then load a fresh page you rarely visit, so the cache is cold, and see if it drags. Three quick checks, and you will usually know which of the three is hurting you.</p><p class="wp-block-paragraph">If you would rather someone measure it properly, that is the whole point of a <a href="/audit">free website audit</a>: I open your site the way your customers do and tell you which leak is real. Speed is not a one-time job either. Images get re-uploaded, plugins update, hosting fills up, and a site that was quick in spring can sag by autumn, which is why <a href="/service-maintenance">ongoing care</a> keeps the number honest. And when a site is too far gone, sometimes a clean <a href="/service-creation">rebuild on the right foundation</a> is faster and cheaper than patching the old one forever.</p><p class="wp-block-paragraph">The trap with mobile speed is that it is invisible to you. You visit your own site on fast wifi, from cache, and it feels fine, so you assume it is fine for everyone. Your customer, standing outside on one bar of signal, is having a completely different experience, and they never tell you. They just leave. The number in those first few seconds is the only one that knows.</p>
 </div>
-
+</div>
+</article>
+<div class="px-6 pb-16">
+<div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+<a class="glass-panel rounded-xl p-6 group hover:border-primary/40 transition-all" href="/blog/how-to-leave-your-web-agency-without-losing-your-website/">
+<div class="flex items-center gap-2 text-[10px] font-mono text-slate-600 mb-2">
+<span class="material-symbols-outlined text-sm">arrow_back</span> <span data-i18n="blog.prev">Previous</span>
+</div>
+<div class="font-display font-bold cf-nav-title text-sm group-hover:text-primary-glow transition-colors leading-snug"><span data-cf-translation-group="3">How to Leave Your Web Agency Without Losing Your Site</span></div>
+</a>
+</div>
+</div>
 <section class="pb-28 px-6">
-    <div class="max-w-3xl mx-auto glass-panel rounded-xl p-10 md:p-14 text-center border border-primary/20">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded border border-primary/30 bg-primary/5 mb-6">
-            <span class="text-xs font-mono text-primary-glow tracking-widest uppercase">// NEXT_STEP</span>
-        </div>
-        <h2 class="text-3xl md:text-4xl font-display font-bold cf-post-title mb-4 tracking-tighter" data-i18n="blog.cta_title">Want this built for you?</h2>
-        <p class="text-slate-400 mb-8 font-mono text-sm" data-i18n="blog.cta_sub">Fixed scope. Fixed price. Fixed deadline.</p>
-        <a href="/contact?objective=blog-cta" class="cf-blog-cta-btn bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-8 py-3 rounded text-sm font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong inline-flex items-center gap-2">
+<div class="max-w-3xl mx-auto glass-panel rounded-xl p-10 md:p-14 text-center border border-primary/20">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded border border-primary/30 bg-primary/5 mb-6">
+<span class="text-xs font-mono text-primary-glow tracking-widest uppercase">// NEXT_STEP</span>
+</div>
+<h2 class="text-3xl md:text-4xl font-display font-bold cf-post-title mb-4 tracking-tighter" data-i18n="blog.cta_title">Want this built for you?</h2>
+<p class="text-slate-400 mb-8 font-mono text-sm" data-i18n="blog.cta_sub">Fixed scope. Fixed price. Fixed deadline.</p>
+<a class="cf-blog-cta-btn bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-8 py-3 rounded text-sm font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong inline-flex items-center gap-2" href="/contact?objective=blog-cta">
             // SUMMON_AGENT
             <span class="material-symbols-outlined text-sm">arrow_forward</span>
-        </a>
-    </div>
+</a>
+</div>
 </section>
 </main>
 <footer class="bg-obsidian pt-24 pb-12 px-6 border-t border-primary/20 relative">
-        <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent shadow-[0_0_15px_rgba(99,102,241,0.5)]">
-        </div>
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20">
-                <div class="md:col-span-3">
-                    <div class="flex items-center gap-3 mb-6">
-                        <img src="/assets/images/cf-mark.png?v=3" alt="Camelot Flows" class="object-contain" style="height:56px;width:auto" />
-                        <span class="font-display text-xl font-bold tracking-tighter uppercase text-white">Camelot
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+</div>
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20">
+<div class="md:col-span-3">
+<div class="flex items-center gap-3 mb-6">
+<img alt="Camelot Flows" class="object-contain" src="/assets/images/cf-mark.png?v=3" style="height:56px;width:auto">
+<span class="font-display text-xl font-bold tracking-tighter uppercase text-white">Camelot
                             Flows</span>
-                    </div>
-                    <p class="text-slate-500 mb-8 text-sm leading-relaxed font-mono">
-                        <span data-i18n="common.footer.location_line_1"><span class="text-primary">&gt;</span> Location: Chisinau, MD</span><br />
-                        <span data-i18n="common.footer.location_line_2"><span class="text-primary">&gt;</span> Coordinates: 47.0105° N, 28.8638° E</span><br />
-                        <span data-i18n="common.footer.location_line_3"><span class="text-primary">&gt;</span> Mission: Awwwards-Tier Design & AI Automation.</span>
-                    </p>
-                    <div class="flex gap-4">
-                        <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400"
-                            href="https://www.linkedin.com/in/alex-buzi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        </a>
-
-                        <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400"
-                            href="/contact.html">
-                            <span class="material-symbols-outlined text-lg">mail</span>
-                        </a>
-                        <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400"
-                            href="/contact.html">
-                            <span class="material-symbols-outlined text-lg">alternate_email</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="md:col-span-2">
-                    <h5
-                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_protocol">
+</div>
+<p class="text-slate-500 mb-8 text-sm leading-relaxed font-mono">
+<span data-i18n="common.footer.location_line_1"><span class="text-primary">&gt;</span> Location: Chisinau, MD</span><br>
+<span data-i18n="common.footer.location_line_2"><span class="text-primary">&gt;</span> Coordinates: 47.0105° N, 28.8638° E</span><br>
+<span data-i18n="common.footer.location_line_3"><span class="text-primary">&gt;</span> Mission: Awwwards-Tier Design &amp; AI Automation.</span>
+</p>
+<div class="flex gap-4">
+<a aria-label="LinkedIn" class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="https://www.linkedin.com/in/alex-buzi/" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+</a>
+<a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="/contact">
+<span class="material-symbols-outlined text-lg">mail</span>
+</a>
+<a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="/contact">
+<span class="material-symbols-outlined text-lg">alternate_email</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_protocol">
                         Protocol</h5>
-                    <ul class="space-y-3 text-slate-500 text-sm font-mono">
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/arsenal.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_protocol_arsenal">The Arsenal</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/merlin.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_protocol_merlin">Merlin</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/case-studies.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_protocol_cases">Case Studies</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/for-agencies.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_protocol_agencies">Agencies</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/blog/"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> <span data-i18n="common.footer.blog">Blog</span></a></li>
-                    </ul>
-                </div>
-                <div class="md:col-span-2">
-                    <h5
-                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_services">
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/arsenal"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_protocol_arsenal">The Arsenal</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/merlin"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_protocol_merlin">Merlin</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/case-studies"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_protocol_cases">Case Studies</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/for-agencies"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_protocol_agencies">Agencies</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/blog/"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> <span data-i18n="common.footer.blog">Blog</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_services">
                         Services</h5>
-                    <ul class="space-y-3 text-slate-500 text-sm font-mono">
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/service-creation.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_services_creation">Site Creation</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/service-maintenance.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_services_maintenance">Maintenance</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/service-automation.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_services_automation">Automations</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/service-marketing.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_services_marketing">Marketing</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/audit"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_services_audit">Free Website Audit</span></a></li>
-                    </ul>
-                </div>
-                <div class="md:col-span-2">
-                    <h5
-                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_company">
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-creation"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_creation">Site Creation</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-maintenance"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_maintenance">Maintenance</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-automation"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_automation">Automations</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-marketing"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_marketing">Marketing</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/audit"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_audit">Free Website Audit</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_company">
                         Company</h5>
-                    <ul class="space-y-3 text-slate-500 text-sm font-mono">
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/about.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_company_about">About</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/work-with-me.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_company_work">Work With</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/legal.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_company_legal">Legal</span></a></li>
-                        <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="/contact.html"><span
-                                    class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
-                                <span data-i18n="common.footer.col_company_contact">Contact</span></a></li>
-                    </ul>
-                </div>
-                <div class="md:col-span-3">
-                    <h5
-                        class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_vanguard">
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/about"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_company_about">About</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/work-with-me"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_company_work">Work With</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/legal"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_company_legal">Legal</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/contact"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_company_contact">Contact</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-3">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_vanguard">
                         Vanguard</h5>
-                    <p class="text-slate-500 text-sm mb-6 leading-relaxed" data-i18n="common.footer.col_vanguard_lead">Weekly insights on AI automation sent
+<p class="text-slate-500 text-sm mb-6 leading-relaxed" data-i18n="common.footer.col_vanguard_lead">Weekly insights on AI automation sent
                         directly to your terminal.</p>
-                    <div
-                        class="flex gap-2 p-1 bg-white/5 rounded border border-white/10 focus-within:border-primary/50 transition-colors">
-                        <label for="newsletter-email" class="sr-only">Email address</label>
-                        <input
-                            id="newsletter-email"
-                            class="bg-transparent border-none focus:ring-0 text-sm flex-1 px-4 text-white font-mono placeholder:text-slate-600"
-                            placeholder="ENTER_EMAIL" type="email" data-i18n-attr="placeholder:common.footer.col_vanguard_placeholder" />
-                        <button
-                            class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded text-xs font-bold transition-colors font-mono" data-i18n="common.footer.col_vanguard_submit">[SUBMIT]</button>
-                    </div>
-                </div>
-            </div>
-            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-                <p class="text-xs text-slate-600 font-mono" data-i18n="common.footer.copyright">&copy; 2026 Camelot Flows. Built by Alex Buzi.</p>
-                <div class="flex flex-wrap justify-center gap-4 md:gap-8">
-                    <div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
-                        <span class="material-symbols-outlined text-sm text-green-500">wifi</span>
-                        <span data-i18n="common.footer.status_optimal">System Status: Optimal</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
-                        <span class="material-symbols-outlined text-sm text-blue-500">bolt</span>
-                        <span data-i18n="common.footer.status_lightning">Lightning Fast Performance</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <div id="custom-cursor"></div>
-
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-
-    <script src="/assets/js/locales.js"></script>
-    <script defer src="/assets/js/i18n.js"></script>
-    <script defer src="/assets/js/camelot-gsap.js"></script>
-    <script defer src="/assets/site.js"></script>
-
+<div class="flex gap-2 p-1 bg-white/5 rounded border border-white/10 focus-within:border-primary/50 transition-colors">
+<label class="sr-only" for="newsletter-email">Email address</label>
+<input class="bg-transparent border-none focus:ring-0 text-sm flex-1 px-4 text-white font-mono placeholder:text-slate-600" data-i18n-attr="placeholder:common.footer.col_vanguard_placeholder" id="newsletter-email" placeholder="ENTER_EMAIL" type="email">
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded text-xs font-bold transition-colors font-mono" data-i18n="common.footer.col_vanguard_submit">[SUBMIT]</button>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-xs text-slate-600 font-mono" data-i18n="common.footer.copyright">© 2026 Camelot Flows. Built by Alex Buzi.</p>
+<div class="flex flex-wrap justify-center gap-4 md:gap-8">
+<div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+<span class="material-symbols-outlined text-sm text-green-500">wifi</span>
+<span data-i18n="common.footer.status_optimal">System Status: Optimal</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+<span class="material-symbols-outlined text-sm text-blue-500">bolt</span>
+<span data-i18n="common.footer.status_lightning">Lightning Fast Performance</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<div id="custom-cursor"></div>
+<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="/assets/js/locales.js"></script>
+<script defer="" src="/assets/js/i18n.js"></script>
+<script defer="" src="/assets/js/camelot-gsap.js"></script>
+<script defer="" src="/assets/site.js"></script>
 </body>
-
 </html>

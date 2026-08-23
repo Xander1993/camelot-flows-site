@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-i18n-page="work-with-me">
+<html lang="en" data-i18n-page="work-with-me" data-cf-static-lang="en">
 
 <head>
     <!-- CF: theme bootstrap (sync, before paint) -->
@@ -24,7 +24,7 @@
       (function () {
         var html = document.documentElement;
         try {
-          var l = localStorage.getItem('cf_lang') || 'en';
+          var l = document.documentElement.lang || 'en';
           if (['en','ro','ru'].indexOf(l) === -1) l = 'en';
           html.setAttribute('lang', l);
           html.setAttribute('data-cf-lang', l);
@@ -39,6 +39,8 @@
     <meta name="description" content="Pick a clear Camelot Flows engagement: a new website built to be found and to convert, automation add-ons, maintenance, or agency white-label help. Fixed price, one-time, you own it.">
     <link rel="canonical" href="https://camelotflows.dev/work-with-me">
     <link rel="alternate" hreflang="en" href="https://camelotflows.dev/work-with-me">
+    <link rel="alternate" hreflang="ro" href="https://camelotflows.dev/ro/work-with-me">
+    <link rel="alternate" hreflang="ru" href="https://camelotflows.dev/ru/work-with-me">
     <link rel="alternate" hreflang="x-default" href="https://camelotflows.dev/work-with-me">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
@@ -48,7 +50,7 @@
     <meta property="og:title" content="Work With Me — Found &amp; Converting Websites | Camelot Flows">
     <meta property="og:description" content="Pick a clear Camelot Flows engagement: a new website built to be found and to convert, automation add-ons, maintenance, or agency white-label help. Fixed price, one-time, you own it.">
     <meta property="og:image" content="https://camelotflows.dev/assets/images/cozy-freelancer/cf-cozy-og-default.webp">
-    <meta property="og:url" content="https://camelotflows.dev/work-with-me.html">
+    <meta property="og:url" content="https://camelotflows.dev/work-with-me">
     <meta property="og:site_name" content="Camelot Flows">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -65,11 +67,11 @@
     <link rel="stylesheet" href="assets/css/camelot.css?v=7">
     <link rel="stylesheet" href="assets/css/theme-night.css?v=2">
     <link rel="stylesheet" href="assets/css/lang-switcher.css">
-    <link rel="prefetch" href="arsenal.html" as="document">
-    <link rel="prefetch" href="merlin.html" as="document">
-    <link rel="prefetch" href="contact.html" as="document">
-    <link rel="prefetch" href="case-studies.html" as="document">
-    <link rel="prefetch" href="about.html" as="document">
+    <link rel="prefetch" href="/arsenal" as="document">
+    <link rel="prefetch" href="/merlin" as="document">
+    <link rel="prefetch" href="/contact" as="document">
+    <link rel="prefetch" href="/case-studies" as="document">
+    <link rel="prefetch" href="/about" as="document">
     <!-- Google tag (gtag.js) — GA4 camelotflows.dev -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4ZPEG1KSR"></script>
     <script>
@@ -138,21 +140,21 @@
             </div>
             <div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="index.html" data-i18n="common.nav.home">[Home]</a>
+                    href="/" data-i18n="common.nav.home">[Home]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="work-with-me.html" data-i18n="common.nav.services">[Services]</a>
+                    href="/work-with-me" data-i18n="common.nav.services">[Services]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
+                    href="/arsenal" data-i18n="common.nav.arsenal">[Arsenal]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
+                    href="/merlin" data-i18n="common.nav.merlin">[Merlin]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
-                    href="case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
+                    href="/case-studies" data-i18n="common.nav.cases">[Cases]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block"
-                    href="for-agencies.html" data-i18n="common.nav.agencies">[Agencies]</a>
+                    href="/for-agencies" data-i18n="common.nav.agencies">[Agencies]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
                     href="/?goto=pricing" data-i18n="common.nav.pricing">[Pricing]</a>
                 <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="contact.html" data-i18n="common.nav.contact">[Contact]</a>
+                    href="/contact" data-i18n="common.nav.contact">[Contact]</a>
             </div>
             <div class="flex items-center gap-2">
                 <a href="tel:+37369555936" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" aria-label="Call Camelot Flows" title="+373 69 555 936">
@@ -168,9 +170,9 @@
         <span class="material-symbols-outlined lang-chevron">expand_more</span>
     </button>
     <ul class="lang-menu" role="listbox" hidden>
-        <li role="option" data-lang="en" tabindex="-1">EN</li>
-        <li role="option" data-lang="ro" tabindex="-1">RO</li>
-        <li role="option" data-lang="ru" tabindex="-1">RU</li>
+        <li role="option" data-lang="en" tabindex="-1"><a href="/work-with-me" hreflang="en">EN</a></li>
+        <li role="option" data-lang="ro" tabindex="-1"><a href="/ro/work-with-me" hreflang="ro">RO</a></li>
+        <li role="option" data-lang="ru" tabindex="-1"><a href="/ru/work-with-me" hreflang="ru">RU</a></li>
     </ul>
 </div>
                 <button id="mobile-menu-toggle" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 transition-all text-slate-400" aria-label="Open menu" type="button">
@@ -180,7 +182,7 @@
     <span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
     <span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
 </button>
-                <a href="contact.html?objective=build"
+                <a href="/contact?objective=build"
                     class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong hidden lg:inline-flex items-center nav-cta"
                     data-i18n="common.nav.summon_agent">
                     [Hire_me]
@@ -191,14 +193,14 @@
         <div id="mobile-nav" class="hidden mt-2 max-w-7xl mx-auto">
             <div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
                 <div class="flex flex-col gap-1">
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="index.html" data-i18n="common.nav.home">[Home]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="work-with-me.html" data-i18n="common.nav.services">[Services]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="arsenal.html" data-i18n="common.nav.arsenal">[Arsenal]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="merlin.html" data-i18n="common.nav.merlin">[Merlin]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="case-studies.html" data-i18n="common.nav.cases">[Cases]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="contact.html" data-i18n="common.nav.contact">[Contact]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/" data-i18n="common.nav.home">[Home]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/work-with-me" data-i18n="common.nav.services">[Services]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/arsenal" data-i18n="common.nav.arsenal">[Arsenal]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/merlin" data-i18n="common.nav.merlin">[Merlin]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/case-studies" data-i18n="common.nav.cases">[Cases]</a>
+                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/contact" data-i18n="common.nav.contact">[Contact]</a>
                     <div class="mx-3 my-2 h-px bg-white/10"></div>
-                    <a href="contact.html?service=build" class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent">[Hire_me]</a>
+                    <a href="/contact?service=build" class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent">[Hire_me]</a>
                 </div>
             </div>
         </div>
@@ -250,7 +252,7 @@
             <p style="font-family:'Fraunces',Georgia,serif;font-size:2.8rem;font-weight:700;letter-spacing:-0.04em;color:var(--text);margin:4px 0 0">from €390</p>
             <p style="font-size:0.85rem;color:var(--muted);margin:4px 0 0" data-i18n="pages.work-with-me.s_tier1_price_note">€390 Start · €690–1,200 Found (scaled to pages) · one-time, fixed before we begin</p>
           </div>
-          <a href="contact.html?objective=build" class="button secondary" style="margin-top:20px" data-i18n="pages.work-with-me.s_tier1_btn">Talk about your build</a>
+          <a href="/contact?objective=build" class="button secondary" style="margin-top:20px" data-i18n="pages.work-with-me.s_tier1_btn">Talk about your build</a>
         </div>
 
         <!-- Tier 2: Automation (optional add-on) -->
@@ -274,7 +276,7 @@
             <p style="font-family:'Fraunces',Georgia,serif;font-size:2.8rem;font-weight:700;letter-spacing:-0.04em;color:var(--text);margin:4px 0 0">from €690</p>
             <p style="font-size:0.85rem;color:var(--muted);margin:4px 0 0" data-i18n="pages.work-with-me.s_tier2_price_note">added to your build · scoped to what you actually need</p>
           </div>
-          <a href="contact.html?objective=automation" class="button primary" style="margin-top:20px" data-i18n="pages.work-with-me.s_tier2_btn">Add automation</a>
+          <a href="/contact?objective=automation" class="button primary" style="margin-top:20px" data-i18n="pages.work-with-me.s_tier2_btn">Add automation</a>
         </div>
 
         <!-- Tier 3: Hosting & Care (optional, technical only) -->
@@ -298,7 +300,7 @@
             <p style="font-family:'Fraunces',Georgia,serif;font-size:2.8rem;font-weight:700;letter-spacing:-0.04em;color:var(--text);margin:4px 0 0">from €30/mo</p>
             <p style="font-size:0.85rem;color:var(--muted);margin:4px 0 0" data-i18n="pages.work-with-me.s_tier3_price_note">technical upkeep only · cancel anytime</p>
           </div>
-          <a href="contact.html?objective=hosting" class="button secondary" style="margin-top:20px" data-i18n="pages.work-with-me.s_tier3_btn">Keep it running</a>
+          <a href="/contact?objective=hosting" class="button secondary" style="margin-top:20px" data-i18n="pages.work-with-me.s_tier3_btn">Keep it running</a>
         </div>
 
       </div>
@@ -371,7 +373,7 @@
           <p class="card-meta" data-i18n="pages.work-with-me.s_fit_unsure_meta">Still unsure?</p>
           <h3 style="margin-top:16px" data-i18n="pages.work-with-me.s_fit_unsure_h">Send me a message.</h3>
           <p data-i18n="pages.work-with-me.s_fit_unsure_p">Describe what you're trying to build. I'll tell you honestly whether it fits, and if it doesn't, I'll point you somewhere that might.</p>
-          <a href="contact.html" class="button ghost" style="margin-top:24px" data-i18n="pages.work-with-me.s_fit_unsure_btn">Get in touch</a>
+          <a href="/contact" class="button ghost" style="margin-top:24px" data-i18n="pages.work-with-me.s_fit_unsure_btn">Get in touch</a>
         </div>
       </div>
     </div>
@@ -385,8 +387,8 @@
         <h2 class="section-title" data-i18n="pages.work-with-me.s_cta_h2">Tell me about <em class="accent">the work.</em></h2>
         <p style="color:var(--muted);font-size:1.02rem;line-height:1.75;margin:20px 0 32px" data-i18n="pages.work-with-me.s_cta_p">I read every message and reply within 24 hours. If the project is a good fit, we agree scope in writing before anything else happens.</p>
         <div class="button-row" style="justify-content:center">
-          <a href="contact.html" class="button primary" data-i18n="pages.work-with-me.s_cta_btn1">Start a conversation</a>
-          <a href="about.html" class="button ghost" data-i18n="pages.work-with-me.s_cta_btn2">Learn about the workshop</a>
+          <a href="/contact" class="button primary" data-i18n="pages.work-with-me.s_cta_btn1">Start a conversation</a>
+          <a href="/about" class="button ghost" data-i18n="pages.work-with-me.s_cta_btn2">Learn about the workshop</a>
         </div>
       </div>
     </div>
@@ -417,11 +419,11 @@
                         </a>
 
                         <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400"
-                            href="contact.html">
+                            href="/contact">
                             <span class="material-symbols-outlined text-lg">mail</span>
                         </a>
                         <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400"
-                            href="contact.html">
+                            href="/contact">
                             <span class="material-symbols-outlined text-lg">alternate_email</span>
                         </a>
                     </div>
@@ -432,19 +434,19 @@
                         Protocol</h5>
                     <ul class="space-y-3 text-slate-500 text-sm font-mono">
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="arsenal.html"><span
+                                href="/arsenal"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_protocol_arsenal">The Arsenal</span></a></li>
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="merlin.html"><span
+                                href="/merlin"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_protocol_merlin">Merlin</span></a></li>
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="case-studies.html"><span
+                                href="/case-studies"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_protocol_cases">Case Studies</span></a></li>
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="for-agencies.html"><span
+                                href="/for-agencies"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_protocol_agencies">Agencies</span></a></li>
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/blog/"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> <span data-i18n="common.footer.blog">Blog</span></a></li>
@@ -456,23 +458,23 @@
                         Services</h5>
                     <ul class="space-y-3 text-slate-500 text-sm font-mono">
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="service-creation.html"><span
+                                href="/service-creation"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_services_creation">Site Creation</span></a></li>
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="service-maintenance.html"><span
+                                href="/service-maintenance"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_services_maintenance">Maintenance</span></a></li>
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="service-automation.html"><span
+                                href="/service-automation"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_services_automation">Automations</span></a></li>
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="service-marketing.html"><span
+                                href="/service-marketing"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_services_marketing">Marketing</span></a></li>
                     <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="audit.html"><span
+                                href="/audit"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_services_audit">Free Website Audit</span></a></li>
                     </ul>
@@ -483,19 +485,19 @@
                         Company</h5>
                     <ul class="space-y-3 text-slate-500 text-sm font-mono">
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="about.html"><span
+                                href="/about"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_company_about">About</span></a></li>
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="work-with-me.html"><span
+                                href="/work-with-me"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_company_work">Work With</span></a></li>
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="legal.html"><span
+                                href="/legal"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_company_legal">Legal</span></a></li>
                         <li><a class="hover:text-primary transition-colors flex items-center gap-2 group"
-                                href="contact.html"><span
+                                href="/contact"><span
                                     class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
                                 <span data-i18n="common.footer.col_company_contact">Contact</span></a></li>
                     </ul>

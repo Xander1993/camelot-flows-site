@@ -1,0 +1,24 @@
+# Added to mitigate CVE-2017-8295 vulnerability
+UseCanonicalName On
+
+<VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+
+        ServerName camelotflows.dev
+        ServerAlias www.camelotflows.dev
+
+        DocumentRoot /var/www/html
+
+        <Directory /var/www/html/>
+            Options FollowSymLinks
+            AllowOverride All
+            Require all granted
+        </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+RewriteEngine on
+RewriteCond %{SERVER_NAME} =camelotflows.dev [OR]
+RewriteCond %{SERVER_NAME} =www.camelotflows.dev
+RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+</VirtualHost>
