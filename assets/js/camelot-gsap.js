@@ -1207,15 +1207,15 @@
         })();
 
         // ------------------------------------------------------------
-        // 12. NAV "MORE" SUBMENU — adaptive collapse (768 px – 1379 px)
-        //     768-859 → 2 links; 860-959 → 3; 960-1099 → 4;
+        // 12. NAV "MORE" SUBMENU — adaptive collapse (801 px – 1379 px)
+        //     801-859 → 2 links; 860-959 → 3; 960-1099 → 4;
         //     1100-1379 → 5. Thresholds include the logo and controls widths.
         //     Container visibility is forced via inline style so Tailwind
         //     `hidden md:flex` ambiguity cannot create a dead zone.
         //     No HTML changes to 14 pages needed.
         // ------------------------------------------------------------
         (() => {
-            const BREAKPOINT_MIN = 768;
+            const BREAKPOINT_MIN = 801;
             const BREAKPOINT_MAX = 1380;
 
             // How many links stay visible in the bar at each width

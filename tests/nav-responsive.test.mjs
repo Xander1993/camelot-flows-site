@@ -29,13 +29,13 @@ test('desktop nav CTA respects the Tailwind lg visibility breakpoint', async () 
   }
 });
 
-test('adaptive nav keeps fewer links at the narrow notebook breakpoints', async () => {
+test('adaptive nav keeps mobile navigation through 800px and fewer desktop links after it', async () => {
   const scripts = await Promise.all([
     readFile(new URL('../assets/js/camelot-gsap.js', import.meta.url), 'utf8'),
   ]);
   const expected = new Map([
-    [767, null],
-    [768, 2],
+    [800, null],
+    [801, 2],
     [859, 2],
     [860, 3],
     [959, 3],
@@ -47,10 +47,11 @@ test('adaptive nav keeps fewer links at the narrow notebook breakpoints', async 
   ]);
 
   for (const source of scripts) {
+    assert.match(source, /const BREAKPOINT_MIN = 801;/);
     const match = source.match(/const getTier = (\(w\) => \{[\s\S]*?\n\s*\});/);
     assert.ok(match, 'expected the adaptive nav tier function');
     const getTier = vm.runInNewContext(match[1], {
-      BREAKPOINT_MIN: 768,
+      BREAKPOINT_MIN: 801,
       BREAKPOINT_MAX: 1380,
     });
     for (const [width, tier] of expected) {
@@ -59,7 +60,7 @@ test('adaptive nav keeps fewer links at the narrow notebook breakpoints', async 
   }
 });
 
-test('mobile menu toggle has no fractional dead zone below the md breakpoint', async () => {
+test('mobile menu toggle stays available through 800px without a fractional dead zone', async () => {
   const [sourceCss, minifiedCss] = await Promise.all([
     readFile(new URL('../assets/css/camelot.css', import.meta.url), 'utf8'),
     readFile(new URL('../assets/css/camelot.min.css', import.meta.url), 'utf8'),
@@ -68,12 +69,16 @@ test('mobile menu toggle has no fractional dead zone below the md breakpoint', a
   assert.match(sourceCss, /#mobile-menu-toggle\s*\{\s*display:\s*flex;/);
   assert.match(
     sourceCss,
-    /@media\s*\(min-width:\s*768px\)[\s\S]*?#mobile-menu-toggle\s*\{\s*display:\s*none;/,
+    /@media\s*\(max-width:\s*800px\)[\s\S]*?nav\.fixed\s*>\s*\.glass-panel\s*>\s*div:nth-child\(2\)\s*\{\s*display:\s*none\s*!important;/,
+  );
+  assert.match(
+    sourceCss,
+    /@media\s*\(min-width:\s*801px\)[\s\S]*?#mobile-menu-toggle\s*\{\s*display:\s*none;/,
   );
   assert.match(minifiedCss, /#mobile-menu-toggle\{display:flex\}/);
   assert.match(
     minifiedCss,
-    /@media\s*\(min-width:768px\)\{#mobile-menu-toggle\{display:none\}/,
+    /@media\s*\(min-width:801px\)\{#mobile-menu-toggle\{display:none\}/,
   );
 });
 
@@ -89,7 +94,7 @@ test('homepage variants bust cached navigation CSS and JS', async () => {
     const camelotCssVersion = html.match(/camelot\.min\.css\?v=(\d+)/);
     const navJsVersion = html.match(/camelot-gsap\.min\.js\?v=(\d+)/);
     assert.ok(siteCssVersion && Number(siteCssVersion[1]) > 1);
-    assert.ok(camelotCssVersion && Number(camelotCssVersion[1]) > 18);
-    assert.ok(navJsVersion && Number(navJsVersion[1]) > 7);
+    assert.ok(camelotCssVersion && Number(camelotCssVersion[1]) > 19);
+    assert.ok(navJsVersion && Number(navJsVersion[1]) > 8);
   }
 });
