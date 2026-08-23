@@ -1939,15 +1939,12 @@ nav.fixed .glass-panel > div:first-child {
 
 /* ── Mobile hamburger + dropdown ─────────────────────────────────────────────
    md:hidden is not in the compiled Tailwind CSS, so enforce visibility
-   via plain CSS. Hamburger visible only below 768 px; dropdown always
+   via plain CSS. Hamburger visible below the 768 px breakpoint; dropdown always
    hidden on desktop (JS toggle only works on mobile). */
 #mobile-menu-toggle {
-    display: none;
+    display: flex;
 }
 @media (max-width: 767px) {
-    #mobile-menu-toggle {
-        display: flex;
-    }
     /* Cozy theme: use terracotta border/color for hamburger button */
     [data-theme="cozy"] #mobile-menu-toggle {
         border-color: rgba(196, 120, 92, 0.4);
@@ -1955,6 +1952,9 @@ nav.fixed .glass-panel > div:first-child {
     }
 }
 @media (min-width: 768px) {
+    #mobile-menu-toggle {
+        display: none;
+    }
     #mobile-nav {
         display: none !important;
     }
