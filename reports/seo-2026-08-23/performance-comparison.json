@@ -1,0 +1,25 @@
+{
+  "profile": {
+    "network": "Fast 4G",
+    "mobile": "390x844 DPR 3, CPU 4x",
+    "desktop": "1440x900 DPR 1, CPU 1x",
+    "source": "Chrome DevTools navigation traces",
+    "fieldData": "No CrUX data available for the tested query URLs"
+  },
+  "before": {
+    "commit": "534bffde6a6b009d6b9986f1d222ad1cc24cc88b",
+    "mobile": {"lcpMs": 718, "ttfbMs": 34, "cls": 0.01},
+    "desktop": {"lcpMs": 368, "ttfbMs": 34, "cls": 0.19}
+  },
+  "after": {
+    "commit": "f93ee839c1ce385521907637261ffac3f839423e",
+    "mobileRuns": [
+      {"lcpMs": 763, "ttfbMs": 34, "cls": 0.00},
+      {"lcpMs": 749, "ttfbMs": 34, "cls": 0.00},
+      {"lcpMs": 785, "ttfbMs": 34, "cls": 0.01}
+    ],
+    "mobileMedian": {"lcpMs": 763, "ttfbMs": 34, "cls": 0.00},
+    "desktop": {"lcpMs": 377, "ttfbMs": 33, "cls": 0.09}
+  },
+  "assessment": "No material regression. Mobile median LCP changed by 45 ms and remained below 0.8 s; desktop LCP changed by 9 ms; CLS improved on both profiles."
+}
