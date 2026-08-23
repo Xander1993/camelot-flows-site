@@ -36,10 +36,10 @@ test('adaptive nav keeps fewer links at the narrow notebook breakpoints', async 
   const expected = new Map([
     [767, null],
     [768, 2],
-    [839, 2],
-    [840, 3],
-    [919, 3],
-    [920, 4],
+    [859, 2],
+    [860, 3],
+    [959, 3],
+    [960, 4],
     [1099, 4],
     [1100, 5],
     [1379, 5],
@@ -90,6 +90,6 @@ test('homepage variants bust cached navigation CSS and JS', async () => {
     const navJsVersion = html.match(/camelot-gsap\.min\.js\?v=(\d+)/);
     assert.ok(siteCssVersion && Number(siteCssVersion[1]) > 1);
     assert.ok(camelotCssVersion && Number(camelotCssVersion[1]) > 18);
-    assert.ok(navJsVersion && Number(navJsVersion[1]) > 6);
+    assert.ok(navJsVersion && Number(navJsVersion[1]) > 7);
   }
 });

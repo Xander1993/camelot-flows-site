@@ -1208,7 +1208,7 @@
 
         // ------------------------------------------------------------
         // 12. NAV "MORE" SUBMENU — adaptive collapse (768 px – 1379 px)
-        //     768-839 → 2 links; 840-919 → 3; 920-1099 → 4;
+        //     768-859 → 2 links; 860-959 → 3; 960-1099 → 4;
         //     1100-1379 → 5. Thresholds include the logo and controls widths.
         //     Container visibility is forced via inline style so Tailwind
         //     `hidden md:flex` ambiguity cannot create a dead zone.
@@ -1222,8 +1222,8 @@
             const getTier = (w) => {
                 if (w < BREAKPOINT_MIN || w >= BREAKPOINT_MAX) return null;
                 if (w >= 1100) return 5;
-                if (w >= 920)  return 4;
-                if (w >= 840)  return 3;
+                if (w >= 960)  return 4;
+                if (w >= 860)  return 3;
                 return 2;
             };
 
