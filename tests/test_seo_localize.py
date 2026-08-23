@@ -29,7 +29,7 @@ class SeoLocalizationBuildTests(unittest.TestCase):
             f'<!doctype html><html lang="en" data-i18n-page="about"><head><title>About</title><meta name="description" content="About description"><link rel="canonical" href="https://camelotflows.dev/about"></head><body>{switcher}<main><h1 data-i18n="pages.about.hero">English about</h1><img src="assets/about.webp"></main></body></html>',
             encoding="utf-8",
         )
-        translated = f'''<!doctype html><html lang="en"><head><title>Translated post</title><meta name="description" content="English post description"><link rel="canonical" href="https://camelotflows.dev/blog/translated-post/"></head><body>{switcher}<article><h1><span data-lang-content="en">English post</span><span data-lang-content="ro" hidden>Articol română</span><span data-lang-content="ru" hidden>Статья по-русски</span></h1><div data-lang-content="en"><p>{'English body ' * 20}</p></div><div data-lang-content="ro" hidden><p>{'Conținut română ' * 20}</p></div><div data-lang-content="ru" hidden><p>{'Русское содержание ' * 20}</p></div></article></body></html>'''
+        translated = f'''<!doctype html><html lang="en"><head><title>Translated post</title><meta name="description" content="English post description"><link rel="canonical" href="https://camelotflows.dev/blog/translated-post/"></head><body>{switcher}<article><h1><span data-lang-content="en">English post</span><span data-lang-content="ro" hidden>Articol română</span><span data-lang-content="ru" hidden>Статья по-русски</span></h1><div data-lang-content="en"><p>{'English body ' * 20}</p></div><div data-lang-content="ro" hidden><p>{'Conținut română ' * 20}</p><a href="/about.html">Despre</a></div><div data-lang-content="ru" hidden><p>{'Русское содержание ' * 20}</p><a href="/about.html">О нас</a></div></article></body></html>'''
         (self.root / "blog" / "translated-post" / "index.html").write_text(translated, encoding="utf-8")
         english_only = f'''<!doctype html><html lang="en"><head><title>English only</title><meta name="description" content="Only English"><link rel="canonical" href="https://camelotflows.dev/blog/english-only/"></head><body>{switcher}<article><h1>English only</h1><p>{'Only English body ' * 20}</p></article></body></html>'''
         (self.root / "blog" / "english-only" / "index.html").write_text(english_only, encoding="utf-8")
@@ -84,6 +84,7 @@ class SeoLocalizationBuildTests(unittest.TestCase):
         self.assertNotIn("Conținut română", english.get_text(" ", strip=True))
         self.assertIn("Conținut română", ro.get_text(" ", strip=True))
         self.assertNotIn("English body", ro.get_text(" ", strip=True))
+        self.assertEqual(ro.select_one('article a')["href"], "/ro/about")
         self.assertFalse((self.root / "ro" / "blog" / "english-only" / "index.html").exists())
         self.assertFalse((self.root / "ru" / "blog" / "english-only" / "index.html").exists())
         english_only = BeautifulSoup((self.root / "blog" / "english-only" / "index.html").read_text(encoding="utf-8"), "html.parser")

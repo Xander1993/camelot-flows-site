@@ -12,7 +12,7 @@ function sitemapUrls(xml) {
 export function extractFirstPartyResources(html, pageUrl, origin) {
   const found = new Set();
   for (const tagMatch of html.matchAll(RESOURCE_TAG_RE)) {
-    if (/^<link\b/i.test(tagMatch[0]) && (/\brel=["']prefetch["']/i.test(tagMatch[0]) || /\bas=["']document["']/i.test(tagMatch[0]))) continue;
+    if (/^<link\b/i.test(tagMatch[0]) && (/\brel=["'](?:prefetch|canonical|alternate)["']/i.test(tagMatch[0]) || /\bas=["']document["']/i.test(tagMatch[0]))) continue;
     for (const match of tagMatch[0].matchAll(RESOURCE_ATTR_RE)) {
       const values = match[1].toLowerCase() === 'srcset'
         ? match[2].split(',').map((part) => part.trim().split(/\s+/)[0])

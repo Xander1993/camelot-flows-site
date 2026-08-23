@@ -264,6 +264,8 @@ def _is_static_resource(value: str) -> bool:
 
 def _localize_links(soup: BeautifulSoup, lang: str, available_by_route: dict[str, tuple[str, ...]]) -> None:
     known_routes = sorted(available_by_route, key=len, reverse=True)
+    html_aliases = {f"{route}.html": route for route in known_routes if route != "/" and not route.endswith("/")}
+    html_aliases["/index.html"] = "/"
     for node in soup.find_all(True):
         for attr in ("href", "src", "poster", "action"):
             value = node.get(attr)
@@ -279,6 +281,9 @@ def _localize_links(soup: BeautifulSoup, lang: str, available_by_route: dict[str
             if parts.scheme and parts.netloc and parts.netloc != "camelotflows.dev":
                 continue
             candidate = parts.path or "/"
+            if not candidate.startswith("/"):
+                candidate = f"/{candidate}"
+            candidate = html_aliases.get(candidate, candidate)
             matched = next((route for route in known_routes if candidate == route), None)
             if matched and lang in available_by_route[matched]:
                 node[attr] = urlunsplit(("", "", _localized_route(matched, lang), parts.query, parts.fragment))

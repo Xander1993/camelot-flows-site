@@ -3,7 +3,7 @@ import test from 'node:test';
 import { auditResources, extractFirstPartyResources } from '../tools/seo-resource-audit.mjs';
 
 test('extractFirstPartyResources resolves srcsets and excludes third-party assets', () => {
-  const html = '<link rel="stylesheet" href="/site.css"><link rel="prefetch" as="document" href="/about"><img src="image.webp" srcset="small.webp 480w, /large.webp 900w"><script src="https://cdn.example/app.js"></script>';
+  const html = '<link rel="stylesheet" href="/site.css"><link rel="prefetch" as="document" href="/about"><link rel="canonical" href="/"><link rel="alternate" hreflang="ro" href="/ro/"><img src="image.webp" srcset="small.webp 480w, /large.webp 900w"><script src="https://cdn.example/app.js"></script>';
   assert.deepEqual(extractFirstPartyResources(html, 'https://site.test/about', 'https://site.test').sort(), [
     'https://site.test/image.webp',
     'https://site.test/large.webp',
