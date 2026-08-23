@@ -76,3 +76,20 @@ test('mobile menu toggle has no fractional dead zone below the md breakpoint', a
     /@media\s*\(min-width:768px\)\{#mobile-menu-toggle\{display:none\}/,
   );
 });
+
+test('homepage variants bust cached navigation CSS and JS', async () => {
+  const pages = await Promise.all([
+    readFile(new URL('../index.html', import.meta.url), 'utf8'),
+    readFile(new URL('../ro/index.html', import.meta.url), 'utf8'),
+    readFile(new URL('../ru/index.html', import.meta.url), 'utf8'),
+  ]);
+
+  for (const html of pages) {
+    const siteCssVersion = html.match(/site\.min\.css\?v=(\d+)/);
+    const camelotCssVersion = html.match(/camelot\.min\.css\?v=(\d+)/);
+    const navJsVersion = html.match(/camelot-gsap\.min\.js\?v=(\d+)/);
+    assert.ok(siteCssVersion && Number(siteCssVersion[1]) > 1);
+    assert.ok(camelotCssVersion && Number(camelotCssVersion[1]) > 18);
+    assert.ok(navJsVersion && Number(navJsVersion[1]) > 6);
+  }
+});
