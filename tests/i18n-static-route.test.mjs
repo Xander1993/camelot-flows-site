@@ -48,3 +48,11 @@ test('fixed Romanian URL uses Romanian independently of stored language', () => 
   const i18n = loadI18n({ documentLang: 'ro', storedLang: 'en' });
   assert.equal(i18n.current(), 'ro');
 });
+
+test('runtime mobile navigation injects clean routes with the fixed language prefix', () => {
+  const source = fs.readFileSync('assets/js/camelot-gsap.js', 'utf8');
+  assert.doesNotMatch(source, /\['for-agencies\.html'/);
+  assert.doesNotMatch(source, /\['about\.html'/);
+  assert.doesNotMatch(source, /\['index\.html#pricing-cards'/);
+  assert.match(source, /const langPrefix = fixedLang === 'en' \? '' : `\/\$\{fixedLang\}`/);
+});

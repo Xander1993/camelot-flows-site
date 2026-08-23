@@ -1544,10 +1544,12 @@
             if (!casesLink) return;
 
             const cls = casesLink.className;
+            const fixedLang = document.documentElement.getAttribute('data-cf-static-lang') || 'en';
+            const langPrefix = fixedLang === 'en' ? '' : `/${fixedLang}`;
             const toAdd = [
-                ['for-agencies.html',      '[Agencies]', 'common.nav.agencies'],
-                ['about.html',             '[About]',    'common.nav.about'   ],
-                ['index.html#pricing-cards','[Pricing]', 'common.nav.pricing' ],
+                [`${langPrefix}/for-agencies`,    '[Agencies]', 'common.nav.agencies'],
+                [`${langPrefix}/about`,           '[About]',    'common.nav.about'   ],
+                [`${langPrefix}/#pricing-cards`,  '[Pricing]',  'common.nav.pricing' ],
             ];
             let after = casesLink;
             toAdd.forEach(([href, label, i18n]) => {
