@@ -19,6 +19,12 @@
       var trigger = switcher.querySelector('[data-cf-lang-trigger]');
       var menu = switcher.querySelector('[role="listbox"]');
       if (!trigger || !menu) return;
+      var language = document.documentElement.lang || 'en';
+      var current = switcher.querySelector('[data-cf-lang-current]');
+      if (current) current.textContent = language.toUpperCase();
+      menu.querySelectorAll('[data-lang]').forEach(function (option) {
+        option.setAttribute('aria-selected', String(option.getAttribute('data-lang') === language));
+      });
       var close = function () {
         switcher.classList.remove('is-open');
         trigger.setAttribute('aria-expanded', 'false');

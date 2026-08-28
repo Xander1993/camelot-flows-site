@@ -34,6 +34,7 @@ const perfCritical = '<style id="cf-performance-critical">.material-symbols-outl
 for (const file of files) {
   const absolute = path.join(root, file);
   let html = await readFile(absolute, 'utf8');
+  const lang = /^ro[\\/]/.test(file) ? 'ro' : /^ru[\\/]/.test(file) ? 'ru' : 'en';
 
   html = html.replace(/\s*<link[^>]+(?:cdnjs\.cloudflare\.com|cdn\.jsdelivr\.net)[^>]+rel="(?:preconnect|preload)"[^>]*>/g, '');
   html = html.replace(/\s*<link as="document"[^>]+rel="prefetch">/g, '');
@@ -56,9 +57,9 @@ for (const file of files) {
   html = html.replace('</head>', `${fontLinks}\n<link href="/assets/css/site.bundle.min.css?v=1" rel="stylesheet">\n</head>`);
   html = html.replace('</body>', '<script defer="" src="/assets/js/cf-runtime.min.js?v=1"></script>\n<script defer="" src="/assets/site.min.js?v=1"></script>\n<script defer="" src="/assets/js/cf-motion-loader.min.js?v=1"></script>\n</body>');
   html = html.replace(/src="\/assets\/images\/cf-mark\.png\?v=3"/g, 'decoding="async" height="56" loading="lazy" src="/assets/images/cf-mark-112.webp?v=1" width="39"');
+  html = html.replace(/(<span class="lang-current" data-cf-lang-current="">)(?:EN|RO|RU)(<\/span>)/, `$1${lang.toUpperCase()}$2`);
 
   if (file.endsWith('contact.html')) {
-    const lang = /^ro[\\/]/.test(file) ? 'ro' : /^ru[\\/]/.test(file) ? 'ru' : 'en';
     const unavailable = {
       en: 'File upload unavailable pending privacy review',
       ro: 'Încărcarea fișierelor este indisponibilă până la evaluarea de confidențialitate',

@@ -86,6 +86,7 @@
       '#cf-consent .cf-decline{background:transparent;color:inherit;border-color:rgba(45,42,38,.25)}' +
       '[data-theme="night"] #cf-consent .cf-decline{border-color:rgba(226,228,239,.25)}' +
       '@media (max-width:480px){#cf-consent{flex-direction:column;align-items:stretch;text-align:center}' +
+      '#cf-consent p{flex:0 1 auto}' +
       '#cf-consent .cf-consent-actions{justify-content:center}}';
     document.head.appendChild(css);
 
