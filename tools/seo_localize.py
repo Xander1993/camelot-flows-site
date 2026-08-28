@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import re
 import subprocess
+import xml.etree.ElementTree as ET
 from datetime import date
 from pathlib import Path, PurePosixPath
 from urllib.parse import urlsplit, urlunsplit
@@ -35,6 +36,10 @@ PUBLIC_TOP_LEVEL = (
     "custom-premium.html",
     "legal.html",
     "privacy.html",
+    "quote-to-order.html",
+    "websites.html",
+    "industries/technical-distributors.html",
+    "industries/hvac-refrigeration.html",
 )
 
 
@@ -44,6 +49,8 @@ def _route_for(root: Path, source: Path) -> str:
         return "/"
     if source.parent == root:
         return f"/{source.stem}"
+    if rel.endswith(".html") and not rel.startswith("blog/"):
+        return f"/{rel[:-5]}"
     if rel == "blog/index.html":
         return "/blog/"
     if rel.startswith("blog/") and rel.endswith("/index.html"):
@@ -257,6 +264,35 @@ def _apply_dictionary(soup: BeautifulSoup, dictionary: dict) -> None:
                 node[attr] = value
 
 
+PRIMARY_NAV = {
+    "common.nav.home": "/quote-to-order",
+    "common.nav.services": "/industries/technical-distributors",
+    "common.nav.arsenal": "/case-studies",
+    "common.nav.merlin": "/websites",
+    "common.nav.cases": "/about",
+    "common.nav.contact": "/contact",
+    "common.nav.summon_agent": "/contact",
+}
+
+
+def _set_primary_nav(text: str, lang: str, dictionary: dict) -> str:
+    """Change navigation destinations and labels without changing its classes or behavior."""
+    soup = BeautifulSoup(text, "html.parser")
+    for key, route in PRIMARY_NAV.items():
+        value = _lookup(dictionary, key)
+        for node in soup.select(f'[data-i18n="{key}"]'):
+            anchor = node if node.name == "a" else node.find_parent("a")
+            if anchor:
+                anchor["href"] = _localized_route(route, lang)
+            if value:
+                _set_node_value(node, value)
+    for key in ("common.nav.agencies", "common.nav.pricing"):
+        for node in soup.select(f'[data-i18n="{key}"]'):
+            anchor = node if node.name == "a" else node.find_parent("a")
+            (anchor or node).decompose()
+    return _serialize_html(soup)
+
+
 def _is_static_resource(value: str) -> bool:
     path = urlsplit(value).path
     return path.startswith("/assets/") or path.startswith("assets/") or "/assets/" in path or path.endswith(("favicon.ico", "favicon.png", "apple-touch-icon.png"))
@@ -341,7 +377,14 @@ def _localize_schema_url(value: str, lang: str, available_by_route: dict[str, tu
     return value
 
 
-def _localize_schema(soup: BeautifulSoup, lang: str, available_by_route: dict[str, tuple[str, ...]]) -> None:
+def _localize_schema(
+    soup: BeautifulSoup,
+    lang: str,
+    available_by_route: dict[str, tuple[str, ...]],
+    dictionary: dict,
+    page_slug: str | None,
+    route: str,
+) -> None:
     def rewrite(node, key: str | None = None):
         if isinstance(node, dict):
             for child_key, child in list(node.items()):
@@ -361,19 +404,66 @@ def _localize_schema(soup: BeautifulSoup, lang: str, available_by_route: dict[st
         payload = rewrite(payload)
         if isinstance(payload, dict):
             payload["inLanguage"] = lang
+        localized_url = _absolute(_localized_route(route, lang))
+        title = _lookup(dictionary, f"pages.{page_slug}.meta_title") if page_slug else None
+        description = _lookup(dictionary, f"pages.{page_slug}.meta_description") if page_slug else None
+
+        def update_service(node):
+            if isinstance(node, dict):
+                types = node.get("@type", [])
+                types = types if isinstance(types, list) else [types]
+                if "Service" in types:
+                    node["@id"] = f"{localized_url}#service"
+                    node["url"] = localized_url
+                    if title:
+                        node["name"] = re.sub(r"\s*\|\s*Camelot Flows$", "", title)
+                    if description:
+                        node["description"] = description
+                    node["provider"] = {"@id": f"{BASE_URL}/#organization"}
+                    node["areaServed"] = [
+                        {"@type": "Country", "name": "Moldova"},
+                        {"@type": "Country", "name": "Romania"},
+                    ]
+                for child in node.values():
+                    update_service(child)
+            elif isinstance(node, list):
+                for child in node:
+                    update_service(child)
+
+        update_service(payload)
         script.string = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
 
 
-def _write_sitemap(root: Path, available_by_route: dict[str, tuple[str, ...]]) -> None:
+def _read_sitemap_lastmods(root: Path) -> dict[str, str]:
+    path = root / "sitemap.xml"
+    if not path.exists():
+        return {}
+    try:
+        tree = ET.parse(path)
+    except (ET.ParseError, OSError):
+        return {}
+    namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    values: dict[str, str] = {}
+    for node in tree.findall("sm:url", namespace):
+        loc = node.findtext("sm:loc", default="", namespaces=namespace).strip()
+        lastmod = node.findtext("sm:lastmod", default="", namespaces=namespace).strip()
+        if loc and lastmod:
+            values[loc] = lastmod
+    return values
+
+
+def _write_sitemap(root: Path, available_by_route: dict[str, tuple[str, ...]], previous_lastmods: dict[str, str]) -> None:
     rows = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
-    lastmod = date.today().isoformat()
+    created_lastmod = date.today().isoformat()
     for route in sorted(available_by_route, key=lambda item: (item != "/", item)):
         for lang in available_by_route[route]:
             localized = _localized_route(route, lang)
-            rows.extend(("  <url>", f"    <loc>{_absolute(localized)}</loc>", f"    <lastmod>{lastmod}</lastmod>", "  </url>"))
+            absolute = _absolute(localized)
+            lastmod = previous_lastmods.get(absolute, created_lastmod)
+            rows.extend(("  <url>", f"    <loc>{absolute}</loc>", f"    <lastmod>{lastmod}</lastmod>", "  </url>"))
     rows.append("</urlset>")
     (root / "sitemap.xml").write_text("\n".join(rows) + "\n", encoding="utf-8")
 
@@ -394,7 +484,7 @@ def _render_localized(
     _apply_dictionary(soup, dictionary)
     _set_localized_metadata(soup, dictionary, soup.html.get("data-i18n-page"))
     _localize_links(soup, lang, available_by_route)
-    _localize_schema(soup, lang, available_by_route)
+    _localize_schema(soup, lang, available_by_route, dictionary, soup.html.get("data-i18n-page"), route)
 
     canonical = soup.select_one('link[rel="canonical"]')
     if canonical:
@@ -414,6 +504,7 @@ def _render_localized(
 
 def build_site(root: Path | str) -> dict:
     root = Path(root).resolve()
+    previous_lastmods = _read_sitemap_lastmods(root)
     locales = _load_locales(root)
     sources = _public_sources(root)
     filename_routes = {source.name: _route_for(root, source) for source in sources if source.parent == root}
@@ -427,7 +518,7 @@ def build_site(root: Path | str) -> dict:
         if source.relative_to(root).as_posix().startswith("blog/"):
             text, translated = _capture_and_strip_blog_translations(root, source, text, sidecar)
         route = _route_for(root, source)
-        available = LANGUAGES if source.parent == root or translated else ("en",)
+        available = LANGUAGES if not source.relative_to(root).as_posix().startswith("blog/") or translated else ("en",)
         if source.relative_to(root).as_posix() == "blog/index.html" and translated:
             available = LANGUAGES
         available_by_route[route] = available
@@ -439,6 +530,7 @@ def build_site(root: Path | str) -> dict:
         route = _route_for(root, source)
         available = available_by_route[route]
         english = _normalize_english(source_text[source], route, available, filename_routes)
+        english = _set_primary_nav(english, "en", locales["en"])
         source.write_text(english, encoding="utf-8")
         groups = sidecar.get(source.relative_to(root).as_posix(), [])
         for lang in ("ro", "ru"):
@@ -447,10 +539,11 @@ def build_site(root: Path | str) -> dict:
             output = _output_for(root, source, lang)
             output.parent.mkdir(parents=True, exist_ok=True)
             rendered = _render_localized(english, route, lang, available, available_by_route, locales[lang], groups)
+            rendered = _set_primary_nav(rendered, lang, locales[lang])
             output.write_text(rendered, encoding="utf-8")
             generated.append(output.relative_to(root).as_posix())
 
-    _write_sitemap(root, available_by_route)
+    _write_sitemap(root, available_by_route, previous_lastmods)
     return {"generated": sorted(generated), "routes": len(available_by_route)}
 
 

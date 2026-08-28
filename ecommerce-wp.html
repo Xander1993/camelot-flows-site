@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" data-i18n-page="ecommerce-wp" data-cf-static-lang="en">
+
+<html data-cf-static-lang="en" data-i18n-page="ecommerce-wp" lang="en">
 <head>
 <script>(function(){var h=document.documentElement;try{var c=document.cookie.match('(?:^|;) ?cf_theme=([^;]*)');var t=c?c[1]:(localStorage.getItem('cf_theme')||'cozy');h.setAttribute('data-theme',t);}catch(e){h.setAttribute('data-theme','cozy');}try{if(sessionStorage.getItem('cf_loaded')==='1')h.classList.add('cf-skip-preloader');}catch(e){}h.classList.add('js');})();</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WooCommerce Development, Redesign & Migration | Camelot Flows</title>
-<meta name="description" content="WooCommerce development, redesign, and migration with product, order, customer, payment, shipping, CRM, and automation requirements handled around your existing business.">
-<link rel="canonical" href="https://camelotflows.dev/ecommerce-wp">
-    <link rel="alternate" hreflang="en" href="https://camelotflows.dev/ecommerce-wp">
-    <link rel="alternate" hreflang="ro" href="https://camelotflows.dev/ro/ecommerce-wp">
-    <link rel="alternate" hreflang="ru" href="https://camelotflows.dev/ru/ecommerce-wp">
-    <link rel="alternate" hreflang="x-default" href="https://camelotflows.dev/ecommerce-wp">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/tailwind.built.css">
-<link rel="stylesheet" href="assets/site.css?v=2">
-<link rel="stylesheet" href="assets/css/camelot.css?v=9">
-<link rel="stylesheet" href="assets/css/theme-night.css?v=2">
-<link rel="stylesheet" href="assets/css/lang-switcher.css">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>WooCommerce Development, Redesign &amp; Migration | Camelot Flows</title>
+<meta content="WooCommerce development, redesign, and migration with product, order, customer, payment, shipping, CRM, and automation requirements handled around your existing business." name="description">
+<link href="https://camelotflows.dev/ecommerce-wp" rel="canonical">
+<link href="https://camelotflows.dev/ecommerce-wp" hreflang="en" rel="alternate">
+<link href="https://camelotflows.dev/ro/ecommerce-wp" hreflang="ro" rel="alternate">
+<link href="https://camelotflows.dev/ru/ecommerce-wp" hreflang="ru" rel="alternate">
+<link href="https://camelotflows.dev/ecommerce-wp" hreflang="x-default" rel="alternate">
+<link href="favicon.png" rel="icon" sizes="32x32" type="image/png">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=Space+Grotesk:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet">
+<link href="assets/css/tailwind.built.css" rel="stylesheet">
+<link href="assets/site.css?v=2" rel="stylesheet">
+<link href="assets/css/camelot.css?v=9" rel="stylesheet">
+<link href="assets/css/theme-night.css?v=2" rel="stylesheet">
+<link href="assets/css/lang-switcher.css" rel="stylesheet">
 <noscript><style>.sr,.hero-word,.hero-price,.hero-cta{opacity:1!important;transform:none!important;}</style></noscript>
 <style>
 /* ── Accent tokens (ecommerce-wp = neon amber / deep amber) ── */
@@ -178,377 +179,349 @@ a{text-decoration:none;color:inherit;}
 @keyframes deco-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}@keyframes deco-spin-slow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}@keyframes deco-pulse{0%,100%{opacity:.15}50%{opacity:.38}}.hero-deco{position:absolute;pointer-events:none;z-index:0;overflow:visible;}.hero-deco-bag{top:8%;right:5%;width:92px;animation:deco-float 6s ease-in-out infinite;}.hero-deco-chart{bottom:16%;left:4%;width:122px;animation:deco-float 8s ease-in-out infinite 2.5s;}.hero-deco-prodgrid{top:44%;right:3%;width:76px;animation:deco-pulse 5s ease-in-out infinite;}@media(max-width:767px){.hero-deco{display:none;}}
 @media(max-width:767px){nav.fixed > div:not(#mobile-nav) .lp-nav-cta{display:none!important;}}
 </style>
-    <!-- Google tag (gtag.js) — GA4 camelotflows.dev -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4ZPEG1KSR"></script>
-    <script>
+<!-- Google tag (gtag.js) — GA4 camelotflows.dev -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T4ZPEG1KSR"></script>
+<script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
       try { if (localStorage.getItem('cf_consent') === 'granted') { gtag('consent', 'update', { analytics_storage: 'granted' }); } } catch (e) {}      gtag('js', new Date());
       gtag('config', 'G-T4ZPEG1KSR');
     </script>
-    <script defer src="/assets/js/cf-consent.js?v=1"></script>
+<script defer="" src="/assets/js/cf-consent.js?v=1"></script>
 </head>
-
 <body class="theme-cozy font-body overflow-x-hidden">
-<div class="lp-grain" aria-hidden="true"></div>
+<div aria-hidden="true" class="lp-grain"></div>
 <div id="custom-cursor"></div>
-
 <!-- Site nav (identical to all other pages) -->
 <nav class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-6 md:py-6">
-        <div
-            class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
-            <div class="flex items-center">
-                <img src="assets/images/cf-logo-wordmark-2x.webp" alt="Camelot Flows" class="h-16 md:h-28 w-auto object-contain">
-            </div>
-            <div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="/" data-i18n="common.nav.home">[Home]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="/work-with-me" data-i18n="common.nav.services">[Services]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="/arsenal" data-i18n="common.nav.arsenal">[Arsenal]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="/merlin" data-i18n="common.nav.merlin">[Merlin]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
-                    href="/case-studies" data-i18n="common.nav.cases">[Cases]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block"
-                    href="/for-agencies" data-i18n="common.nav.agencies">[Agencies]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block"
-                    href="/?goto=pricing" data-i18n="common.nav.pricing">[Pricing]</a>
-                <a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider"
-                    href="/contact" data-i18n="common.nav.contact">[Contact]</a>
-            </div>
-            <div class="flex items-center gap-2">
-                <a href="tel:+37369555936" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" aria-label="Call Camelot Flows" title="+373 69 555 936">
-                    <span class="material-symbols-outlined cf-phone-icon" style="font-size:18px">call</span>
-                </a>
-                <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
-                    <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 status-dot animate-pulse"></div>
-                    <span class="text-[10px] font-mono text-emerald-500/80" data-i18n="common.nav.sys_online">SYS_ONLINE</span>
-                </div>
-                <div class="lang-switcher" data-cf-lang-switcher>
-    <button class="lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Change language" data-i18n-attr="aria-label:common.lang_label">
-        <span class="lang-current" data-cf-lang-current>EN</span>
-        <span class="material-symbols-outlined lang-chevron">expand_more</span>
-    </button>
-    <ul class="lang-menu" role="listbox" hidden>
-        <li role="option" data-lang="en" tabindex="-1"><a href="/ecommerce-wp" hreflang="en">EN</a></li>
-        <li role="option" data-lang="ro" tabindex="-1"><a href="/ro/ecommerce-wp" hreflang="ro">RO</a></li>
-        <li role="option" data-lang="ru" tabindex="-1"><a href="/ru/ecommerce-wp" hreflang="ru">RU</a></li>
-    </ul>
+<div class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
+<div class="flex items-center">
+<img alt="Camelot Flows" class="h-16 md:h-28 w-auto object-contain" src="assets/images/cf-logo-wordmark-2x.webp">
 </div>
-                <button id="mobile-menu-toggle" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 transition-all text-slate-400" aria-label="Open menu" type="button">
-                    <span class="material-symbols-outlined" style="font-size:20px">menu</span>
-                </button>
-                <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Toggle theme">
-    <span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
-    <span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
+<div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.home" href="/quote-to-order">[Quote-to-Order]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.services" href="/industries/technical-distributors">[Industries]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.arsenal" href="/case-studies">[Case Studies]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.merlin" href="/websites">[Websites]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" data-i18n="common.nav.cases" href="/about">[About]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.contact" href="/contact">[Contact]</a>
+</div>
+<div class="flex items-center gap-2">
+<a aria-label="Call Camelot Flows" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="tel:+37369555936" title="+373 69 555 936">
+<span class="material-symbols-outlined cf-phone-icon" style="font-size:18px">call</span>
+</a>
+<div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-500 status-dot animate-pulse"></div>
+<span class="text-[10px] font-mono text-emerald-500/80" data-i18n="common.nav.sys_online">SYS_ONLINE</span>
+</div>
+<div class="lang-switcher" data-cf-lang-switcher="">
+<button aria-expanded="false" aria-haspopup="listbox" aria-label="Change language" class="lang-trigger" data-i18n-attr="aria-label:common.lang_label" type="button">
+<span class="lang-current" data-cf-lang-current="">EN</span>
+<span class="material-symbols-outlined lang-chevron">expand_more</span>
 </button>
-                <a href="/contact?objective=build"
-                    class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong hidden lg:inline-flex items-center nav-cta"
-                    data-i18n="common.nav.summon_agent">
-                    [Hire_me]
-                </a>
-            </div>
-        </div>
-        
-        <div id="mobile-nav" class="hidden mt-2 max-w-7xl mx-auto">
-            <div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
-                <div class="flex flex-col gap-1">
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/" data-i18n="common.nav.home">[Home]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/work-with-me" data-i18n="common.nav.services">[Services]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/arsenal" data-i18n="common.nav.arsenal">[Arsenal]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/merlin" data-i18n="common.nav.merlin">[Merlin]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/case-studies" data-i18n="common.nav.cases">[Cases]</a>
-                    <a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" href="/contact" data-i18n="common.nav.contact">[Contact]</a>
-                    <div class="mx-3 my-2 h-px bg-white/10"></div>
-                    <a href="/contact?service=build" class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent">[Hire_me]</a>
-                </div>
-            </div>
-        </div>
-        <script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");var open=!menu.classList.contains("hidden");btn.setAttribute("aria-expanded",open?"true":"false");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");}});document.querySelectorAll("#mobile-nav a").forEach(function(a){a.addEventListener("click",function(){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");});});}})();</script>
-        </nav>
-
+<ul class="lang-menu" hidden="" role="listbox">
+<li data-lang="en" role="option" tabindex="-1"><a href="/ecommerce-wp" hreflang="en">EN</a></li>
+<li data-lang="ro" role="option" tabindex="-1"><a href="/ro/ecommerce-wp" hreflang="ro">RO</a></li>
+<li data-lang="ru" role="option" tabindex="-1"><a href="/ru/ecommerce-wp" hreflang="ru">RU</a></li>
+</ul>
+</div>
+<button aria-label="Open menu" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 transition-all text-slate-400" id="mobile-menu-toggle" type="button">
+<span class="material-symbols-outlined" style="font-size:20px">menu</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="theme-toggle" type="button">
+<span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
+<span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
+</button>
+<a class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong hidden lg:inline-flex items-center nav-cta" data-i18n="common.nav.summon_agent" href="/contact">[Map My Workflow]</a>
+</div>
+</div>
+<div class="hidden mt-2 max-w-7xl mx-auto" id="mobile-nav">
+<div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
+<div class="flex flex-col gap-1">
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.home" href="/quote-to-order">[Quote-to-Order]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.services" href="/industries/technical-distributors">[Industries]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.arsenal" href="/case-studies">[Case Studies]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.merlin" href="/websites">[Websites]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.cases" href="/about">[About]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.contact" href="/contact">[Contact]</a>
+<div class="mx-3 my-2 h-px bg-white/10"></div>
+<a class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent" href="/contact">[Map My Workflow]</a>
+</div>
+</div>
+</div>
+<script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");var open=!menu.classList.contains("hidden");btn.setAttribute("aria-expanded",open?"true":"false");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");}});document.querySelectorAll("#mobile-nav a").forEach(function(a){a.addEventListener("click",function(){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");});});}})();</script>
+</nav>
 <!-- S1: Hero -->
 <section class="lp-hero" id="hero">
-  <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
-  <svg class="hero-deco hero-deco-bag" aria-hidden="true" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="38" width="84" height="74" rx="9" stroke="rgba(var(--lp-accent-rgb),.28)" stroke-width="1.5" fill="rgba(var(--lp-accent-rgb),.05)"/><path d="M30 38 C30 18 70 18 70 38" stroke="rgba(var(--lp-accent-rgb),.28)" stroke-width="1.5" fill="none"/><line x1="8" y1="62" x2="92" y2="62" stroke="rgba(var(--lp-accent-rgb),.16)" stroke-width="1"/><rect x="40" y="27" width="20" height="13" rx="3" stroke="rgba(var(--lp-accent-rgb),.22)" stroke-width="1" fill="rgba(var(--lp-accent-rgb),.06)"/><circle cx="50" cy="35" r="3.5" fill="rgba(var(--lp-accent-rgb),.38)"/><line x1="28" y1="82" x2="72" y2="82" stroke="rgba(var(--lp-accent-rgb),.14)" stroke-width="1"/><line x1="28" y1="94" x2="55" y2="94" stroke="rgba(var(--lp-accent-rgb),.1)" stroke-width="1"/></svg>
-  <svg class="hero-deco hero-deco-chart" aria-hidden="true" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="18" y1="88" x2="132" y2="88" stroke="rgba(var(--lp-accent-rgb),.22)" stroke-width="1.5" stroke-linecap="round"/><line x1="18" y1="8" x2="18" y2="88" stroke="rgba(var(--lp-accent-rgb),.22)" stroke-width="1.5" stroke-linecap="round"/><rect x="28" y="62" width="16" height="26" rx="3" fill="rgba(var(--lp-accent-rgb),.18)"/><rect x="53" y="46" width="16" height="42" rx="3" fill="rgba(var(--lp-accent-rgb),.22)"/><rect x="78" y="28" width="16" height="60" rx="3" fill="rgba(var(--lp-accent-rgb),.27)"/><rect x="103" y="10" width="16" height="78" rx="3" fill="rgba(var(--lp-accent-rgb),.33)"/><polyline points="113,6 120,2 127,6" stroke="rgba(var(--lp-accent-rgb),.45)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="120" y1="2" x2="120" y2="16" stroke="rgba(var(--lp-accent-rgb),.45)" stroke-width="1.5" stroke-linecap="round"/></svg>
-  <svg class="hero-deco hero-deco-prodgrid" aria-hidden="true" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="23" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.25)" stroke-width="1.5" fill="rgba(var(--lp-accent-rgb),.06)"/><rect x="33" y="4" width="23" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.25)" stroke-width="1.5" fill="rgba(var(--lp-accent-rgb),.06)"/><rect x="62" y="4" width="23" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.3)" stroke-width="1.5" fill="rgba(var(--lp-accent-rgb),.1)"/><rect x="4" y="33" width="23" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.2)" stroke-width="1.5" fill="rgba(var(--lp-accent-rgb),.04)"/><rect x="33" y="33" width="23" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.3)" stroke-width="1.5" fill="rgba(var(--lp-accent-rgb),.08)"/><rect x="62" y="33" width="23" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.2)" stroke-width="1.5" fill="rgba(var(--lp-accent-rgb),.04)"/><rect x="4" y="62" width="23" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.2)" stroke-width="1.5" fill="rgba(var(--lp-accent-rgb),.04)"/><rect x="33" y="62" width="23" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.2)" stroke-width="1.5" fill="rgba(var(--lp-accent-rgb),.04)"/><rect x="62" y="62" width="23" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.25)" stroke-width="1.5" fill="rgba(var(--lp-accent-rgb),.06)"/></svg>
-  <div class="lp-wrap hero-grid">
-    <div>
-      <span class="pill" data-i18n="pages.ecommerce-wp.hero_pill">Ecommerce & Advanced WP</span>
-      <h1 class="hero-h1" data-i18n="pages.ecommerce-wp.hero_h1">
-        <span class="hero-word">WooCommerce,</span><br>
-        <span class="hero-word">built, redesigned,</span><br>
-        <span class="hero-word accent">or migrated.</span>
-      </h1>
-      <p class="hero-sub" data-i18n="pages.ecommerce-wp.hero_sub">New WooCommerce stores, redesigns, and careful migrations — including products, orders, customer data, payments, shipping, CRM, and automation when the project requires them.</p>
-      <div class="hero-actions">
-        <a href="/contact?objective=ecommerce-wp" class="cta-pill hero-cta">
-          <span data-i18n="pages.ecommerce-wp.hero_cta_primary">Start my store</span>
-          <span class="cta-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
-        </a>
-        <a href="#deliverables" class="cta-ghost hero-cta" data-i18n="pages.ecommerce-wp.hero_cta_ghost">What's included</a>
-      </div>
-    </div>
-    <div style="display:flex;justify-content:center;">
-      <div class="price-card-outer hero-price">
-        <div class="price-card-inner">
-          <div><div class="price-from" data-i18n="pages.ecommerce-wp.price_from">Starting from</div><div class="price-amount">€990</div></div>
-          <ul class="price-checks">
-            <li class="price-check-item"><span class="check-dot"></span><span data-i18n="pages.ecommerce-wp.price_check_1">Full WooCommerce build</span></li>
-            <li class="price-check-item"><span class="check-dot"></span><span data-i18n="pages.ecommerce-wp.price_check_2">AI automation included</span></li>
-            <li class="price-check-item"><span class="check-dot"></span><span data-i18n="pages.ecommerce-wp.price_check_3">Cart abandonment recovery</span></li>
-            <li class="price-check-item"><span class="check-dot"></span><span data-i18n="pages.ecommerce-wp.price_check_4">CRM sync included</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- S2: Trust marquee -->
-<div class="marquee-wrap" aria-hidden="true">
-  <div class="marquee-track">
-    <span class="m-item">WooCommerce Expert</span><span class="m-dot m-item">·</span><span class="m-item">AI Automation Included</span><span class="m-dot m-item">·</span><span class="m-item">Cart Recovery Automation</span><span class="m-dot m-item">·</span><span class="m-item">CRM Sync</span><span class="m-dot m-item">·</span><span class="m-item">Payment Gateway Setup</span><span class="m-dot m-item">·</span><span class="m-item">Mobile Commerce</span><span class="m-dot m-item">·</span>
-    <span class="m-item">WooCommerce Expert</span><span class="m-dot m-item">·</span><span class="m-item">AI Automation Included</span><span class="m-dot m-item">·</span><span class="m-item">Cart Recovery Automation</span><span class="m-dot m-item">·</span><span class="m-item">CRM Sync</span><span class="m-dot m-item">·</span><span class="m-item">Payment Gateway Setup</span><span class="m-dot m-item">·</span><span class="m-item">Mobile Commerce</span><span class="m-dot m-item">·</span>
-  </div>
+<div aria-hidden="true" class="hero-orb hero-orb-1"></div>
+<svg aria-hidden="true" class="hero-deco hero-deco-bag" fill="none" viewbox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><rect fill="rgba(var(--lp-accent-rgb),.05)" height="74" rx="9" stroke="rgba(var(--lp-accent-rgb),.28)" stroke-width="1.5" width="84" x="8" y="38"></rect><path d="M30 38 C30 18 70 18 70 38" fill="none" stroke="rgba(var(--lp-accent-rgb),.28)" stroke-width="1.5"></path><line stroke="rgba(var(--lp-accent-rgb),.16)" stroke-width="1" x1="8" x2="92" y1="62" y2="62"></line><rect fill="rgba(var(--lp-accent-rgb),.06)" height="13" rx="3" stroke="rgba(var(--lp-accent-rgb),.22)" stroke-width="1" width="20" x="40" y="27"></rect><circle cx="50" cy="35" fill="rgba(var(--lp-accent-rgb),.38)" r="3.5"></circle><line stroke="rgba(var(--lp-accent-rgb),.14)" stroke-width="1" x1="28" x2="72" y1="82" y2="82"></line><line stroke="rgba(var(--lp-accent-rgb),.1)" stroke-width="1" x1="28" x2="55" y1="94" y2="94"></line></svg>
+<svg aria-hidden="true" class="hero-deco hero-deco-chart" fill="none" viewbox="0 0 140 100" xmlns="http://www.w3.org/2000/svg"><line stroke="rgba(var(--lp-accent-rgb),.22)" stroke-linecap="round" stroke-width="1.5" x1="18" x2="132" y1="88" y2="88"></line><line stroke="rgba(var(--lp-accent-rgb),.22)" stroke-linecap="round" stroke-width="1.5" x1="18" x2="18" y1="8" y2="88"></line><rect fill="rgba(var(--lp-accent-rgb),.18)" height="26" rx="3" width="16" x="28" y="62"></rect><rect fill="rgba(var(--lp-accent-rgb),.22)" height="42" rx="3" width="16" x="53" y="46"></rect><rect fill="rgba(var(--lp-accent-rgb),.27)" height="60" rx="3" width="16" x="78" y="28"></rect><rect fill="rgba(var(--lp-accent-rgb),.33)" height="78" rx="3" width="16" x="103" y="10"></rect><polyline fill="none" points="113,6 120,2 127,6" stroke="rgba(var(--lp-accent-rgb),.45)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></polyline><line stroke="rgba(var(--lp-accent-rgb),.45)" stroke-linecap="round" stroke-width="1.5" x1="120" x2="120" y1="2" y2="16"></line></svg>
+<svg aria-hidden="true" class="hero-deco hero-deco-prodgrid" fill="none" viewbox="0 0 90 90" xmlns="http://www.w3.org/2000/svg"><rect fill="rgba(var(--lp-accent-rgb),.06)" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.25)" stroke-width="1.5" width="23" x="4" y="4"></rect><rect fill="rgba(var(--lp-accent-rgb),.06)" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.25)" stroke-width="1.5" width="23" x="33" y="4"></rect><rect fill="rgba(var(--lp-accent-rgb),.1)" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.3)" stroke-width="1.5" width="23" x="62" y="4"></rect><rect fill="rgba(var(--lp-accent-rgb),.04)" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.2)" stroke-width="1.5" width="23" x="4" y="33"></rect><rect fill="rgba(var(--lp-accent-rgb),.08)" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.3)" stroke-width="1.5" width="23" x="33" y="33"></rect><rect fill="rgba(var(--lp-accent-rgb),.04)" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.2)" stroke-width="1.5" width="23" x="62" y="33"></rect><rect fill="rgba(var(--lp-accent-rgb),.04)" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.2)" stroke-width="1.5" width="23" x="4" y="62"></rect><rect fill="rgba(var(--lp-accent-rgb),.04)" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.2)" stroke-width="1.5" width="23" x="33" y="62"></rect><rect fill="rgba(var(--lp-accent-rgb),.06)" height="23" rx="4" stroke="rgba(var(--lp-accent-rgb),.25)" stroke-width="1.5" width="23" x="62" y="62"></rect></svg>
+<div class="lp-wrap hero-grid">
+<div>
+<span class="pill" data-i18n="pages.ecommerce-wp.hero_pill">Ecommerce &amp; Advanced WP</span>
+<h1 class="hero-h1" data-i18n="pages.ecommerce-wp.hero_h1">
+<span class="hero-word">WooCommerce,</span><br>
+<span class="hero-word">built, redesigned,</span><br>
+<span class="hero-word accent">or migrated.</span>
+</h1>
+<p class="hero-sub" data-i18n="pages.ecommerce-wp.hero_sub">New WooCommerce stores, redesigns, and careful migrations — including products, orders, customer data, payments, shipping, CRM, and automation when the project requires them.</p>
+<div class="hero-actions">
+<a class="cta-pill hero-cta" href="/contact?objective=ecommerce-wp">
+<span data-i18n="pages.ecommerce-wp.hero_cta_primary">Start my store</span>
+<span aria-hidden="true" class="cta-arrow"><svg viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+</a>
+<a class="cta-ghost hero-cta" data-i18n="pages.ecommerce-wp.hero_cta_ghost" href="#deliverables">What's included</a>
 </div>
-
+</div>
+<div style="display:flex;justify-content:center;">
+<div class="price-card-outer hero-price">
+<div class="price-card-inner">
+<div><div class="price-from" data-i18n="pages.ecommerce-wp.price_from">Starting from</div><div class="price-amount">€990</div></div>
+<ul class="price-checks">
+<li class="price-check-item"><span class="check-dot"></span><span data-i18n="pages.ecommerce-wp.price_check_1">Full WooCommerce build</span></li>
+<li class="price-check-item"><span class="check-dot"></span><span data-i18n="pages.ecommerce-wp.price_check_2">AI automation included</span></li>
+<li class="price-check-item"><span class="check-dot"></span><span data-i18n="pages.ecommerce-wp.price_check_3">Cart abandonment recovery</span></li>
+<li class="price-check-item"><span class="check-dot"></span><span data-i18n="pages.ecommerce-wp.price_check_4">CRM sync included</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- S2: Trust marquee -->
+<div aria-hidden="true" class="marquee-wrap">
+<div class="marquee-track">
+<span class="m-item">WooCommerce Expert</span><span class="m-dot m-item">·</span><span class="m-item">AI Automation Included</span><span class="m-dot m-item">·</span><span class="m-item">Cart Recovery Automation</span><span class="m-dot m-item">·</span><span class="m-item">CRM Sync</span><span class="m-dot m-item">·</span><span class="m-item">Payment Gateway Setup</span><span class="m-dot m-item">·</span><span class="m-item">Mobile Commerce</span><span class="m-dot m-item">·</span>
+<span class="m-item">WooCommerce Expert</span><span class="m-dot m-item">·</span><span class="m-item">AI Automation Included</span><span class="m-dot m-item">·</span><span class="m-item">Cart Recovery Automation</span><span class="m-dot m-item">·</span><span class="m-item">CRM Sync</span><span class="m-dot m-item">·</span><span class="m-item">Payment Gateway Setup</span><span class="m-dot m-item">·</span><span class="m-item">Mobile Commerce</span><span class="m-dot m-item">·</span>
+</div>
+</div>
 <!-- S3: Feature Spotlight (GSAP PIN) -->
-<section id="feature-spotlight" class="lp-section">
-  <div class="lp-wrap">
-    <div class="sr" style="margin-bottom:3rem;">
-      <span class="pill" data-i18n="pages.ecommerce-wp.s3_pill">What you get</span>
-      <h2 class="section-h" data-i18n="pages.ecommerce-wp.s3_h">Commerce with a brain.</h2>
-    </div>
-    <div class="feat-grid">
-      <div class="feat-list">
-        <div class="feat-item" data-fi="0"><div class="feat-item-name" data-i18n="pages.ecommerce-wp.feat1_name">Full WooCommerce</div><div class="feat-item-sub" data-i18n="pages.ecommerce-wp.feat1_sub">Complete store, not a theme demo</div></div>
-        <div class="feat-item" data-fi="1"><div class="feat-item-name" data-i18n="pages.ecommerce-wp.feat2_name">Cart Recovery</div><div class="feat-item-sub" data-i18n="pages.ecommerce-wp.feat2_sub">AI catches abandons before they're lost</div></div>
-        <div class="feat-item" data-fi="2"><div class="feat-item-name" data-i18n="pages.ecommerce-wp.feat3_name">Payment Gateways</div><div class="feat-item-sub" data-i18n="pages.ecommerce-wp.feat3_sub">Stripe, PayPal, Revolut, local methods</div></div>
-        <div class="feat-item" data-fi="3"><div class="feat-item-name" data-i18n="pages.ecommerce-wp.feat4_name">CRM Intelligence</div><div class="feat-item-sub" data-i18n="pages.ecommerce-wp.feat4_sub">Every order synced to your pipeline</div></div>
-      </div>
-      <div class="feat-details">
-        <div class="feat-detail" data-fd="0"><div class="feat-detail-card"><div class="feat-detail-inner">
-          <div class="feat-vis feat-vis--store">
-            <div class="fv-product"><div class="fv-product-img"></div><div class="fv-product-text"><div class="fv-line"></div><div class="fv-line-s"></div></div></div>
-            <div class="fv-product"><div class="fv-product-img"></div><div class="fv-product-text"><div class="fv-line"></div><div class="fv-line-s"></div></div></div>
-            <div class="fv-product"><div class="fv-product-img"></div><div class="fv-product-text"><div class="fv-line"></div><div class="fv-line-s"></div></div></div>
-          </div>
-          <div class="feat-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
-          <h3 class="feat-title" data-i18n="pages.ecommerce-wp.feat1_title">A real store, engineered to sell.</h3>
-          <p class="feat-desc" data-i18n="pages.ecommerce-wp.feat1_desc">WooCommerce built from scratch — product pages optimised for conversion, checkout flow tested on mobile, inventory management wired up, and shipping rules configured. Not a theme demo: a production commerce engine.</p>
-        </div></div></div>
-        <div class="feat-detail" data-fd="1"><div class="feat-detail-card"><div class="feat-detail-inner">
-          <div class="feat-vis feat-vis--cart">
-            <div class="fv-email"><div class="fv-email-dot"></div><div class="fv-email-bar" style="width:65%"></div><div class="fv-email-time">0 min</div></div>
-            <div class="fv-conn"></div>
-            <div class="fv-email"><div class="fv-email-dot" style="opacity:.55"></div><div class="fv-email-bar" style="width:45%;opacity:.6"></div><div class="fv-email-time">1 hr</div></div>
-            <div class="fv-conn"></div>
-            <div class="fv-email"><div class="fv-email-dot" style="opacity:.3"></div><div class="fv-email-bar" style="width:55%;opacity:.4"></div><div class="fv-email-time">24 hr</div></div>
-          </div>
-          <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.56 2 2 0 0 1 3.6 1.38h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.1a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.5 16h.5z"/></svg></div>
-          <h3 class="feat-title" data-i18n="pages.ecommerce-wp.feat2_title">The abandoned cart gets a second chance.</h3>
-          <p class="feat-desc" data-i18n="pages.ecommerce-wp.feat2_desc">When the project needs it, an automation can monitor cart events and send a consent-aware reminder sequence containing the products a customer left behind. The workflow and reporting are configured around the store's actual tools.</p>
-        </div></div></div>
-        <div class="feat-detail" data-fd="2"><div class="feat-detail-card"><div class="feat-detail-inner">
-          <div class="feat-vis feat-vis--pay">
-            <div class="fv-pay"><div class="fv-pay-dot"></div>Stripe</div>
-            <div class="fv-pay"><div class="fv-pay-dot" style="opacity:.5"></div>PayPal</div>
-            <div class="fv-pay"><div class="fv-pay-dot" style="opacity:.7"></div>Revolut</div>
-            <div class="fv-pay"><div class="fv-pay-dot" style="opacity:.4"></div>Local</div>
-          </div>
-          <div class="feat-icon"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
-          <h3 class="feat-title" data-i18n="pages.ecommerce-wp.feat3_title">Accept payments your customers trust.</h3>
-          <p class="feat-desc" data-i18n="pages.ecommerce-wp.feat3_desc">Stripe, PayPal, Revolut Business, and local payment methods configured end-to-end. SSL, PCI compliance, and receipt flows tested before launch. You choose which gateways to offer — I wire them up and test every edge case.</p>
-        </div></div></div>
-        <div class="feat-detail" data-fd="3"><div class="feat-detail-card"><div class="feat-detail-inner">
-          <div class="feat-vis feat-vis--crm">
-            <div class="fv-stage"><div class="fv-stage-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div><div class="fv-stage-lbl" data-i18n="pages.ecommerce-wp.feat4_stage_order">Order</div></div>
-            <div class="fv-arr">›</div>
-            <div class="fv-stage"><div class="fv-stage-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="fv-stage-lbl" data-i18n="pages.ecommerce-wp.feat4_stage_trigger">Trigger</div></div>
-            <div class="fv-arr">›</div>
-            <div class="fv-stage"><div class="fv-stage-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div><div class="fv-stage-lbl" data-i18n="pages.ecommerce-wp.feat4_stage_crm">CRM</div></div>
-            <div class="fv-arr">›</div>
-            <div class="fv-stage"><div class="fv-stage-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="fv-stage-lbl" data-i18n="pages.ecommerce-wp.feat4_stage_email">Email</div></div>
-          </div>
-          <div class="feat-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-          <h3 class="feat-title" data-i18n="pages.ecommerce-wp.feat4_title">Every order lands in your pipeline.</h3>
-          <p class="feat-desc" data-i18n="pages.ecommerce-wp.feat4_desc">AI automation pushes each completed order to your CRM — customer name, product, value, and lifecycle stage. New customers enter a welcome sequence automatically. Repeat buyers get recognition. Your sales data and your pipeline stay in sync without manual entry.</p>
-        </div></div></div>
-      </div>
-    </div>
-  </div>
+<section class="lp-section" id="feature-spotlight">
+<div class="lp-wrap">
+<div class="sr" style="margin-bottom:3rem;">
+<span class="pill" data-i18n="pages.ecommerce-wp.s3_pill">What you get</span>
+<h2 class="section-h" data-i18n="pages.ecommerce-wp.s3_h">Commerce with a brain.</h2>
+</div>
+<div class="feat-grid">
+<div class="feat-list">
+<div class="feat-item" data-fi="0"><div class="feat-item-name" data-i18n="pages.ecommerce-wp.feat1_name">Full WooCommerce</div><div class="feat-item-sub" data-i18n="pages.ecommerce-wp.feat1_sub">Complete store, not a theme demo</div></div>
+<div class="feat-item" data-fi="1"><div class="feat-item-name" data-i18n="pages.ecommerce-wp.feat2_name">Cart Recovery</div><div class="feat-item-sub" data-i18n="pages.ecommerce-wp.feat2_sub">AI catches abandons before they're lost</div></div>
+<div class="feat-item" data-fi="2"><div class="feat-item-name" data-i18n="pages.ecommerce-wp.feat3_name">Payment Gateways</div><div class="feat-item-sub" data-i18n="pages.ecommerce-wp.feat3_sub">Stripe, PayPal, Revolut, local methods</div></div>
+<div class="feat-item" data-fi="3"><div class="feat-item-name" data-i18n="pages.ecommerce-wp.feat4_name">CRM Intelligence</div><div class="feat-item-sub" data-i18n="pages.ecommerce-wp.feat4_sub">Every order synced to your pipeline</div></div>
+</div>
+<div class="feat-details">
+<div class="feat-detail" data-fd="0"><div class="feat-detail-card"><div class="feat-detail-inner">
+<div class="feat-vis feat-vis--store">
+<div class="fv-product"><div class="fv-product-img"></div><div class="fv-product-text"><div class="fv-line"></div><div class="fv-line-s"></div></div></div>
+<div class="fv-product"><div class="fv-product-img"></div><div class="fv-product-text"><div class="fv-line"></div><div class="fv-line-s"></div></div></div>
+<div class="fv-product"><div class="fv-product-img"></div><div class="fv-product-text"><div class="fv-line"></div><div class="fv-line-s"></div></div></div>
+</div>
+<div class="feat-icon"><svg viewbox="0 0 24 24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></div>
+<h3 class="feat-title" data-i18n="pages.ecommerce-wp.feat1_title">A real store, engineered to sell.</h3>
+<p class="feat-desc" data-i18n="pages.ecommerce-wp.feat1_desc">WooCommerce built from scratch — product pages optimised for conversion, checkout flow tested on mobile, inventory management wired up, and shipping rules configured. Not a theme demo: a production commerce engine.</p>
+</div></div></div>
+<div class="feat-detail" data-fd="1"><div class="feat-detail-card"><div class="feat-detail-inner">
+<div class="feat-vis feat-vis--cart">
+<div class="fv-email"><div class="fv-email-dot"></div><div class="fv-email-bar" style="width:65%"></div><div class="fv-email-time">0 min</div></div>
+<div class="fv-conn"></div>
+<div class="fv-email"><div class="fv-email-dot" style="opacity:.55"></div><div class="fv-email-bar" style="width:45%;opacity:.6"></div><div class="fv-email-time">1 hr</div></div>
+<div class="fv-conn"></div>
+<div class="fv-email"><div class="fv-email-dot" style="opacity:.3"></div><div class="fv-email-bar" style="width:55%;opacity:.4"></div><div class="fv-email-time">24 hr</div></div>
+</div>
+<div class="feat-icon"><svg viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.56 2 2 0 0 1 3.6 1.38h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.1a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.5 16h.5z"></path></svg></div>
+<h3 class="feat-title" data-i18n="pages.ecommerce-wp.feat2_title">The abandoned cart gets a second chance.</h3>
+<p class="feat-desc" data-i18n="pages.ecommerce-wp.feat2_desc">When the project needs it, an automation can monitor cart events and send a consent-aware reminder sequence containing the products a customer left behind. The workflow and reporting are configured around the store's actual tools.</p>
+</div></div></div>
+<div class="feat-detail" data-fd="2"><div class="feat-detail-card"><div class="feat-detail-inner">
+<div class="feat-vis feat-vis--pay">
+<div class="fv-pay"><div class="fv-pay-dot"></div>Stripe</div>
+<div class="fv-pay"><div class="fv-pay-dot" style="opacity:.5"></div>PayPal</div>
+<div class="fv-pay"><div class="fv-pay-dot" style="opacity:.7"></div>Revolut</div>
+<div class="fv-pay"><div class="fv-pay-dot" style="opacity:.4"></div>Local</div>
+</div>
+<div class="feat-icon"><svg viewbox="0 0 24 24"><rect height="16" rx="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg></div>
+<h3 class="feat-title" data-i18n="pages.ecommerce-wp.feat3_title">Accept payments your customers trust.</h3>
+<p class="feat-desc" data-i18n="pages.ecommerce-wp.feat3_desc">Stripe, PayPal, Revolut Business, and local payment methods configured end-to-end. SSL, PCI compliance, and receipt flows tested before launch. You choose which gateways to offer — I wire them up and test every edge case.</p>
+</div></div></div>
+<div class="feat-detail" data-fd="3"><div class="feat-detail-card"><div class="feat-detail-inner">
+<div class="feat-vis feat-vis--crm">
+<div class="fv-stage"><div class="fv-stage-icon"><svg viewbox="0 0 24 24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></div><div class="fv-stage-lbl" data-i18n="pages.ecommerce-wp.feat4_stage_order">Order</div></div>
+<div class="fv-arr">›</div>
+<div class="fv-stage"><div class="fv-stage-icon"><svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div><div class="fv-stage-lbl" data-i18n="pages.ecommerce-wp.feat4_stage_trigger">Trigger</div></div>
+<div class="fv-arr">›</div>
+<div class="fv-stage"><div class="fv-stage-icon"><svg viewbox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg></div><div class="fv-stage-lbl" data-i18n="pages.ecommerce-wp.feat4_stage_crm">CRM</div></div>
+<div class="fv-arr">›</div>
+<div class="fv-stage"><div class="fv-stage-icon"><svg viewbox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div><div class="fv-stage-lbl" data-i18n="pages.ecommerce-wp.feat4_stage_email">Email</div></div>
+</div>
+<div class="feat-icon"><svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
+<h3 class="feat-title" data-i18n="pages.ecommerce-wp.feat4_title">Every order lands in your pipeline.</h3>
+<p class="feat-desc" data-i18n="pages.ecommerce-wp.feat4_desc">AI automation pushes each completed order to your CRM — customer name, product, value, and lifecycle stage. New customers enter a welcome sequence automatically. Repeat buyers get recognition. Your sales data and your pipeline stay in sync without manual entry.</p>
+</div></div></div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- S4: Deliverables -->
-<section id="deliverables" class="lp-section">
-  <div class="lp-wrap">
-    <div class="sr">
-      <span class="pill" data-i18n="pages.ecommerce-wp.deliv_pill">What's included</span>
-      <h2 class="section-h" data-i18n="pages.ecommerce-wp.deliv_h">Everything your store needs.</h2>
-      <p class="section-sub" data-i18n="pages.ecommerce-wp.deliv_sub">A complete commerce stack — storefront, payments, AI automation, and CRM sync — delivered and production-ready.</p>
-    </div>
-    <div class="deliverables">
-      <div class="deliv-item sr"><svg class="check-svg" viewBox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"/><path class="check-path" d="M10 16l4 4 8-8"/></svg><div><div class="deliv-name" data-i18n="pages.ecommerce-wp.deliv1_name">Full WooCommerce store</div><div class="deliv-desc" data-i18n="pages.ecommerce-wp.deliv1_desc">Product pages, categories, filters, inventory — built for your catalogue.</div></div></div>
-      <div class="deliv-item sr"><svg class="check-svg" viewBox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"/><path class="check-path" d="M10 16l4 4 8-8"/></svg><div><div class="deliv-name" data-i18n="pages.ecommerce-wp.deliv2_name">Payment gateway setup</div><div class="deliv-desc" data-i18n="pages.ecommerce-wp.deliv2_desc">Stripe, PayPal, Revolut — or local methods. Tested end-to-end.</div></div></div>
-      <div class="deliv-item sr"><svg class="check-svg" viewBox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"/><path class="check-path" d="M10 16l4 4 8-8"/></svg><div><div class="deliv-name" data-i18n="pages.ecommerce-wp.deliv3_name">AI cart recovery</div><div class="deliv-desc" data-i18n="pages.ecommerce-wp.deliv3_desc">Abandoned cart automation wired in. Personalised recovery sequences.</div></div></div>
-      <div class="deliv-item sr"><svg class="check-svg" viewBox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"/><path class="check-path" d="M10 16l4 4 8-8"/></svg><div><div class="deliv-name" data-i18n="pages.ecommerce-wp.deliv4_name">CRM sync</div><div class="deliv-desc" data-i18n="pages.ecommerce-wp.deliv4_desc">Every order pushed to HubSpot, Notion, Airtable, or your CRM of choice.</div></div></div>
-      <div class="deliv-item sr"><svg class="check-svg" viewBox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"/><path class="check-path" d="M10 16l4 4 8-8"/></svg><div><div class="deliv-name" data-i18n="pages.ecommerce-wp.deliv5_name">GA4 ecommerce tracking</div><div class="deliv-desc" data-i18n="pages.ecommerce-wp.deliv5_desc">Purchase events, funnel analysis, and product performance from day one.</div></div></div>
-      <div class="deliv-item sr"><svg class="check-svg" viewBox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"/><path class="check-path" d="M10 16l4 4 8-8"/></svg><div><div class="deliv-name" data-i18n="pages.ecommerce-wp.deliv6_name">Mobile-optimised checkout</div><div class="deliv-desc" data-i18n="pages.ecommerce-wp.deliv6_desc">Touch-native cart and checkout, tested on real devices. Fewer drop-offs.</div></div></div>
-    </div>
-  </div>
+<section class="lp-section" id="deliverables">
+<div class="lp-wrap">
+<div class="sr">
+<span class="pill" data-i18n="pages.ecommerce-wp.deliv_pill">What's included</span>
+<h2 class="section-h" data-i18n="pages.ecommerce-wp.deliv_h">Everything your store needs.</h2>
+<p class="section-sub" data-i18n="pages.ecommerce-wp.deliv_sub">A complete commerce stack — storefront, payments, AI automation, and CRM sync — delivered and production-ready.</p>
+</div>
+<div class="deliverables">
+<div class="deliv-item sr"><svg class="check-svg" viewbox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"></circle><path class="check-path" d="M10 16l4 4 8-8"></path></svg><div><div class="deliv-name" data-i18n="pages.ecommerce-wp.deliv1_name">Full WooCommerce store</div><div class="deliv-desc" data-i18n="pages.ecommerce-wp.deliv1_desc">Product pages, categories, filters, inventory — built for your catalogue.</div></div></div>
+<div class="deliv-item sr"><svg class="check-svg" viewbox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"></circle><path class="check-path" d="M10 16l4 4 8-8"></path></svg><div><div class="deliv-name" data-i18n="pages.ecommerce-wp.deliv2_name">Payment gateway setup</div><div class="deliv-desc" data-i18n="pages.ecommerce-wp.deliv2_desc">Stripe, PayPal, Revolut — or local methods. Tested end-to-end.</div></div></div>
+<div class="deliv-item sr"><svg class="check-svg" viewbox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"></circle><path class="check-path" d="M10 16l4 4 8-8"></path></svg><div><div class="deliv-name" data-i18n="pages.ecommerce-wp.deliv3_name">AI cart recovery</div><div class="deliv-desc" data-i18n="pages.ecommerce-wp.deliv3_desc">Abandoned cart automation wired in. Personalised recovery sequences.</div></div></div>
+<div class="deliv-item sr"><svg class="check-svg" viewbox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"></circle><path class="check-path" d="M10 16l4 4 8-8"></path></svg><div><div class="deliv-name" data-i18n="pages.ecommerce-wp.deliv4_name">CRM sync</div><div class="deliv-desc" data-i18n="pages.ecommerce-wp.deliv4_desc">Every order pushed to HubSpot, Notion, Airtable, or your CRM of choice.</div></div></div>
+<div class="deliv-item sr"><svg class="check-svg" viewbox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"></circle><path class="check-path" d="M10 16l4 4 8-8"></path></svg><div><div class="deliv-name" data-i18n="pages.ecommerce-wp.deliv5_name">GA4 ecommerce tracking</div><div class="deliv-desc" data-i18n="pages.ecommerce-wp.deliv5_desc">Purchase events, funnel analysis, and product performance from day one.</div></div></div>
+<div class="deliv-item sr"><svg class="check-svg" viewbox="0 0 32 32"><circle class="check-bg" cx="16" cy="16" r="16"></circle><path class="check-path" d="M10 16l4 4 8-8"></path></svg><div><div class="deliv-name" data-i18n="pages.ecommerce-wp.deliv6_name">Mobile-optimised checkout</div><div class="deliv-desc" data-i18n="pages.ecommerce-wp.deliv6_desc">Touch-native cart and checkout, tested on real devices. Fewer drop-offs.</div></div></div>
+</div>
+</div>
 </section>
-
 <!-- S5: Timeline -->
-<section id="timeline-section" class="lp-section">
-  <div class="lp-wrap">
-    <div class="sr"><span class="pill" data-i18n="pages.ecommerce-wp.timeline_pill">Build timeline</span><h2 class="section-h" data-i18n="pages.ecommerce-wp.timeline_h">Store live in 4 weeks.</h2><p class="section-sub" data-i18n="pages.ecommerce-wp.timeline_sub">The schedule is designed around the natural complexity of a commerce build — no shortcuts that create rework.</p></div>
-    <div class="timeline-scroll"><div class="timeline-svg-wrap">
-      <svg class="timeline-svg" viewBox="0 0 860 140" preserveAspectRatio="xMidYMid meet">
-        <line class="t-track" x1="60" y1="70" x2="800" y2="70"/>
-        <line class="t-path" x1="60" y1="70" x2="60" y2="70" id="t-line"/>
-        <circle class="t-ring" cx="60" cy="70" r="9"/><circle class="t-dot" cx="60" cy="70" r="4"/>
-        <text class="t-day" x="60" y="28" text-anchor="middle" data-i18n="pages.ecommerce-wp.tl1_day">WEEK 1</text><text class="t-label" x="60" y="46" text-anchor="middle" data-i18n="pages.ecommerce-wp.tl1_label">Scope + build</text><text class="t-sub" x="60" y="97" text-anchor="middle" data-i18n="pages.ecommerce-wp.tl1_sub1">Kick-off, catalogue</text><text class="t-sub" x="60" y="112" text-anchor="middle" data-i18n="pages.ecommerce-wp.tl1_sub2">scoped + started</text>
-        <circle class="t-ring" cx="430" cy="70" r="9"/><circle class="t-dot" cx="430" cy="70" r="4"/>
-        <text class="t-day" x="430" y="28" text-anchor="middle" data-i18n="pages.ecommerce-wp.tl2_day">WEEK 2–3</text><text class="t-label" x="430" y="46" text-anchor="middle" data-i18n="pages.ecommerce-wp.tl2_label">Payments + AI</text><text class="t-sub" x="430" y="97" text-anchor="middle" data-i18n="pages.ecommerce-wp.tl2_sub1">Gateways live,</text><text class="t-sub" x="430" y="112" text-anchor="middle" data-i18n="pages.ecommerce-wp.tl2_sub2">cart recovery wired</text>
-        <circle class="t-ring" cx="800" cy="70" r="9"/><circle class="t-dot" cx="800" cy="70" r="4"/>
-        <text class="t-day" x="800" y="28" text-anchor="middle" data-i18n="pages.ecommerce-wp.tl3_day">WEEK 4</text><text class="t-label" x="800" y="46" text-anchor="middle" data-i18n="pages.ecommerce-wp.tl3_label">Live</text><text class="t-sub" x="800" y="97" text-anchor="middle" data-i18n="pages.ecommerce-wp.tl3_sub1">Domain connected,</text><text class="t-sub" x="800" y="112" text-anchor="middle" data-i18n="pages.ecommerce-wp.tl3_sub2">first orders ready</text>
-      </svg>
-    </div></div>
-  </div>
+<section class="lp-section" id="timeline-section">
+<div class="lp-wrap">
+<div class="sr"><span class="pill" data-i18n="pages.ecommerce-wp.timeline_pill">Build timeline</span><h2 class="section-h" data-i18n="pages.ecommerce-wp.timeline_h">Store live in 4 weeks.</h2><p class="section-sub" data-i18n="pages.ecommerce-wp.timeline_sub">The schedule is designed around the natural complexity of a commerce build — no shortcuts that create rework.</p></div>
+<div class="timeline-scroll"><div class="timeline-svg-wrap">
+<svg class="timeline-svg" preserveaspectratio="xMidYMid meet" viewbox="0 0 860 140">
+<line class="t-track" x1="60" x2="800" y1="70" y2="70"></line>
+<line class="t-path" id="t-line" x1="60" x2="60" y1="70" y2="70"></line>
+<circle class="t-ring" cx="60" cy="70" r="9"></circle><circle class="t-dot" cx="60" cy="70" r="4"></circle>
+<text class="t-day" data-i18n="pages.ecommerce-wp.tl1_day" text-anchor="middle" x="60" y="28">WEEK 1</text><text class="t-label" data-i18n="pages.ecommerce-wp.tl1_label" text-anchor="middle" x="60" y="46">Scope + build</text><text class="t-sub" data-i18n="pages.ecommerce-wp.tl1_sub1" text-anchor="middle" x="60" y="97">Kick-off, catalogue</text><text class="t-sub" data-i18n="pages.ecommerce-wp.tl1_sub2" text-anchor="middle" x="60" y="112">scoped + started</text>
+<circle class="t-ring" cx="430" cy="70" r="9"></circle><circle class="t-dot" cx="430" cy="70" r="4"></circle>
+<text class="t-day" data-i18n="pages.ecommerce-wp.tl2_day" text-anchor="middle" x="430" y="28">WEEK 2–3</text><text class="t-label" data-i18n="pages.ecommerce-wp.tl2_label" text-anchor="middle" x="430" y="46">Payments + AI</text><text class="t-sub" data-i18n="pages.ecommerce-wp.tl2_sub1" text-anchor="middle" x="430" y="97">Gateways live,</text><text class="t-sub" data-i18n="pages.ecommerce-wp.tl2_sub2" text-anchor="middle" x="430" y="112">cart recovery wired</text>
+<circle class="t-ring" cx="800" cy="70" r="9"></circle><circle class="t-dot" cx="800" cy="70" r="4"></circle>
+<text class="t-day" data-i18n="pages.ecommerce-wp.tl3_day" text-anchor="middle" x="800" y="28">WEEK 4</text><text class="t-label" data-i18n="pages.ecommerce-wp.tl3_label" text-anchor="middle" x="800" y="46">Live</text><text class="t-sub" data-i18n="pages.ecommerce-wp.tl3_sub1" text-anchor="middle" x="800" y="97">Domain connected,</text><text class="t-sub" data-i18n="pages.ecommerce-wp.tl3_sub2" text-anchor="middle" x="800" y="112">first orders ready</text>
+</svg>
+</div></div>
+</div>
 </section>
-
 <!-- S6: Risk Reversal -->
 <section class="lp-section" id="guarantee">
-  <div class="lp-wrap">
-    <div class="risk-outer sr"><div class="risk-inner">
-      <div class="risk-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-      <h2 class="risk-h" data-i18n="pages.ecommerce-wp.guarantee_h">Launch Guarantee</h2>
-      <p class="risk-copy" data-i18n="pages.ecommerce-wp.guarantee_copy">"If your store isn't taking real orders within 4 weeks of our kick-off call, I continue working at no extra charge until it does."</p>
-      <span class="risk-badge"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pages.ecommerce-wp.guarantee_badge">Backed by contract</span></span>
-    </div></div>
-  </div>
+<div class="lp-wrap">
+<div class="risk-outer sr"><div class="risk-inner">
+<div class="risk-icon"><svg viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+<h2 class="risk-h" data-i18n="pages.ecommerce-wp.guarantee_h">Launch Guarantee</h2>
+<p class="risk-copy" data-i18n="pages.ecommerce-wp.guarantee_copy">"If your store isn't taking real orders within 4 weeks of our kick-off call, I continue working at no extra charge until it does."</p>
+<span class="risk-badge"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-i18n="pages.ecommerce-wp.guarantee_badge">Backed by contract</span></span>
+</div></div>
+</div>
 </section>
-
 <!-- S7: FAQ -->
 <section class="lp-section" id="faq">
-  <div class="lp-wrap">
-    <div class="sr"><span class="pill" data-i18n="pages.ecommerce-wp.faq_pill">Questions</span><h2 class="section-h" data-i18n="pages.ecommerce-wp.faq_h">Everything you might wonder.</h2></div>
-    <div class="faq-wrap">
-      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q" data-i18n="pages.ecommerce-wp.faq1_q">Is WooCommerce the right platform for my store?</span><span class="faq-arrow" aria-hidden="true"></span></button><div class="faq-body"><p class="faq-ans" data-i18n="pages.ecommerce-wp.faq1_a">WooCommerce is the right choice for stores where you need full control — custom product types, complex rules, and the ability to own your data. If you're selling 5 SKUs and want Shopify's simplicity, I'll tell you honestly. If you need a real commerce engine, WooCommerce is the answer.</p></div></div>
-      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q" data-i18n="pages.ecommerce-wp.faq2_q">How does AI cart recovery actually work?</span><span class="faq-arrow" aria-hidden="true"></span></button><div class="faq-body"><p class="faq-ans" data-i18n="pages.ecommerce-wp.faq2_a">When WooCommerce detects an abandoned cart (customer added items but didn't complete checkout), an automated sequence fires — personalised email with the exact products they left, then a follow-up nudge. It runs on your own infrastructure — no third-party cart recovery subscription required.</p></div></div>
-      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q" data-i18n="pages.ecommerce-wp.faq3_q">Do I need to provide all the product content?</span><span class="faq-arrow" aria-hidden="true"></span></button><div class="faq-body"><p class="faq-ans" data-i18n="pages.ecommerce-wp.faq3_a">Yes — product names, descriptions, prices, and images should come from you. I can help structure and format them in WordPress, and AI can generate first-draft product descriptions if you're starting from scratch.</p></div></div>
-      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q" data-i18n="pages.ecommerce-wp.faq4_q">What CRMs does the sync connect to?</span><span class="faq-arrow" aria-hidden="true"></span></button><div class="faq-body"><p class="faq-ans" data-i18n="pages.ecommerce-wp.faq4_a">HubSpot, Notion, Airtable, Pipedrive, and most tools with an API or Zapier connector. We scope the exact integration during kick-off — if your CRM is on n8n's integration list, it connects.</p></div></div>
-      <div class="faq-item"><button class="faq-btn" aria-expanded="false" type="button"><span class="faq-q" data-i18n="pages.ecommerce-wp.faq5_q">Can I add more products or categories after launch?</span><span class="faq-arrow" aria-hidden="true"></span></button><div class="faq-body"><p class="faq-ans" data-i18n="pages.ecommerce-wp.faq5_a">Yes. WooCommerce's admin panel is designed for non-technical users to manage their own catalogue. I'll show you how during handoff. If you need structural changes (new product types, new shipping zones), those are billed at €65/hour.</p></div></div>
-    </div>
-  </div>
+<div class="lp-wrap">
+<div class="sr"><span class="pill" data-i18n="pages.ecommerce-wp.faq_pill">Questions</span><h2 class="section-h" data-i18n="pages.ecommerce-wp.faq_h">Everything you might wonder.</h2></div>
+<div class="faq-wrap">
+<div class="faq-item"><button aria-expanded="false" class="faq-btn" type="button"><span class="faq-q" data-i18n="pages.ecommerce-wp.faq1_q">Is WooCommerce the right platform for my store?</span><span aria-hidden="true" class="faq-arrow"></span></button><div class="faq-body"><p class="faq-ans" data-i18n="pages.ecommerce-wp.faq1_a">WooCommerce is the right choice for stores where you need full control — custom product types, complex rules, and the ability to own your data. If you're selling 5 SKUs and want Shopify's simplicity, I'll tell you honestly. If you need a real commerce engine, WooCommerce is the answer.</p></div></div>
+<div class="faq-item"><button aria-expanded="false" class="faq-btn" type="button"><span class="faq-q" data-i18n="pages.ecommerce-wp.faq2_q">How does AI cart recovery actually work?</span><span aria-hidden="true" class="faq-arrow"></span></button><div class="faq-body"><p class="faq-ans" data-i18n="pages.ecommerce-wp.faq2_a">When WooCommerce detects an abandoned cart (customer added items but didn't complete checkout), an automated sequence fires — personalised email with the exact products they left, then a follow-up nudge. It runs on your own infrastructure — no third-party cart recovery subscription required.</p></div></div>
+<div class="faq-item"><button aria-expanded="false" class="faq-btn" type="button"><span class="faq-q" data-i18n="pages.ecommerce-wp.faq3_q">Do I need to provide all the product content?</span><span aria-hidden="true" class="faq-arrow"></span></button><div class="faq-body"><p class="faq-ans" data-i18n="pages.ecommerce-wp.faq3_a">Yes — product names, descriptions, prices, and images should come from you. I can help structure and format them in WordPress, and AI can generate first-draft product descriptions if you're starting from scratch.</p></div></div>
+<div class="faq-item"><button aria-expanded="false" class="faq-btn" type="button"><span class="faq-q" data-i18n="pages.ecommerce-wp.faq4_q">What CRMs does the sync connect to?</span><span aria-hidden="true" class="faq-arrow"></span></button><div class="faq-body"><p class="faq-ans" data-i18n="pages.ecommerce-wp.faq4_a">HubSpot, Notion, Airtable, Pipedrive, and most tools with an API or Zapier connector. We scope the exact integration during kick-off — if your CRM is on n8n's integration list, it connects.</p></div></div>
+<div class="faq-item"><button aria-expanded="false" class="faq-btn" type="button"><span class="faq-q" data-i18n="pages.ecommerce-wp.faq5_q">Can I add more products or categories after launch?</span><span aria-hidden="true" class="faq-arrow"></span></button><div class="faq-body"><p class="faq-ans" data-i18n="pages.ecommerce-wp.faq5_a">Yes. WooCommerce's admin panel is designed for non-technical users to manage their own catalogue. I'll show you how during handoff. If you need structural changes (new product types, new shipping zones), those are billed at €65/hour.</p></div></div>
+</div>
+</div>
 </section>
-
 <!-- S8: Final CTA -->
 <section class="lp-cta-sect" id="book">
-  <div class="cta-glow" aria-hidden="true"></div>
-  <div class="cta-content sr">
-    <span class="pill" data-i18n="pages.ecommerce-wp.cta_pill">Ready to launch?</span>
-    <h2 class="cta-h" data-i18n="pages.ecommerce-wp.cta_h">Your store,<br>built to <span class="accent">sell.</span></h2>
-    <p class="cta-p" data-i18n="pages.ecommerce-wp.cta_p">Book a free 30-minute scoping call. We define the catalogue, agree the spec, and I start building the same week.</p>
-    <div class="cta-row">
-      <a href="/contact?objective=ecommerce-wp" class="cta-pill">
-        <span data-i18n="pages.ecommerce-wp.cta_btn">Book a free call</span>
-        <span class="cta-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
-      </a>
-    </div>
-  </div>
+<div aria-hidden="true" class="cta-glow"></div>
+<div class="cta-content sr">
+<span class="pill" data-i18n="pages.ecommerce-wp.cta_pill">Ready to launch?</span>
+<h2 class="cta-h" data-i18n="pages.ecommerce-wp.cta_h">Your store,<br>built to <span class="accent">sell.</span></h2>
+<p class="cta-p" data-i18n="pages.ecommerce-wp.cta_p">Book a free 30-minute scoping call. We define the catalogue, agree the spec, and I start building the same week.</p>
+<div class="cta-row">
+<a class="cta-pill" href="/contact?objective=ecommerce-wp">
+<span data-i18n="pages.ecommerce-wp.cta_btn">Book a free call</span>
+<span aria-hidden="true" class="cta-arrow"><svg viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+</a>
+</div>
+</div>
 </section>
-
 <!-- Site footer (identical to all other pages) -->
 <footer class="bg-obsidian pt-24 pb-12 px-6 border-t border-primary/20 relative">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
-    <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20">
-            <div class="md:col-span-3">
-                <div class="flex items-center gap-3 mb-6">
-                    <img src="/assets/images/cf-mark.png?v=3" alt="Camelot Flows" class="object-contain" style="height:56px;width:auto" />
-                    <span class="font-display text-xl font-bold tracking-tighter uppercase text-white">Camelot Flows</span>
-                </div>
-                <p class="text-slate-500 mb-8 text-sm leading-relaxed font-mono">
-                    <span data-i18n="common.footer.location_line_1"><span class="text-primary">&gt;</span> Location: Chisinau, MD</span><br>
-                    <span data-i18n="common.footer.location_line_2"><span class="text-primary">&gt;</span> Coordinates: 47.0105° N, 28.8638° E</span><br>
-                    <span data-i18n="common.footer.location_line_3"><span class="text-primary">&gt;</span> Mission: Premium builds. You own the asset.</span>
-                </p>
-                <div class="flex gap-4">
-                    <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="https://www.linkedin.com/in/alex-buzi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                    </a>
-                    <a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="mailto:alex@camelotflows.dev" aria-label="Email">
-                        <span class="material-symbols-outlined text-lg">mail</span>
-                    </a>
-                    <a class="nav-phone-btn w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="tel:+37369555936" aria-label="Call">
-                        <span class="material-symbols-outlined cf-phone-icon text-lg">call</span>
-                    </a>
-                </div>
-                <a href="tel:+37369555936" class="nav-phone-btn mt-4 flex items-center gap-2 text-slate-500 hover:text-primary transition-colors text-xs font-mono">
-                    <span class="material-symbols-outlined cf-phone-icon" style="font-size:14px">call</span>
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20">
+<div class="md:col-span-3">
+<div class="flex items-center gap-3 mb-6">
+<img alt="Camelot Flows" class="object-contain" src="/assets/images/cf-mark.png?v=3" style="height:56px;width:auto">
+<span class="font-display text-xl font-bold tracking-tighter uppercase text-white">Camelot Flows</span>
+</div>
+<p class="text-slate-500 mb-8 text-sm leading-relaxed font-mono">
+<span data-i18n="common.footer.location_line_1"><span class="text-primary">&gt;</span> Location: Chisinau, MD</span><br>
+<span data-i18n="common.footer.location_line_2"><span class="text-primary">&gt;</span> Coordinates: 47.0105° N, 28.8638° E</span><br>
+<span data-i18n="common.footer.location_line_3"><span class="text-primary">&gt;</span> Mission: Premium builds. You own the asset.</span>
+</p>
+<div class="flex gap-4">
+<a aria-label="LinkedIn" class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="https://www.linkedin.com/in/alex-buzi/" rel="noopener noreferrer" target="_blank">
+<svg fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+</a>
+<a aria-label="Email" class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="mailto:alex@camelotflows.dev">
+<span class="material-symbols-outlined text-lg">mail</span>
+</a>
+<a aria-label="Call" class="nav-phone-btn w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="tel:+37369555936">
+<span class="material-symbols-outlined cf-phone-icon text-lg">call</span>
+</a>
+</div>
+<a class="nav-phone-btn mt-4 flex items-center gap-2 text-slate-500 hover:text-primary transition-colors text-xs font-mono" href="tel:+37369555936">
+<span class="material-symbols-outlined cf-phone-icon" style="font-size:14px">call</span>
                     +373 69 555 936
                 </a>
-            </div>
-            <div class="md:col-span-2">
-                <h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_protocol">Protocol</h5>
-                <ul class="space-y-3 text-slate-500 text-sm font-mono">
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/arsenal"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_arsenal">The Arsenal</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/merlin"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_merlin">Merlin</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/case-studies"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_cases">Case Studies</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/for-agencies"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_agencies">Agencies</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/blog/"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.blog">Blog</span></a></li>
-                </ul>
-            </div>
-            <div class="md:col-span-2">
-                <h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_services">Services</h5>
-                <ul class="space-y-3 text-slate-500 text-sm font-mono">
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-creation"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_creation">Site Creation</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-maintenance"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_maintenance">Maintenance</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-automation"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_automation">Automations</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-marketing"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_marketing">Marketing</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/audit"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_audit">Free Website Audit</span></a></li>
-                </ul>
-            </div>
-            <div class="md:col-span-2">
-                <h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_company">Company</h5>
-                <ul class="space-y-3 text-slate-500 text-sm font-mono">
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/about"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_about">About</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/work-with-me"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_work">Work With</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/legal"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_legal">Legal</span></a></li>
-                    <li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/contact"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_contact">Contact</span></a></li>
-                </ul>
-            </div>
-            <div class="md:col-span-3">
-                <h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_vanguard">Vanguard</h5>
-                <p class="text-slate-500 text-sm mb-6 leading-relaxed" data-i18n="common.footer.col_vanguard_lead">Weekly insights on AI automation sent directly to your terminal.</p>
-                <div class="flex gap-2 p-1 bg-white/5 rounded border border-white/10">
-                    <label for="nl-email-ec" class="sr-only">Email address</label>
-                    <input id="nl-email-ec" class="bg-transparent border-none focus:ring-0 text-sm flex-1 px-4 text-white font-mono placeholder:text-slate-600" placeholder="ENTER_EMAIL" type="email" data-i18n-attr="placeholder:common.footer.col_vanguard_placeholder">
-                    <button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded text-xs font-bold transition-colors font-mono" data-i18n="common.footer.col_vanguard_submit">[SUBMIT]</button>
-                </div>
-            </div>
-        </div>
-        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p class="text-xs text-slate-600 font-mono" data-i18n="common.footer.copyright">&copy; 2026 Camelot Flows. Built by Alex Buzi.</p>
-            <div class="flex flex-wrap justify-center gap-4 md:gap-8">
-                <div class="flex items-center gap-2 text-xs text-slate-500 font-mono"><span class="material-symbols-outlined text-sm text-green-500">wifi</span><span data-i18n="common.footer.status_optimal">System Status: Optimal</span></div>
-                <div class="flex items-center gap-2 text-xs text-slate-500 font-mono"><span class="material-symbols-outlined text-sm text-blue-500">bolt</span><span data-i18n="common.footer.status_lightning">Lightning Fast Performance</span></div>
-            </div>
-        </div>
-    </div>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_protocol">Protocol</h5>
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/arsenal"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_arsenal">The Arsenal</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/merlin"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_merlin">Merlin</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/case-studies"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_cases">Case Studies</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/for-agencies"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_protocol_agencies">Agencies</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/blog/"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.blog">Blog</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_services">Services</h5>
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-creation"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_creation">Site Creation</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-maintenance"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_maintenance">Maintenance</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-automation"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_automation">Automations</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/service-marketing"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_marketing">Marketing</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/audit"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_services_audit">Free Website Audit</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_company">Company</h5>
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/about"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_about">About</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/work-with-me"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_work">Work With</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/legal"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_legal">Legal</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/contact"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span><span data-i18n="common.footer.col_company_contact">Contact</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-3">
+<h5 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_vanguard">Vanguard</h5>
+<p class="text-slate-500 text-sm mb-6 leading-relaxed" data-i18n="common.footer.col_vanguard_lead">Weekly insights on AI automation sent directly to your terminal.</p>
+<div class="flex gap-2 p-1 bg-white/5 rounded border border-white/10">
+<label class="sr-only" for="nl-email-ec">Email address</label>
+<input class="bg-transparent border-none focus:ring-0 text-sm flex-1 px-4 text-white font-mono placeholder:text-slate-600" data-i18n-attr="placeholder:common.footer.col_vanguard_placeholder" id="nl-email-ec" placeholder="ENTER_EMAIL" type="email">
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded text-xs font-bold transition-colors font-mono" data-i18n="common.footer.col_vanguard_submit">[SUBMIT]</button>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-xs text-slate-600 font-mono" data-i18n="common.footer.copyright">© 2026 Camelot Flows. Built by Alex Buzi.</p>
+<div class="flex flex-wrap justify-center gap-4 md:gap-8">
+<div class="flex items-center gap-2 text-xs text-slate-500 font-mono"><span class="material-symbols-outlined text-sm text-green-500">wifi</span><span data-i18n="common.footer.status_optimal">System Status: Optimal</span></div>
+<div class="flex items-center gap-2 text-xs text-slate-500 font-mono"><span class="material-symbols-outlined text-sm text-blue-500">bolt</span><span data-i18n="common.footer.status_lightning">Lightning Fast Performance</span></div>
+</div>
+</div>
+</div>
 </footer>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="assets/js/locales.js"></script>
-<script defer src="assets/js/i18n.js"></script>
-<script defer src="assets/site.js?v=2"></script>
+<script defer="" src="assets/js/i18n.js"></script>
+<script defer="" src="assets/site.js?v=2"></script>
 <script>
 // Theme toggle (site nav button)
 (function(){

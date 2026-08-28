@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+
+<html data-cf-static-lang="ro" data-i18n-page="index" lang="ro">
+<head>
+<!-- CF: theme bootstrap (sync, before paint) -->
+<script>
+      (function () {
+        var html = document.documentElement;
+        try {
+          var c = document.cookie.match('(?:^|;) ?cf_theme=([^;]*)');
+          var t = c ? c[1] : (localStorage.getItem('cf_theme') || 'cozy');
+          html.setAttribute('data-theme', t);
+        } catch (e) { html.setAttribute('data-theme', 'cozy'); }
+        try {
+          if (sessionStorage.getItem('cf_loaded') === '1') {
+            html.classList.add('cf-skip-preloader');
+          }
+        } catch (e) {}
+        html.classList.add('js');
+      })();
+    </script>
+<!-- CF: lang bootstrap (sync, before paint) -->
+<script>
+      (function () {
+        var html = document.documentElement;
+        try {
+          var l = document.documentElement.lang || 'en';
+          if (['en','ro','ru'].indexOf(l) === -1) l = 'en';
+          html.setAttribute('lang', l);
+          html.setAttribute('data-cf-lang', l);
+          if (l !== 'en') html.setAttribute('data-i18n-loading', '1');
+        } catch (e) { html.setAttribute('lang', 'en'); }
+      })();
+    </script>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Dezvoltare web, WooCommerce și automatizări AI | Camelot Flows</title>
+<meta content="Dezvoltare WordPress și WooCommerce, redesign, migrări, integrări AI și mentenanță pentru afaceri din Moldova, România, Europa și SUA." name="description">
+<link href="https://camelotflows.dev/ro/" rel="canonical"><link href="https://camelotflows.dev/" hreflang="en" rel="alternate"><link href="https://camelotflows.dev/ro/" hreflang="ro" rel="alternate"><link href="https://camelotflows.dev/ru/" hreflang="ru" rel="alternate"><link href="https://camelotflows.dev/" hreflang="x-default" rel="alternate">
+
+
+
+
+<link href="/favicon.ico" rel="icon" type="image/x-icon">
+<link href="/favicon.png" rel="icon" sizes="32x32" type="image/png">
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+<!-- Open Graph -->
+<meta content="website" property="og:type">
+<meta content="Dezvoltare web, WooCommerce și automatizări AI | Camelot Flows" property="og:title">
+<meta content="Dezvoltare WordPress și WooCommerce, redesign, migrări, integrări AI și mentenanță pentru afaceri din Moldova, România, Europa și SUA." property="og:description">
+<meta content="https://camelotflows.dev/assets/images/cozy-freelancer/cf-cozy-og-default.webp" property="og:image">
+<meta content="https://camelotflows.dev/" property="og:url">
+<meta content="Camelot Flows" property="og:site_name">
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card">
+<meta content="Dezvoltare web, WooCommerce și automatizări AI | Camelot Flows" name="twitter:title">
+<meta content="Dezvoltare WordPress și WooCommerce, redesign, migrări, integrări AI și mentenanță pentru afaceri din Moldova, România, Europa și SUA." name="twitter:description">
+<meta content="https://camelotflows.dev/assets/images/cozy-freelancer/cf-cozy-og-default.webp" name="twitter:image">
+<link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect">
+<link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect">
+<link as="script" crossorigin="" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" rel="preload">
+<link as="script" crossorigin="" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" rel="preload">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=optional" rel="preload">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=optional" media="print" onload="this.media='all'" rel="stylesheet">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=optional" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"></noscript>
+<link href="/assets/css/tailwind.built.css" rel="stylesheet">
+<link href="/assets/site.min.css?v=2" media="print" onload="this.media='all'" rel="stylesheet">
+<noscript><link href="/assets/site.min.css?v=2" rel="stylesheet"></noscript>
+<link href="/assets/css/camelot.min.css?v=20" media="print" onload="this.media='all'" rel="stylesheet">
+<noscript><link href="/assets/css/camelot.min.css?v=20" rel="stylesheet"></noscript>
+<link href="/assets/css/theme-night.min.css?v=1" media="print" onload="this.media='all'" rel="stylesheet">
+<noscript><link href="/assets/css/theme-night.min.css?v=1" rel="stylesheet"></noscript>
+<link href="/assets/css/lang-switcher.css" media="print" onload="this.media='all'" rel="stylesheet">
+<noscript><link href="/assets/css/lang-switcher.css" rel="stylesheet"></noscript>
+<link as="document" href="/ro/arsenal" rel="prefetch">
+<link as="document" href="/ro/merlin" rel="prefetch">
+<link as="document" href="/ro/contact" rel="prefetch">
+<link as="document" href="/ro/case-studies" rel="prefetch">
+<link as="document" href="/ro/about" rel="prefetch">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://camelotflows.dev/#organization","name":"Camelot Flows","alternateName":"Camelot Flows Atelier","description":"Solo web development studio providing WordPress and WooCommerce builds, redesigns, migrations, AI integrations, and maintenance.","url":"https://camelotflows.dev/ro/","image":"https://camelotflows.dev/assets/images/cozy-freelancer/cf-cozy-og-default.webp","founder":{"@id":"https://camelotflows.dev/#alexandru-buzi","@type":"Person","name":"Alexandru Buzi","url":"https://camelotflows.dev/ro/about"},"priceRange":"€€","knowsLanguage":["en","ro","ru"],"knowsAbout":["Web Development","WordPress Development","WooCommerce","Website Migration","AI Automation","Website Maintenance"],"slogan":"You've earned the reputation. Make sure your website isn't losing it.","telephone":"+37369555936","email":"alex@camelotflows.dev","address":{"@type":"PostalAddress","addressLocality":"Chișinău","addressCountry":"MD"},"areaServed":[{"@type":"Country","name":"Moldova"},{"@type":"Country","name":"Romania"},{"@type":"AdministrativeArea","name":"European Union"},{"@type":"Country","name":"United States"}],"sameAs":["https://www.linkedin.com/in/alex-buzi/","https://camelotflows.dev/about"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"alex@camelotflows.dev","availableLanguage":["en","ro","ru"]},"inLanguage":"ro"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","@id":"https://camelotflows.dev/ro/#found-and-converting-build","name":"Found & Converting — Local Business Website Build","serviceType":"Website design + local discovery foundation","description":"A one-time premium website build that is set up to be found on Google for the searches that make a local business money, and built to convert those visitors into bookings, calls, and sales. Includes Google Business Profile optimization, on-page local SEO targeting profitable-intent keywords, LocalBusiness schema, service pages for the money services, a review-request flow, and a full handover. The client owns the asset outright — no retainer, no middleman. Does not include ongoing ad management or traffic/lead guarantees.","category":"Web design","provider":{"@id":"https://camelotflows.dev/#organization"},"areaServed":[{"@type":"Country","name":"Moldova"},{"@type":"Country","name":"Romania"},{"@type":"AdministrativeArea","name":"European Union"},{"@type":"Country","name":"United States"}],"audience":{"@type":"BusinessAudience","name":"Local service SMBs with existing demand losing it to a weak or unfindable website"},"termsOfService":"One-time build, full client ownership on handover. Excludes ad management and traffic/lead guarantees.","offers":[{"@type":"Offer","name":"Start","description":"The end of \"I don't really have a website\" — a clean, fast, findable one-pager, live in days. You own it.","price":"390","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","price":"390","priceCurrency":"EUR","valueAddedTaxIncluded":false,"minPrice":"390"},"category":"Website build (one-time)","availability":"https://schema.org/InStock","url":"https://camelotflows.dev/ro/#pricing-cards"},{"@type":"Offer","name":"Found — Core","description":"The full get-found-and-convert build: Google Business Profile, on-page local SEO, LocalBusiness schema, conversion-first design, review-request flow, and a full handover. Owned outright.","price":"690","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","price":"690","priceCurrency":"EUR","valueAddedTaxIncluded":false,"minPrice":"690"},"category":"Website build (one-time)","availability":"https://schema.org/InStock","url":"https://camelotflows.dev/ro/#pricing-cards"},{"@type":"Offer","name":"Found — Standard","description":"A larger multi-page build with dedicated service pages for each money service, richer conversion design, and a full local-SEO foundation. Owned outright.","price":"990","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","price":"990","priceCurrency":"EUR","valueAddedTaxIncluded":false,"minPrice":"990"},"category":"Website build (one-time)","availability":"https://schema.org/InStock","url":"https://camelotflows.dev/ro/#pricing-cards"},{"@type":"Offer","name":"Found — Premium","description":"Fully bespoke design with advanced motion and interactions, scaled to your page count. The flagship owned asset — fixed to your services and pages.","price":"1200","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","price":"1200","priceCurrency":"EUR","valueAddedTaxIncluded":false,"minPrice":"1200"},"category":"Website build (one-time)","availability":"https://schema.org/InStock","url":"https://camelotflows.dev/ro/#pricing-cards"}],"inLanguage":"ro"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://camelotflows.dev/ro/#website","url":"https://camelotflows.dev/ro/","name":"Camelot Flows","description":"Premium websites and AI automation from a solo workshop in Chisinau.","inLanguage":"ro"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will you get me more customers?","acceptedAnswer":{"@type":"Answer","text":"Honestly: I build the asset, you run your sales. My job is to make sure the people already searching for what you do can find you — Google Business Profile dialed in, local SEO aimed at profitable-intent searches, LocalBusiness schema — and that the site turns those visitors into bookings. What I don't do is run your ads or promise a number of leads. If you already have demand from referrals, foot traffic, or reputation, I make sure it finally lands on a site worthy of it. If you have no demand and need someone to make you famous, I'm not the right fit."}},{"@type":"Question","name":"Do I own the website, or am I renting it?","acceptedAnswer":{"@type":"Answer","text":"You own it outright. It's a one-time build handed over to you with a guide — no rental, no retainer trap, no being held hostage by your developer. The site, the content, and the accounts are yours to keep and control."}},{"@type":"Question","name":"Will my business show up on Google?","acceptedAnswer":{"@type":"Answer","text":"I set the foundation so you can be found: your Google Business Profile is optimized, the site has on-page local SEO targeting the searches that actually bring paying customers, and the LocalBusiness schema Google needs to trust and place you is built in. I can't guarantee a specific ranking position — nobody honest can — but I make sure everything within a builder's control is done right so you're set up to be found."}},{"@type":"Question","name":"What does it cost, and are there hidden fees or monthly charges?","acceptedAnswer":{"@type":"Answer","text":"One fixed price, agreed upfront. The Start one-pager begins at €390; the full Found build is €690–€1,200, fixed to your page count. No surprises and no required monthly fee — you own the asset when it's done. There's an optional Hosting & Care plan if you want me to keep handling hosting, SSL, backups, and updates afterward, but it's opt-in and sold as technical work performed, never as a traffic or ranking promise."}},{"@type":"Question","name":"Do you work with businesses outside Moldova?","acceptedAnswer":{"@type":"Answer","text":"Yes. I'm a solo atelier based in Chișinău working with local service businesses across Moldova and Romania first, and the EU and US next. Everything is delivered remotely with direct builder access — no agency layers, no account managers, no middlemen between you and the person actually building your site."}},{"@type":"Question","name":"What kind of businesses is this built for?","acceptedAnswer":{"@type":"Answer","text":"Local service businesses that already have demand — salons, clinics, dentists, restaurants, trades, fitness studios, and similar — who are losing customers to a weak, outdated, or unfindable website. If you have a reputation and repeat customers but your site doesn't reflect it, that's exactly what this is for. If you have no demand yet and need marketing to create it from scratch, this isn't the right offer."}}],"inLanguage":"ro"}</script>
+<style>
+/* ── Critical CSS — inlined to remove render-blocking FCP penalty ── */
+/* CSS tokens (camelot.css :root) */
+:root,[data-theme="night"]{--cft-primary:79 70 229;--cft-primary-glow:99 102 241;--cft-accent:139 92 246;--cft-cobalt:30 58 138;--cft-obsidian:5 5 8;--cft-obsidian-light:10 10 18;--cft-parchment:10 10 18;--cft-candle:0 242 255;--cft-sage:139 92 246;--cft-terracotta:99 102 241;--cft-charcoal:15 23 42;--cf-alabaster:#F5F4F0;--cf-cream:#EDEBE6;--cf-sand:#E0DDD6;--cf-parchment:#F1ECDF;--cf-charcoal:#1A1A18;--cf-charcoal-soft:#302F2B;--cf-muted:#6D6A64;--cf-line:rgba(26,26,24,0.1);--cf-line-strong:rgba(26,26,24,0.2);--cf-sage:#7B9171;--cf-sage-soft:rgba(123,145,113,0.15);--cf-terracotta:#C4785C;--cf-terracotta-soft:rgba(196,120,92,0.15);--cf-cobalt:#3F5D8D;--cf-candle:#E8B96B;--cf-candle-glow:rgba(232,185,107,0.18);--bg:#f6f3ed;--bg-alt:#ece8df;--surface:rgba(255,255,255,0.68);--surface-strong:rgba(255,255,255,0.86);--line:rgba(26,26,24,0.1);--line-strong:rgba(26,26,24,0.18);--text:#171715;--text-soft:#302f2b;--muted:#6d6a64;--sage:#758d6c;--terracotta:#c4785c;--cobalt:#3f5d8d}
+[data-theme="cozy"]{--cft-primary:196 120 92;--cft-primary-glow:212 135 90;--cft-accent:123 145 113;--cft-cobalt:63 93 141;--cft-obsidian:245 244 240;--cft-obsidian-light:237 235 230;--cft-parchment:241 236 223;--cft-candle:232 185 107;--cft-sage:123 145 113;--cft-terracotta:196 120 92;--cft-charcoal:26 26 24}
+[data-theme="night"]{--surface:rgba(15,15,25,.72);--surface-strong:rgba(20,20,35,.88);--line:rgba(255,255,255,.09);--line-strong:rgba(255,255,255,.16);--text:#e2e8f0;--text-soft:#b4c0d0;--muted:rgba(180,192,208,.70);--bg:#050508;--bg-alt:#0a0a12}
+/* Body/html base */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:radial-gradient(circle at 0% 0%,rgba(117,141,108,.16),transparent 30%),radial-gradient(circle at 100% 15%,rgba(196,120,92,.12),transparent 30%),#f6f3ed;color:#171715;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html,body{max-width:100%;overflow-x:clip}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+[data-theme="night"] body{background:radial-gradient(circle at 0% 0%,rgba(30,58,138,.09),transparent 40%),radial-gradient(circle at 100% 20%,rgba(139,92,246,.06),transparent 35%),#050508;color:#e2e8f0}
+[data-theme="cozy"] body.theme-cozy{background:radial-gradient(circle at 0% 0%,rgba(123,145,113,.16),transparent 35%),radial-gradient(circle at 100% 10%,rgba(196,120,92,.12),transparent 35%),#F5F4F0;color:#1A1A18}
+/* glass-panel (nav pill) */
+.glass-panel{background:rgba(10,10,18,.6);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(99,102,241,.2);box-shadow:inset 0 1px 0 0 rgba(255,255,255,.05)}
+[data-theme="cozy"] body.theme-cozy .glass-panel{background:rgba(255,255,255,.72);border-color:rgba(26,26,24,.1);backdrop-filter:blur(18px);box-shadow:0 4px 24px -8px rgba(26,26,24,.1)}
+/* theme-toggle (visible in nav, must not flash) */
+.theme-toggle{position:relative;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;background:transparent;border:1px solid rgba(99,102,241,.25);cursor:pointer;color:inherit;transition:background .25s ease,border-color .25s ease}
+.theme-toggle .icon-cozy{display:inline-block}.theme-toggle .icon-night{display:none}
+[data-theme="night"] .theme-toggle .icon-cozy{display:none}[data-theme="night"] .theme-toggle .icon-night{display:inline-block}
+[data-theme="cozy"] .theme-toggle{border-color:rgba(196,120,92,.3);color:#c4785c}
+[data-theme="night"] .theme-toggle{border-color:rgba(99,102,241,.4);color:#a5b4fc}
+/* preloader gate + misc above-fold */
+html.cf-skip-preloader #preloader{display:none!important}
+.grain-overlay{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")}
+.perspective-1000{perspective:1000px}
+</style>
+<style id="cf-polish">
+html.js .cf-rise{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+html.js .cf-rise.is-in{opacity:1;transform:none}
+#offer-stack .glass-card{transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
+#offer-stack .glass-card:hover{transform:translateY(-4px);border-color:rgba(99,102,241,.45);box-shadow:0 14px 44px -12px rgba(99,102,241,.30)}
+@media (prefers-reduced-motion: reduce){html.js .cf-rise{opacity:1!important;transform:none!important;transition:none!important}}
+</style>
+<!-- Google tag (gtag.js) — GA4 camelotflows.dev -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T4ZPEG1KSR"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+      try { if (localStorage.getItem('cf_consent') === 'granted') { gtag('consent', 'update', { analytics_storage: 'granted' }); } } catch (e) {}      gtag('js', new Date());
+      gtag('config', 'G-T4ZPEG1KSR');
+    </script>
+<script defer="" src="/assets/js/cf-consent.js?v=1"></script>
+</head>
+<body class="theme-cozy font-body overflow-x-hidden selection:bg-primary selection:text-white">
+<a class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999999] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm focus:font-mono focus:shadow-neon" data-i18n="common.skip_link" href="#main-content">Sari la conținutul principal</a>
+<div aria-atomic="true" aria-live="polite" class="sr-only" id="lang-announce" role="status"></div>
+<div aria-hidden="true" class="scroll-progress"></div>
+<div class="grain-overlay"></div>
+<div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none" id="bg-orbs">
+<div class="bg-orb absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-cobalt/20 rounded-full blur-[120px]">
+</div>
+<div class="bg-orb absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-accent/10 rounded-full blur-[100px]">
+</div>
+<div class="bg-orb absolute top-[40%] left-[30%] w-[30vw] h-[30vw] bg-primary/10 rounded-full blur-[150px]">
+</div>
+<div class="absolute inset-0 grid-bg"></div>
+</div>
+<!-- ИЗМЕНЕНИЕ: Zentry Orbital Badge (Вращающаяся печать в углу) -->
+<div class="fixed bottom-8 right-8 z-50 pointer-events-none mix-blend-screen opacity-60 hidden md:flex items-center justify-center w-32 h-32">
+<svg class="animate-[spin_12s_linear_infinite] absolute inset-0" height="100" viewbox="0 0 100 100" width="100">
+<defs>
+<path d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" id="circle"></path>
+</defs>
+<text class="text-primary-glow font-mono uppercase tracking-[0.15em]" fill="currentColor" font-size="10.5">
+<textpath href="#circle">Camelot Flows • Digital Kingdom •</textpath>
+</text>
+</svg>
+<span class="material-symbols-outlined text-primary text-2xl animate-pulse">change_history</span>
+</div>
+<nav class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-6 md:py-6">
+<div class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-lg px-6 py-3 border-l-4 border-l-primary/50">
+<div class="flex items-center">
+<img alt="Camelot Flows" class="h-16 md:h-28 w-auto object-contain" height="112" src="/assets/images/cf-logo-wordmark-2x.webp" width="212">
+</div>
+<div class="hidden md:flex items-center gap-1" style="margin-left:3rem">
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.home" href="/ro/">[Acasă]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.services" href="/ro/work-with-me">[Servicii]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.arsenal" href="/ro/arsenal">[Arsenal]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.merlin" href="/ro/merlin">[Merlin]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" data-i18n="common.nav.cases" href="/ro/case-studies">[Cazuri]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden 2xl:block" data-i18n="common.nav.agencies" href="/ro/for-agencies">[Agenții]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider hidden lg:block" data-i18n="common.nav.pricing" href="#pricing-cards">[Prețuri]</a>
+<a class="px-3 py-2 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.contact" href="/ro/contact">[Contact]</a>
+</div>
+<div class="flex items-center gap-2">
+<a aria-label="Call Camelot Flows" class="nav-phone-btn flex items-center justify-center w-11 h-11 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="tel:+37369555936" title="+373 69 555 936">
+<span class="material-symbols-outlined cf-phone-icon" style="font-size:18px">call</span>
+</a>
+<div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded bg-black/40 border border-white/5">
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-500 status-dot animate-pulse"></div>
+<span class="text-[10px] font-mono text-emerald-500/80" data-i18n="common.nav.sys_online">SYS_ONLINE</span>
+</div>
+<div class="lang-switcher" data-cf-lang-switcher="">
+<button aria-expanded="false" aria-haspopup="listbox" aria-label="Limbă" class="lang-trigger" data-i18n-attr="aria-label:common.lang_label" type="button">
+<span class="lang-current" data-cf-lang-current="">EN</span>
+<span class="material-symbols-outlined lang-chevron">expand_more</span>
+</button>
+<ul class="lang-menu" hidden="" role="listbox">
+<li data-lang="en" role="option" tabindex="-1"><a href="/" hreflang="en">EN</a></li>
+<li data-lang="ro" role="option" tabindex="-1"><a href="/ro/" hreflang="ro">RO</a></li>
+<li data-lang="ru" role="option" tabindex="-1"><a href="/ru/" hreflang="ru">RU</a></li>
+</ul>
+</div>
+<button aria-label="Open menu" class="md:hidden flex items-center justify-center w-9 h-9 rounded border border-white/10 hover:bg-white/5 hover:border-primary/50 transition-all text-slate-400" id="mobile-menu-toggle" type="button">
+<span class="material-symbols-outlined" style="font-size:20px">menu</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="theme-toggle" type="button">
+<span class="material-symbols-outlined icon-cozy" style="font-size:20px">dark_mode</span>
+<span class="material-symbols-outlined icon-night" style="font-size:20px">light_mode</span>
+</button>
+<a class="bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 hover:border-indigo-400 text-indigo-100 px-4 py-1.5 rounded text-xs font-mono font-bold transition-all shadow-neon hover:shadow-neon-strong hidden lg:inline-flex items-center nav-cta" data-i18n="common.nav.summon_agent" href="/ro/contact?objective=build">[Hire_me]</a>
+</div>
+</div>
+<div class="hidden mt-2 max-w-7xl mx-auto" id="mobile-nav">
+<div class="glass-panel rounded-lg border border-primary/20 py-3 px-2">
+<div class="flex flex-col gap-1">
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.home" href="/ro/">[Acasă]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.services" href="/ro/work-with-me">[Servicii]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.arsenal" href="/ro/arsenal">[Arsenal]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.merlin" href="/ro/merlin">[Merlin]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.cases" href="/ro/case-studies">[Cazuri]</a>
+<a class="px-4 py-3 text-sm font-mono text-slate-400 hover:text-white hover:bg-white/5 rounded transition-colors uppercase tracking-wider" data-i18n="common.nav.contact" href="/ro/contact">[Contact]</a>
+<div class="mx-3 my-2 h-px bg-white/10"></div>
+<a class="mx-2 block text-center bg-indigo-600 hover:bg-indigo-700 border border-indigo-500 text-white px-4 py-2.5 rounded text-sm font-mono font-bold transition-all" data-i18n="common.nav.summon_agent" href="/ro/contact?service=build">[Hire_me]</a>
+</div>
+</div>
+</div>
+<script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");var open=!menu.classList.contains("hidden");btn.setAttribute("aria-expanded",open?"true":"false");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");}});document.querySelectorAll("#mobile-nav a").forEach(function(a){a.addEventListener("click",function(){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");});});}})();</script>
+</nav>
+<a aria-hidden="true" id="main-content" style="position:absolute;opacity:0;pointer-events:none;" tabindex="-1"></a>
+<main class="relative pt-32 pb-20 px-6 overflow-hidden min-h-screen flex flex-col justify-center perspective-1000" id="hero">
+<div aria-hidden="true" class="absolute inset-0 z-0 pointer-events-none" style="background:url('/assets/images/cozy-freelancer/cf-cozy-hero-home.webp') center/cover no-repeat;opacity:0.12;mix-blend-mode:multiply;"></div>
+<div class="absolute top-[25%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent z-0 overflow-hidden">
+<div class="data-stream w-32 md:w-64 h-full bg-gradient-to-r from-transparent via-white to-transparent shadow-[0_0_15px_#fff]">
+</div>
+</div>
+<div class="absolute bottom-[35%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent/20 to-transparent z-0 overflow-hidden">
+<div class="data-stream w-40 md:w-80 h-full bg-gradient-to-r from-transparent via-white to-transparent shadow-[0_0_15px_#fff]">
+</div>
+</div>
+<div class="absolute top-[20%] right-[8%] w-20 h-20 md:w-28 md:h-28 glass-panel rounded-xl rotate-12 flex items-center justify-center opacity-80 parallax-float z-20 shadow-neon border-primary/40" data-depth="0.15" id="hero-float-code">
+<span class="material-symbols-outlined text-primary text-4xl md:text-5xl drop-shadow-[0_0_15px_rgba(79,70,229,0.8)]">code_blocks</span>
+</div>
+<div class="absolute bottom-[25%] left-[5%] md:left-[10%] w-16 h-16 md:w-20 md:h-20 glass-panel rounded-full flex items-center justify-center opacity-60 parallax-float z-20 border-accent/40" data-depth="-0.12">
+<span class="material-symbols-outlined text-accent text-2xl md:text-3xl">memory</span>
+</div>
+<div class="absolute top-[40%] left-[45%] md:left-[50%] w-12 h-12 md:w-16 md:h-16 glass-panel rounded-lg flex items-center justify-center opacity-40 parallax-float z-20 border-white/10" data-depth="0.08" style="transform: rotate(-15deg);">
+<span class="material-symbols-outlined text-white text-xl md:text-2xl">api</span>
+</div>
+<div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-7 z-10 relative">
+<div class="inline-flex items-center gap-3 px-4 py-2 rounded-none border-l-2 border-primary bg-gradient-to-r from-primary/10 to-transparent mb-8" id="hero-badge">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+<span class="text-primary-glow font-mono text-xs tracking-widest uppercase" data-i18n="pages.index.hero_badge">Atelier web solo · Preț fix · Rămâne al tău</span>
+</div>
+<h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tighter mb-8 text-white uppercase perspective-1000" id="hero-h1" style="transform-style: preserve-3d;">
+<span class="inline-block" data-i18n="pages.index.hero_word_1" id="hero-word-1">Un site pe măsura</span> <br>
+<span class="inline-flex overflow-hidden pb-4 -mb-4">
+<span class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400 animate-gradient-x text-glow" data-i18n="pages.index.hero_word_2" id="hero-word-2">reputației tale.</span>
+</span>
+</h1>
+<p class="text-lg md:text-xl text-slate-400 max-w-xl mb-10 leading-relaxed font-light border-l border-white/10 pl-6" data-i18n="pages.index.hero_p" id="hero-p">Site-uri, magazine WooCommerce și automatizări AI pentru afaceri din Moldova, România și nu numai — construite, migrate și întreținute de un singur dezvoltator responsabil.</p>
+<div class="flex flex-wrap gap-5" id="hero-btns">
+<a class="group relative px-8 py-4 bg-primary text-white font-mono font-bold text-sm tracking-wide overflow-hidden rounded-sm hover:scale-[1.02] transition-transform" href="/ro/contact">
+<div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000">
+</div>
+<span class="relative flex items-center gap-3">
+<span data-i18n="pages.index.hero_btn_start">Vezi gratuit ce ți-aș construi</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</span>
+</a>
+<a class="px-8 py-4 glass-panel text-slate-300 font-mono font-bold text-sm tracking-wide rounded-sm hover:bg-white/5 border border-white/10 hover:border-primary/50 transition-colors flex items-center gap-3" href="/ro/arsenal">
+<span data-i18n="pages.index.hero_btn_view">Vezi lucrări live</span>
+<span class="material-symbols-outlined text-sm opacity-50">grid_view</span>
+</a>
+</div>
+<!-- mobile-only code accent: lives in the CTA->stats gap (in flow), so it never overlaps copy -->
+<div aria-hidden="true" class="md:hidden mt-12 flex justify-center">
+<div class="w-12 h-12 glass-panel rounded-xl rotate-12 flex items-center justify-center opacity-70 shadow-neon border-primary/40">
+<span class="material-symbols-outlined text-primary text-3xl drop-shadow-[0_0_15px_rgba(79,70,229,0.8)]">code_blocks</span>
+</div>
+</div>
+<div class="mt-16 flex gap-8 md:gap-12 border-t border-white/5 pt-8" id="hero-stats">
+<div>
+<div class="font-display text-xl font-bold text-white mb-1 text-primary" data-i18n="pages.index.hero_stat_1_value">Găsit pe Google</div>
+<div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest" data-i18n="pages.index.hero_stat_1_label">SEO tehnic real + Profil Google Business</div>
+</div>
+<div>
+<div class="font-display text-xl font-bold text-white mb-1" data-i18n="pages.index.hero_stat_2_value">Făcut să convertească</div>
+<div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest" data-i18n="pages.index.hero_stat_2_label">Sub 3s pe telefon · mobile-first</div>
+</div>
+<div>
+<div class="font-display text-xl font-bold text-white mb-1" data-i18n="pages.index.hero_stat_3_value">Live în ~2 săptămâni</div>
+<div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest" data-i18n="pages.index.hero_stat_3_label">Rămâne al tău · fără abonament</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 relative h-[400px] md:h-[600px] w-full flex items-center justify-center">
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle, #4f46e5 1px, transparent 1px); background-size: 30px 30px;">
+</div>
+<div class="relative w-full aspect-square max-w-md">
+<div class="absolute inset-0 rounded-full border border-primary/20 animate-[spin_10s_linear_infinite]">
+</div>
+<div class="absolute inset-4 rounded-full border border-dashed border-primary/30 animate-[spin_15s_linear_infinite_reverse]">
+</div>
+<div class="absolute inset-0 m-auto w-48 h-64 md:w-64 md:h-80 glass-panel clip-path-shield flex flex-col items-center justify-center z-10 shadow-neon">
+<style>
+                            .clip-path-shield {
+                                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                            }
+                        </style>
+<div class="w-16 h-16 md:w-20 md:h-20 mb-4 rounded-full bg-gradient-to-b from-primary/20 to-transparent flex items-center justify-center border border-primary/40 relative">
+<div class="absolute inset-0 rounded-full animate-ping bg-primary/20"></div>
+<span class="material-symbols-outlined text-3xl md:text-4xl text-primary drop-shadow-[0_0_10px_rgba(79,70,229,0.8)]">security</span>
+</div>
+<p class="text-white font-mono font-bold tracking-widest text-xs md:text-sm mb-1">FOUND_FIRST</p>
+<p class="text-[8px] md:text-[10px] text-indigo-300 uppercase">Built to be found
+                        </p>
+</div>
+<div class="absolute top-10 right-0 glass-panel p-3 rounded border-l-2 border-l-emerald-500 backdrop-blur-md animate-bounce hidden md:block" style="animation-duration: 3s;">
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2 h-2 bg-emerald-500 rounded-full status-dot"></span>
+<span class="text-[10px] font-mono text-white">CPU_LOAD</span>
+</div>
+<div class="w-24 h-1 bg-white/10 rounded-full overflow-hidden">
+<div class="w-[30%] h-full bg-emerald-500"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- ИЗМЕНЕНИЕ: Zentry Kinetic Angled Marquee -->
+<div class="relative w-full overflow-hidden bg-primary py-5 -rotate-2 scale-110 z-30 shadow-[0_0_40px_rgba(79,70,229,0.4)] border-y border-white/20">
+<div class="marquee-container flex whitespace-nowrap font-display font-bold text-4xl md:text-5xl uppercase tracking-tighter text-obsidian">
+<!-- Блок контента 1 -->
+<div class="flex items-center">
+<span class="mx-6">// AWP WEB DESIGN</span>
+<span class="material-symbols-outlined text-4xl mx-2">auto_awesome</span>
+<span class="mx-6">// CUSTOM AUTOMATION</span>
+<span class="material-symbols-outlined text-4xl mx-2">speed</span>
+<span class="mx-6">// LOCAL SEO BUILT IN</span>
+<span class="material-symbols-outlined text-4xl mx-2">memory</span>
+<span class="mx-6">// YOU OWN THE SITE</span>
+</div>
+<!-- Блок контента 2 (копия для бесконечного цикла) -->
+<div class="flex items-center">
+<span class="mx-6">// AWP WEB DESIGN</span>
+<span class="material-symbols-outlined text-4xl mx-2">auto_awesome</span>
+<span class="mx-6">// CUSTOM AUTOMATION</span>
+<span class="material-symbols-outlined text-4xl mx-2">speed</span>
+<span class="mx-6">// LOCAL SEO BUILT IN</span>
+<span class="material-symbols-outlined text-4xl mx-2">memory</span>
+<span class="mx-6">// YOU OWN THE SITE</span>
+</div>
+</div>
+</div>
+<!-- ИЗМЕНЕНИЕ: Исправлен баг "Черной дыры" (GSAP Pin Spacer Bug). Убраны ручные высоты и sticky -->
+<section class="relative bg-obsidian z-20" id="portal-trigger">
+<!-- Блок центровки без sticky, GSAP сам создаст pin -->
+<div class="relative h-screen w-full hidden md:flex items-center justify-center p-4 md:p-12 overflow-hidden">
+<!-- Сам Портал (изначально сжат в ромб/щит через clip-path) -->
+<div class="w-full h-full bg-obsidian border border-primary/40 relative flex items-center justify-center overflow-hidden shadow-neon-strong" id="zentry-portal" style="clip-path: polygon(50% 5%, 96% 50%, 50% 95%, 4% 50%); border-radius: 40px;">
+<!-- Параллакс фон внутри портала -->
+<div class="absolute inset-0 opacity-20" id="portal-bg" style="background-image: radial-gradient(circle, rgba(99,102,241,0.9) 1px, transparent 1px); background-size: 20px 20px;">
+</div>
+<div class="absolute inset-0 bg-gradient-radial from-primary/30 via-obsidian/80 to-obsidian"></div>
+<!-- Контент портала -->
+<div class="text-center z-10 relative">
+<span class="text-primary-glow font-mono text-xs md:text-sm uppercase tracking-[0.4em] mb-4 block drop-shadow-[0_0_10px_rgba(99,102,241,0.8)]" data-i18n="pages.index.portal_sub" id="portal-sub">Alege calea</span>
+<p class="font-display text-5xl md:text-9xl font-bold tracking-tighter text-white uppercase text-glow mix-blend-overlay" data-i18n="pages.index.portal_text" id="portal-text">Alege <br>Direcția</p>
+</div>
+<!-- ИЗМЕНЕНИЕ: Артурианское Откровение (Голограмма Экскалибура) -->
+<div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 scale-75 pointer-events-none z-20" id="portal-revelation">
+<div class="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
+<!-- Магические кольца (Ормузд/Артур) -->
+<div class="absolute inset-0 rounded-full border border-primary/20 animate-[spin_10s_linear_infinite]">
+</div>
+<div class="absolute inset-4 rounded-full border border-dashed border-accent/40 animate-[spin_15s_linear_infinite_reverse]">
+</div>
+<div class="absolute inset-8 rounded-full border-t-2 border-l-2 border-white/10 animate-[spin_5s_ease-in-out_infinite_alternate]">
+</div>
+<!-- Голографический Меч Экскалибур -->
+<div class="relative z-10 flex flex-col items-center">
+<span class="material-symbols-outlined text-[100px] md:text-[140px] text-white drop-shadow-[0_0_40px_rgba(99,102,241,0.8)]" style="transform: rotate(180deg);">swords</span>
+</div>
+<!-- Энергетический пьедестал -->
+<div class="absolute bottom-10 w-32 h-4 bg-primary/60 blur-[15px] rounded-full"></div>
+<div class="absolute bottom-10 w-16 h-2 bg-white/80 blur-[5px] rounded-full"></div>
+</div>
+<h3 class="font-display text-3xl md:text-5xl font-bold mt-8 text-white uppercase tracking-widest text-glow" data-i18n="pages.index.portal_cta_h">Cum <span class="text-primary-glow">lucrezi?</span></h3>
+<div class="mt-4 flex flex-wrap justify-center items-center gap-3 bg-black/50 px-4 py-2 rounded border border-primary/30 backdrop-blur-md">
+<a class="font-mono text-xs text-emerald-400 tracking-[0.2em] uppercase hover:underline" data-i18n="pages.index.portal_link_1" href="#grand-armory">1. Business</a>
+<span class="text-white/30">|</span>
+<a class="font-mono text-xs text-purple-400 tracking-[0.2em] uppercase hover:underline" data-i18n="pages.index.portal_link_2" href="#obsidian-vault">2. Fondator</a>
+<span class="text-white/30">|</span>
+<a class="font-mono text-xs text-blue-400 tracking-[0.2em] uppercase hover:underline" data-i18n="pages.index.portal_link_3" href="/ro/for-agencies">3. Agenție</a>
+</div>
+</div>
+<!-- Декоративные уголки -->
+<div class="absolute top-8 left-8 w-8 h-8 border-t-2 border-l-2 border-primary/50"></div>
+<div class="absolute top-8 right-8 w-8 h-8 border-t-2 border-r-2 border-primary/50"></div>
+<div class="absolute bottom-8 left-8 w-8 h-8 border-b-2 border-l-2 border-primary/50"></div>
+<div class="absolute bottom-8 right-8 w-8 h-8 border-b-2 border-r-2 border-primary/50"></div>
+</div>
+</div>
+<!-- Mobile-only flows: the desktop diamond reveal doesn't run on phones,
+             so the three paths are presented directly as tappable cards. -->
+<div class="md:hidden px-6 py-24" id="portal-mobile">
+<div class="text-center mb-10">
+<span class="text-primary-glow font-mono text-xs uppercase tracking-[0.35em] mb-4 block" data-i18n="pages.index.portal_sub">Alege calea</span>
+<p class="font-display text-4xl font-bold tracking-tighter uppercase leading-[0.95] text-primary-glow text-glow" data-i18n="pages.index.portal_text">Alege <br>Direcția</p>
+</div>
+<div class="flex flex-col gap-4 max-w-sm mx-auto">
+<a class="portal-flow-card group flex items-center gap-4 p-4 glass-panel rounded-xl border border-primary/20 hover:border-primary/60 transition-colors" href="#grand-armory">
+<span class="material-symbols-outlined text-primary text-2xl shrink-0">storefront</span>
+<span class="flex-1 font-mono text-sm tracking-wide uppercase text-primary" data-i18n="pages.index.portal_link_1">1. Business</span>
+<span class="material-symbols-outlined text-primary/40 text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<a class="portal-flow-card group flex items-center gap-4 p-4 glass-panel rounded-xl border border-primary/20 hover:border-primary/60 transition-colors" href="#obsidian-vault">
+<span class="material-symbols-outlined text-primary text-2xl shrink-0">rocket_launch</span>
+<span class="flex-1 font-mono text-sm tracking-wide uppercase text-primary" data-i18n="pages.index.portal_link_2">2. Fondator</span>
+<span class="material-symbols-outlined text-primary/40 text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<a class="portal-flow-card group flex items-center gap-4 p-4 glass-panel rounded-xl border border-primary/20 hover:border-primary/60 transition-colors" href="/ro/for-agencies">
+<span class="material-symbols-outlined text-primary text-2xl shrink-0">groups</span>
+<span class="flex-1 font-mono text-sm tracking-wide uppercase text-primary" data-i18n="pages.index.portal_link_3">3. Agenție</span>
+<span class="material-symbols-outlined text-primary/40 text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<section class="py-24 px-6 relative border-t border-white/5 bg-obsidian overflow-hidden -mt-[1px] z-30" id="round-table">
+<div class="absolute top-[5%] right-[-40%] md:right-[-15%] w-[500px] h-[500px] md:w-[800px] md:h-[800px] opacity-25 pointer-events-none z-0">
+<div class="relative w-full h-full border-[2px] border-dashed border-primary/30 rounded-full flex items-center justify-center" id="literal-round-table">
+<div class="absolute w-[75%] h-[75%] border border-accent/20 rounded-full"></div>
+<div class="absolute w-[45%] h-[45%] border border-white/5 rounded-full"></div>
+<div class="absolute w-full h-full" style="transform: rotate(0deg);">
+<div class="absolute top-[-24px] md:top-[-32px] left-1/2 -translate-x-1/2 w-12 h-12 md:w-16 md:h-16 bg-obsidian border border-primary/50 rounded-full flex items-center justify-center shadow-neon">
+<span class="rt-icon material-symbols-outlined text-white text-lg md:text-2xl">smart_toy</span>
+</div>
+</div>
+<div class="absolute w-full h-full" style="transform: rotate(60deg);">
+<div class="absolute top-[-24px] md:top-[-32px] left-1/2 -translate-x-1/2 w-12 h-12 md:w-16 md:h-16 bg-obsidian border border-accent/50 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(139,92,246,0.5)]">
+<span class="rt-icon material-symbols-outlined text-white text-lg md:text-2xl">webhook</span>
+</div>
+</div>
+<div class="absolute w-full h-full" style="transform: rotate(120deg);">
+<div class="absolute top-[-24px] md:top-[-32px] left-1/2 -translate-x-1/2 w-12 h-12 md:w-16 md:h-16 bg-obsidian border border-indigo-500/50 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+<span class="rt-icon material-symbols-outlined text-white text-lg md:text-2xl">database</span>
+</div>
+</div>
+<div class="absolute w-full h-full" style="transform: rotate(180deg);">
+<div class="absolute top-[-24px] md:top-[-32px] left-1/2 -translate-x-1/2 w-12 h-12 md:w-16 md:h-16 bg-obsidian border border-emerald-500/50 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.4)]">
+<span class="rt-icon material-symbols-outlined text-white text-lg md:text-2xl">sync</span>
+</div>
+</div>
+<div class="absolute w-full h-full" style="transform: rotate(240deg);">
+<div class="absolute top-[-24px] md:top-[-32px] left-1/2 -translate-x-1/2 w-12 h-12 md:w-16 md:h-16 bg-obsidian border border-purple-500/50 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(168,85,247,0.4)]">
+<span class="rt-icon material-symbols-outlined text-white text-lg md:text-2xl">terminal</span>
+</div>
+</div>
+<div class="absolute w-full h-full" style="transform: rotate(300deg);">
+<div class="absolute top-[-24px] md:top-[-32px] left-1/2 -translate-x-1/2 w-12 h-12 md:w-16 md:h-16 bg-obsidian border border-blue-500/50 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.4)]">
+<span class="rt-icon material-symbols-outlined text-white text-lg md:text-2xl">analytics</span>
+</div>
+</div>
+<div class="absolute inset-0 bg-gradient-radial from-primary/10 to-transparent rounded-full"></div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h2 class="font-display text-4xl md:text-5xl font-bold tracking-tighter text-white mb-2 uppercase" data-i18n="pages.index.rt_h2">Cele trei scurgeri <br>care te costă clienți</h2>
+<div class="h-1 w-20 bg-gradient-to-r from-primary to-transparent"></div>
+</div>
+<div class="md:text-right max-w-sm">
+<p class="font-mono text-xs text-primary mb-2" data-i18n="pages.index.rt_kicker">// PE UNDE SE SCURGE CEREREA</p>
+<p class="text-slate-400 text-sm leading-relaxed" data-i18n="pages.index.rt_intro">O reputație ar trebui să-ți aducă clienți. Majoritatea site-urilor locale îi lasă, pe tăcute, să-ți scape în trei puncte. Iată cum îl închid pe fiecare.</p>
+</div>
+</div>
+<div class="relative w-full overflow-hidden pb-12" id="card-scroll-wrapper">
+<div class="flex flex-col md:flex-row gap-6 md:gap-12 md:w-max md:pr-32" id="card-stack">
+<div class="stack-card glass-card p-8 rounded-xl flex flex-col md:h-[480px] md:w-[450px] flex-shrink-0 group relative overflow-hidden" style="transform-style: preserve-3d;">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/50 to-transparent transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500">
+</div>
+<div class="mb-8 w-14 h-14 rounded bg-primary/10 flex items-center justify-center border border-primary/20 group-hover:bg-primary/20 group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-3xl text-primary group-hover:text-white transition-colors">auto_fix</span>
+</div>
+<h3 class="font-display text-2xl font-bold mb-2 text-white uppercase" data-i18n="pages.index.rt_card_1_h">Te caută. Nu găsesc nimic.</h3>
+<div class="text-[10px] font-mono text-primary mb-6 tracking-widest uppercase" data-i18n="pages.index.rt_card_1_meta">DESCOPERIRE_LOCALĂ</div>
+<p class="text-slate-400 mb-8 text-sm leading-relaxed border-l border-white/5 pl-4" data-i18n="pages.index.rt_card_1_p">Un salon, o clinică sau o firmă de meseriași cu reputație reală ar trebui să fie primul rezultat când cineva îi caută numele pe Google — și un rezultat puternic pentru serviciu. Majoritatea nu sunt: site-ul e invizibil pentru căutare sau nu există un Profil Google Business, așa că omul gata să rezerve nu ajunge niciodată la tine. Integrez SEO tehnic chiar în construcție — structură curată, încărcare rapidă, meta corecte, schema locală — și îți configurez corect Profilul Google Business, ca exact căutările care îți aduc bani să te poată găsi.</p>
+<div class="mt-auto pt-6 border-t border-white/5">
+<ul class="space-y-3 text-xs font-mono text-slate-300">
+<li class="flex items-center gap-3">
+<span class="text-primary">&gt;</span> <span data-i18n="pages.index.rt_card_1_li_1">SEO tehnic + schema locală</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="text-primary">&gt;</span> <span data-i18n="pages.index.rt_card_1_li_2">Profil Google Business configurat</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="stack-card glass-card p-8 rounded-xl flex flex-col md:h-[480px] md:w-[450px] flex-shrink-0 relative overflow-hidden ring-1 ring-primary/30 shadow-neon" style="transform-style: preserve-3d;">
+<div class="absolute -top-20 -right-20 w-60 h-60 bg-primary/10 rounded-full blur-3xl pointer-events-none">
+</div>
+<div class="mb-8 w-14 h-14 rounded bg-indigo-500 flex items-center justify-center border border-indigo-400 shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+<span class="material-symbols-outlined text-3xl text-white">swords</span>
+</div>
+<h3 class="font-display text-2xl font-bold mb-2 text-white uppercase" data-i18n="pages.index.rt_card_2_h">Un site frumos care nu cere niciodată rezervarea.</h3>
+<div class="text-[10px] font-mono text-indigo-300 mb-6 tracking-widest uppercase" data-i18n="pages.index.rt_card_2_meta">SITE_CARE_VINDE</div>
+<p class="text-slate-300 mb-8 text-sm leading-relaxed border-l border-indigo-500/30 pl-4" data-i18n="pages.index.rt_card_2_p">Majoritatea site-urilor de business mic ori arată învechit și distrug încrederea, ori arată bine, dar ascund singurul lucru care contează: cum să te rezerve. Pe telefon, cu trei secunde de răbdare, un vizitator confuz pleacă — un client pe care reputația ta deja l-a câștigat, pierdut la ultimul pas. Construiesc rapid și mobile-first, cu apelul la rezervare deasupra liniei de pliere, un număr de telefon pe care dai click și un drum spre rezervare pe care îl poate urma și un deget grăbit. Gândit în jurul deciziei, nu al decorului.</p>
+<div class="mt-auto pt-6 border-t border-white/10">
+<ul class="space-y-3 text-xs font-mono text-white">
+<li class="flex items-center gap-3">
+<span class="text-indigo-400 text-lg material-symbols-outlined">bolt</span> <span data-i18n="pages.index.rt_card_2_li_1">Mobile-first · încărcare sub 3s</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="text-indigo-400 text-lg material-symbols-outlined">public</span>
+<span data-i18n="pages.index.rt_card_2_li_2">Click-to-call · gata de rezervare</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="stack-card glass-card p-8 rounded-xl flex flex-col md:h-[480px] md:w-[450px] flex-shrink-0 group relative overflow-hidden" style="transform-style: preserve-3d;">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500/50 to-transparent transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500">
+</div>
+<div class="mb-8 w-14 h-14 rounded bg-purple-500/10 flex items-center justify-center border border-purple-500/20 group-hover:bg-purple-500/20 group-hover:border-purple-500/50 transition-colors">
+<span class="material-symbols-outlined text-3xl text-purple-400 group-hover:text-white transition-colors">query_stats</span>
+</div>
+<h3 class="font-display text-2xl font-bold mb-2 text-white uppercase" data-i18n="pages.index.rt_card_3_h">Blocat într-o platformă din care nu poți pleca.</h3>
+<div class="text-[10px] font-mono text-purple-400 mb-6 tracking-widest uppercase" data-i18n="pages.index.rt_card_3_meta">PROPRIETATE</div>
+<p class="text-slate-400 mb-8 text-sm leading-relaxed border-l border-white/5 pl-4" data-i18n="pages.index.rt_card_3_p">O mulțime de site-uri „ieftine” sunt o capcană — dezvoltatorul deține fișierele, găzduirea, cheile. Te oprești din plătit și site-ul dispare; ai stat în chirie la propria ușă de la intrare. Eu livrez o construcție o singură dată, cu predare completă: fișiere, accesuri, conturi, tot. Deții activul în întregime. Dacă vreodată mă vrei înapoi pentru modificări, mă chemi — nu ești taxat niciodată doar ca să ții luminile aprinse.</p>
+<div class="mt-auto pt-6 border-t border-white/5">
+<ul class="space-y-3 text-xs font-mono text-slate-300">
+<li class="flex items-center gap-3">
+<span class="text-purple-400">&gt;</span> <span data-i18n="pages.index.rt_card_3_li_1">Predare completă · e al tău</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="text-purple-400">&gt;</span> <span data-i18n="pages.index.rt_card_3_li_2">Fără abonament · fără captivitate</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ── Editorial break: workshop ethos ───────────────────────── -->
+<section style="position:relative;overflow:hidden;border-top:1px solid var(--line);">
+<div class="editorial-split">
+<div class="editorial-photo cf-wipe">
+<picture>
+<source srcset="/assets/images/cozy-freelancer/cf-cozy-laptop-coffee.webp" type="image/webp">
+<img alt="The workshop in session" class="img-zoom" height="1086" loading="lazy" src="/assets/images/cozy-freelancer/cf-cozy-laptop-coffee.png" width="1448">
+</picture>
+</div>
+<div class="editorial-body">
+<p class="editorial-kicker" data-i18n="pages.index.ethos_kicker">// ETOSUL ATELIERULUI</p>
+<blockquote class="editorial-quote cf-reveal" data-i18n="pages.index.ethos_quote">Un client pe rând.<br>Făcut <em style="font-style:italic;color:rgb(var(--cft-primary-glow));">cum trebuie.</em></blockquote>
+<p class="cf-reveal" data-i18n="pages.index.ethos_p" style="margin-top:24px;color:var(--muted);font-size:0.97rem;line-height:1.78;max-width:380px;transition-delay:0.15s">Niciun account manager la mijloc. Niciun junior care lucrează de mântuială. Fiecare proiect primește aceeași atenție — pentru că iau doar proiecte pe care le pot face cum trebuie.</p>
+<a class="button ghost cf-reveal" data-i18n="pages.index.ethos_cta" href="/ro/work-with-me" style="margin-top:32px;align-self:flex-start;transition-delay:0.28s">Vezi cum lucrez</a>
+</div>
+</div>
+</section>
+<section class="py-24 px-6 bg-black relative overflow-hidden" id="terminal-section">
+<!-- Blueprint texture layer -->
+<div aria-hidden="true" class="cf-bg-layer" style="background-image:url('/assets/images/cozy-freelancer/arsenal_blueprint.webp');opacity:0.07;mix-blend-mode:screen;"></div>
+<div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(#1e1e2e 1px, transparent 1px), linear-gradient(90deg, #1e1e2e 1px, transparent 1px); background-size: 40px 40px;">
+</div>
+<div class="max-w-7xl mx-auto glass-panel border border-white/10 rounded-2xl p-6 md:p-16 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<div class="terminal-step inline-block px-3 py-1 bg-primary/10 rounded text-primary text-[10px] font-mono mb-6 uppercase tracking-widest border border-primary/20" data-i18n="pages.index.term_kicker">Cum funcționează</div>
+<h2 class="terminal-step font-display text-4xl font-bold mb-6 text-white tracking-tight uppercase" data-i18n="pages.index.term_h2">Din lead<br>în <span class="text-primary-glow">vânzare</span></h2>
+<p class="terminal-step text-slate-400 mb-10 text-base font-light" data-i18n="pages.index.term_p">Nu e doar cod. Sunt sisteme conectate care transformă fiecare contact cu clientul în creștere reală — fără să te blocheze munca manuală pe parcurs.</p>
+<div class="space-y-4">
+<div class="terminal-step group flex items-center gap-4 p-4 rounded-lg bg-white/5 hover:bg-white/10 border border-white/5 hover:border-primary/30 transition-all cursor-default">
+<div class="w-10 h-10 min-w-10 rounded bg-green-900/30 flex items-center justify-center text-green-400 border border-green-500/30 shadow-[0_0_10px_rgba(74,222,128,0.2)]">
+<span class="material-symbols-outlined text-lg">forum</span>
+</div>
+<div>
+<h3 class="font-mono font-bold text-sm text-green-400" data-i18n="pages.index.term_step_1_h">01_LEAD_INTAKE</h3>
+<p class="text-xs text-slate-500 mt-1" data-i18n="pages.index.term_step_1_p">Preluăm lead-uri din toate canalele unde sunt clienții tăi.</p>
+</div>
+</div>
+<div class="terminal-step group flex items-center gap-4 p-4 rounded-lg bg-white/5 hover:bg-white/10 border border-white/5 hover:border-primary/30 transition-all cursor-default">
+<div class="w-10 h-10 min-w-10 rounded bg-indigo-900/30 flex items-center justify-center text-indigo-400 border border-indigo-500/30 shadow-[0_0_10px_rgba(99,102,241,0.2)]">
+<span class="material-symbols-outlined text-lg">psychology</span>
+</div>
+<div>
+<h3 class="font-mono font-bold text-sm text-indigo-400" data-i18n="pages.index.term_step_2_h">02_DECISION_ENGINE</h3>
+<p class="text-xs text-slate-500 mt-1" data-i18n="pages.index.term_step_2_p">Stabilesc singure prioritatea și trimit task-ul în mâinile potrivite.</p>
+</div>
+</div>
+<div class="terminal-step group flex items-center gap-4 p-4 rounded-lg bg-white/5 hover:bg-white/10 border border-white/5 hover:border-primary/30 transition-all cursor-default">
+<div class="w-10 h-10 min-w-10 rounded bg-blue-900/30 flex items-center justify-center text-blue-400 border border-blue-500/30 shadow-[0_0_10px_rgba(96,165,250,0.2)]">
+<span class="material-symbols-outlined text-lg">database</span>
+</div>
+<div>
+<h3 class="font-mono font-bold text-sm text-blue-400" data-i18n="pages.index.term_step_3_h">03_CRM_SYNC</h3>
+<p class="text-xs text-slate-500 mt-1" data-i18n="pages.index.term_step_3_p">Completează CRM-ul și pun întâlnirile în calendar — singure.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative flex items-center justify-center min-h-[300px] md:min-h-[400px]" id="terminal-hub">
+<div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(79,70,229,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(79,70,229,0.5) 1px, transparent 1px); background-size: 24px 24px;">
+</div>
+<div class="relative w-full aspect-square max-w-[400px] flex items-center justify-center scale-75 md:scale-100">
+<div class="absolute w-full h-full border border-primary/10 rounded-full animate-ping" style="animation-duration: 3s"></div>
+<div class="absolute w-[80%] h-[80%] border border-primary/20 rounded-full animate-ping" style="animation-duration: 3s; animation-delay: 1s"></div>
+<div class="relative z-20 w-32 h-32 rounded-full bg-black border border-primary/50 shadow-[0_0_30px_rgba(79,70,229,0.4)] flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl text-primary animate-pulse">hub</span>
+</div>
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+<div class="glass-panel px-4 py-2 rounded text-[10px] font-mono text-green-400 border border-green-500/30 shadow-[0_0_15px_rgba(74,222,128,0.3)]">
+                                INPUT_SIGNAL
+                            </div>
+<div class="h-16 w-[1px] bg-gradient-to-b from-green-500 to-primary mx-auto"></div>
+</div>
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-20">
+<div class="h-16 w-[1px] bg-gradient-to-b from-primary to-blue-500 mx-auto"></div>
+<div class="glass-panel px-4 py-2 rounded text-[10px] font-mono text-blue-400 border border-blue-500/30 shadow-[0_0_15px_rgba(96,165,250,0.3)]">
+                                OUTPUT_DATA
+                            </div>
+</div>
+<div class="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex items-center">
+<div class="glass-panel p-2 rounded-full border border-purple-500/30 shadow-[0_0_15px_rgba(168,85,247,0.3)] bg-black">
+<span class="material-symbols-outlined text-purple-400 text-sm">bolt</span>
+</div>
+<div class="w-12 h-[1px] bg-gradient-to-r from-purple-500 to-primary hidden md:block"></div>
+</div>
+<div class="absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 z-20 flex items-center">
+<div class="w-12 h-[1px] bg-gradient-to-r from-primary to-orange-500 hidden md:block"></div>
+<div class="glass-panel p-2 rounded-full border border-orange-500/30 shadow-[0_0_15px_rgba(249,115,22,0.3)] bg-black">
+<span class="material-symbols-outlined text-orange-400 text-sm">storage</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: THE GRAND ARMORY -->
+<section class="py-24 px-6 relative bg-obsidian overflow-hidden border-t border-white/5 z-20" id="grand-armory">
+<div class="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-neon-cyan/10 blur-[150px] rounded-full pointer-events-none">
+</div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="armory-visual cf-artifact-frame cf-artifact-frame--terracotta relative h-[400px] md:h-[600px] w-full overflow-hidden glass-panel border border-neon-cyan/20 p-2">
+<div class="cf-artifact-core absolute inset-2 overflow-hidden">
+<img alt="Web development toolkit workspace" class="cf-artifact-img w-full h-full object-cover img-zoom" decoding="async" height="1024" loading="lazy" src="/assets/images/cozy-freelancer/cf-cozy-hero-arsenal.webp" width="1536">
+</img></div>
+<!-- Decorative overlay box -->
+<div class="cf-artifact-label absolute bottom-6 right-6 glass-panel px-4 py-2 border border-neon-cyan/50 rounded flex items-center gap-3 shadow-[0_0_20px_rgba(0,242,255,0.3)] bg-obsidian/80">
+<span class="w-2 h-2 rounded-full bg-neon-cyan animate-pulse"></span>
+<span class="text-[10px] font-mono text-neon-cyan tracking-widest uppercase">Forge Active</span>
+</div>
+<span class="cf-artifact-node node-a"></span>
+<span class="cf-artifact-node node-b"></span>
+<span class="cf-artifact-node node-c"></span>
+</div>
+<div class="armory-content relative z-10">
+<span class="text-neon-cyan font-mono text-xs uppercase tracking-[0.3em] mb-4 block" data-i18n="pages.index.armory_kicker">// LUCRĂRI SELECTATE</span>
+<h2 class="font-display text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-6" data-i18n="pages.index.armory_h">Proiecte web <br><span class="text-neon-cyan text-glow-cyan">recente</span></h2>
+<p class="text-white/50 text-base font-light leading-relaxed mb-8" data-i18n="pages.index.armory_p">O privire la site-uri și automatizări reale pe care le-am construit — proiecte live pe care le poți accesa, nu mockup-uri de stoc.</p>
+<ul class="space-y-4 mb-10 font-mono text-sm">
+<li class="flex items-center gap-4 text-white/70">
+<span class="text-neon-cyan material-symbols-outlined">folder_special</span> <span data-i18n="pages.index.armory_li_1">Construit pe comandă, niciodată șablon</span>
+</li>
+<li class="flex items-center gap-4 text-white/70">
+<span class="text-neon-cyan material-symbols-outlined">api</span> <span data-i18n="pages.index.armory_li_2">Rapid și mobile-first</span>
+</li>
+<li class="flex items-center gap-4 text-white/70">
+<span class="text-neon-cyan material-symbols-outlined">dns</span> <span data-i18n="pages.index.armory_li_3">Live în zile, nu luni</span>
+</li>
+</ul>
+<a class="bg-obsidian border border-neon-cyan/50 text-neon-cyan px-8 py-4 rounded text-xs font-bold font-mono uppercase tracking-[0.2em] hover:bg-neon-cyan hover:text-obsidian transition-colors shadow-[0_0_15px_rgba(0,242,255,0.2)]" data-i18n="pages.index.armory_btn" href="/ro/arsenal">INTRĂ ÎN FORJĂ</a>
+</div>
+</div>
+</section>
+<!-- SECTION: THE ALCHEMIST'S SANCTUM -->
+<section class="py-24 px-6 relative bg-obsidian overflow-hidden border-t border-white/5 z-20" id="alchemy-sanctum">
+<div class="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-neon-purple/10 blur-[150px] rounded-full pointer-events-none">
+</div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="alchemy-content relative z-10 order-2 lg:order-1">
+<span class="text-neon-purple font-mono text-xs uppercase tracking-[0.3em] mb-4 block" data-i18n="pages.index.alchemy_kicker">// MERLIN</span>
+<h2 class="font-display text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-6" data-i18n="pages.index.alchemy_h">Automatizări <br><span class="text-neon-purple text-glow-purple">pentru afaceri</span></h2>
+<p class="text-white/50 text-base font-light leading-relaxed mb-8" data-i18n="pages.index.alchemy_p">Merlin este stratul meu de automatizare — un asistent AI care răspunde la întrebări frecvente, programează clienți și îți ține evidențele la zi, ca să nu mai pierzi clienți după program.</p>
+<ul class="space-y-4 mb-10 font-mono text-sm">
+<li class="flex items-center gap-4 text-white/70">
+<span class="text-neon-purple material-symbols-outlined">model_training</span> <span data-i18n="pages.index.alchemy_li_1">Răspunde la întrebări frecvente 24/7</span>
+</li>
+<li class="flex items-center gap-4 text-white/70">
+<span class="text-neon-purple material-symbols-outlined">neurology</span> <span data-i18n="pages.index.alchemy_li_2">Programează clienți automat</span>
+</li>
+<li class="flex items-center gap-4 text-white/70">
+<span class="text-neon-purple material-symbols-outlined">smart_toy</span> <span data-i18n="pages.index.alchemy_li_3">Fără follow-up-uri manuale</span>
+</li>
+</ul>
+<a class="bg-obsidian border border-neon-purple/50 text-neon-purple px-8 py-4 rounded text-xs font-bold font-mono uppercase tracking-[0.2em] hover:bg-neon-purple hover:text-obsidian transition-colors shadow-[0_0_15px_rgba(191,0,255,0.2)]" data-i18n="pages.index.alchemy_btn" href="/ro/merlin">VEZI AUTOMATIZĂRILE</a>
+</div>
+<div class="alchemy-visual cf-artifact-frame cf-artifact-frame--sage relative h-[400px] md:h-[600px] w-full overflow-hidden glass-panel border border-neon-purple/20 p-2 order-1 lg:order-2">
+<div class="cf-artifact-core absolute inset-2 overflow-hidden">
+<img alt="Cozy AI automation command center" class="cf-artifact-img w-full h-full object-cover img-zoom" decoding="async" height="1024" loading="lazy" src="/assets/images/cozy-freelancer/cf-cozy-hero-merlin.webp" width="1536">
+</img></div>
+<!-- Decorative overlay box -->
+<div class="cf-artifact-label absolute top-6 left-6 glass-panel px-4 py-2 border border-neon-purple/50 rounded flex items-center gap-3 shadow-[0_0_20px_rgba(191,0,255,0.3)] bg-obsidian/80">
+<span class="w-2 h-2 rounded-full bg-neon-purple animate-pulse"></span>
+<span class="text-[10px] font-mono text-neon-purple tracking-widest uppercase">Run Sequence</span>
+</div>
+<span class="cf-artifact-node node-a"></span>
+<span class="cf-artifact-node node-b"></span>
+<span class="cf-artifact-node node-c"></span>
+</div>
+</div>
+</section>
+<!-- SECTION: THE OBSIDIAN VAULT -->
+<section class="py-24 px-6 relative bg-obsidian overflow-hidden border-t border-white/5 z-20" id="obsidian-vault">
+<div class="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-500/10 blur-[150px] rounded-full pointer-events-none">
+</div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="vault-visual cf-artifact-frame cf-artifact-frame--terracotta relative h-[400px] md:h-[600px] w-full overflow-hidden glass-panel border border-emerald-500/20 p-2">
+<div class="cf-artifact-core absolute inset-2 overflow-hidden">
+<img alt="Website rebuild before and after workspace" class="cf-artifact-img w-full h-full object-cover img-zoom" decoding="async" height="941" loading="lazy" src="/assets/images/cozy-freelancer/cf-cozy-case-site.webp" width="1672">
+</div>
+<div class="cf-artifact-label absolute bottom-6 left-6 glass-panel px-4 py-2 border border-emerald-500/50 rounded flex items-center gap-3 shadow-[0_0_20px_rgba(16,185,129,0.3)] bg-obsidian/80">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span class="text-[10px] font-mono text-emerald-400 tracking-widest uppercase">Design
+                        Perfected</span>
+</div>
+<span class="cf-artifact-node node-a"></span>
+<span class="cf-artifact-node node-b"></span>
+<span class="cf-artifact-node node-c"></span>
+</div>
+<div class="vault-content relative z-10">
+<span class="text-emerald-400 font-mono text-xs uppercase tracking-[0.3em] mb-4 block" data-i18n="pages.index.vault_kicker">// ASPECTUL</span>
+<h2 class="font-display text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-6" data-i18n="pages.index.vault_h">Web design <br><span class="text-emerald-400 text-glow" style="text-shadow: 0 0 20px rgba(16,185,129,0.5)">care convertește</span></h2>
+<p class="text-white/50 text-base font-light leading-relaxed mb-8" data-i18n="pages.index.vault_p">Site-ul tău ar trebui să arate la fel de bine ca reputația ta. Design curat și premium care funcționează pe telefon și desktop și inspiră încredere înainte de a citi un cuvânt.</p>
+<ul class="space-y-4 mb-10 font-mono text-sm">
+<li class="flex items-center gap-4 text-white/70">
+<span class="text-emerald-400 material-symbols-outlined">design_services</span> <span data-i18n="pages.index.vault_li_1">Arată scump pe orice ecran</span>
+</li>
+<li class="flex items-center gap-4 text-white/70">
+<span class="text-emerald-400 material-symbols-outlined">animation</span> <span data-i18n="pages.index.vault_li_2">Senzație fluidă, premium</span>
+</li>
+<li class="flex items-center gap-4 text-white/70">
+<span class="text-emerald-400 material-symbols-outlined">diamond</span> <span data-i18n="pages.index.vault_li_3">Un brand care ți se potrivește</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SECTION: THE OFFER — VALUE STACK -->
+<section class="py-24 px-6 relative bg-obsidian overflow-hidden border-t border-white/5 z-20" id="offer-stack">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/10 blur-[160px] rounded-full pointer-events-none"></div>
+<div class="max-w-5xl mx-auto relative z-10">
+<div class="text-center mb-16 cf-rise" style="transition-delay:0ms">
+<span class="text-primary-glow font-mono text-xs uppercase tracking-[0.3em] mb-4 block" data-i18n="pages.index.offer_kicker">// CONSTRUCȚIA, DETALIATĂ</span>
+<h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-tighter mb-5" data-i18n="pages.index.offer_h2">Un preț fix.<br><span class="text-primary-glow text-glow">Totul inclus.</span></h2>
+<p class="text-slate-400 text-sm max-w-xl mx-auto leading-relaxed" data-i18n="pages.index.offer_lead">Fără surprize pe factură. Tot ce e mai jos vine cu construcția.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 cf-rise" style="transition-delay:90ms">
+<div class="glass-card rounded-xl p-6 flex gap-4 items-start border border-primary/15">
+<span class="material-symbols-outlined text-primary text-2xl mt-0.5 shrink-0">checklist</span>
+<div>
+<h3 class="font-display text-lg font-bold text-white mb-1" data-i18n="pages.index.offer_1_h">Strategie &amp; hartă de cuvinte-cheie</h3>
+<p class="text-slate-400 text-sm leading-relaxed" data-i18n="pages.index.offer_1_p">Găsesc căutările cu intenție de cumpărare pe care clienții tăi chiar le scriu — și țintesc fiecare pagină spre una.</p>
+</div>
+</div>
+<div class="glass-card rounded-xl p-6 flex gap-4 items-start border border-primary/15">
+<span class="material-symbols-outlined text-primary text-2xl mt-0.5 shrink-0">draw</span>
+<div>
+<h3 class="font-display text-lg font-bold text-white mb-1" data-i18n="pages.index.offer_2_h">Design &amp; copy axate pe conversie</h3>
+<p class="text-slate-400 text-sm leading-relaxed" data-i18n="pages.index.offer_2_p">Pagini premium, în stilul brandului tău, scrise în vocea ta ca să transforme un vizitator într-o rezervare, nu doar să arate bine.</p>
+</div>
+</div>
+<div class="glass-card rounded-xl p-6 flex gap-4 items-start border border-primary/15">
+<span class="material-symbols-outlined text-primary text-2xl mt-0.5 shrink-0">travel_explore</span>
+<div>
+<h3 class="font-display text-lg font-bold text-white mb-1" data-i18n="pages.index.offer_3_h">Fundație de SEO local</h3>
+<p class="text-slate-400 text-sm leading-relaxed" data-i18n="pages.index.offer_3_p">Structură curată, încărcare rapidă, titluri corecte, meta și schema locală — făcute bine din prima.</p>
+</div>
+</div>
+<div class="glass-card rounded-xl p-6 flex gap-4 items-start border border-primary/15">
+<span class="material-symbols-outlined text-primary text-2xl mt-0.5 shrink-0">location_on</span>
+<div>
+<h3 class="font-display text-lg font-bold text-white mb-1" data-i18n="pages.index.offer_4_h">Configurare Profil Google Business</h3>
+<p class="text-slate-400 text-sm leading-relaxed" data-i18n="pages.index.offer_4_p">Prezența ta în map-pack configurată ca cei care caută „lângă mine” să te găsească.</p>
+</div>
+</div>
+<div class="glass-card rounded-xl p-6 flex gap-4 items-start border border-primary/15">
+<span class="material-symbols-outlined text-primary text-2xl mt-0.5 shrink-0">call</span>
+<div>
+<h3 class="font-display text-lg font-bold text-white mb-1" data-i18n="pages.index.offer_5_h">Click-to-call + gata de rezervare</h3>
+<p class="text-slate-400 text-sm leading-relaxed" data-i18n="pages.index.offer_5_p">Telefon pe care dai click, linkuri de rezervare, formulare scurte — fiecare drum spre „da” făcut fără fricțiune.</p>
+</div>
+</div>
+<div class="glass-card rounded-xl p-6 flex gap-4 items-start border border-primary/15">
+<span class="material-symbols-outlined text-primary text-2xl mt-0.5 shrink-0">speed</span>
+<div>
+<h3 class="font-display text-lg font-bold text-white mb-1" data-i18n="pages.index.offer_6_h">Construcție rapidă pe mobil</h3>
+<p class="text-slate-400 text-sm leading-relaxed" data-i18n="pages.index.offer_6_p">Gândită pentru încărcare sub 3 secunde pe telefon, fiindcă majoritatea celor care caută local sunt pe mobil.</p>
+</div>
+</div>
+<div class="glass-card rounded-xl p-6 flex gap-4 items-start border border-primary/15">
+<span class="material-symbols-outlined text-primary text-2xl mt-0.5 shrink-0">reviews</span>
+<div>
+<h3 class="font-display text-lg font-bold text-white mb-1" data-i18n="pages.index.offer_7_h">Flux de cerere a recenziilor</h3>
+<p class="text-slate-400 text-sm leading-relaxed" data-i18n="pages.index.offer_7_p">Un flux integrat care face ușor să ceri o recenzie clienților mulțumiți, la momentul potrivit.</p>
+</div>
+</div>
+<div class="glass-card rounded-xl p-6 flex gap-4 items-start border border-primary/15">
+<span class="material-symbols-outlined text-primary text-2xl mt-0.5 shrink-0">handshake</span>
+<div>
+<h3 class="font-display text-lg font-bold text-white mb-1" data-i18n="pages.index.offer_8_h">Predare completă &amp; instruire</h3>
+<p class="text-slate-400 text-sm leading-relaxed" data-i18n="pages.index.offer_8_p">Fișiere, accesuri și conturi trecute pe numele tău — plus un walkthrough ca să nu rămâi niciodată blocat.</p>
+</div>
+</div>
+</div>
+<div class="mt-12 max-w-3xl mx-auto glass-panel border border-primary/30 rounded-xl p-6 md:p-8 text-center cf-rise" style="transition-delay:170ms">
+<p class="text-slate-300 text-base md:text-lg leading-relaxed" data-i18n="pages.index.price_anchor">Comandat pe bucăți — un copywriter, un specialist SEO, un designer, un developer — e un proiect de <span class="text-white font-medium">€3.000+</span>. Făcut de un singur om care le face pe toate patru, începe de la <span class="text-white font-medium">€690</span>.</p>
+</div>
+</div>
+</section>
+<!-- Star Wars Scrolling Pricing from Stitch Generation (Neon Purple Cyberpunk Redesign) -->
+<section class="h-screen w-full relative flex flex-col z-30 border-t border-white/5" id="starwars-pricing">
+<span aria-hidden="true" class="absolute top-0 left-0 w-0 h-0 pointer-events-none" id="pricing-cards"></span>
+<div class="starfield-anim"></div>
+<!-- Violet Network Wires Background -->
+<div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-40 mix-blend-screen overflow-hidden">
+<svg class="h-[150%] w-[150%] network-wires rotate-90 md:rotate-0" preserveaspectratio="xMidYMid slice" viewbox="0 0 1000 1000">
+<defs>
+<lineargradient id="neon-cyan-purple" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#00f2ff"></stop>
+<stop offset="100%" stop-color="#bf00ff"></stop>
+</lineargradient>
+<filter height="140%" id="neon-glow" width="140%" x="-20%" y="-20%">
+<fegaussianblur result="blur" stddeviation="3"></fegaussianblur>
+<fecomposite in="SourceGraphic" in2="blur" operator="over"></fecomposite>
+</filter>
+</defs>
+<!-- Background grid lines -->
+<g opacity="0.1" stroke="#bf00ff" stroke-width="1">
+<line x1="0" x2="1000" y1="200" y2="200"></line>
+<line x1="0" x2="1000" y1="400" y2="400"></line>
+<line x1="0" x2="1000" y1="600" y2="600"></line>
+<line x1="0" x2="1000" y1="800" y2="800"></line>
+<line x1="200" x2="200" y1="0" y2="1000"></line>
+<line x1="400" x2="400" y1="0" y2="1000"></line>
+<line x1="600" x2="600" y1="0" y2="1000"></line>
+<line x1="800" x2="800" y1="0" y2="1000"></line>
+</g>
+<!-- Animated Circuit Wires -->
+<g fill="none" filter="url(#neon-glow)" stroke="url(#neon-cyan-purple)" stroke-linecap="round" stroke-linejoin="round">
+<path class="circuit-wire" d="M 500 0 L 500 150 L 200 150 L 200 450 L 50 450" stroke-width="3"></path>
+<path class="circuit-wire" d="M 500 0 L 500 250 L 300 250 L 300 700 L 100 700" stroke-width="2"></path>
+<path class="circuit-wire" d="M 500 0 L 500 100 L 800 100 L 800 600 L 950 600" stroke-width="2.5"></path>
+<path class="circuit-wire" d="M 500 0 L 500 350 L 650 350 L 650 850 L 900 850" stroke-width="4"></path>
+<path class="circuit-wire" d="M 500 0 L 500 1000" stroke="#bf00ff" stroke-width="2.5"></path>
+<path class="circuit-wire" d="M 450 0 L 450 400 L 400 400 L 400 1000" stroke="#00f2ff" stroke-width="1.5"></path>
+<path class="circuit-wire" d="M 550 0 L 550 500 L 600 500 L 600 1000" stroke="#bf00ff" stroke-width="1.5"></path>
+<!-- Graphic Nodes -->
+<circle class="circuit-node" cx="200" cy="150" fill="#00f2ff" r="6" stroke="none"></circle>
+<circle class="circuit-node" cx="200" cy="450" fill="#bf00ff" r="10" stroke="none"></circle>
+<circle class="circuit-node" cx="300" cy="250" fill="#00f2ff" r="4" stroke="none"></circle>
+<circle class="circuit-node" cx="300" cy="700" fill="#00f2ff" r="8" stroke="none"></circle>
+<circle class="circuit-node" cx="800" cy="100" fill="#bf00ff" r="8" stroke="none"></circle>
+<circle class="circuit-node" cx="800" cy="600" fill="#00f2ff" r="12" stroke="none"></circle>
+<circle class="circuit-node" cx="650" cy="350" fill="#bf00ff" r="5" stroke="none"></circle>
+<circle class="circuit-node" cx="650" cy="850" fill="#bf00ff" r="10" stroke="none"></circle>
+</g>
+</svg>
+</div>
+<!-- Holographic Sword Centerpiece -->
+<div class="absolute inset-0 z-0 flex items-center justify-center opacity-40 mix-blend-screen pointer-events-none hologram-sword-img">
+<img alt="Productized service planning workspace" class="max-w-[700px] w-full object-contain filter blur-[1px] opacity-60" decoding="async" height="1024" loading="lazy" src="/assets/images/cozy-freelancer/cf-cozy-hero-work.webp" width="1536">
+</div>
+<div aria-hidden="true" class="pricing-blueprint-system">
+<svg class="pricing-blueprint-lines" preserveaspectratio="xMidYMid slice" viewbox="0 0 1200 760">
+<defs>
+<lineargradient id="pricingBlueprintStroke" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="currentColor" stop-opacity="0.08"></stop>
+<stop offset="50%" stop-color="currentColor" stop-opacity="0.32"></stop>
+<stop offset="100%" stop-color="currentColor" stop-opacity="0.08"></stop>
+</lineargradient>
+</defs>
+<path class="pricing-blueprint-route" d="M 112 540 H 318 C 390 540 390 380 470 380 H 600"></path>
+<path class="pricing-blueprint-route" d="M 1088 202 H 858 C 780 202 790 380 680 380 H 600"></path>
+<path class="pricing-blueprint-route" d="M 254 188 H 420 C 510 188 500 318 600 318"></path>
+<path class="pricing-blueprint-route" d="M 946 594 H 748 C 682 594 676 442 604 442"></path>
+<circle class="pricing-blueprint-ring" cx="600" cy="380" r="172"></circle>
+<circle class="pricing-blueprint-ring pricing-blueprint-ring--inner" cx="600" cy="380" r="92"></circle>
+</svg>
+<div class="pricing-blueprint-core">
+<span class="pricing-core-kicker">Engagement Matrix</span>
+<strong>Fixed Scope</strong>
+<span>brief -&gt; build -&gt; handoff</span>
+</div>
+<div class="pricing-route-card route-project">
+<span>01</span>
+<strong>Project</strong>
+<em>launch sprint</em>
+</div>
+<div class="pricing-route-card route-retainer">
+<span>02</span>
+<strong>Retainer</strong>
+<em>monthly support</em>
+</div>
+<div class="pricing-route-card route-agency">
+<span>03</span>
+<strong>Agency</strong>
+<em>white-label flow</em>
+</div>
+<div class="pricing-route-card route-intake">
+<span>IN</span>
+<strong>Brief</strong>
+<em>clear constraints</em>
+</div>
+<div class="pricing-route-card route-handoff">
+<span>OUT</span>
+<strong>Delivery</strong>
+<em>ready to ship</em>
+</div>
+</div>
+<div class="crawl-container relative z-10">
+<div class="crawl-content flex flex-col items-center gap-12 px-6 text-center">
+<div class="max-w-3xl mb-16">
+<p class="text-neon-cyan tracking-[0.5em] text-sm font-bold uppercase mb-6 neon-text-cyan" data-i18n="pages.index.pricing_kicker">Ce primești · cât costă</p>
+<h2 class="text-white font-display text-5xl md:text-8xl font-black leading-[1.1] tracking-tighter mb-6 uppercase" data-i18n="pages.index.pricing_h2">Găsit. Convertește.<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#bf00ff] to-[#0066ff]">Al tău.</span></h2>
+<div class="h-[1px] w-24 bg-gradient-to-r from-transparent via-[#bf00ff] to-transparent mx-auto mb-8">
+</div>
+<p class="text-white/50 text-xl font-light leading-relaxed max-w-2xl mx-auto" data-i18n="pages.index.pricing_lead">Un preț fix pentru un site pus la punct ca să fie găsit și construit ca să convertească — apoi predat ție. O singură dată. Fixat înainte să începem. Fără factură-surpriză, fără abonament lunar ca să-ți deții propriul site.</p>
+</div>
+<!-- Card 1: Launch Site + Basic Automation -->
+<div class="pricing-card-sw border-cyan glow-cyan w-full flex flex-col md:flex-row gap-8 items-center text-left relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl text-neon-cyan">web</span>
+</div>
+<div class="flex-1 flex flex-col gap-3 relative z-10">
+<div class="flex items-center gap-3">
+<img alt="Camelot Flows" class="h-8 w-auto object-contain opacity-40" height="112" src="/assets/images/cf-logo-wordmark.webp" width="212">
+<span class="text-neon-cyan font-mono text-[10px] tracking-[0.3em] uppercase" data-i18n="pages.index.sw_c1_kicker">SITE_WEB</span>
+</div>
+<h3 class="font-display text-3xl md:text-4xl font-black text-white uppercase tracking-tighter" data-i18n="pages.index.sw_c1_title">Start</h3>
+<span class="text-neon-cyan font-mono text-sm uppercase tracking-wider" data-i18n="pages.index.sw_c1_sub">One-pager-ul curat, ușor de găsit</span>
+<p class="text-white/50 text-sm leading-relaxed max-w-xs" data-i18n="pages.index.sw_c1_desc">Sfârșitul lui „nu prea am un site” — un one-pager curat, rapid, ușor de găsit, live în câteva zile. E al tău.</p>
+<button aria-expanded="false" class="sw-details-toggle sw-details-toggle--cyan">
+<span class="toggle-arrow">▸</span>
+<span data-i18n="pages.index.sw_details_show">Ce include</span>
+</button>
+<div class="sw-details">
+<ul class="flex flex-col gap-1.5 mt-3">
+<li class="flex items-center gap-2 text-white/55 text-xs font-mono"><span class="text-neon-cyan text-[10px]">▸</span><span data-i18n="pages.index.sw_c1_li1">Până la 3 pagini · responsive · SEO de bază</span></li>
+<li class="flex items-center gap-2 text-white/55 text-xs font-mono"><span class="text-neon-cyan text-[10px]">▸</span><span data-i18n="pages.index.sw_c1_li2">Formular de contact conectat la inbox-ul tău</span></li>
+<li class="flex items-center gap-2 text-white/55 text-xs font-mono"><span class="text-neon-cyan text-[10px]">▸</span><span data-i18n="pages.index.sw_c1_li3">Google Analytics 4 + filtru anti-spam</span></li>
+<li class="flex items-center gap-2 text-white/55 text-xs font-mono"><span class="text-neon-cyan text-[10px]">▸</span><span data-i18n="pages.index.sw_c1_li4">2 runde de revizuiri · predare curată</span></li>
+<li class="flex items-center gap-2 text-neon-cyan/80 text-xs font-mono font-bold mt-1"><span class="text-[10px]">⏱</span><span data-i18n="pages.index.sw_c1_delivery">Livrat în 5–7 zile lucrătoare</span></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col items-end gap-4 min-w-[200px] border-l border-white/10 pl-8 ml-4 relative z-10">
+<div class="text-neon-cyan text-5xl md:text-6xl font-black font-mono tracking-tighter neon-text-cyan">from €390</div>
+<div class="text-white/40 text-xs font-mono tracking-widest uppercase mb-4">fixed scope · fast launch</div>
+<a class="bg-neon-cyan/10 border border-neon-cyan/50 text-neon-cyan w-full py-4 rounded-xl text-sm font-black font-mono tracking-widest uppercase hover:bg-neon-cyan hover:text-obsidian transition-all duration-300 text-center block" data-i18n="pages.index.sw_c1_cta" href="/ro/launch-site">Pornesc Proiectul</a>
+</div>
+</div>
+<!-- Card 2: Merlin Automation (featured) -->
+<div class="pricing-card-sw border-purple glow-purple w-full flex flex-col md:flex-row gap-8 items-center text-left relative overflow-hidden scale-105">
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-neon-purple/20 blur-3xl pointer-events-none"></div>
+<div class="absolute top-0 right-0 p-4 opacity-20">
+<span class="material-symbols-outlined text-6xl text-neon-purple neon-text-purple">auto_fix_high</span>
+</div>
+<div class="flex-1 flex flex-col gap-3 relative z-10">
+<div class="flex items-center gap-3">
+<img alt="Camelot Flows" class="h-8 w-auto object-contain opacity-40" height="112" src="/assets/images/cf-logo-wordmark.webp" width="212">
+<span class="text-neon-purple font-mono text-[10px] tracking-[0.3em] uppercase" data-i18n="pages.index.sw_c2_kicker">FLUX_AI</span>
+</div>
+<h3 class="font-display text-3xl md:text-4xl font-black text-white uppercase tracking-tighter" data-i18n="pages.index.sw_c2_title">Automatizare Merlin</h3>
+<p class="text-white/50 text-sm leading-relaxed max-w-xs" data-i18n="pages.index.sw_c2_desc">Sistem n8n + agent Claude. Califică lead-uri, gestionează suportul de nivel 1, sincronizează CRM-ul — 24/7.</p>
+<button aria-expanded="false" class="sw-details-toggle sw-details-toggle--purple">
+<span class="toggle-arrow">▸</span>
+<span data-i18n="pages.index.sw_details_show">Ce include</span>
+</button>
+<div class="sw-details">
+<ul class="flex flex-col gap-1.5 mt-3">
+<li class="flex items-center gap-2 text-white/55 text-xs font-mono"><span class="text-neon-purple text-[10px]">▸</span><span data-i18n="pages.index.sw_c2_li1">Agent n8n + Claude antrenat pe afacerea ta</span></li>
+<li class="flex items-center gap-2 text-white/55 text-xs font-mono"><span class="text-neon-purple text-[10px]">▸</span><span data-i18n="pages.index.sw_c2_li2">Calificare lead-uri + sincronizare CRM</span></li>
+<li class="flex items-center gap-2 text-white/55 text-xs font-mono"><span class="text-neon-purple text-[10px]">▸</span><span data-i18n="pages.index.sw_c2_li3">Suport tier-1 automatizat 24/7</span></li>
+<li class="flex items-center gap-2 text-white/55 text-xs font-mono"><span class="text-neon-purple text-[10px]">▸</span><span data-i18n="pages.index.sw_c2_li4">30 de zile suport onboarding inclus</span></li>
+<li class="flex items-center gap-2 text-neon-purple/80 text-xs font-mono font-bold mt-1"><span class="text-[10px]">⏱</span><span data-i18n="pages.index.sw_c2_delivery">Livrat în 7–10 zile lucrătoare</span></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col items-end gap-4 min-w-[200px] border-l border-white/10 pl-8 ml-4 relative z-10">
+<div class="text-neon-purple text-5xl md:text-6xl font-black font-mono tracking-tighter neon-text-purple">from €690</div>
+<div class="text-white/40 text-xs font-mono tracking-widest uppercase mb-4">setup + optional support</div>
+<a class="bg-neon-purple text-obsidian w-full py-4 rounded-xl text-sm font-black font-mono tracking-widest uppercase hover:bg-white hover:text-black transition-colors text-center block shadow-[0_0_20px_rgba(191,0,255,0.4)]" data-i18n="pages.index.sw_c2_cta" href="/ro/merlin-automation">Discutăm Automatizarea</a>
+</div>
+</div>
+<!-- Card 3: Ecommerce / Advanced WP + Merlin -->
+<div class="pricing-card-sw border-amber glow-amber w-full flex flex-col md:flex-row gap-8 items-center text-left relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl text-neon-amber">storefront</span>
+</div>
+<div class="flex-1 flex flex-col gap-3 relative z-10">
+<div class="flex items-center gap-3">
+<img alt="Camelot Flows" class="h-8 w-auto object-contain opacity-40" height="112" src="/assets/images/cf-logo-wordmark.webp" width="212">
+<span class="text-neon-amber font-mono text-[10px] tracking-[0.3em] uppercase" data-i18n="pages.index.sw_c3_kicker">ECOMMERCE_WP</span>
+</div>
+<h3 class="font-display text-3xl md:text-4xl font-black text-white uppercase tracking-tighter" data-i18n="pages.index.sw_c3_title">Ecommerce / WP Avansat</h3>
+<span class="text-neon-amber font-mono text-sm uppercase tracking-wider" data-i18n="pages.index.sw_c3_sub">+ Automatizare Merlin</span>
+<p class="text-white/50 text-sm leading-relaxed max-w-xs" data-i18n="pages.index.sw_c3_desc">Magazin WooCommerce complet sau WordPress complex multi-pagină cu automatizare Merlin integrată.</p>
+<button aria-expanded="false" class="sw-details-toggle sw-details-toggle--amber">
+<span class="toggle-arrow">▸</span>
+<span data-i18n="pages.index.sw_details_show">Ce include</span>
+</button>
+<div class="sw-details">
+<ul class="flex flex-col gap-1.5 mt-3">
+<li class="flex items-center gap-2 text-white/55 text-xs font-mono"><span class="text-neon-amber text-[10px]">▸</span><span data-i18n="pages.index.sw_c3_li1">Magazin WooCommerce sau 5–8 pagini WP</span></li>
+<li class="flex items-center gap-2 text-white/55 text-xs font-mono"><span class="text-neon-amber text-[10px]">▸</span><span data-i18n="pages.index.sw_c3_li2">Integrare gateway plăți + setup produse</span></li>
+<li class="flex items-center gap-2 text-white/55 text-xs font-mono"><span class="text-neon-amber text-[10px]">▸</span><span data-i18n="pages.index.sw_c3_li3">Automatizare Merlin inclusă</span></li>
+<li class="flex items-center gap-2 text-white/55 text-xs font-mono"><span class="text-neon-amber text-[10px]">▸</span><span data-i18n="pages.index.sw_c3_li4">2 runde de revizuiri · predare curată</span></li>
+<li class="flex items-center gap-2 text-neon-amber/80 text-xs font-mono font-bold mt-1"><span class="text-[10px]">⏱</span><span data-i18n="pages.index.sw_c3_delivery">Livrat în 14–21 zile lucrătoare</span></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col items-end gap-4 min-w-[200px] border-l border-white/10 pl-8 ml-4 relative z-10">
+<div class="text-neon-amber text-5xl md:text-6xl font-black font-mono tracking-tighter neon-text-amber">from €990</div>
+<div class="text-white/40 text-xs font-mono tracking-widest uppercase mb-4">includes merlin setup</div>
+<a class="bg-neon-amber-10 border border-neon-amber-50 text-neon-amber w-full py-4 rounded-xl text-sm font-black font-mono tracking-widest uppercase hover:bg-neon-amber hover:text-obsidian transition-all duration-300 text-center block" data-i18n="pages.index.sw_c3_cta" href="/ro/ecommerce-wp">Construiesc Magazinul</a>
+</div>
+</div>
+<!-- Card 4: Custom Premium Website + Merlin -->
+<div class="pricing-card-sw border-blue glow-blue w-full flex flex-col md:flex-row gap-8 items-center text-left relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl text-neon-blue">diamond</span>
+</div>
+<div class="flex-1 flex flex-col gap-3 relative z-10">
+<div class="flex items-center gap-3">
+<img alt="Camelot Flows" class="h-8 w-auto object-contain opacity-40" height="112" src="/assets/images/cf-logo-wordmark.webp" width="212">
+<span class="text-neon-blue font-mono text-[10px] tracking-[0.3em] uppercase" data-i18n="pages.index.sw_c4_kicker">BUILD_PREMIUM</span>
+</div>
+<h3 class="font-display text-3xl md:text-4xl font-black text-white uppercase tracking-tighter" data-i18n="pages.index.sw_c4_title">Website Premium Custom</h3>
+<span class="text-neon-blue font-mono text-sm uppercase tracking-wider" data-i18n="pages.index.sw_c4_sub">+ Automatizare Merlin</span>
+<p class="text-white/50 text-sm leading-relaxed max-w-xs" data-i18n="pages.index.sw_c4_desc">Website de nivel înalt, construit de la zero cu integrare completă Merlin AI. Pentru branduri care cer excelență.</p>
+<button aria-expanded="false" class="sw-details-toggle sw-details-toggle--blue">
+<span class="toggle-arrow">▸</span>
+<span data-i18n="pages.index.sw_details_show">Ce include</span>
+</button>
+<div class="sw-details">
+<ul class="flex flex-col gap-1.5 mt-3">
+<li class="flex items-center gap-2 text-white/55 text-xs font-mono"><span class="text-neon-blue text-[10px]">▸</span><span data-i18n="pages.index.sw_c4_li1">Design custom de la zero · fără template-uri</span></li>
+<li class="flex items-center gap-2 text-white/55 text-xs font-mono"><span class="text-neon-blue text-[10px]">▸</span><span data-i18n="pages.index.sw_c4_li2">Integrare completă Merlin AI</span></li>
+<li class="flex items-center gap-2 text-white/55 text-xs font-mono"><span class="text-neon-blue text-[10px]">▸</span><span data-i18n="pages.index.sw_c4_li3">Acces prioritar pe durata build-ului</span></li>
+<li class="flex items-center gap-2 text-white/55 text-xs font-mono"><span class="text-neon-blue text-[10px]">▸</span><span data-i18n="pages.index.sw_c4_li4">Suport 60 de zile post-lansare</span></li>
+<li class="flex items-center gap-2 text-neon-blue/80 text-xs font-mono font-bold mt-1"><span class="text-[10px]">⏱</span><span data-i18n="pages.index.sw_c4_delivery">Livrat în 3–4 săptămâni</span></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col items-end gap-4 min-w-[200px] border-l border-white/10 pl-8 ml-4 relative z-10">
+<div class="text-neon-blue text-5xl md:text-6xl font-black font-mono tracking-tighter neon-text-blue">from €1,200</div>
+<div class="text-white/40 text-xs font-mono tracking-widest uppercase mb-4">bespoke, no templates</div>
+<a class="bg-neon-blue/10 border border-neon-blue/50 text-neon-blue w-full py-4 rounded-xl text-sm font-black font-mono tracking-widest uppercase hover:bg-neon-blue hover:text-white transition-all duration-300 text-center block" data-i18n="pages.index.sw_c4_cta" href="/ro/custom-premium">Pornesc Build-ul Premium</a>
+</div>
+</div>
+<div class="py-24 text-center space-y-4">
+<p class="text-white/40 text-[10px] tracking-[0.4em] uppercase">Fixed scope. Clear handoff. No agency layers.</p>
+<p class="text-white/25 text-[9px] tracking-[0.2em] uppercase">Built from Chișinău for clients in Moldova, Romania, and Europe.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: GUARANTEE · BOUNDARY · HOSTING & CARE -->
+<section class="py-24 px-6 relative bg-obsidian overflow-hidden border-t border-white/5 z-30" id="trust-terms">
+<div class="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-primary/10 blur-[150px] rounded-full pointer-events-none"></div>
+<div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Guarantee -->
+<div class="glass-card rounded-2xl p-8 md:p-10 border border-primary/30 shadow-neon relative overflow-hidden cf-rise" style="transition-delay:0ms">
+<div class="absolute top-0 right-0 p-5 opacity-10">
+<span class="material-symbols-outlined text-6xl text-primary">verified_user</span>
+</div>
+<span class="text-primary-glow font-mono text-xs uppercase tracking-[0.3em] mb-3 block" data-i18n="pages.index.guarantee_kicker">// INVERSAREA RISCULUI</span>
+<h2 class="font-display text-3xl md:text-4xl font-bold text-white tracking-tight mb-4" data-i18n="pages.index.guarantee_h">Garanția „Aprobi sau pleci”</h2>
+<p class="text-slate-300 text-base leading-relaxed max-w-3xl" data-i18n="pages.index.guarantee_p">Plătești un avans ca să începem. Apoi vezi designul. Dacă nu-ți place direcția, îl revizuiesc până îți place — sau pleci și nu mai datorezi nimic. Nu plătești niciodată restul pentru un site pe care nu l-ai ales. Acces direct la mine pe tot parcursul: fără account manageri, fără pasări de la unul la altul. Riscul de a rata ținta e al meu, nu al tău.</p>
+</div>
+<!-- Boundary -->
+<div class="glass-card rounded-2xl p-8 md:p-10 border border-white/10 relative overflow-hidden cf-rise" style="transition-delay:90ms">
+<div class="absolute top-0 right-0 p-5 opacity-10">
+<span class="material-symbols-outlined text-6xl text-emerald-400">balance</span>
+</div>
+<span class="text-emerald-400 font-mono text-xs uppercase tracking-[0.3em] mb-3 block" data-i18n="pages.index.boundary_kicker">// LINIA ONESTĂ</span>
+<h2 class="font-display text-3xl md:text-4xl font-bold text-white tracking-tight mb-4" data-i18n="pages.index.boundary_h">Eu construiesc activul. Tu îți conduci vânzările.</h2>
+<p class="text-slate-300 text-base leading-relaxed max-w-3xl" data-i18n="pages.index.boundary_p">Te fac ușor de găsit și gata să convertești — un site rapid, SEO real, un profil Google configurat corect. Ce nu vând e magie: nu pot promite trafic, lead-uri, poziții în căutări sau un val de clienți noi, și nici n-o voi face vreodată. Treaba mea e să opresc cererea pe care deja ai câștigat-o să se scurgă printre degete — așa că, atunci când cineva te caută, te găsește și te poate rezerva. Vânzarea rămâne a ta. Eu doar mă asigur că ușa e deschisă și luminile sunt aprinse.</p>
+</div>
+<!-- Hosting & Care -->
+<div class="glass-panel rounded-2xl p-8 md:p-10 border border-white/10 relative overflow-hidden cf-rise" style="transition-delay:170ms">
+<div class="absolute top-0 right-0 p-5 opacity-10">
+<span class="material-symbols-outlined text-6xl text-slate-400">dns</span>
+</div>
+<span class="text-slate-400 font-mono text-xs uppercase tracking-[0.3em] mb-3 block" data-i18n="pages.index.hosting_care_kicker">// OPȚIONAL · DOAR TEHNIC</span>
+<h2 class="font-display text-2xl md:text-3xl font-bold text-white tracking-tight mb-4" data-i18n="pages.index.hosting_care_h">Găzduire &amp; Mentenanță</h2>
+<p class="text-slate-400 text-base leading-relaxed max-w-3xl" data-i18n="pages.index.hosting_care_p">Odată ce site-ul e al tău, găzduiește-l singur sau lasă întreținerea în grija mea. Asta acoperă partea plictisitoare-dar-critică: găzduire, SSL, patch-uri de securitate, backupuri, monitorizare uptime. Atât — nu e marketing și nu promite nimic legat de trafic, poziții sau clienți. Doar ține un site pe care deja îl deții rapid, sigur și online. Îl iei sau îl lași; site-ul e al tău oricum.</p>
+</div>
+</div>
+</section>
+<!-- Testimonials ─────────────────────────────────────────── -->
+<section class="py-24 px-6 relative" id="testimonials">
+<div aria-hidden="true" class="absolute inset-0 grid-bg opacity-20"></div>
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="text-center mb-16">
+<span class="text-primary-glow font-mono text-xs uppercase tracking-widest mb-4 block" data-i18n="pages.index.testi_kicker">// CLIENT_VOICES</span>
+<h2 class="font-display text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4" data-i18n="pages.index.testi_h2">Cuvintele lor, <span class="text-accent text-glow">nu ale mele</span></h2>
+<p class="text-slate-400 text-sm max-w-xl mx-auto leading-relaxed" data-i18n="pages.index.testi_lead">Fiecare proiect e o colaborare reală. Iată cum descriu clienții experiența.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+<!-- Vasile – Timberkids -->
+<div class="glass-card rounded-xl p-8 relative border border-primary/20 transition-all duration-300">
+<div aria-hidden="true" class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary/70 to-accent/50 rounded-l-xl"></div>
+<div aria-label="5 stars" class="mb-5 pl-1" style="color:#f59e0b;font-size:1.05rem;letter-spacing:3px">★★★★★</div>
+<blockquote class="text-white/70 text-sm leading-relaxed mb-8 pl-1" data-i18n="pages.index.testi_1_quote">„Cu Alexandru a fost mai degrabă ca o întâlnire cu un partener creativ decât o angajare de developer. Site-ul a fost lansat în mai puțin de două săptămâni — fluid, fiecare animație la locul ei. Părinții îmi fac complimente non-stop.”</blockquote>
+<div class="flex items-center gap-3 pl-1">
+<div aria-hidden="true" class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/60 to-accent/60 flex items-center justify-center text-white font-bold font-mono text-sm flex-shrink-0">V</div>
+<div>
+<strong class="text-white text-sm font-semibold block leading-tight">Vasile Petras</strong>
+<a class="text-primary-glow text-xs font-mono hover:underline" href="https://timberkids.md" rel="noopener noreferrer" target="_blank">Timberkids</a>
+</div>
+</div>
+</div>
+<!-- Owner – First Line Garage Door -->
+<div class="glass-card rounded-xl p-8 relative border border-primary/20 transition-all duration-300">
+<div aria-hidden="true" class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-accent/70 to-primary/50 rounded-l-xl"></div>
+<div aria-label="5 stars" class="mb-5 pl-1" style="color:#f59e0b;font-size:1.05rem;letter-spacing:3px">★★★★★</div>
+<blockquote class="text-white/70 text-sm leading-relaxed mb-8 pl-1" data-i18n="pages.index.testi_2_quote">„I-am dat lui Alexandru un brief sumar și un termen ferm. A revenit cu un design la care nici nu mă gândisem și cu site-ul gata cu trei zile mai devreme.”</blockquote>
+<div class="flex items-center gap-3 pl-1">
+<div aria-hidden="true" class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/60 to-primary/60 flex items-center justify-center text-white font-bold font-mono text-sm flex-shrink-0">F</div>
+<div>
+<strong class="text-white text-sm font-semibold block leading-tight">Owner</strong>
+<a class="text-primary-glow text-xs font-mono hover:underline" href="https://firstlinegarage.com" rel="noopener noreferrer" target="_blank">First Line Garage Door</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ ──────────────────────────────────────────────────── -->
+<section class="py-24 px-6 relative" id="faq">
+<div class="max-w-3xl mx-auto relative z-10">
+<div class="text-center mb-16">
+<span class="text-primary-glow font-mono text-xs uppercase tracking-widest mb-4 block" data-i18n="pages.index.faq_kicker">// RĂSPUNSURI_DIRECTE</span>
+<h2 class="font-display text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4" data-i18n="pages.index.faq_h2">Întrebări și <span class="text-accent text-glow">răspunsuri</span></h2>
+<p class="text-slate-400 text-sm max-w-xl mx-auto leading-relaxed" data-i18n="pages.index.faq_lead">Varianta onestă — aceleași răspunsuri pe care le-ai primi de la mine la telefon.</p>
+</div>
+<div class="cf-faq flex flex-col gap-4">
+<details class="glass-card rounded-xl border border-primary/20">
+<summary class="cf-faq-q flex items-center justify-between gap-4 p-6 cursor-pointer">
+<span class="text-white font-display font-bold text-base md:text-lg" data-i18n="pages.index.faq_q1">Îmi aduci mai mulți clienți?</span>
+<span aria-hidden="true" class="cf-faq-icon material-symbols-outlined text-primary-glow">expand_more</span>
+</summary>
+<p class="text-slate-300 text-sm leading-relaxed px-6 pb-6" data-i18n="pages.index.faq_a1">Sincer: eu construiesc activul, vânzările le faci tu. Treaba mea e ca oamenii care deja caută ce faci tu să te găsească — Google Business Profile pus la punct, SEO local țintit pe căutările cu intenție de cumpărare, schema LocalBusiness — și ca site-ul să transforme acei vizitatori în programări. Ce nu fac: nu îți rulez reclame și nu promit un număr de lead-uri. Dacă ai deja cerere din recomandări, trafic pietonal sau reputație, mă asigur că ajunge în sfârșit pe un site pe măsura ei. Dacă nu ai cerere și ai nevoie de cineva care să te facă faimos, nu sunt alegerea potrivită.</p>
+</details>
+<details class="glass-card rounded-xl border border-primary/20">
+<summary class="cf-faq-q flex items-center justify-between gap-4 p-6 cursor-pointer">
+<span class="text-white font-display font-bold text-base md:text-lg" data-i18n="pages.index.faq_q2">Site-ul e al meu sau doar îl închiriez?</span>
+<span aria-hidden="true" class="cf-faq-icon material-symbols-outlined text-primary-glow">expand_more</span>
+</summary>
+<p class="text-slate-300 text-sm leading-relaxed px-6 pb-6" data-i18n="pages.index.faq_a2">E al tău, integral. E o construcție plătită o singură dată, predată ție împreună cu un ghid — fără chirie, fără capcana unui abonament, fără să fii ostaticul developerului. Site-ul, conținutul și conturile rămân ale tale.</p>
+</details>
+<details class="glass-card rounded-xl border border-primary/20">
+<summary class="cf-faq-q flex items-center justify-between gap-4 p-6 cursor-pointer">
+<span class="text-white font-display font-bold text-base md:text-lg" data-i18n="pages.index.faq_q3">O să apară afacerea mea pe Google?</span>
+<span aria-hidden="true" class="cf-faq-icon material-symbols-outlined text-primary-glow">expand_more</span>
+</summary>
+<p class="text-slate-300 text-sm leading-relaxed px-6 pb-6" data-i18n="pages.index.faq_a3">Pun fundația ca să poți fi găsit: Google Business Profile optimizat, SEO local on-page țintit pe căutările care aduc clienți plătitori și schema LocalBusiness de care Google are nevoie ca să te plaseze cu încredere. Nu pot garanta o poziție anume în rezultate — nimeni onest nu poate — dar mă asigur că tot ce ține de constructor e făcut corect, ca să fii pregătit să fii găsit.</p>
+</details>
+<details class="glass-card rounded-xl border border-primary/20">
+<summary class="cf-faq-q flex items-center justify-between gap-4 p-6 cursor-pointer">
+<span class="text-white font-display font-bold text-base md:text-lg" data-i18n="pages.index.faq_q4">Cât costă și există taxe ascunse sau plăți lunare?</span>
+<span aria-hidden="true" class="cf-faq-icon material-symbols-outlined text-primary-glow">expand_more</span>
+</summary>
+<p class="text-slate-300 text-sm leading-relaxed px-6 pb-6" data-i18n="pages.index.faq_a4">Un preț fix, agreat dinainte. One-pager-ul Start pornește de la 390 €; construcția completă Found e 690–1.200 €, fixată după numărul de pagini. Fără surprize și fără taxe lunare obligatorii — activul e al tău când e gata. Există un plan opțional Hosting &amp; Care dacă vrei să mă ocup în continuare de hosting, SSL, backup-uri și actualizări, dar e opțional și vândut ca muncă tehnică prestată, niciodată ca promisiune de trafic sau poziții.</p>
+</details>
+<details class="glass-card rounded-xl border border-primary/20">
+<summary class="cf-faq-q flex items-center justify-between gap-4 p-6 cursor-pointer">
+<span class="text-white font-display font-bold text-base md:text-lg" data-i18n="pages.index.faq_q5">Lucrezi și cu afaceri din afara Moldovei?</span>
+<span aria-hidden="true" class="cf-faq-icon material-symbols-outlined text-primary-glow">expand_more</span>
+</summary>
+<p class="text-slate-300 text-sm leading-relaxed px-6 pb-6" data-i18n="pages.index.faq_a5">Da. Sunt un atelier solo din Chișinău și lucrez întâi cu afaceri locale de servicii din Moldova și România, apoi din UE și SUA. Totul se livrează remote, cu acces direct la constructor — fără straturi de agenție, fără account manageri, fără intermediari între tine și omul care îți construiește efectiv site-ul.</p>
+</details>
+<details class="glass-card rounded-xl border border-primary/20">
+<summary class="cf-faq-q flex items-center justify-between gap-4 p-6 cursor-pointer">
+<span class="text-white font-display font-bold text-base md:text-lg" data-i18n="pages.index.faq_q6">Pentru ce fel de afaceri e gândit?</span>
+<span aria-hidden="true" class="cf-faq-icon material-symbols-outlined text-primary-glow">expand_more</span>
+</summary>
+<p class="text-slate-300 text-sm leading-relaxed px-6 pb-6" data-i18n="pages.index.faq_a6">Afaceri locale de servicii care au deja cerere — saloane, clinici, stomatologi, restaurante, meseriași, săli de fitness și altele asemenea — și care pierd clienți din cauza unui site slab, învechit sau de negăsit. Dacă ai reputație și clienți fideli, dar site-ul nu arată asta, exact pentru asta e făcut. Dacă nu ai încă cerere și ai nevoie de marketing care s-o creeze de la zero, nu e oferta potrivită.</p>
+</details>
+</div>
+</div>
+</section>
+<section class="py-16 px-6 border-b border-white/5">
+<div class="max-w-7xl mx-auto text-center">
+<p class="text-[10px] font-mono uppercase tracking-[0.3em] text-slate-500 mb-12" data-i18n="pages.index.trust_kicker">Construit cu</p>
+<div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60">
+<div class="flex items-center gap-2 group cursor-default">
+<span class="material-symbols-outlined text-2xl group-hover:text-white transition-colors">web</span>
+<span class="font-display text-lg font-bold tracking-tighter group-hover:text-white transition-colors italic">WordPress</span>
+</div>
+<div class="flex items-center gap-2 group cursor-default">
+<span class="material-symbols-outlined text-2xl group-hover:text-white transition-colors">storefront</span>
+<span class="font-display text-lg font-bold tracking-tighter group-hover:text-white transition-colors italic">WooCommerce</span>
+</div>
+<div class="flex items-center gap-2 group cursor-default">
+<span class="material-symbols-outlined text-2xl group-hover:text-white transition-colors">animation</span>
+<span class="font-display text-lg font-bold tracking-tighter group-hover:text-white transition-colors italic">GSAP</span>
+</div>
+<div class="flex items-center gap-2 group cursor-default">
+<span class="material-symbols-outlined text-2xl group-hover:text-white transition-colors">hub</span>
+<span class="font-display text-lg font-bold tracking-tighter group-hover:text-white transition-colors italic">Make · n8n</span>
+</div>
+<div class="flex items-center gap-2 group cursor-default">
+<span class="material-symbols-outlined text-2xl group-hover:text-white transition-colors">smart_toy</span>
+<span class="font-display text-lg font-bold tracking-tighter group-hover:text-white transition-colors italic">AI Agents</span>
+</div>
+<div class="flex items-center gap-2 group cursor-default">
+<span class="material-symbols-outlined text-2xl group-hover:text-white transition-colors">shopping_bag</span>
+<span class="font-display text-lg font-bold tracking-tighter group-hover:text-white transition-colors italic">Shopify · Custom</span>
+</div>
+<div class="flex items-center gap-2 group cursor-default">
+<span class="material-symbols-outlined text-2xl group-hover:text-white transition-colors">style</span>
+<span class="font-display text-lg font-bold tracking-tighter group-hover:text-white transition-colors italic">Tailwind</span>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-obsidian pt-24 pb-12 px-6 border-t border-primary/20 relative">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+</div>
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20">
+<div class="md:col-span-3">
+<div class="flex items-center gap-3 mb-6">
+<img alt="Camelot Flows" class="object-contain" src="/assets/images/cf-mark.png?v=3" style="height:56px;width:auto">
+<span class="font-display text-xl font-bold tracking-tighter uppercase text-white">Camelot
+                            Flows</span>
+</img></div>
+<p class="text-slate-500 mb-8 text-sm leading-relaxed font-mono">
+<span data-i18n="common.footer.location_line_1"><span class="text-primary">&gt;</span> Locație: Chișinău, MD</span><br>
+<span data-i18n="common.footer.location_line_2"><span class="text-primary">&gt;</span> Coordonate: 47.0105° N, 28.8638° E</span><br>
+<span data-i18n="common.footer.location_line_3"><span class="text-primary">&gt;</span> Misiune: Construcții premium. Activul e al tău.</span>
+</p>
+<div class="flex gap-4">
+<a aria-label="LinkedIn" class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="https://www.linkedin.com/in/alex-buzi/" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+</a>
+<a class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="https://github.com/Xander1993" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-lg">mail</span>
+</a>
+<a aria-label="Call +373 69 555 936" class="nav-phone-btn w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-white/5 hover:border-primary/50 hover:text-primary transition-all text-slate-400" href="tel:+37369555936">
+<span class="material-symbols-outlined cf-phone-icon text-lg">call</span>
+</a>
+</div>
+<a class="nav-phone-btn mt-4 flex items-center gap-2 text-slate-500 hover:text-primary transition-colors text-xs font-mono" href="tel:+37369555936">
+<span class="material-symbols-outlined cf-phone-icon" style="font-size:14px">call</span>
+                        +373 69 555 936
+                    </a>
+</div>
+<div class="md:col-span-2">
+<h3 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_protocol">Protocol</h3>
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/arsenal"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_protocol_arsenal">Arsenalul</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/merlin"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_protocol_merlin">Merlin</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/case-studies"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_protocol_cases">Studii de caz</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/for-agencies"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_protocol_agencies">Agenții</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/blog/"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span> <span data-i18n="common.footer.blog">Blog</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h3 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_services">Servicii</h3>
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/service-creation"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_creation">Creare site</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/service-maintenance"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_maintenance">Mentenanță</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/service-automation"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_automation">Automatizări</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/service-marketing"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_marketing">Fii găsit</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/audit"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_services_audit">Audit gratuit de site</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h3 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_company">Atelier</h3>
+<ul class="space-y-3 text-slate-500 text-sm font-mono">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/about"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_company_about">Despre</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/work-with-me"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_company_work">Colaborare</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/legal"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_company_legal">Termeni</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="/ro/contact"><span class="opacity-0 group-hover:opacity-100 text-primary transition-opacity">&gt;</span>
+<span data-i18n="common.footer.col_company_contact">Contact</span></a></li>
+</ul>
+</div>
+<div class="md:col-span-3">
+<h3 class="font-mono font-bold mb-6 text-xs text-white uppercase tracking-widest border-b border-white/10 pb-2 w-max" data-i18n="common.footer.col_vanguard">Avangardă</h3>
+<p class="text-slate-500 text-sm mb-6 leading-relaxed" data-i18n="common.footer.col_vanguard_lead">Săptămânal — idei despre automatizare AI, direct în terminalul tău.</p>
+<div class="flex gap-2 p-1 bg-white/5 rounded border border-white/10 focus-within:border-primary/50 transition-colors" id="newsletter-form">
+<label class="sr-only" for="newsletter-email">Email address</label>
+<input class="bg-transparent border-none focus:ring-0 text-sm flex-1 px-4 text-white font-mono placeholder:text-slate-600" data-i18n-attr="placeholder:common.footer.col_vanguard_placeholder" id="newsletter-email" placeholder="ENTER_EMAIL" type="email">
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded text-xs font-bold transition-colors font-mono" data-i18n="common.footer.col_vanguard_submit">[SUBMIT]</button>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-xs text-slate-600 font-mono" data-i18n="common.footer.copyright">© 2026 Camelot Flows. Construit de Alex Buzi.</p>
+<div class="flex flex-wrap justify-center gap-4 md:gap-8">
+<div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+<span class="material-symbols-outlined text-sm text-green-500">wifi</span>
+<span data-i18n="common.footer.status_optimal">Stare sistem: optimă</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+<span class="material-symbols-outlined text-sm text-blue-500">bolt</span>
+<span data-i18n="common.footer.status_lightning">Performanță fulgerătoare</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<div id="custom-cursor"></div>
+<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script defer="" src="/assets/js/camelot-gsap.min.js?v=9"></script>
+<script defer="" src="/assets/site.min.js?v=1"></script>
+<script defer="" src="/assets/js/locales.min.js?v=18"></script>
+<script defer="" src="/assets/js/i18n.min.js?v=1"></script>
+<script>(function(){var r=[].slice.call(document.querySelectorAll('.cf-rise'));if(!r.length)return;if(!('IntersectionObserver' in window)){r.forEach(function(e){e.classList.add('is-in')});return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});r.forEach(function(e){io.observe(e);});})();</script>
+</body>
+</html>
