@@ -1,0 +1,3877 @@
+{
+  "generatedAt": "2026-08-28T12:28:37.052Z",
+  "baseUrl": "https://camelotflows.dev/",
+  "sitemap": {
+    "url": "https://camelotflows.dev/sitemap.xml",
+    "status": 200,
+    "urlCount": 88
+  },
+  "crawledUrlCount": 88,
+  "records": [
+    {
+      "url": "https://camelotflows.dev/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/",
+      "metaRobots": null,
+      "title": "Web Development, WooCommerce & AI Automation | Camelot Flows",
+      "metaDescription": "WordPress and WooCommerce development, redesigns, migrations, AI integrations, and maintenance for businesses in Moldova, Romania, Europe, and the USA.",
+      "h1": [
+        "A site as good as your reputation."
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 54,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 150402,
+      "initialMainTextLength": 502,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/",
+      "internalLinksIn": 98
+    },
+    {
+      "url": "https://camelotflows.dev/ro/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/",
+      "metaRobots": null,
+      "title": "Dezvoltare web, WooCommerce și automatizări AI | Camelot Flows",
+      "metaDescription": "Dezvoltare WordPress și WooCommerce, redesign, migrări, integrări AI și mentenanță pentru afaceri din Moldova, România, Europa și SUA.",
+      "h1": [
+        "Un site pe măsura reputației tale."
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 54,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 124428,
+      "initialMainTextLength": 634,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/",
+      "internalLinksIn": 95
+    },
+    {
+      "url": "https://camelotflows.dev/ru/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/",
+      "metaRobots": null,
+      "title": "Веб-разработка, WooCommerce и AI-автоматизация | Camelot Flows",
+      "metaDescription": "Разработка WordPress и WooCommerce, редизайн, миграции, AI-интеграции и поддержка для бизнеса в Молдове, Румынии, Европе и США.",
+      "h1": [
+        "Сайт, достойный вашей репутации."
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 54,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 133144,
+      "initialMainTextLength": 641,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/",
+      "internalLinksIn": 95
+    },
+    {
+      "url": "https://camelotflows.dev/about",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/about",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/about",
+      "metaRobots": null,
+      "title": "About Alexandru Buzi — Solo Web Atelier | Camelot Flows",
+      "metaDescription": "The solo workshop behind Camelot Flows: fast, findable websites built to convert, from Chisinau to clients in Moldova, Romania, and Europe. Fixed prices, direct builder access, 24h replies. You own it.",
+      "h1": [
+        "An Avalon for makers, run from Moldova while my son Arthur naps."
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/about"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/about"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/about"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/about"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 44,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 46287,
+      "initialMainTextLength": 4657,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/",
+      "internalLinksIn": 62
+    },
+    {
+      "url": "https://camelotflows.dev/ro/about",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/about",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/about",
+      "metaRobots": null,
+      "title": "Despre Alexandru Buzi | Camelot Flows",
+      "metaDescription": "Atelierul solo din spatele Camelot Flows: site-uri premium, automatizări AI și livrare productizată din Chișinău, pentru clienți din toată lumea.",
+      "h1": [
+        "Un Avalon pentru meseriași, ținut în viață din Moldova cât timp fiul meu Arthur doarme."
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/about"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/about"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/about"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/about"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 44,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 40307,
+      "initialMainTextLength": 5004,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/",
+      "internalLinksIn": 60
+    },
+    {
+      "url": "https://camelotflows.dev/ru/about",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/about",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/about",
+      "metaRobots": null,
+      "title": "Об Александру Бузи | Camelot Flows",
+      "metaDescription": "Соло-мастерская за Camelot Flows: премиум-сайты, AI-автоматизация и спокойная продуктизированная работа из Кишинёва — для клиентов по всему миру.",
+      "h1": [
+        "Avalon для мастеров — держу его на ходу из Молдовы, пока мой сын Артур спит."
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/about"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/about"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/about"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/about"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 44,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 44644,
+      "initialMainTextLength": 5003,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/",
+      "internalLinksIn": 60
+    },
+    {
+      "url": "https://camelotflows.dev/arsenal",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/arsenal",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/arsenal",
+      "metaRobots": null,
+      "title": "Tools & Stack — WordPress, GSAP & n8n Automation | Camelot Flows",
+      "metaDescription": "See the tools Alex Buzi uses: WordPress, GSAP animations, n8n automation, Claude API agents. The full stack behind conversion-focused sites built in Chisinau.",
+      "h1": [
+        "The Arsenal"
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/arsenal"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/arsenal"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/arsenal"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/arsenal"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 43,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 61311,
+      "initialMainTextLength": 2432,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/",
+      "internalLinksIn": 122
+    },
+    {
+      "url": "https://camelotflows.dev/ro/arsenal",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/arsenal",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/arsenal",
+      "metaRobots": null,
+      "title": "Arsenalul | Camelot Flows",
+      "metaDescription": "Capabilitățile Camelot Flows: sisteme web boutique, automatizări AI, infrastructură de servicii productizate și asset-uri digitale gândite pentru conversie.",
+      "h1": [
+        "Arsenalul"
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/arsenal"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/arsenal"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/arsenal"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/arsenal"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 43,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 52430,
+      "initialMainTextLength": 2392,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/",
+      "internalLinksIn": 118
+    },
+    {
+      "url": "https://camelotflows.dev/ru/arsenal",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/arsenal",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/arsenal",
+      "metaRobots": null,
+      "title": "Arsenal | Camelot Flows",
+      "metaDescription": "Возможности Camelot Flows: бутиковые веб-системы, AI-автоматизация, продуктизированная инфраструктура услуг и digital-активы под конверсию.",
+      "h1": [
+        "Arsenal"
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/arsenal"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/arsenal"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/arsenal"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/arsenal"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 43,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 54584,
+      "initialMainTextLength": 2311,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/",
+      "internalLinksIn": 118
+    },
+    {
+      "url": "https://camelotflows.dev/audit",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/audit",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/audit",
+      "metaRobots": null,
+      "title": "Free Website Audit — Find What's Losing You Customers | Camelot Flows",
+      "metaDescription": "Paste your URL, get a free conversion-path audit in 20 seconds: broken click-to-call links, missing business schema, dead contact paths, mobile speed. No account, no obligation.",
+      "h1": [
+        "Is your website quietly losing you customers?"
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/audit"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/audit"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/audit"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/audit"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 42,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 80335,
+      "initialMainTextLength": 3709,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/",
+      "internalLinksIn": 39
+    },
+    {
+      "url": "https://camelotflows.dev/ro/audit",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/audit",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/audit",
+      "metaRobots": null,
+      "title": "Site-ul tău pierde clienți fără să-ți dai seama? | Camelot Flows",
+      "metaDescription": "Lipește adresa mai jos. În aproximativ douăzeci de secunde primești aceeași verificare a căii de conversie pe care o fac înainte de fiecare proiect: linkuri cli",
+      "h1": [
+        "Site-ul tău pierde clienți fără să-ți dai seama?"
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/audit"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/audit"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/audit"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/audit"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 42,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 76403,
+      "initialMainTextLength": 4037,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/",
+      "internalLinksIn": 37
+    },
+    {
+      "url": "https://camelotflows.dev/ru/audit",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/audit",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/audit",
+      "metaRobots": null,
+      "title": "Ваш сайт незаметно теряет клиентов? | Camelot Flows",
+      "metaDescription": "Вставьте адрес ниже. Примерно за двадцать секунд вы получите ту же проверку пути к конверсии, которую я делаю перед каждым проектом: битые ссылки click-to-call,",
+      "h1": [
+        "Ваш сайт незаметно теряет клиентов?"
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/audit"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/audit"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/audit"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/audit"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 42,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 79878,
+      "initialMainTextLength": 3994,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/",
+      "internalLinksIn": 37
+    },
+    {
+      "url": "https://camelotflows.dev/blog/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/blog/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/blog/",
+      "metaRobots": null,
+      "title": "The Codex — Build Notes & AI Dispatches | Camelot Flows",
+      "metaDescription": "Build notes, AI breakdowns, and field reports from a solo WordPress developer building in public.",
+      "h1": [
+        "Dispatches from the Workshop."
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 71,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 46223,
+      "initialMainTextLength": 463,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/",
+      "internalLinksIn": 53
+    },
+    {
+      "url": "https://camelotflows.dev/ro/blog/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/blog/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/blog/",
+      "metaRobots": null,
+      "title": "Rapoarte din Atelier. | Camelot Flows",
+      "metaDescription": "Note de construcție, analize AI și rapoarte de la un developer WordPress solo, construit în public.",
+      "h1": [
+        "Rapoarte din Atelier."
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 71,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 45889,
+      "initialMainTextLength": 456,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/",
+      "internalLinksIn": 51
+    },
+    {
+      "url": "https://camelotflows.dev/ru/blog/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/blog/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/blog/",
+      "metaRobots": null,
+      "title": "Заметки из Мастерской. | Camelot Flows",
+      "metaDescription": "Заметки о разработке, разборы AI и полевые отчёты от solo WordPress-разработчика.",
+      "h1": [
+        "Заметки из Мастерской."
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 71,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 47951,
+      "initialMainTextLength": 396,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/",
+      "internalLinksIn": 51
+    },
+    {
+      "url": "https://camelotflows.dev/blog/ai-intake-assistant-small-service-business/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/blog/ai-intake-assistant-small-service-business/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/blog/ai-intake-assistant-small-service-business/",
+      "metaRobots": null,
+      "title": "What an AI Intake Assistant Actually Does for a Small Service Business | Camelot Flows",
+      "metaDescription": "An AI assistant on a small-business site is not a chatbot gimmick. Here is what one actually does on a real garage-door repair site — a 24/7 intake worker that catches the after-hours leads a small team cannot answer in person.",
+      "h1": [
+        "What an AI Intake Assistant Actually Does for a Small Service Business"
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/ai-intake-assistant-small-service-business/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/ai-intake-assistant-small-service-business/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 42,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 38524,
+      "initialMainTextLength": 4141,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/blog/",
+      "internalLinksIn": 14
+    },
+    {
+      "url": "https://camelotflows.dev/blog/automate-import-back-office-before-hiring/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/blog/automate-import-back-office-before-hiring/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/blog/automate-import-back-office-before-hiring/",
+      "metaRobots": null,
+      "title": "The Import Back-Office Tax: 5 Jobs to Automate Before You Hire - Camelot Flows",
+      "metaDescription": "An import back office runs on manual follow-ups, EUR.1 paperwork, and copy-paste order entry. Here are five of those jobs you can hand to a system — before you hire another person.",
+      "h1": [
+        "The Import Back-Office Tax: 5 Jobs to Automate Before You Hire"
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/automate-import-back-office-before-hiring/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/automate-import-back-office-before-hiring/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/automate-import-back-office-before-hiring/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/automate-import-back-office-before-hiring/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 46,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 36139,
+      "initialMainTextLength": 2875,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/blog/",
+      "internalLinksIn": 8
+    },
+    {
+      "url": "https://camelotflows.dev/ro/blog/automate-import-back-office-before-hiring/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/blog/automate-import-back-office-before-hiring/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/blog/automate-import-back-office-before-hiring/",
+      "metaRobots": null,
+      "title": "Taxa pe Back-Office-ul de Import: 5 Sarcini de Automatizat Înainte să Angajezi | Camelot Flows",
+      "metaDescription": "Back-office-ul unui importator funcționează pe follow-up-uri manuale, acte EUR.1 și introducerea comenzilor prin copy-paste. Iată cinci dintre aceste sarcini pe",
+      "h1": [
+        "Taxa pe Back-Office-ul de Import: 5 Sarcini de Automatizat Înainte să Angajezi"
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/automate-import-back-office-before-hiring/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/automate-import-back-office-before-hiring/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/automate-import-back-office-before-hiring/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/automate-import-back-office-before-hiring/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 46,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 36338,
+      "initialMainTextLength": 3139,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/blog/",
+      "internalLinksIn": 8
+    },
+    {
+      "url": "https://camelotflows.dev/ru/blog/automate-import-back-office-before-hiring/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/blog/automate-import-back-office-before-hiring/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/blog/automate-import-back-office-before-hiring/",
+      "metaRobots": null,
+      "title": "Налог на бэк-офис импорта: 5 задач для автоматизации до найма | Camelot Flows",
+      "metaDescription": "Бэк-офис импортёра держится на ручных напоминаниях, бумагах EUR.1 и копипасте заказов. Вот пять таких задач, которые можно отдать системе — ещё до того, как нан",
+      "h1": [
+        "Налог на бэк-офис импорта: 5 задач для автоматизации до найма"
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/automate-import-back-office-before-hiring/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/automate-import-back-office-before-hiring/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/automate-import-back-office-before-hiring/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/automate-import-back-office-before-hiring/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 46,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 38564,
+      "initialMainTextLength": 2837,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/blog/",
+      "internalLinksIn": 8
+    },
+    {
+      "url": "https://camelotflows.dev/blog/building-dreamscape-in-parallel/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/blog/building-dreamscape-in-parallel/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/blog/building-dreamscape-in-parallel/",
+      "metaRobots": null,
+      "title": "Building Dreamscape in Parallel: How Game Dev Is Sharpening My Skills - Camelot Flows",
+      "metaDescription": "Building a narrative RPG in Ren'Py while doing client web work full-time sounds like a contradiction. It isn't. Here is how game dev sharpens the exact muscles that make better web projects.",
+      "h1": [
+        "Building Dreamscape in Parallel: How Game Dev Is Sharpening My Skills"
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/building-dreamscape-in-parallel/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/building-dreamscape-in-parallel/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/building-dreamscape-in-parallel/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/building-dreamscape-in-parallel/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 45,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 35192,
+      "initialMainTextLength": 2564,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/blog/",
+      "internalLinksIn": 8
+    },
+    {
+      "url": "https://camelotflows.dev/ro/blog/building-dreamscape-in-parallel/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/blog/building-dreamscape-in-parallel/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/blog/building-dreamscape-in-parallel/",
+      "metaRobots": null,
+      "title": "Construind Dreamscape în Paralel: Cum Mă Ascute Game Dev-ul | Camelot Flows",
+      "metaDescription": "Construirea unui RPG narativ în Ren'Py în paralel cu proiecte web pentru clienți sună ca o contradicție. Nu este. Iată cum game dev-ul ascute exact mușchii care",
+      "h1": [
+        "Construind Dreamscape în Paralel: Cum Mă Ascute Game Dev-ul"
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/building-dreamscape-in-parallel/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/building-dreamscape-in-parallel/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/building-dreamscape-in-parallel/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/building-dreamscape-in-parallel/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 45,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 35090,
+      "initialMainTextLength": 2697,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/blog/",
+      "internalLinksIn": 8
+    },
+    {
+      "url": "https://camelotflows.dev/ru/blog/building-dreamscape-in-parallel/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/blog/building-dreamscape-in-parallel/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/blog/building-dreamscape-in-parallel/",
+      "metaRobots": null,
+      "title": "Строю Dreamscape Параллельно: Как Геймдев Точит Мои Навыки | Camelot Flows",
+      "metaDescription": "Днём я строю сайты для клиентов, а в свободное время — нарративную RPG под названием Dreamscape. Вот почему это не так разрознено, как кажется.",
+      "h1": [
+        "Строю Dreamscape Параллельно: Как Геймдев Точит Мои Навыки"
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/building-dreamscape-in-parallel/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/building-dreamscape-in-parallel/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/building-dreamscape-in-parallel/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/building-dreamscape-in-parallel/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 45,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 37123,
+      "initialMainTextLength": 2439,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/blog/",
+      "internalLinksIn": 8
+    },
+    {
+      "url": "https://camelotflows.dev/blog/do-i-own-my-website-checklist/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/blog/do-i-own-my-website-checklist/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/blog/do-i-own-my-website-checklist/",
+      "metaRobots": null,
+      "title": "Do You Actually Own Your Website? A 5-Minute Check - Camelot Flows",
+      "metaDescription": "Five accounts decide whether you own your website or just rent it from your agency. Here is the 5-minute checklist I run before taking over any site.",
+      "h1": [
+        "Do You Actually Own Your Website? A 5-Minute Check"
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/do-i-own-my-website-checklist/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/do-i-own-my-website-checklist/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/do-i-own-my-website-checklist/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/do-i-own-my-website-checklist/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 48,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 37176,
+      "initialMainTextLength": 4758,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/blog/",
+      "internalLinksIn": 7
+    },
+    {
+      "url": "https://camelotflows.dev/ro/blog/do-i-own-my-website-checklist/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/blog/do-i-own-my-website-checklist/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/blog/do-i-own-my-website-checklist/",
+      "metaRobots": null,
+      "title": "Îți Deții Cu Adevărat Site-ul? O Verificare De 5 Minute | Camelot Flows",
+      "metaDescription": "Ai plătit pentru site-ul tău, dar îl deții cu adevărat? Cinci conturi decid răspunsul, și le poți verifica pe toate chiar în seara asta, în aproximativ cinci mi",
+      "h1": [
+        "Îți Deții Cu Adevărat Site-ul? O Verificare De 5 Minute"
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/do-i-own-my-website-checklist/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/do-i-own-my-website-checklist/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/do-i-own-my-website-checklist/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/do-i-own-my-website-checklist/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 48,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 37611,
+      "initialMainTextLength": 5113,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/blog/",
+      "internalLinksIn": 7
+    },
+    {
+      "url": "https://camelotflows.dev/ru/blog/do-i-own-my-website-checklist/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/blog/do-i-own-my-website-checklist/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/blog/do-i-own-my-website-checklist/",
+      "metaRobots": null,
+      "title": "Вам Действительно Принадлежит Ваш Сайт? Проверка За 5 Минут | Camelot Flows",
+      "metaDescription": "Вы заплатили за свой сайт, но владеете ли вы им на самом деле? Ответ решают пять аккаунтов, и вы можете проверить каждый сегодня вечером примерно за пять минут.",
+      "h1": [
+        "Вам Действительно Принадлежит Ваш Сайт? Проверка За 5 Минут"
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/do-i-own-my-website-checklist/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/do-i-own-my-website-checklist/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/do-i-own-my-website-checklist/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/do-i-own-my-website-checklist/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 48,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 42049,
+      "initialMainTextLength": 4994,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/blog/",
+      "internalLinksIn": 7
+    },
+    {
+      "url": "https://camelotflows.dev/blog/how-chatgpt-decides-which-local-businesses-to-recommend/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/blog/how-chatgpt-decides-which-local-businesses-to-recommend/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/blog/how-chatgpt-decides-which-local-businesses-to-recommend/",
+      "metaRobots": null,
+      "title": "How ChatGPT Decides Which Local Businesses to Recommend - Camelot Flows",
+      "metaDescription": "There is no secret AI SEO trick. ChatGPT names the businesses it can read clearly. Here is what it actually reads and what it ignores.",
+      "h1": [
+        "How ChatGPT Decides Which Local Businesses to Recommend"
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/how-chatgpt-decides-which-local-businesses-to-recommend/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/how-chatgpt-decides-which-local-businesses-to-recommend/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/how-chatgpt-decides-which-local-businesses-to-recommend/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/how-chatgpt-decides-which-local-businesses-to-recommend/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 48,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 38150,
+      "initialMainTextLength": 5289,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/blog/",
+      "internalLinksIn": 8
+    },
+    {
+      "url": "https://camelotflows.dev/ro/blog/how-chatgpt-decides-which-local-businesses-to-recommend/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/blog/how-chatgpt-decides-which-local-businesses-to-recommend/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/blog/how-chatgpt-decides-which-local-businesses-to-recommend/",
+      "metaRobots": null,
+      "title": "Cum decide ChatGPT ce afaceri locale recomandă | Camelot Flows",
+      "metaDescription": "Dacă vrei ca ChatGPT să îți recomande afacerea, nu există o setare ascunsă pe care s-o cumperi. Contează doar dacă o mașină te poate citi clar. Iată ce vede de",
+      "h1": [
+        "Cum decide ChatGPT ce afaceri locale recomandă"
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/how-chatgpt-decides-which-local-businesses-to-recommend/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/how-chatgpt-decides-which-local-businesses-to-recommend/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/how-chatgpt-decides-which-local-businesses-to-recommend/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/how-chatgpt-decides-which-local-businesses-to-recommend/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 48,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 38417,
+      "initialMainTextLength": 5453,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/blog/",
+      "internalLinksIn": 8
+    },
+    {
+      "url": "https://camelotflows.dev/ru/blog/how-chatgpt-decides-which-local-businesses-to-recommend/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/blog/how-chatgpt-decides-which-local-businesses-to-recommend/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/blog/how-chatgpt-decides-which-local-businesses-to-recommend/",
+      "metaRobots": null,
+      "title": "Как ChatGPT выбирает, какие местные компании советовать | Camelot Flows",
+      "metaDescription": "Если вы хотите, чтобы ChatGPT рекомендовал ваш бизнес, нет скрытой настройки, которую можно купить. Важно лишь одно: может ли машина ясно вас прочитать. Вот что",
+      "h1": [
+        "Как ChatGPT выбирает, какие местные компании советовать"
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/how-chatgpt-decides-which-local-businesses-to-recommend/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/how-chatgpt-decides-which-local-businesses-to-recommend/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/how-chatgpt-decides-which-local-businesses-to-recommend/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/how-chatgpt-decides-which-local-businesses-to-recommend/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 48,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 43359,
+      "initialMainTextLength": 5415,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/blog/",
+      "internalLinksIn": 8
+    },
+    {
+      "url": "https://camelotflows.dev/blog/how-i-build-sites-for-clients/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/blog/how-i-build-sites-for-clients/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/blog/how-i-build-sites-for-clients/",
+      "metaRobots": null,
+      "title": "How I Build Sites for Clients: Simple WordPress, Custom Builds, and AI Automations - Camelot Flows",
+      "metaDescription": "Not every project needs AI, a custom build, or a complex CRM integration. Here is how I decide what stack to use for each client — and where AI automations actually change the equation.",
+      "h1": [
+        "How I Build Sites for Clients: Simple WordPress, Custom Builds, and AI Automations"
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/how-i-build-sites-for-clients/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/how-i-build-sites-for-clients/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/how-i-build-sites-for-clients/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/how-i-build-sites-for-clients/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 46,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 35842,
+      "initialMainTextLength": 2540,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/blog/",
+      "internalLinksIn": 10
+    },
+    {
+      "url": "https://camelotflows.dev/ro/blog/how-i-build-sites-for-clients/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/blog/how-i-build-sites-for-clients/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/blog/how-i-build-sites-for-clients/",
+      "metaRobots": null,
+      "title": "Cum Construiesc Site-uri pentru Clienți: WordPress Simplu, Build-uri Custom și Automatizări AI | Camelot Flows",
+      "metaDescription": "Nu fiecare proiect are nevoie de AI, o soluție custom sau un CRM complex. Iată cum decid ce stack să folosesc pentru fiecare client — și unde automatizările AI",
+      "h1": [
+        "Cum Construiesc Site-uri pentru Clienți: WordPress Simplu, Build-uri Custom și Automatizări AI"
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/how-i-build-sites-for-clients/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/how-i-build-sites-for-clients/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/how-i-build-sites-for-clients/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/how-i-build-sites-for-clients/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 46,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 35816,
+      "initialMainTextLength": 2752,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/blog/",
+      "internalLinksIn": 10
+    },
+    {
+      "url": "https://camelotflows.dev/ru/blog/how-i-build-sites-for-clients/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/blog/how-i-build-sites-for-clients/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/blog/how-i-build-sites-for-clients/",
+      "metaRobots": null,
+      "title": "Как Я Строю Сайты для Клиентов: Простой WordPress, Кастомные Сборки и AI-Автоматизации | Camelot Flows",
+      "metaDescription": "От базовых деплоев WordPress до кастомных PHP-плагинов и AI-пайплайнов — вот как я подхожу к каждому проекту.",
+      "h1": [
+        "Как Я Строю Сайты для Клиентов: Простой WordPress, Кастомные Сборки и AI-Автоматизации"
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/how-i-build-sites-for-clients/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/how-i-build-sites-for-clients/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/how-i-build-sites-for-clients/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/how-i-build-sites-for-clients/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 46,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 37573,
+      "initialMainTextLength": 2397,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/blog/",
+      "internalLinksIn": 10
+    },
+    {
+      "url": "https://camelotflows.dev/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/",
+      "metaRobots": null,
+      "title": "What You Get for €390: Landing Page or Portfolio Site, Both With AI - Camelot Flows",
+      "metaDescription": "Every 390 euro project includes either a landing page with smart AI chatbot, or a full 5-10 page portfolio site with chatbot and auto-blog. Fixed scope, fast launch, AI included.",
+      "h1": [
+        "What You Get for €390: Landing Page or Portfolio Site, Both With AI"
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 46,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 36378,
+      "initialMainTextLength": 3133,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/blog/",
+      "internalLinksIn": 10
+    },
+    {
+      "url": "https://camelotflows.dev/ro/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/",
+      "metaRobots": null,
+      "title": "Cum Construiesc Site-uri pentru 390€: Defalcarea Paginii Starter | Camelot Flows",
+      "metaDescription": "Fiecare proiect de 390 euro include fie un landing page cu chatbot AI inteligent, fie un site portfolio complet cu 5-10 pagini, chatbot si auto-blog. Scop fix,",
+      "h1": [
+        "Cum Construiesc Site-uri pentru 390€: Defalcarea Paginii Starter"
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 46,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 36221,
+      "initialMainTextLength": 3306,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/blog/",
+      "internalLinksIn": 10
+    },
+    {
+      "url": "https://camelotflows.dev/ru/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/",
+      "metaRobots": null,
+      "title": "Как Я Делаю Сайты за 390€: Разбор Стартовой Страницы | Camelot Flows",
+      "metaDescription": "Kazhdyj proekt za 390 evro vklyuchaet libo lending s umnym II-chatbotom, libo polnocennyj portfolio-sajt s 5-10 stranicami, chatbotom i avto-blogom. Fiksirovann",
+      "h1": [
+        "Как Я Делаю Сайты за 390€: Разбор Стартовой Страницы"
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/how-i-build-websites-for-e390-the-starter-page-breakdown/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 46,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 36959,
+      "initialMainTextLength": 3364,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/blog/",
+      "internalLinksIn": 10
+    },
+    {
+      "url": "https://camelotflows.dev/blog/how-to-leave-your-web-agency-without-losing-your-website/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/blog/how-to-leave-your-web-agency-without-losing-your-website/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/blog/how-to-leave-your-web-agency-without-losing-your-website/",
+      "metaRobots": null,
+      "title": "How to Leave Your Web Agency Without Losing Your Site - Camelot Flows",
+      "metaDescription": "The exact order to secure your domain, backup, hosting and email before you tell your web agency you are leaving, so you never lose your website.",
+      "h1": [
+        "How to Leave Your Web Agency Without Losing Your Site"
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/how-to-leave-your-web-agency-without-losing-your-website/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/how-to-leave-your-web-agency-without-losing-your-website/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/how-to-leave-your-web-agency-without-losing-your-website/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/how-to-leave-your-web-agency-without-losing-your-website/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 48,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 38750,
+      "initialMainTextLength": 5364,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/blog/",
+      "internalLinksIn": 8
+    },
+    {
+      "url": "https://camelotflows.dev/ro/blog/how-to-leave-your-web-agency-without-losing-your-website/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/blog/how-to-leave-your-web-agency-without-losing-your-website/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/blog/how-to-leave-your-web-agency-without-losing-your-website/",
+      "metaRobots": null,
+      "title": "Cum să pleci de la agenția web fără să-ți pierzi site-ul | Camelot Flows",
+      "metaDescription": "Plecarea de la agenția web e momentul în care se pierd site-urile. Iată ordinea exactă în care îți asiguri domeniul, o copie completă, găzduirea și emailul înai",
+      "h1": [
+        "Cum să pleci de la agenția web fără să-ți pierzi site-ul"
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/how-to-leave-your-web-agency-without-losing-your-website/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/how-to-leave-your-web-agency-without-losing-your-website/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/how-to-leave-your-web-agency-without-losing-your-website/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/how-to-leave-your-web-agency-without-losing-your-website/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 48,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 38886,
+      "initialMainTextLength": 5355,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/blog/",
+      "internalLinksIn": 8
+    },
+    {
+      "url": "https://camelotflows.dev/ru/blog/how-to-leave-your-web-agency-without-losing-your-website/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/blog/how-to-leave-your-web-agency-without-losing-your-website/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/blog/how-to-leave-your-web-agency-without-losing-your-website/",
+      "metaRobots": null,
+      "title": "Как уйти от веб-агентства и не потерять сайт | Camelot Flows",
+      "metaDescription": "Уход от веб-агентства — момент, когда теряются сайты. Вот точный порядок, в котором нужно защитить домен, полную копию, хостинг и почту, прежде чем сказать хоть",
+      "h1": [
+        "Как уйти от веб-агентства и не потерять сайт"
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/how-to-leave-your-web-agency-without-losing-your-website/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/how-to-leave-your-web-agency-without-losing-your-website/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/how-to-leave-your-web-agency-without-losing-your-website/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/how-to-leave-your-web-agency-without-losing-your-website/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 48,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 43459,
+      "initialMainTextLength": 5212,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/blog/",
+      "internalLinksIn": 8
+    },
+    {
+      "url": "https://camelotflows.dev/blog/why-is-my-new-website-not-showing-up-on-google/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/blog/why-is-my-new-website-not-showing-up-on-google/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/blog/why-is-my-new-website-not-showing-up-on-google/",
+      "metaRobots": null,
+      "title": "Why Is My New Website Not Showing Up on Google? - Camelot Flows",
+      "metaDescription": "Two different reasons a new site is missing from Google, and a fifteen minute check to tell which problem you actually have.",
+      "h1": [
+        "Why Is My New Website Not Showing Up on Google?"
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/why-is-my-new-website-not-showing-up-on-google/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/why-is-my-new-website-not-showing-up-on-google/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/why-is-my-new-website-not-showing-up-on-google/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/why-is-my-new-website-not-showing-up-on-google/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 48,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 38178,
+      "initialMainTextLength": 5203,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/blog/",
+      "internalLinksIn": 7
+    },
+    {
+      "url": "https://camelotflows.dev/ro/blog/why-is-my-new-website-not-showing-up-on-google/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/blog/why-is-my-new-website-not-showing-up-on-google/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/blog/why-is-my-new-website-not-showing-up-on-google/",
+      "metaRobots": null,
+      "title": "De ce nu apare noul meu site pe Google? | Camelot Flows",
+      "metaDescription": "Un site nou poate lipsi de pe Google din două motive complet diferite, iar soluția pentru unul nu ajută cu nimic celălalt. Uite verificarea de cincisprezece min",
+      "h1": [
+        "De ce nu apare noul meu site pe Google?"
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/why-is-my-new-website-not-showing-up-on-google/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/why-is-my-new-website-not-showing-up-on-google/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/why-is-my-new-website-not-showing-up-on-google/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/why-is-my-new-website-not-showing-up-on-google/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 48,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 38652,
+      "initialMainTextLength": 5553,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/blog/",
+      "internalLinksIn": 7
+    },
+    {
+      "url": "https://camelotflows.dev/ru/blog/why-is-my-new-website-not-showing-up-on-google/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/blog/why-is-my-new-website-not-showing-up-on-google/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/blog/why-is-my-new-website-not-showing-up-on-google/",
+      "metaRobots": null,
+      "title": "Почему мой новый сайт не появляется в Google? | Camelot Flows",
+      "metaDescription": "Нового сайта может не быть в Google по двум совершенно разным причинам, и решение одной ничего не даёт для другой. Вот пятнадцатиминутная проверка, которую я де",
+      "h1": [
+        "Почему мой новый сайт не появляется в Google?"
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/why-is-my-new-website-not-showing-up-on-google/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/why-is-my-new-website-not-showing-up-on-google/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/why-is-my-new-website-not-showing-up-on-google/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/why-is-my-new-website-not-showing-up-on-google/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 48,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 43492,
+      "initialMainTextLength": 5525,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/blog/",
+      "internalLinksIn": 7
+    },
+    {
+      "url": "https://camelotflows.dev/blog/why-wordpress-slow-on-mobile/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/blog/why-wordpress-slow-on-mobile/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/blog/why-wordpress-slow-on-mobile/",
+      "metaRobots": null,
+      "title": "Why Your WordPress Site Feels Slow on Your Phone - Camelot Flows",
+      "metaDescription": "The three things that quietly slow almost every WordPress site on a phone, the one number that tells the truth, and how to check yours tonight.",
+      "h1": [
+        "Why Your WordPress Site Feels Slow on Your Phone"
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/why-wordpress-slow-on-mobile/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/why-wordpress-slow-on-mobile/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/why-wordpress-slow-on-mobile/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/why-wordpress-slow-on-mobile/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 48,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 38350,
+      "initialMainTextLength": 5508,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/blog/",
+      "internalLinksIn": 7
+    },
+    {
+      "url": "https://camelotflows.dev/ro/blog/why-wordpress-slow-on-mobile/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/blog/why-wordpress-slow-on-mobile/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/blog/why-wordpress-slow-on-mobile/",
+      "metaRobots": null,
+      "title": "De ce site-ul tău WordPress pare lent pe telefon | Camelot Flows",
+      "metaDescription": "Deschide-ți propriul site pe telefon, pe date mobile, și numără secundele. În aproape fiecare audit pe care îl fac, aceleași trei probleme târăsc site-urile Wor",
+      "h1": [
+        "De ce site-ul tău WordPress pare lent pe telefon"
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/why-wordpress-slow-on-mobile/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/why-wordpress-slow-on-mobile/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/why-wordpress-slow-on-mobile/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/why-wordpress-slow-on-mobile/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 48,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 38976,
+      "initialMainTextLength": 5987,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/blog/",
+      "internalLinksIn": 7
+    },
+    {
+      "url": "https://camelotflows.dev/ru/blog/why-wordpress-slow-on-mobile/",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/blog/why-wordpress-slow-on-mobile/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/blog/why-wordpress-slow-on-mobile/",
+      "metaRobots": null,
+      "title": "Почему ваш сайт на WordPress тормозит на телефоне | Camelot Flows",
+      "metaDescription": "Откройте свой сайт на телефоне, на мобильном интернете, и сосчитайте секунды. Почти в каждом аудите, который я делаю, одни и те же три проблемы замедляют сайты",
+      "h1": [
+        "Почему ваш сайт на WordPress тормозит на телефоне"
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/blog/why-wordpress-slow-on-mobile/"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/blog/why-wordpress-slow-on-mobile/"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/blog/why-wordpress-slow-on-mobile/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/blog/why-wordpress-slow-on-mobile/"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 48,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 44243,
+      "initialMainTextLength": 5914,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/blog/",
+      "internalLinksIn": 7
+    },
+    {
+      "url": "https://camelotflows.dev/case-studies",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/case-studies",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/case-studies",
+      "metaRobots": null,
+      "title": "Client Case Studies — WordPress & AI Automation | Camelot Flows",
+      "metaDescription": "Real client work by Alex Buzi: a WooCommerce store for Timberkids launched in under two weeks, and a lead-gen site for First Line Garage Door delivered three days early.",
+      "h1": [
+        "Work I take. Results I deliver."
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/case-studies"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/case-studies"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/case-studies"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/case-studies"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 42,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 37926,
+      "initialMainTextLength": 2240,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/",
+      "internalLinksIn": 128
+    },
+    {
+      "url": "https://camelotflows.dev/ro/case-studies",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/case-studies",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/case-studies",
+      "metaRobots": null,
+      "title": "Studii de caz cu clienți — WordPress & automatizare AI | Camelot Flows",
+      "metaDescription": "Proiecte reale livrate de Alex Buzi: magazinul WooCommerce Timberkids lansat în mai puțin de două săptămâni și site-ul de lead-uri First Line Garage Door predat cu trei zile mai devreme.",
+      "h1": [
+        "Lucrarea pe care o iau. Rezultatele pe care le livrez."
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/case-studies"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/case-studies"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/case-studies"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/case-studies"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 42,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 32945,
+      "initialMainTextLength": 2560,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/",
+      "internalLinksIn": 124
+    },
+    {
+      "url": "https://camelotflows.dev/ru/case-studies",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/case-studies",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/case-studies",
+      "metaRobots": null,
+      "title": "Клиентские кейсы — WordPress и AI-автоматизация | Camelot Flows",
+      "metaDescription": "Реальные проекты Алекса Бузи: магазин WooCommerce Timberkids, запущенный меньше чем за две недели, и лидогенерирующий сайт First Line Garage Door, сданный на три дня раньше срока.",
+      "h1": [
+        "Работа, которую беру. Результаты, которые сдаю."
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/case-studies"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/case-studies"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/case-studies"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/case-studies"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 42,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 34912,
+      "initialMainTextLength": 2338,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/",
+      "internalLinksIn": 124
+    },
+    {
+      "url": "https://camelotflows.dev/contact",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/contact",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/contact",
+      "metaRobots": null,
+      "title": "Contact Camelot Flows | Brief a Web or AI Build",
+      "metaDescription": "Tell Camelot Flows about your website, automation, AI agent, or agency overflow project. Get a clear reply from the builder within 24 hours.",
+      "h1": [
+        "Tell me about the work."
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/contact"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/contact"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/contact"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/contact"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 41,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 47425,
+      "initialMainTextLength": 1946,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/",
+      "internalLinksIn": 264
+    },
+    {
+      "url": "https://camelotflows.dev/ro/contact",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/contact",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/contact",
+      "metaRobots": null,
+      "title": "Contact Camelot Flows | Brief pentru un proiect web sau AI",
+      "metaDescription": "Spune-mi despre proiectul tău de site, automatizare, agent AI sau capacitate overflow pentru agenție. Primești un răspuns clar de la cel care construiește, în 24h.",
+      "h1": [
+        "Spune-mi despre proiect."
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/contact"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/contact"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/contact"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/contact"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 41,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 41129,
+      "initialMainTextLength": 1926,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/",
+      "internalLinksIn": 255
+    },
+    {
+      "url": "https://camelotflows.dev/ru/contact",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/contact",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/contact",
+      "metaRobots": null,
+      "title": "Контакты Camelot Flows | Бриф для веб- или AI-проекта",
+      "metaDescription": "Расскажи Camelot Flows о своём проекте сайта, автоматизации, AI-агента или дополнительных мощностях для агентства. Получи понятный ответ от разработчика в течение 24 часов.",
+      "h1": [
+        "Расскажи о проекте."
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/contact"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/contact"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/contact"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/contact"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 41,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 42975,
+      "initialMainTextLength": 1952,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/",
+      "internalLinksIn": 255
+    },
+    {
+      "url": "https://camelotflows.dev/custom-premium",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/custom-premium",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/custom-premium",
+      "metaRobots": null,
+      "title": "Custom Premium Website — Bespoke Build · From €1,200 | Camelot Flows",
+      "metaDescription": "No templates, no compromises. A bespoke website built entirely around your brand — with full AI integration, custom interactions, and a quoted price after your kick-off call. From €1,200.",
+      "h1": [
+        "Built for your brand. Runs on intelligence."
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/custom-premium"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/custom-premium"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/custom-premium"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/custom-premium"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 36,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 63848,
+      "initialMainTextLength": 5800,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/",
+      "internalLinksIn": 5
+    },
+    {
+      "url": "https://camelotflows.dev/ro/custom-premium",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/custom-premium",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/custom-premium",
+      "metaRobots": null,
+      "title": "Construit pentru brandul tău. Rulează pe inteligență. | Camelot Flows",
+      "metaDescription": "No templates, no compromises. A bespoke website built entirely around your brand — with full AI integration, custom interactions, and a quoted price after your kick-off call. From €1,200.",
+      "h1": [
+        "Construit pentru brandul tău. Rulează pe inteligență."
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/custom-premium"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/custom-premium"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/custom-premium"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/custom-premium"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 36,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 62074,
+      "initialMainTextLength": 6362,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/",
+      "internalLinksIn": 5
+    },
+    {
+      "url": "https://camelotflows.dev/ru/custom-premium",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/custom-premium",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/custom-premium",
+      "metaRobots": null,
+      "title": "Создан для твоего бренда. Работает на интеллекте. | Camelot Flows",
+      "metaDescription": "No templates, no compromises. A bespoke website built entirely around your brand — with full AI integration, custom interactions, and a quoted price after your kick-off call. From €1,200.",
+      "h1": [
+        "Создан для твоего бренда. Работает на интеллекте."
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/custom-premium"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/custom-premium"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/custom-premium"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/custom-premium"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 36,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 66305,
+      "initialMainTextLength": 6346,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/",
+      "internalLinksIn": 5
+    },
+    {
+      "url": "https://camelotflows.dev/ecommerce-wp",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ecommerce-wp",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ecommerce-wp",
+      "metaRobots": null,
+      "title": "WooCommerce Development, Redesign & Migration | Camelot Flows",
+      "metaDescription": "WooCommerce development, redesign, and migration with product, order, customer, payment, shipping, CRM, and automation requirements handled around your existing business.",
+      "h1": [
+        "WooCommerce, built, redesigned, or migrated."
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/ecommerce-wp"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/ecommerce-wp"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/ecommerce-wp"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/ecommerce-wp"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 36,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 69744,
+      "initialMainTextLength": 5643,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/",
+      "internalLinksIn": 5
+    },
+    {
+      "url": "https://camelotflows.dev/ro/ecommerce-wp",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/ecommerce-wp",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/ecommerce-wp",
+      "metaRobots": null,
+      "title": "Dezvoltare, redesign și migrare WooCommerce | Camelot Flows",
+      "metaDescription": "Dezvoltare, redesign și migrare WooCommerce cu produse, comenzi, clienți, plăți, livrare, CRM și automatizări adaptate afacerii existente.",
+      "h1": [
+        "WooCommerce, construit, refăcut sau migrat."
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/ecommerce-wp"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/ecommerce-wp"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/ecommerce-wp"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/ecommerce-wp"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 36,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 67658,
+      "initialMainTextLength": 6112,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/",
+      "internalLinksIn": 5
+    },
+    {
+      "url": "https://camelotflows.dev/ru/ecommerce-wp",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/ecommerce-wp",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/ecommerce-wp",
+      "metaRobots": null,
+      "title": "Разработка, редизайн и миграция WooCommerce | Camelot Flows",
+      "metaDescription": "Разработка, редизайн и миграция WooCommerce с учётом товаров, заказов, клиентов, платежей, доставки, CRM и автоматизации существующего бизнеса.",
+      "h1": [
+        "WooCommerce: разработка, редизайн или миграция."
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/ecommerce-wp"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/ecommerce-wp"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/ecommerce-wp"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/ecommerce-wp"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 36,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 71738,
+      "initialMainTextLength": 6145,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/",
+      "internalLinksIn": 5
+    },
+    {
+      "url": "https://camelotflows.dev/for-agencies",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/for-agencies",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/for-agencies",
+      "metaRobots": null,
+      "title": "White-Label WordPress Developer for Agencies | Camelot Flows",
+      "metaDescription": "White-label WordPress development for digital agencies. NDA-protected, sprint delivery from €800, async via Slack Connect. No retainer required.",
+      "h1": [
+        "Overflow capacity for agencies who landed more than they staffed."
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/for-agencies"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/for-agencies"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/for-agencies"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/for-agencies"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 44,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 38473,
+      "initialMainTextLength": 1665,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/",
+      "internalLinksIn": 67
+    },
+    {
+      "url": "https://camelotflows.dev/ro/for-agencies",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/for-agencies",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/for-agencies",
+      "metaRobots": null,
+      "title": "Pentru agenții | Partener White-Label web și AI",
+      "metaDescription": "Capacitate white-label de site-uri și automatizări AI pentru agențiile care au nevoie de livrare seniorală fără un nou angajat full-time.",
+      "h1": [
+        "Mâini libere pentru agențiile care au prins mai mult decât pot livra."
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/for-agencies"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/for-agencies"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/for-agencies"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/for-agencies"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 44,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 33183,
+      "initialMainTextLength": 1814,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/",
+      "internalLinksIn": 65
+    },
+    {
+      "url": "https://camelotflows.dev/ru/for-agencies",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/for-agencies",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/for-agencies",
+      "metaRobots": null,
+      "title": "Агентствам | White-Label партнёр для веба и AI",
+      "metaDescription": "White-label мощности по сайтам и AI-автоматизации для агентств — senior-качество без найма штатного сотрудника.",
+      "h1": [
+        "Свободные руки для агентств, которые взяли больше, чем могут потянуть."
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/for-agencies"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/for-agencies"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/for-agencies"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/for-agencies"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 44,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 34811,
+      "initialMainTextLength": 1681,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/",
+      "internalLinksIn": 65
+    },
+    {
+      "url": "https://camelotflows.dev/launch-site",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/launch-site",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/launch-site",
+      "metaRobots": null,
+      "title": "Launch Site — Live in 7 Days · €390 | Camelot Flows",
+      "metaDescription": "Fixed-scope website. Up to 3 pages, mobile responsive, contact form, GA4, lead-capture automation. Delivered in 5–7 days from €390.",
+      "h1": [
+        "Your site, live in 7 days."
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/launch-site"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/launch-site"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/launch-site"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/launch-site"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 36,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 61151,
+      "initialMainTextLength": 4362,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/",
+      "internalLinksIn": 5
+    },
+    {
+      "url": "https://camelotflows.dev/ro/launch-site",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/launch-site",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/launch-site",
+      "metaRobots": null,
+      "title": "Site-ul tău, live în 7 zile. | Camelot Flows",
+      "metaDescription": "Fixed-scope website. Up to 3 pages, mobile responsive, contact form, GA4, lead-capture automation. Delivered in 5–7 days from €390.",
+      "h1": [
+        "Site-ul tău, live în 7 zile."
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/launch-site"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/launch-site"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/launch-site"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/launch-site"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 36,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 59131,
+      "initialMainTextLength": 4773,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/",
+      "internalLinksIn": 5
+    },
+    {
+      "url": "https://camelotflows.dev/ru/launch-site",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/launch-site",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/launch-site",
+      "metaRobots": null,
+      "title": "Твой сайт, запуск за 7 дней. | Camelot Flows",
+      "metaDescription": "Fixed-scope website. Up to 3 pages, mobile responsive, contact form, GA4, lead-capture automation. Delivered in 5–7 days from €390.",
+      "h1": [
+        "Твой сайт, запуск за 7 дней."
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/launch-site"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/launch-site"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/launch-site"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/launch-site"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 36,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 62069,
+      "initialMainTextLength": 4675,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/",
+      "internalLinksIn": 5
+    },
+    {
+      "url": "https://camelotflows.dev/legal",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/legal",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/legal",
+      "metaRobots": null,
+      "title": "Terms & Conditions | Camelot Flows",
+      "metaDescription": "Terms and conditions for Camelot Flows services, website use, project delivery, payments, revisions, ownership, and limitations.",
+      "h1": [
+        "Terms & Conditions"
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/legal"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/legal"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/legal"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/legal"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 41,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 33218,
+      "initialMainTextLength": 1691,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/",
+      "internalLinksIn": 34
+    },
+    {
+      "url": "https://camelotflows.dev/ro/legal",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/legal",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/legal",
+      "metaRobots": null,
+      "title": "Termeni și condiții | Camelot Flows",
+      "metaDescription": "Termeni și condiții pentru serviciile Camelot Flows: utilizarea site-ului, livrarea proiectelor, plăți, revizii, drepturi de proprietate și limitări.",
+      "h1": [
+        "Termeni și condiții"
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/legal"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/legal"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/legal"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/legal"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 41,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 28663,
+      "initialMainTextLength": 1848,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/",
+      "internalLinksIn": 33
+    },
+    {
+      "url": "https://camelotflows.dev/ru/legal",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/legal",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/legal",
+      "metaRobots": null,
+      "title": "Условия использования | Camelot Flows",
+      "metaDescription": "Условия использования услуг Camelot Flows: правила пользования сайтом, сдача проектов, оплата, ревизии, права собственности и ограничения.",
+      "h1": [
+        "Условия использования"
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/legal"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/legal"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/legal"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/legal"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 41,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 30668,
+      "initialMainTextLength": 1774,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/",
+      "internalLinksIn": 33
+    },
+    {
+      "url": "https://camelotflows.dev/merlin",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/merlin",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/merlin",
+      "metaRobots": null,
+      "title": "Merlin AI Agent — n8n Automation & Claude API | Camelot Flows",
+      "metaDescription": "Custom AI automation agent built on n8n and Claude API. Handles lead triage, support, and CRM sync 24/7. Setup from €690, monthly support from €250.",
+      "h1": [
+        "An AI agent that runs your front-of-house."
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/merlin"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/merlin"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/merlin"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/merlin"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 45,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 40631,
+      "initialMainTextLength": 1877,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/",
+      "internalLinksIn": 123
+    },
+    {
+      "url": "https://camelotflows.dev/ro/merlin",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/merlin",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/merlin",
+      "metaRobots": null,
+      "title": "Agenți AI Merlin | Camelot Flows",
+      "metaDescription": "Agenții Merlin se ocupă de preluarea lead-urilor, triere, follow-up, fluxuri de conținut și operațiuni de prima linie — în jurul instrumentelor pe care deja le folosești.",
+      "h1": [
+        "Un agent AI care îți ține prima linie."
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/merlin"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/merlin"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/merlin"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/merlin"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 45,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 35267,
+      "initialMainTextLength": 2063,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/",
+      "internalLinksIn": 119
+    },
+    {
+      "url": "https://camelotflows.dev/ru/merlin",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/merlin",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/merlin",
+      "metaRobots": null,
+      "title": "AI-агенты Merlin | Camelot Flows",
+      "metaDescription": "Агенты Merlin берут на себя приём заявок, триаж, follow-up, контент-процессы и операции на первой линии — вокруг инструментов, которыми ты уже пользуешься.",
+      "h1": [
+        "AI-агент, который ведёт твою первую линию."
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/merlin"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/merlin"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/merlin"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/merlin"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 45,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 37297,
+      "initialMainTextLength": 2007,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/",
+      "internalLinksIn": 119
+    },
+    {
+      "url": "https://camelotflows.dev/merlin-automation",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/merlin-automation",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/merlin-automation",
+      "metaRobots": null,
+      "title": "Merlin Agent — Your First Digital Employee · €690 | Camelot Flows",
+      "metaDescription": "A configured Claude + n8n AI agent for your business. Qualifies leads, triages emails, syncs CRM, handles tier-1 support — 24/7, no extra headcount. From €690.",
+      "h1": [
+        "Your first digital employee, deployed."
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/merlin-automation"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/merlin-automation"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/merlin-automation"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/merlin-automation"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 36,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 65521,
+      "initialMainTextLength": 5241,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/",
+      "internalLinksIn": 5
+    },
+    {
+      "url": "https://camelotflows.dev/ro/merlin-automation",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/merlin-automation",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/merlin-automation",
+      "metaRobots": null,
+      "title": "Primul tău angajat digital, pus la treabă. | Camelot Flows",
+      "metaDescription": "A configured Claude + n8n AI agent for your business. Qualifies leads, triages emails, syncs CRM, handles tier-1 support — 24/7, no extra headcount. From €690.",
+      "h1": [
+        "Primul tău angajat digital, pus la treabă."
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/merlin-automation"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/merlin-automation"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/merlin-automation"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/merlin-automation"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 36,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 63069,
+      "initialMainTextLength": 5788,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/",
+      "internalLinksIn": 5
+    },
+    {
+      "url": "https://camelotflows.dev/ru/merlin-automation",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/merlin-automation",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/merlin-automation",
+      "metaRobots": null,
+      "title": "Твой первый цифровой сотрудник, в работе. | Camelot Flows",
+      "metaDescription": "A configured Claude + n8n AI agent for your business. Qualifies leads, triages emails, syncs CRM, handles tier-1 support — 24/7, no extra headcount. From €690.",
+      "h1": [
+        "Твой первый цифровой сотрудник, в работе."
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/merlin-automation"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/merlin-automation"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/merlin-automation"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/merlin-automation"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 36,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 66674,
+      "initialMainTextLength": 5730,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/",
+      "internalLinksIn": 5
+    },
+    {
+      "url": "https://camelotflows.dev/privacy",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/privacy",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/privacy",
+      "metaRobots": null,
+      "title": "Privacy Policy | Camelot Flows",
+      "metaDescription": "How Camelot Flows handles contact details, project information, analytics, cookies, retention, and privacy requests.",
+      "h1": [
+        "Privacy Policy"
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/privacy"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/privacy"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/privacy"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/privacy"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 41,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 35179,
+      "initialMainTextLength": 3066,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/audit",
+      "internalLinksIn": 6
+    },
+    {
+      "url": "https://camelotflows.dev/ro/privacy",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/privacy",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/privacy",
+      "metaRobots": null,
+      "title": "Politica de confidențialitate | Camelot Flows",
+      "metaDescription": "Cum gestionează Camelot Flows datele de contact, informațiile de proiect, analiticele, cookie-urile, retenția și cererile de confidențialitate.",
+      "h1": [
+        "Politica de confidențialitate"
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/privacy"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/privacy"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/privacy"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/privacy"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 41,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 30859,
+      "initialMainTextLength": 3358,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/audit",
+      "internalLinksIn": 6
+    },
+    {
+      "url": "https://camelotflows.dev/ru/privacy",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/privacy",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/privacy",
+      "metaRobots": null,
+      "title": "Политика конфиденциальности | Camelot Flows",
+      "metaDescription": "Как Camelot Flows обращается с контактными данными, информацией о проекте, аналитикой, cookie, хранением данных и запросами по конфиденциальности.",
+      "h1": [
+        "Политика конфиденциальности"
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/privacy"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/privacy"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/privacy"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/privacy"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 41,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 33637,
+      "initialMainTextLength": 3188,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/audit",
+      "internalLinksIn": 6
+    },
+    {
+      "url": "https://camelotflows.dev/service-automation",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/service-automation",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/service-automation",
+      "metaRobots": null,
+      "title": "AI Automation & Merlin Agents - Camelot Flows",
+      "metaDescription": "Custom AI agents and automations for triage, content, operations, CRM glue, and front-of-house workflows built around your tools.",
+      "h1": [
+        "Hire a workshop, deploy an agent."
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/service-automation"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/service-automation"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/service-automation"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/service-automation"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 45,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 37385,
+      "initialMainTextLength": 1988,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/",
+      "internalLinksIn": 35
+    },
+    {
+      "url": "https://camelotflows.dev/ro/service-automation",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/service-automation",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/service-automation",
+      "metaRobots": null,
+      "title": "Automatizări AI și agenți Merlin - Camelot Flows",
+      "metaDescription": "Agenți AI personalizați și automatizări pentru triere, conținut, operațiuni, lipici CRM și fluxuri de prima linie — construite în jurul instrumentelor tale.",
+      "h1": [
+        "Un singur om. O echipă întreagă de AI."
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/service-automation"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/service-automation"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/service-automation"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/service-automation"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 45,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 33504,
+      "initialMainTextLength": 2191,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/",
+      "internalLinksIn": 34
+    },
+    {
+      "url": "https://camelotflows.dev/ru/service-automation",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/service-automation",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/service-automation",
+      "metaRobots": null,
+      "title": "AI-автоматизация и агенты Merlin - Camelot Flows",
+      "metaDescription": "Кастомные AI-агенты и автоматизации для триажа, контента, операций, CRM-склейки и фронт-офисных процессов — вокруг инструментов, которыми ты уже пользуешься.",
+      "h1": [
+        "Один разработчик — целая AI-команда."
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/service-automation"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/service-automation"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/service-automation"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/service-automation"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 45,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 35808,
+      "initialMainTextLength": 2300,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/",
+      "internalLinksIn": 34
+    },
+    {
+      "url": "https://camelotflows.dev/service-creation",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/service-creation",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/service-creation",
+      "metaRobots": null,
+      "title": "Fixed-Price Website Builds from €390 - Camelot Flows",
+      "metaDescription": "Launch Page from €390, Signature Landing from €650, Site Sprint from €900. Fixed scope, hand-built, from a solo workshop in Chisinau.",
+      "h1": [
+        "Sites that ship from €390."
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/service-creation"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/service-creation"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/service-creation"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/service-creation"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 45,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 37829,
+      "initialMainTextLength": 2075,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/",
+      "internalLinksIn": 40
+    },
+    {
+      "url": "https://camelotflows.dev/ro/service-creation",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/service-creation",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/service-creation",
+      "metaRobots": null,
+      "title": "Site-uri la preț fix de la €390 - Camelot Flows",
+      "metaDescription": "Pagină de lansare de la €390, Landing premium de la €650, Sprint de site de la €900. Volum fix, construit manual, dintr-un atelier solo în Chișinău.",
+      "h1": [
+        "Site-uri care se lansează de la €390."
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/service-creation"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/service-creation"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/service-creation"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/service-creation"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 45,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 33950,
+      "initialMainTextLength": 2342,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/",
+      "internalLinksIn": 39
+    },
+    {
+      "url": "https://camelotflows.dev/ru/service-creation",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/service-creation",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/service-creation",
+      "metaRobots": null,
+      "title": "Сайты по фиксированной цене от €390 - Camelot Flows",
+      "metaDescription": "Стартовая страница от €390, Премиальный лендинг от €650, Сайт-спринт от €900. Фиксированный объём, написано вручную, соло-мастерская в Кишинёве.",
+      "h1": [
+        "Сайты, которые запускаются от €390."
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/service-creation"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/service-creation"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/service-creation"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/service-creation"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 45,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 36239,
+      "initialMainTextLength": 2339,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/",
+      "internalLinksIn": 39
+    },
+    {
+      "url": "https://camelotflows.dev/service-maintenance",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/service-maintenance",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/service-maintenance",
+      "metaRobots": null,
+      "title": "Site Maintenance & Care Plans - Camelot Flows",
+      "metaDescription": "Care plans for live sites: updates, security, performance, and quarterly improvements from the same craftsman who built it.",
+      "h1": [
+        "A live site is a living thing."
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/service-maintenance"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/service-maintenance"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/service-maintenance"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/service-maintenance"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 45,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 37519,
+      "initialMainTextLength": 1804,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/",
+      "internalLinksIn": 38
+    },
+    {
+      "url": "https://camelotflows.dev/ro/service-maintenance",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/service-maintenance",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/service-maintenance",
+      "metaRobots": null,
+      "title": "Mentenanță site și planuri de îngrijire - Camelot Flows",
+      "metaDescription": "Planuri de îngrijire pentru site-uri în producție: actualizări, securitate, performanță și îmbunătățiri trimestriale, de la același meseriaș care l-a construit.",
+      "h1": [
+        "Un site activ e un organism viu."
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/service-maintenance"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/service-maintenance"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/service-maintenance"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/service-maintenance"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 45,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 33710,
+      "initialMainTextLength": 2020,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/",
+      "internalLinksIn": 37
+    },
+    {
+      "url": "https://camelotflows.dev/ru/service-maintenance",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/service-maintenance",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/service-maintenance",
+      "metaRobots": null,
+      "title": "Поддержка сайта и планы ухода - Camelot Flows",
+      "metaDescription": "Планы ухода за живыми сайтами: обновления, безопасность, производительность и поквартальные улучшения — от того же мастера, который сайт построил.",
+      "h1": [
+        "Сайт — это живой организм."
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/service-maintenance"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/service-maintenance"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/service-maintenance"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/service-maintenance"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 45,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 35650,
+      "initialMainTextLength": 1967,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/",
+      "internalLinksIn": 37
+    },
+    {
+      "url": "https://camelotflows.dev/service-marketing",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/service-marketing",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/service-marketing",
+      "metaRobots": null,
+      "title": "Get Found — Local SEO for Small Businesses in Romania & Europe | Camelot Flows",
+      "metaDescription": "Findability built into the build: real technical SEO, local schema, and a Google Business Profile set up right — so the people already searching for you can find you. You own it.",
+      "h1": [
+        "Be found when they search for you."
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/service-marketing"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/service-marketing"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/service-marketing"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/service-marketing"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 45,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 37792,
+      "initialMainTextLength": 2099,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/",
+      "internalLinksIn": 35
+    },
+    {
+      "url": "https://camelotflows.dev/ro/service-marketing",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/service-marketing",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/service-marketing",
+      "metaRobots": null,
+      "title": "Fii găsit — SEO local & vizibilitate - Camelot Flows",
+      "metaDescription": "Vizibilitate construită în site: SEO tehnic real, schema locală și un profil Google Business setat corect — ca oamenii care deja te caută să te poată găsi. E al tău.",
+      "h1": [
+        "Să te găsească când te caută."
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/service-marketing"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/service-marketing"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/service-marketing"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/service-marketing"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 45,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 34438,
+      "initialMainTextLength": 2898,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/",
+      "internalLinksIn": 34
+    },
+    {
+      "url": "https://camelotflows.dev/ru/service-marketing",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/service-marketing",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/service-marketing",
+      "metaRobots": null,
+      "title": "Чтобы тебя находили — локальное SEO - Camelot Flows",
+      "metaDescription": "Находимость, встроенная в сайт: настоящее техническое SEO, локальная schema и правильно настроенный профиль Google Business — чтобы те, кто уже тебя ищет, тебя нашли. Сайт твой.",
+      "h1": [
+        "Чтобы тебя нашли, когда тебя ищут."
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/service-marketing"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/service-marketing"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/service-marketing"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/service-marketing"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 45,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 36898,
+      "initialMainTextLength": 2834,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/",
+      "internalLinksIn": 34
+    },
+    {
+      "url": "https://camelotflows.dev/work-with-me",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/work-with-me",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/work-with-me",
+      "metaRobots": null,
+      "title": "Work With Me — Found & Converting Websites | Camelot Flows",
+      "metaDescription": "Pick a clear Camelot Flows engagement: a new website built to be found and to convert, automation add-ons, maintenance, or agency white-label help. Fixed price, one-time, you own it.",
+      "h1": [
+        "One workshop. Found & converting. Clear prices."
+      ],
+      "language": "en",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/work-with-me"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/work-with-me"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/work-with-me"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/work-with-me"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 47,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 45049,
+      "initialMainTextLength": 4330,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/",
+      "internalLinksIn": 101
+    },
+    {
+      "url": "https://camelotflows.dev/ro/work-with-me",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ro/work-with-me",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ro/work-with-me",
+      "metaRobots": null,
+      "title": "Colaborare | Servicii web și AI productizate",
+      "metaDescription": "Alege un format clar de colaborare cu Camelot Flows: creare site, automatizare AI, mentenanță, suport de creștere sau capacitate overflow pentru agenții.",
+      "h1": [
+        "Un atelier. Găsit & convertit. Prețuri transparente."
+      ],
+      "language": "ro",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/work-with-me"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/work-with-me"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/work-with-me"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/work-with-me"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 47,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 39373,
+      "initialMainTextLength": 4797,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ro/",
+      "internalLinksIn": 98
+    },
+    {
+      "url": "https://camelotflows.dev/ru/work-with-me",
+      "status": 200,
+      "redirectDestination": null,
+      "redirectHops": 0,
+      "redirectChain": [],
+      "finalUrl": "https://camelotflows.dev/ru/work-with-me",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://camelotflows.dev/ru/work-with-me",
+      "metaRobots": null,
+      "title": "Сотрудничество | Продуктизированные веб- и AI-услуги",
+      "metaDescription": "Выбери понятный формат работы с Camelot Flows: создание сайта, AI-автоматизация, поддержка, помощь с ростом или дополнительные мощности для агентства.",
+      "h1": [
+        "Одна мастерская. Находят и конвертит. Прозрачные цены."
+      ],
+      "language": "ru",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://camelotflows.dev/work-with-me"
+        },
+        {
+          "lang": "ro",
+          "href": "https://camelotflows.dev/ro/work-with-me"
+        },
+        {
+          "lang": "ru",
+          "href": "https://camelotflows.dev/ru/work-with-me"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://camelotflows.dev/work-with-me"
+        }
+      ],
+      "inSitemap": true,
+      "internalLinksOut": 47,
+      "internalHtmlAliasLinks": [],
+      "initialHtmlBytes": 43301,
+      "initialMainTextLength": 4626,
+      "mainContentInInitialHtml": true,
+      "discoveredFrom": "https://camelotflows.dev/ru/",
+      "internalLinksIn": 98
+    }
+  ],
+  "duplicateCanonicalGroups": []
+}
