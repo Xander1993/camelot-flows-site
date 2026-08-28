@@ -11,11 +11,6 @@
           var t = c ? c[1] : (localStorage.getItem('cf_theme') || 'cozy');
           html.setAttribute('data-theme', t);
         } catch (e) { html.setAttribute('data-theme', 'cozy'); }
-        try {
-          if (sessionStorage.getItem('cf_loaded') === '1') {
-            html.classList.add('cf-skip-preloader');
-          }
-        } catch (e) {}
         html.classList.add('js');
       })();
     </script>
@@ -28,7 +23,6 @@
           if (['en','ro','ru'].indexOf(l) === -1) l = 'en';
           html.setAttribute('lang', l);
           html.setAttribute('data-cf-lang', l);
-          if (l !== 'en') html.setAttribute('data-i18n-loading', '1');
         } catch (e) { html.setAttribute('lang', 'en'); }
       })();
     </script>
@@ -58,50 +52,23 @@
 <meta content="https://camelotflows.dev/assets/images/blog/dreamscape-game-dev.png" name="twitter:image">
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="preload">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"></noscript>
-<link href="/assets/css/tailwind.built.css" rel="stylesheet">
-<link href="/assets/site.css?v=2" rel="stylesheet">
-<link href="/assets/css/camelot.css?v=6" rel="stylesheet">
-<link href="/assets/css/theme-night.css?v=2" rel="stylesheet">
-<link href="/assets/css/lang-switcher.css" rel="stylesheet">
+
 <link href="/assets/css/blog.css?v=1" rel="stylesheet">
-<link as="document" href="/arsenal" rel="prefetch">
-<link as="document" href="/merlin" rel="prefetch">
-<link as="document" href="/contact" rel="prefetch">
-<link as="document" href="/case-studies" rel="prefetch">
-<link as="document" href="/about" rel="prefetch">
 <!-- Google tag (gtag.js) — GA4 camelotflows.dev -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T4ZPEG1KSR"></script>
-<script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
-      try { if (localStorage.getItem('cf_consent') === 'granted') { gtag('consent', 'update', { analytics_storage: 'granted' }); } } catch (e) {}      gtag('js', new Date());
-      gtag('config', 'G-T4ZPEG1KSR');
-    </script>
 <script defer="" src="/assets/js/cf-consent.js?v=1"></script>
+<style id="cf-performance-critical">.material-symbols-outlined{display:inline-block;width:1em;min-width:1em;height:1em;overflow:hidden;white-space:nowrap;word-wrap:normal;letter-spacing:normal;line-height:1;vertical-align:middle}#hero-badge,#hero-word-1,#hero-word-2,#hero-p,#hero-btns,#hero-stats,.hero-word,.hero-price,.hero-cta{opacity:1!important;visibility:visible!important;transform:none!important}</style>
+
+<link as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=optional" rel="preload">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=optional" media="print" onload="this.media='all'" rel="stylesheet">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=optional" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&amp;icon_names=ads_click,all_inclusive,alternate_email,analytics,animation,api,architecture,arrow_back,arrow_forward,arrow_outward,auto_awesome,auto_fix,auto_fix_high,auto_stories,balance,bolt,build,cable,call,change_history,checklist,chevron_right,code_blocks,contact_mail,dark_mode,database,design_services,diamond,dns,draw,east,expand_more,folder_special,forum,grid_view,groups,handshake,hub,light_mode,link,location_on,mail,mark_email_read,memory,menu,model_training,monitoring,neurology,palette,psychology,psychology_alt,public,query_stats,reviews,rocket_launch,schema,search,search_insights,security,shield,shopping_bag,smart_toy,speed,storage,storefront,style,support_agent,swords,sync,terminal,timer_off,translate,travel_explore,trending_up,verified_user,web,webhook,wifi&amp;display=block" media="print" onload="this.media='all'" rel="stylesheet">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&amp;icon_names=ads_click,all_inclusive,alternate_email,analytics,animation,api,architecture,arrow_back,arrow_forward,arrow_outward,auto_awesome,auto_fix,auto_fix_high,auto_stories,balance,bolt,build,cable,call,change_history,checklist,chevron_right,code_blocks,contact_mail,dark_mode,database,design_services,diamond,dns,draw,east,expand_more,folder_special,forum,grid_view,groups,handshake,hub,light_mode,link,location_on,mail,mark_email_read,memory,menu,model_training,monitoring,neurology,palette,psychology,psychology_alt,public,query_stats,reviews,rocket_launch,schema,search,search_insights,security,shield,shopping_bag,smart_toy,speed,storage,storefront,style,support_agent,swords,sync,terminal,timer_off,translate,travel_explore,trending_up,verified_user,web,webhook,wifi&amp;display=block" rel="stylesheet"></noscript>
+<link href="/assets/css/site.bundle.min.css?v=1" rel="stylesheet">
 </head>
 <body class="theme-cozy font-body overflow-x-hidden selection:bg-primary selection:text-white">
 <a class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999999] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm focus:font-mono focus:shadow-neon" data-i18n="common.skip_link" href="#main-content">Skip to main content</a>
 <div aria-atomic="true" aria-live="polite" class="sr-only" id="lang-announce" role="status"></div>
 <div aria-hidden="true" class="scroll-progress"></div>
-<div class="fixed inset-0 z-[999999] bg-obsidian flex flex-col items-center justify-center" id="preloader">
-<div class="absolute inset-0 grid-bg opacity-30"></div>
-<div class="w-32 h-32 relative flex items-center justify-center mb-8 z-10">
-<div class="absolute inset-0 rounded-full border-t-2 border-primary animate-spin"></div>
-<div class="absolute inset-2 rounded-full border-b-2 border-accent animate-[spin_2s_linear_infinite_reverse]">
-</div>
-<span class="material-symbols-outlined text-4xl text-white animate-pulse">design_services</span>
-</div>
-<div class="text-primary-glow font-mono text-[10px] tracking-[0.4em] uppercase mb-4 z-10" data-i18n="common.preloader_init" id="loader-text">
-            Initializing Protocols...</div>
-<div class="w-64 h-[2px] bg-white/10 rounded-full overflow-hidden z-10">
-<div class="w-0 h-full bg-gradient-to-r from-primary to-accent" id="loader-bar"></div>
-</div>
-<div class="mt-4 font-mono text-white text-sm tracking-widest z-10" id="loader-percent">0%</div>
-</div>
 <div class="grain-overlay"></div>
 <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none" id="bg-orbs">
 <div class="bg-orb absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-cobalt/20 rounded-full blur-[120px]">
@@ -183,7 +150,7 @@
 <script>(function(){var btn=document.getElementById("mobile-menu-toggle"),menu=document.getElementById("mobile-nav");if(btn&&menu){btn.addEventListener("click",function(){menu.classList.toggle("hidden");var open=!menu.classList.contains("hidden");btn.setAttribute("aria-expanded",open?"true":"false");});document.addEventListener("click",function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");}});document.querySelectorAll("#mobile-nav a").forEach(function(a){a.addEventListener("click",function(){menu.classList.add("hidden");btn.setAttribute("aria-expanded","false");});});}})();</script>
 </nav>
 <main id="main-content">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Building Dreamscape in Parallel: How Game Dev Is Sharpening My Skills","description":"Building a narrative RPG in Ren'Py while doing client web work full-time sounds like a contradiction. It isn't. Here is how game dev sharpens the exact muscles that make better web projects.","url":"https://camelotflows.dev/blog/building-dreamscape-in-parallel/","datePublished":"2026-05-03T16:21:32+00:00","dateModified":"2026-05-19T23:40:37+00:00","author":{"@type":"Person","@id":"https://camelotflows.dev/#alexandru-buzi","name":"Alexandru Buzi","url":"https://camelotflows.dev/about"},"publisher":{"@type":"Organization","name":"Camelot Flows","url":"https://camelotflows.dev/","logo":{"@type":"ImageObject","url":"https://camelotflows.dev/assets/images/cf-logo-wordmark.png"}},"image":"https://camelotflows.dev/assets/images/blog/dreamscape-game-dev-1024x576.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://camelotflows.dev/blog/building-dreamscape-in-parallel/"},"wordCount":370}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Building Dreamscape in Parallel: How Game Dev Is Sharpening My Skills","description":"Building a narrative RPG in Ren'Py while doing client web work full-time sounds like a contradiction. It isn't. Here is how game dev sharpens the exact muscles that make better web projects.","url":"https://camelotflows.dev/blog/building-dreamscape-in-parallel/","datePublished":"2026-05-03T16:21:32+00:00","dateModified":"2026-05-19T23:40:37+00:00","author":{"@type":"Person","@id":"https://camelotflows.dev/#alexandru-buzi","name":"Alexandru Buzi","url":"https://camelotflows.dev/about"},"publisher":{"@type":"Organization","name":"Camelot Flows","url":"https://camelotflows.dev/","logo":{"@type":"ImageObject","url":"https://camelotflows.dev/assets/images/cf-logo-wordmark.png"}},"image":"https://camelotflows.dev/assets/images/blog/dreamscape-game-dev-1024x576.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://camelotflows.dev/blog/building-dreamscape-in-parallel/"},"wordCount":370,"inLanguage":"en"}</script>
 <section class="pt-44 pb-16 px-6 relative overflow-hidden">
 <div class="absolute inset-0 grid-bg opacity-20 pointer-events-none"></div>
 <div class="absolute top-0 right-0 w-[50vw] h-[50vw] bg-primary/5 rounded-full blur-[140px] pointer-events-none"></div>
@@ -291,7 +258,7 @@
 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20">
 <div class="md:col-span-3">
 <div class="flex items-center gap-3 mb-6">
-<img alt="Camelot Flows" class="object-contain" src="/assets/images/cf-mark.png?v=3" style="height:56px;width:auto">
+<img alt="Camelot Flows" class="object-contain" decoding="async" height="56" loading="lazy" src="/assets/images/cf-mark-112.webp?v=1" width="39" style="height:56px;width:auto">
 <span class="font-display text-xl font-bold tracking-tighter uppercase text-white">Camelot
                             Flows</span>
 </div>
@@ -385,13 +352,8 @@
 </div>
 </footer>
 <div id="custom-cursor"></div>
-<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
-<script defer="" src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-<script src="/assets/js/locales.js"></script>
-<script defer="" src="/assets/js/i18n.js"></script>
-<script defer="" src="/assets/js/camelot-gsap.js"></script>
-<script defer="" src="/assets/site.js"></script>
+<script defer="" src="/assets/js/cf-runtime.min.js?v=1"></script>
+<script defer="" src="/assets/site.min.js?v=1"></script>
+<script defer="" src="/assets/js/cf-motion-loader.min.js?v=1"></script>
 </body>
 </html>

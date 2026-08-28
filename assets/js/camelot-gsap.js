@@ -102,14 +102,8 @@
         // that the i18n DOMContentLoaded pass then destroys via textContent=...,
         // leaving the .hero-char animation with no targets.
 
-        // HERO PRE-HIDE — these are the targets playHeroAnimation animates
-        // FROM. We set autoAlpha: 0 synchronously so the natural state
-        // never paints during the gap between defer-script execution and
-        // the preloader timeline completing. Pairs with .js CSS hide for
-        // coverage during initial parse.
-        const _heroTargets = ["#hero-badge", "#hero-word-1", "#hero-word-2", "#hero-p", "#hero-btns", "#hero-stats"]
-            .filter(sel => document.querySelector(sel));
-        if (_heroTargets.length) gsap.set(_heroTargets, { autoAlpha: 0 });
+        // Hero copy remains in its natural visible state. Decorative motion
+        // must never gate the page's meaningful content or move the LCP text.
 
         // ------------------------------------------------------------
         // 1. LENIS SMOOTH SCROLL
@@ -367,44 +361,6 @@
         // ------------------------------------------------------------
         const playHeroAnimation = () => {
             window._heroAnimStarted = true;
-            if (!document.getElementById('hero-badge')) return; // Non-home pages: no-op
-            // Wrap the hero word AFTER i18n has run, so the per-char spans
-            // contain the translated letters and aren't wiped by a later
-            // textContent assignment. Idempotent — re-wrapping plain text
-            // gives the same result.
-            wrapLetters(document.getElementById('hero-word-1'));
-            // Targets were pre-hidden (autoAlpha: 0) at script load to prevent
-            // a flash. We use fromTo so the from-state is explicit and the
-            // tweens animate to autoAlpha: 1 regardless of pre-set state.
-            const heroTl = gsap.timeline();
-
-            heroTl
-                .fromTo("#hero-badge",
-                    { y: 60, autoAlpha: 0 },
-                    { y: 0, autoAlpha: 1, duration: 1, ease: "power4.out" })
-                // Unhide the word-1 wrapper so the per-char animation is visible.
-                .set("#hero-word-1", { autoAlpha: 1 }, "<")
-                .from(".hero-char", {
-                    z: 400,
-                    rotationX: -90,
-                    opacity: 0,
-                    stagger: 0.04,
-                    duration: 1.2,
-                    ease: "back.out(1.5)",
-                    transformOrigin: "50% 50% -50px"
-                }, "-=0.8")
-                .fromTo("#hero-word-2",
-                    { yPercent: 100, autoAlpha: 0 },
-                    { yPercent: 0, autoAlpha: 1, duration: 1.2, ease: "power4.out" }, "-=1.0")
-                .fromTo("#hero-p",
-                    { y: 50, autoAlpha: 0 },
-                    { y: 0, autoAlpha: 1, duration: 1, ease: "power4.out" }, "-=0.8")
-                .fromTo("#hero-btns",
-                    { y: 40, autoAlpha: 0 },
-                    { y: 0, autoAlpha: 1, duration: 1, ease: "power4.out" }, "-=0.7")
-                .fromTo("#hero-stats",
-                    { y: 30, autoAlpha: 0 },
-                    { y: 0, autoAlpha: 1, duration: 1, ease: "power4.out" }, "-=0.6");
         };
 
         // SYNC: sections that set initial visibility state

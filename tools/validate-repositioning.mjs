@@ -57,8 +57,11 @@ for (const route of coreRoutes) {
 }
 
 const contact = await readFile(path.join(root, 'contact.html'), 'utf8');
-for (const name of ['name','company','website','country','products_services','request_channels','current_process','current_tools','monthly_volume','time_consuming_step','human_approval','desired_result','attachment','preferred_contact']) {
+for (const name of ['name','company','website','country','products_services','request_channels','current_process','current_tools','monthly_volume','time_consuming_step','human_approval','desired_result','preferred_contact']) {
   if (!new RegExp(`name=["']${name}["']`).test(contact)) failures.push({ url: 'https://camelotflows.dev/contact', issue: `missing form field ${name}` });
+}
+if (!/<input\b(?=[^>]*id=["']c-file["'])(?=[^>]*type=["']file["'])(?=[^>]*disabled)[^>]*>/i.test(contact)) {
+  failures.push({ url: 'https://camelotflows.dev/contact', issue: 'preview file upload is not disabled' });
 }
 if (/07:00|09:30|nap schedule|Arthur's nap/i.test(await readFile(path.join(root, 'about.html'), 'utf8'))) failures.push({ url: 'https://camelotflows.dev/about', issue: 'detailed personal schedule remains' });
 

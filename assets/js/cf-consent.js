@@ -1,13 +1,30 @@
-/* Camelot Flows — cookie consent banner + GA4 Consent Mode v2 updates.
-   Default consent state (denied) is set inline in each page's head BEFORE gtag config.
-   This script only renders the banner and records the visitor's choice. */
+/* Camelot Flows — cookie consent banner and consent-gated GA4 loader.
+   Analytics is not requested until the visitor has granted consent. */
 (function () {
   'use strict';
 
   var KEY = 'cf_consent';
+  var GA_ID = 'G-T4ZPEG1KSR';
+  var analyticsLoading = false;
+
+  function loadAnalytics() {
+    if (analyticsLoading || document.querySelector('script[data-cf-ga4]')) return;
+    analyticsLoading = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', GA_ID, { anonymize_ip: true });
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_ID);
+    script.setAttribute('data-cf-ga4', 'consent-granted');
+    document.head.appendChild(script);
+  }
+
   var stored = null;
   try { stored = localStorage.getItem(KEY); } catch (e) { /* storage blocked: show banner every visit */ }
-  if (stored === 'granted' || stored === 'denied') return; // choice already made
+  if (stored === 'granted') { loadAnalytics(); return; }
+  if (stored === 'denied') return;
 
   var lang = 'en';
   try { lang = document.documentElement.getAttribute('data-cf-static-lang') || document.documentElement.getAttribute('data-cf-lang') || localStorage.getItem('cf_lang') || 'en'; } catch (e) {}
@@ -37,9 +54,7 @@
 
   function decide(granted) {
     try { localStorage.setItem(KEY, granted ? 'granted' : 'denied'); } catch (e) {}
-    if (granted && typeof window.gtag === 'function') {
-      window.gtag('consent', 'update', { analytics_storage: 'granted' });
-    }
+    if (granted) loadAnalytics();
     var el = document.getElementById('cf-consent');
     if (el) {
       el.style.transition = 'opacity .25s ease, transform .25s ease';

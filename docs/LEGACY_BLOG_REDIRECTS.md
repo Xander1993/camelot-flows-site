@@ -10,7 +10,9 @@ Keep the old hostname active as a redirect source for at least 12 months after t
 
 ## Preferred Cloudflare configuration
 
-Create Bulk Redirects for the known no-slash variants first. Each entry is a static 301 with query strings removed:
+Import `docs/cloudflare-legacy-blog-no-slash-redirects.csv` as a Cloudflare Bulk Redirect List and enable that list with a Bulk Redirect Rule. The CSV deliberately omits the source scheme, so the exact no-slash path matches both HTTP and HTTPS. Its optional columns set 301, do not preserve query strings, do not include subdomains, do not use subpath matching, and do not preserve a path suffix. There is no header row, as required by Cloudflare's import format.
+
+These exact entries must execute before the broader hostname rule. Each is a direct one-hop mapping:
 
 ```text
 https://blog.camelotflows.dev/ai-intake-assistant-small-service-business -> https://camelotflows.dev/blog/ai-intake-assistant-small-service-business/
@@ -40,5 +42,10 @@ Preserve query string: off
 
 The hostname rule deliberately preserves unknown paths. It allows the final apex URL to return a truthful 404 instead of consolidating unrelated historical URLs into the homepage.
 
-Before changing taxonomy/feed/attachment behavior, export historical URLs and backlinks from Search Console or another authenticated source. Map any valuable URL one-to-one; use 404/410 only when no close replacement or retained value exists.
+Cloudflare references:
 
+- https://developers.cloudflare.com/rules/url-forwarding/bulk-redirects/reference/csv-file-format/
+- https://developers.cloudflare.com/rules/url-forwarding/bulk-redirects/reference/url-components/
+- https://developers.cloudflare.com/rules/url-forwarding/bulk-redirects/how-it-works/
+
+Before changing taxonomy/feed/attachment behavior, export historical URLs and backlinks from Search Console or another authenticated source. Map any valuable URL one-to-one; use 404/410 only when no close replacement or retained value exists.

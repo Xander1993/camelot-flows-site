@@ -15,12 +15,6 @@
 <link href="favicon.png" rel="icon" sizes="32x32" type="image/png">
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=Space+Grotesk:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet">
-<link href="assets/css/tailwind.built.css" rel="stylesheet">
-<link href="assets/site.css?v=2" rel="stylesheet">
-<link href="assets/css/camelot.css?v=9" rel="stylesheet">
-<link href="assets/css/theme-night.css?v=2" rel="stylesheet">
-<link href="assets/css/lang-switcher.css" rel="stylesheet">
 <noscript><style>.sr,.hero-word,.hero-price,.hero-cta{opacity:1!important;transform:none!important;}</style></noscript>
 <style>
 /* ── Accent tokens (Merlin-agent = neon purple / deep violet) ── */
@@ -178,15 +172,15 @@ a{text-decoration:none;color:inherit;}
 @media(max-width:767px){nav.fixed > div:not(#mobile-nav) .lp-nav-cta{display:none!important;}}
 </style>
 <!-- Google tag (gtag.js) — GA4 camelotflows.dev -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T4ZPEG1KSR"></script>
-<script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
-      try { if (localStorage.getItem('cf_consent') === 'granted') { gtag('consent', 'update', { analytics_storage: 'granted' }); } } catch (e) {}      gtag('js', new Date());
-      gtag('config', 'G-T4ZPEG1KSR');
-    </script>
 <script defer="" src="/assets/js/cf-consent.js?v=1"></script>
+<style id="cf-performance-critical">.material-symbols-outlined{display:inline-block;width:1em;min-width:1em;height:1em;overflow:hidden;white-space:nowrap;word-wrap:normal;letter-spacing:normal;line-height:1;vertical-align:middle}#hero-badge,#hero-word-1,#hero-word-2,#hero-p,#hero-btns,#hero-stats,.hero-word,.hero-price,.hero-cta{opacity:1!important;visibility:visible!important;transform:none!important}</style>
+
+<link as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=optional" rel="preload">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=optional" media="print" onload="this.media='all'" rel="stylesheet">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=optional" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&amp;icon_names=ads_click,all_inclusive,alternate_email,analytics,animation,api,architecture,arrow_back,arrow_forward,arrow_outward,auto_awesome,auto_fix,auto_fix_high,auto_stories,balance,bolt,build,cable,call,change_history,checklist,chevron_right,code_blocks,contact_mail,dark_mode,database,design_services,diamond,dns,draw,east,expand_more,folder_special,forum,grid_view,groups,handshake,hub,light_mode,link,location_on,mail,mark_email_read,memory,menu,model_training,monitoring,neurology,palette,psychology,psychology_alt,public,query_stats,reviews,rocket_launch,schema,search,search_insights,security,shield,shopping_bag,smart_toy,speed,storage,storefront,style,support_agent,swords,sync,terminal,timer_off,translate,travel_explore,trending_up,verified_user,web,webhook,wifi&amp;display=block" media="print" onload="this.media='all'" rel="stylesheet">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&amp;icon_names=ads_click,all_inclusive,alternate_email,analytics,animation,api,architecture,arrow_back,arrow_forward,arrow_outward,auto_awesome,auto_fix,auto_fix_high,auto_stories,balance,bolt,build,cable,call,change_history,checklist,chevron_right,code_blocks,contact_mail,dark_mode,database,design_services,diamond,dns,draw,east,expand_more,folder_special,forum,grid_view,groups,handshake,hub,light_mode,link,location_on,mail,mark_email_read,memory,menu,model_training,monitoring,neurology,palette,psychology,psychology_alt,public,query_stats,reviews,rocket_launch,schema,search,search_insights,security,shield,shopping_bag,smart_toy,speed,storage,storefront,style,support_agent,swords,sync,terminal,timer_off,translate,travel_explore,trending_up,verified_user,web,webhook,wifi&amp;display=block" rel="stylesheet"></noscript>
+<link href="/assets/css/site.bundle.min.css?v=1" rel="stylesheet">
 </head>
 <body class="theme-cozy font-body overflow-x-hidden">
 <div aria-hidden="true" class="lp-grain"></div>
@@ -509,7 +503,7 @@ a{text-decoration:none;color:inherit;}
 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20">
 <div class="md:col-span-3">
 <div class="flex items-center gap-3 mb-6">
-<img alt="Camelot Flows" class="object-contain" src="/assets/images/cf-mark.png?v=3" style="height:56px;width:auto">
+<img alt="Camelot Flows" class="object-contain" decoding="async" height="56" loading="lazy" src="/assets/images/cf-mark-112.webp?v=1" width="39" style="height:56px;width:auto">
 <span class="font-display text-xl font-bold tracking-tighter uppercase text-white">Camelot Flows</span>
 </div>
 <p class="text-slate-500 mb-8 text-sm leading-relaxed font-mono">
@@ -581,11 +575,6 @@ a{text-decoration:none;color:inherit;}
 </div>
 </div>
 </footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="assets/js/locales.js"></script>
-<script defer="" src="assets/js/i18n.js"></script>
-<script defer="" src="assets/site.js?v=2"></script>
 <script>
 // Theme toggle (site nav button)
 (function(){
@@ -603,5 +592,8 @@ document.querySelectorAll('.faq-btn').forEach(function(btn){btn.addEventListener
 window.addEventListener('DOMContentLoaded',function(){if(typeof gsap==='undefined'){document.querySelectorAll('.sr,.hero-word,.hero-price,.hero-cta').forEach(function(el){el.style.opacity='1';el.style.transform='none';});return;}gsap.registerPlugin(ScrollTrigger);var noMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(!noMotion){gsap.timeline({delay:0.25}).fromTo('.hero-word',{y:60,opacity:0},{y:0,opacity:1,stagger:0.09,duration:1,ease:'power4.out'}).fromTo('.hero-price',{x:80,opacity:0},{x:0,opacity:1,duration:1,ease:'back.out(1.7)'},'-=0.55').fromTo('.hero-cta',{y:20,opacity:0},{y:0,opacity:1,stagger:0.1,duration:0.7,ease:'power3.out'},'-=0.45');var orbs=document.querySelectorAll('.hero-orb');window.addEventListener('mousemove',function(e){var dx=e.clientX/window.innerWidth-0.5;var dy=e.clientY/window.innerHeight-0.5;orbs.forEach(function(o,i){gsap.to(o,{x:dx*(i+1)*40,y:dy*(i+1)*30,duration:1.2,ease:'power1.out'});});});}else{gsap.set(['.hero-word','.hero-price','.hero-cta'],{opacity:1,x:0,y:0});}var desktop=window.innerWidth>=768;var feats=gsap.utils.toArray('.feat-item');var details=gsap.utils.toArray('.feat-detail');if(desktop&&!noMotion&&feats.length){feats.forEach(function(f,i){gsap.set(f,{opacity:i===0?1:0.2,scale:i===0?1:0.95});});details.forEach(function(d,i){gsap.set(d,i===0?{opacity:1,y:0}:{opacity:0,y:14});});ScrollTrigger.create({trigger:'#feature-spotlight',pin:true,scrub:0.6,invalidateOnRefresh:true,start:'top top',end:function(){return'+='+feats.length*window.innerHeight*0.45;},onUpdate:function(self){var idx=Math.min(Math.floor(self.progress*feats.length),feats.length-1);feats.forEach(function(f,i){gsap.to(f,{opacity:i===idx?1:0.2,scale:i===idx?1:0.95,duration:0.3,ease:'power2.out'});});details.forEach(function(d,i){gsap.to(d,{opacity:i===idx?1:0,y:i===idx?0:14,duration:0.3,ease:'power2.out'});});}});}else{gsap.set('.feat-detail',{opacity:1,y:0});gsap.set('.feat-item',{opacity:1,scale:1});}document.querySelectorAll('.check-path').forEach(function(p,i){var len=p.getTotalLength();if(noMotion){gsap.set(p,{strokeDasharray:len,strokeDashoffset:0});return;}gsap.set(p,{strokeDasharray:len,strokeDashoffset:len});gsap.to(p,{strokeDashoffset:0,duration:0.55,ease:'power2.out',delay:i*0.12,scrollTrigger:{trigger:p,start:'top 83%',toggleActions:'play none none reverse'}});});if(!noMotion){gsap.fromTo('#t-line',{attr:{x2:60}},{attr:{x2:800},ease:'none',scrollTrigger:{trigger:'#timeline-section',start:'top 70%',end:'bottom 30%',scrub:1}});}else{gsap.set('#t-line',{attr:{x2:800}});}if(!noMotion){gsap.utils.toArray('.sr').forEach(function(el){gsap.to(el,{y:0,opacity:1,duration:0.85,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 83%',toggleActions:'play none none reverse'}});});}else{gsap.set('.sr',{opacity:1,y:0});}if(!noMotion&&!window.matchMedia('(hover:none)').matches){var cur=document.createElement('div');cur.className='cf-cursor';cur.setAttribute('aria-hidden','true');document.body.appendChild(cur);var xTo=gsap.quickTo(cur,'x',{duration:.4,ease:'power3'});var yTo=gsap.quickTo(cur,'y',{duration:.4,ease:'power3'});window.addEventListener('mousemove',function(e){xTo(e.clientX);yTo(e.clientY);});var iSel='a,button,[role=button],input,textarea,select,.lp-feat-item';document.body.addEventListener('mouseover',function(e){if(e.target.closest(iSel))cur.classList.add('is-hover');});document.body.addEventListener('mouseout',function(e){if(e.target.closest(iSel))cur.classList.remove('is-hover');});if(window.matchMedia('(pointer:fine)').matches){var cc=document.getElementById('custom-cursor');var ccVis=false,lastPt=0;gsap.set(cc,{xPercent:-50,yPercent:-50,zIndex:99999});window.addEventListener('mousemove',function(e2){if(!ccVis){ccVis=true;gsap.to(cc,{opacity:1,duration:.3});}gsap.to(cc,{x:e2.clientX,y:e2.clientY,duration:.15,ease:'power2.out'});var now=Date.now();if(now-lastPt>12){lastPt=now;var p=document.createElement('div');p.style.cssText='position:fixed;width:6px;height:6px;border-radius:50%;background:rgba(var(--lp-accent-rgb),1);pointer-events:none;z-index:9998;mix-blend-mode:screen;filter:blur(1px);box-shadow:0 0 20px 4px rgba(var(--lp-accent-rgb),.6);';document.body.appendChild(p);gsap.set(p,{x:e2.clientX,y:e2.clientY,xPercent:-50,yPercent:-50});gsap.to(p,{x:e2.clientX+(Math.random()-.5)*15,y:e2.clientY+(Math.random()-.5)*15,scale:0,opacity:0,duration:Math.random()*.4+.4,ease:'power2.out',onComplete:function(){p.remove();}});}});document.addEventListener('mouseleave',function(){ccVis=false;gsap.to(cc,{opacity:0,duration:.3});});document.querySelectorAll('a,button,input').forEach(function(el){el.addEventListener('mouseenter',function(){gsap.to(cc,{scale:3.5,opacity:.3,duration:.3,ease:'power2.out'});});el.addEventListener('mouseleave',function(){gsap.to(cc,{scale:1,opacity:1,duration:.3,ease:'power2.out'});});});}}
 });
 </script>
+<script defer="" src="/assets/js/cf-runtime.min.js?v=1"></script>
+<script defer="" src="/assets/site.min.js?v=1"></script>
+<script defer="" src="/assets/js/cf-motion-loader.min.js?v=1"></script>
 </body>
 </html>

@@ -2,6 +2,10 @@
 module.exports = {
   content: [
     "./*.html",
+    "./ro/**/*.html",
+    "./ru/**/*.html",
+    "./blog/**/*.html",
+    "./industries/**/*.html",
     "./assets/js/**/*.js",
     "./assets/site.js",
     "./wp-theme/**/*.php",
@@ -16,12 +20,6 @@ module.exports = {
     "theme-toggle",
     "icon-cozy",
     "icon-night",
-    {
-      pattern: /(bg|text|border|from|to)-(primary|primary-glow|accent|cobalt|sage|terracotta|charcoal|candle|parchment|obsidian|obsidian-light)/,
-    },
-    {
-      pattern: /(bg|text|border)-(slate|indigo|emerald|cyan|black|white)-(\d+)/,
-    },
   ],
   theme: {
     extend: {

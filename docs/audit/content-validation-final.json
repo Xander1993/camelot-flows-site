@@ -1,18 +1,22 @@
 {
-  "generatedAt": "2026-08-28T13:35:38.806Z",
+  "generatedAt": "2026-08-28T14:18:30.221Z",
   "sitemapUrls": 100,
   "filesValidated": 100,
   "coreLocalizedPagesChecked": 24,
-  "jsonLdDocuments": 94,
+  "jsonLdDocuments": 85,
   "schemaTypes": [
     "BlogPosting",
     "BreadcrumbList",
-    "FAQPage",
     "Organization",
     "Person",
     "Service",
     "WebApplication",
     "WebSite"
   ],
-  "failures": []
+  "failures": [
+    {
+      "url": "https://camelotflows.dev/contact",
+      "issue": "missing form field attachment"
+    }
+  ]
 }

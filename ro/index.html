@@ -11,11 +11,6 @@
           var t = c ? c[1] : (localStorage.getItem('cf_theme') || 'cozy');
           html.setAttribute('data-theme', t);
         } catch (e) { html.setAttribute('data-theme', 'cozy'); }
-        try {
-          if (sessionStorage.getItem('cf_loaded') === '1') {
-            html.classList.add('cf-skip-preloader');
-          }
-        } catch (e) {}
         html.classList.add('js');
       })();
     </script>
@@ -28,7 +23,6 @@
           if (['en','ro','ru'].indexOf(l) === -1) l = 'en';
           html.setAttribute('lang', l);
           html.setAttribute('data-cf-lang', l);
-          if (l !== 'en') html.setAttribute('data-i18n-loading', '1');
         } catch (e) { html.setAttribute('lang', 'en'); }
       })();
     </script>
@@ -52,35 +46,13 @@
 <meta content="Automatizare AI pentru companii tehnice B2B | Camelot Flows" name="twitter:title">
 <meta content="Camelot Flows automatizează fluxurile de vânzări și operațiuni pentru distribuitori, instalatori și companii tehnice din Moldova și România — de la cerere la ofertă, CRM și follow-up." name="twitter:description">
 <meta content="https://camelotflows.dev/assets/images/cozy-freelancer/cf-cozy-og-default.webp" name="twitter:image">
-<link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect">
-<link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect">
-<link as="script" crossorigin="" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" rel="preload">
-<link as="script" crossorigin="" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" rel="preload">
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=optional" rel="preload">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=optional" media="print" onload="this.media='all'" rel="stylesheet">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=optional" rel="stylesheet"></noscript>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"></noscript>
-<link href="/assets/css/tailwind.built.css" rel="stylesheet">
-<link href="/assets/site.min.css?v=2" media="print" onload="this.media='all'" rel="stylesheet">
-<noscript><link href="/assets/site.min.css?v=2" rel="stylesheet"></noscript>
-<link href="/assets/css/camelot.min.css?v=20" media="print" onload="this.media='all'" rel="stylesheet">
-<noscript><link href="/assets/css/camelot.min.css?v=20" rel="stylesheet"></noscript>
-<link href="/assets/css/theme-night.min.css?v=1" media="print" onload="this.media='all'" rel="stylesheet">
-<noscript><link href="/assets/css/theme-night.min.css?v=1" rel="stylesheet"></noscript>
-<link href="/assets/css/lang-switcher.css" media="print" onload="this.media='all'" rel="stylesheet">
-<noscript><link href="/assets/css/lang-switcher.css" rel="stylesheet"></noscript>
-<link as="document" href="/ro/quote-to-order" rel="prefetch">
-<link as="document" href="/ro/merlin" rel="prefetch">
-<link as="document" href="/ro/contact" rel="prefetch">
-<link as="document" href="/ro/case-studies" rel="prefetch">
-<link as="document" href="/ro/about" rel="prefetch">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://camelotflows.dev/#organization","name":"Camelot Flows","alternateName":"Camelot Flows Atelier","description":"Solo web development studio providing WordPress and WooCommerce builds, redesigns, migrations, AI integrations, and maintenance.","url":"https://camelotflows.dev/ro/","image":"https://camelotflows.dev/assets/images/cozy-freelancer/cf-cozy-og-default.webp","founder":{"@id":"https://camelotflows.dev/#alexandru-buzi","@type":"Person","name":"Alexandru Buzi","url":"https://camelotflows.dev/ro/about"},"priceRange":"€€","knowsLanguage":["en","ro","ru"],"knowsAbout":["Web Development","WordPress Development","WooCommerce","Website Migration","AI Automation","Website Maintenance"],"slogan":"You've earned the reputation. Make sure your website isn't losing it.","telephone":"+37369555936","email":"alex@camelotflows.dev","address":{"@type":"PostalAddress","addressLocality":"Chișinău","addressCountry":"MD"},"areaServed":[{"@type":"Country","name":"Moldova"},{"@type":"Country","name":"Romania"},{"@type":"AdministrativeArea","name":"European Union"},{"@type":"Country","name":"United States"}],"sameAs":["https://www.linkedin.com/in/alex-buzi/","https://camelotflows.dev/about"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"alex@camelotflows.dev","availableLanguage":["en","ro","ru"]},"inLanguage":"ro"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","@id":"https://camelotflows.dev/ro/#service","name":"Automatizare AI pentru companii tehnice B2B","serviceType":"Website design + local discovery foundation","description":"Camelot Flows automatizează fluxurile de vânzări și operațiuni pentru distribuitori, instalatori și companii tehnice din Moldova și România — de la cerere la ofertă, CRM și follow-up.","category":"Web design","provider":{"@id":"https://camelotflows.dev/#organization"},"areaServed":[{"@type":"Country","name":"Moldova"},{"@type":"Country","name":"Romania"}],"audience":{"@type":"BusinessAudience","name":"Local service SMBs with existing demand losing it to a weak or unfindable website"},"termsOfService":"One-time build, full client ownership on handover. Excludes ad management and traffic/lead guarantees.","offers":[{"@type":"Offer","name":"Start","description":"The end of \"I don't really have a website\" — a clean, fast, findable one-pager, live in days. You own it.","price":"390","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","price":"390","priceCurrency":"EUR","valueAddedTaxIncluded":false,"minPrice":"390"},"category":"Website build (one-time)","availability":"https://schema.org/InStock","url":"https://camelotflows.dev/ro/#pricing-cards"},{"@type":"Offer","name":"Found — Core","description":"The full get-found-and-convert build: Google Business Profile, on-page local SEO, LocalBusiness schema, conversion-first design, review-request flow, and a full handover. Owned outright.","price":"690","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","price":"690","priceCurrency":"EUR","valueAddedTaxIncluded":false,"minPrice":"690"},"category":"Website build (one-time)","availability":"https://schema.org/InStock","url":"https://camelotflows.dev/ro/#pricing-cards"},{"@type":"Offer","name":"Found — Standard","description":"A larger multi-page build with dedicated service pages for each money service, richer conversion design, and a full local-SEO foundation. Owned outright.","price":"990","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","price":"990","priceCurrency":"EUR","valueAddedTaxIncluded":false,"minPrice":"990"},"category":"Website build (one-time)","availability":"https://schema.org/InStock","url":"https://camelotflows.dev/ro/#pricing-cards"},{"@type":"Offer","name":"Found — Premium","description":"Fully bespoke design with advanced motion and interactions, scaled to your page count. The flagship owned asset — fixed to your services and pages.","price":"1200","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","price":"1200","priceCurrency":"EUR","valueAddedTaxIncluded":false,"minPrice":"1200"},"category":"Website build (one-time)","availability":"https://schema.org/InStock","url":"https://camelotflows.dev/ro/#pricing-cards"}],"inLanguage":"ro","url":"https://camelotflows.dev/ro/"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://camelotflows.dev/ro/#website","url":"https://camelotflows.dev/ro/","name":"Camelot Flows","description":"Premium websites and AI automation from a solo workshop in Chisinau.","inLanguage":"ro"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will you get me more customers?","acceptedAnswer":{"@type":"Answer","text":"Honestly: I build the asset, you run your sales. My job is to make sure the people already searching for what you do can find you — Google Business Profile dialed in, local SEO aimed at profitable-intent searches, LocalBusiness schema — and that the site turns those visitors into bookings. What I don't do is run your ads or promise a number of leads. If you already have demand Scoped after diagnostic; the full Found build is €690–€1,200, fixed to your page count. No surprises and no required monthly fee — you own the asset when it's done. There's an optional Hosting & Care plan if you want me to keep handling hosting, SSL, backups, and updates afterward, but it's opt-in and sold as technical work performed, never as a traffic or ranking promise."}},{"@type":"Question","name":"Do you work with businesses outside Moldova?","acceptedAnswer":{"@type":"Answer","text":"Yes. I'm a solo atelier based in Chișinău working with local service businesses across Moldova and Romania first, and the EU and US next. Everything is delivered remotely with direct builder access — no agency layers, no account managers, no middlemen between you and the person actually building your site."}},{"@type":"Question","name":"What kind of businesses is this built for?","acceptedAnswer":{"@type":"Answer","text":"Local service businesses that already have demand — salons, clinics, dentists, restaurants, trades, fitness studios, and similar — who are losing customers to a weak, outdated, or unfindable website. If you have a reputation and repeat customers but your site doesn't reflect it, that's exactly what this is for. If you have no demand yet and need marketing to create it from scratch, this isn't the right offer."}}],"inLanguage":"ro"}</script>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://camelotflows.dev/#organization","name":"Camelot Flows","alternateName":"Camelot Flows Atelier","description":"Camelot Flows automatizează fluxurile de vânzări și operațiuni pentru distribuitori, instalatori și companii tehnice din Moldova și România — de la cerere la ofertă, CRM și follow-up.","url":"https://camelotflows.dev/ro/","image":"https://camelotflows.dev/assets/images/cozy-freelancer/cf-cozy-og-default.webp","founder":{"@id":"https://camelotflows.dev/#alexandru-buzi","@type":"Person","name":"Alexandru Buzi","url":"https://camelotflows.dev/ro/about"},"priceRange":"€€","knowsLanguage":["en","ro","ru"],"knowsAbout":["Web Development","WordPress Development","WooCommerce","Website Migration","AI Automation","Website Maintenance"],"slogan":"You've earned the reputation. Make sure your website isn't losing it.","telephone":"+37369555936","email":"alex@camelotflows.dev","address":{"@type":"PostalAddress","addressLocality":"Chișinău","addressCountry":"MD"},"areaServed":[{"@type":"Country","name":"Moldova"},{"@type":"Country","name":"Romania"},{"@type":"AdministrativeArea","name":"European Union"},{"@type":"Country","name":"United States"}],"sameAs":["https://www.linkedin.com/in/alex-buzi/","https://camelotflows.dev/about"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"alex@camelotflows.dev","availableLanguage":["en","ro","ru"]},"inLanguage":"ro"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","@id":"https://camelotflows.dev/ro/#service","name":"De la cererea clientului la oferta gata de trimis.","serviceType":"Website design + local discovery foundation","description":"Camelot Flows automatizează fluxurile de vânzări și operațiuni pentru distribuitori, instalatori și companii tehnice din Moldova și România — de la cerere la ofertă, CRM și follow-up.","category":"Web design","provider":{"@id":"https://camelotflows.dev/#organization"},"areaServed":[{"@type":"Country","name":"Moldova"},{"@type":"Country","name":"Romania"}],"audience":{"@type":"BusinessAudience","name":"Local service SMBs with existing demand losing it to a weak or unfindable website"},"termsOfService":"One-time build, full client ownership on handover. Excludes ad management and traffic/lead guarantees.","offers":[{"@type":"Offer","name":"Start","description":"The end of \"I don't really have a website\" — a clean, fast, findable one-pager, live in days. You own it.","price":"390","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","price":"390","priceCurrency":"EUR","valueAddedTaxIncluded":false,"minPrice":"390"},"category":"Website build (one-time)","availability":"https://schema.org/InStock","url":"https://camelotflows.dev/ro/#pricing-cards"},{"@type":"Offer","name":"Found — Core","description":"The full get-found-and-convert build: Google Business Profile, on-page local SEO, LocalBusiness schema, conversion-first design, review-request flow, and a full handover. Owned outright.","price":"690","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","price":"690","priceCurrency":"EUR","valueAddedTaxIncluded":false,"minPrice":"690"},"category":"Website build (one-time)","availability":"https://schema.org/InStock","url":"https://camelotflows.dev/ro/#pricing-cards"},{"@type":"Offer","name":"Found — Standard","description":"A larger multi-page build with dedicated service pages for each money service, richer conversion design, and a full local-SEO foundation. Owned outright.","price":"990","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","price":"990","priceCurrency":"EUR","valueAddedTaxIncluded":false,"minPrice":"990"},"category":"Website build (one-time)","availability":"https://schema.org/InStock","url":"https://camelotflows.dev/ro/#pricing-cards"},{"@type":"Offer","name":"Found — Premium","description":"Fully bespoke design with advanced motion and interactions, scaled to your page count. The flagship owned asset — fixed to your services and pages.","price":"1200","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","price":"1200","priceCurrency":"EUR","valueAddedTaxIncluded":false,"minPrice":"1200"},"category":"Website build (one-time)","availability":"https://schema.org/InStock","url":"https://camelotflows.dev/ro/#pricing-cards"}],"inLanguage":"ro","url":"https://camelotflows.dev/ro/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://camelotflows.dev/ro/#website","url":"https://camelotflows.dev/ro/","name":"Camelot Flows","description":"Camelot Flows automatizează fluxurile de vânzări și operațiuni pentru distribuitori, instalatori și companii tehnice din Moldova și România — de la cerere la ofertă, CRM și follow-up.","inLanguage":"ro"}</script>
+
 <style>
 /* ── Critical CSS — inlined to remove render-blocking FCP penalty ── */
 /* CSS tokens (camelot.css :root) */
@@ -118,15 +90,15 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
 @media (prefers-reduced-motion: reduce){html.js .cf-rise{opacity:1!important;transform:none!important;transition:none!important}}
 </style>
 <!-- Google tag (gtag.js) — GA4 camelotflows.dev -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T4ZPEG1KSR"></script>
-<script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
-      try { if (localStorage.getItem('cf_consent') === 'granted') { gtag('consent', 'update', { analytics_storage: 'granted' }); } } catch (e) {}      gtag('js', new Date());
-      gtag('config', 'G-T4ZPEG1KSR');
-    </script>
 <script defer="" src="/assets/js/cf-consent.js?v=1"></script>
+<style id="cf-performance-critical">.material-symbols-outlined{display:inline-block;width:1em;min-width:1em;height:1em;overflow:hidden;white-space:nowrap;word-wrap:normal;letter-spacing:normal;line-height:1;vertical-align:middle}#hero-badge,#hero-word-1,#hero-word-2,#hero-p,#hero-btns,#hero-stats,.hero-word,.hero-price,.hero-cta{opacity:1!important;visibility:visible!important;transform:none!important}</style>
+
+<link as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=optional" rel="preload">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=optional" media="print" onload="this.media='all'" rel="stylesheet">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=optional" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&amp;icon_names=ads_click,all_inclusive,alternate_email,analytics,animation,api,architecture,arrow_back,arrow_forward,arrow_outward,auto_awesome,auto_fix,auto_fix_high,auto_stories,balance,bolt,build,cable,call,change_history,checklist,chevron_right,code_blocks,contact_mail,dark_mode,database,design_services,diamond,dns,draw,east,expand_more,folder_special,forum,grid_view,groups,handshake,hub,light_mode,link,location_on,mail,mark_email_read,memory,menu,model_training,monitoring,neurology,palette,psychology,psychology_alt,public,query_stats,reviews,rocket_launch,schema,search,search_insights,security,shield,shopping_bag,smart_toy,speed,storage,storefront,style,support_agent,swords,sync,terminal,timer_off,translate,travel_explore,trending_up,verified_user,web,webhook,wifi&amp;display=block" media="print" onload="this.media='all'" rel="stylesheet">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&amp;icon_names=ads_click,all_inclusive,alternate_email,analytics,animation,api,architecture,arrow_back,arrow_forward,arrow_outward,auto_awesome,auto_fix,auto_fix_high,auto_stories,balance,bolt,build,cable,call,change_history,checklist,chevron_right,code_blocks,contact_mail,dark_mode,database,design_services,diamond,dns,draw,east,expand_more,folder_special,forum,grid_view,groups,handshake,hub,light_mode,link,location_on,mail,mark_email_read,memory,menu,model_training,monitoring,neurology,palette,psychology,psychology_alt,public,query_stats,reviews,rocket_launch,schema,search,search_insights,security,shield,shopping_bag,smart_toy,speed,storage,storefront,style,support_agent,swords,sync,terminal,timer_off,translate,travel_explore,trending_up,verified_user,web,webhook,wifi&amp;display=block" rel="stylesheet"></noscript>
+<link href="/assets/css/site.bundle.min.css?v=1" rel="stylesheet">
 </head>
 <body class="theme-cozy font-body overflow-x-hidden selection:bg-primary selection:text-white">
 <a class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999999] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm focus:font-mono focus:shadow-neon" data-i18n="common.skip_link" href="#main-content">Sari la conținutul principal</a>
@@ -1225,7 +1197,7 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20">
 <div class="md:col-span-3">
 <div class="flex items-center gap-3 mb-6">
-<img alt="Camelot Flows" class="object-contain" src="/assets/images/cf-mark.png?v=3" style="height:56px;width:auto">
+<img alt="Camelot Flows" class="object-contain" decoding="async" height="56" loading="lazy" src="/assets/images/cf-mark-112.webp?v=1" width="39" style="height:56px;width:auto">
 <span class="font-display text-xl font-bold tracking-tighter uppercase text-white">Camelot
                             Flows</span>
 </div>
@@ -1318,14 +1290,9 @@ html.js .cf-rise.is-in{opacity:1;transform:none}
 </div>
 </footer>
 <div id="custom-cursor"></div>
-<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
-<script defer="" src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-<script defer="" src="/assets/js/camelot-gsap.min.js?v=9"></script>
-<script defer="" src="/assets/site.min.js?v=1"></script>
-<script defer="" src="/assets/js/locales.min.js?v=18"></script>
-<script defer="" src="/assets/js/i18n.min.js?v=1"></script>
 <script>(function(){var r=[].slice.call(document.querySelectorAll('.cf-rise'));if(!r.length)return;if(!('IntersectionObserver' in window)){r.forEach(function(e){e.classList.add('is-in')});return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});r.forEach(function(e){io.observe(e);});})();</script>
+<script defer="" src="/assets/js/cf-runtime.min.js?v=1"></script>
+<script defer="" src="/assets/site.min.js?v=1"></script>
+<script defer="" src="/assets/js/cf-motion-loader.min.js?v=1"></script>
 </body>
 </html>

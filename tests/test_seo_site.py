@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE = "https://camelotflows.dev"
 LANGS = ("en", "ro", "ru")
 PUBLIC_TOP_LEVEL = (
-    "index.html", "audit.html", "about.html", "arsenal.html", "merlin.html", "case-studies.html",
+    "index.html", "audit.html", "about.html", "arsenal.html", "merlin.html", "case-studies.html", "quote-to-order.html", "websites.html",
     "for-agencies.html", "contact.html", "work-with-me.html", "service-creation.html",
     "service-maintenance.html", "service-automation.html", "service-marketing.html", "launch-site.html",
     "merlin-automation.html", "ecommerce-wp.html", "custom-premium.html", "legal.html", "privacy.html",
@@ -26,6 +26,8 @@ def route_for(path: Path) -> str:
         return f"/{path.stem}"
     if rel == "blog/index.html":
         return "/blog/"
+    if rel in ("industries/technical-distributors.html", "industries/hvac-refrigeration.html"):
+        return f"/{path.parent.name}/{path.stem}"
     return f"/{path.parent.relative_to(ROOT).as_posix()}/"
 
 
@@ -38,7 +40,8 @@ def localized_route(route: str, lang: str) -> str:
 def english_sources():
     top = [ROOT / name for name in PUBLIC_TOP_LEVEL]
     blog = list((ROOT / "blog").glob("index.html")) + list((ROOT / "blog").glob("*/index.html"))
-    return sorted(set(top + blog))
+    industries = list((ROOT / "industries").glob("*.html"))
+    return sorted(set(top + blog + industries))
 
 
 def localized_path(source: Path, lang: str) -> Path:
@@ -85,6 +88,8 @@ class SeoSiteContractTests(unittest.TestCase):
                     failures.append(f"{source.relative_to(ROOT)} -> redirecting internal href {href}")
             options = soup.select(".lang-menu [data-lang]")
             option_map = {node["data-lang"]: node.find("a", href=True)["href"] if node.find("a", href=True) else None for node in options}
+            if not option_map:
+                option_map = {node.get("hreflang"): node.get("href") for node in soup.select(".language-links a[hreflang]")}
             expected = {lang: localized_route(route, lang) if lang != "en" else route for lang in supported}
             if option_map != expected:
                 failures.append(f"{source.relative_to(ROOT)} language links {option_map} != {expected}")
@@ -119,7 +124,7 @@ class SeoSiteContractTests(unittest.TestCase):
                     failures.append(f"{target.relative_to(ROOT)} hreflang {alternates}")
                 if soup.select("[data-lang-content]"):
                     failures.append(f"{target.relative_to(ROOT)} contains other language bodies")
-                language_links = {link.get("hreflang"): link.get("href") for link in soup.select(".lang-menu a[hreflang]")}
+                language_links = {link.get("hreflang"): link.get("href") for link in soup.select(".lang-menu a[hreflang], .language-links a[hreflang]")}
                 expected_language_links = {code: (route if code == "en" else localized_route(route, code)) for code in supported}
                 if language_links != expected_language_links:
                     failures.append(f"{target.relative_to(ROOT)} language links {language_links}")

@@ -3,9 +3,12 @@
   "version": "1.2.0",
   "private": true,
   "description": "Camelot Flows static site + WordPress theme",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
-    "build:css": "tailwindcss -i src/tw.css -o assets/css/tailwind.built.css --minify",
-    "build:js": "terser assets/js/locales.js -c -m -o assets/js/locales.min.js && terser assets/js/i18n.js -c -m -o assets/js/i18n.min.js && terser assets/js/camelot-gsap.js -c -m -o assets/js/camelot-gsap.min.js",
+    "build:css": "tailwindcss -i src/tw.css -o assets/css/tailwind.built.css --minify && node tools/build-css-bundle.mjs",
+    "build:js": "terser assets/js/locales.js -c -m -o assets/js/locales.min.js && terser assets/js/i18n.js -c -m -o assets/js/i18n.min.js && terser assets/js/camelot-gsap.js -c -m -o assets/js/camelot-gsap.min.js && terser assets/js/cf-runtime.js -c -m -o assets/js/cf-runtime.min.js && terser assets/js/cf-motion-loader.js -c -m -o assets/js/cf-motion-loader.min.js",
     "watch:css": "tailwindcss -i src/tw.css -o assets/css/tailwind.built.css --watch",
     "test": "node --test tests/*.test.mjs",
     "build": "npm run build:css && npm run build:js"
@@ -13,7 +16,7 @@
   "devDependencies": {
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/forms": "^0.5.7",
-    "sharp": "^0.34.5",
+    "sharp": "^0.35.4",
     "tailwindcss": "^3.4.4",
     "terser": "^5.50.0"
   }

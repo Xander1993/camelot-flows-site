@@ -82,7 +82,7 @@ test('mobile menu toggle stays available through 800px without a fractional dead
   );
 });
 
-test('homepage variants bust cached navigation CSS and JS', async () => {
+test('homepage variants use the versioned stable CSS bundle and deferred runtime', async () => {
   const pages = await Promise.all([
     readFile(new URL('../index.html', import.meta.url), 'utf8'),
     readFile(new URL('../ro/index.html', import.meta.url), 'utf8'),
@@ -90,11 +90,12 @@ test('homepage variants bust cached navigation CSS and JS', async () => {
   ]);
 
   for (const html of pages) {
-    const siteCssVersion = html.match(/site\.min\.css\?v=(\d+)/);
-    const camelotCssVersion = html.match(/camelot\.min\.css\?v=(\d+)/);
-    const navJsVersion = html.match(/camelot-gsap\.min\.js\?v=(\d+)/);
-    assert.ok(siteCssVersion && Number(siteCssVersion[1]) > 1);
-    assert.ok(camelotCssVersion && Number(camelotCssVersion[1]) > 19);
-    assert.ok(navJsVersion && Number(navJsVersion[1]) > 8);
+    const cssVersion = html.match(/site\.bundle\.min\.css\?v=(\d+)/);
+    const runtimeVersion = html.match(/cf-runtime\.min\.js\?v=(\d+)/);
+    const motionVersion = html.match(/cf-motion-loader\.min\.js\?v=(\d+)/);
+    assert.ok(cssVersion && Number(cssVersion[1]) >= 1);
+    assert.ok(runtimeVersion && Number(runtimeVersion[1]) >= 1);
+    assert.ok(motionVersion && Number(motionVersion[1]) >= 1);
+    assert.doesNotMatch(html, /locales\.min\.js|cdnjs\.cloudflare\.com\/ajax\/libs\/gsap/);
   }
 });
