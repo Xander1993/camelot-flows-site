@@ -153,7 +153,14 @@ export async function crawlSite({ baseUrl, seeds = [], fetchImpl = fetch, maxUrl
   const sitemapUrls = [...sitemapBody.matchAll(/<loc>\s*([^<]+?)\s*<\/loc>/gi)].map((match) => decodeEntities(match[1]));
   const allowedOrigins = new Set([base.origin, ...seeds.map((seed) => new URL(seed, base).origin)]);
   const normalize = (value, parent = homeUrl) => normalizeDocumentUrl(value, parent, allowedOrigins);
-  const normalizedSitemapUrls = sitemapUrls.map((url) => normalize(url)).filter(Boolean);
+  const normalizedSitemapUrls = sitemapUrls.map((url) => {
+    try {
+      const listed = new URL(url, base);
+      return normalize(new URL(`${listed.pathname}${listed.search}`, base).href);
+    } catch {
+      return null;
+    }
+  }).filter(Boolean);
   const sitemapSet = new Set(normalizedSitemapUrls);
   const queue = [...new Set([homeUrl, ...normalizedSitemapUrls, ...seeds.map((seed) => normalize(seed)).filter(Boolean)])];
   const queued = new Set(queue);

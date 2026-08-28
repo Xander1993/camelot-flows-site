@@ -1,0 +1,20 @@
+HTTP/1.1 200 OK
+Date: Fri, 28 Aug 2026 12:27:05 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+x-frame-options: DENY
+Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=f%2FxkT9sFZlROEvbqmKdlZ9xjF8UKy7VhPKaER8XZAAMB%2FWo%2BmxuaeuhY0JsbM9A1AikRURWAbrE%2FB8M%2F2jksT28Up%2Fg4pqrOIgSiD0XzHU%2Bg60gSRwb7RGt6V8gQpadBFS6%2F"}]}
+Nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+Access-Control-Allow-Origin: *
+Cache-Control: public, max-age=0, must-revalidate
+x-content-type-options: nosniff
+Link: <https://fonts.googleapis.com>; rel="preconnect", <https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=optional>; rel="preload"; as=style
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+content-security-policy: frame-ancestors 'none'
+permissions-policy: geolocation=(), microphone=(), camera=()
+referrer-policy: strict-origin-when-cross-origin
+Server: cloudflare
+cf-cache-status: DYNAMIC
+CF-RAY: a3234ee099f35e34-KIV
+

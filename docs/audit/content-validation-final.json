@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-08-28T13:35:38.806Z",
+  "sitemapUrls": 100,
+  "filesValidated": 100,
+  "coreLocalizedPagesChecked": 24,
+  "jsonLdDocuments": 94,
+  "schemaTypes": [
+    "BlogPosting",
+    "BreadcrumbList",
+    "FAQPage",
+    "Organization",
+    "Person",
+    "Service",
+    "WebApplication",
+    "WebSite"
+  ],
+  "failures": []
+}
