@@ -1337,7 +1337,7 @@ body {
             footer .grid {
                 gap: 36px !important;
             }
-            footer h5 {
+            footer .footer-col-title {
                 margin-bottom: 12px !important;
             }
         }

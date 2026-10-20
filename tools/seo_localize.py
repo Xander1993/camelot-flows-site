@@ -30,7 +30,6 @@ PUBLIC_TOP_LEVEL = (
     "service-automation.html",
     "service-marketing.html",
     "launch-site.html",
-    "merlin-automation.html",
     "ecommerce-wp.html",
     "custom-premium.html",
     "legal.html",
@@ -359,21 +358,75 @@ def _localize_schema(soup: BeautifulSoup, lang: str, available_by_route: dict[st
         except json.JSONDecodeError:
             continue
         payload = rewrite(payload)
-        if isinstance(payload, dict):
+        # inLanguage is not a schema.org property of Person or Organization.
+        if isinstance(payload, dict) and payload.get("@type") not in ("Person", "Organization"):
             payload["inLanguage"] = lang
         script.string = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
 
 
-def _write_sitemap(root: Path, available_by_route: dict[str, tuple[str, ...]]) -> None:
+def _sync_faq_schema(soup: BeautifulSoup) -> None:
+    """Rebuild the FAQPage JSON-LD from the visible [data-faq-schema] block so markup matches the page text."""
+    container = soup.select_one("[data-faq-schema]")
+    if not container:
+        return
+    entities = []
+    for item in container.select("details"):
+        question = item.select_one("[data-faq-q]")
+        answer = item.select_one("[data-faq-a]")
+        if question and answer:
+            entities.append({
+                "@type": "Question",
+                "name": question.get_text(" ", strip=True),
+                "acceptedAnswer": {"@type": "Answer", "text": answer.get_text(" ", strip=True)},
+            })
+    for script in soup.select('script[type="application/ld+json"]'):
+        try:
+            payload = json.loads(script.string or script.get_text())
+        except json.JSONDecodeError:
+            continue
+        if isinstance(payload, dict) and payload.get("@type") == "FAQPage" and entities:
+            payload["mainEntity"] = entities
+            script.string = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+
+
+def _git_available(root: Path) -> bool:
+    try:
+        result = subprocess.run(["git", "rev-parse", "--is-inside-work-tree"], cwd=root, capture_output=True, text=True)
+    except OSError:
+        return False
+    return result.returncode == 0 and result.stdout.strip() == "true"
+
+
+def _lastmod_for(root: Path, path: Path, use_git: bool) -> str | None:
+    """Last git commit date of the file; mtime if git is unavailable or the file has uncommitted changes."""
+    if not path.exists():
+        return None
+    if use_git:
+        rel = path.relative_to(root).as_posix()
+        dirty = subprocess.run(["git", "status", "--porcelain", "--", rel], cwd=root, capture_output=True, text=True).stdout.strip()
+        if not dirty:
+            committed = subprocess.run(["git", "log", "-1", "--format=%cs", "--", rel], cwd=root, capture_output=True, text=True).stdout.strip()
+            if committed:
+                return committed
+    return date.fromtimestamp(path.stat().st_mtime).isoformat()
+
+
+def _write_sitemap(root: Path, available_by_route: dict[str, tuple[str, ...]], route_sources: dict[str, Path]) -> None:
     rows = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
-    lastmod = date.today().isoformat()
+    use_git = _git_available(root)
     for route in sorted(available_by_route, key=lambda item: (item != "/", item)):
+        source = route_sources[route]
         for lang in available_by_route[route]:
             localized = _localized_route(route, lang)
-            rows.extend(("  <url>", f"    <loc>{_absolute(localized)}</loc>", f"    <lastmod>{lastmod}</lastmod>", "  </url>"))
+            page = source if lang == "en" else _output_for(root, source, lang)
+            lastmod = _lastmod_for(root, page, use_git)
+            rows.extend(("  <url>", f"    <loc>{_absolute(localized)}</loc>"))
+            if lastmod:
+                rows.append(f"    <lastmod>{lastmod}</lastmod>")
+            rows.append("  </url>")
     rows.append("</urlset>")
     (root / "sitemap.xml").write_text("\n".join(rows) + "\n", encoding="utf-8")
 
@@ -394,6 +447,7 @@ def _render_localized(
     _apply_dictionary(soup, dictionary)
     _set_localized_metadata(soup, dictionary, soup.html.get("data-i18n-page"))
     _localize_links(soup, lang, available_by_route)
+    _sync_faq_schema(soup)
     _localize_schema(soup, lang, available_by_route)
 
     canonical = soup.select_one('link[rel="canonical"]')
@@ -450,7 +504,7 @@ def build_site(root: Path | str) -> dict:
             output.write_text(rendered, encoding="utf-8")
             generated.append(output.relative_to(root).as_posix())
 
-    _write_sitemap(root, available_by_route)
+    _write_sitemap(root, available_by_route, {_route_for(root, source): source for source in sources})
     return {"generated": sorted(generated), "routes": len(available_by_route)}
 
 

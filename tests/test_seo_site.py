@@ -14,7 +14,7 @@ PUBLIC_TOP_LEVEL = (
     "index.html", "audit.html", "about.html", "arsenal.html", "merlin.html", "case-studies.html",
     "for-agencies.html", "contact.html", "work-with-me.html", "service-creation.html",
     "service-maintenance.html", "service-automation.html", "service-marketing.html", "launch-site.html",
-    "merlin-automation.html", "ecommerce-wp.html", "custom-premium.html", "legal.html", "privacy.html",
+    "ecommerce-wp.html", "custom-premium.html", "legal.html", "privacy.html",
 )
 
 

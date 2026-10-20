@@ -22,7 +22,7 @@ class SeoLocalizationBuildTests(unittest.TestCase):
         (self.root / "assets" / "js" / "locales.js").write_text(locale_js, encoding="utf-8")
         switcher = '<ul class="lang-menu"><li role="option" data-lang="en">EN</li><li role="option" data-lang="ro">RO</li><li role="option" data-lang="ru">RU</li></ul>'
         (self.root / "index.html").write_text(
-            f'<!doctype html><html lang="en" data-i18n-page="index"><head><title>Old</title><meta name="description" content="Old"><link rel="canonical" href="https://camelotflows.dev/"><link rel="stylesheet" href="assets/site.css"><script type="application/ld+json">{{"@context":"https://schema.org","@type":"Organization","@id":"https://camelotflows.dev/#organization","url":"https://camelotflows.dev/","inLanguage":"en"}}</script></head><body>{switcher}<main><h1 data-i18n="pages.index.hero">English home</h1><a href="about.html">About</a></main></body></html>',
+            f'<!doctype html><html lang="en" data-i18n-page="index"><head><title>Old</title><meta name="description" content="Old"><link rel="canonical" href="https://camelotflows.dev/"><link rel="stylesheet" href="assets/site.css"><script type="application/ld+json">{{"@context":"https://schema.org","@type":"Organization","@id":"https://camelotflows.dev/#organization","url":"https://camelotflows.dev/"}}</script></head><body>{switcher}<main><h1 data-i18n="pages.index.hero">English home</h1><a href="about.html">About</a></main></body></html>',
             encoding="utf-8",
         )
         (self.root / "about.html").write_text(
@@ -97,8 +97,46 @@ class SeoLocalizationBuildTests(unittest.TestCase):
         ro = BeautifulSoup((self.root / "ro" / "index.html").read_text(encoding="utf-8"), "html.parser")
         payload = json.loads(ro.select_one('script[type="application/ld+json"]').string)
         self.assertEqual(payload["url"], "https://camelotflows.dev/ro/")
-        self.assertEqual(payload["inLanguage"], "ro")
+        self.assertNotIn("inLanguage", payload)  # not a property of Organization
         self.assertEqual(payload["@id"], "https://camelotflows.dev/#organization")
+
+    def test_faq_schema_is_rebuilt_from_the_visible_localized_faq(self):
+        from tools.seo_localize import build_site
+
+        locale_path = self.root / "assets" / "js" / "locales.js"
+        locales = json.loads(locale_path.read_text(encoding="utf-8")[len("window.cfLocales = "):-1])
+        locales["ro"]["pages"]["about"].update({"faq_q1": "Întrebare?", "faq_a1": "Răspuns."})
+        locale_path.write_text("window.cfLocales = " + json.dumps(locales, ensure_ascii=False) + ";", encoding="utf-8")
+        about = (self.root / "about.html").read_text(encoding="utf-8")
+        faq_schema = '<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Question?","acceptedAnswer":{"@type":"Answer","text":"Answer."}}]}</script>'
+        faq_block = '<div data-faq-schema><details><summary><span data-faq-q data-i18n="pages.about.faq_q1">Question?</span></summary><p data-faq-a data-i18n="pages.about.faq_a1">Answer.</p></details></div>'
+        about = about.replace("</head>", faq_schema + "</head>").replace("</main>", faq_block + "</main>")
+        (self.root / "about.html").write_text(about, encoding="utf-8")
+
+        build_site(self.root)
+        ro = BeautifulSoup((self.root / "ro" / "about.html").read_text(encoding="utf-8"), "html.parser")
+        payload = json.loads(ro.select_one('script[type="application/ld+json"]').string)
+        self.assertEqual(payload["mainEntity"], [{"@type": "Question", "name": "Întrebare?", "acceptedAnswer": {"@type": "Answer", "text": "Răspuns."}}])
+
+    def test_sitemap_lastmod_uses_each_files_own_date(self):
+        import os
+        import xml.etree.ElementTree as ET
+        from datetime import date
+        from tools.seo_localize import build_site
+
+        build_site(self.root)
+        old = 1700000000  # 2023-11-14
+        os.utime(self.root / "ro" / "about.html", (old, old))
+        build_site(self.root)
+        os.utime(self.root / "ro" / "about.html", (old, old))
+        from tools.seo_localize import _write_sitemap, _route_for, _public_sources
+        sources = _public_sources(self.root)
+        available = {_route_for(self.root, s): (("en", "ro", "ru") if s.parent == self.root or "translated" in s.as_posix() else ("en",)) for s in sources}
+        _write_sitemap(self.root, available, {_route_for(self.root, s): s for s in sources})
+        ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+        rows = {u.find("sm:loc", ns).text: u.find("sm:lastmod", ns).text for u in ET.parse(self.root / "sitemap.xml").findall("sm:url", ns)}
+        self.assertEqual(rows["https://camelotflows.dev/ro/about"], date.fromtimestamp(old).isoformat())
+        self.assertEqual(rows["https://camelotflows.dev/about"], date.today().isoformat())
 
     def test_running_the_generator_twice_is_byte_for_byte_deterministic(self):
         from tools.seo_localize import build_site
