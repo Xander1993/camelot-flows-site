@@ -84,7 +84,7 @@
   "provider": {"@type": "Person", "name": "Alexandru Buzi", "url": "https://camelotflows.dev/"},
   "url": "https://camelotflows.dev/merlin",
   "description": "Custom AI automation agent built on n8n and Claude API. Handles lead qualification, tier-1 support responses, and CRM sync 24/7 without growing your headcount.",
-  "offers": {"@type": "Offer", "price": "1200", "priceCurrency": "EUR", "description": "Setup fee. Monthly support from €250/mo."},
+  "offers": {"@type": "Offer", "price": "690", "priceCurrency": "EUR", "description": "Setup fee. Monthly support from €250/mo."},
   "areaServed": "Worldwide"
 }
     </script>
@@ -111,7 +111,7 @@
     {
       "@type": "Question",
       "name": "How much does Merlin cost?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Setup starts from €690 (fixed price, one-time). Optional monthly support starts from €250/mo and covers Claude API costs, n8n hosting, and ongoing refinement as your business evolves. Cancel anytime."}
+      "acceptedAnswer": {"@type": "Answer", "text": "Setup starts from €690 (fixed price, one-time). Optional monthly support starts from €250/mo and covers monitoring, fixes, and ongoing refinement as your business evolves. Claude API and n8n hosting run on your own accounts, so you pay the providers directly at cost. Cancel anytime."}
     },
     {
       "@type": "Question",
@@ -137,6 +137,11 @@
       "@type": "Question",
       "name": "Can Merlin be upgraded later?",
       "acceptedAnswer": {"@type": "Answer", "text": "Yes. New capabilities (additional integrations, new workflows, deeper automations) are scoped and billed separately. Merlin is built on a modular stack — adding a new skill doesn't require rebuilding the whole agent."}
+    },
+    {
+      "@type": "Question",
+      "name": "Is there an ongoing cost after setup?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes — support is from €250/month (monitoring, fixes, small changes). AI and automation usage (Claude API, n8n hosting) runs on your own accounts, so you pay providers directly at cost, with no markup. Typical usage for a small business is €10–40/month."}
     }
   ]
 }
@@ -373,7 +378,7 @@
         <div>
           <p class="section-kicker" data-i18n="pages.merlin.s_build_kicker">The build</p>
           <h2 class="section-title" data-i18n="pages.merlin.s_build_h2">How I set it up.</h2>
-          <p style="color:var(--cf-muted);font-size:1.02rem;line-height:1.75;margin:24px 0 0" data-i18n="pages.merlin.s_build_p">Every Merlin instance is custom-built for one business. I train it on your docs, your tone, your offers, and your edge cases. Setup takes 2–3 weeks. After that, the monthly fee covers hosting, model costs, and ongoing refinement.</p>
+          <p style="color:var(--cf-muted);font-size:1.02rem;line-height:1.75;margin:24px 0 0" data-i18n="pages.merlin.s_build_p">Every Merlin instance is custom-built for one business. I train it on your docs, your tone, your offers, and your edge cases. Setup takes 2–3 weeks. After that, optional monthly support covers monitoring and ongoing refinement, while AI and automation usage runs on your own accounts, paid to the providers directly.</p>
           <div style="display:grid;gap:16px;margin-top:24px">
             <div class="stack-card">
               <strong data-i18n="pages.merlin.s_build_c1_h">Week 1 — Knowledge build</strong>
@@ -401,8 +406,8 @@
     <div class="container">
       <div class="section-header">
         <p class="section-kicker" data-i18n="pages.merlin.tl_kicker">Setup timeline</p>
-        <h2 class="section-title" data-i18n="pages.merlin.tl_h2">Deployed in two weeks.</h2>
-        <p class="section-copy" data-i18n="pages.merlin.tl_p">Week one is discovery and configuration. Week two is testing and integration. Then Merlin runs — and keeps running.</p>
+        <h2 class="section-title" data-i18n="pages.merlin.tl_h2">Deployed in 2–3 weeks.</h2>
+        <p class="section-copy" data-i18n="pages.merlin.tl_p">Week one is discovery and configuration. Weeks two and three are integration and testing. Then Merlin runs — and keeps running.</p>
       </div>
       <div class="grid-3">
         <div class="card">
@@ -411,7 +416,7 @@
           <p><span data-i18n="pages.merlin.tl_c1_p1">Discovery call,</span> <span data-i18n="pages.merlin.tl_c1_p2">rules + tools mapped</span></p>
         </div>
         <div class="card">
-          <p class="card-meta"><span class="material-symbols-outlined" style="font-size:1.1rem;vertical-align:-3px;color:var(--cf-terracotta)" aria-hidden="true">cable</span> <span data-i18n="pages.merlin.tl_c2_meta">WEEK 2</span></p>
+          <p class="card-meta"><span class="material-symbols-outlined" style="font-size:1.1rem;vertical-align:-3px;color:var(--cf-terracotta)" aria-hidden="true">cable</span> <span data-i18n="pages.merlin.tl_c2_meta">WEEKS 2–3</span></p>
           <h3 data-i18n="pages.merlin.tl_c2_h">Integration</h3>
           <p><span data-i18n="pages.merlin.tl_c2_p1">Connected, tested,</span> <span data-i18n="pages.merlin.tl_c2_p2">edge cases resolved</span></p>
         </div>
@@ -462,7 +467,7 @@
     <div class="container">
       <div class="card highlight" style="max-width:720px;margin:0 auto;text-align:center">
         <span class="material-symbols-outlined" style="font-size:2.2rem;color:var(--cf-terracotta)" aria-hidden="true">verified_user</span>
-        <h2 class="section-title" style="margin-top:12px" data-i18n="pages.merlin.risk_h2">Works or We Fix It Guarantee</h2>
+        <h2 class="section-title" style="margin-top:12px" data-i18n="pages.merlin.risk_h2">Works or I Fix It Guarantee</h2>
         <p style="font-size:1.05rem;line-height:1.75;margin:16px 0 0" data-i18n="pages.merlin.risk_p">"If Merlin doesn't perform the agreed automations within 30 days of deployment, I rebuild it at no charge. You don't pay for a broken agent."</p>
         <p class="card-meta" style="margin-top:20px"><span data-i18n="pages.merlin.risk_badge">30-day performance guarantee</span></p>
       </div>
@@ -475,7 +480,7 @@
       <div style="text-align:center;max-width:540px;margin:0 auto">
         <p class="section-kicker" data-i18n="pages.merlin.s_price_kicker">Pricing</p>
         <h2 class="section-title" data-i18n="pages.merlin.s_price_h2">from €690 setup · support from €250/mo</h2>
-        <p style="color:var(--cf-muted);font-size:1.02rem;line-height:1.75;margin:20px 0 32px" data-i18n="pages.merlin.s_price_p">Fixed setup, cancel anytime. Optional monthly support covers Claude API costs, n8n hosting, and keeping the agent accurate as your business evolves.</p>
+        <p style="color:var(--cf-muted);font-size:1.02rem;line-height:1.75;margin:20px 0 32px" data-i18n="pages.merlin.s_price_p">Fixed setup, cancel anytime. Optional monthly support covers monitoring, fixes, and keeping the agent accurate as your business evolves. Claude API and n8n hosting run on your own accounts, billed by the providers at cost.</p>
         <div class="button-row" style="justify-content:center">
           <a href="/contact?objective=build" class="button primary" data-i18n="pages.merlin.s_price_btn1">Book a demo call</a>
           <a href="/work-with-me" class="button ghost" data-i18n="pages.merlin.s_price_btn2">Full pricing breakdown</a>
@@ -518,7 +523,7 @@
             <span class="font-display" style="font-size:1.1rem;font-weight:500" data-faq-q data-i18n="pages.merlin.faq_q4">How much does Merlin cost?</span>
             <span class="cf-faq-icon material-symbols-outlined" aria-hidden="true">expand_more</span>
           </summary>
-          <p data-faq-a data-i18n="pages.merlin.faq_a4">Setup starts from €690 (fixed price, one-time). Optional monthly support starts from €250/mo and covers Claude API costs, n8n hosting, and ongoing refinement as your business evolves. Cancel anytime.</p>
+          <p data-faq-a data-i18n="pages.merlin.faq_a4">Setup starts from €690 (fixed price, one-time). Optional monthly support starts from €250/mo and covers monitoring, fixes, and ongoing refinement as your business evolves. Claude API and n8n hosting run on your own accounts, so you pay the providers directly at cost. Cancel anytime.</p>
         </details>
         <details class="card" style="padding:0">
           <summary class="cf-faq-q" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 26px;cursor:pointer">
@@ -554,6 +559,13 @@
             <span class="cf-faq-icon material-symbols-outlined" aria-hidden="true">expand_more</span>
           </summary>
           <p data-faq-a data-i18n="pages.merlin.faq_a9">Yes. New capabilities (additional integrations, new workflows, deeper automations) are scoped and billed separately. Merlin is built on a modular stack — adding a new skill doesn't require rebuilding the whole agent.</p>
+        </details>
+        <details class="card" style="padding:0">
+          <summary class="cf-faq-q" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 26px;cursor:pointer">
+            <span class="font-display" style="font-size:1.1rem;font-weight:500" data-faq-q data-i18n="pages.merlin.faq_q10">Is there an ongoing cost after setup?</span>
+            <span class="cf-faq-icon material-symbols-outlined" aria-hidden="true">expand_more</span>
+          </summary>
+          <p data-faq-a data-i18n="pages.merlin.faq_a10">Yes — support is from €250/month (monitoring, fixes, small changes). AI and automation usage (Claude API, n8n hosting) runs on your own accounts, so you pay providers directly at cost, with no markup. Typical usage for a small business is €10–40/month.</p>
         </details>
       </div>
     </div>
